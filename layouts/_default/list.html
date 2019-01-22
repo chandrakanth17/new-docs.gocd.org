@@ -1,0 +1,6 @@
+{{.Content}}
+<ul>
+  {{ range .Pages }}
+  <li><a href="{{.URL}}">{{.Name}}</a></li>
+  {{end}}
+</ul>
