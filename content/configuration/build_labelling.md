@@ -45,4 +45,4 @@ Using a **VCS material** in the labeltemplate. In this example, the Subversion r
 </pipeline>
 ```
 
-In some instances - for example when using Git - the revision number can be long. In this case the revision number [can be truncated](../../configuration/admin_use_custom_pipeline_label.html#using-truncated-material-revisions).
+In some instances - for example when using Git - the revision number can be long. In this case the revision number [can be truncated](../configuration/admin_use_custom_pipeline_label.html#using-truncated-material-revisions).

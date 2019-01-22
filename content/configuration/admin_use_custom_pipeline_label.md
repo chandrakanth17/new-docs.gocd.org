@@ -7,7 +7,7 @@ keywords: GoCD configuration, pipeline labels, custom pipeline labels, material 
 
 When using GoCD to build your application, it is often useful to be able to include extra information in the label GoCD uses. For example, you might want to have your label contain a static major.minor version number in addition to the unique count of the pipeline.
 
--   Click on the [Administration](../../navigation/administration_page.html) tab
+-   Click on the [Administration](../navigation/administration_page.html) tab
 ![](../../images/topnav_admin.png)
 -   Edit the pipeline
 ![](../../images/2_edit_pipeline.png)

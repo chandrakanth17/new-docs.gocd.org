@@ -20,7 +20,7 @@ Say we have two pipelines - **upstream\_pipeline** and **downstream\_pipeline** 
 
 ![](../../images/pipeline_add_material.png)
 
-Power users can also configure this via the **Config XML** tab on the Admin section (Configuration reference is [here](../../configuration/configuration_reference.html)):
+Power users can also configure this via the **Config XML** tab on the Admin section (Configuration reference is [here](../configuration/configuration_reference.html)):
 
 ```xml
 <pipeline name="downstream_pipeline">
@@ -60,7 +60,7 @@ A fetch task can also be instructed to retrieve (fetch) an artifact from an ance
 
 ![](../../images/task_fetch_artifact_ancestor.png)
 
-For power users, here's how you can configure this via the **Config XML** tab on the Admin section (Configuration reference is [here](../../configuration/configuration_reference.html)):
+For power users, here's how you can configure this via the **Config XML** tab on the Admin section (Configuration reference is [here](../configuration/configuration_reference.html)):
 
 ```xml
 <pipeline name="topmost_pipeline">

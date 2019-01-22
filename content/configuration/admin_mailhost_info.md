@@ -7,7 +7,7 @@ keywords: GoCD configuration, mailhost, mailhost configuration, email notificati
 
 In order to allow [email notifications](dev_notifications.html), you need to tell GoCD information about your mailhost.
 
--   Click on the [Administration](../../navigation/administration_page.html) tab
+-   Click on the [Administration](../navigation/administration_page.html) tab
 ![](../../images/topnav_admin.png)
 -   Click on the 'Server Configuration' sub-tab
 -   Add your mailhost information (with username and password as required)
