@@ -41,7 +41,7 @@ You can create an environment in the admin UI through the following steps. This 
 
 -   Click on finish
 
-Setting up an environment through the xml can be found in the [configuration reference](configuration_reference.md#environments)
+Setting up an environment through the xml can be found in the [configuration reference](configuration_reference.html#environments)
 
 ## Add a new agent to an existing environment
 

@@ -19,5 +19,5 @@ Users who download artifacts for a job from the artifacts tab on the dashboard c
 
 ### Also see...
 
--   [Managing artifacts and reports](../../configuration/managing_artifacts_and_reports.md)
--   [Auto purge old artifacts](../../configuration/delete_artifacts.md)
+-   [Managing artifacts and reports](../../configuration/managing_artifacts_and_reports.html)
+-   [Auto purge old artifacts](../../configuration/delete_artifacts.html)

@@ -269,7 +269,7 @@ The `<server>` element can be used to define information and attributes of the G
 | jobTimeout | No | This entry will be used as the default timeout value for hung jobs. A job is considered as hung if it does not generate any console output for "jobTimeout" minutes. If the attribute is not specified jobTimeout defaults to 60 minutes. |
 | commandRepositoryLocation | Yes (auto-generated) | Specifies the location of the [command repository]() relative to `go-server_install_root/db/command_repository`. The bundled repository is in a directory named default. |
 | serverId | Yes (auto-generated) | This value uniquely identifies a Go server installation. It may be used by features that require unique names/identifiers across different Go server installations. This attribute need not be specified for a new server. In case no value is given, server auto-generates a random UUID an assigns it as serverId. This value should never be changed for an existing server. Administrator should clear this attribute before copying configuration to a different installation. |
-| agentAutoRegisterKey | No | The key specified here is used by agents for [auto-registration](../../advanced_usage/agent_auto_register.md). |
+| agentAutoRegisterKey | No | The key specified here is used by agents for [auto-registration](../../advanced_usage/agent_auto_register.html). |
 
 ### Notes:
 
@@ -377,7 +377,7 @@ The `<backup>` element is used to configure backups.
 | Attribute        | Required | Description                                                                                                                                                                                  |
 |:-----------------|:---------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | schedule         | No       | The cron-like specification to perform a backup.                                                                                                                                             |
-| postBackupScript | No       | A script that will be invoked on the GoCD server after backup is performed (successfully, or otherwise). See [cron backups](../../advanced_usage/cron_backup.md) for details about this script. |
+| postBackupScript | No       | A script that will be invoked on the GoCD server after backup is performed (successfully, or otherwise). See [cron backups](../../advanced_usage/cron_backup.html) for details about this script. |
 | emailOnSuccess   | No       | Boolean indicating whether email should be sent on a successful backup. Requires that [mailhost](#mailhost) config be setup.                                                                 |
 | emailOnFailure   | No       | Boolean indicating whether email should be sent on a failed backup backup. Requires that [mailhost](#mailhost) config be setup.                                                              |
 

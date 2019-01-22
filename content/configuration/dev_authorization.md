@@ -74,7 +74,7 @@ The **"view" permission** allows users to view the pipeline. It does not give pe
 
 The **"operate" permission** allows users to trigger pipelines and its stages. In the below example, the role "developer" is being granted the operate permission and will be able to trigger pipelines and its stages within this group.
 
-The **"admin" permission** makes the user a [Pipeline Group Administrator](delegating_group_administration.md) allowing him to view, operate and administer the pipeline group. In the below example, role "admins" has been granted this permission.
+The **"admin" permission** makes the user a [Pipeline Group Administrator](delegating_group_administration.html) allowing him to view, operate and administer the pipeline group. In the below example, role "admins" has been granted this permission.
 
 > Note that is is possible to give a user or role only the operate permission. In the example below, the user "bot" only has operate permission. That means they can not view the pipeline, they can only operate it. This can be used to enable a script to operate on pipelines via the APIs without letting that user access any other features of Go.
 
@@ -112,7 +112,7 @@ For power users, here's how you would configure permissions via "Config XML":
 
 ## Adding authorization to approvals
 
-In GoCD, it is possible to specify [manual approvals](managing_pipelines.md) between stages. You can also specify which user is allowed to trigger manual approvals.
+In GoCD, it is possible to specify [manual approvals](managing_pipelines.html) between stages. You can also specify which user is allowed to trigger manual approvals.
 
 The authorization can be inherited from the pipeline group this pipeline belongs to. But defining specific permissions overrides this. In the example below, only members of the role "admin", and the user "goleys", can trigger the approval.
 
@@ -173,4 +173,4 @@ For power users, here's how you would configure permissions via "Config XML":
 
 ### Also See
 
--   [Delegating group administration](delegating_group_administration.md)
+-   [Delegating group administration](delegating_group_administration.html)

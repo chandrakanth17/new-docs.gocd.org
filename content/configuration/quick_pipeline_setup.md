@@ -20,7 +20,7 @@ After you've entered your license information, clicking on the **Pipelines** tab
 
 ![](../../images/new_pipeline_2.png)
 
-1.  Choose the material type. The material can be your Source Control Management (SCM or version control) repository or another pipeline or a [package repository](../../extension_points/package_repository_extension.md) (e.g. [yum](../../extension_points/yum_repository_poller.md)). Currently Go supports the following SCMs:
+1.  Choose the material type. The material can be your Source Control Management (SCM or version control) repository or another pipeline or a [package repository](../../extension_points/package_repository_extension.html) (e.g. [yum](../../extension_points/yum_repository_poller.html)). Currently Go supports the following SCMs:
     1. Subversion
     2. Mercurial
     3. Git
@@ -40,9 +40,9 @@ A pipeline contains one or more stages. Define the first stage of your pipeline
 1.  Fill in the Stage name.
 2.  Fill in the Job name.
 3.  Fill in the task type and the command for the task.
-4.  If you use Ant, NAnt or Rake for scripting, Go provides convenience wrappers for these tools. To use any other scripting tool (e.g: Maven, msbuild, etc.), choose the "More..." option to use the [command repository](../../advanced_usage/command_repository.md) or specify the command line syntax for that tool.
+4.  If you use Ant, NAnt or Rake for scripting, Go provides convenience wrappers for these tools. To use any other scripting tool (e.g: Maven, msbuild, etc.), choose the "More..." option to use the [command repository](../../advanced_usage/command_repository.html) or specify the command line syntax for that tool.
 
-See the [Managing pipelines](managing_pipelines.md) documentation for editing these settings following the creation of your pipeline.
+See the [Managing pipelines](managing_pipelines.html) documentation for editing these settings following the creation of your pipeline.
 
 ## Initial task settings
 
@@ -66,13 +66,13 @@ For this option to work, Rake needs to be installed on the Go Agent(s) and the *
 
 ### More...
 
-In addition to the above tasks, GoCD allows you to run anything on the command line. You can use the [command repository](../../advanced_usage/command_repository.md) to help you choose the command. Alternately you can specify a command on your own.
+In addition to the above tasks, GoCD allows you to run anything on the command line. You can use the [command repository](../../advanced_usage/command_repository.html) to help you choose the command. Alternately you can specify a command on your own.
 
-You can see the complete configuration reference [here](configuration_reference.md).
+You can see the complete configuration reference [here](configuration_reference.html).
 
 #### Also See
 
--   [Adding a material to an existing pipeline](admin_add_material.md)
--   [Adding a stage to an existing pipeline](admin_add_stage.md)
--   [Adding a job to an existing pipeline](admin_add_job.md)
--   [Role-based authorization](dev_authorization.md)
+-   [Adding a material to an existing pipeline](admin_add_material.html)
+-   [Adding a stage to an existing pipeline](admin_add_stage.html)
+-   [Adding a job to an existing pipeline](admin_add_job.html)
+-   [Role-based authorization](dev_authorization.html)

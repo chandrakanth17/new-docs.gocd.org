@@ -7,7 +7,7 @@ keywords: GoCD configuration, user management, role-based permissions, system ad
 
 GoCD's user management features allow you to control access to GoCD and grant role-based permissions.
 
-All user management features depend on an [authentication mechanism](dev_authentication.md) having been configured in GoCD. Please ensure you have at least one [authentication mechanism](dev_authentication.md) enabled before attempting to use any of the features mentioned in this chapter.
+All user management features depend on an [authentication mechanism](dev_authentication.html) having been configured in GoCD. Please ensure you have at least one [authentication mechanism](dev_authentication.html) enabled before attempting to use any of the features mentioned in this chapter.
 
 ## Adding Users
 

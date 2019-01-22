@@ -11,7 +11,7 @@ The concept of pipeline counters was introduced in release 1.3.2. In order to ma
 
 ## Customising the pipeline label
 
-You can create a custom label by setting the **Label Template** field on your pipeline. This will change the value that GoCD shows on its webpages. It will also change the value of the **GO\_PIPELINE\_LABEL** property that is passed to your build. You can refer to ${COUNT} or material names which are defined in the configuration of [materials](configuration_reference.md#svn).
+You can create a custom label by setting the **Label Template** field on your pipeline. This will change the value that GoCD shows on its webpages. It will also change the value of the **GO\_PIPELINE\_LABEL** property that is passed to your build. You can refer to ${COUNT} or material names which are defined in the configuration of [materials](configuration_reference.html#svn).
 
 ![](../../images/pipeline_labelling.png)
 
@@ -45,4 +45,4 @@ Using a **VCS material** in the labeltemplate. In this example, the Subversion r
 </pipeline>
 ```
 
-In some instances - for example when using Git - the revision number can be long. In this case the revision number [can be truncated](../../configuration/admin_use_custom_pipeline_label.md#using-truncated-material-revisions).
+In some instances - for example when using Git - the revision number can be long. In this case the revision number [can be truncated](../../configuration/admin_use_custom_pipeline_label.html#using-truncated-material-revisions).

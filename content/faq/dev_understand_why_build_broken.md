@@ -14,7 +14,7 @@ Usage: As a developer, I want to understand why the build is broken.
 
 Let's assume that in this case, we are on a java project using JUnit as our testing library.
 
--   If we're not already, we need to configure Go to [upload JUnit xml reports](../../configuration/dev_upload_test_report.md)
+-   If we're not already, we need to configure Go to [upload JUnit xml reports](../../configuration/dev_upload_test_report.html)
 -   Click on the **Pipelines** tab
 
 ![](../../images/topnav_pipelines.png)

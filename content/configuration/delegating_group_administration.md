@@ -50,4 +50,4 @@ As a group administrator of a pipeline group, a user is privileged to:
 -   Restfully view and operate (trigger, rerun stages etc.) all the pipelines in this group.
 -   Restfully edit the pipelines belonging to this group.
 
-> **Note:** A group administrator can access "Pipelines" and "Config XML" tabs on the Administration page to [view and edit his/her pipeline groups](pipeline_group_admin_config.md). He/She cannot access Server Configuration or perform user management. While a group administrator cannot access Pipeline Templates either, they can use existing templates for pipelines within their pipeline group.
+> **Note:** A group administrator can access "Pipelines" and "Config XML" tabs on the Administration page to [view and edit his/her pipeline groups](pipeline_group_admin_config.html). He/She cannot access Server Configuration or perform user management. While a group administrator cannot access Pipeline Templates either, they can use existing templates for pipelines within their pipeline group.

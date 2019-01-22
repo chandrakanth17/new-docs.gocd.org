@@ -35,5 +35,5 @@ You can disallow deletion of artifacts from a particular stage so that those art
 
 ### Also see...
 
--   [Managing artifacts and reports](managing_artifacts_and_reports.md)
--   [Clean up after cancelling a task](../../advanced_usage/dev_clean_up_when_cancel.md)
+-   [Managing artifacts and reports](managing_artifacts_and_reports.html)
+-   [Clean up after cancelling a task](../../advanced_usage/dev_clean_up_when_cancel.html)

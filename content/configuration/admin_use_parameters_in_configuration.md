@@ -45,7 +45,7 @@ Parameter values are defined in the ```<params>``` tag within a pipeline and can
 
 ## Using parameters in pipeline templates
 
-Parameter usage within [templates](pipeline_templates.md) is similar to usage within pipelines. The only difference is that you cannot **define** parameters in a template.
+Parameter usage within [templates](pipeline_templates.html) is similar to usage within pipelines. The only difference is that you cannot **define** parameters in a template.
 
 ```xml
 <pipeline name="trunk" template="my_template">

@@ -14,8 +14,8 @@ One of the most useful aspects of having your build mapped as a pipeline, is bei
 
 For this example, we'll assume that there is already an ant task defined in your build that will take a binary and deploy it to your environment. A separate task will verify the install was successful. If it is not, a task will run to rollback the deployment. We will also assume that earlier in the pipeline there is a **dist** stage with a **create-installers** job that will have already created the binary for us to use.
 
--   [Add a new stage](../../configuration/admin_add_stage.md) named **UAT** with a job named **deploy**
--   [Ensure that the **UAT** stage is manual](../../configuration/dev_choose_when_stage_runs.md)
+-   [Add a new stage](../../configuration/admin_add_stage.html) named **UAT** with a job named **deploy**
+-   [Ensure that the **UAT** stage is manual](../../configuration/dev_choose_when_stage_runs.html)
 -   Ensure the following task block is in the **deploy** job configuration
 
 ```xml
@@ -30,7 +30,7 @@ For this example, we'll assume that there is already an ant task defined in your
 ```
 When you are ready to deploy something into the UAT environment...
 
--   Navigate to the [pipeline activity](../navigation/pipeline_activity_page.md) page
+-   Navigate to the [pipeline activity](../navigation/pipeline_activity_page.html) page
 -   Find the check-in you want to deploy
 -   Click on the manual transition into the **UAT** stage
 
@@ -48,8 +48,8 @@ When you are ready to deploy something into the UAT environment...
 
 For this example, we'll assume that there is a known way to rollback to a previous installation. We will also assume that earlier in the pipeline there is a **dist** stage with a **create-installers** job that will have already created the binary for us to use.
 
--   [Add a new stage](../../configuration/admin_add_stage.md) named **production** with a job named **deploy**
--   [Ensure that the **production** stage is manual](../../configuration/dev_choose_when_stage_runs.md)
+-   [Add a new stage](../../configuration/admin_add_stage.html) named **production** with a job named **deploy**
+-   [Ensure that the **production** stage is manual](../../configuration/dev_choose_when_stage_runs.html)
 -   Ensure there is no task block in the **deploy** job configuration
 
 When you are ready to deploy something into the production

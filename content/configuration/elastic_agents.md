@@ -44,6 +44,6 @@ An elastic agent profile will usually contain the configuration for your agent. 
 
 ![](../../images/configuration/elastic-agents/profile.png)
 
-Once an elastic agent profile is defined, it should then be associated with a particular [job](admin_add_job.md). It's possible to define several profiles for different types jobs.
+Once an elastic agent profile is defined, it should then be associated with a particular [job](admin_add_job.html). It's possible to define several profiles for different types jobs.
 
 ![](../../images/configuration/elastic-agents/configure-job.png)

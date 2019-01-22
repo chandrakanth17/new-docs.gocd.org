@@ -8,14 +8,14 @@ keywords: gocd pipelines, build pipelines, jenkins, cd pipelines, pipeline confi
 
 The "Pipeline Activity" page shows the history of stages for each pipeline label over the life of a specific pipeline.
 
-![Pipeline Activity Page](../resources/images/PipelineActivity.png)
+![Pipeline Activity Page](../../images/PipelineActivity.png)
 
 ### Key
 
 1.  The revision number and "Triggered by" provide a quick look at who activated this pipeline and why. Click "Triggered by" to show a list of comments and revisions.
 2.  Hover over a stage in the pipeline configuration box to see info and stage re-run icon (see points 4 & 5 for further details).
 3.  This indicates a manual gate, which is waiting for approval. This could be the case where a stage needs manual approval or when a stage has failed.
-4.  Click the info icon which appears on hovering over the stage, to show [stage details](_page.md).
+4.  Click the info icon which appears on hovering over the stage, to show [stage details](_page.html).
 5.  Upon hovering over a completed stage, this button can be used to re-run that particular stage. This option re-builds that stage and continues to build the subsequent stages from there on.
 6.  This indicates a stage that has not yet been run.
 7.  This indicates that the following stage has already been approved to run, either manually or automatically.
@@ -24,5 +24,5 @@ The "Pipeline Activity" page shows the history of stages for each pipeline label
 
 ##### Also see...
 
--   [Stage details](_page.md)
--   [GoCD overview](../introduction/concepts_in_go.md)
+-   [Stage details](_page.html)
+-   [GoCD overview](../introduction/concepts_in_go.html)

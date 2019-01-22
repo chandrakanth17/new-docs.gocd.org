@@ -89,4 +89,4 @@ The pop-up shows the extract of the template "Services-Template" configured for 
 
 #### See also...
 
--   [Templates - Configuration Reference](configuration_reference.md#templates)
+-   [Templates - Configuration Reference](configuration_reference.html#templates)

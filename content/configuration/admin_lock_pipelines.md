@@ -56,4 +56,4 @@ or `none`, corresponding to the three options shown above:
 </pipeline>
 ```
 
-Also see the [configuration reference](configuration_reference.md#pipeline).
+Also see the [configuration reference](configuration_reference.html#pipeline).

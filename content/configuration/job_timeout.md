@@ -41,5 +41,5 @@ You can configure timeouts for each job if the timeout behavior needs to be diff
 
 ### Also see...
 
--   [Adding a job](admin_add_job.md)
--   [Clean up after cancelling a task](../../advanced_usage/dev_clean_up_when_cancel.md)
+-   [Adding a job](admin_add_job.html)
+-   [Clean up after cancelling a task](../../advanced_usage/dev_clean_up_when_cancel.html)

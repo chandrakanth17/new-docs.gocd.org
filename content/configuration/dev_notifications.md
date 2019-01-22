@@ -8,7 +8,7 @@ keywords: GoCD configuration, email notifications, status change, build events
 
 It is often useful to receive an email when certain status changes occur in a stage. For example, a developer might want to know when their own check-in has broken the build. Alternatively, a manager might want an email whenever a project is deployed into production. Both of these scenarios can be covered by Notification Filters
 
-Notifications will only work if [Security](dev_authentication.md) is enabled and [mailhost information](admin_mailhost_info.md) is correct.
+Notifications will only work if [Security](dev_authentication.html) is enabled and [mailhost information](admin_mailhost_info.html) is correct.
 
 ## Example usage
 

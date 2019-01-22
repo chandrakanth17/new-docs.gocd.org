@@ -15,11 +15,11 @@ Administrators can also disable agents. GoCD will not schedule work for a disabl
 Administrators can choose to delete an agent which is no longer required. The agent must be disabled before it can be deleted. An agent in a disabled(building) or disabled(cancelled) state cannot be deleted.
 
 
-![](../resources/images/agents.png)
+![](../../images/agents.png)
 
 ### Key
 
-1.  Admin users can click here to get to the [Agent details](.md) of the given agent.
+1.  Admin users can click here to get to the [Agent details](.html) of the given agent.
 2.  Filter the agents list.
 3.  By default, the table is sorted by the status column. The order of sort is pending, lost contact, missing, building, idle, disabled, cancelled.
 4.  Find out how many agents are pending, enabled and disabled.
@@ -31,5 +31,5 @@ Administrators can choose to delete an agent which is no longer required. The ag
 
 #### Also see...
 
--   [Managing Agents](../configuration/managing_a_build_cloud.md)
--   [GoCD overview](../introduction/concepts_in_go.md)
+-   [Managing Agents](../configuration/managing_a_build_cloud.html)
+-   [GoCD overview](../introduction/concepts_in_go.html)

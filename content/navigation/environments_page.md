@@ -9,7 +9,7 @@ keywords: gocd environment, build pipelines, build materials, cd pipeline, manag
 The "Environments" page displays all environments along with it's associated
 pipelines and materials.
 
-![](../resources/images/environments.png)
+![](../../images/environments.png)
 
 ### Key
 
@@ -24,4 +24,4 @@ pipelines and materials.
 
 ### Also see...
 
--   [Managing Environments](../configuration/managing_environments.md)
+-   [Managing Environments](../configuration/managing_environments.html)

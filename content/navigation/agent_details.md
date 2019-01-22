@@ -14,7 +14,7 @@ This tab shows the configuration and runtime information of an agent. For exampl
 
 In terms of configuration, this tab shows the resources of the agent and the environment it belongs to. A sample Details tab looks as below:
 
-![](../resources/images/agent_details.png)
+![](../../images/agent_details.png)
 
 ## Job Run History tab
 
@@ -22,7 +22,7 @@ You must be logged in as an admin user to configure this step.
 
 This tab shows a table of all the completed jobs that ran on this agent. A sample page is shown below
 
-![](../resources/images/agent_job_history.png)
+![](../../images/agent_job_history.png)
 
 For every job, the following columns are shown:
 
@@ -41,7 +41,7 @@ This page is useful to figure out if there are agent issues and hence a certain 
 
 Consider a job which runs functional tests for a web application that need a browser to be available. The job was passing so far and only recently it has started to fail intermittently. Here are the steps you can follow to figure out if this is an agent issue.
 
-1.  Navigate to the [Job Details page](age.md) of the given job that failed.
+1.  Navigate to the [Job Details page](age.html) of the given job that failed.
 2.  Locate the "Agent" label and click on the link to the agent
 3.  Navigate to the "Job Run History" tab
 4.  Sort on the Job Name and locate the job that just navigated from

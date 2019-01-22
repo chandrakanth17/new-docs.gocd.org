@@ -101,4 +101,4 @@ From GoCD v18.10.0, you can also include pipeline level environment variables in
 
 #### Also see...
 
--   [Use parameters in configuration](admin_use_parameters_in_configuration.md)
+-   [Use parameters in configuration](admin_use_parameters_in_configuration.html)

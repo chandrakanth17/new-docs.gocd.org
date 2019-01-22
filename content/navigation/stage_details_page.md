@@ -8,15 +8,15 @@ keywords: gocd pipeline stage, stage details, gocd failed stage, gocd rerun stag
 
 The "Stage Details" page displays details of a specific stage.
 
-![Stage Details Page](../resources/images/stage_details.png)
+![Stage Details Page](../../images/stage_details.png)
 
 ### Key
 
 
 1.  Name of the stage.
 2.  The jobs in this stage are grouped by status: Passed, Failed, Cancelled, In Progress. Expand these sections to see the jobs.
-3.  Cancelled job. Click the job name to view [job details](age.md) for that job.
-4.  Failed jobs: Click the job name to view [ details](age.md) for that job.
+3.  Cancelled job. Click the job name to view [job details](age.html) for that job.
+4.  Failed jobs: Click the job name to view [ details](age.html) for that job.
 5.  Displays a graphical visualization of the pipeline dependency chain.
 6.  Details of a specific stage run: run number, status, when it was triggered, who triggered it and duration of the stage.
 7.  Lists all the material changes that were part of the build in this stage.
@@ -27,13 +27,13 @@ The "Stage Details" page displays details of a specific stage.
 
 ## Failed Build History
 
-Results of test runs from jobs within a stage are aggregated up to the stage level. Failures are listed under the relevant pipeline instance label. Tests listed are ones that are failing in the stage instance currently being viewed. The tests are grouped by pipeline instance in which they started to fail (and are still failing). This gives you information about which users' checkins are responsible for test failures. On clicking the "Changes" link next to the Pipeline Label, the popup shows you the modifications to materials that are built in this instance of the pipeline. All the stage instances till the time this stage was last seen green are listed in the failed build history. The pipelines are sorted by [natural ordering](../faq/ordering_of_pipelines.md).
+Results of test runs from jobs within a stage are aggregated up to the stage level. Failures are listed under the relevant pipeline instance label. Tests listed are ones that are failing in the stage instance currently being viewed. The tests are grouped by pipeline instance in which they started to fail (and are still failing). This gives you information about which users' checkins are responsible for test failures. On clicking the "Changes" link next to the Pipeline Label, the popup shows you the modifications to materials that are built in this instance of the pipeline. All the stage instances till the time this stage was last seen green are listed in the failed build history. The pipelines are sorted by [natural ordering](../faq/ordering_of_pipelines.html).
 
 ### Test Failures in the current stage
 
 Other information that the "Tests" tab on the "Stage Details" page shows: (Image not annotated)
 
-![Tests Tab](../resources/images/failed_build_history_1.png)
+![Tests Tab](../../images/failed_build_history_1.png)
 
 
 1.  Total number of tests run
@@ -51,17 +51,17 @@ Other information that the "Tests" tab on the "Stage Details" page shows: (Image
 
 You are viewing stage 'Dev' of pipeline label '60'. The pipeline has been failing since label '59'. There are currently 4 failing tests. This is how they are listed.
 
-![Tests Tab Example 1](../resources/images/failed_build_history_2.png)
+![Tests Tab Example 1](../../images/failed_build_history_2.png)
 
 -   60 has 3 failing test all of which started failing in 60
 -   59 and 58 are listed because the 'dev' stage failed but none of the currently failing tests started failing because of the changes in 59 or 58. This could be because the tests that were failing in 59 got fixed by the checkins in 60. But these check-ins broke other tests. Or this could be because none of the test ran in 59 and 58, an error occurred before the tests started running.
--   The pipeline instances are listed in [natural order](../faq/ordering_of_pipelines.md). In this case the schedule and natural order are the same.
+-   The pipeline instances are listed in [natural order](../faq/ordering_of_pipelines.html). In this case the schedule and natural order are the same.
 
 ### Example 2
 
 You are viewing stage 'Dev' of pipeline label '59'. The pipeline has been failing since label '65'. There are currently 6 failing tests. This is how they are listed.
 
-![Tests Tab Example 2](../resources/images/failed_build_history_3.png)
+![Tests Tab Example 2](../../images/failed_build_history_3.png)
 
 -   The natural order of pipelines is 61, 60, 65, 59, 58, 57, 56, 55. This is the order in which they are listed.
 -   65's changes caused 2 failing test which are still failing in 61 (instance being viewed).
@@ -71,10 +71,10 @@ You are viewing stage 'Dev' of pipeline label '59'. The pipeline has been failin
 
 If there are no tests configured in the stage or GoCD is still computing results, this is the message that is displayed.
 
-![](../resources/images/no_tests_configured.png)
+![](../../images/no_tests_configured.png)
 
 #### Also See...
 
--   [Job details](age.md)
--   [Re-running job(s)](../faq/job_rerun.md)
--   [Historical Configuration](../faq/stage_old_config.md)
+-   [Job details](age.html)
+-   [Re-running job(s)](../faq/job_rerun.html)
+-   [Historical Configuration](../faq/stage_old_config.html)

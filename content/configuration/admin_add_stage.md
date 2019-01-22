@@ -15,7 +15,7 @@ to it.
 -   You will notice that a defaultStage exists. Click on the "Add new stage" link.
 ![](../../images/stages_listing_with_add_stage_highlight.png)
 -   Fill stage name and trigger type.
--   Fill in the details for the first job and first task belonging to this job. You can [add more jobs](admin_add_job.md) and [add more tasks](admin_add_task.md) to the jobs.
+-   Fill in the details for the first job and first task belonging to this job. You can [add more jobs](admin_add_job.html) and [add more tasks](admin_add_task.html) to the jobs.
 -   Click on help icon next to the fields to get additional details about the fields you are editing.
 ![](../../images/add_stage_window.png)
 -   Click "Save".

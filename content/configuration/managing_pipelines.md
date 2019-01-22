@@ -5,11 +5,11 @@ keywords: GoCD configuration, GoCD pipelines, pipeline templates, adding stages 
 
 # Managing GoCD pipelines
 
-GoCD can be configured using [Administration](../../navigation/administration_page.md) Tab. You can perform operations like add/edit Pipelines, Stages, Jobs, Tasks, Templates and Pipeline group. You can also configure GoCD by editing the full XML file if you wish, by clicking on the **Config XML** section of the [Administration](../../navigation/administration_page.md) tab. GoCD will check the syntax of the configuration before it saves it again
+GoCD can be configured using [Administration](../../navigation/administration_page.html) Tab. You can perform operations like add/edit Pipelines, Stages, Jobs, Tasks, Templates and Pipeline group. You can also configure GoCD by editing the full XML file if you wish, by clicking on the **Config XML** section of the [Administration](../../navigation/administration_page.html) tab. GoCD will check the syntax of the configuration before it saves it again
 
 ## Creating a new pipeline
 
-To create a new pipeline, go to the **Pipelines** sub-tab of the [Administration](../../navigation/administration_page.md) tab and click on the ["Create a new pipeline within this group"](quick_pipeline_setup.md) link as shown in the screen shot below.
+To create a new pipeline, go to the **Pipelines** sub-tab of the [Administration](../../navigation/administration_page.html) tab and click on the ["Create a new pipeline within this group"](quick_pipeline_setup.html) link as shown in the screen shot below.
 
 ![](../../images/create_new_pipeline_link.png)
 
@@ -41,7 +41,7 @@ Now that you have a pipeline, lets add another material to it.
 
 ## Blacklist
 
-Often you do want to specify a set of files that Go should ignore when it checks for changes. Repository changesets which contain only these files will not automatically trigger a pipeline. These are detailed in the [ignore](configuration_reference.md#ignore) section of the [configuration reference](configuration_reference.md).
+Often you do want to specify a set of files that Go should ignore when it checks for changes. Repository changesets which contain only these files will not automatically trigger a pipeline. These are detailed in the [ignore](configuration_reference.html#ignore) section of the [configuration reference](configuration_reference.html).
 
 -   Enter the items to blacklist using ant-style syntax below
 
@@ -67,7 +67,7 @@ Now that you have a pipeline with a single stage, lets add more stages to it.
 
 -   Fill stage name and trigger type.
 
--   Fill in the details for the first job and first task belonging to this job. You can [add more jobs](admin_add_job.md) and [add more tasks](admin_add_task.md) to the jobs.
+-   Fill in the details for the first job and first task belonging to this job. You can [add more jobs](admin_add_job.html) and [add more tasks](admin_add_task.html) to the jobs.
 
 -   Click on help icon next to the fields to get additional details about the fields you are editing.
 
@@ -93,7 +93,7 @@ Now that we have a pipeline with stage(s), we can add more jobs to any of the ex
 
 ![](../../images/add_new_job_window.png)
 
--   Fill in the details for the initial task belonging to this job. You can edit this job later to [add more tasks](admin_add_task.md)
+-   Fill in the details for the initial task belonging to this job. You can edit this job later to [add more tasks](admin_add_task.html)
 
 -   You can choose the type of the task as required.
 
@@ -111,7 +111,7 @@ Now that we have a pipeline with stage(s) containing job(s) we can add tasks to 
 
 ![](../../images/edit_job_link_on_tree.png)
 
--   Click on "Add new task". You can choose the task type from Ant, Nant, Rake and Fetch Artifact. Or you can choose "More..." to choose a command from [command repository](../../advanced_usage/command_repository.md) or specify your own command
+-   Click on "Add new task". You can choose the task type from Ant, Nant, Rake and Fetch Artifact. Or you can choose "More..." to choose a command from [command repository](../../advanced_usage/command_repository.html) or specify your own command
 
 ![](../../images/add_new_task_link.png)
 
@@ -220,7 +220,7 @@ Power users can configure the above as follows:
 
 ### Editing Pipeline Templates
 
-Go Administrators can now enable any Go user to edit a template by [making them a template administrator](dev_authorization.md#specifying-permissions-for-templates).
+Go Administrators can now enable any Go user to edit a template by [making them a template administrator](dev_authorization.html#specifying-permissions-for-templates).
 
 Template administrators can view and edit the templates to which they have permissions, on the template tab of the admin page. Template Administrators, will however not be able to add, delete or change permissions for a template. They will also be able to see the number of pipelines in which the template is being used, but not the details of those pipelines.
 
@@ -245,16 +245,16 @@ The pop-up shows the extract of the template "Services-Template" configured for 
 
 #### See also...
 
--   [Templates - Configuration Reference](configuration_reference.md#templates)
+-   [Templates - Configuration Reference](configuration_reference.html#templates)
 
 ## Stage approvals in action
 
-By default, when one stage completes successfully, the next stage is automatically triggered by Go. However sometimes you don't want the next stage to be triggered automatically. This might be the case if you have a stage that deploys your application to a testing, staging or production environment. Another case can be when you don't want your pipeline to be automatically triggered by changes in version control. In these situations, you want the stage triggered by manual intervention. This can be done through manual [approvals](configuration_reference.md#approval).
+By default, when one stage completes successfully, the next stage is automatically triggered by Go. However sometimes you don't want the next stage to be triggered automatically. This might be the case if you have a stage that deploys your application to a testing, staging or production environment. Another case can be when you don't want your pipeline to be automatically triggered by changes in version control. In these situations, you want the stage triggered by manual intervention. This can be done through manual [approvals](configuration_reference.html#approval).
 
 If you add a manual approval to the first stage in a pipeline, it will prevent the pipeline from being triggered from version control. Instead, it will only pick up changes when you trigger the pipeline manually (this is sometimes known as "forcing the build").
 
-You can control who can trigger manual approvals. See the section on [Adding authorization to approvals](dev_authorization.md#adding-authorization-to-approvals) for more details.
+You can control who can trigger manual approvals. See the section on [Adding authorization to approvals](dev_authorization.html#adding-authorization-to-approvals) for more details.
 
 ## Managing pipeline groups
 
-There is support for collecting multiple pipelines into a single named group. See the section on [Specifying who can view and operate pipeline groups](dev_authorization.md#specifying-permissions-for-pipeline-groups) for more details.
+There is support for collecting multiple pipelines into a single named group. See the section on [Specifying who can view and operate pipeline groups](dev_authorization.html#specifying-permissions-for-pipeline-groups) for more details.

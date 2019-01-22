@@ -39,7 +39,7 @@ Steps to select the revisions of materials you want to deploy
 There are 3 reasons this can happen
 
 -   There is a deployment in progress, so another one cannot be started
--   Your deployment pipeline is operating in [locked](../../configuration/admin_lock_pipelines.md) mode
+-   Your deployment pipeline is operating in [locked](../../configuration/admin_lock_pipelines.html) mode
 -   You do not have sufficient permissions to operate on that pipeline
 
 ### Deploying the latest of all materials
