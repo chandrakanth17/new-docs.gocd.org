@@ -10,7 +10,7 @@ title: Environments
 The "Environments" page displays all environments along with it's associated
 pipelines and materials.
 
-![](/images/environments.png)
+![](images/environments.png)
 
 ### Key
 

@@ -17,7 +17,7 @@ To assign a user as a group administrator:
 3.  Click the "Edit" link for that group
 4.  Here, you can define permissions for users and roles
 
-![](/images/group_admin_permissions.png)
+![](images/group_admin_permissions.png)
 
 In the above screenshot, the GoCD admin has delegated group admin privileges to a user "jez" and all users defined under the role "groupAdminRole". The privileges of a Group Administrator have been described in the next section.
 

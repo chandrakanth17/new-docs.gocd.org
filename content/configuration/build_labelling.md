@@ -14,7 +14,7 @@ The concept of pipeline counters was introduced in release 1.3.2. In order to ma
 
 You can create a custom label by setting the **Label Template** field on your pipeline. This will change the value that GoCD shows on its webpages. It will also change the value of the **GO\_PIPELINE\_LABEL** property that is passed to your build. You can refer to ${COUNT} or material names which are defined in the configuration of [materials](configuration_reference.html#svn).
 
-![](/images/pipeline_labelling.png)
+![](images/pipeline_labelling.png)
 
 Power users can still edit the config xml to achieve the same. The xml snippet to configure **labelTemplate** is below.
 

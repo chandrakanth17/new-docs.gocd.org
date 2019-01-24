@@ -9,6 +9,6 @@ title: Server Details
 
 The "Server Details" page describes the GoCD server version and environment.
 
-![Server Details Page](/images/ServerDetails.png)
+![Server Details Page](images/ServerDetails.png)
 
 This box lists all the server Information.

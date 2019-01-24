@@ -17,18 +17,18 @@ Notifications will only work if [Security](dev_authentication.html) is enabled a
 
 - Click on the **Preferences** tab
 
-    ![](/images/topnav_preferences.png)
+    ![](images/topnav_preferences.png)
 
 - Click "Edit" and enter the email address, and make sure "Enable email notification" is checked
 - When I check in, my source control log in will be either "User" or "username", so enter both of those into the "My check-in aliases" box
 
-![](/images/3_email_and_matcher.png)
+![](images/3_email_and_matcher.png)
 
 - Click "Save" to store these values
 
 - Add a filter for the "twist-plugins" stage of "acceptance" pipeline to notify me when a check-in of mine breaks the build
 
-![](/images/4_add_filter.png)
+![](images/4_add_filter.png)
 
 ### Events
 
@@ -52,7 +52,7 @@ The table below shows how the previous state can influence the triggered event:
 | Fail            | Pass           | Fixed |
 | Pass            | Pass           | Passes  |
 
-![](/images/5_added_filter.png)
+![](images/5_added_filter.png)
 
 > I'll be emailed whenever the "twist-plugins" stage of "acceptance" pipeline breaks due to my check-in
 
@@ -64,6 +64,6 @@ The table below shows how the previous state can influence the triggered event:
 
 Users can also select to get notifications for a particular (or all) event on any stage of any pipeline.
 
-![](/images/6_added_filter_any_pipeline.png)
+![](images/6_added_filter_any_pipeline.png)
 
 > I'll be emailed whenever any stage of any pipeline fails due to my check-in

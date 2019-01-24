@@ -9,11 +9,11 @@ title: Running out of Disk Space
 
 After you've had GoCD running for a while, you may notice the following warning box when browsing GoCD:
 
-![](/images/1_low_disk_space_on_artifacts.png)
+![](images/1_low_disk_space_on_artifacts.png)
 
 If you don't do anything about it, you'll end up seeing the following error:
 
-![](/images/2_out_of_disk_space_on_artifacts.png)
+![](images/2_out_of_disk_space_on_artifacts.png)
 
 GoCD will stop scheduling new pipelines until you make more room, either by compressing large files, attaching a larger hard drive, or by deleting unused artifacts. You could also let GoCD manage artifact disk space by enabling auto purge of old artifacts.
 
@@ -34,7 +34,7 @@ GoCD can be configured to automatically delete artifacts if the available disk s
 3.  Specify when GoCD should begin to purge artifacts in the first edit box.
 4.  Specify when GoCD should stop purging artifacts in the second edit box.
 
-![Purge artifacts](/images/pipeline_management.png)
+![Purge artifacts](images/pipeline_management.png)
 
 #### Never delete artifacts for a stage
 
@@ -46,7 +46,7 @@ You can disallow deletion of artifacts from a particular stage so that those art
 2. Navigate to the pipelines section and choose a pipeline to edit
 3. Navigate to the stage settings for the stage
 
-![Disable artifact cleanup](/images/artifact_disable_stage.png)
+![Disable artifact cleanup](images/artifact_disable_stage.png)
 
 4.Check the box 'Never Cleanup Artifacts'
 
@@ -72,10 +72,10 @@ If compressing large artifacts is not giving you enough free space, another thin
 
 -   Find the location of the GoCD configuration file
 -   Navigate to the [Admin](../navigation/administration_page.html) section
-![](/images/topnav_admin.png)
+![](images/topnav_admin.png)
 -   Click on the "Config XML" tab
 -   The location of the configuration file is listed here
-![](/images/4_find_config_location.png)
+![](images/4_find_config_location.png)
 -   Install the new drive
 -   Shut down GoCD server
 -   Copy all files from the original artifact repository location to the new drive

@@ -12,15 +12,15 @@ Templating helps to create reusable workflows in order to make tasks like creati
 
 Pipeline Templates can be managed from the Templates tab on the Administration Page.
 
-![](/images/pipeline_templates.png)
+![](images/pipeline_templates.png)
 
 Clicking on the "Add New Template" brings up the following form which allows you to create a fresh template, or extract it from an existing pipeline. Once saved, the pipeline indicated will also start using this newly created template.
 
-![](/images/add_new_template.png)
+![](images/add_new_template.png)
 
 A template can also be extracted from a pipeline using the "Extract Template" link. This can be found on the "Pipelines" tab in the Administration page.
 
-![](/images/extract_template_from_pipeline.png)
+![](images/extract_template_from_pipeline.png)
 
 ### Example
 
@@ -69,17 +69,17 @@ GoCD Administrators can now enable any GoCD user to edit a template by [making t
 
 Template administrators can view and edit the templates to which they have permissions, on the template tab of the admin page. Template Administrators, will however not be able to add, delete or change permissions for a template. They will also be able to see the number of pipelines in which the template is being used, but not the details of those pipelines.
 
-![](/images/template_admin_edit_template.png)
+![](images/template_admin_edit_template.png)
 
 ### Viewing Pipeline Templates
 
 Pipeline Templates can now be viewed by Administrators and Pipeline Group Administrators while editing or creating a Pipeline.
 
-![](/images/template_view_on_pipeline_tab.png)
+![](images/template_view_on_pipeline_tab.png)
 
 Clicking on the icon indicated by arrow will display the following:
 
-![](/images/view_template_popup.png)
+![](images/view_template_popup.png)
 
 The pop-up shows the extract of the template "Services-Template" configured for the pipeline "Service\_1".
 

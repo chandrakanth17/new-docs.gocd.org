@@ -8,7 +8,7 @@ keywords: gocd, continuous delivery, continuous integration, quick start guide, 
 
 Welcome to GoCD - an open-source Continuous Integration and Continuous Delivery system.
 
-![Start using GoCD](/images/home-image1.svg)
+![Start using GoCD](images/home-image1.svg)
 
 ## Quick help
 

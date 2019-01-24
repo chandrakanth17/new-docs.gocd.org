@@ -16,7 +16,7 @@ Administrators can also disable agents. GoCD will not schedule work for a disabl
 Administrators can choose to delete an agent which is no longer required. The agent must be disabled before it can be deleted. An agent in a disabled(building) or disabled(cancelled) state cannot be deleted.
 
 
-![](/images/agents.png)
+![](images/agents.png)
 
 ### Key
 

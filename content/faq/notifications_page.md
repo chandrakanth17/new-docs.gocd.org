@@ -9,7 +9,7 @@ title: Email Notifications
 
 The Notifications page is to customize the email notifications for the current logged in user.
 
-![Notifications Page](/images/my_cruise_page.png)
+![Notifications Page](images/my_cruise_page.png)
 
 #### Key
 
