@@ -1,4 +1,5 @@
-baseURL = "http://example.org/"
+baseURL = "https://gocd-private.github.io/docs.gocd.org/"
 languageCode = "en-us"
 title = "GoCD Docs"
 uglyUrls = true
+theme = "hugo-theme-techdoc"
