@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>http://example.org/configuration.html</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/configuration/admin_add_job.html</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/configuration/admin_add_material.html</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/configuration/admin_add_stage.html</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/configuration/admin_add_task.html</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/configuration/admin_clone_pipeline.html</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/configuration/admin_lock_pipelines.html</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/configuration/admin_mailhost_info.html</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/configuration/admin_timer.html</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/configuration/admin_use_custom_pipeline_label.html</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/configuration/admin_use_parameters_in_configuration.html</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/configuration/build_labelling.html</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/configuration/configuration_reference.html</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/configuration/delegating_group_administration.html</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/configuration/delete_artifacts.html</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/configuration/dev_authentication.html</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/configuration/dev_authorization.html</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/configuration/dev_choose_when_stage_runs.html</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/configuration/dev_notifications.html</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/configuration/dev_upload_test_report.html</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/configuration/elastic_agents.html</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/configuration/job_timeout.html</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/configuration/managing_a_build_cloud.html</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/configuration/managing_artifacts_and_reports.html</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/configuration/managing_dependencies.html</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/configuration/managing_environments.html</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/configuration/managing_pipelines.html</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/configuration/managing_users.html</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/configuration/pipeline_group_admin_config.html</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/configuration/pipeline_scheduling.html</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/configuration/pipeline_templates.html</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/configuration/quick_pipeline_setup.html</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/configuration/schema.html</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/configuration/tfs_config.html</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/configuration/ui_testing.html</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/faq.html</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/faq/admin_out_of_disk_space.html</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/faq/agent_guid_issue.html</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/faq/artifact_integrity.html</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/faq/concurrent_config_modifications.html</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/faq/dependency_management.html</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/faq/deploy_a_specific_build_to_an_environment.html</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/faq/dev_save_properties.html</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/faq/dev_see_artifact_as_tab.html</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/faq/dev_understand_why_build_broken.html</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/faq/dev_use_current_revision_in_build.html</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/faq/docker_container_ssh_keys.html</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/faq/environment_variables.html</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/faq/job_rerun.html</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/faq/material_update_hung.html</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/faq/notifications_page.html</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/faq/ordering_of_pipelines.html</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/faq/rm_deploy_to_environment.html</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/faq/rm_what_is_deployed.html</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/faq/stage_old_config.html</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/faq/tester_what_has_changed.html</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/navigation.html</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/navigation/administration_page.html</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/navigation/agent_details.html</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/navigation/agents_page.html</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/navigation/environments_page.html</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/navigation/job_details_page.html</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/navigation/pipeline_activity_page.html</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/navigation/pipelines_dashboard_page.html</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/navigation/server_details_page.html</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/navigation/stage_details_page.html</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/navigation/value_stream_map.html</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/categories.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://example.org/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://example.org/tags.html</loc>
+    <priority>0</priority>
+  </url>
+  
+</urlset>
