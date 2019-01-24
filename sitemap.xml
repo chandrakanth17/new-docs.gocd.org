@@ -3,285 +3,285 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>/</loc>
+    <loc>https://gocd-private.github.io/docs.gocd.org/</loc>
   </url>
   
   <url>
-    <loc>/faq/dev_use_current_revision_in_build.html</loc>
+    <loc>https://gocd-private.github.io/docs.gocd.org/faq/dev_use_current_revision_in_build.html</loc>
   </url>
   
   <url>
-    <loc>/faq/environment_variables.html</loc>
+    <loc>https://gocd-private.github.io/docs.gocd.org/faq/environment_variables.html</loc>
   </url>
   
   <url>
-    <loc>/configuration/admin_add_material.html</loc>
+    <loc>https://gocd-private.github.io/docs.gocd.org/configuration/admin_add_material.html</loc>
   </url>
   
   <url>
-    <loc>/configuration/admin_add_stage.html</loc>
+    <loc>https://gocd-private.github.io/docs.gocd.org/configuration/admin_add_stage.html</loc>
   </url>
   
   <url>
-    <loc>/configuration/admin_add_job.html</loc>
+    <loc>https://gocd-private.github.io/docs.gocd.org/configuration/admin_add_job.html</loc>
   </url>
   
   <url>
-    <loc>/configuration/admin_add_task.html</loc>
+    <loc>https://gocd-private.github.io/docs.gocd.org/configuration/admin_add_task.html</loc>
   </url>
   
   <url>
-    <loc>/navigation/administration_page.html</loc>
+    <loc>https://gocd-private.github.io/docs.gocd.org/navigation/administration_page.html</loc>
   </url>
   
   <url>
-    <loc>/navigation/agent_details.html</loc>
+    <loc>https://gocd-private.github.io/docs.gocd.org/navigation/agent_details.html</loc>
   </url>
   
   <url>
-    <loc>/navigation/agents_page.html</loc>
+    <loc>https://gocd-private.github.io/docs.gocd.org/navigation/agents_page.html</loc>
   </url>
   
   <url>
-    <loc>/faq/artifact_integrity.html</loc>
+    <loc>https://gocd-private.github.io/docs.gocd.org/faq/artifact_integrity.html</loc>
   </url>
   
   <url>
-    <loc>/configuration/dev_authentication.html</loc>
+    <loc>https://gocd-private.github.io/docs.gocd.org/configuration/dev_authentication.html</loc>
   </url>
   
   <url>
-    <loc>/configuration/dev_authorization.html</loc>
+    <loc>https://gocd-private.github.io/docs.gocd.org/configuration/dev_authorization.html</loc>
   </url>
   
   <url>
-    <loc>/configuration/delete_artifacts.html</loc>
+    <loc>https://gocd-private.github.io/docs.gocd.org/configuration/delete_artifacts.html</loc>
   </url>
   
   <url>
-    <loc>/categories.html</loc>
+    <loc>https://gocd-private.github.io/docs.gocd.org/categories.html</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/faq/rm_what_is_deployed.html</loc>
+    <loc>https://gocd-private.github.io/docs.gocd.org/faq/rm_what_is_deployed.html</loc>
   </url>
   
   <url>
-    <loc>/configuration/dev_choose_when_stage_runs.html</loc>
+    <loc>https://gocd-private.github.io/docs.gocd.org/configuration/dev_choose_when_stage_runs.html</loc>
   </url>
   
   <url>
-    <loc>/configuration/admin_clone_pipeline.html</loc>
+    <loc>https://gocd-private.github.io/docs.gocd.org/configuration/admin_clone_pipeline.html</loc>
   </url>
   
   <url>
-    <loc>/faq/agent_guid_issue.html</loc>
+    <loc>https://gocd-private.github.io/docs.gocd.org/faq/agent_guid_issue.html</loc>
   </url>
   
   <url>
-    <loc>/faq/concurrent_config_modifications.html</loc>
+    <loc>https://gocd-private.github.io/docs.gocd.org/faq/concurrent_config_modifications.html</loc>
   </url>
   
   <url>
-    <loc>/configuration.html</loc>
+    <loc>https://gocd-private.github.io/docs.gocd.org/configuration.html</loc>
   </url>
   
   <url>
-    <loc>/faq/docker_container_ssh_keys.html</loc>
+    <loc>https://gocd-private.github.io/docs.gocd.org/faq/docker_container_ssh_keys.html</loc>
   </url>
   
   <url>
-    <loc>/configuration/admin_use_custom_pipeline_label.html</loc>
+    <loc>https://gocd-private.github.io/docs.gocd.org/configuration/admin_use_custom_pipeline_label.html</loc>
   </url>
   
   <url>
-    <loc>/configuration/delegating_group_administration.html</loc>
+    <loc>https://gocd-private.github.io/docs.gocd.org/configuration/delegating_group_administration.html</loc>
   </url>
   
   <url>
-    <loc>/faq/deploy_a_specific_build_to_an_environment.html</loc>
+    <loc>https://gocd-private.github.io/docs.gocd.org/faq/deploy_a_specific_build_to_an_environment.html</loc>
   </url>
   
   <url>
-    <loc>/faq/rm_deploy_to_environment.html</loc>
+    <loc>https://gocd-private.github.io/docs.gocd.org/faq/rm_deploy_to_environment.html</loc>
   </url>
   
   <url>
-    <loc>/configuration/elastic_agents.html</loc>
+    <loc>https://gocd-private.github.io/docs.gocd.org/configuration/elastic_agents.html</loc>
   </url>
   
   <url>
-    <loc>/faq/notifications_page.html</loc>
+    <loc>https://gocd-private.github.io/docs.gocd.org/faq/notifications_page.html</loc>
   </url>
   
   <url>
-    <loc>/navigation/environments_page.html</loc>
+    <loc>https://gocd-private.github.io/docs.gocd.org/navigation/environments_page.html</loc>
   </url>
   
   <url>
-    <loc>/faq.html</loc>
+    <loc>https://gocd-private.github.io/docs.gocd.org/faq.html</loc>
   </url>
   
   <url>
-    <loc>/faq/material_update_hung.html</loc>
+    <loc>https://gocd-private.github.io/docs.gocd.org/faq/material_update_hung.html</loc>
   </url>
   
   <url>
-    <loc>/faq/stage_old_config.html</loc>
+    <loc>https://gocd-private.github.io/docs.gocd.org/faq/stage_old_config.html</loc>
   </url>
   
   <url>
-    <loc>/faq/job_rerun.html</loc>
+    <loc>https://gocd-private.github.io/docs.gocd.org/faq/job_rerun.html</loc>
   </url>
   
   <url>
-    <loc>/navigation/job_details_page.html</loc>
+    <loc>https://gocd-private.github.io/docs.gocd.org/navigation/job_details_page.html</loc>
   </url>
   
   <url>
-    <loc>/configuration/job_timeout.html</loc>
+    <loc>https://gocd-private.github.io/docs.gocd.org/configuration/job_timeout.html</loc>
   </url>
   
   <url>
-    <loc>/configuration/admin_lock_pipelines.html</loc>
+    <loc>https://gocd-private.github.io/docs.gocd.org/configuration/admin_lock_pipelines.html</loc>
   </url>
   
   <url>
-    <loc>/configuration/admin_mailhost_info.html</loc>
+    <loc>https://gocd-private.github.io/docs.gocd.org/configuration/admin_mailhost_info.html</loc>
   </url>
   
   <url>
-    <loc>/configuration/managing_a_build_cloud.html</loc>
+    <loc>https://gocd-private.github.io/docs.gocd.org/configuration/managing_a_build_cloud.html</loc>
   </url>
   
   <url>
-    <loc>/configuration/managing_artifacts_and_reports.html</loc>
+    <loc>https://gocd-private.github.io/docs.gocd.org/configuration/managing_artifacts_and_reports.html</loc>
   </url>
   
   <url>
-    <loc>/configuration/managing_dependencies.html</loc>
+    <loc>https://gocd-private.github.io/docs.gocd.org/configuration/managing_dependencies.html</loc>
   </url>
   
   <url>
-    <loc>/configuration/managing_environments.html</loc>
+    <loc>https://gocd-private.github.io/docs.gocd.org/configuration/managing_environments.html</loc>
   </url>
   
   <url>
-    <loc>/configuration/managing_pipelines.html</loc>
+    <loc>https://gocd-private.github.io/docs.gocd.org/configuration/managing_pipelines.html</loc>
   </url>
   
   <url>
-    <loc>/configuration/managing_users.html</loc>
+    <loc>https://gocd-private.github.io/docs.gocd.org/configuration/managing_users.html</loc>
   </url>
   
   <url>
-    <loc>/navigation.html</loc>
+    <loc>https://gocd-private.github.io/docs.gocd.org/navigation.html</loc>
   </url>
   
   <url>
-    <loc>/configuration/dev_notifications.html</loc>
+    <loc>https://gocd-private.github.io/docs.gocd.org/configuration/dev_notifications.html</loc>
   </url>
   
   <url>
-    <loc>/faq/ordering_of_pipelines.html</loc>
+    <loc>https://gocd-private.github.io/docs.gocd.org/faq/ordering_of_pipelines.html</loc>
   </url>
   
   <url>
-    <loc>/configuration/admin_use_parameters_in_configuration.html</loc>
+    <loc>https://gocd-private.github.io/docs.gocd.org/configuration/admin_use_parameters_in_configuration.html</loc>
   </url>
   
   <url>
-    <loc>/navigation/pipeline_activity_page.html</loc>
+    <loc>https://gocd-private.github.io/docs.gocd.org/navigation/pipeline_activity_page.html</loc>
   </url>
   
   <url>
-    <loc>/navigation/pipelines_dashboard_page.html</loc>
+    <loc>https://gocd-private.github.io/docs.gocd.org/navigation/pipelines_dashboard_page.html</loc>
   </url>
   
   <url>
-    <loc>/configuration/pipeline_group_admin_config.html</loc>
+    <loc>https://gocd-private.github.io/docs.gocd.org/configuration/pipeline_group_admin_config.html</loc>
   </url>
   
   <url>
-    <loc>/configuration/build_labelling.html</loc>
+    <loc>https://gocd-private.github.io/docs.gocd.org/configuration/build_labelling.html</loc>
   </url>
   
   <url>
-    <loc>/configuration/pipeline_scheduling.html</loc>
+    <loc>https://gocd-private.github.io/docs.gocd.org/configuration/pipeline_scheduling.html</loc>
   </url>
   
   <url>
-    <loc>/configuration/pipeline_templates.html</loc>
+    <loc>https://gocd-private.github.io/docs.gocd.org/configuration/pipeline_templates.html</loc>
   </url>
   
   <url>
-    <loc>/configuration/dev_upload_test_report.html</loc>
+    <loc>https://gocd-private.github.io/docs.gocd.org/configuration/dev_upload_test_report.html</loc>
   </url>
   
   <url>
-    <loc>/configuration/configuration_reference.html</loc>
+    <loc>https://gocd-private.github.io/docs.gocd.org/configuration/configuration_reference.html</loc>
   </url>
   
   <url>
-    <loc>/faq/dependency_management.html</loc>
+    <loc>https://gocd-private.github.io/docs.gocd.org/faq/dependency_management.html</loc>
   </url>
   
   <url>
-    <loc>/faq/admin_out_of_disk_space.html</loc>
+    <loc>https://gocd-private.github.io/docs.gocd.org/faq/admin_out_of_disk_space.html</loc>
   </url>
   
   <url>
-    <loc>/faq/dev_save_properties.html</loc>
+    <loc>https://gocd-private.github.io/docs.gocd.org/faq/dev_save_properties.html</loc>
   </url>
   
   <url>
-    <loc>/configuration/schema.html</loc>
+    <loc>https://gocd-private.github.io/docs.gocd.org/configuration/schema.html</loc>
   </url>
   
   <url>
-    <loc>/faq/dev_see_artifact_as_tab.html</loc>
+    <loc>https://gocd-private.github.io/docs.gocd.org/faq/dev_see_artifact_as_tab.html</loc>
   </url>
   
   <url>
-    <loc>/faq/tester_what_has_changed.html</loc>
+    <loc>https://gocd-private.github.io/docs.gocd.org/faq/tester_what_has_changed.html</loc>
   </url>
   
   <url>
-    <loc>/navigation/server_details_page.html</loc>
+    <loc>https://gocd-private.github.io/docs.gocd.org/navigation/server_details_page.html</loc>
   </url>
   
   <url>
-    <loc>/configuration/quick_pipeline_setup.html</loc>
+    <loc>https://gocd-private.github.io/docs.gocd.org/configuration/quick_pipeline_setup.html</loc>
   </url>
   
   <url>
-    <loc>/navigation/stage_details_page.html</loc>
+    <loc>https://gocd-private.github.io/docs.gocd.org/navigation/stage_details_page.html</loc>
   </url>
   
   <url>
-    <loc>/configuration/tfs_config.html</loc>
+    <loc>https://gocd-private.github.io/docs.gocd.org/configuration/tfs_config.html</loc>
   </url>
   
   <url>
-    <loc>/tags.html</loc>
+    <loc>https://gocd-private.github.io/docs.gocd.org/tags.html</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/configuration/admin_timer.html</loc>
+    <loc>https://gocd-private.github.io/docs.gocd.org/configuration/admin_timer.html</loc>
   </url>
   
   <url>
-    <loc>/configuration/ui_testing.html</loc>
+    <loc>https://gocd-private.github.io/docs.gocd.org/configuration/ui_testing.html</loc>
   </url>
   
   <url>
-    <loc>/navigation/value_stream_map.html</loc>
+    <loc>https://gocd-private.github.io/docs.gocd.org/navigation/value_stream_map.html</loc>
   </url>
   
   <url>
-    <loc>/faq/dev_understand_why_build_broken.html</loc>
+    <loc>https://gocd-private.github.io/docs.gocd.org/faq/dev_understand_why_build_broken.html</loc>
   </url>
   
 </urlset>
