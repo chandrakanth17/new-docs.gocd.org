@@ -3,7 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>http://example.org/configuration.html</loc>
+    <loc>http://example.org/</loc>
   </url>
   
   <url>
@@ -143,10 +143,6 @@
   </url>
   
   <url>
-    <loc>http://example.org/faq.html</loc>
-  </url>
-  
-  <url>
     <loc>http://example.org/faq/admin_out_of_disk_space.html</loc>
   </url>
   
@@ -227,10 +223,6 @@
   </url>
   
   <url>
-    <loc>http://example.org/navigation.html</loc>
-  </url>
-  
-  <url>
     <loc>http://example.org/navigation/administration_page.html</loc>
   </url>
   
@@ -276,8 +268,15 @@
   </url>
   
   <url>
-    <loc>http://example.org/</loc>
-    <priority>0</priority>
+    <loc>http://example.org/configuration.html</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/faq.html</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/navigation.html</loc>
   </url>
   
   <url>
