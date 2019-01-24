@@ -1,6 +1,7 @@
 ---
 description: The Environments page displays all environments along with it's associated pipelines and materials.
 keywords: gocd environment, build pipelines, build materials, cd pipeline, managing environments
+title: Environments
 ---
 
 

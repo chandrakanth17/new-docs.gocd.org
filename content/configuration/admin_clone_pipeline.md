@@ -1,6 +1,7 @@
 ---
 description: Clone an existing GoCD pipeline
 keywords: GoCD configuration, clone pipeline, CD pipeline, continuous delivery pipeline, branch, pipeline group
+title: Clone a pipeline
 ---
 
 # Clone an existing GoCD pipeline

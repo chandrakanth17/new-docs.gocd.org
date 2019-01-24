@@ -1,6 +1,7 @@
 ---
 description: GoCD's Value Stream Map (VSM) helps you visualize your continuous delivery work
 keywords: value stream map, vsm, gocd, continuous integration, continuous delivery, cd workflow, cd pipelines, pipeline dependencies, build pipeline
+title: Value Stream Map
 ---
 
 

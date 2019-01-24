@@ -1,6 +1,7 @@
 ---
 description: GoCD pipeline template management
 keywords: GoCD configuration, pipeline templates, creating pipeline templates, editing pipeline templates, viewing pipeline templates, pipeline groups
+title: Pipeline Templates
 ---
 
 # GoCD Pipeline Templates

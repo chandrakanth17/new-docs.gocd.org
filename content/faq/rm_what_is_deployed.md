@@ -1,6 +1,7 @@
 ---
 description: Before deploying something into production on GoCD, it's useful to understand what is currently there.
 keywords: gocd environments, deployments, production deployment, deploy to environment, deploy application
+title: Check What's Deployed
 ---
 
 

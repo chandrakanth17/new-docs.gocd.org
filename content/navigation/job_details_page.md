@@ -1,6 +1,7 @@
 ---
 description: The Job Details page shows the details of a job within a specific stage in your build pipeline.
 keywords: gocd job details, upload test reports, job artifacts, build materials, job history, cd pipeline
+title: Job Details
 ---
 
 

@@ -1,6 +1,7 @@
 ---
 description: List of all agents available on GoCD server and how to enable and filter agents.
 keywords: gocd agents, filter agents on gocd, gocd server, continuous delivery, elastic agents
+title: Agents
 ---
 
 

@@ -1,6 +1,7 @@
 ---
 description: In GoCD, we use two distinct types of ordering pipelines; schedule order and natural order.
 keywords: gocd pipelines, manage pipelines, build pipelines, cd pipelines, continuous delivery
+title: Ordering of Pipelines
 ---
 
 

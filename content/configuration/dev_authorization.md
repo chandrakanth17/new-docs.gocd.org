@@ -1,6 +1,7 @@
 ---
 description: GoCD authorization and administration
 keywords: GoCD configuration, authorization, administration, users, roles, role-based security, security, security configuration, user permissions, pipeline groups, pipeline permissions, GoCD administration
+title: Authorizing Users
 ---
 
 # Authorization

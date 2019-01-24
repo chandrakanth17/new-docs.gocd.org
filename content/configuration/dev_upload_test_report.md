@@ -1,6 +1,7 @@
 ---
 description: Publishing artifacts in GoCD
 keywords: GoCD configuration, publishing artifacts, reports, GoCD pipeline, job configuration,
+title: Publish Reports and Artifacts
 ---
 
 # Publishing artifacts

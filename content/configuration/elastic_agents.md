@@ -1,6 +1,7 @@
 ---
 description: Managing elastic agents with GoCD
 keywords: GoCD configuration, elastic agents, docker, ecs, cloud
+title: Elastic Agents
 ---
 
 # GoCD Elastic Agents

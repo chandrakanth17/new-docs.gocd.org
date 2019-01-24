@@ -1,6 +1,7 @@
 ---
 description: Details about the agent configuration and history of all jobs that ran on a single agent in GoCD.
 keywords: gocd agent, single agent, agent configuration, job run history, gocd debug
+title: Agent Details
 ---
 
 

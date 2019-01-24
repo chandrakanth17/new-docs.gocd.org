@@ -1,6 +1,7 @@
 ---
 description: GoCD Artifact integrity verification
 keywords: GoCD artifact, artifact integrity, GoCD job, checksum, download artifact, artifact
+title: Artifact integrity verification
 ---
 
 # GoCD Artifact integrity verification

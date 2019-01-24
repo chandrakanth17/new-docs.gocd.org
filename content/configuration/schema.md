@@ -1,3 +1,7 @@
+---
+title: Schema
+
+---
 # Schema
 
 -   Configuration file schema :

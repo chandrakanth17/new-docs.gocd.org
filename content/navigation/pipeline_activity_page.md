@@ -1,6 +1,7 @@
 ---
 description: The Pipeline Activity page shows the history of stages for each pipeline label over the life of a specific pipeline.
 keywords: gocd pipelines, build pipelines, jenkins, cd pipelines, pipeline configuration, pipeline stage, continuous delivery
+title: Pipeline Activity
 ---
 
 

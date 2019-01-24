@@ -1,6 +1,7 @@
 ---
 description: GoCD configuration reference index
 keywords: GoCD configuration, reference index
+title: Reference
 ---
 
 <a id="top"></a>
