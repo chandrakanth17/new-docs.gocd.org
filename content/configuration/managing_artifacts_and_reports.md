@@ -20,7 +20,7 @@ To configure an artifact:
 -   Click on the **Artifacts** tab
 -   Enter the source (where the artifact will be found) and destination (where the artifact should be saved on the Go server)
 
-![](images/job_artifacts.png)
+![](../images/job_artifacts.png)
 
 For power users, here's how you would configure this via Config XML:
 
@@ -42,11 +42,11 @@ This mechanism is a simple way to include reports (for example code coverage) in
 
 The console tab shows output information from all the phases of the job. This also includes information from the version control system and details regarding the artifacts created and published during the job.
 
-![](images/console_out.png)
+![](../images/console_out.png)
 
 If you produce an html page with an embedded Flash file into your artifact repository:
 
-![](images/select_artifact.png)
+![](../images/select_artifact.png)
 
 You can use the following configuration to display it in a tab:
 
@@ -58,7 +58,7 @@ You can use the following configuration to display it in a tab:
 
 GoCD will create a tab called "Recording" and display the contents of the file in the tab when you click on it:
 
-![](images/recording.png)
+![](../images/recording.png)
 
 ### Publishing tests
 
@@ -73,7 +73,7 @@ To configure a test artifact:
 -   Enter the source (where the artifact will be found) and destination (where the artifact should be saved on the Go server)
 -   From the **Type** dropdown, select **Test Artifact**
 
-![](images/job_test_artifacts.png)
+![](../images/job_test_artifacts.png)
 
 For power users, here's how you would configure this via Config XML:
 

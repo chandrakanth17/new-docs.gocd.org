@@ -9,7 +9,7 @@ title: Pipeline Activity
 
 The "Pipeline Activity" page shows the history of stages for each pipeline label over the life of a specific pipeline.
 
-![Pipeline Activity Page](images/PipelineActivity.png)
+![Pipeline Activity Page](../images/PipelineActivity.png)
 
 ### Key
 

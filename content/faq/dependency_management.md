@@ -17,7 +17,7 @@ If you have frequent material updates coupled with long running dependent pipeli
 
 Consider the following dependency chain:
 
-![](images/revision_propagation.png)
+![](../images/revision_propagation.png)
 
 #### Legend
 

@@ -19,7 +19,7 @@ You will need to configure the following to add a TFS material:
 -   Project Path: Enter the project path within the collection. You can specify paths of sub folders to create materials for each component. Ex: $/test/component or $/my_application
 -   Check connection: You can use check connection to verify the TFS material configuration
 
-![tfs_config](images/tfs_config.png)
+![tfs_config](../images/tfs_config.png)
 
 ##### Notes:
 

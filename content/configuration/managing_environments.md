@@ -18,27 +18,27 @@ You can create an environment in the admin UI through the following steps. This 
 
 -   Click on the Environments tab
 
-![](images/topnav_environments.png)
+![](../images/topnav_environments.png)
 
 -   Click on the "Add a new environment"
 
-![](images/env_click_new.png)
+![](../images/env_click_new.png)
 
 -   Provide a name for the environment
 
-![](images/env_name.png)
+![](../images/env_name.png)
 
 -   Add one or more pipelines that need to run on the environment
 
-![](images/env_pipelines.png)
+![](../images/env_pipelines.png)
 
 -   Add one or more agents associated with the environment
 
-![](images/env_agents.png)
+![](../images/env_agents.png)
 
 -   Add one or more environment variables or secure environment variables that need to be passed.
 
-![](images/env_env_variables.png)
+![](../images/env_env_variables.png)
 
 -   Click on finish
 
@@ -52,4 +52,4 @@ You can do this very easily in the Agents tab. Just select the agents you want t
 -   An environment **with a hyphen** means some of your selected agents are associated to it. No change will occur after clicking “Apply”.
 -   An environment **without a check** will remove the environment from all selected agents.
 
-![](images/associate_agent_environment.png)
+![](../images/associate_agent_environment.png)

@@ -21,7 +21,7 @@ This option enables a single instance of the pipeline to run at a time by tempor
 unlocking it when finished. When the pipeline finishes, either because of the failure of any stage or the success of the
 final stage, the pipeline is automatically unlocked. The pipeline is also unlocked if it reaches a manual stage.
 
-![Pipeline locking behavior - Unlock when finished](images/pipeline_lock_behavior_01_unlock_when_finished.png)
+![Pipeline locking behavior - Unlock when finished](../images/pipeline_lock_behavior_01_unlock_when_finished.png)
 
 
 ## Option 2: Run single instance of pipeline and lock on failure ("Lock behavior: Lock on failure")
@@ -31,14 +31,14 @@ remains locked if it fails. The pipeline is unlocked if it reaches the last stag
 not unlocked if it reaches a manual stage. If a pipeline is locked, it will not allow any new instances to run, unless
 it is unlocked, either manually or [through the API](https://api.gocd.org/current/#releasing-a-pipeline-lock).
 
-![Pipeline locking behavior - Lock on failure](images/pipeline_lock_behavior_02_lock_on_failure.png)
+![Pipeline locking behavior - Lock on failure](../images/pipeline_lock_behavior_02_lock_on_failure.png)
 
 
 ## Option 3: Run multiple instances ("Lock behavior: None")
 
 This is the default behavior. Multiple instances of a pipeline can run simultaneously.
 
-![Pipeline locking behavior - None](images/pipeline_lock_behavior_03_none.png)
+![Pipeline locking behavior - None](../images/pipeline_lock_behavior_03_none.png)
 
 
 # Controlling locking behavior from the config XML

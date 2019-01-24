@@ -20,7 +20,7 @@ You must be logged in as an admin user to configure this step.
 2.  Navigate to the Pipeline Management sub-section
 3.  Specify when GoCD should begin to purge artifacts in the first edit box.
 4.  Specify when GoCD should stop purging artifacts in the second edit box.
-![Purge artifacts](images/pipeline_management.png)
+![Purge artifacts](../images/pipeline_management.png)
 
 ### Never delete artifacts for a stage
 
@@ -31,7 +31,7 @@ You can disallow deletion of artifacts from a particular stage so that those art
 1.  Navigate to the admin section on the GoCD dashboard.
 2.  Navigate to the pipelines section and choose a pipeline to edit
 3.  Navigate to the stage settings for the stage
-![Disable artifact cleanup](images/artifact_disable_stage.png)
+![Disable artifact cleanup](../images/artifact_disable_stage.png)
 4.  Check the box 'Never Cleanup Artifacts'
 
 ### Also see...

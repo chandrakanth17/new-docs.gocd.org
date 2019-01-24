@@ -36,15 +36,15 @@ There are a few basic concepts to understanding the elastic agent plugins in GoC
 
 Plugin settings will usually contain the connection settings so that the GoCD server can connect to the elastic provider. An elastic provider depending on the plugin may be a docker server, or a kubernetes cluster.
 
-![](images/configuration/elastic-agents/plugin-settings.png)
+![](../images/configuration/elastic-agents/plugin-settings.png)
 
 
 ### Elastic Agent Profile
 
 An elastic agent profile will usually contain the configuration for your agent. Depending on the plugin used, this may contain the machine image (ami, docker image), size of the CPU/memory/disk, network settings among other things.
 
-![](images/configuration/elastic-agents/profile.png)
+![](../images/configuration/elastic-agents/profile.png)
 
 Once an elastic agent profile is defined, it should then be associated with a particular [job](admin_add_job.html). It's possible to define several profiles for different types jobs.
 
-![](images/configuration/elastic-agents/configure-job.png)
+![](../images/configuration/elastic-agents/configure-job.png)

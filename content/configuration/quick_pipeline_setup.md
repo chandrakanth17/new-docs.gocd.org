@@ -12,14 +12,14 @@ After you've entered your license information, clicking on the **Pipelines** tab
 
 ### Step 1: Basic Settings
 
-![](images/new_pipeline_1.png)
+![](../images/new_pipeline_1.png)
 
 1.  Fill in the pipeline name
 2.  Fill in the pipeline group
 
 ### Step 2: Material
 
-![](images/new_pipeline_2.png)
+![](../images/new_pipeline_2.png)
 
 1.  Choose the material type. The material can be your Source Control Management (SCM or version control) repository or another pipeline or a [package repository](../../extension_points/package_repository_extension.html) (e.g. [yum](../../extension_points/yum_repository_poller.html)). Currently Go supports the following SCMs:
     1. Subversion
@@ -34,7 +34,7 @@ After you've entered your license information, clicking on the **Pipelines** tab
 
 ### Step 3: Stage and Job
 
-![](images/new_pipeline_3.png)
+![](../images/new_pipeline_3.png)
 
 A pipeline contains one or more stages. Define the first stage of your pipeline
 

@@ -9,7 +9,7 @@ title: Pipeline Dashboard
 
 This shows the current activity in the system. You can see all the instances of a given pipeline that are currently in progress.
 
-![Pipelines Dashboard Page](images/pipelines_dashboard.png)
+![Pipelines Dashboard Page](../images/pipelines_dashboard.png)
 
 ### Key
 
@@ -34,7 +34,7 @@ This shows the current activity in the system. You can see all the instances of 
 
 ### Personalize pipelines view
 
-![Personalize pipelines view](images/pipelines_dashboard_personalize.png)
+![Personalize pipelines view](../images/pipelines_dashboard_personalize.png)
 
 You can customize and control the pipelines you see on the dashboard by using the "Personalize" button on your dashboard. You can choose which pipelines you want to see, in this list, and save your selection by clicking on the "Apply" button. From that point onwards, the pipelines dashboard will only show your selections.
 

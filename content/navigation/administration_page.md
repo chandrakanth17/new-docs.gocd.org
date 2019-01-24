@@ -18,7 +18,7 @@ There are four ways to configure pipelines etc.
 
 The "Pipelines" tab allows you to configure pipelines grouped in pipeline groups.
 
-![](images/pipeline_groups.png)
+![](../images/pipeline_groups.png)
 
 ### Key
 
@@ -35,7 +35,7 @@ The "Pipelines" tab allows you to configure pipelines grouped in pipeline groups
 
 The "Templates" tab allows you to configure pipeline templates which can be used to templatize pipelines.
 
-![](images/pipeline_templates.png)
+![](../images/pipeline_templates.png)
 
 ### Key
 

@@ -16,7 +16,7 @@ GoCD verifies artifact integrity to ensure that they are unchanged from the poin
 
 Users who download artifacts for a job from the artifacts tab on the dashboard can verify their integrity by using the md5.checksum file within the cruise-output folder available on same tab. The file contains the name and checksum for each artifact saved by the job.
 
-![](images/md5_checksum.png)
+![](../images/md5_checksum.png)
 
 ### Also see...
 
