@@ -19,7 +19,7 @@ The SCM command used by GoCD server can hang with no output. Invalid configurati
 
 Such a scenario is notified to the users by a warning in Server Health; when clicked shows a message similar to the one below.
 
-![](../../images/material_update_hung.png)
+![](/images/material_update_hung.png)
 
 ## What can I do with the information
 

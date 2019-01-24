@@ -12,7 +12,7 @@ GoCD allows you to parameterize your pipelines and pipeline templates. This powe
 
 Edit the **Parameters** tab when defining a **pipeline** .
 
-![](../../images/use_parameters_in_configuration.png)
+![](/images/use_parameters_in_configuration.png)
 
 ## Defining and using a parameter
 

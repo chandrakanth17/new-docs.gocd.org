@@ -1,66 +1,39 @@
-* [GoCD Tour](navigation.html)
-    * [Pipeline Dashboard](navigation/pipelines_dashboard_page.html)
-    * [Agents](navigation/agents_page.html)
-    * [Agent Details](navigation/agent_details.html)
-    * [Pipeline Activity](navigation/pipeline_activity_page.html)
-    * [Stage Details](navigation/stage_details_page.html)
-    * [Job Details](navigation/job_details_page.html)
-    * [Administration](navigation/administration_page.html)
-    * [Server Details](navigation/server_details_page.html)
-    * [Environments](navigation/environments_page.html)
-    * [Value Stream Map](navigation/value_stream_map.html)
-* [Configuration](configuration.html)
-    * [Setup a New Pipeline](configuration/quick_pipeline_setup.html)
-    * [Managing Pipelines](configuration/managing_pipelines.html)
-    * [Managing Dependencies](configuration/managing_dependencies.html)
-    * [Managing Agents](configuration/managing_a_build_cloud.html)
-    * [Managing Environments](configuration/managing_environments.html)
-    * [Pipeline Labelling](configuration/build_labelling.html)
-    * [Pipeline Scheduling](configuration/pipeline_scheduling.html)
-    * [Parameterize a Pipeline](configuration/admin_use_parameters_in_configuration.html)
-    * [Customize a Pipeline Label](configuration/admin_use_custom_pipeline_label.html)
-    * [Clone a Pipeline](configuration/admin_clone_pipeline.html)
-    * [Lock a Pipeline](configuration/admin_lock_pipelines.html)
-    * [Add Material to Existing Pipeline](configuration/admin_add_material.html)
-    * [Add Stage to Existing Pipeline](configuration/admin_add_stage.html)
-    * [Add job to Existing Stage](configuration/admin_add_job.html)
-    * [Add task to Existing Job](configuration/admin_add_task.html)
-    * [Pipeline Templates](configuration/pipeline_templates.html)
-    * [Elastic Agents](configuration/elastic_agents.html)
-    * [Choose When a Stage Runs](configuration/dev_choose_when_stage_runs.html)
-    * [Timer Trigger](configuration/admin_timer.html)
-    * [Job Timeout](configuration/job_timeout.html)
-    * [Managing Users](configuration/managing_users.html)
-    * [Authentication](configuration/dev_authentication.html)
-    * [Authorizing Users](configuration/dev_authorization.html)
-    * [Delegating Group Administration](configuration/delegating_group_administration.html)
-    * [Pipeline Group Administration](configuration/pipeline_group_admin_config.html)
-    * [Publish Reports and Artifacts](configuration/dev_upload_test_report.html)
-    * [Managing Artifacts and Reports](configuration/managing_artifacts_and_reports.html)
-    * [Auto Delete Artifacts](configuration/delete_artifacts.html)
-    * [UI Testing](configuration/ui_testing.html)
-    * [Mailhost Information](configuration/admin_mailhost_info.html)
-    * [Notifications](configuration/dev_notifications.html)
-    * [TFS Material configuration](configuration/tfs_config.html)
-    * [Reference](configuration/configuration_reference.html)
-    * [Schema](configuration/schema.html)
-* [FAQ/Troubleshooting](faq.html)
-    * [Ordering of Pipelines](faq/ordering_of_pipelines.html)
-    * [Historical Configuration](faq/stage_old_config.html)
-    * [Concurrent Modifications to Config](faq/concurrent_config_modifications.html)
-    * [Why the Build is Broken?](faq/dev_understand_why_build_broken.html)
-    * [See artifacts as sub-tabs](faq/dev_see_artifact_as_tab.html)
-    * [Save Properties for a Build](faq/dev_save_properties.html)
-    * [Using Environment variables](faq/environment_variables.html)
-    * [Deploy to an environment](faq/rm_deploy_to_environment.html)
-    * [See changes in new binary](faq/tester_what_has_changed.html)
-    * [Run Tests against new Builds](faq/dependency_management.html)
-    * [Check What's Deployed](faq/rm_what_is_deployed.html)
-    * [Deploy a Specific Build](faq/deploy_a_specific_build_to_an_environment.html)
-    * [Clone/Copy an Existing Agents](faq/agent_guid_issue.html)
-    * [How do I re-run jobs?](faq/job_rerun.html)
-    * [Go unable to poll for changes](faq/material_update_hung.html)
-    * [Artifact integrity verification](faq/artifact_integrity.html)
-    * [Email Notifications](faq/notifications_page.html)
-    * [Running out of Disk Space](faq/admin_out_of_disk_space.html)
-    * [Configure SSH Keys for dockerized GoCD](faq/docker_container_ssh_keys.html)
+---
+description: Welcome to GoCD. More information on concepts, managing pipelines, and getting started.
+keywords: gocd, continuous delivery, continuous integration, quick start guide, cd pipelines, build pipelines, gocd tutorials, gocd videos, install gocd
+---
+
+
+# GoCD User Documentation
+
+Welcome to GoCD - an open-source Continuous Integration and Continuous Delivery system.
+
+![Start using GoCD](/images/home-image1.svg)
+
+## Quick help
+
+Need a quick start? Setup your first GoCD pipeline, while learning all the concepts, by following the
+["Getting Started" guide](https://www.gocd.org/getting-started/part-1/). Make sure you've
+[installed](https://docs.gocd.org/current/installation/) the GoCD Server and at least one GoCD Agent.
+
+
+[Read this](gocd_on_kubernetes/introduction.html) to setup GoCD pipelines on a Kubernetes cluster. 
+
+### More information and guides
+
+- [Basic concepts in GoCD](introduction/concepts_in_go.html) - Review basic concepts in GoCD. Understand how GoCD sees the world.
+- [System requirements](installation/system_requirements.html) - Find out system requirements for installing GoCD.
+- [Managing pipelines](configuration/managing_pipelines.html) - Release Management with GoCD.
+- [Managing a build cloud](configuration/managing_a_build_cloud.html) - How to set up and scale your build cloud.
+- [Managing artifacts and reports](configuration/managing_artifacts_and_reports.html) - Keep your test reports, binaries and other artifacts in GoCD's central repository.
+- [Running GoCD on Kubernetes](gocd_on_kubernetes/introduction.html) - Learn how to setup GoCD on a Kubernetes cluster. 
+
+### See GoCD in use
+
+[Watch tutorials on some common GoCD concepts and tasks](https://www.gocd.org/videos/)
+
+## Contributing to this documentation
+
+The code for this help documentation is hosted [here](https://github.com/gocd/docs.go.cd/tree/master). If you think something can be improved and/or added to the documentation, please send a [pull request](https://help.github.com/articles/creating-a-pull-request/) for the same.
+
+We're using [Hugo](https://github.com/gohugoio/hugo) for generating our HTML Docs from markdown files. You can read more about it [here](https://gohugo.io/getting-started/).

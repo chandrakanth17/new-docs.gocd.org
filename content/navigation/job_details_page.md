@@ -9,7 +9,7 @@ title: Job Details
 
 The "Job Details" page shows the details of a job within a specific stage.
 
-![Job Details Page](../../images/JobDetails.png)
+![Job Details Page](/images/JobDetails.png)
 
 ### Key
 

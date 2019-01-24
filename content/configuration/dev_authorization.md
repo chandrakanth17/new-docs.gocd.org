@@ -21,7 +21,7 @@ If administrators are specified, only they can perform the following actions:
 
 Users can be made administrators from the "User Summary" tab in the "Admin" section.
 
-![](../../images/user_summary_make_admin.png)
+![](/images/user_summary_make_admin.png)
 
 To give admin privileges to users and/or roles via "Config xml", please refer to the example in the section below, where members of the "go\_admin" role (jhumble and qiao), along with the user chris, can administer Go.
 
@@ -29,7 +29,7 @@ To give admin privileges to users and/or roles via "Config xml", please refer to
 
 You can define roles that can be used anywhere that authorization is required. A role is just a group of users. Administrators can add users to a new or existing role from the "User Summary" tab in the "Admin" section. Here, you can select any number of users and assign a new or existing role to them. In this example, user "aantony" is being added to the role "analyst"
 
-![](../../images/user_summary_add_user_to_role.png)
+![](/images/user_summary_add_user_to_role.png)
 
 For power users, here's how you would configure roles via "Config XML":
 
@@ -81,11 +81,11 @@ The **"admin" permission** makes the user a [Pipeline Group Administrator](deleg
 
 To edit the permissions for a pipeline group, navigate to the "Pipelines" tab on the "Admin" section:
 
-![](../../images/group_list.png)
+![](/images/group_list.png)
 
 Then, click the "Edit" link for the pipeline group you want to manage permissions for:
 
-![](../../images/group_permission.png)
+![](/images/group_permission.png)
 
 If no authorization is defined for a pipeline group, all GoCD users will have view and operate permissions to that group.
 
@@ -117,7 +117,7 @@ In GoCD, it is possible to specify [manual approvals](managing_pipelines.html) b
 
 The authorization can be inherited from the pipeline group this pipeline belongs to. But defining specific permissions overrides this. In the example below, only members of the role "admin", and the user "goleys", can trigger the approval.
 
-![](../../images/stage_permissions.png)
+![](/images/stage_permissions.png)
 
 For power users, here's how you would configure authorization for approvals for a stage via "Config XML":
 
@@ -151,11 +151,11 @@ A GoCD Administrator can make any user a template administrator for a specific t
 
 To edit the permissions for a template, navigate to the "Templates" tab on the "Admin" section:
 
-![](../../images/templates_tab_on_admin_page.png)
+![](/images/templates_tab_on_admin_page.png)
 
 Then, click the "Permissions" link for the template you want to manage permissions for:
 
-![](../../images/add_template_permissions.png)
+![](/images/add_template_permissions.png)
 
 For power users, here's how you would configure permissions via "Config XML":
 

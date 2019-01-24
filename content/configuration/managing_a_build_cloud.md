@@ -14,7 +14,7 @@ The first thing you need to do is [install Go agent](../../installation/installi
 
 Once the GoCD agent has been installed and pointed at your GoCD server, go to the [Agents](../navigation/agents_page.html) tab on the GoCD dashboard. You should see something like this:
 
-![](../../images/enable_agent.png)
+![](/images/enable_agent.png)
 
 Note that the hostname is as reported by the agent, and the IP address is as reported by the server.
 
@@ -34,7 +34,7 @@ Resources are just plain text tags. There are no preset tags or conventions arou
 
 To specify the resources that a job needs, go to the **Pipelines configuration** section of the [Administration](../navigation/administration_page.html) tab and edit the job that you want to specify resources for:
 
-![](../../images/edit_job_resources.png)
+![](/images/edit_job_resources.png)
 
 Once you’ve specified the resources your jobs need, you’ll want to describe the resources your agents have. You can do this very easily in the [Agents](../navigation/agents_page.html) tab. Just select the agents you want to describe, and click on the **Resources** button.
 
@@ -42,7 +42,7 @@ Once you’ve specified the resources your jobs need, you’ll want to describe 
 
 Enter the name of the new resource and click the “Add” button.
 
-![](../../images/associate_agent_resources_new.png)
+![](/images/associate_agent_resources_new.png)
 
 ### Associate selected agent(s) with existing resources
 
@@ -52,7 +52,7 @@ All existing resources across your agents and jobs will appear in alphabetical o
 -   A resource **with a hyphen** means some of your selected agents are associated to it. No change will occur after clicking “Apply”.
 -   A resource **without a check** will remove the resource from all selected agents.
 
-![](../../images/associate_agent_resources_existing.png)
+![](/images/associate_agent_resources_existing.png)
 
 ## Agent states
 
@@ -70,7 +70,7 @@ To permanently remove an agent from Go's configuration, you can use the [agent a
 
 Following this procedure, if you restart the agent, GoCD server will see it as a new agent, and you can enable it again in the same way as described above.
 
-![](../../images/delete_agent.png)
+![](/images/delete_agent.png)
 
 ## Pausing agents
 
@@ -78,7 +78,7 @@ If you want to pause an agent or temporarily disable it so that GoCD server will
 
 A disabled agent can be enabled; this will make it eligible to pick up work again. You can use the api or enable an agent from the agents tab.
 
-![](../../images/disable_agent.png)
+![](/images/disable_agent.png)
 
 ## Details of a single agent
 
@@ -90,7 +90,7 @@ This tab shows the configuration and runtime information of an agent. For exampl
 
 In terms of configuration, this tab shows the resources of the agent and the environment it belongs to. A sample Details tab looks as below:
 
-![](../../images/agent_details.png)
+![](/images/agent_details.png)
 
 ### Job Run History tab
 
@@ -98,7 +98,7 @@ You must be logged in as an admin user to configure this step.
 
 This tab shows a table of all the completed jobs that ran on this agent. A sample page is shown below
 
-![](../../images/agent_job_history.png)
+![](/images/agent_job_history.png)
 
 For every job, the following columns are shown:
 

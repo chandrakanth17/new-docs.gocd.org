@@ -15,12 +15,12 @@ For this example, we will assume we have a stage name "production" that will aut
 
 -   Start at the [Environments](../navigation/environments_page.html) page
 
-![](../../images/topnav_environments.png)
+![](/images/topnav_environments.png)
 
 -   Click on the name of your "production" stage
 
-![](../../images/2_click_stage_activity.png)
+![](/images/2_click_stage_activity.png)
 
 -   The [Stage Details](../navigation/stage_details_page.html) page will show every time GoCD has deployed your application
 
-![](../../images/3_stage_activity.png)
+![](/images/3_stage_activity.png)

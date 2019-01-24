@@ -20,12 +20,12 @@ Steps to select the revisions of materials you want to deploy
 -   Navigate to the Environments page and locate the specific deployment pipeline you are interested in.
 -   Click on "Deploy Specific Revision".
 
-![](../../images/new_revisions.png)
+![](/images/new_revisions.png)
 
 -   This gives you the list of available revisions for each material
 -   Click on the "Revision to Deploy" search box. This will list latest 5 revisions/labels of your materials ordered by time of check-in (latest check-in on top)
 
-![](../../images/see_all_materials.png)
+![](/images/see_all_materials.png)
 
 -   Select the revisions of all the materials that you would like to pick for deployment. You can search for the revision you want by
     -   revision hash/pipeline label
@@ -52,14 +52,14 @@ If you always want to have the latest of all materials deployed to your environm
 -   This will pick up the latest available revision of your materials at
     the time the pipeline is scheduled
 
-![](../../images/deploy_latest.png)
+![](/images/deploy_latest.png)
 
 ### Using passwords while deploying
 
 -   You can set secure variables in Go that gets passed along as environment variables to the executing task. You can use this feature to pass passwords to deploy scripts. For e.g., you can define a secure variable named 'DB\_DEPLOY\_PASSWORD' and the DB password as its value. This value will be encrypted by Go and passed along to the task.
 
-    ![](../../images/secure_variables_admin.png)
+    ![](/images/secure_variables_admin.png)
 
 -   Also, you can override secure variables when you use the 'Trigger With Options' feature.
 
-    ![](../../images/secure_variables_trigger.png)
+    ![](/images/secure_variables_trigger.png)

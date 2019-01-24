@@ -8,7 +8,7 @@ title: Pipeline Scheduling
 
 Pipelines get scheduled automatically by default. Please see the knowledge base article in the Also see section below. Here we'll see how to disable automatic scheduling.
 
-![Pipeline General Options](../../images/pipeline_auto_schedule.png)
+![Pipeline General Options](/images/pipeline_auto_schedule.png)
 
 ## Disable automatic scheduling
 

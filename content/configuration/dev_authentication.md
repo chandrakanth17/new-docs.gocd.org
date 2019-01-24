@@ -18,7 +18,7 @@ Note: The order of the configurations matters. They will be tried from the first
 
 Consider the example image below:
 
-![Shows two authorization configurations](../../images/user_authentication_multiple_configurations.png)
+![Shows two authorization configurations](/images/user_authentication_multiple_configurations.png)
 
 In this example, the password file authentication method will be tried first. If that succeeds, the user will be allowed to log in. If not, the LDAP authentication method will be tried next. If that succeeds, the user will be allowed to log in. If not, the user will be disallowed from logging in.
 
@@ -34,7 +34,7 @@ In this example, the password file authentication method will be tried first. If
 
 The [password file plugin's documentation](https://github.com/gocd/gocd-filebased-authentication-plugin/blob/master/README.html) has information about the values that can go into a password file.
 
-![User authentication using password file](../../images/user_authentication_password_file.png)
+![User authentication using password file](/images/user_authentication_password_file.png)
 
 ### LDAP/AD authentication
 
@@ -46,7 +46,7 @@ The [password file plugin's documentation](https://github.com/gocd/gocd-filebase
 
 The [LDAP authentication plugin's documentation](https://github.com/gocd/gocd-ldap-authentication-plugin/blob/master/README.html) has more information about the configuration.
 
-![User authentication using LDAP](../../images/user_authentication_ldap.png)
+![User authentication using LDAP](/images/user_authentication_ldap.png)
 
 
 It you've installed any other plugins, they will also be available at the "Authorization Configuration" page, ready to be setup.
@@ -78,4 +78,4 @@ To switch the mode in which the GoCD Server operates:
 3.  Click on the "Server Configuration" tab
 4.  Set the "Allow users to login via plugin into GoCD, even if they haven't been explicitly added to GoCD." checkbox
 
-![](../../images/user_authentication_auto_login.png)
+![](/images/user_authentication_auto_login.png)
