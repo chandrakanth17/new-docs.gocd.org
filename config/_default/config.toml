@@ -3,6 +3,7 @@ languageCode = "en-us"
 title = "GoCD Docs"
 uglyUrls = true
 theme = "hugo-book"
+relativeURLs = true
 [params]
   # (Optional, default true) Show or hide table of contents globally
   # You can also specify this parameter per page in front matter
