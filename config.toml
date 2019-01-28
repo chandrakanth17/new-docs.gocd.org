@@ -1,5 +1,17 @@
-baseURL = "https://gocd-private.github.io/docs.gocd.org/"
+baseURL = ""
 languageCode = "en-us"
 title = "GoCD Docs"
 uglyUrls = true
-theme = "hugo-theme-techdoc"
+theme = "hugo-book"
+[params]
+  # (Optional, default true) Show or hide table of contents globally
+  # You can also specify this parameter per page in front matter
+  BookShowToC = true
+
+  # (Optional, default none) Set leaf bundle to render as side menu
+  # When not specified file structure and weights will be used
+  BookMenuBundle = "/menu"
+
+  # (Optional, default docs) Specify section of content to render as menu
+  # You can also set value to "*" to render all sections to menu
+  BookSection = "*"
