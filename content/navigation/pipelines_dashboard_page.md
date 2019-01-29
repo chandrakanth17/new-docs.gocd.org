@@ -15,7 +15,7 @@ This shows the current activity in the system. You can see all the instances of 
 
 1.  The pipelines are listed under the pipeline group that they belong to. You can also edit pipeline group by clicking on settings icon.
 2.  Pipeline instance [label](../configuration/build_labelling.html) defaults to the number of times a pipeline has run.
-3.  Click on each stage segment to see [stage details](_page.html) for that stage instance.
+3.  Click on each stage segment to see [stage details](stage_details_page.html) for that stage instance.
 4.  The "Trigger" button forces a pipeline to begin build activity.
 5.  The [Trigger with Options](../advanced_usage/trigger_with_options.html) button allows to pick the revisions of materials that the pipelines should build with, and trigger the pipeline.
 6.  The "Pause" button pauses scheduling of the pipeline.
