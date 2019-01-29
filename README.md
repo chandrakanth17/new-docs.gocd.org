@@ -38,4 +38,13 @@ $ git commit -am 'Updating...'
 $ git push
 
 ```
-Check the latest changes [here](https://gocd-private.github.io/docs.gocd.org/)
+Check the latest changes deployed [here](https://gocd-private.github.io/docs.gocd.org/)
+
+### Update this repository with Current docs changes
+
+Update the list of directories to be updated in the sync script.
+Run the sync script to copy over changes from the current [docs repository](https://github.com/gocd/docs.go.cd)
+Go through the changes to see if everything can be committed and then push the code.
+```
+ $ sync.sh
+```
