@@ -6,6 +6,7 @@
   "main": "index.js",
   "scripts": {
     "hugo" : "npx hugo",
+    "local-build" : "npx hugo --environment=development",
     "serve" : "npx hugo serve -D"
   },
   "author": "ThoughtWorks, Inc.",
