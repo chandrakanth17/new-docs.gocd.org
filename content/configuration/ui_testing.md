@@ -1,7 +1,6 @@
 ---
 description: UI Testing
 keywords: GoCD configuration, UI testing, 
-title: UI Testing
 ---
 
 # UI testing

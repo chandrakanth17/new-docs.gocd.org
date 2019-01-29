@@ -1,7 +1,6 @@
 ---
 description: GoCD server polls for changes to all materials of 'Auto Triggered' pipelines. Polling occurs every minute and ten materials at a time.
 keywords: gocd server polls, build materials, polling intervals, pipelines, cd pipelines, schedule pipeline
-title: Go unable to poll for changes
 ---
 
 

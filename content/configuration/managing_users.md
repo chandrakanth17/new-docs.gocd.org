@@ -1,7 +1,6 @@
 ---
 description: Managing GoCD users
 keywords: GoCD configuration, user management, role-based permissions, system administrator, role management, adding users, assigning roles
-title: Managing Users
 ---
 
 # Managing Users

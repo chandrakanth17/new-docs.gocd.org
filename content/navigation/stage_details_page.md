@@ -1,7 +1,6 @@
 ---
 description: The stage details page displays details of a specific stage on GoCD.
 keywords: gocd pipeline stage, stage details, gocd failed stage, gocd rerun stage, build materials, build history, test failures, continuous delivery
-title: Stage Details
 ---
 
 
@@ -16,8 +15,8 @@ The "Stage Details" page displays details of a specific stage.
 
 1.  Name of the stage.
 2.  The jobs in this stage are grouped by status: Passed, Failed, Cancelled, In Progress. Expand these sections to see the jobs.
-3.  Cancelled job. Click the job name to view [job details](age.html) for that job.
-4.  Failed jobs: Click the job name to view [ details](age.html) for that job.
+3.  Cancelled job. Click the job name to view [job details](../navigation/job_details_page.html) for that job.
+4.  Failed jobs: Click the job name to view [ details](../navigation/job_details_page.html) for that job.
 5.  Displays a graphical visualization of the pipeline dependency chain.
 6.  Details of a specific stage run: run number, status, when it was triggered, who triggered it and duration of the stage.
 7.  Lists all the material changes that were part of the build in this stage.
@@ -76,6 +75,6 @@ If there are no tests configured in the stage or GoCD is still computing results
 
 #### Also See...
 
--   [Job details](age.html)
+-   [Job details](../navigation/job_details_page.html)
 -   [Re-running job(s)](../faq/job_rerun.html)
 -   [Historical Configuration](../faq/stage_old_config.html)

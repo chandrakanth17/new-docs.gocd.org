@@ -1,7 +1,6 @@
 ---
 description: Managing GoCD pipelines
 keywords: GoCD configuration, GoCD pipelines, pipeline templates, adding stages to pipelines, adding materials to pipelines, clone pipelines, blacklist, adding jobs to pipelines
-title: Managing Pipelines
 ---
 
 # Managing GoCD pipelines
@@ -112,7 +111,7 @@ Now that we have a pipeline with stage(s) containing job(s) we can add tasks to 
 
 ![](../images/edit_job_link_on_tree.png)
 
--   Click on "Add new task". You can choose the task type from Ant, Nant, Rake and Fetch Artifact. Or you can choose "More..." to choose a command from [command repository](../../advanced_usage/command_repository.html) or specify your own command
+-   Click on "Add new task". You can choose the task type from Ant, Nant, Rake and Fetch Artifact. Or you can choose "More..." to choose a command from [command repository](../advanced_usage/command_repository.html) or specify your own command
 
 ![](../images/add_new_task_link.png)
 

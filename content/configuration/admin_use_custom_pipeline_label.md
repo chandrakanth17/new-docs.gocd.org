@@ -1,7 +1,6 @@
 ---
 description: Creating and using custom pipeline label in GoCD
 keywords: GoCD configuration, pipeline labels, custom pipeline labels, material revision, upstream pipeline labels
-title: Customize a Pipeline label
 ---
 
 # Use a custom pipeline label

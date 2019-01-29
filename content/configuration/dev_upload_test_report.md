@@ -1,12 +1,11 @@
 ---
 description: Publishing artifacts in GoCD
 keywords: GoCD configuration, publishing artifacts, reports, GoCD pipeline, job configuration,
-title: Publish Reports and Artifacts
 ---
 
 # Publishing artifacts
 
-When executing a job on an agent there are often artifacts created that we need to keep around. For example, JUnit creates xml reports that GoCD is able to parse in order to help you [understand why the build is broken](../../faq/dev_understand_why_build_broken.html). You can use GoCD with any JUnit style xml reports. Or you might create a flash video of your UI tests that we want displayed in GoCD. You can upload any html file from your build and view it in GoCD.
+When executing a job on an agent there are often artifacts created that we need to keep around. For example, JUnit creates xml reports that GoCD is able to parse in order to help you [understand why the build is broken](../faq/dev_understand_why_build_broken.html). You can use GoCD with any JUnit style xml reports. Or you might create a flash video of your UI tests that we want displayed in GoCD. You can upload any html file from your build and view it in GoCD.
 
 To publish artifacts you add a an [< artifact >](configuration_reference.html#artifact) to the job configuration. More information can be found on the [Managing artifacts and reports](managing_artifacts_and_reports.html) page.
 
@@ -53,4 +52,4 @@ For each job that creates a flash video
 -   Navigate to "Custom Tabs". Add the tab name and the source of the html file. This will create a tab called "Recording" that shows the html page found at "recording/twist-recording.html" on GoCD server.
 -   ![](../images/8_add_tab_section.png)
 -   Click "Save"
--   [Watch the flash video as a sub-tab on the Job Details page](../../faq/dev_see_artifact_as_tab.html)
+-   [Watch the flash video as a sub-tab on the Job Details page](../faq/dev_see_artifact_as_tab.html)

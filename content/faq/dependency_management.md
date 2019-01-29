@@ -1,7 +1,6 @@
 ---
 description: How GoCD handles deployment pipeline dependency. 
 keywords: dependency pipeline, test, code,build, propagate material, dependency chain
-title: Run Tests against new Builds
 ---
 
 

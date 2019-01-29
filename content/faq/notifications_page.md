@@ -1,7 +1,6 @@
 ---
 description: The notifications page is to customize the email notifications for the current logged in user in GoCD.
 keywords: gocd notifications, user notifications, gocd server, custom notifications
-title: Email Notifications
 ---
 
 

@@ -1,7 +1,6 @@
 ---
 description: Add new job to an existing GoCD pipeline stage.
 keywords: continuous delivery pipeline, job, jobs, stage, stages, CD pipeline
-title: Add job to Existing stage
 ---
 
 # Add a new job to an existing GoCD stage

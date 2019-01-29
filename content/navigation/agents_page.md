@@ -1,7 +1,6 @@
 ---
 description: List of all agents available on GoCD server and how to enable and filter agents.
 keywords: gocd agents, filter agents on gocd, gocd server, continuous delivery, elastic agents
-title: Agents
 ---
 
 
@@ -20,7 +19,7 @@ Administrators can choose to delete an agent which is no longer required. The ag
 
 ### Key
 
-1.  Admin users can click here to get to the [Agent details](.html) of the given agent.
+1.  Admin users can click here to get to the [Agent details](../navigation/agent_details.html) of the given agent.
 2.  Filter the agents list.
 3.  By default, the table is sorted by the status column. The order of sort is pending, lost contact, missing, building, idle, disabled, cancelled.
 4.  Find out how many agents are pending, enabled and disabled.

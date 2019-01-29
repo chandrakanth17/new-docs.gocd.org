@@ -1,7 +1,6 @@
 ---
 description: GoCD Authentication
 keywords: GoCD configuration, authentication, https, ldap, ldap authentication, authorization plugins, user access, passwords, logins, authorization endpoints, GoCD security
-title: Authentication
 ---
 
 # Authentication
@@ -62,7 +61,7 @@ You can use one or more of the below to tweak settings such as the session confi
 | `go.sessioncookie.secure`               | `N`                                 | Set this to `Y` to allow a session cookie to be set only if the request was made over HTTPS. Do not set this property if the users access GoCD via HTTP url                                                                                |
 | `go.security.reauthentication.interval` | `1800000` (30 mins in milliseconds) | GoCD forces a perodic re-authentication of users, this is to ensure any changes like removing of users or roles in the external authorization server are reflected in GoCD. The re-authentication interval is controlled by this property. |
 
-See [the "Other config options" page](../../advanced_usage/other_config_options.html) for instructions around setting these system property values.
+See [the "Other config options" page](../advanced_usage/other_config_options.html) for instructions around setting these system property values.
 
 ## Controlling User Access
 

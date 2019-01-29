@@ -1,7 +1,6 @@
 ---
 description: Admin users can trace a pipeline run back to it's configuration. The stage history has markers indicating GoCD configuration changes.
 keywords: gocd config, build history, configuration changes, audit pipeline, pipeline history, stage history
-title: Historical Configuration
 ---
 
 

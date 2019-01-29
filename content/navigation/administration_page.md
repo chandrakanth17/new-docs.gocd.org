@@ -1,7 +1,6 @@
 ---
 description: Get started with GoCD. Configure pipelines and learn about pipeline templates.
 keywords: gocd get started, gocd configuration, build pipelines, jenkins, configure pipelines, config as code, pipeline templates
-title: Administration
 ---
 
 

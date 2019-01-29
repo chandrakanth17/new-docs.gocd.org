@@ -1,7 +1,6 @@
 ---
 description: Automatically delete artifacts in GoCD
 keywords: GoCD configuration, delete artifacts, disk space, artifact purge, pipeline configuration, pipeline management, artifact management,  
-title: Auto Delete Artifacts
 ---
 
 # Auto delete artifacts
@@ -37,4 +36,4 @@ You can disallow deletion of artifacts from a particular stage so that those art
 ### Also see...
 
 -   [Managing artifacts and reports](managing_artifacts_and_reports.html)
--   [Clean up after cancelling a task](../../advanced_usage/dev_clean_up_when_cancel.html)
+-   [Clean up after cancelling a task](../advanced_usage/dev_clean_up_when_cancel.html)

@@ -1,7 +1,6 @@
 ---
 description: Concurrent Modifications to GoCD's Configuration
 keywords: concurrent modification, multiple modifications, GoCD configuration, successful merge, merge conflict
-title: Concurrent Modifications to Config
 ---
 
 # Concurrent Modifications to GoCD's Configuration

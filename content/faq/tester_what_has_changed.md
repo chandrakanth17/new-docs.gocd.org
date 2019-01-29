@@ -1,7 +1,6 @@
 ---
 description: When updating your testing environments to a new version, it is useful to know what changes have been made since it was last updated.
 keywords: gocd, test environments, pipeline activity, user acceptance testing
-title: See changes in new binary
 ---
 
 

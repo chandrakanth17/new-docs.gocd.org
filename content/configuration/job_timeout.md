@@ -1,7 +1,6 @@
 ---
 description: GoCD job timeouts
 keywords: GoCD configuration, job timeouts, cancel jobs, console output, pipeline management, configure timeout
-title: Job Timeout
 ---
 
 # Job Timeout
@@ -43,4 +42,4 @@ You can configure timeouts for each job if the timeout behavior needs to be diff
 ### Also see...
 
 -   [Adding a job](admin_add_job.html)
--   [Clean up after cancelling a task](../../advanced_usage/dev_clean_up_when_cancel.html)
+-   [Clean up after cancelling a task](../advanced_usage/dev_clean_up_when_cancel.html)

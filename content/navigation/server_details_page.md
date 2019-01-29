@@ -1,7 +1,6 @@
 ---
 description: Description of GoCD server version and environment.
 keywords: gocd server, gocd environment, jvm, os information gocd, artifacts repository, continuous delivery
-title: Server Details
 ---
 
 

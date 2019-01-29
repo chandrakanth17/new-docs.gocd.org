@@ -1,7 +1,6 @@
 ---
 description: When run of of space, GoCD stops scheduling new pipelines by compressing large files, attaching a larger hard drive, or by deleting unused artifacts. 
 keywords: Disk space, schedule pipelines, 
-title: Running out of Disk Space
 ---
 
 
@@ -54,7 +53,7 @@ You can disallow deletion of artifacts from a particular stage so that those art
 ### Also see...
 
 -   [Managing artifacts and reports](../configuration/managing_artifacts_and_reports.html)
--   [Clean up after cancelling a task](../../advanced_usage/dev_clean_up_when_cancel.html)
+-   [Clean up after cancelling a task](../advanced_usage/dev_clean_up_when_cancel.html)
 
 ## Compress large log files
 

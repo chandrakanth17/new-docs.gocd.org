@@ -1,7 +1,6 @@
 ---
 description: Paramerterize GoCD pipelines and pipeline templates
 keywords: GoCD configuration, GoCD pipelines, continuous delivery pipelines, pipeline templates, parameters, CD pipelines, pipeline configuration, pipeline template configuration
-title: Parameterize a pipeline
 ---
 
 # Parameterize your Configuration

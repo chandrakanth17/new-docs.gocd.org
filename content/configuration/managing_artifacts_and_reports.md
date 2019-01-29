@@ -1,7 +1,6 @@
 ---
 description: Managing artifacts and reports in GoCD
 keywords: GoCD configuration, artifacts, reports, publishing artifacts, artifact repository, test artifacts, 
-title: Managing Artifacts and Reports
 ---
 
 # Managing artifacts and reports
@@ -92,4 +91,4 @@ GoCD will:
 
 ### RESTful API
 
-GoCD publishes all of its information as resources that can be queried through http in the form of RESTful API. See the [Go integration](../../integration/index.html) page for more information.
+GoCD publishes all of its information as resources that can be queried through http in the form of RESTful API. See the [Go integration](../integration/index.html) page for more information.

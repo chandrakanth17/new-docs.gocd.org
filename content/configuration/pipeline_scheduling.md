@@ -1,7 +1,6 @@
 ---
 description: GoCD pipeline scheduling
 keywords: GoCD configuration, pipeline scheduling, automatic scheduling, stages, continuous delivery pipeline
-title: Pipeline Scheduling
 ---
 
 # GoCD Pipeline Scheduling

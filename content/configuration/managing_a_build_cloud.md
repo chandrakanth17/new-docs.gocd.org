@@ -1,7 +1,6 @@
 ---
 description: Managing GoCD agents
 keywords: GoCD configuration, GoCD agent, build cloud, agents, pausing agents, job run history, agent states, debugging agent issues, pausing agents, removing agents, agent management
-title: Managing Agents
 ---
 
 # Managing GoCD agents
@@ -10,7 +9,7 @@ GoCD is designed to make managing a build cloud extremely simple. This page take
 
 ## Adding a GoCD agent to your cloud
 
-The first thing you need to do is [install Go agent](../../installation/installing_go_agent.html) on the machine you want to add to the cloud.
+The first thing you need to do is [install Go agent](../installation/installing_go_agent.html) on the machine you want to add to the cloud.
 
 Once the GoCD agent has been installed and pointed at your GoCD server, go to the [Agents](../navigation/agents_page.html) tab on the GoCD dashboard. You should see something like this:
 

@@ -1,7 +1,6 @@
 ---
 description: TFS material configuration
 keywords: GoCD configuration, TFS, GoCD server, TFS server, pipeline materials
-title: TFS Material configuration
 ---
 
 # TFS Material configuration

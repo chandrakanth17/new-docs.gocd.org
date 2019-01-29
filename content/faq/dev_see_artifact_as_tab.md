@@ -1,7 +1,6 @@
 ---
 description: See artifacts as sub-tabs in GoCD
 keywords: artifacts, configuration, GoCD stage, GoCD job, broken build
-title: See artifacts as sub-tabs
 ---
 
 
