@@ -1,6 +1,7 @@
 ---
 description: Delegating group administration in GoCD
 keywords: GoCD configuration, group administration, pipeline groups, GoCD administrator, group administrator, pipeline templates
+title: Delegating Group Administration
 ---
 
 # Delegating Group Administration

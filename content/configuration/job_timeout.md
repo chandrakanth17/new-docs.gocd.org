@@ -1,6 +1,7 @@
 ---
 description: GoCD job timeouts
 keywords: GoCD configuration, job timeouts, cancel jobs, console output, pipeline management, configure timeout
+title: Job Timeout
 ---
 
 # Job Timeout

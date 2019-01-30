@@ -1,6 +1,7 @@
 ---
 description: GoCD pipeline groups administration
 keywords: GoCD configuration, GoCD pipeline groups, pipeline group administration, pipeline groups, continuous delivery pipelines, CD pipelines
+title: Pipeline Group Administration
 ---
 
 # GoCD Pipeline Groups Administration

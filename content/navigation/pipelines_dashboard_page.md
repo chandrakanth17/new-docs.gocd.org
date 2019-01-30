@@ -1,6 +1,7 @@
 ---
 description: In GoCD's pipeline dashboard, you can see all the instances of a given pipeline that are currently in progress.
 keywords: gocd pipelines, build pipelines, jenkins, cd pipelines, configure pipelines, visual stream mapping, continuous delivery
+title: Pipeline Dashboard
 ---
 
 

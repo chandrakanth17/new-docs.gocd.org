@@ -1,6 +1,7 @@
 ---
 description: Managing dependencies in GoCD
 keywords: GoCD configuration, dependency management, pipeline dependencies, pipelines as materials, upstream pipeline, downstream pipeline
+title: Managing Dependencies
 ---
 
 # Managing dependencies

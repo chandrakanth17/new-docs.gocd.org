@@ -1,6 +1,7 @@
 ---
 description: Add a new task to an existing GoCD job
 keywords: GoCD configuration, job, jobs, task, continuous delivery pipeline, CD pipeline
+title: Add task to Existing Job
 ---
 
 # Add a new task to an existing GoCD Job

@@ -1,6 +1,7 @@
 ---
 description: GoCD pipeline setup
 keywords: GoCD configuration, pipeline setup, pipeline configuration, GoCD pipeline stages, stages, jobs, GoCD jobs, materials, create new pipeline
+title: Setup a New Pipeline
 ---
 
 # Setup a new pipeline

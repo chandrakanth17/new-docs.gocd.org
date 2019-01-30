@@ -1,6 +1,7 @@
 ---
 description: Automatically delete artifacts in GoCD
 keywords: GoCD configuration, delete artifacts, disk space, artifact purge, pipeline configuration, pipeline management, artifact management,  
+title: Auto Delete Artifacts
 ---
 
 # Auto delete artifacts

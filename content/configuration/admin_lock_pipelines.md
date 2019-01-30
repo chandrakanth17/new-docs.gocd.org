@@ -1,6 +1,7 @@
 ---
 description: Ensure only one instance of a GoCD pipeline can run at the same time
 keywords: GoCD congfiguration, continuous delivery pipeline, stage, locked pipeline, pipeline scheduling, pipeline locking
+title: Lock a Pipeline
 ---
 
 # Pipeline locking: Ensure only one instance of a GoCD pipeline can run at the same time

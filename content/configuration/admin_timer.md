@@ -1,6 +1,7 @@
 ---
 description: Run a GoCD pipeline on a schedule or timer
 keywords: GoCD configuration, GoCD pipeline, scheduled pipelines, cron, timer, continuous delivery pipeline, CD pipeline, stage, material, trigger
+title: Timer Trigger
 ---
 
 # Run a GoCD pipeline on a schedule

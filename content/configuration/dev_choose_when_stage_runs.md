@@ -1,6 +1,7 @@
 ---
 description: Choose when a stage runs in GoCD
 keywords: GoCD configuration, stage, manual pipeline, continuous delivery pipeline, GoCD stages
+title: Choose When a Stage Runs
 ---
 
 # Choose when a GoCD stage runs

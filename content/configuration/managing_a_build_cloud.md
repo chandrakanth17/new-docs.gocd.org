@@ -1,6 +1,7 @@
 ---
 description: Managing GoCD agents
 keywords: GoCD configuration, GoCD agent, build cloud, agents, pausing agents, job run history, agent states, debugging agent issues, pausing agents, removing agents, agent management
+title: Managing Agents
 ---
 
 # Managing GoCD agents

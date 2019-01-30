@@ -1,6 +1,7 @@
 ---
 description: Managing artifacts and reports in GoCD
 keywords: GoCD configuration, artifacts, reports, publishing artifacts, artifact repository, test artifacts, 
+title: Managing Artifacts and Reports
 ---
 
 # Managing artifacts and reports

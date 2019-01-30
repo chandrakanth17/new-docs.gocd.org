@@ -1,6 +1,7 @@
 ---
 description: GoCD mailhost information and email notifications
 keywords: GoCD configuration, mailhost, mailhost configuration, email notifications, SMTPS, TLS 
+title: Mailhost Information
 ---
 
 # Mailhost information

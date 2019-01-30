@@ -1,6 +1,7 @@
 ---
 description: Managing environments
 keywords: GoCD configuration, GoCD environments, pipeline groups, agents, UAT environments, performance testing environment, production environment, deployment pipeline
+title: Managing Environments
 ---
 
 # Managing environments

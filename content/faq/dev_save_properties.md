@@ -1,6 +1,7 @@
 ---
 description: Using GoCD propereies to save extra information about your build.
 keywords: build, GoCD properties, resource
+title: Save Properties for a Build
 ---
 
 # Saving properties about a build

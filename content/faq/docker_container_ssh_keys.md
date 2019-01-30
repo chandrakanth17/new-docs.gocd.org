@@ -1,6 +1,7 @@
 ---
 description: Using ssh keys for private git repos in docker containers.
 keywords: ssh, git, gocd docker, GoCD materials, private repository, 
+title: Configure SSH Keys for dockerized GoCD
 ---
 
 # Using SSH keys to access GoCD materials in a containerized GoCD server and agent

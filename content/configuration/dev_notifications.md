@@ -1,6 +1,7 @@
 ---
 description: GoCD notifications
 keywords: GoCD configuration, email notifications, status change, build events
+title: Notifications
 ---
 
 

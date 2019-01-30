@@ -1,6 +1,7 @@
 ---
 description: The stage details page displays details of a specific stage on GoCD.
 keywords: gocd pipeline stage, stage details, gocd failed stage, gocd rerun stage, build materials, build history, test failures, continuous delivery
+title: Stage Details
 ---
 
 
