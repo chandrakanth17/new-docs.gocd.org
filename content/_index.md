@@ -2,6 +2,7 @@
 description: Welcome to GoCD. More information on concepts, managing pipelines, and getting started.
 keywords: gocd, continuous delivery, continuous integration, quick start guide, cd pipelines, build pipelines, gocd tutorials, gocd videos, install gocd
 type: docs
+title: Introduction
 ---
 
 
