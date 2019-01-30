@@ -26,7 +26,7 @@ def pushToGHPages = {
         elasticProfileId = 'ecs-gocd-dev-build'
         tasks {
           bash {
-            commandString = "git remote add upstream 'https://\${BUILD_MAP_USER}:\${BUILD_MAP_PASSWORD}@github.com/gocd/docs.go.cd'"
+            commandString = "git remote add upstream 'https://\${BUILD_MAP_USER}:\${BUILD_MAP_PASSWORD}@github.com/gocd/new-docs.gocd.org'"
           }
           bash {
             commandString = "bundle install --path .bundle --jobs 4"
@@ -48,13 +48,13 @@ GoCD.script { GoCD buildScript ->
       group = 'new-gocd-help-docs'
       materials {
         git {
-          url = 'https://github.com/gocd-private/docs.gocd.org'
+          url = 'https://github.com/gocd/new-docs.gocd.org'
           branch = "master"
           shallowClone = true
         }
       }
       trackingTool {
-        link = 'https://github.com/gocd-private/docs.gocd.org/issues/${ID}'
+        link = 'https://github.com/gocd/new-docs.gocd.org/issues/${ID}'
         regex = ~/##(\\d+)/
       }
       stages {
@@ -71,7 +71,7 @@ GoCD.script { GoCD buildScript ->
         }
       }
       trackingTool {
-        link = 'https://github.com/gocd-private/docs.gocd.org/issues/${ID}'
+        link = 'https://github.com/gocd/new-docs.gocd.org/issues/${ID}'
         regex = ~/##(\\d+)/
       }
       stages {
@@ -84,13 +84,13 @@ GoCD.script { GoCD buildScript ->
 //        group = "gocd-help-docs"
 //        materials {
 //          git {
-//            url = 'https://github.com/gocd/docs.go.cd'
+//            url = 'https://github.com/gocd/new-docs.gocd.org'
 //            branch = "release-${releaseVersion}"
 //            shallowClone = true
 //          }
 //        }
 //        trackingTool {
-//          link = 'https://github.com/gocd/docs.go.cd/issues/${ID}'
+//          link = 'https://github.com/gocd/new-docs.gocd.org/issues/${ID}'
 //          regex = ~/##(\\d+)/
 //        }
 //        stages {
