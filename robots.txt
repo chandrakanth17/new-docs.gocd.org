@@ -1,0 +1,52 @@
+User-agent: *
+
+# Allow root and /current
+Allow: /
+Allow: /current
+Allow: /current/
+
+# Disallow versioned directories
+Disallow: /18.12.0
+Disallow: /19.2.0
+Disallow: /19.1.0
+Disallow: /18.12.0
+Disallow: /18.11.0
+Disallow: /18.10.0
+Disallow: /18.9.0
+Disallow: /18.8.0
+Disallow: /18.7.0
+Disallow: /18.6.0
+Disallow: /18.5.0
+Disallow: /18.4.0
+Disallow: /18.3.0
+Disallow: /18.2.0
+Disallow: /18.1.0
+Disallow: /17.12.0
+Disallow: /17.11.0
+Disallow: /17.10.0
+Disallow: /17.9.0
+Disallow: /17.8.0
+Disallow: /17.7.0
+Disallow: /17.6.0
+Disallow: /17.5.0
+Disallow: /17.4.0
+Disallow: /17.3.0
+Disallow: /17.2.0
+Disallow: /17.1.0
+Disallow: /16.12.0
+Disallow: /16.11.0
+Disallow: /16.10.0
+Disallow: /16.9.0
+Disallow: /16.8.0
+Disallow: /16.7.0
+Disallow: /16.6.0
+Disallow: /16.5.0
+Disallow: /16.4.0
+Disallow: /16.3.0
+Disallow: /16.2.0
+Disallow: /16.1.0
+Disallow: /15.3.0
+Disallow: /15.2.0
+Disallow: /15.1.0
+Disallow: /14.4.0
+Disallow: /14.3.0
