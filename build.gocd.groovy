@@ -67,7 +67,7 @@ GoCD.script { GoCD buildScript ->
       group = 'new-gocd-help-docs'
       materials {
         pluggable {
-          scm = '4b2cfb9e-95ed-4b39-9ac0-cf007f6c7c41'
+          scm = 'new-docs-gocd-org'
         }
       }
       trackingTool {
