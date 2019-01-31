@@ -1,0 +1,5463 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reference | GoCD User Documentation</title>
+
+<link href="https://fonts.googleapis.com/css?family=Oxygen|Oxygen+Mono:300,400,700" rel="stylesheet">
+<link rel="stylesheet" href="../normalize.min.css">
+
+<link rel="stylesheet" href="../book.min.29d743ffb6d61ecbfc9bb21b7eab17d63b577d4bd547c3f095addb1c793ab1b1.css">
+  
+</head>
+
+<body>
+  <input type="checkbox" style="display: none" id="menu-control" />
+  <main class="flex container">
+
+    <aside class="book-menu fixed">
+      <nav role="navigation">
+
+
+
+    <ul>
+<li><a href="../"><strong>Introduction</strong></a></li>
+<li><a href="../navigation.html"><strong>GoCD Tour</strong></a>
+
+<ul>
+<li><a href="../navigation/pipelines_dashboard_page.html">Pipeline Dashboard</a></li>
+<li><a href="../navigation/agents_page.html">Agents</a></li>
+<li><a href="../navigation/agent_details.html">Agent Details</a></li>
+<li><a href="../navigation/pipeline_activity_page.html">Pipeline Activity</a></li>
+<li><a href="../navigation/stage_details_page.html">Stage Details</a></li>
+<li><a href="../navigation/job_details_page.html">Job Details</a></li>
+<li><a href="../navigation/administration_page.html">Administration</a></li>
+<li><a href="../navigation/server_details_page.html">Server Details</a></li>
+<li><a href="../navigation/environments_page.html">Environments</a></li>
+<li><a href="../navigation/value_stream_map.html">Value Stream Map</a></li>
+</ul></li>
+<li><a href="../configuration.html"><strong>Configuration</strong></a>
+
+<ul>
+<li><a href="../configuration/quick_pipeline_setup.html">Setup a New Pipeline</a></li>
+<li><a href="../configuration/managing_pipelines.html">Managing Pipelines</a></li>
+<li><a href="../configuration/managing_dependencies.html">Managing Dependencies</a></li>
+<li><a href="../configuration/managing_a_build_cloud.html">Managing Agents</a></li>
+<li><a href="../configuration/managing_environments.html">Managing Environments</a></li>
+<li><a href="../configuration/build_labelling.html">Pipeline Labelling</a></li>
+<li><a href="../configuration/pipeline_scheduling.html">Pipeline Scheduling</a></li>
+<li><a href="../configuration/admin_use_parameters_in_configuration.html">Parameterize a Pipeline</a></li>
+<li><a href="../configuration/admin_use_custom_pipeline_label.html">Customize a Pipeline Label</a></li>
+<li><a href="../configuration/admin_clone_pipeline.html">Clone a Pipeline</a></li>
+<li><a href="../configuration/admin_lock_pipelines.html">Lock a Pipeline</a></li>
+<li><a href="../configuration/admin_add_material.html">Add Material to Existing Pipeline</a></li>
+<li><a href="../configuration/admin_add_stage.html">Add Stage to Existing Pipeline</a></li>
+<li><a href="../configuration/admin_add_job.html">Add job to Existing Stage</a></li>
+<li><a href="../configuration/admin_add_task.html">Add task to Existing Job</a></li>
+<li><a href="../configuration/pipeline_templates.html">Pipeline Templates</a></li>
+<li><a href="../configuration/elastic_agents.html">Elastic Agents</a></li>
+<li><a href="../configuration/dev_choose_when_stage_runs.html">Choose When a Stage Runs</a></li>
+<li><a href="../configuration/admin_timer.html">Timer Trigger</a></li>
+<li><a href="../configuration/job_timeout.html">Job Timeout</a></li>
+<li><a href="../configuration/managing_users.html">Managing Users</a></li>
+<li><a href="../configuration/dev_authentication.html">Authentication</a></li>
+<li><a href="../configuration/dev_authorization.html">Authorizing Users</a></li>
+<li><a href="../configuration/delegating_group_administration.html">Delegating Group Administration</a></li>
+<li><a href="../configuration/pipeline_group_admin_config.html">Pipeline Group Administration</a></li>
+<li><a href="../configuration/dev_upload_test_report.html">Publish Reports and Artifacts</a></li>
+<li><a href="../configuration/managing_artifacts_and_reports.html">Managing Artifacts and Reports</a></li>
+<li><a href="../configuration/delete_artifacts.html">Auto Delete Artifacts</a></li>
+<li><a href="../configuration/ui_testing.html">UI Testing</a></li>
+<li><a href="../configuration/admin_mailhost_info.html">Mailhost Information</a></li>
+<li><a href="../configuration/dev_notifications.html">Notifications</a></li>
+<li><a href="../configuration/tfs_config.html">TFS Material configuration</a></li>
+<li><a href="../configuration/configuration_reference.html">Reference</a></li>
+<li><a href="../configuration/schema.html">Schema</a></li>
+</ul></li>
+<li><a href="../faq.html"><strong>FAQ/Troubleshooting</strong></a>
+
+<ul>
+<li><a href="../faq/ordering_of_pipelines.html">Ordering of Pipelines</a></li>
+<li><a href="../faq/stage_old_config.html">Historical Configuration</a></li>
+<li><a href="../faq/concurrent_config_modifications.html">Concurrent Modifications to Config</a></li>
+<li><a href="../faq/dev_understand_why_build_broken.html">Why the Build is Broken?</a></li>
+<li><a href="../faq/dev_see_artifact_as_tab.html">See artifacts as sub-tabs</a></li>
+<li><a href="../faq/dev_save_properties.html">Save Properties for a Build</a></li>
+<li><a href="../faq/environment_variables.html">Using Environment variables</a></li>
+<li><a href="../faq/rm_deploy_to_environment.html">Deploy to an environment</a></li>
+<li><a href="../faq/tester_what_has_changed.html">See changes in new binary</a></li>
+<li><a href="../faq/dependency_management.html">Run Tests against new Builds</a></li>
+<li><a href="../faq/rm_what_is_deployed.html">Check What&rsquo;s Deployed</a></li>
+<li><a href="../faq/deploy_a_specific_build_to_an_environment.html">Deploy a Specific Build</a></li>
+<li><a href="../faq/agent_guid_issue.html">Clone/Copy an Existing Agents</a></li>
+<li><a href="../faq/job_rerun.html">How do I re-run jobs?</a></li>
+<li><a href="../faq/material_update_hung.html">Go unable to poll for changes</a></li>
+<li><a href="../faq/artifact_integrity.html">Artifact integrity verification</a></li>
+<li><a href="../faq/notifications_page.html">Email Notifications</a></li>
+<li><a href="../faq/admin_out_of_disk_space.html">Running out of Disk Space</a></li>
+<li><a href="../faq/docker_container_ssh_keys.html">Configure SSH Keys for dockerized GoCD</a></li>
+</ul></li>
+</ul>
+
+
+
+
+</nav>
+    </aside>
+
+    <div class="book-page">
+      <header class="align-center justify-between book-header">
+  <label for="menu-control">
+    <img src="../svg/menu.svg" />
+  </label>
+  <strong>Reference</strong>
+</header>
+
+      
+<article class="markdown">
+
+<p><a id="top"></a></p>
+
+<h1 id="gocd-configuration-reference">GoCD Configuration Reference</h1>
+
+<p><big><pre>
+<a href="#cruise">&lt;cruise&gt;</a>
+    <a href="#server">&lt;server&gt;</a>
+        <a href="#security">&lt;security&gt;</a>
+            <a href="#ldap">&lt;ldap&gt;</a>
+                <a href="#bases">&lt;bases&gt;</a>
+                    <a href="#base">&lt;base/&gt;</a>
+                <a href="#bases">&lt;/bases&gt;</a>
+            <a href="#ldap">&lt;/ldap&gt;</a>
+            <a href="#passwordFile">&lt;passwordFile/&gt;</a>
+            <a href="#authConfigs">&lt;authConfigs&gt;</a>
+              <a href="#authConfig">&lt;authConfig&gt;</a>
+                <a href="#property">&lt;property&gt;</a>
+                  <a href="#key">&lt;key/&gt;</a>
+                  <a href="#value">&lt;value/&gt;</a>
+                <a href="#property">&lt;/property&gt;</a>
+              <a href="#authConfig">&lt;/authConfig&gt;</a>
+            <a href="#authConfigs">&lt;/authConfigs&gt;</a>
+            <a href="#roles">&lt;roles&gt;</a>
+                <a href="#role_definition">&lt;role&gt;</a>
+                    <a href="#usersinrole">&lt;users/&gt;</a>
+                        <a href="#userinrole">&lt;user/&gt;</a>
+                <a href="#role_definition">&lt;/role&gt;</a>
+                <a href="#plugin_role_definition">&lt;pluginRole/&gt;</a>
+            <a href="#roles">&lt;/roles&gt;</a>
+            <a href="#admins">&lt;admins&gt;</a>
+                <a href="#roleinadmin">&lt;role/&gt;</a>
+                <a href="#user">&lt;user/&gt;</a>
+            <a href="#admins">&lt;/admins&gt;</a>
+        <a href="#security">&lt;/security&gt;</a>
+        <a href="#mailhost">&lt;mailhost/&gt;</a>
+        <a href="#backup">&lt;backup/&gt;</a>
+    <a href="#server">&lt;/server&gt;</a>
+    <a href="#elastic">&lt;elastic&gt;</a>
+        <a href="#profiles">&lt;profiles&gt;</a>
+            <a href="#profile">&lt;profile&gt;</a>
+                <a href="#property">&lt;property&gt;</a>
+                    <a href="#key">&lt;key/&gt;</a>
+                    <a href="#value">&lt;value/&gt;</a>
+                <a href="#property">&lt;/property&gt;</a>
+            <a href="#profile">&lt;/profile&gt;</a>
+        <a href="#profiles">&lt;/profiles&gt;</a>
+    <a href="#elastic">&lt;/elastic&gt;</a>
+    <a href="#repositories">&lt;repositories&gt;</a>
+        <a href="#repository">&lt;repository&gt;</a>
+            <a href="#pluginConfiguration">&lt;pluginConfiguration/&gt;</a>
+            <a href="#configuration">&lt;configuration&gt;</a>
+                <a href="#property">&lt;property&gt;</a>
+                    <a href="#key">&lt;key/&gt;</a>
+                    <a href="#value">&lt;value/&gt;</a>
+                <a href="#property">&lt;/property&gt;</a>
+            <a href="#configuration">&lt;/configuration&gt;</a>
+            <a href="#packages">&lt;packages&gt;</a>
+                <a href="#package">&lt;package&gt;</a>
+                    <a href="#configuration">&lt;configuration&gt;</a>
+                        <a href="#property">&lt;property&gt;</a>
+                            <a href="#key">&lt;key/&gt;</a>
+                            <a href="#value">&lt;value/&gt;</a>
+                        <a href="#property">&lt;/property&gt;</a>
+                    <a href="#configuration">&lt;/configuration&gt;</a>
+                <a href="#package">&lt;/package&gt;</a>
+            <a href="#packages">&lt;/packages&gt;</a>
+        <a href="#repository">&lt;/repository&gt;</a>
+    <a href="#repositories">&lt;/repositories&gt;</a>
+    <a href="#config-repos">&lt;config-repos&gt;</a>
+      <a href="#config-repo">&lt;config-repo&gt;</a>
+        <a href="#config-repo-svn">&lt;svn /&gt;</a>
+        <a href="#config-repo-hg">&lt;hg /&gt;</a>
+        <a href="#config-repo-p4">&lt;p4 /&gt;</a>
+        <a href="#config-repo-git">&lt;git /&gt;</a>
+        <a href="#config-repo-tfs">&lt;tfs /&gt;</a>
+        <a href="#config-repo-scm">&lt;scm /&gt;</a>
+        <a href="#config-repo-configuration">&lt;configuration&gt;</a>
+            <a href="#config-repo-property">&lt;property&gt;</a>
+                <a href="#config-repo-property-key">&lt;key/&gt;</a>
+                <a href="#config-repo-property-value">&lt;value/&gt;</a>
+            <a href="#config-repo-property">&lt;/property&gt;</a>
+        <a href="#config-repo-configuration">&lt;/configuration&gt;</a>
+      <a href="#config-repo">&lt;/config-repo&gt;</a>
+    <a href="#config-repos">&lt;/config-repos&gt;</a>
+    <a href="#artifactStores">&lt;artifactStores&gt;</a>
+        <a href="#artifactStore">&lt;artifactStore&gt;</a>
+            <a href="#property">&lt;property&gt;</a>
+                <a href="#key">&lt;key/&gt;</a>
+                <a href="#value">&lt;value/&gt;</a>
+            <a href="#property">&lt;/property&gt;</a>
+        <a href="#artifactStore">&lt;/artifactStore&gt;</a>
+    <a href="#artifactStores">&lt;/artifactStores&gt;</a>
+    <a href="#pipelines">&lt;pipelines&gt;</a>
+        <a href="#group_authorization">&lt;authorization&gt;</a>
+            <a href="#group_admins">&lt;admins&gt;</a>
+                <a href="#user">&lt;user/&gt;</a>
+                <a href="#role">&lt;role/&gt;</a>
+            <a href="#group_admins">&lt;/admins&gt;</a>
+            <a href="#group_view">&lt;view&gt;</a>
+                <a href="#user">&lt;user/&gt;</a>
+                <a href="#role">&lt;role/&gt;</a>
+            <a href="#group_view">&lt;/view&gt;</a>
+            <a href="#group_operate">&lt;operate&gt;</a>
+                <a href="#user">&lt;user/&gt;</a>
+                <a href="#role">&lt;role/&gt;</a>
+            <a href="#group_operate">&lt;/operate&gt;</a>
+        <a href="#group_authorization">&lt;/authorization&gt;</a>
+        <a href="#pipeline">&lt;pipeline&gt;</a>
+            <a href="#params">&lt;params&gt;</a>
+                <a href="#param">&lt;param/&gt;</a>
+            <a href="#params">&lt;/params&gt;</a>
+            <a href="#trackingtool">&lt;trackingtool/&gt;</a>
+            <a href="#mingle">&lt;mingle/&gt;</a>
+            <a href="#timer">&lt;timer/&gt;</a>
+            <a href="#environmentvariables">&lt;environmentvariables&gt;</a>
+                <a href="#variable">&lt;variable&gt;</a>
+                    &lt;value/&gt;
+                <a href="#variable">&lt;/variable&gt;</a>
+            <a href="#environmentvariables">&lt;/environmentvariables&gt;</a>
+            <a href="#materials">&lt;materials&gt;</a>
+                <a href="#svn">&lt;svn&gt;</a>
+                    <a href="#filter">&lt;filter&gt;</a>
+                        <a href="#ignore">&lt;ignore/&gt;</a>
+                    <a href="#filter">&lt;/filter&gt;</a>
+                <a href="#svn">&lt;/svn&gt;</a>
+                <a href="#hg">&lt;hg&gt;</a>
+                    <a href="#filter">&lt;filter&gt;</a>
+                        <a href="#ignore">&lt;ignore/&gt;</a>
+                    <a href="#filter">&lt;/filter&gt;</a>
+                <a href="#hg">&lt;/hg&gt;</a>
+                <a href="#p4">&lt;p4&gt;</a>
+                    &lt;view/&gt;
+                    <a href="#filter">&lt;filter&gt;</a>
+                        <a href="#ignore">&lt;ignore/&gt;</a>
+                    <a href="#filter">&lt;/filter&gt;</a>
+                <a href="#p4">&lt;/p4&gt;</a>
+                <a href="#git">&lt;git&gt;</a>
+                    <a href="#filter">&lt;filter&gt;</a>
+                        <a href="#ignore">&lt;ignore/&gt;</a>
+                    <a href="#filter">&lt;/filter&gt;</a>
+                <a href="#git">&lt;/git&gt;</a>
+                <a href="#tfs">&lt;tfs&gt;</a>
+                    <a href="#filter">&lt;filter&gt;</a>
+                        <a href="#ignore">&lt;ignore/&gt;</a>
+                    <a href="#filter">&lt;/filter&gt;</a>
+                <a href="#tfs">&lt;/tfs&gt;</a>
+                <a href="#package-material">&lt;package/&gt;</a>
+                <a href="#pipeline-dependency">&lt;pipeline/&gt;</a>
+            <a href="#materials">&lt;/materials&gt;</a>
+            <a href="#stage">&lt;stage&gt;</a>
+                <a href="#approval">&lt;approval&gt;</a>
+                    <a href="#authorization">&lt;authorization&gt;</a>
+                        <a href="#role">&lt;role/&gt;</a>
+                        <a href="#user">&lt;user/&gt;</a>
+                    <a href="#authorization">&lt;/authorization&gt;</a>
+                <a href="#approval">&lt;/approval&gt;</a>
+                <a href="#environmentvariables">&lt;environmentvariables&gt;</a>
+                    <a href="#variable">&lt;variable&gt;</a>
+                        &lt;value/&gt;
+                    <a href="#variable">&lt;/variable&gt;</a>
+                <a href="#environmentvariables">&lt;/environmentvariables&gt;</a>
+                <a href="#jobs">&lt;jobs&gt;</a>
+                    <a href="#job">&lt;job&gt;</a>
+                        <a href="#environmentvariables">&lt;environmentvariables&gt;</a>
+                            <a href="#variable">&lt;variable&gt;</a>
+                                &lt;value/&gt;
+                            <a href="#variable">&lt;/variable&gt;</a>
+                        <a href="#environmentvariables">&lt;/environmentvariables&gt;</a>
+                        <a href="#resources">&lt;resources&gt;</a>
+                            <a href="#resource">&lt;resource/&gt;</a>
+                        <a href="#resources">&lt;/resources&gt;</a>
+                        <a href="#tasks">&lt;tasks&gt;</a>
+                            <a href="#fetchartifact">&lt;fetchartifact&gt;</a>
+                                <a href="#runif">&lt;runif/&gt;</a>
+                                <a href="#oncancel">&lt;oncancel/&gt;</a>
+                            <a href="#fetchartifact">&lt;/fetchartifact&gt;</a>
+                            <a href="#ant">&lt;ant&gt;</a>
+                                <a href="#runif%20">&lt;runif/&gt;</a>
+                                <a href="#oncancel">&lt;oncancel/&gt;</a>
+                            <a href="#ant">&lt;/ant&gt;</a>
+                            <a href="#nant">&lt;nant&gt;</a>
+                                <a href="#runif%20">&lt;runif/&gt;</a>
+                                <a href="#oncancel">&lt;oncancel/&gt;</a>
+                            <a href="#nant">&lt;/nant&gt;</a>
+                            <a href="#rake">&lt;rake&gt;</a>
+                                <a href="#runif%20">&lt;runif/&gt;</a>
+                                <a href="#oncancel">&lt;oncancel/&gt;</a>
+                            <a href="#rake">&lt;/rake&gt;</a>
+                            <a href="#exec">&lt;exec&gt;</a>
+                                <a href="#arg">&lt;arg/&gt;</a>
+                                <a href="#runif%20">&lt;runif/&gt;</a>
+                                <a href="#oncancel">&lt;oncancel/&gt;</a>
+                            <a href="#exec">&lt;/exec&gt;</a>
+                        <a href="#tasks">&lt;/tasks&gt;</a>
+                        <a href="#artifacts">&lt;artifacts&gt;</a>
+                            <a href="#artifact">&lt;artifact/&gt;</a>
+                        <a href="#artifacts">&lt;/artifacts&gt;</a>
+                        <a href="#tabs">&lt;tabs&gt;</a>
+                            <a href="#tab">&lt;tab/&gt;</a>
+                        <a href="#tabs">&lt;/tabs&gt;</a>
+                        <a href="#properties">&lt;properties&gt;</a>
+                            <a href="#property">&lt;property/&gt;</a>
+                        <a href="#properties">&lt;/properties&gt;</a>
+                    <a href="#job">&lt;/job&gt;</a>
+                <a href="#jobs">&lt;/jobs&gt;</a>
+            <a href="#stage">&lt;/stage&gt;</a>
+        <a href="#pipeline">&lt;/pipeline&gt;</a>
+    <a href="#pipelines">&lt;/pipelines&gt;</a>
+    <a href="#templates">&lt;templates&gt;</a>
+        <a href="#pipeline-template">&lt;pipeline&gt;</a>
+            <a href="#stage">&lt;stage&gt;</a>
+                &hellip;
+            <a href="#stage">&lt;/stage&gt;</a>
+        <a href="#pipeline-template">&lt;/pipeline&gt;</a>
+    <a href="#templates">&lt;/templates&gt;</a>
+    <a href="#environments">&lt;environments&gt;</a>
+        <a href="#environment">&lt;environment&gt;</a>
+            <a href="#environmentvariables">&lt;environmentvariables&gt;</a>
+                <a href="#variable">&lt;variable&gt;</a>
+                    &lt;value/&gt;
+                <a href="#variable">&lt;/variable&gt;</a>
+            <a href="#environmentvariables">&lt;/environmentvariables&gt;</a>
+            <a href="#environment-agents">&lt;agents&gt;</a>
+                <a href="#environment-agents-physical">&lt;physical/&gt;</a>
+            <a href="#environment-agents">&lt;/agents&gt;</a>
+            <a href="#environment-pipelines">&lt;pipelines&gt;</a>
+                <a href="#environment-pipeline">&lt;pipeline/&gt;</a>
+            <a href="#environment-pipelines">&lt;/pipelines&gt;</a>
+        <a href="#environment">&lt;/environment&gt;</a>
+    <a href="#environments">&lt;/environments&gt;</a>
+    <a href="#agents">&lt;agents&gt;</a>
+        <a href="#agent">&lt;agent&gt;</a>
+            <a href="#agentresources">&lt;resources&gt;</a>
+                <a href="#agentresource">&lt;resource/&gt;</a>
+            <a href="#resources">&lt;/resources&gt;</a>
+        <a href="#agent">&lt;/agent&gt;</a>
+    <a href="#agents">&lt;/agents&gt;</a>
+<a href="#cruise">&lt;/cruise&gt;</a>
+</pre></big></p>
+
+<p><a href="#go-configuration-reference">top</a></p>
+
+<h1 id="configuration-reference">Configuration reference</h1>
+
+<h2 id="cruise">&lt;cruise&gt;</h2>
+
+<p>The <code>&lt;cruise&gt;</code> element is the root element of the configuration.</p>
+
+<p><a href="#go-configuration-reference">top</a></p>
+
+<h2 id="server">&lt;server&gt;</h2>
+
+<p>The <code>&lt;server&gt;</code> element can be used to define information and attributes of the Go Server.</p>
+
+<h3 id="attributes">Attributes</h3>
+
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>artifactsdir</td>
+<td>No</td>
+<td>This directory is where Go will store its information, including artifacts published by jobs. The <strong>default value</strong> is &lsquo;artifacts&rsquo; in the folder where the Go Server is installed. You can use an absolute path or a relative path which will take the server installed directory as the root. <strong>Notes:</strong> If you specify the attribute, please check whether Go has permission to access that directory. Also you should be aware of that changing this value while Go Server is running won&rsquo;t take effect until Go Server is restarted.</td>
+</tr>
+
+<tr>
+<td>siteUrl</td>
+<td>No</td>
+<td>This entry will be used by Go Server to generate links for emails, feeds etc., where we cannot have relative URLs. For example, if you have fronted Go with a reverse proxy, this value should be the base URL for the proxy and not the internal Go address. For this reason, it is necessary to specify this configuration. Format: [protocol]://[host]:[port]. You need to define the [port] in case Go uses a non-standard port.</td>
+</tr>
+
+<tr>
+<td>secureSiteUrl</td>
+<td>No</td>
+<td>Certain features in Go, such as Mingle integration, require an HTTPS(SSL) endpoint. If you wish that your primary site URL be HTTP, but still want to have HTTPS endpoints for the features that require SSL, you can specify the secureSiteUrl attribute with a value of the base HTTPS URL. Format: https://[host]:[port]. You need to define the [port] in case Go uses a non-standard port.</td>
+</tr>
+
+<tr>
+<td>purgeStart</td>
+<td>No</td>
+<td>Go can purge old artifacts when available disk space on the server is low. Go will begin to purge artifacts when disk space is lower than &lsquo;purgeStart&rsquo; GB. Artifacts will never be deleted if &lsquo;purgeStart&rsquo; and &lsquo;purgeUpto&rsquo; are not defined.</td>
+</tr>
+
+<tr>
+<td>purgeUpto</td>
+<td>No</td>
+<td>Go can purge old artifacts when available disk space on the server is low. Go will purge artifacts till available disk space is greater than &lsquo;purgeUpto&rsquo; GB. This attribute must be defined if purgeStart is defined.</td>
+</tr>
+
+<tr>
+<td>jobTimeout</td>
+<td>No</td>
+<td>This entry will be used as the default timeout value for hung jobs. A job is considered as hung if it does not generate any console output for &ldquo;jobTimeout&rdquo; minutes. If the attribute is not specified jobTimeout defaults to 60 minutes.</td>
+</tr>
+
+<tr>
+<td>commandRepositoryLocation</td>
+<td>Yes (auto-generated)</td>
+<td>Specifies the location of the [command repository]() relative to <code>go-server_install_root/db/command_repository</code>. The bundled repository is in a directory named default.</td>
+</tr>
+
+<tr>
+<td>serverId</td>
+<td>Yes (auto-generated)</td>
+<td>This value uniquely identifies a Go server installation. It may be used by features that require unique names/identifiers across different Go server installations. This attribute need not be specified for a new server. In case no value is given, server auto-generates a random UUID an assigns it as serverId. This value should never be changed for an existing server. Administrator should clear this attribute before copying configuration to a different installation.</td>
+</tr>
+
+<tr>
+<td>agentAutoRegisterKey</td>
+<td>No</td>
+<td>The key specified here is used by agents for <a href="../../advanced_usage/agent_auto_register.html">auto-registration</a>.</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="notes">Notes:</h3>
+
+<ul>
+<li>If both siteUrl and secureSiteUrl are not defined, Go URLs will use the default domain which in most cases will be <a href="http://your-go-server:8153">http://your-go-server:8153</a></li>
+<li>If only siteUrl is defined and is not HTTPS, Go URLs will be composed from the siteUrl entry. In this case, the secure pages of Go will not be navigable.</li>
+<li>If only siteUrl is defined and is HTTPS, Go URLs will be composed from the siteUrl entry and all pages will be HTTPS.</li>
+<li>If only secureSiteUrl is defined, Go URLs will use the default domain for non-HTTPS pages, while HTTPs pages will be composed from the secureSiteUrl entry.</li>
+<li>If purgeStart and purgeUpto are not defined, artifacts will never be deleted.</li>
+</ul>
+
+<h3 id="examples">Examples</h3>
+
+<pre><code class="language-xml">&lt;cruise&gt;
+  &lt;server artifactsdir=&quot;/var/lib/go/big-artifacts-folder&quot; siteUrl=&quot;http://go.example.com&quot; secureSiteUrl=&quot;https://go.example.com&quot; purgeStart='5' purgeUpto='10' jobTimeout='30'&gt;
+  &lt;/server&gt;
+&lt;/cruise&gt;
+</code></pre>
+
+<p><a href="#top">top</a></p>
+
+<h2 id="security">&lt;security&gt;</h2>
+
+<p>The <code>&lt;security&gt;</code> element can be used to enable authentication. If the element is not defined anyone can use Go without logging in. We currently support enabling authentication using Authorization plugin endpoint. Support for LDAP and simple password-file authentication is available out of box via the bundled plugins for the same. You can use more than one authentication mechanism if you want. Support for inbuilt <a href="#ldap">LDAP</a> and <a href="#passwordFile">password file</a> tags in configuration has been deprecated.</p>
+
+<h3 id="attributes-1">Attributes</h3>
+
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>allowOnlyKnownUsersToLogin</td>
+<td>No</td>
+<td>Allow only those users to login who have been explicitly added by an admin. If false, any new user who tries to login and is present in your password file or LDAP will be automatically created as a Go user. (Default=false)</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="examples-1">Examples</h3>
+
+<pre><code class="language-xml">&lt;server artifactsdir=&quot;/var/lib/go/big-artifacts-folder&quot;&gt;
+  &lt;security allowOnlyKnownUsersToLogin=&quot;false&quot;&gt;
+    &lt;authConfigs&gt;
+     &lt;authConfig id=&quot;profile-id&quot; pluginId=&quot;cd.go.authentication.ldap&quot;&gt;
+       &lt;property&gt;
+         &lt;key&gt;Url&lt;/key&gt;
+         &lt;value&gt;ldap://xxx.yourcompany.com&lt;/value&gt;
+       &lt;/property&gt;
+       &lt;property&gt;
+         &lt;key&gt;ManagerDN&lt;/key&gt;
+         &lt;value&gt;cn=Acitivity Directory LDap User,ou=InformationSystems,ou=SharedAccounts,ou=Principal,dc=xxxx,dc=yyyy,dc=com&lt;/value&gt;
+       &lt;/property&gt;
+       &lt;property&gt;
+         &lt;key&gt;Password&lt;/key&gt;
+         &lt;value&gt;secret&lt;/value&gt;
+       &lt;/property&gt;
+       &lt;property&gt;
+         &lt;key&gt;SearchBases&lt;/key&gt;
+         &lt;value&gt;ou=Employees,ou=Enterprise,ou=Principal,dc=xxxx,dc=yyyy,dc=com&lt;/value&gt;
+       &lt;/property&gt;
+       &lt;property&gt;
+         &lt;key&gt;UserLoginFilter&lt;/key&gt;
+         &lt;value&gt;(sAMAccountName={0})&lt;/value&gt;
+       &lt;/property&gt;
+       &lt;property&gt;
+         &lt;key&gt;UserSearchFilter&lt;/key&gt;
+         &lt;value&gt;(sAMAccountName={0})&lt;/value&gt;
+       &lt;/property&gt;
+       &lt;property&gt;
+         &lt;key&gt;DisplayNameAttribute&lt;/key&gt;
+         &lt;value&gt;displayName&lt;/value&gt;
+       &lt;/property&gt;
+       &lt;property&gt;
+         &lt;key&gt;EmailAttribute&lt;/key&gt;
+         &lt;value&gt;mail&lt;/value&gt;
+       &lt;/property&gt;
+     &lt;/authConfig&gt;
+   &lt;/authConfigs&gt;
+  &lt;/security&gt;
+&lt;/server&gt;
+</code></pre>
+
+<p><a href="#top">top</a></p>
+
+<h2 id="mailhost">&lt;mailhost&gt;</h2>
+
+<p>The <code>&lt;mailhost&gt;</code> element is used to configure mail notifications. Mail notifications require <a href="#security">security</a> to be enabled.</p>
+
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>hostname</td>
+<td>Yes</td>
+<td>The SMTP mail server which Go will use to send email. For example, hostname=&ldquo;mailhost.yourcompany.com&rdquo;</td>
+</tr>
+
+<tr>
+<td>port</td>
+<td>Yes</td>
+<td>The mail port to use. Typically this will be the default mail port of 25.</td>
+</tr>
+
+<tr>
+<td>username</td>
+<td>Yes</td>
+<td>The username which Go should use to login to the mail host.</td>
+</tr>
+
+<tr>
+<td>password</td>
+<td>Yes</td>
+<td>The password to access the mailhost.</td>
+</tr>
+
+<tr>
+<td>tls</td>
+<td>No</td>
+<td>Use TLS(Transport Layer Security) or not. The default value is &lsquo;false&rsquo;. Use &lsquo;true&rsquo; to enable TLS security.</td>
+</tr>
+
+<tr>
+<td>from</td>
+<td>Yes</td>
+<td>Go will attempt to set this email address as the &lsquo;from&rsquo; address for email that it sends. Note that this setting may not be honoured by the SMTP server that you use. For example, from=&ldquo;go-admin@yourcompany.com&rdquo;.</td>
+</tr>
+
+<tr>
+<td>admin</td>
+<td>Yes</td>
+<td>Go admintrator&rsquo;s email address. Go will send diagnostic messages to this email address. For example, Go will send a warning message if it is running out of disk space.</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="examples-2">Examples</h3>
+
+<pre><code class="language-xml">&lt;mailhost hostname=&quot;mailhost.yourcompany.com&quot; port=&quot;25&quot; username=&quot;go-user&quot; password=&quot;crs123&quot; tls=&quot;false&quot; from=&quot;go@yourcompany.com&quot; admin=&quot;goadministrator@yourcompany.com&quot; /&gt;
+</code></pre>
+
+<p><a href="#top">top</a></p>
+
+<h2 id="backup">&lt;backup&gt;</h2>
+
+<p>The <code>&lt;backup&gt;</code> element is used to configure backups.</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">Attribute</th>
+<th align="left">Required</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">schedule</td>
+<td align="left">No</td>
+<td align="left">The cron-like specification to perform a backup.</td>
+</tr>
+
+<tr>
+<td align="left">postBackupScript</td>
+<td align="left">No</td>
+<td align="left">A script that will be invoked on the GoCD server after backup is performed (successfully, or otherwise). See <a href="../../advanced_usage/cron_backup.html">cron backups</a> for details about this script.</td>
+</tr>
+
+<tr>
+<td align="left">emailOnSuccess</td>
+<td align="left">No</td>
+<td align="left">Boolean indicating whether email should be sent on a successful backup. Requires that <a href="#mailhost">mailhost</a> config be setup.</td>
+</tr>
+
+<tr>
+<td align="left">emailOnFailure</td>
+<td align="left">No</td>
+<td align="left">Boolean indicating whether email should be sent on a failed backup backup. Requires that <a href="#mailhost">mailhost</a> config be setup.</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="examples-3">Examples</h3>
+
+<p>For example: to perform a backup once a night at 10pm on weekdays and call the <code>/usr/local/bin/upload-to-s3</code> script after the backup is done.</p>
+
+<pre><code class="language-xml">&lt;server&gt;
+  &lt;backup schedule=&quot;0 0 22 ? * MON-FRI&quot; postBackupScript=&quot;/usr/local/bin/upload-to-s3&quot; emailOnSuccess=&quot;false&quot; emailOnFailure=&quot;true&quot;/&gt;
+  ...
+&lt;/server&gt;
+</code></pre>
+
+<p>Go uses the <a href="http://www.quartz-scheduler.org/documentation/quartz-2.x/quick-start">Quartz</a> scheduler internally. For convenience we reproduce the <a href="http://www.quartz-scheduler.org/documentation/quartz-2.x/tutorials/crontrigger">Quartz cron documentation</a> here:</p>
+
+<h3 id="format">Format</h3>
+
+<p>A cron expression is a string comprised of 6 or 7 fields separated by white space. Fields can contain any of the allowed values, along with
+various combinations of the allowed special characters for that field. The fields are as follows:</p>
+
+<table>
+<thead>
+<tr>
+<th>Field Name</th>
+<th>Mandatory?</th>
+<th>Allowed Values</th>
+<th>Allowed Special Characters</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Seconds</td>
+<td>YES</td>
+<td>0-59</td>
+<td>, - * /</td>
+</tr>
+
+<tr>
+<td>Minutes</td>
+<td>YES</td>
+<td>0-59</td>
+<td>, - * /</td>
+</tr>
+
+<tr>
+<td>Hours</td>
+<td>YES</td>
+<td>0-23</td>
+<td>, - * /</td>
+</tr>
+
+<tr>
+<td>Day of month</td>
+<td>YES</td>
+<td>1-31</td>
+<td>, - * ? / L W</td>
+</tr>
+
+<tr>
+<td>Month</td>
+<td>YES</td>
+<td>1-12 or JAN-DEC</td>
+<td>, - * /</td>
+</tr>
+
+<tr>
+<td>Day of week</td>
+<td>YES</td>
+<td>1-7 or SUN-SAT</td>
+<td>, - * ? / L #</td>
+</tr>
+
+<tr>
+<td>Year</td>
+<td>NO</td>
+<td>empty, 1970-2099</td>
+<td>, - * /</td>
+</tr>
+</tbody>
+</table>
+
+<p>So cron expressions can be as simple as this: <code>* * * * * ?</code> or more complex, like this: <code>0 15 10 ? * 6L 2002-2005</code></p>
+
+<h3 id="special-characters">Special characters</h3>
+
+<ul>
+<li><p><code>*</code> (<em>&ldquo;all values&rdquo;</em>) - used to select all values within a field. For example, &ldquo;*&rdquo; in the minute field means <em>&ldquo;every minute&rdquo;</em>.</p></li>
+
+<li><p><code>?</code> (<em>&ldquo;no specific value&rdquo;</em>) - useful when you need to specify something in one of the two fields in which the character is allowed, but not the other. For example, if I want my trigger to fire on a particular day of the month (say, the 10th), but don&rsquo;t care what day of the week that happens to be, I would put &ldquo;10&rdquo; in the day-of-month field, and &ldquo;?&rdquo; in the day-of-week field. See the examples below for clarification.</p></li>
+
+<li><p><code>-</code> - used to specify ranges. For example, &ldquo;10-12&rdquo; in the hour field means <em>&ldquo;the hours 10, 11 and 12&rdquo;</em>.</p></li>
+
+<li><p><code>,</code> - used to specify additional values. For example, &ldquo;MON,WED,FRI&rdquo; in the day-of-week field means <em>&ldquo;the days Monday, Wednesday, and Friday&rdquo;</em>.</p></li>
+
+<li><p><code>/</code> - used to specify increments. For example, &ldquo;0/15&rdquo; in the seconds field means <em>&ldquo;the seconds 0, 15, 30, and 45&rdquo;</em>. And &ldquo;<sup>5</sup>&frasl;<sub>15</sub>&rdquo; in the seconds field means <em>&ldquo;the seconds 5, 20, 35, and 50&rdquo;</em>. You can also specify &lsquo;/&rsquo; after the &lsquo;<strong>&rsquo; character - in this case &lsquo;</strong>&rsquo; is equivalent to having &lsquo;0&rsquo; before the &lsquo;/&rsquo;. &lsquo;<sup>1</sup>&frasl;<sub>3</sub>&rsquo; in the day-of-month field means <em>&ldquo;fire every 3 days starting on the first day of the month&rdquo;</em>.</p></li>
+
+<li><p><code>L</code> (<em>&ldquo;last&rdquo;</em>) - has different meaning in each of the two fields in which it is allowed. For example, the value &ldquo;L&rdquo; in the day-of-month field means <em>&ldquo;the last day of the month&rdquo;</em> - day 31 for January, day 28 for February on non-leap years. If used in the day-of-week field by itself, it simply means &ldquo;7&rdquo; or &ldquo;SAT&rdquo;. But if used in the day-of-week field after another value, it means <em>&ldquo;the last xxx day of the month&rdquo;</em> - for example &ldquo;6L&rdquo; means <em>&ldquo;the last friday of the month&rdquo;</em>. When using the &lsquo;L&rsquo; option, it is important not to specify lists, or ranges of values, as you&rsquo;ll get confusing results.</p></li>
+
+<li><p><code>W</code> (<em>&ldquo;weekday&rdquo;</em>) - used to specify the weekday (Monday-Friday) nearest the given day. As an example, if you were to specify &ldquo;15W&rdquo; as the value for the day-of-month field, the meaning is: <em>&ldquo;the nearest weekday to the 15th of the month&rdquo;</em>. So if the 15th is a Saturday, the trigger will fire on Friday the 14th. If the 15th is a Sunday, the trigger will fire on Monday the 16th. If the 15th is a Tuesday, then it will fire on Tuesday the 15th. However if you specify &ldquo;1W&rdquo; as the value for day-of-month, and the 1st is a Saturday, the trigger will fire on Monday the 3rd, as it will not &lsquo;jump&rsquo; over the boundary of a month&rsquo;s days. The &lsquo;W&rsquo; character can only be specified when the day-of-month is a single day, not a range or list of days. The &lsquo;L&rsquo; and &lsquo;W&rsquo; characters can also be combined in the day-of-month field to yield &lsquo;LW&rsquo;, which translates to <em>&ldquo;last weekday of the month&rdquo;</em>.</p></li>
+
+<li><p><code>#</code> - used to specify &ldquo;the nth&rdquo; XXX day of the month. For example, the value of &ldquo;6#3&rdquo; in the day-of-week field means <em>&ldquo;the third Friday of the month&rdquo;</em> (day 6 = Friday and &ldquo;#3&rdquo; = the 3rd one in the month). Other examples: &ldquo;2#1&rdquo; = the first Monday of the month and &ldquo;4#5&rdquo; = the fifth Wednesday of the month. Note that if you specify &ldquo;#5&rdquo; and there is not 5 of the given day-of-week in the month, then no firing will occur that month. The legal characters and the names of months and days of the week are not case sensitive. <code>MON</code> is the same as <code>mon</code>.</p></li>
+</ul>
+
+<h3 id="examples-4">Examples</h3>
+
+<p>Here are some full examples:</p>
+
+<table>
+<thead>
+<tr>
+<th>Expression</th>
+<th>Meaning</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><code>0 0 12 * * ?</code></td>
+<td>Fire at 12pm (noon) every day</td>
+</tr>
+
+<tr>
+<td><code>0 15 10 ? * *</code></td>
+<td>Fire at 10:15am every day</td>
+</tr>
+
+<tr>
+<td><code>0 15 10 * * ?</code></td>
+<td>Fire at 10:15am every day</td>
+</tr>
+
+<tr>
+<td><code>0 15 10 * * ? *</code></td>
+<td>Fire at 10:15am every day</td>
+</tr>
+
+<tr>
+<td><code>0 15 10 * * ? 2005</code></td>
+<td>Fire at 10:15am every day during the year 2005</td>
+</tr>
+
+<tr>
+<td><code>0 * 14 * * ?</code></td>
+<td>Fire every minute starting at 2pm and ending at 2:59pm, every day</td>
+</tr>
+
+<tr>
+<td><code>0 0/5 14 * * ?</code></td>
+<td>Fire every 5 minutes starting at 2pm and ending at 2:55pm, every day</td>
+</tr>
+
+<tr>
+<td><code>0 0/5 14,18 * * ?</code></td>
+<td>Fire every 5 minutes starting at 2pm and ending at 2:55pm, AND fire every 5 minutes starting at 6pm and ending at 6:55pm, every day</td>
+</tr>
+
+<tr>
+<td><code>0 0-5 14 * * ?</code></td>
+<td>Fire every minute starting at 2pm and ending at 2:05pm, every day</td>
+</tr>
+
+<tr>
+<td><code>0 10,44 14 ? 3 WED</code></td>
+<td>Fire at 2:10pm and at 2:44pm every Wednesday in the month of March.</td>
+</tr>
+
+<tr>
+<td><code>0 15 10 ? * MON-FRI</code></td>
+<td>Fire at 10:15am every Monday, Tuesday, Wednesday, Thursday and Friday</td>
+</tr>
+
+<tr>
+<td><code>0 15 10 15 * ?</code></td>
+<td>Fire at 10:15am on the 15th day of every month</td>
+</tr>
+
+<tr>
+<td><code>0 15 10 L * ?</code></td>
+<td>Fire at 10:15am on the last day of every month</td>
+</tr>
+
+<tr>
+<td><code>0 15 10 ? * 6L</code></td>
+<td>Fire at 10:15am on the last Friday of every month</td>
+</tr>
+
+<tr>
+<td><code>0 15 10 ? * 6L</code></td>
+<td>Fire at 10:15am on the last Friday of every month</td>
+</tr>
+
+<tr>
+<td><code>0 15 10 ? * 6L 2002-2005</code></td>
+<td>Fire at 10:15am on every last friday of every month during the years 2002, 2003, 2004 and 2005</td>
+</tr>
+
+<tr>
+<td><code>0 15 10 ? * 6#3</code></td>
+<td>Fire at 10:15am on the third Friday of every month</td>
+</tr>
+
+<tr>
+<td><code>0 0 12 1/5 * ?</code></td>
+<td>Fire at 12pm (noon) every 5 days every month, starting on the first day of the month.</td>
+</tr>
+
+<tr>
+<td><code>0 11 11 11 11 ?</code></td>
+<td>Fire every November 11th at 11:11am.</td>
+</tr>
+</tbody>
+</table>
+
+<p>Pay attention to the effects of &lsquo;?&rsquo; and &lsquo;*&rsquo; in the day-of-week and day-of-month fields!</p>
+
+<h3 id="notes-1">Notes</h3>
+
+<ul>
+<li>Support for specifying both a day-of-week and a day-of-month value is not complete (you must currently use the &lsquo;?&rsquo; character in one of these fields).</li>
+<li>Be careful when setting fire times between mid-night and 1:00 AM - &ldquo;daylight savings&rdquo; can cause a skip or a repeat depending on whether the time moves back or jumps forward.</li>
+</ul>
+
+<p><a href="#top">top</a></p>
+
+<h2 id="ldap">&lt;ldap&gt;</h2>
+
+<p>[<em>Deprecated</em>]</p>
+
+<p>The <code>&lt;ldap&gt;</code> element is used to specify the ldap server. Users can access Go with their username and password from this ldap server.</p>
+
+<h3 id="attributes-2">Attributes</h3>
+
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>uri</td>
+<td>Yes</td>
+<td>uri for the ldap server. For example, uri=&ldquo;ldap://ldap.yourcompany.com&rdquo;</td>
+</tr>
+
+<tr>
+<td>managerDn</td>
+<td>Yes</td>
+<td>For example, managerDn=&ldquo;cn=Active Directory Ldap User,ou=InformationSystems,ou=SharedAccounts,ou=Principal,dc=xxxxx,dc=yyyy,dc=com&rdquo;</td>
+</tr>
+
+<tr>
+<td>managerPassword</td>
+<td>Yes</td>
+<td>Go will connect to the LDAP server with this password</td>
+</tr>
+
+<tr>
+<td>searchFilter</td>
+<td>No</td>
+<td>e.g. searchFilter=&ldquo;(sAMAccountName={0})&rdquo;</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="examples-5">Examples</h3>
+
+<pre><code class="language-xml">&lt;security&gt;
+  &lt;ldap uri=&quot;ldap://xxx.yourcompany.com&quot;
+     managerDn=&quot;cn=Acitivity Directory LDap User,ou=InformationSystems,ou=SharedAccounts,ou=Principal,dc=xxxx,dc=yyyy,dc=com&quot;
+     managerPassword=&quot;password&quot;
+     searchFilter=&quot;(sAMAccountName={0})&quot; /&gt;
+     &lt;bases&gt;
+      &lt;base value=&quot;ou=Employees,ou=Enterprise,ou=Principal,dc=xxxx,dc=yyyy,dc=com&quot;/&gt;
+    &lt;/bases&gt;
+  &lt;passwordFile path=&quot;/home/go/admins.properties&quot;/&gt;
+  &lt;roles&gt;
+    &lt;role name=&quot;go-admin&quot;&gt;
+      &lt;user&gt;Jez&lt;/user&gt;
+      &lt;user&gt;lqiao&lt;/user&gt;
+    &lt;/role&gt;
+  &lt;/roles&gt;
+  &lt;admins&gt;
+    &lt;role&gt;go-admin&lt;/role&gt;
+    &lt;user&gt;lqiao&lt;/user&gt;
+  &lt;/admins&gt;
+&lt;/security&gt;
+</code></pre>
+
+<p><a href="#top">top</a></p>
+
+<h2 id="bases">&lt;bases&gt;</h2>
+
+<p>The <code>&lt;bases&gt;</code> element is used to specify a list of search bases (the distinguished name of the search base object) which defines
+the location in the directory from which the LDAP search begins.</p>
+
+<p><a href="#top">top</a></p>
+
+<h2 id="base">&lt;base&gt;</h2>
+
+<p>The <code>&lt;base&gt;</code> element is used to specify a search base (the distinguished name of the search base object) defines the location in
+the directory from which the LDAP search begins.</p>
+
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>value</td>
+<td>Yes</td>
+<td>The search base.</td>
+</tr>
+</tbody>
+</table>
+
+<pre><code class="language-xml">  &lt;ldap uri=&quot;ldap://xxx.yourcompany.com&quot;
+     managerDn=&quot;cn=Acitivity Directory LDap User,ou=InformationSystems,ou=SharedAccounts,ou=Principal,dc=xxxx,dc=yyyy,dc=com&quot;
+     managerPassword=&quot;password&quot;
+     searchFilter=&quot;(sAMAccountName={0})&quot; /&gt;
+     &lt;bases&gt;
+      &lt;base value=&quot;ou=Employees,ou=Enterprise,ou=Principal,dc=xxxx,dc=yyyy,dc=com&quot;/&gt;
+    &lt;/bases&gt;
+  &lt;/ldap&gt;
+</code></pre>
+
+<p><a href="#top">top</a></p>
+
+<h2 id="passwordFile">&lt;passwordFile&gt;</h2>
+
+<p>[<em>Deprecated</em>]</p>
+
+<p>The <code>&lt;passwordFile&gt;</code> element is used to specify a file which has a set of username and password pairs. The format of username and password in this file is \${username}=\${password which has been encrypted with SHA1}, with one line per user.</p>
+
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>path</td>
+<td>Yes</td>
+<td>The absolute path of the password file.</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="examples-6">Examples</h3>
+
+<p>Suppose the password file is <strong>admins.properties</strong>, which is located in <strong>/home/go</strong>. You want to create two users as Administrators:</p>
+
+<ul>
+<li>one username is <strong>Jez</strong>, the password encrypted with SHA1 is <strong>ThmbShxAtJepX80c2JY1FzOEmUk=</strong></li>
+<li>the other one is <strong>lqiao</strong>, the password encrypted with SHA1 is <strong>TfkgShslgJepX80c2JY1trwEskT=</strong></li>
+</ul>
+
+<p>The configuration could look like:</p>
+
+<pre><code class="language-xml">&lt;security&gt;
+  &lt;passwordFile path=&quot;/home/go/admins.properties&quot;/&gt;
+&lt;/security&gt;
+</code></pre>
+
+<p>The username and password could be set in admins.properties as follows:</p>
+
+<pre><code>Jez=ThmbShxAtJepX80c2JY1FzOEmUk
+lqiao=TfkgShslgJepX80c2JY1trwEskT
+</code></pre>
+
+<p><a href="#top">top</a></p>
+
+<h2 id="authConfigs">&lt;authConfigs&gt;</h2>
+
+<p>Using <code>&lt;authConfigs&gt;</code> element GoCD administrators can provide one or more authorization configurations to connect with the authorization server(s).</p>
+
+<h3 id="example">Example</h3>
+
+<pre><code class="language-xml">&lt;authConfigs&gt;
+    &lt;authConfig id=&quot;file-auth-config&quot; pluginId=&quot;cd.go.authentication.passwordfile&quot;&gt;
+    ...
+    &lt;/authConfig&gt;
+    &lt;authConfig id=&quot;ldap&quot; pluginId=&quot;cd.go.authentication.ldap&quot;&gt;
+    ...
+    &lt;/authConfig&gt;
+&lt;/authConfigs&gt;
+</code></pre>
+
+<p><a href="#top">top</a></p>
+
+<h2 id="authConfig">&lt;authConfig&gt;</h2>
+
+<p>The <code>&lt;authConfig&gt;</code> specifies the <a href="#property">configuration</a> to be used by the authorization plugin. This will usually allow administrators to configure the connection settings for your authorization plugin, and may include configuration like URLs and credentials, among others.</p>
+
+<p>An <code>authConfig</code> should have a unique <code>id</code> attribute and should be associated to plugin through the <code>pluginId</code> attribute.</p>
+
+<h3 id="attributes-3">Attributes</h3>
+
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>id</td>
+<td>Yes</td>
+<td>Unique Id of authConfig.</td>
+</tr>
+
+<tr>
+<td>pluginId</td>
+<td>Yes</td>
+<td>The Id of authorization plugin.</td>
+</tr>
+</tbody>
+</table>
+
+<p>Refer to your plugin&rsquo;s documentation to know the <code>property</code> keys to be configured.</p>
+
+<h3 id="example-1">Example:</h3>
+
+<pre><code class="language-xml">&lt;authConfig id=&quot;file-auth-config&quot; pluginId=&quot;cd.go.authentication.passwordfile&quot;&gt;
+  &lt;property&gt;
+    &lt;key&gt;PasswordFilePath&lt;/key&gt;
+    &lt;value&gt;/etc/go/password.properties&lt;/value&gt;
+  &lt;/property&gt;
+&lt;/authConfig&gt;
+</code></pre>
+
+<p><a href="#top">top</a></p>
+
+<h2 id="roles">&lt;roles&gt;</h2>
+
+<p>The <code>&lt;roles&gt;</code> element is a container for roles that users defined. It can&rsquo;t be defined without <code>&lt;role&gt;</code>.</p>
+
+<h3 id="examples-7">Examples</h3>
+
+<pre><code class="language-xml">&lt;security&gt;
+  ...
+  &lt;roles&gt;
+    &lt;role name=&quot;go-admin&quot;&gt;
+      &lt;user&gt;Jez&lt;/user&gt;
+      &lt;user&gt;lqiao&lt;/user&gt;
+    &lt;/role&gt;
+  &lt;/roles&gt;
+&lt;/security&gt;
+</code></pre>
+
+<p><a href="#top">top</a></p>
+
+<h2 id="role_definition">&lt;role&gt;</h2>
+
+<p>The <code>&lt;role&gt;</code> element is used to define a group of users who perform similar tasks. Users are added by adding the sub-tag <a href="#usersinrole"><code>&lt;users&gt;</code></a>.</p>
+
+<p><strong>Notes:</strong></p>
+
+<ul>
+<li>If you want to define roles, you must define an authentication method, either <a href="#ldap"><code>&lt;ldap&gt;</code></a> or <a href="#passwordFile"><code>&lt;passwordFile&gt;</code></a>.</li>
+<li>These roles are not associated with roles defined in LDAP; they only work within Go. For example, you can assign a role to the <a href="#approval">manual-approval</a> in a stage, so that only the users in that role can approve the stage to run.</li>
+</ul>
+
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>name</td>
+<td>Yes</td>
+<td>The name of the role.</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="examples-8">Examples</h3>
+
+<p>Two users would be in the role &lsquo;pipeline-operators&rsquo;, they are <strong>Jez</strong> and <strong>lqiao</strong>.</p>
+
+<pre><code class="language-xml">&lt;roles&gt;
+  &lt;role name=&quot;pipeline-operators&quot;&gt;
+    &lt;users&gt;
+      &lt;user&gt;Jez&lt;/user&gt;
+      &lt;user&gt;lqiao&lt;/user&gt;
+    &lt;/users&gt;
+  &lt;/role&gt;
+&lt;/roles&gt;
+</code></pre>
+
+<p><a href="#top">top</a></p>
+
+<h2 id="usersinrole">&lt;users&gt;</h2>
+
+<p>List of users in a role.</p>
+
+<p><a href="#top">top</a></p>
+
+<p>One <code>&lt;user&gt;</code> element defines a particular user in a role. You can add as many as you like.</p>
+
+<h2 id="userinrole">&lt;user&gt;</h2>
+
+<p>One <code>&lt;user&gt;</code> element defines a particular user in a role. You can add as many as you like.</p>
+
+<p><strong>Notes:</strong></p>
+
+<ul>
+<li>The user must be in your <a href="#ldap">LDAP</a> or <a href="#passwordFile">passwordFile</a>.</li>
+</ul>
+
+<h3 id="examples-9">Examples</h3>
+
+<p>Two users would be in the role &lsquo;pipeline-operators&rsquo;, they are <strong>Jez</strong> and <strong>lqiao</strong>.</p>
+
+<pre><code class="language-xml">&lt;role name=&quot;pipeline-operators&quot;&gt;
+  &lt;users&gt;
+    &lt;user&gt;Jez&lt;/user&gt;
+    &lt;user&gt;lqiao&lt;/user&gt;
+  &lt;/users&gt;
+&lt;/role&gt;
+</code></pre>
+
+<p><a href="#top">top</a></p>
+
+<h2 id="plugin_role_definition">&lt;pluginRole&gt;</h2>
+
+<p>The <code>&lt;pluginRole&gt;</code> element is used to define roles in GoCD. Unlike <code>role</code> which contains a list of <code>users</code>, <code>pluginRole</code> provides <a href="#property">configuration</a> to map a GoCD role to a role defined in an external authorization server managed by an Authorization plugin. e.g pluginRole can be used to define mappings between LDAP group and GoCD roles.</p>
+
+<p><strong>Notes:</strong></p>
+
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>name</td>
+<td>Yes</td>
+<td>The name of the role.</td>
+</tr>
+
+<tr>
+<td>authConfigId</td>
+<td>Yes</td>
+<td>Id of an <a href="#authConfig">authorization config</a>.</td>
+</tr>
+</tbody>
+</table>
+
+<p>Refer to your plugin&rsquo;s documentation to know the <code>property</code> keys to be configured for the <code>pluginRole</code>.</p>
+
+<h3 id="examples-10">Examples</h3>
+
+<pre><code class="language-xml">&lt;roles&gt;
+&lt;pluginRole name=&quot;SuperAdmin&quot; authConfigId=&quot;auth_config_id&quot;&gt;
+  &lt;property&gt;
+    &lt;key&gt;MemberOfAttribute&lt;/key&gt;
+    &lt;value&gt;memberOf&lt;/value&gt;
+  &lt;/property&gt;
+  &lt;property&gt;
+    &lt;key&gt;MatchingGroups&lt;/key&gt;
+    &lt;value&gt;CN=Dev,OU=Groups,DC=some,DC=enterprise,DC=com&lt;/value&gt;
+  &lt;/property&gt;
+&lt;/pluginRole&gt;
+&lt;/roles&gt;
+</code></pre>
+
+<p><a href="#top">top</a></p>
+
+<h2 id="admins">&lt;admins&gt;</h2>
+
+<p>The <code>&lt;admins&gt;</code> element specifies which users are administrators. Only administrators can open the Administration tab to maintain Go Configuration. Administrators can perform all functions in Go (including triggering pipelines, deploying to environments etc.)</p>
+
+<p><strong>Notes:</strong></p>
+
+<p>The user must be in your <a href="#ldap">LDAP</a> or <a href="#passwordFile">passwordFile</a>.</p>
+
+<h3 id="examples-11">Examples</h3>
+
+<pre><code class="language-xml">&lt;security&gt;
+  ...
+  &lt;admins&gt;
+    &lt;role&gt;go-admin&lt;/role&gt;
+    &lt;user&gt;lqiao&lt;/user&gt;
+  &lt;/admins&gt;
+&lt;/security&gt;
+</code></pre>
+
+<p><a href="#top">top</a></p>
+
+<h2 id="roleinadmin">&lt;role&gt;</h2>
+
+<p>One <code>&lt;role&gt;</code> element in <a href="#admins"><code>&lt;admins&gt;</code></a> is used to specify a group as administrators. You can add as many as you like.</p>
+
+<p><strong>Notes:</strong></p>
+
+<ul>
+<li>The role must refer to <a href="#roles"><code>&lt;roles&gt;</code></a>.</li>
+</ul>
+
+<h3 id="examples-12">Examples</h3>
+
+<p>The users in role &lsquo;<strong>go-admin</strong>&rsquo; would be administrators.</p>
+
+<pre><code class="language-xml">&lt;admins&gt;
+  &lt;role&gt;go-admin&lt;/role&gt;
+  &lt;user&gt;lqiao&lt;/user&gt;
+&lt;/admins&gt;
+</code></pre>
+
+<p><a href="#top">top</a></p>
+
+<h2 id="user">&lt;user&gt;</h2>
+
+<p><strong>Notes:</strong></p>
+
+<ul>
+<li>The user must be in your <a href="#ldap">LDAP</a> or <a href="#passwordFile">passwordFile</a>.</li>
+</ul>
+
+<h3 id="examples-13">Examples</h3>
+
+<p>Two users would be administrators, they are <strong>Jez</strong> and <strong>lqiao</strong>.</p>
+
+<pre><code class="language-xml">&lt;admins&gt;
+  &lt;user&gt;Jez&lt;/user&gt;
+  &lt;user&gt;lqiao&lt;/user&gt;
+&lt;/admins&gt;
+</code></pre>
+
+<p><a href="#top">top</a></p>
+
+<h2 id="role">&lt;role&gt;</h2>
+
+<p><strong>Notes:</strong></p>
+
+<ul>
+<li>The role must be defined in <a href="#roles"><code>&lt;roles&gt;</code></a>.</li>
+</ul>
+
+<h3 id="examples-14">Examples</h3>
+
+<pre><code class="language-xml">&lt;view&gt;
+   &lt;user&gt;lqiao&lt;user&gt;
+   &lt;role&gt;_readonly_member&lt;role&gt;
+&lt;/view&gt;
+</code></pre>
+
+<h2 id="elastic">&lt;elastic&gt;</h2>
+
+<p>The <code>&lt;elastic&gt;</code> element is used to provide configurations for the elastic agents.</p>
+
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>jobStarvationTimeout</td>
+<td>No</td>
+<td>Timeout in minutes. If a job that requires an elastic agent is not assigned within the specified period, the elastic agent plugin will be <a href="https://plugin-api.gocd.org/current/elastic-agents/#create-agent">notified</a> to create a new elastic agent.</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="examples-15">Examples</h3>
+
+<pre><code class="language-xml">&lt;elastic jobStarvationTimeout=&quot;10&quot;&gt;
+  &lt;profiles&gt;
+    &lt;profile id=&quot;aws.small&quot; pluginId=&quot;aws&quot;&gt;
+      ...
+    &lt;/profile&gt;
+  &lt;/profiles&gt;
+&lt;/elastic&gt;
+</code></pre>
+
+<p><a href="#top">top</a></p>
+
+<h2 id="profiles">&lt;profiles&gt;</h2>
+
+<p><code>&lt;profiles&gt;</code> element specifies the profiles to configure elastic agents.</p>
+
+<p>There can be zero or more profiles.</p>
+
+<h3 id="examples-16">Examples</h3>
+
+<pre><code class="language-xml">&lt;profiles&gt;
+  &lt;profile id=&quot;aws.small&quot; pluginId=&quot;aws&quot;&gt;
+    ...
+  &lt;/profile&gt;
+&lt;/profiles&gt;
+</code></pre>
+
+<p><a href="#top">top</a></p>
+
+<h2 id="profile">&lt;profile&gt;</h2>
+
+<p><code>&lt;profile&gt;</code> specifies the <a href="#property">configuration</a> to be used to to create an elastic-agent instance.
+A profile should have a unique <code>id</code> attribute and should be associated to plugin through the <code>pluginId</code> attribute.</p>
+
+<h3 id="attributes-4">Attributes</h3>
+
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>id</td>
+<td>Yes</td>
+<td>Unique Id of profile.</td>
+</tr>
+
+<tr>
+<td>pluginId</td>
+<td>Yes</td>
+<td>The Id of elastic-agent plugin.</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="example-2">Example:</h3>
+
+<pre><code class="language-xml">&lt;profile id=&quot;ec2.small-us-east&quot; pluginId=&quot;com.example.ec2&quot;&gt;
+  &lt;property&gt;
+    &lt;key&gt;ami-id&lt;/key&gt;
+    &lt;value&gt;ami-6ac7408f&lt;/value&gt;
+  &lt;/property&gt;
+  &lt;property&gt;
+    &lt;key&gt;region&lt;/key&gt;
+    &lt;value&gt;us-east-1&lt;/value&gt;
+  &lt;/property&gt;
+&lt;/profile&gt;
+</code></pre>
+
+<p><a href="#top">top</a></p>
+
+<h2 id="config-repos">&lt;config-repos&gt;</h2>
+
+<p>The <code>&lt;config-repos&gt;</code> element is a container of many <code>&lt;config-repo&gt;</code>.</p>
+
+<h3 id="example-3">Example</h3>
+
+<pre><code class="language-xml">&lt;cruise&gt;
+  ...
+  &lt;config-repos&gt;
+    &lt;config-repo pluginId=&quot;json.config.plugin&quot; id=&quot;gocd-json-config-example&quot;&gt;
+      &lt;git url=&quot;https://github.com/tomzo/gocd-json-config-example.git&quot; /&gt;
+    &lt;/config-repo&gt;
+    &lt;config-repo pluginId=&quot;yaml.config.plugin&quot; id=&quot;gocd-yaml-config-example&quot;&gt;
+      &lt;git url=&quot;https://github.com/tomzo/gocd-yaml-config-example.git&quot; /&gt;
+      &lt;configuration&gt;
+        &lt;property&gt;
+          &lt;key&gt;file_pattern&lt;/key&gt;
+          &lt;value&gt;**/*.gocd.yaml&lt;/value&gt;
+        &lt;/property&gt;
+      &lt;/configuration&gt;
+    &lt;/config-repo&gt;
+  &lt;/config-repos&gt;
+&lt;/cruise&gt;
+</code></pre>
+
+<p><a href="#top">top</a></p>
+
+<h2 id="config-repo">&lt;config-repo&gt;</h2>
+
+<p>The <code>&lt;config-repo&gt;</code> element specifies a single configuration repository. It must contain exactly one SCM material and may contain additional configuration section.</p>
+
+<h3 id="attributes-5">Attributes</h3>
+
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>pluginId</td>
+<td>Yes</td>
+<td>The ID of configuration repository plugin. E.g. <code>json.config.plugin</code>.</td>
+</tr>
+
+<tr>
+<td>id</td>
+<td>Yes</td>
+<td>The ID of the configuration repository. ID must be a unique alphanumeric string. It can also contain <code>-</code>,<code>_</code>,<code>.</code>.</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="example-4">Example</h3>
+
+<pre><code class="language-xml">&lt;cruise&gt;
+    ...
+    &lt;config-repos&gt;
+      &lt;config-repo pluginId=&quot;yaml.config.plugin&quot; id=&quot;gocd-yaml-config-example&quot;&gt;
+        &lt;git url=&quot;https://github.com/tomzo/gocd-yaml-config-example.git&quot; /&gt;
+        &lt;configuration&gt;
+          &lt;property&gt;
+            &lt;key&gt;file_pattern&lt;/key&gt;
+            &lt;value&gt;**/*.gocd.yaml&lt;/value&gt;
+          &lt;/property&gt;
+        &lt;/configuration&gt;
+      &lt;/config-repo&gt;
+  &lt;/config-repos&gt;
+&lt;/cruise&gt;
+</code></pre>
+
+<h3 id="config-repo-configuration">&lt;configuration&gt;</h3>
+
+<p>The <code>&lt;configuration&gt;</code> element is optional part of config repo definition.
+Keys and values are specified and handled by particular plugin. This section
+can be used to <strong>customize how config repo plugin works when parsing this specific repository</strong>.</p>
+
+<h4 id="example-5">Example</h4>
+
+<pre><code class="language-xml">&lt;configuration&gt;
+  &lt;property&gt;
+    &lt;key&gt;file_pattern&lt;/key&gt;
+    &lt;value&gt;*.go.yaml&lt;/value&gt;
+  &lt;/property&gt;
+  &lt;property&gt;
+    &lt;key&gt;allowed_pipelines_regex&lt;/key&gt;
+    &lt;value&gt;project-X-.*&lt;/value&gt;
+  &lt;/property&gt;
+&lt;/configuration&gt;
+</code></pre>
+
+<p><a href="#top">top</a></p>
+
+<h2 id="config-repo-svn">&lt;svn&gt;</h2>
+
+<p>The config repo <code>&lt;svn&gt;</code> material element specifies the location of your code base in Subversion repository.</p>
+
+<h3 id="attributes-6">Attributes</h3>
+
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>url</td>
+<td>Yes</td>
+<td>URL for the remote repository. Go supports the following protocols for subversion: http, https, svn and svn+ssh, but does not support &lsquo;file:///&lsquo;.</td>
+</tr>
+
+<tr>
+<td>username</td>
+<td>No</td>
+<td>The user account for the remote repository.</td>
+</tr>
+
+<tr>
+<td>password</td>
+<td>No</td>
+<td>The password for the specified user</td>
+</tr>
+
+<tr>
+<td>encryptedPassword</td>
+<td>No</td>
+<td>The encrypted password for the specified user</td>
+</tr>
+
+<tr>
+<td>checkexternals</td>
+<td>No</td>
+<td>The default value is false, the value should be either one of true/false or <sup>1</sup>&frasl;<sub>0</sub>. &lsquo;true&rsquo; or &lsquo;1&rsquo; means that the changes of externals will be included as part of configuration.</td>
+</tr>
+
+<tr>
+<td>materialName</td>
+<td>No</td>
+<td>The name to identify a material. Material name can contain the following characters: a-z, A-Z, 0-9, fullstop, underscore and hyphen, but whitespace is not allowed. A material name is case insensitive and starting with fullstop is invalid. The max length is 255 characters.</td>
+</tr>
+
+<tr>
+<td>autoUpdate</td>
+<td>No</td>
+<td>By default Go polls the repository for changes automatically. If autoUpdate is set to false then Go will not poll the repository for changes. For config repo materials, autoUpdate is always set to true.</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="notes-2">Notes:</h3>
+
+<p>Go cannot automatically accept svn SSL certificates. If you are using https for svn repository, you have to go to the Server,
+and as the user &lsquo;go&rsquo; do a command &ldquo;svn update&rdquo; to store the certificates in the cache permanently.</p>
+
+<h3 id="examples-17">Examples:</h3>
+
+<pre><code class="language-xml">&lt;config-repo pluginId=&quot;json.config.plugin&quot; id=&quot;repo1&quot;&gt;
+    &lt;svn  url=&quot;http://svn-server.com/framework&quot; /&gt;
+&lt;/config-repo&gt;
+</code></pre>
+
+<p><a href="#top">top</a></p>
+
+<h2 id="config-repo-hg">&lt;hg&gt;</h2>
+
+<p>The config repo <code>&lt;hg&gt;</code> material element specifies the location of your code base in a Mercurial repository. Go supports the following protocols for Mercurial: http, ssh.</p>
+
+<h3 id="notes-3">Notes:</h3>
+
+<p>You must install Mercurial 1.5 or above on the Go Server. Go does not ship with Mercurial.</p>
+
+<h3 id="attributes-7">Attributes</h3>
+
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>url</td>
+<td>Yes</td>
+<td>URL to fetch source code from the Mercurial repository. If you specify the username and password for the Mercurial repository, you should put them into the url. Mercurial supports an optional identifier after # in the url, which indicates a particular branch, tag or changeset. This option can be used to configure mercurial branches in Go.</td>
+</tr>
+
+<tr>
+<td>materialName</td>
+<td>No</td>
+<td>The name to identify a material. Material name can contain the following characters: a-z, A-Z, 0-9, fullstop, underscore and hyphen. Spaces are not allowed. Material name is case insensitive. The max length is 255 characters.</td>
+</tr>
+
+<tr>
+<td>autoUpdate</td>
+<td>No</td>
+<td>By default Go polls the repository for changes automatically. If autoUpdate is set to false then Go will not poll the repository for changes. For config repo materials, autoUpdate is always set to true.</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="examples-18">Examples</h3>
+
+<pre><code class="language-xml">&lt;config-repo pluginId=&quot;json.config.plugin&quot; id=&quot;repo1&quot;&gt;
+    &lt;hg url=&quot;http://username:password@your-hg/&quot;/&gt;
+&lt;/config-repo&gt;
+</code></pre>
+
+<h4 id="specifying-a-mercurial-branch">Specifying a mercurial branch.</h4>
+
+<pre><code class="language-xml">&lt;config-repo pluginId=&quot;json.config.plugin&quot; id=&quot;repo1&quot;&gt;
+    &lt;hg url=&quot;http://username:password@your-hg##branch_name&quot;/&gt;
+&lt;/config-repo&gt;
+</code></pre>
+
+<p>Note that # needs to be escaped with another # - hence the ## in the url above.</p>
+
+<p><a href="#top">top</a></p>
+
+<h2 id="config-repo-p4">&lt;p4&gt;</h2>
+
+<p>The config repo <code>&lt;p4&gt;</code> material element specifies the location of your code base in a Perforce repository.</p>
+
+<h3 id="attributes-8">Attributes</h3>
+
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>port</td>
+<td>Yes</td>
+<td>Perforce server connection to use (host:port). This is the same as you would pass in the p4port parameter for the p4 command line or in the P4PORT environment variable.</td>
+</tr>
+
+<tr>
+<td>username</td>
+<td>No</td>
+<td>Perforce username to use.</td>
+</tr>
+
+<tr>
+<td>password</td>
+<td>No</td>
+<td>Password for the specified user.</td>
+</tr>
+
+<tr>
+<td>encryptedPassword</td>
+<td>No</td>
+<td>Encrypted Password for the specified user.</td>
+</tr>
+
+<tr>
+<td>useTickets</td>
+<td>No</td>
+<td>Set to true to work with perforce tickets. Go will do a p4 login using the supplied password before each command. We recommend that you make your user a part of a p4 group, and set the ticket timeout to unlimited as described <a href="http://www.perforce.com/perforce/doc.current/manuals/cmdref/login.html">here</a>.</td>
+</tr>
+
+<tr>
+<td>view</td>
+<td>Yes</td>
+<td>Valid Perforce view. The view should be a sub-element of P4. Click <a href="http://www.perforce.com/perforce/doc.082/manuals/p4guide/02_config.html#1066090">here</a> to see details about VIEW of Perforce.</td>
+</tr>
+
+<tr>
+<td>materialName</td>
+<td>No</td>
+<td>The name to identify a material. Material name can contain the following characters: a-z, A-Z, 0-9, fullstop, underscore and hyphen. Spaces are not allowed. Material name is case insensitive. The max length is 255 characters.</td>
+</tr>
+
+<tr>
+<td>autoUpdate</td>
+<td>No</td>
+<td>By default Go polls the repository for changes automatically. If autoUpdate is set to false then Go will not poll the repository for changes. For config repo materials, autoUpdate is always set to true.</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="notes-4">Notes:</h3>
+
+<p>Views consist of multiple mappings. Each mapping has two parts:</p>
+
+<ol>
+<li>The left-hand side specifies one or more files in the depot and has the form: //depotname/file_specification</li>
+<li>The right-hand side specifies one or more files in the client workspace and has the form: //clientname/file_specification</li>
+</ol>
+
+<p>Go creates a p4 client to check out files into its sandbox with the &lsquo;clobber&rsquo; option set. All other options use default values as defined by Perforce. Client name is generated automatically by Go. Hence, you can use anything as &lsquo;clientname&rsquo; on the right-hand side in view mapping. The client name format is: cruise-[hostname]-[config repo id]-[a random hash code], for example &ldquo;cruise-myhostname-configrepo1-wOaJ9kjpfgOLQCncki19ikXt5Q&rdquo;.</p>
+
+<p>Go views are in the same format as that used by Perforce itself. In fact you should be able to copy a Perforce view from your existing Perforce
+setup and paste it into the view section.</p>
+
+<p>For example:</p>
+
+<pre><code class="language-xml">&lt;config-repo pluginId=&quot;json.config.plugin&quot; id=&quot;repo1&quot;&gt;
+    &lt;p4 port=&quot;10.18.3.102:1666&quot; username=&quot;userName&quot; password=&quot;passwd&quot;&gt;
+      &lt;view&gt;&lt;![CDATA[
+    //depot/dev/src...          //anything/src/...
+    //depot/dev/test...         //anything/test/...
+    //depot/dev/main/docs/...   //anything/docs/...
+      ]]&gt;&lt;/view&gt;
+    &lt;/p4&gt;
+&lt;/config-repo&gt;
+</code></pre>
+
+<p><a href="#top">top</a></p>
+
+<h2 id="config-repo-git">&lt;git&gt;</h2>
+
+<p>The config repo <code>&lt;git&gt;</code> material element specifies the location of your code base in a GIT repository. Go only supports remote repositories.</p>
+
+<h3 id="notes-5">Notes:</h3>
+
+<p>git versions 1.9 and above are supported by Go.</p>
+
+<p>If &lsquo;branch&rsquo; is defined, Go will check out the specified branch. Otherwise, Go will check out the master branch.</p>
+
+<p>If there are submodules in the repository, Go will check out them as well.</p>
+
+<p>While installing msysGit On Windows machines for Go server, please choose Option iii, namely <em>Run Git and included UNIX tools from
+windows command prompt</em></p>
+
+<p>If you are using git through SSH on windows, please ensure that the HOME user environment variable is set to the full path of the parent
+directory where the .ssh/ directory is located.</p>
+
+<h3 id="attributes-9">Attributes</h3>
+
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>url</td>
+<td>Yes</td>
+<td>git url for the repository.</td>
+</tr>
+
+<tr>
+<td>branch</td>
+<td>No</td>
+<td>a branch name in the repository.</td>
+</tr>
+
+<tr>
+<td>materialName</td>
+<td>No</td>
+<td>The name to identify a material. Material name can contain the following characters: a-z, A-Z, 0-9, fullstop, underscore and hyphen. Spaces are not allowed. Material name is case insensitive. The max length is 255 characters.</td>
+</tr>
+
+<tr>
+<td>autoUpdate</td>
+<td>No</td>
+<td>By default Go polls the repository for changes automatically. If autoUpdate is set to false then Go will not poll the repository for changes. For config repo materials, autoUpdate is always set to true.</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="examples-are">Examples are:</h3>
+
+<pre><code class="language-xml">&lt;config-repo pluginId=&quot;json.config.plugin&quot; id=&quot;repo1&quot;&gt;
+    &lt;git url=&quot;git://127.0.0.1/precommit.git&quot; branch=&quot;1.3branch&quot;/&gt;
+&lt;/config-repo&gt;
+</code></pre>
+
+<p><a href="#top">top</a></p>
+
+<h2 id="config-repo-tfs">&lt;tfs&gt;</h2>
+
+<p>The config repo <code>&lt;tfs&gt;</code> material element specifies the location of your code base in a TFS Source repository.</p>
+
+<h3 id="attributes-10">Attributes</h3>
+
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>url</td>
+<td>Yes</td>
+<td>url for the Collection on the TFS Server.</td>
+</tr>
+
+<tr>
+<td>Domain</td>
+<td>No</td>
+<td>Domain name for TFS authentication credentials.</td>
+</tr>
+
+<tr>
+<td>Username</td>
+<td>Yes</td>
+<td>Username of the account to access the TFS collection.</td>
+</tr>
+
+<tr>
+<td>Password</td>
+<td>Yes</td>
+<td>Password of the account to access the TFS collection.</td>
+</tr>
+
+<tr>
+<td>encryptedPassword</td>
+<td>No</td>
+<td>Encrypted Password of the account to access the TFS collection.</td>
+</tr>
+
+<tr>
+<td>Project Path</td>
+<td>Yes</td>
+<td>The project path within the TFS collection.</td>
+</tr>
+
+<tr>
+<td>materialName</td>
+<td>No</td>
+<td>The name to identify a material. Material name can contain the following characters: a-z, A-Z, 0-9, fullstop, underscore and hyphen. Spaces are not allowed. Material name is case insensitive. The max length is 255 characters.</td>
+</tr>
+
+<tr>
+<td>autoUpdate</td>
+<td>No</td>
+<td>By default Go polls the repository for changes automatically. If autoUpdate is set to false then Go will not poll the repository for changes. For config repo materials, autoUpdate is always set to true.</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="examples-are-1">Examples are:</h3>
+
+<pre><code class="language-xml">&lt;config-repo pluginId=&quot;json.config.plugin&quot; id=&quot;repo1&quot;&gt;
+    &lt;tfs url=&quot;http://10.21.3.210:8080/tfs/New&quot; domain=&quot;DOMAIN&quot; username=&quot;jim&quot; password=&quot;as802nsk9==&quot; projectPath=&quot;$/webapp&quot; /&gt;
+&lt;/config-repo&gt;
+</code></pre>
+
+<p><a href="#top">top</a></p>
+
+<h2 id="config-repo-scm">&lt;scm&gt;</h2>
+
+<p>The config repo <code>&lt;scm&gt;</code> material element specifies the location of your code base in any of the  SCM repositories.</p>
+
+<h3 id="attributes-11">Attributes</h3>
+
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>ref</td>
+<td>Yes</td>
+<td>The unique package repository id.</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="examples-are-2">Examples are:</h3>
+
+<pre><code class="language-xml">&lt;config-repo pluginId=&quot;json.config.plugin&quot; id=&quot;repo1&quot;&gt;
+    &lt;scm ref=&quot;e289f497-057b-46bc-bb69-8043454f5c1b&quot;/&gt;
+&lt;/config-repo&gt;
+</code></pre>
+
+<p><a href="#top">top</a></p>
+
+<h2 id="repositories">&lt;repositories&gt;</h2>
+
+<p>The <code>&lt;repositories&gt;</code> element is a container of package repositories.</p>
+
+<h3 id="example-6">Example</h3>
+
+<pre><code class="language-xml">&lt;cruise&gt;
+  ...
+  &lt;repositories&gt;
+    &lt;repository id=&quot;repo-id&quot; name=&quot;repo-name&quot;&gt;
+      &lt;pluginConfiguration id=&quot;plugin-id&quot; version=&quot;plugin-version&quot; /&gt;
+      &lt;configuration&gt;
+        &lt;property&gt;
+            &lt;key&gt;property-name&lt;/key&gt;
+            &lt;value&gt;property-value&lt;/value&gt;
+        &lt;/property&gt;
+        ...
+      &lt;/configuration&gt;
+      &lt;packages&gt;
+        &lt;package id=&quot;package-id&quot; name=&quot;package-name&quot;  &gt;
+          &lt;configuration&gt;
+            &lt;property&gt;
+                &lt;key&gt;property-name&lt;/key&gt;
+                &lt;value&gt;property-value&lt;/value&gt;
+            &lt;/property&gt;
+            ...
+          &lt;/configuration&gt;
+        &lt;/package&gt;
+      &lt;/packages&gt;
+    &lt;/repository&gt;
+  &lt;/repositories&gt;
+&lt;/cruise&gt;
+</code></pre>
+
+<p><a href="#top">top</a></p>
+
+<h2 id="repository">&lt;repository&gt;</h2>
+
+<p>The <code>&lt;repository&gt;</code> element specifies a single repository. Repository must be be unique by id and name (name is case-insensitive) across repositories configuration.</p>
+
+<h3 id="attributes-12">Attributes</h3>
+
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>id</td>
+<td>No</td>
+<td>The id uniquely identifies a package repository by GO. This attribute need not be specified. In case no value is given, server auto-generates a random UUID and assigns it as repository id.</td>
+</tr>
+
+<tr>
+<td>name</td>
+<td>Yes</td>
+<td>The name uniquely identifies a package repository which will be specified by user and same will be used to display on screen. Repository name can contain the following characters: a-z, A-Z, 0-9, fullstop, underscore and hyphen. Spaces are not allowed. Name is case-insensitive in Go and the length should be less than 255 characters.</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="example-7">Example</h3>
+
+<pre><code class="language-xml">&lt;cruise&gt;
+  ...
+  &lt;repositories&gt;
+    &lt;repository id=&quot;repo-id&quot; name=&quot;repo-name&quot;&gt;
+      &lt;pluginConfiguration id=&quot;plugin-id&quot; version=&quot;plugin-version&quot; /&gt;
+      &lt;configuration&gt;
+        &lt;property&gt;
+            &lt;key&gt;property-name&lt;/key&gt;
+            &lt;value&gt;property-value&lt;/value&gt;
+        &lt;/property&gt;
+        ...
+      &lt;/configuration&gt;
+      &lt;packages&gt;
+        &lt;package id=&quot;package-id&quot; name=&quot;package-name&quot;  &gt;
+          &lt;configuration&gt;
+            &lt;property&gt;
+                &lt;key&gt;property-name&lt;/key&gt;
+                &lt;value&gt;property-value&lt;/value&gt;
+            &lt;/property&gt;
+            ...
+          &lt;/configuration&gt;
+        &lt;/package&gt;
+      &lt;/packages&gt;
+    &lt;/repository&gt;
+  &lt;/repositories&gt;
+&lt;/cruise&gt;
+</code></pre>
+
+<p><a href="#top">top</a></p>
+
+<h2 id="pluginConfiguration">&lt;pluginConfiguration&gt;</h2>
+
+<p>The <code>&lt;pluginConfiguration&gt;</code> element specifies configuration related to plugin.</p>
+
+<h3 id="attributes-13">Attributes</h3>
+
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>id</td>
+<td>Yes</td>
+<td>Specifies plugin id which is going to handle repository configuration</td>
+</tr>
+
+<tr>
+<td>version</td>
+<td>Yes</td>
+<td>Specifies plugin version which is going to handle repository configuration</td>
+</tr>
+</tbody>
+</table>
+
+<p><a href="#top">top</a></p>
+
+<h2 id="configuration">&lt;configuration&gt;</h2>
+
+<p>The <code>&lt;configuration&gt;</code> element specifies configuration related repository or package as one or more properties.</p>
+
+<p><a href="#top">top</a></p>
+
+<h2 id="property">&lt;property&gt;</h2>
+
+<p>The <code>&lt;property&gt;</code> element holds key and value.</p>
+
+<p><a href="#top">top</a></p>
+
+<h2 id="key">&lt;key&gt;</h2>
+
+<p>The <code>&lt;key&gt;</code> element specifies name of property.</p>
+
+<p><a href="#top">top</a></p>
+
+<h2 id="value">&lt;value&gt;</h2>
+
+<p>The <code>&lt;value&gt;</code> element specifies value of property.</p>
+
+<p><a href="#top">top</a></p>
+
+<h2 id="packages">&lt;packages&gt;</h2>
+
+<p>The <code>&lt;packages&gt;</code> element specifies list of packages under a repository.</p>
+
+<p><a href="#top">top</a></p>
+
+<h2 id="package">&lt;package&gt;</h2>
+
+<p>The <code>&lt;package&gt;</code> element specifies single package under a repository. This tag holds configuration related to package</p>
+
+<h3 id="attributes-14">Attributes</h3>
+
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>id</td>
+<td>No</td>
+<td>The id uniquely identifies a package by GO across repositories. This attribute need not be specified. In case no value is given, server auto-generates a random UUID and assigns it as package id.</td>
+</tr>
+
+<tr>
+<td>name</td>
+<td>Yes</td>
+<td>The name uniquely identifies a package within a repository, name will be specified by user and same will be used to display on screen. Package name can contain the following characters: a-z, A-Z, 0-9, fullstop, underscore and hyphen. Spaces are not allowed. Name is case-insensitive in Go and the length should be less than 255 characters.</td>
+</tr>
+
+<tr>
+<td>autoUpdate</td>
+<td>No</td>
+<td>By default Go polls the repository for changes automatically. If autoUpdate is set to false then Go will not poll the repository for changes. Instead it will check for changes only when you trigger a pipeline that contains this material.</td>
+</tr>
+</tbody>
+</table>
+
+<p><a href="#top">top</a></p>
+
+<h2 id="artifactStores">&lt;artifactStores&gt;</h2>
+
+<p>The <code>&lt;artifactStores&gt;</code> element is a container of many <code>&lt;artifactStore&gt;</code>.</p>
+
+<h3 id="example-8">Example</h3>
+
+<pre><code class="language-xml">&lt;cruise&gt;
+  ...
+  &lt;artifactStores&gt;
+      &lt;artifactStore id=&quot;dockerhub&quot; pluginId=&quot;cd.go.artifact.docker.registry&quot;&gt;
+        &lt;property&gt;
+          &lt;key&gt;RegistryURL&lt;/key&gt;
+          &lt;value&gt;https://index.docker.io/v1/&lt;/value&gt;
+        &lt;/property&gt;
+        &lt;property&gt;
+          &lt;key&gt;Username&lt;/key&gt;
+          &lt;value&gt;boohoo&lt;/value&gt;
+        &lt;/property&gt;
+        &lt;property&gt;
+          &lt;key&gt;Password&lt;/key&gt;
+          &lt;value&gt;password&lt;/value&gt;
+        &lt;/property&gt;
+      &lt;/artifactStore&gt;
+    &lt;/artifactStores&gt;
+&lt;/cruise&gt;
+</code></pre>
+
+<p><a href="#top">top</a></p>
+
+<h2 id="artifactStore">&lt;artifactStore&gt;</h2>
+
+<p>The <code>&lt;artifactStore&gt;</code> element specifies a global artifact store to publish/fetch external artifacts. It can contain zero or more <code>&lt;property&gt;</code> elements to specify the plugin properties.</p>
+
+<h3 id="attributes-15">Attributes</h3>
+
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>pluginId</td>
+<td>Yes</td>
+<td>The ID of artifact plugin. E.g. <code>cd.go.artifact.docker.registry</code>.</td>
+</tr>
+
+<tr>
+<td>id</td>
+<td>Yes</td>
+<td>The ID of the artifact store. ID must be a unique alphanumeric string. It can also contain <code>-</code>,<code>_</code>,<code>.</code>. This will be used later in the publish config</td>
+</tr>
+</tbody>
+</table>
+
+<p><a href="#top">top</a></p>
+
+<h2 id="pipelines">&lt;pipelines&gt;</h2>
+
+<p>The <code>&lt;pipelines&gt;</code> element is a container of pipelines.</p>
+
+<h3 id="attributes-16">Attributes</h3>
+
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>group</td>
+<td>No</td>
+<td>The name is used to identify a pipeline group, and must be unique. The name can contain the following characters: a-z, A-Z, 0-9, period (.), underscore (_) and hyphen (-). Spaces are not allowed. The length should be less than 255 characters. The default name is &lsquo;defaultGroup&rsquo;.</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="examples-19">Examples</h3>
+
+<pre><code class="language-xml">&lt;cruise&gt;
+  ...
+  &lt;pipelines group=&quot;studios&quot;&gt;
+    &lt;pipeline name=&quot;yourproject&quot; labeltemplate=&quot;foo-1.0.${COUNT}&quot;&gt;
+      &lt;materials&gt;
+        &lt;svn url=&quot;http://your-svn/&quot;/&gt;
+      &lt;/materials&gt;
+      &lt;stage name=&quot;ut&quot;&gt;
+    &lt;jobs&gt;
+      &lt;job name=&quot;linux&quot;&gt;
+        &lt;resources&gt;
+          &lt;resource&gt;linux&lt;/resource&gt;
+        &lt;/resources&gt;
+        &lt;tasks&gt;
+          &lt;ant target=&quot;unit-test&quot; /&gt;
+        &lt;/tasks&gt;
+      &lt;/job&gt;
+    &lt;/jobs&gt;
+      &lt;/stage&gt;
+    &lt;/pipeline&gt;
+  &lt;/pipelines&gt;
+&lt;/cruise&gt;
+</code></pre>
+
+<p><a href="#top">top</a></p>
+
+<h2 id="authorization">&lt;authorization&gt;</h2>
+
+<p>The <code>&lt;authorization&gt;</code> tag allows you to specify the what users and roles are able to administer, view or operate any particular group of pipelines.</p>
+
+<p><a href="#top">top</a></p>
+
+<h2 id="admins-1">&lt;admins&gt;</h2>
+
+<p>The <code>&lt;admins&gt;</code> element is a permission section to specify who can administer the pipeline group. Go administrators can define roles and users in the tag.</p>
+
+<p>Users and Roles defined as group admins can view and operate on all pipelines in this pipeline group. They are allowed to navigate to the admin page where they can only see and edit this pipeline group which includes creating and modifying pipelines in this group,via the Pipeline Configuration Tab. They have no permission to view or modify the Pipeline Templates even if they are used by any pipeline in this group.</p>
+
+<p><strong>Note:</strong> Go Administrators (<a href="#admins">admins</a>) defined in <a href="#security">security</a> tab, can administer all pipeline groups.</p>
+
+<h3 id="examples-20">Examples</h3>
+
+<p>Given the following configuration only <a href="#admins">admins</a>, lqiao and any users having the role &lsquo;studios_group_admin&rsquo;.</p>
+
+<pre><code class="language-xml">&lt;cruise&gt;
+  ...
+  &lt;pipelines group=&quot;studios&quot;&gt;
+    &lt;authorization&gt;
+        &lt;admins&gt;
+           &lt;user&gt;lqiao&lt;/user&gt;
+           &lt;role&gt;studios_group_admin&lt;/role&gt;
+        &lt;/admins&gt;
+    &lt;/authorization&gt;
+    &lt;pipeline name=&quot;yourproject&quot; labeltemplate=&quot;foo-1.0.${COUNT}&quot;&gt;
+    ......
+    &lt;/pipeline&gt;
+  &lt;/pipelines&gt;
+&lt;/cruise&gt;
+</code></pre>
+
+<p><a href="#top">top</a></p>
+
+<h2 id="view">&lt;view&gt;</h2>
+
+<p>The <code>&lt;view&gt;</code> element is a permission section to specify who can see the pipelines under the pipeline group. You can define roles and users in the tag.</p>
+
+<p><strong>Note:</strong>Administrators (<a href="#admins">admins</a>) can see all pipeline groups. Any other users or roles that are not listed under the <code>&lt;view&gt;</code> tag will be unable to see this pipeline group</p>
+
+<h3 id="examples-21">Examples</h3>
+
+<p>Given the following configuration only administrators can operate the pipeline group, and only <a href="#admins">admins</a>, lqiao and any users having the role &lsquo;go_readonly_member&rsquo; can see the pipeline.</p>
+
+<pre><code class="language-xml">&lt;cruise&gt;
+  ...
+  &lt;pipelines group=&quot;studios&quot;&gt;
+    &lt;authorization&gt;
+        &lt;view&gt;
+           &lt;user&gt;lqiao&lt;/user&gt;
+           &lt;role&gt;go_readonly_member&lt;/role&gt;
+        &lt;/view&gt;
+    &lt;/authorization&gt;
+    &lt;pipeline name=&quot;yourproject&quot; labeltemplate=&quot;foo-1.0.${COUNT}&quot;&gt;
+    ......
+    &lt;/pipeline&gt;
+  &lt;/pipelines&gt;
+&lt;/cruise&gt;
+</code></pre>
+
+<p><a href="#top">top</a></p>
+
+<h2 id="operate">&lt;operate&gt;</h2>
+
+<p>The <code>&lt;operate&gt;</code> element specifies who can operate the pipelines under the pipeline group. You can define roles and users.</p>
+
+<p><strong>Note:</strong>Any users/roles that are not listed under the <a href="#group_view"><code>&lt;view&gt;</code></a> tag will be unable to see this pipeline group (even if they are listed as being allowed to <code>&lt;operate&gt;</code> that pipeline group)</p>
+
+<h3 id="examples-22">Examples</h3>
+
+<p>Given the following configuration, only <a href="#admins">admins</a>, lqiao, jez and the users having the role &lsquo;go_core_member&rsquo; can operate the pipeline group. Only <a href="#admins">admins</a>, lqiao and the users having the role &lsquo;go_readonly_member&rsquo; can see the pipeline (jez and go_core_member cannot).</p>
+
+<pre><code class="language-xml">&lt;cruise&gt;
+  ...
+  &lt;pipelines group=&quot;studios&quot;&gt;
+    &lt;authorization&gt;
+        &lt;view&gt;
+           &lt;user&gt;lqiao&lt;/user&gt;
+           &lt;role&gt;go_readonly_member&lt;/role&gt;
+        &lt;/view&gt;
+        &lt;operate&gt;
+           &lt;user&gt;lqiao&lt;/user&gt;
+           &lt;user&gt;jez&lt;/user&gt;
+           &lt;role&gt;go_core_member&lt;/role&gt;
+        &lt;/operate&gt;
+    &lt;/authorization&gt;
+    &lt;pipeline name=&quot;yourproject&quot; labeltemplate=&quot;foo-1.0.${COUNT}&quot;&gt;
+    ......
+    &lt;/pipeline&gt;
+  &lt;/pipelines&gt;
+&lt;/cruise&gt;
+</code></pre>
+
+<p><a href="#top">top</a></p>
+
+<h2 id="pipeline">&lt;pipeline&gt;</h2>
+
+<p>The <code>&lt;pipeline&gt;</code> element specifies a single pipeline. It must be unique (including case) across the entire configuration (not only in the
+pipeline group).</p>
+
+<p><strong>Notes:</strong></p>
+
+<p>There should be at least one stage in one pipeline. Go uses the pipeline name to identify the pipeline. If you change the pipeline name, you will lose the history of the pipeline.</p>
+
+<h3 id="attributes-17">Attributes</h3>
+
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>name</td>
+<td>Yes</td>
+<td>The name is used to identify a pipeline, so each pipeline name must be unique. Pipeline name can contain the following characters: a-z, A-Z, 0-9, fullstop, underscore and hyphen. Spaces are not allowed. Name is case-insensitive in Go and the length should be less than 255 characters.</td>
+</tr>
+
+<tr>
+<td>labeltemplate</td>
+<td>No</td>
+<td>Both of material names and ${COUNT} are available in the labeltemplate and the default value of labeltemplate is &lsquo;${COUNT}&rsquo;. If you just specify labeltemplate=&ldquo;foo-1.0-${COUNT}&rdquo;, your pipeline will show foo-1.0-1, foo-1.0-2, and so on. When you reference material names in the labeltemplate, Go will use the revisions of the reference materials to populate the pipeline label. For example, given a mateial name is &lsquo;svnrepo&rsquo; in a pipeline, when you specify labeltemplate=&ldquo;foo-1.0-${svnrepo}&rdquo;, then your pipeline would show foo-1.0-3123, foo-1.0-3124, and so on. Material names are case insensitive. The max length of a pipeline label is 255. If a material name is &lsquo;svnrepo&rsquo;, the following labeltemplates are valid: ${COUNT}, ${svnrepo}, foo-${COUNT}-${SVNrepo}, foo-${svnrepo}-${COUNT}-bar.</td>
+</tr>
+
+<tr>
+<td>lockBehavior</td>
+<td>No</td>
+<td>The possible values are &ldquo;none&rdquo;, &ldquo;lockOnFailure&rdquo; or &ldquo;unlockWhenFinished&rdquo;.The default value is &ldquo;none&rdquo;. When set to &ldquo;lockOnFailure&rdquo;, GoCD ensures that only a single instance of a pipeline can be run at a time and the pipeline <a href="../configuration/admin_lock_pipelines.html">will be locked</a> if it fails, unless it is the last stage which fails. When set to &ldquo;unlockWhenFinished&rdquo;, GoCD ensures that only a single instance of a pipeline can be run at a time, and the pipeline will be unlocked as soon as it finishes (success or failure), or reaches a manual stage.</td>
+</tr>
+
+<tr>
+<td>template</td>
+<td>No</td>
+<td>The name of the template that this pipeline references. If this is set, no stages may be defined in this pipeline.</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="examples-23">Examples</h3>
+
+<pre><code class="language-xml">&lt;pipelines&gt;
+  &lt;pipeline name=&quot;yourproject&quot; labeltemplate=&quot;foo-1.0.${COUNT}-${svn}&quot; lockBehavior=&quot;lockOnFailure&quot;&gt;
+  &lt;environmentvariables&gt;
+     &lt;variable name=&quot;FOO&quot;&gt;&lt;value&gt;bar&lt;/value&gt;&lt;/variable&gt;
+   &lt;/environmentvariables&gt;
+    &lt;materials&gt;
+      &lt;svn url=&quot;http://your-svn/&quot; materialName=&quot;svn&quot; /&gt;
+    &lt;/materials&gt;
+    &lt;stage name=&quot;ut&quot;&gt;
+      &lt;jobs&gt;
+    &lt;job name=&quot;linux&quot;&gt;
+      &lt;resources&gt;
+        &lt;resource&gt;linux&lt;/resource&gt;
+      &lt;/resources&gt;
+      &lt;tasks&gt;
+        &lt;ant target=&quot;unit-test&quot; /&gt;
+      &lt;/tasks&gt;
+    &lt;/job&gt;
+      &lt;/jobs&gt;
+    &lt;/stage&gt;
+  &lt;/pipeline&gt;
+&lt;/pipelines&gt;
+</code></pre>
+
+<p><a href="#top">top</a></p>
+
+<h2 id="params">&lt;params&gt;</h2>
+
+<p>The element <code>&lt;params&gt;</code> specifies the list of parameters (Element <a href="#param">param</a>) elements to be used in a pipeline or a pipeline template. You can specify these under a <a href="#pipeline"><code>&lt;pipeline&gt;</code></a> and can be used anywhere inside pipeline/stage/job definition.</p>
+
+<p><a href="#top">top</a></p>
+
+<h2 id="param">&lt;param&gt;</h2>
+
+<p>A <code>&lt;param&gt;</code> defines the parameter name that will be substituted with the paramerter value that will be substituted in a pipeline or a pipeline
+template.</p>
+
+<h3 id="example-9">Example:</h3>
+
+<pre><code class="language-xml">&lt;params&gt;
+    &lt;param name=&quot;COMMAND&quot;&gt;echo&lt;/param&gt;
+    &lt;param name=&quot;WORKING_DIR&quot;&gt;/repo/branch&lt;/param&gt;
+&lt;/params&gt;
+</code></pre>
+
+<p><a href="#top">top</a></p>
+
+<h2 id="trackingtool">&lt;trackingtool&gt;</h2>
+
+<p>The <code>&lt;trackingtool&gt;</code> element can be used to specify links to an issue tracker. Go will construct a link based on the commit message that you
+can use to take you to your tracking tool (Mingle card, JIRA issue, Trac issue etc).</p>
+
+<h3 id="attributes-18">Attributes</h3>
+
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>link</td>
+<td>Yes</td>
+<td>a URL with a string &lsquo;${ID}&rsquo;. Go will replace the string &lsquo;${ID}&rsquo; with the first matched group value at run-time.</td>
+</tr>
+
+<tr>
+<td>regex</td>
+<td>Yes</td>
+<td>A [regex]() to identify the IDs. Go will find the first matched group in your commit messages and use it to construct the hyper-link.</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="examples-24">Examples</h3>
+
+<p>Suppose you are using a Web Application to manage your tasks or bugs, and the link looks like <a href="http://your-trackingtool/yourproject/512">http://your-trackingtool/yourproject/512</a>, &lsquo;512&rsquo;
+is your task ID. Your configuration would be:</p>
+
+<pre><code class="language-xml">&lt;pipeline name=&quot;yourproject&quot;&gt;
+  &lt;trackingtool link=&quot;http://your-trackingtool/yourproject/${ID}&quot; regex=&quot;evo-(\d+)&quot;/&gt;
+  ...
+&lt;/pipeline&gt;
+</code></pre>
+
+<p>If you check in some code with a commit message which includes the characters &lsquo;evo-512&rsquo; then that will appear in the modification pop-up
+box as a link. When you click it, Go will take you to the web page &lsquo;<a href="http://your-trackingtool/yourproject/512'">http://your-trackingtool/yourproject/512'</a>.</p>
+
+<p>For example: If you use <a href="http://www.thoughtworks.com/products/mingle-agile-project-management/">Mingle</a> for your task manager, the configuration would be:</p>
+
+<pre><code class="language-xml">&lt;pipeline name=&quot;yourproject&quot;&gt;
+  &lt;trackingtool link=&quot;http://your-mingle-server/projects/yourproject/cards/${ID}&quot; regex=&quot;##(\d+)&quot;/&gt;
+  ...
+&lt;/pipeline&gt;
+</code></pre>
+
+<p><strong>Notes:</strong> You can not define multiple tracking tools in one pipeline.</p>
+
+<p><a href="#top">top</a></p>
+
+<h2 id="mingle">&lt;mingle&gt;</h2>
+
+<p>This element let&rsquo;s you associate a <a href="http://www.thoughtworks-studios.com/mingle">Mingle</a> project to a pipeline. Once associated, you will be able to track Mingle cards from within Go.</p>
+
+<p><strong>Note:</strong> You cannot configure a <a href="#trackingtool">trackingtool</a> if mingle is configured for a pipeline.</p>
+
+<h3 id="attributes-19">Attributes</h3>
+
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>baseUrl</td>
+<td>Yes</td>
+<td>Base URL to the Mingle installation (do not include the project name/identifier)</td>
+</tr>
+
+<tr>
+<td>projectIdentifier</td>
+<td>Yes</td>
+<td>This is the &ldquo;Identifier&rdquo; specified under a Mingle project&rsquo;s &ldquo;Basic Options&rdquo;</td>
+</tr>
+
+<tr>
+<td>mqlGroupingConditions</td>
+<td>No</td>
+<td>An MQL string that determines the &ldquo;passing criteria&rdquo; for cards displayed in Go</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="examples-25">Examples</h3>
+
+<pre><code class="language-xml">&lt;mingle
+    baseUrl=&quot;http://mingle.example.com&quot;
+    projectIdentifier=&quot;my_project&quot;&gt;
+    &lt;mqlGroupingConditions&gt;status &gt; 'In Dev'&lt;/mqlGroupingConditions&gt;
+&lt;/mingle&gt;
+</code></pre>
+
+<p><a href="#top">top</a></p>
+
+<h2 id="timer">&lt;timer&gt;</h2>
+
+<p>The <code>&lt;timer&gt;</code> element specifies a cron-like schedule to build the pipeline.</p>
+
+<h3 id="attributes-20">Attributes</h3>
+
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>onlyOnChanges</td>
+<td>No</td>
+<td>Skips scheduling if the previous run of the pipeline was with the latest material(s). This option is typically useful when automatic pipeline scheduling is turned off.</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="examples-26">Examples</h3>
+
+<p>For example to run a pipeline once a night at 10pm on weekdays:</p>
+
+<pre><code class="language-xml">&lt;pipeline name=&quot;yourproject&quot;&gt;
+  &lt;timer&gt;0 0 22 ? * MON-FRI&lt;/timer&gt;
+  ...
+&lt;/pipeline&gt;
+</code></pre>
+
+<p>Go uses the <a href="http://www.quartz-scheduler.org/documentation/quartz-2.x/quick-start">Quartz</a> scheduler internally. For convenience we reproduce the <a href="http://www.quartz-scheduler.org/documentation/quartz-2.x/tutorials/crontrigger">Quartz cron documentation</a> here:</p>
+
+<h3 id="format-1">Format</h3>
+
+<p>A cron expression is a string comprised of 6 or 7 fields separated by white space. Fields can contain any of the allowed values, along with
+various combinations of the allowed special characters for that field. The fields are as follows:</p>
+
+<table>
+<thead>
+<tr>
+<th>Field Name</th>
+<th>Mandatory?</th>
+<th>Allowed Values</th>
+<th>Allowed Special Characters</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Seconds</td>
+<td>YES</td>
+<td>0-59</td>
+<td>, - * /</td>
+</tr>
+
+<tr>
+<td>Minutes</td>
+<td>YES</td>
+<td>0-59</td>
+<td>, - * /</td>
+</tr>
+
+<tr>
+<td>Hours</td>
+<td>YES</td>
+<td>0-23</td>
+<td>, - * /</td>
+</tr>
+
+<tr>
+<td>Day of month</td>
+<td>YES</td>
+<td>1-31</td>
+<td>, - * ? / L W</td>
+</tr>
+
+<tr>
+<td>Month</td>
+<td>YES</td>
+<td>1-12 or JAN-DEC</td>
+<td>, - * /</td>
+</tr>
+
+<tr>
+<td>Day of week</td>
+<td>YES</td>
+<td>1-7 or SUN-SAT</td>
+<td>, - * ? / L #</td>
+</tr>
+
+<tr>
+<td>Year</td>
+<td>NO</td>
+<td>empty, 1970-2099</td>
+<td>, - * /</td>
+</tr>
+</tbody>
+</table>
+
+<p>So cron expressions can be as simple as this: <code>* * * * * ?</code> or more complex, like this: <code>0 15 10 ? * 6L 2002-2005</code></p>
+
+<h3 id="special-characters-1">Special characters</h3>
+
+<ul>
+<li><p><code>*</code> (<em>&ldquo;all values&rdquo;</em>) - used to select all values within a field. For example, &ldquo;*&rdquo; in the minute field means <em>&ldquo;every minute&rdquo;</em>.</p></li>
+
+<li><p><code>?</code> (<em>&ldquo;no specific value&rdquo;</em>) - useful when you need to specify something in one of the two fields in which the character is allowed, but not the other. For example, if I want my trigger to fire on a particular day of the month (say, the 10th), but don&rsquo;t care what day of the week that happens to be, I would put &ldquo;10&rdquo; in the day-of-month field, and &ldquo;?&rdquo; in the day-of-week field. See the examples below for clarification.</p></li>
+
+<li><p><code>-</code> - used to specify ranges. For example, &ldquo;10-12&rdquo; in the hour field means <em>&ldquo;the hours 10, 11 and 12&rdquo;</em>.</p></li>
+
+<li><p><code>,</code> - used to specify additional values. For example, &ldquo;MON,WED,FRI&rdquo; in the day-of-week field means <em>&ldquo;the days Monday, Wednesday, and Friday&rdquo;</em>.</p></li>
+
+<li><p><code>/</code> - used to specify increments. For example, &ldquo;0/15&rdquo; in the seconds field means <em>&ldquo;the seconds 0, 15, 30, and 45&rdquo;</em>. And &ldquo;<sup>5</sup>&frasl;<sub>15</sub>&rdquo; in the seconds field means <em>&ldquo;the seconds 5, 20, 35, and 50&rdquo;</em>. You can also specify &lsquo;/&rsquo; after the &lsquo;<strong>&rsquo; character - in this case &lsquo;</strong>&rsquo; is equivalent to having &lsquo;0&rsquo; before the &lsquo;/&rsquo;. &lsquo;<sup>1</sup>&frasl;<sub>3</sub>&rsquo; in the day-of-month field means <em>&ldquo;fire every 3 days starting on the first day of the month&rdquo;</em>.</p></li>
+
+<li><p><code>L</code> (<em>&ldquo;last&rdquo;</em>) - has different meaning in each of the two fields in which it is allowed. For example, the value &ldquo;L&rdquo; in the day-of-month field means <em>&ldquo;the last day of the month&rdquo;</em> - day 31 for January, day 28 for February on non-leap years. If used in the day-of-week field by itself, it simply means &ldquo;7&rdquo; or &ldquo;SAT&rdquo;. But if used in the day-of-week field after another value, it means <em>&ldquo;the last xxx day of the month&rdquo;</em> - for example &ldquo;6L&rdquo; means <em>&ldquo;the last friday of the month&rdquo;</em>. When using the &lsquo;L&rsquo; option, it is important not to specify lists, or ranges of values, as you&rsquo;ll get confusing results.</p></li>
+
+<li><p><code>W</code> (<em>&ldquo;weekday&rdquo;</em>) - used to specify the weekday (Monday-Friday) nearest the given day. As an example, if you were to specify &ldquo;15W&rdquo; as the value for the day-of-month field, the meaning is: <em>&ldquo;the nearest weekday to the 15th of the month&rdquo;</em>. So if the 15th is a Saturday, the trigger will fire on Friday the 14th. If the 15th is a Sunday, the trigger will fire on Monday the 16th. If the 15th is a Tuesday, then it will fire on Tuesday the 15th. However if you specify &ldquo;1W&rdquo; as the value for day-of-month, and the 1st is a Saturday, the trigger will fire on Monday the 3rd, as it will not &lsquo;jump&rsquo; over the boundary of a month&rsquo;s days. The &lsquo;W&rsquo; character can only be specified when the day-of-month is a single day, not a range or list of days. The &lsquo;L&rsquo; and &lsquo;W&rsquo; characters can also be combined in the day-of-month field to yield &lsquo;LW&rsquo;, which translates to <em>&ldquo;last weekday of the month&rdquo;</em>.</p></li>
+
+<li><p><code>#</code> - used to specify &ldquo;the nth&rdquo; XXX day of the month. For example, the value of &ldquo;6#3&rdquo; in the day-of-week field means <em>&ldquo;the third Friday of the month&rdquo;</em> (day 6 = Friday and &ldquo;#3&rdquo; = the 3rd one in the month). Other examples: &ldquo;2#1&rdquo; = the first Monday of the month and &ldquo;4#5&rdquo; = the fifth Wednesday of the month. Note that if you specify &ldquo;#5&rdquo; and there is not 5 of the given day-of-week in the month, then no firing will occur that month. The legal characters and the names of months and days of the week are not case sensitive. <code>MON</code> is the same as <code>mon</code>.</p></li>
+</ul>
+
+<h3 id="examples-27">Examples</h3>
+
+<p>Here are some full examples:</p>
+
+<table>
+<thead>
+<tr>
+<th>Expression</th>
+<th>Meaning</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><code>0 0 12 * * ?</code></td>
+<td>Fire at 12pm (noon) every day</td>
+</tr>
+
+<tr>
+<td><code>0 15 10 ? * *</code></td>
+<td>Fire at 10:15am every day</td>
+</tr>
+
+<tr>
+<td><code>0 15 10 * * ?</code></td>
+<td>Fire at 10:15am every day</td>
+</tr>
+
+<tr>
+<td><code>0 15 10 * * ? *</code></td>
+<td>Fire at 10:15am every day</td>
+</tr>
+
+<tr>
+<td><code>0 15 10 * * ? 2005</code></td>
+<td>Fire at 10:15am every day during the year 2005</td>
+</tr>
+
+<tr>
+<td><code>0 * 14 * * ?</code></td>
+<td>Fire every minute starting at 2pm and ending at 2:59pm, every day</td>
+</tr>
+
+<tr>
+<td><code>0 0/5 14 * * ?</code></td>
+<td>Fire every 5 minutes starting at 2pm and ending at 2:55pm, every day</td>
+</tr>
+
+<tr>
+<td><code>0 0/5 14,18 * * ?</code></td>
+<td>Fire every 5 minutes starting at 2pm and ending at 2:55pm, AND fire every 5 minutes starting at 6pm and ending at 6:55pm, every day</td>
+</tr>
+
+<tr>
+<td><code>0 0-5 14 * * ?</code></td>
+<td>Fire every minute starting at 2pm and ending at 2:05pm, every day</td>
+</tr>
+
+<tr>
+<td><code>0 10,44 14 ? 3 WED</code></td>
+<td>Fire at 2:10pm and at 2:44pm every Wednesday in the month of March.</td>
+</tr>
+
+<tr>
+<td><code>0 15 10 ? * MON-FRI</code></td>
+<td>Fire at 10:15am every Monday, Tuesday, Wednesday, Thursday and Friday</td>
+</tr>
+
+<tr>
+<td><code>0 15 10 15 * ?</code></td>
+<td>Fire at 10:15am on the 15th day of every month</td>
+</tr>
+
+<tr>
+<td><code>0 15 10 L * ?</code></td>
+<td>Fire at 10:15am on the last day of every month</td>
+</tr>
+
+<tr>
+<td><code>0 15 10 ? * 6L</code></td>
+<td>Fire at 10:15am on the last Friday of every month</td>
+</tr>
+
+<tr>
+<td><code>0 15 10 ? * 6L</code></td>
+<td>Fire at 10:15am on the last Friday of every month</td>
+</tr>
+
+<tr>
+<td><code>0 15 10 ? * 6L 2002-2005</code></td>
+<td>Fire at 10:15am on every last friday of every month during the years 2002, 2003, 2004 and 2005</td>
+</tr>
+
+<tr>
+<td><code>0 15 10 ? * 6#3</code></td>
+<td>Fire at 10:15am on the third Friday of every month</td>
+</tr>
+
+<tr>
+<td><code>0 0 12 1/5 * ?</code></td>
+<td>Fire at 12pm (noon) every 5 days every month, starting on the first day of the month.</td>
+</tr>
+
+<tr>
+<td><code>0 11 11 11 11 ?</code></td>
+<td>Fire every November 11th at 11:11am.</td>
+</tr>
+</tbody>
+</table>
+
+<p>Pay attention to the effects of &lsquo;?&rsquo; and &lsquo;*&rsquo; in the day-of-week and day-of-month fields!</p>
+
+<h3 id="notes-6">Notes</h3>
+
+<ul>
+<li>Support for specifying both a day-of-week and a day-of-month value is not complete (you must currently use the &lsquo;?&rsquo; character in one of these fields).</li>
+<li>Be careful when setting fire times between mid-night and 1:00 AM - &ldquo;daylight savings&rdquo; can cause a skip or a repeat depending on whether the time moves back or jumps forward.</li>
+</ul>
+
+<p><a href="#top">top</a></p>
+
+<h2 id="materials">&lt;materials&gt;</h2>
+
+<p>The <code>&lt;materials&gt;</code> element specifies the source of the pipeline changes. Generally this will be your codebase in your source control repository.</p>
+
+<p><strong>Notes:</strong></p>
+
+<p>Go supports multiple materials with the restriction that every material must contain a unique &ldquo;dest&rdquo; folder (that is not a subfolder of any
+other material). Go will check out the source code into this folder for each material.</p>
+
+<h3 id="examples-28">Examples</h3>
+
+<pre><code class="language-xml">&lt;pipeline name=&quot;yourproject&quot; labeltemplate=&quot;foo-1.0.${COUNT}&quot;&gt;
+  &lt;materials&gt;
+    &lt;svn url=&quot;http://your-svn/&quot;/&gt;
+  &lt;/materials&gt;
+  ...
+&lt;/pipeline&gt;
+</code></pre>
+
+<p>Multiple materials:</p>
+
+<pre><code class="language-xml">&lt;pipeline name=&quot;yourproject&quot; labeltemplate=&quot;foo-1.0.${COUNT}&quot;&gt;
+  &lt;materials&gt;
+    &lt;svn url=&quot;http://your-svn/&quot; dest=&quot;svn-folder&quot; /&gt;
+    &lt;git url=&quot;git://127.0.0.1/precommit.git&quot; branch=&quot;1.3branch&quot; dest=&quot;git-folder&quot; /&gt;
+    &lt;hg url=&quot;http://your-hg/&quot; dest=&quot;hg-folder&quot; /&gt;
+    &lt;p4 port=&quot;10.18.3.102:1666&quot; username=&quot;userName&quot; password=&quot;passwd&quot; dest=&quot;p4-folder&quot;&gt;
+      &lt;view&gt;&lt;![CDATA[
+    //depot/dev/src...          //anything/src/...
+      ]]&gt;&lt;/view&gt;
+    &lt;/p4&gt;
+  &lt;/materials&gt;
+  ...
+&lt;/pipeline&gt;
+</code></pre>
+
+<p><a href="#top">top</a></p>
+
+<h2 id="filter">&lt;filter&gt;</h2>
+
+<p>The <code>&lt;filter&gt;</code> element specifies files in changesets that should not trigger a pipeline automatically. When a pipeline is triggered by files that are not ignored the filtered files will still be updated with other files. You can only define one filter under each SCM material. When you trigger a pipeline manually, it will update to most recent revision, including filtered files.</p>
+
+<h3 id="examples-29">Examples</h3>
+
+<pre><code class="language-xml">&lt;svn url=&quot;http://your-svn/&quot;&gt;
+  &lt;filter&gt;
+    &lt;ignore pattern=&quot;doc/**/*.*&quot; /&gt;
+  &lt;/filter&gt;
+&lt;/svn&gt;
+</code></pre>
+
+<p><a href="#top">top</a></p>
+
+<h2 id="ignore">&lt;ignore&gt;</h2>
+
+<p>The <code>&lt;ignore&gt;</code> element is used to specify a set of files that are ignored when Go checks for changes. Repository changesets which only
+contain these files will not trigger a pipeline automatically.</p>
+
+<h3 id="attributes-21">Attributes</h3>
+
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>pattern</td>
+<td>Yes</td>
+<td>defines a pattern (Ant-style) for the files to be ignored. Changes of thoes files will not trigger the pipeline. the pattern is relative to the root of the SCM repository, not the sandbox of the pipeline.</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="notes-7">Notes</h3>
+
+<ul>
+<li><code>&lt;ignore&gt;</code> can occur multiple times under <a href="#filter"><code>&lt;filter&gt;</code></a>.</li>
+<li>The pattern is relative to the root directory of the SCM repository, not the sandbox in the agent side or the materials URL.</li>
+<li>Ignored files are still updated when other files are updated.</li>
+</ul>
+
+<h3 id="examples-30">Examples:</h3>
+
+<pre><code class="language-xml">&lt;ignore pattern=&quot;doc/**/*&quot; /&gt;
+</code></pre>
+
+<p>Ignore everything under the folder <strong>&lsquo;doc&rsquo;</strong>.</p>
+
+<pre><code class="language-xml">&lt;ignore pattern=&quot;doc/*&quot; /&gt;
+</code></pre>
+
+<p>Ignore files under the folder <strong>&lsquo;doc&rsquo;</strong>, excluding any subfolder.</p>
+
+<pre><code class="language-xml">&lt;ignore pattern=&quot;framework/helper/*.doc&quot; /&gt;
+</code></pre>
+
+<p>Ignore files that are under the directory &lsquo;framework/helper&rsquo; and the file extension is <strong>.doc</strong>.</p>
+
+<pre><code class="language-xml">&lt;ignore pattern=&quot;*.pdf&quot; /&gt;
+</code></pre>
+
+<p>Ignore files that are under the root directory of SCM repository and the file extension is <strong>.pdf</strong>.</p>
+
+<pre><code class="language-xml">&lt;ignore pattern=&quot;**/helper/*.pdf&quot; /&gt;
+</code></pre>
+
+<p>Ignore all the files that is under any <strong>&lsquo;helper&rsquo;</strong> folder and the file extension is <strong>.pdf</strong>.</p>
+
+<pre><code class="language-xml">&lt;ignore pattern=&quot;helper/**/*.pdf&quot; /&gt;
+</code></pre>
+
+<p>Ignore all the files that are in the nested directory under folder <strong>&lsquo;helper&rsquo;</strong> of the repository and the file extension is <strong>.pdf</strong>.</p>
+
+<p><a href="#top">top</a></p>
+
+<h2 id="svn">&lt;svn&gt;</h2>
+
+<p>The <code>&lt;svn&gt;</code> element specifies the location of your code base in Subversion repository.</p>
+
+<h3 id="attributes-22">Attributes</h3>
+
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>url</td>
+<td>Yes</td>
+<td>URL for the remote repository. Go supports the following protocols for subversion: http, https, svn and svn+ssh, but does not support &lsquo;file:///&lsquo;.</td>
+</tr>
+
+<tr>
+<td>username</td>
+<td>No</td>
+<td>The user account for the remote repository.</td>
+</tr>
+
+<tr>
+<td>password</td>
+<td>No</td>
+<td>The password for the specified user</td>
+</tr>
+
+<tr>
+<td>checkexternals</td>
+<td>No</td>
+<td>The default value is false, the value should be either one of true/false or <sup>1</sup>&frasl;<sub>0</sub>. &lsquo;true&rsquo; or &lsquo;1&rsquo; means that the changes of externals will trigger the pipeline automatically.</td>
+</tr>
+
+<tr>
+<td>dest</td>
+<td>Required if there are multiple materials</td>
+<td>The directory where the code will be checked out. This is relative to the sandbox of the Go Agent. Go prevents the destination folder from being outside the agent&rsquo;s sandbox.</td>
+</tr>
+
+<tr>
+<td>materialName</td>
+<td>Required if this material is referenced in pipeline labeltemplate</td>
+<td>The name to identify a material. Material name can contain the following characters: a-z, A-Z, 0-9, fullstop, underscore and hyphen, but whitespace is not allowed. A material name is case insensitive and starting with fullstop is invalid. It needs to be unique within a pipeline. The max length is 255 characters.</td>
+</tr>
+
+<tr>
+<td>autoUpdate</td>
+<td>No</td>
+<td>By default Go polls the repository for changes automatically. If autoUpdate is set to false then Go will not poll the repository for changes. Instead it will check for changes only when you trigger a pipeline that contains this material or it receives a notification through a post-commit hook. If the same material is specified more than once in the configuration file, all of them must have the same value for autoUpdate.</td>
+</tr>
+
+<tr>
+<td>invertFilter</td>
+<td>No</td>
+<td>Inverts any <code>filter</code> elements, turning them into whitelists. Only files that <em>match</em> the filter will trigger a new build.</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="notes-8">Notes:</h3>
+
+<p>Go cannot automatically accept svn SSL certificates. If you are using https for svn repository, you have to go to the Server and each Agent,
+and as the user &lsquo;go&rsquo; do a command &ldquo;svn update&rdquo; to store the certificates in the cache permanently.</p>
+
+<h3 id="examples-31">Examples:</h3>
+
+<p>For a Go Agent on linux with the following configuration:</p>
+
+<pre><code class="language-xml">&lt;pipeline name=&quot;myproduct&quot;&gt;
+  &lt;materials&gt;
+    &lt;svn  url=&quot;http://svn-server.com/framework&quot; dest=&quot;framework&quot;/&gt;
+    &lt;svn  url=&quot;http://svn-server.com/componentOne&quot; dest=&quot;mycomponent&quot;/&gt;
+  &lt;/materials&gt;
+  ...
+&lt;/pipeline&gt;
+</code></pre>
+
+<p>Go Agent will check out source code from &lsquo;<a href="http://svn-server.com/framework'">http://svn-server.com/framework'</a> to &lsquo;/var/lib/go-agent/pipelines/myproduct/framwork&rsquo;, and from &lsquo;<a href="http://svn-server.com/componentOne'">http://svn-server.com/componentOne'</a> to &lsquo;/var/lib/go-agent/pipelines/myproduct/mycomponent&rsquo;.</p>
+
+<p><a href="#top">top</a></p>
+
+<h2 id="hg">&lt;hg&gt;</h2>
+
+<p>The <code>&lt;hg&gt;</code> element specifies the location of your code base in a Mercurial repository. Go supports the http and ssh for Mercurial.</p>
+
+<h3 id="notes-9">Notes:</h3>
+
+<p>You must install Mercurial 1.5 or above on the Go Server and Go Agents for the jobs need Mercurial. Go does not ship with Mercurial.</p>
+
+<h3 id="attributes-23">Attributes</h3>
+
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>url</td>
+<td>Yes</td>
+<td>URL to fetch source code from the Mercurial repository. If you specify the username and password for the Mercurial repository, you should put them into the url. Mercurial supports an optional identifier after # in the url, which indicates a particular branch, tag or changeset. This option can be used to configure mercurial branches in Go.</td>
+</tr>
+
+<tr>
+<td>dest</td>
+<td>Only for multiple materials</td>
+<td>The directory where the code will be checked out. This is relative to the sandbox of the Go Agent. Go prevents the destination folder from being outside the agent&rsquo;s sandbox.</td>
+</tr>
+
+<tr>
+<td>materialName</td>
+<td>Required if this material is referenced in pipeline labeltemplate</td>
+<td>The name to identify a material. Material name can contain the following characters: a-z, A-Z, 0-9, fullstop, underscore and hyphen. Spaces are not allowed. Material name is case insensitive. It needs to be unique within a pipeline. The max length is 255 characters.</td>
+</tr>
+
+<tr>
+<td>autoUpdate</td>
+<td>No</td>
+<td>By default Go polls the repository for changes automatically. If autoUpdate is set to false then Go will not poll the repository for changes. Instead it will check for changes only when you trigger a pipeline that contains this material. If the same material is specified more than once in the configuration file, all of them must have the same value for autoUpdate.</td>
+</tr>
+
+<tr>
+<td>invertFilter</td>
+<td>No</td>
+<td>Inverts any <code>filter</code> elements, turning them into whitelists. Only files that <em>match</em> the filter will trigger a new build.</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="examples-32">Examples</h3>
+
+<pre><code class="language-xml">&lt;pipeline name=&quot;yourproject&quot;&gt;
+  &lt;materials&gt;
+    &lt;hg url=&quot;http://username:password@your-hg/&quot;/&gt;
+  &lt;/materials&gt;
+  ...
+&lt;/pipeline&gt;
+</code></pre>
+
+<h4 id="specifying-a-mercurial-branch-1">Specifying a mercurial branch.</h4>
+
+<pre><code class="language-xml">&lt;pipeline name=&quot;yourproject_branch&quot;&gt;
+  &lt;materials&gt;
+    &lt;hg url=&quot;http://username:password@your-hg##branch_name&quot;/&gt;
+  &lt;/materials&gt;
+  ...
+&lt;/pipeline&gt;
+</code></pre>
+
+<p>Note that # needs to be escaped with another # - hence the ## in the url above.</p>
+
+<p><a href="#top">top</a></p>
+
+<h2 id="p4">&lt;p4&gt;</h2>
+
+<p>The <code>&lt;p4&gt;</code> element specifies the location of your code base in a Perforce repository.</p>
+
+<h3 id="notes-10">Notes:</h3>
+
+<p>Go will use directory under pipelines/{pipelineName} in agent side as Perforce root directory of perforce client workspace.</p>
+
+<h3 id="attributes-24">Attributes</h3>
+
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>port</td>
+<td>Yes</td>
+<td>Perforce server connection to use (host:port). This is the same as you would pass in the p4port parameter for the p4 command line or in the P4PORT environment variable.</td>
+</tr>
+
+<tr>
+<td>username</td>
+<td>No</td>
+<td>Perforce username to use.</td>
+</tr>
+
+<tr>
+<td>password</td>
+<td>No</td>
+<td>Password for the specified user.</td>
+</tr>
+
+<tr>
+<td>useTickets</td>
+<td>No</td>
+<td>Set to true to work with perforce tickets. Go will do a p4 login using the supplied password before each command. We recommend that you make your user a part of a p4 group, and set the ticket timeout to unlimited as described <a href="http://www.perforce.com/perforce/doc.current/manuals/cmdref/login.html">here</a>.</td>
+</tr>
+
+<tr>
+<td>dest</td>
+<td>Only for multiple materials</td>
+<td>The directory where the code will be checked out. This is relative to the sandbox of the Go Agent. Go prevents the destination folder from being outside the agent&rsquo;s sandbox.</td>
+</tr>
+
+<tr>
+<td>view</td>
+<td>Yes</td>
+<td>Valid Perforce view. The view should be a sub-element of P4. Click <a href="http://www.perforce.com/perforce/doc.082/manuals/p4guide/02_config.html#1066090">here</a> to see details about VIEW of Perforce.</td>
+</tr>
+
+<tr>
+<td>materialName</td>
+<td>Required if this material is referenced in pipeline labeltemplate</td>
+<td>The name to identify a material. Material name can contain the following characters: a-z, A-Z, 0-9, fullstop, underscore and hyphen. Spaces are not allowed. Material name is case insensitive. It needs to be unique within a pipeline. The max length is 255 characters.</td>
+</tr>
+
+<tr>
+<td>autoUpdate</td>
+<td>No</td>
+<td>By default Go polls the repository for changes automatically. If autoUpdate is set to false then Go will not poll the repository for changes. Instead it will check for changes only when you trigger a pipeline that contains this material. If the same material is specified more than once in the configuration file, all of them must have the same value for autoUpdate.</td>
+</tr>
+
+<tr>
+<td>invertFilter</td>
+<td>No</td>
+<td>Inverts any <code>filter</code> elements, turning them into whitelists. Only files that <em>match</em> the filter will trigger a new build.</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="notes-11">Notes:</h3>
+
+<p>You do not need to specify the above attributes if you have already defined them as system variables. So if you have a P4PASSWD variable
+defined then you can leave out the &ldquo;password&rdquo; tag defined above. If you already have them defined as system variables and also in Go
+configuration, Go will overwrite them before running p4.</p>
+
+<p>Views consist of multiple mappings. Each mapping has two parts:</p>
+
+<ol>
+<li>The left-hand side specifies one or more files in the depot and has the form: //depotname/file_specification</li>
+<li>The right-hand side specifies one or more files in the client workspace and has the form: //clientname/file_specification</li>
+</ol>
+
+<p>Go creates a p4 client to check out files into its sandbox with the &lsquo;clobber&rsquo; option set. This means, during material update all writable-but-unopened files in the workspace would be overwritten on the agent. All other options use default values as defined by Perforce. Client name is generated automatically by Go. Hence, you can use anything as &lsquo;clientname&rsquo; on the right-hand side in view mapping. The client name format is: cruise-[hostname]-[pipeline name]-[a random hash code], for example &ldquo;cruise-myhostname-mypipelinename-wOaJ9kjpfgOLQCncki19ikXt5Q&rdquo;. THE GO_P4_CLIENT environment variable will have the client name used. This variable can be used in scripts to get the client name</p>
+
+<p>Go views are in the same format as that used by Perforce itself. In fact you should be able to copy a Perforce view from your existing Perforce
+setup and paste it into the view section.</p>
+
+<p>For example:</p>
+
+<pre><code class="language-xml">&lt;pipeline name=&quot;perforce-example&quot;/&gt;
+  &lt;materials&gt;
+    &lt;p4 port=&quot;10.18.3.102:1666&quot; username=&quot;userName&quot; password=&quot;passwd&quot;&gt;
+      &lt;view&gt;&lt;![CDATA[
+    //depot/dev/src...          //anything/src/...
+    //depot/dev/test...         //anything/test/...
+    //depot/dev/main/docs/...   //anything/docs/...
+      ]]&gt;&lt;/view&gt;
+    &lt;/p4&gt;
+  &lt;/materials&gt;
+  ...
+&lt;/pipeline&gt;
+</code></pre>
+
+<p><a href="#top">top</a></p>
+
+<h2 id="git">&lt;git&gt;</h2>
+
+<p>The <code>&lt;git&gt;</code> element specifies the location of your code base in a GIT repository. Go only supports remote repositories.</p>
+
+<h3 id="notes-12">Notes:</h3>
+
+<p>git versions 1.7 and above are supported by Go.</p>
+
+<p>If &lsquo;branch&rsquo; is defined, Go will check out the specified branch. Otherwise, Go will check out the master branch.</p>
+
+<p>If there are submodules in the repository, Go will check out them as well.</p>
+
+<p>msysGit on Windows has a <a href="https://github.com/msysgit/msysgit/issues/43">defect</a> which causes an error when using Go. Please ensure to use a build which fixes this.</p>
+
+<p>While installing msysGit On Windows machines for Go server or agents, please choose Option iii, namely <em>Run Git and included UNIX tools from
+windows command prompt</em></p>
+
+<p>If you are using git through SSH on windows, please ensure that the HOME user environment variable is set to the full path of the parent
+directory where the .ssh/ directory is located.</p>
+
+<h3 id="attributes-25">Attributes</h3>
+
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>url</td>
+<td>Yes</td>
+<td>GIT URL for the repository.</td>
+</tr>
+
+<tr>
+<td>branch</td>
+<td>No</td>
+<td>a branch name in the repository.</td>
+</tr>
+
+<tr>
+<td>shallowClone</td>
+<td>No</td>
+<td>Add a <code>--depth=N</code> option to git cloning command on Go agent. Shallow clone truncates history to latest revisions, thus helps accelerating clone operation for repositories with long history. Cloning depth is dynamically calculated to ensure revisions from <a href="#env-var-GO_FROM_REVISION">GO_FROM_REVISION</a> to <a href="#env-var-GO_TO_REVISION">GO_TO_REVISION</a> are included in the cloned repository.</td>
+</tr>
+
+<tr>
+<td>dest</td>
+<td>Only for multiple materials</td>
+<td>The directory under the sandbox of Go Agent. Go will check out the source code into this directory.</td>
+</tr>
+
+<tr>
+<td>materialName</td>
+<td>Required if this material is referenced in pipeline labeltemplate</td>
+<td>The name to identify a material. Material name can contain the following characters: a-z, A-Z, 0-9, fullstop, underscore and hyphen. Spaces are not allowed. Material name is case insensitive. It needs to be unique within a pipeline. The max length is 255 characters.</td>
+</tr>
+
+<tr>
+<td>autoUpdate</td>
+<td>No</td>
+<td>By default Go polls the repository for changes automatically. If autoUpdate is set to false then Go will not poll the repository for changes. Instead it will check for changes only when you trigger a pipeline that contains this material. If the same material is specified more than once in the configuration file, all of them must have the same value for autoUpdate.</td>
+</tr>
+
+<tr>
+<td>invertFilter</td>
+<td>No</td>
+<td>Inverts any <code>filter</code> elements, turning them into whitelists. Only files that <em>match</em> the filter will trigger a new build.</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="examples-are-3">Examples are:</h3>
+
+<pre><code class="language-xml">&lt;pipeline name=&quot;yourproject&quot;&gt;
+  &lt;materials&gt;
+    &lt;git url=&quot;git://127.0.0.1/precommit.git&quot; branch=&quot;1.3branch&quot;/&gt;
+  &lt;/materials&gt;
+  ...
+&lt;/pipeline&gt;
+</code></pre>
+
+<pre><code class="language-xml">&lt;pipeline name=&quot;yourproject&quot;&gt;
+  &lt;materials&gt;
+    &lt;git url=&quot;http://ccegit:pst@goserver.yourcompany.com/httpgit.git&quot; /&gt;
+  &lt;/materials&gt;
+  ...
+&lt;/pipeline&gt;
+</code></pre>
+
+<p><a href="#top">top</a></p>
+
+<h2 id="tfs">&lt;tfs&gt;</h2>
+
+<p>The <code>&lt;tfs&gt;</code> element specifies the location of your code base in a TFS Source repository.</p>
+
+<h3 id="attributes-26">Attributes</h3>
+
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>URL</td>
+<td>Yes</td>
+<td>URL for the Collection on the TFS Server.</td>
+</tr>
+
+<tr>
+<td>Domain</td>
+<td>No</td>
+<td>Domain name for TFS authentication credentials.</td>
+</tr>
+
+<tr>
+<td>Username</td>
+<td>Yes</td>
+<td>Username of the account to access the TFS collection.</td>
+</tr>
+
+<tr>
+<td>Password</td>
+<td>Yes</td>
+<td>Password of the account to access the TFS collection.</td>
+</tr>
+
+<tr>
+<td>Project Path</td>
+<td>Yes</td>
+<td>The project path within the TFS collection.</td>
+</tr>
+
+<tr>
+<td>dest</td>
+<td>Only for multiple materials</td>
+<td>The directory where the code will be checked out. This is relative to the sandbox of the Go Agent. Go prevents the destination folder from being outside the agent&rsquo;s sandbox.</td>
+</tr>
+
+<tr>
+<td>invertFilter</td>
+<td>No</td>
+<td>Inverts any <code>filter</code> elements, turning them into whitelists. Only files that <em>match</em> the filter will trigger a new build.</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="examples-are-4">Examples are:</h3>
+
+<pre><code class="language-xml">&lt;pipeline name=&quot;webproject&quot;&gt;
+  &lt;materials&gt;
+    &lt;tfs url=&quot;http://10.21.3.210:8080/tfs/New&quot; domain=&quot;DOMAIN&quot; username=&quot;jim&quot; password=&quot;as802nsk9==&quot; projectPath=&quot;$/webapp&quot; /&gt;
+  &lt;/materials&gt;
+  ...
+&lt;/pipeline&gt;
+</code></pre>
+
+<pre><code class="language-xml">&lt;pipeline name=&quot;myproject&quot;&gt;
+  &lt;materials&gt;
+    &lt;tfs url=&quot;http://tfshost.tw.com:8080/tfs/DefaultCollection&quot; domain=&quot;DOMAIN&quot; username=&quot;jim&quot; password=&quot;as802nsk9==&quot; projectPath=&quot;$/webapp/component/branch&quot; /&gt;
+  &lt;/materials&gt;
+  ...
+&lt;/pipeline&gt;
+</code></pre>
+
+<p><a href="#top">top</a></p>
+
+<h2 id="package-1">&lt;package&gt;</h2>
+
+<p>The <code>&lt;package&gt;</code> element refers to package which is defined as part of repositories configuration.</p>
+
+<h3 id="attributes-27">Attributes</h3>
+
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>ref</td>
+<td>Yes</td>
+<td>The ref tag holds the id of the package</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="example-10">Example</h3>
+
+<pre><code class="language-xml">&lt;cruise&gt;
+  ...
+  &lt;repositories&gt;
+    &lt;repository id=&quot;repo-id&quot; name=&quot;repo-name&quot;&gt;
+      &lt;pluginConfiguration id=&quot;plugin-id&quot; version=&quot;plugin-version&quot; /&gt;
+      &lt;configuration&gt;
+        &lt;property&gt;
+            &lt;key&gt;property-name&lt;/key&gt;
+            &lt;value&gt;property-value&lt;/value&gt;
+        &lt;/property&gt;
+        ...
+      &lt;/configuration&gt;
+      &lt;packages&gt;
+        &lt;package id=&quot;1234-12242-232312&quot; name=&quot;sample-package&quot; &gt;
+          &lt;configuration&gt;
+            &lt;property&gt;
+                &lt;key&gt;property-name&lt;/key&gt;
+                &lt;value&gt;property-value&lt;/value&gt;
+            &lt;/property&gt;
+            ...
+          &lt;/configuration&gt;
+        &lt;/package&gt;
+      &lt;/packages&gt;
+    &lt;/repository&gt;
+  &lt;/repositories&gt;
+  &lt;pipelines name=&quot;webproject&quot;&gt;
+    ...
+    &lt;pipeline name=&quot;webproject&quot;&gt;
+        &lt;materials&gt;
+            &lt;package ref=&quot;1234-12242-232312&quot; /&gt;
+        &lt;/materials&gt;
+        ...
+    &lt;/pipeline&gt;
+    ...
+   &lt;/pipelines&gt;
+&lt;/cruise&gt;
+</code></pre>
+
+<p><a href="#top">top</a></p>
+
+<h2 id="pipeline-1">&lt;pipeline&gt;</h2>
+
+<p>The <code>&lt;pipeline&gt;</code> element specifies that successful completion of a stage in another pipeline will trigger the current pipeline to start.</p>
+
+<p>If there are multiple pipeline dependencies, then any one of them passing will trigger a new pipeline.</p>
+
+<p>Note that you can not specify two (or more) dependencies for the same upstream pipeline.</p>
+
+<h3 id="attributes-28">Attributes</h3>
+
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>pipelineName</td>
+<td>Yes</td>
+<td>The name of a pipeline that this pipeline depends on.</td>
+</tr>
+
+<tr>
+<td>stageName</td>
+<td>Yes</td>
+<td>The name of a stage which will trigger this pipeline once it is successful.</td>
+</tr>
+
+<tr>
+<td>materialName</td>
+<td>By default the materialName is the name of the upstream pipeline (the pipelineName). This is required if this material is referenced in pipeline labeltemplate</td>
+<td>The name to identify a material. Material name can contain the following characters: a-z, A-Z, 0-9, fullstop, underscore and hyphen. Spaces are not allowed. Material name is case insensitive. It needs to be unique within a pipeline. The max length is 255 characters.</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="notes-13">Notes:</h3>
+
+<p>The downstream pipeline wouldn&rsquo;t be triggered if there was no passed stage in the upstream pipeline.</p>
+
+<h3 id="examples-33">Examples</h3>
+
+<p>Suppose there are four pipelines, and they are commonLib1, commonLib2, Server and Client. For example, the stage &lsquo;distStage&rsquo; in commonLib1
+pipeline can trigger the other two pipelines, and the stage &lsquo;pkgstage&rsquo; in commonLib2 pipeline can trigger Server pipeline. The configuration
+would be:</p>
+
+<pre><code class="language-xml">&lt;pipeline name=&quot;Server&quot;&gt;
+  &lt;materials&gt;
+    &lt;pipeline pipelineName=&quot;commonLib1&quot; stageName=&quot;distStage&quot;/&gt;
+    &lt;pipeline pipelineName=&quot;commonLib2&quot; stageName=&quot;pkgStage&quot;/&gt;
+  &lt;/materials&gt;
+  ...
+&lt;/pipeline&gt;
+&lt;pipeline name=&quot;Client&quot;&gt;
+  &lt;materials&gt;
+    &lt;pipeline pipelineName=&quot;commonLib1&quot; stageName=&quot;distStage&quot;/&gt;
+  &lt;/materials&gt;
+  ...
+&lt;/pipeline&gt;
+</code></pre>
+
+<p><a href="#top">top</a></p>
+
+<h2 id="stage">&lt;stage&gt;</h2>
+
+<p>The <code>&lt;stage&gt;</code> element specifies a set of jobs. If any job in a given stage fails then the stage will fail. If a stage has an <a href="#approval"><code>&lt;approval&gt;</code></a> configuration with manual type it can only be triggered manually (i.e. a user must click on the trigger button on the UI). If the previous stage has failed, you can still trigger the following stage manually.</p>
+
+<p><strong>Notes:</strong></p>
+
+<p>There must be at least one job in stage.</p>
+
+<h3 id="attributes-29">Attributes</h3>
+
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>name</td>
+<td>Yes</td>
+<td>The name is used to identify a stage in the pipeline, so it has to be unique (case insensitive) for that <code>&lt;pipeline&gt;</code>. The available characters in stage name are following: a-z, A-Z, 0-9, fullstop, underscore and hyphen. Spaces are not allowed.</td>
+</tr>
+
+<tr>
+<td>fetchMaterials</td>
+<td>No (Default: true)</td>
+<td><strong>Perform material updates or checkouts on the agent</strong>. Set this attribute to false to skip this operation.</td>
+</tr>
+
+<tr>
+<td>cleanWorkingDir</td>
+<td>No (Default: false)</td>
+<td>Remove all files/directories in the working directory on the agent. By default this operation is skipped.</td>
+</tr>
+
+<tr>
+<td>artifactCleanupProhibited</td>
+<td>No (Default: false)</td>
+<td>Never cleanup artifacts for this stage, if purging artifacts is configured at the Server Level.</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="examples-34">Examples</h3>
+
+<pre><code class="language-xml">&lt;pipeline name=&quot;yourproject&quot;&gt;
+  ...
+  &lt;stage name=&quot;ut&quot;&gt;
+  &lt;environmentvariables&gt;
+     &lt;variable name=&quot;FOO&quot;&gt;&lt;value&gt;bar&lt;/value&gt;&lt;/variable&gt;
+   &lt;/environmentvariables&gt;
+    &lt;jobs&gt;
+      &lt;job name=&quot;linux&quot;&gt;
+    &lt;resources&gt;
+      &lt;resource&gt;linux&lt;/resource&gt;
+    &lt;/resources&gt;
+    &lt;tasks&gt;
+      &lt;ant target=&quot;unit-test&quot; /&gt;
+    &lt;/tasks&gt;
+      &lt;/job&gt;
+    &lt;/jobs&gt;
+  &lt;/stage&gt;
+&lt;/pipeline&gt;
+</code></pre>
+
+<p><a href="#top">top</a></p>
+
+<h2 id="jobs">&lt;jobs&gt;</h2>
+
+<p>The <code>&lt;jobs&gt;</code> element specify the set of jobs for a stage.</p>
+
+<p><strong>Note:</strong></p>
+
+<p><code>&lt;jobs&gt;</code> can contain several <a href="#job"><code>&lt;job&gt;</code></a> elements. These jobs can run in parallel on different <a href="#agents"><code>&lt;agents&gt;</code></a>.</p>
+
+<h3 id="examples-35">Examples</h3>
+
+<pre><code class="language-xml">&lt;stage name=&quot;ut&quot;&gt;
+  &lt;jobs&gt;
+    &lt;job name=&quot;linux&quot;&gt;
+      &lt;resources&gt;
+        &lt;resource&gt;linux&lt;/resource&gt;
+      &lt;/resources&gt;
+      &lt;tasks&gt;
+        &lt;ant target=&quot;unit-test&quot; /&gt;
+      &lt;/tasks&gt;
+    &lt;/job&gt;
+  &lt;/jobs&gt;
+&lt;/stage&gt;
+</code></pre>
+
+<p><a href="#top">top</a></p>
+
+<h2 id="job">&lt;job&gt;</h2>
+
+<p>A job is the basic unit of work. It is executed on an agent. A job can fetch artifacts from Go Server, execute tasks and publish artifacts back
+to Go Server.</p>
+
+<p>A job can also be associated with a set of <a href="#resources"><code>&lt;resources&gt;</code></a> or an <a href="#profile"><code>elastic profile</code></a> through the elasticProfileId attribute.
+Resources are used to match a Job to an Agent. ElasticProfileId is used to match a job to an Elastic Agent. An Agent can run a Job if it has all the resources or elasticProfileId that the Job specifies.</p>
+
+<p>A job cannot have both <a href="#resources">resources</a> as well as <a href="#profile">elasticProfileId</a>.
+If a Job has no resources then it can be built by any Agent (But not by an elastic agent)</p>
+
+<h3 id="attributes-30">Attributes</h3>
+
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>name</td>
+<td>Yes</td>
+<td>The name of the job. The name must be unique (ignoring case) within a <code>&lt;stage&gt;</code>. The name can contain: a-z, A-Z, 0-9, fullstop, underscore and hyphen only. Spaces are not allowed.</td>
+</tr>
+
+<tr>
+<td>runOnAllAgents</td>
+<td>No</td>
+<td>If set to &lsquo;true&rsquo; then the Job will run on all agents that can run the job.</td>
+</tr>
+
+<tr>
+<td>runInstanceCount</td>
+<td>No</td>
+<td>If set to &lsquo;x&rsquo; (integer) then &lsquo;x&rsquo; instances of Job will be spawned during scheduling. Environment variables <code>GO_JOB_RUN_INDEX</code> (with values 1-x for every Job) and <code>GO_JOB_RUN_COUNT</code> (with value x for each Job) will be exposed to each task of Job.</td>
+</tr>
+
+<tr>
+<td>timeout</td>
+<td>No</td>
+<td>A job can be configured to time out if it does not generate any console output for a period of time. Use this attribute to define the timeout value in minutes. Define timeout as 0 if the job should never time out. If the attribute is not defined, the default <code>&lt;server&gt;</code> level timeout behaviour will apply.</td>
+</tr>
+
+<tr>
+<td>elasticProfileId</td>
+<td>No</td>
+<td>A job can be configured to run on an elastic agent by specifying this attribute, which maps to the id of an existing <a href="#profile"><code>&lt;profile&gt;</code></a>. MUST NOT be specified along with <code>resources</code>.</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="examples-36">Examples</h3>
+
+<pre><code class="language-xml">&lt;job name=&quot;linux&quot;&gt;
+  &lt;environmentvariables&gt;
+    &lt;variable name=&quot;FOO&quot;&gt;
+      &lt;value&gt;bar&lt;/value&gt;
+    &lt;/variable&gt;
+  &lt;/environmentvariables&gt;
+  &lt;resources&gt;
+    &lt;resource&gt;linux&lt;/resource&gt;
+  &lt;/resources&gt;
+  &lt;tasks&gt;
+    &lt;ant target=&quot;unit-test&quot; /&gt;
+  &lt;/tasks&gt;
+&lt;/job&gt;
+</code></pre>
+
+<pre><code class="language-xml">&lt;job name=&quot;run-upgrade&quot; runOnAllAgents=&quot;true&quot; timeout='30' elasticProfileId=&quot;aws.small&quot;&gt;
+  &lt;tasks&gt;
+    &lt;ant target=&quot;upgrade&quot; /&gt;
+  &lt;/tasks&gt;
+&lt;/job&gt;
+</code></pre>
+
+<pre><code class="language-xml">&lt;job name=&quot;run-upgrade&quot; runInstanceCount=&quot;5&quot; timeout='30'&gt;
+  &lt;resources&gt;
+    &lt;resource&gt;linux&lt;/resource&gt;
+  &lt;/resources&gt;
+  &lt;tasks&gt;
+    &lt;ant target=&quot;upgrade&quot; /&gt;
+  &lt;/tasks&gt;
+&lt;/job&gt;
+</code></pre>
+
+<p><a href="#top">top</a></p>
+
+<h2 id="resources">&lt;resources&gt;</h2>
+
+<p><code>&lt;resources&gt;</code> specifies the <a href="#resource">resources</a> needed for a job. A job can have zero or more resources.</p>
+
+<p>If a job has no resources it can be built on any agent.</p>
+
+<h3 id="example-11">Example:</h3>
+
+<pre><code class="language-xml">&lt;job name=&quot;linux&quot;&gt;
+  &lt;resources&gt;
+    &lt;resource&gt;jdk5&lt;/resource&gt;
+    &lt;resource&gt;tomcat5&lt;/resource&gt;
+    &lt;resource&gt;mercurial&lt;/resource&gt;
+  &lt;/resources&gt;
+&lt;/job&gt;
+</code></pre>
+
+<p><a href="#top">top</a></p>
+
+<h2 id="resource">&lt;resource&gt;</h2>
+
+<p>A <code>&lt;resource&gt;</code> is a text tag that specifies a resource which a job requires to build. An Agent must have all the Resources specified for a Job to be able to run that Job.</p>
+
+<h3 id="validations">Validations:</h3>
+
+<p>Resources are case-insensitive. A resource name can contain alphanumeric characters, hyphens (-), spaces, periods (.) and pipes (|).</p>
+
+<h3 id="example-12">Example:</h3>
+
+<pre><code class="language-xml">&lt;resources&gt;
+  &lt;resource&gt;jdk5&lt;/resource&gt;
+  &lt;resource&gt;tomcat5&lt;/resource&gt;
+  &lt;resource&gt;mercurial&lt;/resource&gt;
+&lt;/resources&gt;
+</code></pre>
+
+<p><a href="#top">top</a></p>
+
+<h2 id="tasks">&lt;tasks&gt;</h2>
+
+<p><code>&lt;tasks&gt;</code> specifies the tasks (like <a href="#ant"><code>&lt;ant&gt;</code></a>, <a href="#rake"><code>&lt;rake&gt;</code></a> etc) that will run as part of a job.</p>
+
+<p>There can be zero or more tasks. These tasks are executed in the order specified in the configuration file. If a task fails, the subsequent tasks are not run unless they have <a href="#runif"><code>&lt;runif status=&quot;failed&quot; /&gt;</code></a> defined.</p>
+
+<p>The following environment variables are set for all tasks:</p>
+
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><code>GO_SERVER_URL</code></td>
+<td>The base URL for the server, including &lsquo;/go&rsquo;. For example: <a href="https://localhost:8154/go">https://localhost:8154/go</a></td>
+</tr>
+
+<tr>
+<td><code>GO_PIPELINE_NAME</code></td>
+<td>The name of the pipeline to which the job belongs to</td>
+</tr>
+
+<tr>
+<td><code>GO_PIPELINE_LABEL</code></td>
+<td>The label of the pipeline to which the job belongs to</td>
+</tr>
+
+<tr>
+<td><code>GO_STAGE_NAME</code></td>
+<td>The name of the stage to which the job belongs to</td>
+</tr>
+
+<tr>
+<td><code>GO_STAGE_COUNTER</code></td>
+<td>The re-run counter of the stage to which the job belongs to</td>
+</tr>
+
+<tr>
+<td><code>GO_JOB_NAME</code></td>
+<td>The name of the job that is being run</td>
+</tr>
+
+<tr>
+<td><code>GO_DEPENDENCY_LABEL_ &lt;upstream_pipeline_name&gt;_&lt;upstream_stage_name&gt;</code></td>
+<td>The label of the upstream pipeline which triggered the pipeline which the job belongs to. For example: &lsquo;GO_DEPENDENCY_LABEL_FRAMEWORK_DEV&rsquo; is the environment variable where the name of the upstream pipeline is &lsquo;framework&rsquo; and the upstream stage is &lsquo;dev&rsquo;. Hyphen (&lsquo;-&rsquo;) is an illegal character in an environment variable. So if a pipeline name or stage name contains &lsquo;-&rsquo;, it will be converted into an underscore. For example, ‘pipeline-foo’ with stage ‘stage-foo’ becomes: GO_DEPENDENCY_LABEL_PIPELINE_FOO_STAGE_FOO.</td>
+</tr>
+
+<tr>
+<td><span id="env-var-GO_TO_REVISION"><code>GO_TO_REVISION_&lt;material_name&gt;</code></span></td>
+<td>The lastest revision in modifications that the build running against for each configured SCM material.</td>
+</tr>
+
+<tr>
+<td><span id="env-var-GO_FROM_REVISION"><code>GO_FROM_REVISION_&lt;material_name&gt;</code></span></td>
+<td>The earlist revision in modifications that the build running against for each configured SCM material.</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="examples-37">Examples</h3>
+
+<pre><code class="language-xml">&lt;job name=&quot;linux&quot;&gt;
+  &lt;tasks&gt;
+    &lt;ant target=&quot;unit-test&quot; /&gt;
+  &lt;/tasks&gt;
+&lt;/job&gt;
+</code></pre>
+
+<p><a href="#top">top</a></p>
+
+<h2 id="ant">&lt;ant&gt;</h2>
+
+<p>Specifies an Ant build to run. Ant is assumed to be present from the command line on the agent. Go depends on and uses JDK 1.6. If JDK 1.4 or 1.5 binaries are required by a build, it can be specified in the Ant <a href="http://ant.apache.org/manual/CoreTasks/javac.html">javac</a> task.</p>
+
+<p>All paths specified are relative to the pipeline working directory.</p>
+
+<h3 id="attributes-31">Attributes</h3>
+
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>buildfile</td>
+<td>No</td>
+<td>Path to Ant build file. If not specified, the path defaults to &lsquo;build.xml&rsquo;.</td>
+</tr>
+
+<tr>
+<td>target</td>
+<td>No</td>
+<td>Ant target(s) to run. If not specified, the target defaults to &lsquo;default&rsquo;</td>
+</tr>
+
+<tr>
+<td>workingdir</td>
+<td>No</td>
+<td>The directory from where Ant is invoked</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="examples-38">Examples</h3>
+
+<ul>
+<li><p>Invoke Ant, specifying a set of targets to run:</p>
+
+<pre><code class="language-xml">&lt;tasks&gt;
+  &lt;ant target=&quot;-Drun=all clean.ivy.localivy clean ft.long_running&quot;/&gt;
+&lt;/tasks&gt;
+</code></pre></li>
+
+<li><p>Invoke Ant in a specific working directory with a set of targets:</p>
+
+<pre><code class="language-xml">&lt;tasks&gt;
+  &lt;ant workingdir=&quot;build&quot; buildfile=&quot;mybuild.xml&quot; target=&quot;-Drun=all clean.ivy.localivy clean ft.long_running&quot;/&gt;
+&lt;/tasks&gt;
+</code></pre></li>
+</ul>
+
+<p><a href="#top">top</a></p>
+
+<h2 id="exec">&lt;exec&gt;</h2>
+
+<p>Runs a specified command. The build fails if the command cannot be run or if it returns an error.</p>
+
+<p>All paths specified are relative to the pipeline working directory.</p>
+
+<h3 id="attributes-32">Attributes</h3>
+
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>command</td>
+<td>Yes</td>
+<td>The command or script to be executed, relative to the working directory</td>
+</tr>
+
+<tr>
+<td>args</td>
+<td>No</td>
+<td>Set of arguments (as a single string) to be passed to the command or script. Note that for complex or quoted arguments we suggest that you use separate <code>&lt;arg&gt;</code> tags for each argument.</td>
+</tr>
+
+<tr>
+<td>workingdir</td>
+<td>No</td>
+<td>The directory in which the script or command is to be executed. Note that this directory is relative to the directory where the agent checks out the materials.</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="examples-39">Examples</h3>
+
+<ul>
+<li><p>Invoke ruby, specifying the working directory as <strong>tools/my-ruby-tool</strong> and executing the ruby script <strong>backup.rb</strong>.</p>
+
+<pre><code class="language-xml">&lt;tasks&gt;
+  &lt;exec command=&quot;/usr/local/bin/ruby&quot; args=&quot;backup.rb&quot; workingdir=&quot;tools/my-ruby-tool&quot;/&gt;
+&lt;/tasks&gt;
+</code></pre></li>
+</ul>
+
+<p><a href="#top">top</a></p>
+
+<h2 id="arg">&lt;arg&gt;</h2>
+
+<p>Specify a single argument for <a href="#exec">exec</a> command.</p>
+
+<p>This element is optional and can occur multiple times. It serves as an alternative to the &ldquo;args&rdquo; attribute of <a href="#exec">exec</a>, but it allows the
+use of any character required for making argument. For example, you can specify double quote using the xml escaped format: &quot;</p>
+
+<p><strong>Note:</strong>When running commands on Windows, Go won&rsquo;t launch your command with system shell (cmd.exe), so you can&rsquo;t use shell commands (like echo) directly. If you want, you can pass your shell command as arguments to the cmd.exe.</p>
+
+<p>On Windows you should specify the full name of your script file such as &ldquo;mybuild.bat&rdquo;. (Only specifying &ldquo;mybuild&rdquo; won&rsquo;t work)</p>
+
+<h3 id="examples-40">Examples</h3>
+
+<ul>
+<li><p>Echo something on Windows:</p>
+
+<pre><code class="language-xml">&lt;exec command=&quot;cmd&quot;&gt;
+  &lt;arg&gt;/c&lt;/arg&gt;
+  &lt;arg&gt;echo&lt;/arg&gt;
+  &lt;arg&gt;something to print out&lt;/arg&gt;
+&lt;/exec&gt;
+</code></pre></li>
+
+<li><p>Run command with pipe character in arguments:</p>
+
+<pre><code class="language-xml">&lt;exec command=&quot;MsBuild&quot;&gt;
+  &lt;arg&gt;D:\projects\project\project-8.sln&lt;/arg&gt;
+  &lt;arg&gt;/REBUILD&lt;/arg&gt;
+  &lt;arg&gt;/CFG=&quot;Release_99|Win32&quot;&lt;/arg&gt;
+&lt;/exec&gt;
+</code></pre></li>
+</ul>
+
+<p><a href="#top">top</a></p>
+
+<h2 id="nant">&lt;nant&gt;</h2>
+
+<p>Specifies a NAnt build to run. NAnt is assumed to be present from the command line on the agent.</p>
+
+<p>All paths specified must be relative to the pipeline working directory.</p>
+
+<h3 id="attributes-33">Attributes</h3>
+
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>buildfile</td>
+<td>No</td>
+<td>Path to NAnt build file. If not specified, the path defaults to &lsquo;default.build&rsquo;. The path is relative to the sandbox directory and cannot be outside the sandbox.</td>
+</tr>
+
+<tr>
+<td>target</td>
+<td>No</td>
+<td>NAnt target(s) to run. If not specified, defaults to the default target of the build file.</td>
+</tr>
+
+<tr>
+<td>workingdir</td>
+<td>No</td>
+<td>The directory from where NAnt is invoked</td>
+</tr>
+
+<tr>
+<td>nantpath</td>
+<td>No</td>
+<td>Path of the directory in which NAnt is installed. By default Go will assume that NAnt is in the system environment variable ${PATH}. If the path is specified, then the path must be the same in all agents which run the job.</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="examples-41">Examples</h3>
+
+<p>Invoke NAnt, specifying a set of targets to run:</p>
+
+<pre><code class="language-xml">&lt;tasks&gt;
+  &lt;nant buildfile=&quot;myproject.build&quot; target=&quot;smoke-test&quot;/&gt;
+&lt;/tasks&gt;
+</code></pre>
+
+<p><a href="#top">top</a></p>
+
+<h2 id="rake">&lt;rake&gt;</h2>
+
+<p>Specifies a Rake build to be run. Ruby and Rake are assumed to be present from the command line on the agent.</p>
+
+<p>All paths specified must be relative to the pipeline working directory.</p>
+
+<h3 id="attributes-34">Attributes</h3>
+
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>buildfile</td>
+<td>No</td>
+<td>Path to Rake file. If not specified, the path defaults to &lsquo;rakefile&rsquo;. The path cannot start from &lsquo;.&rsquo;</td>
+</tr>
+
+<tr>
+<td>target</td>
+<td>No</td>
+<td>Rake target(s) to run. If not specified, defaults to the default target of the build file</td>
+</tr>
+
+<tr>
+<td>workingdir</td>
+<td>No</td>
+<td>The directory from where Rake is invoked</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="examples-42">Examples</h3>
+
+<p>Invoke rake, specifying a set of targets to run:</p>
+
+<pre><code class="language-xml">&lt;tasks&gt;
+  &lt;rake buildfile=&quot;rakefile&quot; target=&quot;smoke-test&quot;/&gt;
+&lt;/tasks&gt;
+</code></pre>
+
+<p><a href="#top">top</a></p>
+
+<h2 id="fetchartifact">&lt;fetchartifact&gt;</h2>
+
+<p>Fetch artifacts from:</p>
+
+<ul>
+<li>1. previous stages in the same pipeline, or</li>
+<li>2. stages of pipelines that this pipeline depends on, directly or indirectly (ancestor pipelines).</li>
+</ul>
+
+<p>When pointed to parent/ancestor pipeline, fetch task can pull artifacts from the upstream-stage or stages before it. This restriction has been
+introduced in 12.2. Stages after the upstream stage can not be fetched from, because they may not be complete when the fetch call executes.</p>
+
+<p>All file paths specified are relative to the pipeline working directory.</p>
+
+<h3 id="attributes-35">Attributes</h3>
+
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>artifactOrigin</td>
+<td>Yes</td>
+<td>Indicates where the artifact needs to be pulled from. Supported values are <code>gocd</code> and <code>external</code>. <code>gocd</code> implies that the artifact needs to be fetched from the gocd server, <code>external</code> implies that the artifact must be fetched from an external artifact store.</td>
+</tr>
+
+<tr>
+<td>pipeline</td>
+<td>No</td>
+<td>This value can either be: 1. the name of upstream pipeline on which the pipeline of the job depends on. The pipeline should be added as a dependency under <code>&lt;materials&gt;</code>, or 2. the hierarchy of an ancestor pipeline of the current pipeline. Example, The value &ldquo;BuildPipeline/AcceptancePipeline&rdquo; denotes that the fetch task attempts to fetch artifacts from its ancestor &lsquo;BuildPipeline&rsquo;. The given hierarchy denotes that the current pipeline depends on &lsquo;AcceptancePipeline&rsquo; which in turn depends on &lsquo;BuildPipeline&rsquo; using the dependency material definition given under materials. Defaults to current pipeline if not specified.</td>
+</tr>
+
+<tr>
+<td>stage</td>
+<td>Yes</td>
+<td>The name of the stage to fetch artifacts from</td>
+</tr>
+
+<tr>
+<td>job</td>
+<td>Yes</td>
+<td>The name of the job to fetch artifacts from</td>
+</tr>
+
+<tr>
+<td>srcdir</td>
+<td>One of srcdir/srcfile if artifact origin is <code>gocd</code></td>
+<td>The path of the artifact directory of a specific job, relative to the sandbox directory. If the directory does not exist, the job is failed. Should be specified if artifactOrigin is <code>gocd</code>.</td>
+</tr>
+
+<tr>
+<td>srcfile</td>
+<td>One of srcdir/srcfile if artifact origin is <code>gocd</code></td>
+<td>The path of the artifact file of a specific job. Should be specified if artifactOrigin is <code>gocd</code>.</td>
+</tr>
+
+<tr>
+<td>dest</td>
+<td>No</td>
+<td>The path of the directory where the artifact is fetched to. The directory is overwritten if it already exists. The directory path is relative to the pipeline working directory. Should be specified if artifactOrigin is <code>gocd</code>.</td>
+</tr>
+
+<tr>
+<td>artifactId</td>
+<td>Yes, if artifact origin is <code>external</code></td>
+<td>The id of the external artifact that is published by the plugin in the upstream job. Should be specified if the artifact origin is <code>external</code>.</td>
+</tr>
+
+<tr>
+<td>configuration</td>
+<td>No</td>
+<td>&lsquo;A list of <code>key</code>-<code>value</code> pairs which defines the plugin configuration. Should be specified if artifact origin is <code>external</code>.</td>
+</tr>
+</tbody>
+</table>
+
+<p>Note: If the file does not exist, the job will fail.
+Go will not fetch the artifact again if it has not changed. The directory path is relative to the pipeline working directory. |</p>
+
+<h3 id="example-13">Example:</h3>
+
+<ol>
+<li><p>Fetch all artifacts in the directory &lsquo;pkg&rsquo; from the previous stage in the same pipeline and put them under the directory &lsquo;lib&rsquo;</p>
+
+<pre><code class="language-xml">&lt;pipelines&gt;
+  &lt;pipeline name=&quot;go&quot;&gt;
+    ...
+    &lt;stage name=&quot;dev&quot;&gt;
+      &lt;jobs&gt;
+    &lt;job name=&quot;unit&quot;&gt;
+      &lt;artifacts&gt;
+        &lt;artifact type=&quot;build&quot; src=&quot;target/deployable.jar&quot; dest=&quot;pkg&quot;/&gt;
+        &lt;artifact type=&quot;external&quot; id=&quot;artifact_jar&quot; storeId=&quot;dummy-s3&quot;&gt;
+          &lt;configuration&gt;
+            &lt;property&gt;
+              &lt;key&gt;Filename&lt;/key&gt;
+              &lt;value&gt;target/deployable.jar&lt;/value&gt;
+            &lt;/property&gt;
+          &lt;/configuration&gt;
+        &lt;/artifact&gt;
+      &lt;/artifacts&gt;
+    &lt;/job&gt;
+      &lt;/jobs&gt;
+    &lt;/stage&gt;
+    &lt;stage name=&quot;ft&quot;&gt;
+      &lt;jobs&gt;
+    &lt;job name=&quot;functional&quot;&gt;
+      &lt;tasks&gt;
+        &lt;fetchartifact artifactOrigin=&quot;gocd&quot; stage=&quot;dev&quot; job=&quot;unit&quot; srcdir=&quot;pkg&quot; dest=&quot;lib&quot;/&gt;
+        &lt;fetchartifact artifactOrigin=&quot;external&quot; stage=&quot;dev&quot; job=&quot;unit&quot; artifactId=&quot;artifact_jar&quot;&gt;
+          &lt;configuration&gt;
+            &lt;property&gt;
+              &lt;key&gt;dest_on_agent&lt;/key&gt;
+              &lt;value&gt;release_candidate.jar&lt;/value&gt;
+            &lt;/property&gt;
+          &lt;/configuration&gt;
+        &lt;/fetchartifact&gt;
+      &lt;/tasks&gt;
+    &lt;/job&gt;
+      &lt;/jobs&gt;
+    &lt;/stage&gt;
+  &lt;/pipeline&gt;
+&lt;/pipelines&gt;
+</code></pre></li>
+
+<li><p>Fetch a single artifact from a stage in the upstream pipeline &lsquo;framework&rsquo; and put it under the directory &lsquo;lib&rsquo;</p>
+
+<pre><code class="language-xml">&lt;pipeline name=&quot;go&quot;&gt;
+  &lt;materials&gt;
+    &lt;pipeline name=&quot;framework&quot; stage=&quot;ft&quot;/&gt;
+  &lt;/materials&gt;
+  &lt;stage name=&quot;dev&quot;&gt;
+    &lt;jobs&gt;
+      &lt;job name=&quot;unit&quot;&gt;
+    &lt;tasks&gt;
+      &lt;fetchartifact origin=&quot;gocd&quot; pipeline=&quot;framework&quot; stage=&quot;dev&quot; job=&quot;unit&quot;
+             srcfile=&quot;pkg/deployable.jar&quot; dest=&quot;lib&quot; /&gt;
+    &lt;/tasks&gt;
+      &lt;/job&gt;
+    &lt;/jobs&gt;
+  &lt;/stage&gt;
+&lt;/pipeline&gt;
+</code></pre></li>
+
+<li><p>Fetch a single artifact from a stage in an ancestor pipeline &lsquo;Build&rsquo; and put it under the directory &lsquo;pkg&rsquo;</p>
+
+<pre><code class="language-xml">&lt;pipeline name=&quot;deploy&quot;&gt;
+  &lt;materials&gt;
+    &lt;pipeline name=&quot;acceptance&quot; stage=&quot;ft&quot;/&gt;
+  &lt;/materials&gt;
+  &lt;stage name=&quot;deply-pkg&quot;&gt;
+    &lt;jobs&gt;
+      &lt;job name=&quot;deploy-win&quot;&gt;
+    &lt;tasks&gt;
+      &lt;fetchartifact origin=&quot;gocd&quot; pipeline=&quot;build&quot; stage=&quot;dist&quot; job=&quot;create-installer&quot;
+             srcfile=&quot;installers/deployable-setup.exe&quot; dest=&quot;installer&quot; /&gt;
+    &lt;/tasks&gt;
+      &lt;/job&gt;
+    &lt;/jobs&gt;
+  &lt;/stage&gt;
+&lt;/pipeline&gt;
+</code></pre></li>
+</ol>
+
+<p><a href="#top">top</a></p>
+
+<h2 id="runif">&lt;runif&gt;</h2>
+
+<p>Specifies when a task should be allowed to run. Multiple conditions may be defined for each task.</p>
+
+<p>A running job on an agent has two possible states: passed or failed. A job starts in the state “passed”. If any task fails, it transitions to
+the state “failed”.</p>
+
+<p>A task can specify any of three possible runif filters: &lsquo;passed&rsquo;, &lsquo;failed&rsquo; or &lsquo;any&rsquo;. (‘passed’ is the default)</p>
+
+<h3 id="attributes-36">Attributes</h3>
+
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>status</td>
+<td>Yes</td>
+<td>The status is the job&rsquo;s current status. The value should be one of &lsquo;passed&rsquo;, &lsquo;failed&rsquo; or &lsquo;any&rsquo;.</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="notes-14"><strong>Notes:</strong></h3>
+
+<p><a href="#runif"><code>&lt;runif&gt;</code></a> can also be defined under <a href="#exec"><code>&lt;exec&gt;</code></a> task even if <code>&lt;exec&gt;</code> has some <code>&lt;arg&gt;</code>s e.g.</p>
+
+<pre><code class="language-xml">    &lt;exec command=&quot;echo&quot;&gt;
+       &lt;arg value=&quot;test&quot; /&gt;
+       &lt;runif status=&quot;passed&quot; /&gt;
+    &lt;/exec&gt;
+</code></pre>
+
+<h3 id="examples-43">Examples</h3>
+
+<p>Given the tasks in a job is following:</p>
+
+<pre><code class="language-xml">&lt;tasks&gt;
+    &lt;ant  buildfile=&quot;build.xml&quot; target=&quot;complie-test-source&quot;/&gt;
+    &lt;fetchartifact origin=&quot;gocd&quot; pipeline=&quot;my_app&quot; stage=&quot;dist&quot; job=&quot;package-artifact&quot; srcdir=&quot;pkg&quot;&gt;
+       &lt;runif  status=&quot;passed&quot;/&gt;
+    &lt;/fetchartifact&gt;
+    &lt;exec command=&quot;./copy_error_log_to_someplace&quot; &gt;
+       &lt;runif status=&quot;failed&quot;/&gt;
+    &lt;/exec&gt;
+&lt;/tasks&gt;
+</code></pre>
+
+<h4 id="scenario-one">Scenario one:</h4>
+
+<p>If task 1 <code>&lt;ant&gt;</code> passed, task 2 <code>&lt;fetchartifact&gt;</code> would be executed.</p>
+
+<p>If task 2 <code>&lt;fetchartifact&gt;</code> passed, task 3 <code>&lt;exec&gt;</code> would NOT be executed.</p>
+
+<p>If task 2 <code>&lt;fetchartifact&gt;</code> failed, task 3 <code>&lt;exec&gt;</code> would be executed.</p>
+
+<h4 id="scenario-two">Scenario two:</h4>
+
+<p>If task 1 <code>&lt;ant&gt;</code> failed, task 2 <code>&lt;fetchartifact&gt;</code> would NOT be executed.</p>
+
+<p>Instead, task 3 <code>&lt;exec&gt;</code> would be executed.</p>
+
+<p><a href="#top">top</a></p>
+
+<h2 id="oncancel">&lt;oncancel&gt;</h2>
+
+<p>Specifies a task to execute when a stage is cancelled. Only one task can be defined in <code>&lt;oncancel&gt;</code>.</p>
+
+<p>If a job is cancelled during the assigning phase, the job will not start preparing</p>
+
+<p>If a job is cancelled during the preparing phase, preparing will complete, but no tasks will be executed</p>
+
+<p>If a job is cancelled during the building phase:</p>
+
+<ul>
+<li>If the currently running task <strong>does not</strong> have <code>&lt;oncancel&gt;</code> defined, the task will be killed</li>
+<li>If the currently running task <strong>does</strong> have <code>&lt;oncancel&gt;</code> defined, the task defined within <code>&lt;oncancel&gt;</code> will execute immediately. As soon as both the original task and the <code>&lt;oncancel&gt;</code> task are completed, no other tasks will execute</li>
+</ul>
+
+<p>If a job is cancelled during the completing phase, the agent will ignore the request and complete as planned</p>
+
+<h3 id="examples-44">Examples</h3>
+
+<p>The task &lsquo;start_server&rsquo; starts a process on an agent. When the stage is cancelled, the agent will invoke the cancel task &lsquo;kill_server&rsquo; to kill the process early and clean up any extra files.</p>
+
+<pre><code class="language-xml">&lt;tasks&gt;
+  &lt;ant target=&quot;start_server&quot;&gt;
+    &lt;oncancel&gt;
+      &lt;ant target=&quot;kill_server&quot; /&gt;
+    &lt;/oncancel&gt;
+  &lt;/ant&gt;
+&lt;/tasks&gt;
+</code></pre>
+
+<p><a href="#top">top</a></p>
+
+<h2 id="artifacts">&lt;artifacts&gt;</h2>
+
+<p><code>&lt;artifacts&gt;</code> specifies what files the agent will publish to the server or an external artifact store.</p>
+
+<h3 id="examples-45">Examples</h3>
+
+<pre><code class="language-xml">&lt;job name=&quot;unit&quot;&gt;
+  &lt;artifacts&gt;
+    &lt;artifact type=&quot;build&quot; src=&quot;target/deployable.jar&quot; dest=&quot;pkg&quot;/&gt;
+    &lt;artifact type=&quot;test&quot; src=&quot;target/junit-output&quot; dest=&quot;junit&quot;/&gt;
+    &lt;artifact type=&quot;external&quot; id=&quot;docker-image&quot; storeId=&quot;dockerhub&quot;&gt;
+      &lt;configuration&gt;
+        &lt;property&gt;
+          &lt;key&gt;Image&lt;/key&gt;
+          &lt;value&gt;gocd/gocd-demo&lt;/value&gt;
+        &lt;/property&gt;
+        &lt;property&gt;
+          &lt;key&gt;Tag&lt;/key&gt;
+          &lt;value&gt;v${GO_PIPELINE_COUNTER}&lt;/value&gt;
+        &lt;/property&gt;
+      &lt;/configuration&gt;
+    &lt;/artifact&gt;
+  &lt;/artifacts&gt;
+&lt;/job&gt;
+</code></pre>
+
+<p><a href="#top">top</a></p>
+
+<h2 id="artifact">&lt;artifact&gt;</h2>
+
+<p>Publish build or test artifacts to the artifact repository for the job. The src attribute should point towards a folder that contains the test output files. Go will use these to generate a test report if the artifact type is <code>test</code>. Test
+information is placed in the Failures and Test sub-tabs. Test results from multiple jobs are aggregated on the stage detail pages. This allows you to see the results of tests from both functional and unit tests even if they are run in different jobs.</p>
+
+<h3 id="attributes-37">Attributes</h3>
+
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>type</td>
+<td>Yes</td>
+<td>Type can be either <code>build</code> or <code>test</code>. This identifies the type of artifact that is uploaded to the GoCD server</td>
+</tr>
+
+<tr>
+<td>src</td>
+<td>Yes, if type is <code>build</code> or <code>test</code></td>
+<td>The file or folders to publish to the server. Go will only upload files that are in the working directory of the job. You can use wildcards to specify the files and folders to upload: ** means any path, * means any file or folder name. Should be specified if type is <code>build</code> or <code>test</code></td>
+</tr>
+
+<tr>
+<td>dest</td>
+<td>No</td>
+<td>The destination is relative to the artifacts folder of the current instance on the server side. If it is not specified, the artifact will be stored in the root of the artifacts directory. Should be specified if type is <code>build</code> or <code>test</code></td>
+</tr>
+
+<tr>
+<td>id</td>
+<td>Yes, if type is <code>external</code></td>
+<td>The artifact id for an external artifact. This id can be used later in a downstream fetch task. Should be specified if type is <code>external</code>.</td>
+</tr>
+
+<tr>
+<td>storeId</td>
+<td>Yes, if type is <code>external</code></td>
+<td>The artifact store id referencing an existing global artifact store. Should be specified if type is <code>external</code>.</td>
+</tr>
+
+<tr>
+<td>configuration</td>
+<td>No</td>
+<td>&lsquo;A list of <code>key</code>-<code>value</code> pairs which defines the plugin configuration. Should be specified if type is <code>external</code>.</td>
+</tr>
+</tbody>
+</table>
+
+<p>You can use wildcards to specify which files to upload to the go server in case of build or test artifacts. The wildcard syntax follows the commonly used ant/nant style. So &ldquo;target/**/*.xml&rdquo;
+would upload all xml files in the target directory and any of its subdirectories. The original directory structure is preserved on the
+server.</p>
+
+<h3 id="examples-for-build-artifact">Examples for build artifact</h3>
+
+<pre><code class="language-xml">&lt;job name=&quot;unit&quot;&gt;
+  &lt;artifacts&gt;
+    &lt;artifact type=&quot;build&quot; src=&quot;target/deployable.jar&quot; dest=&quot;pkg&quot;/&gt;
+  &lt;/artifacts&gt;
+&lt;/job&gt;
+</code></pre>
+
+<pre><code class="language-xml">&lt;job name=&quot;unit&quot;&gt;
+  &lt;artifacts&gt;
+    &lt;artifact type=&quot;build&quot; src=&quot;target/**/*Test.xml&quot; dest=&quot;pkg&quot;/&gt;
+  &lt;/artifacts&gt;
+&lt;/job&gt;
+</code></pre>
+
+<p>The following will upload all xml files to the server&rsquo;s artifact repository.</p>
+
+<pre><code class="language-xml">&lt;job name=&quot;unit&quot;&gt;
+  &lt;artifacts&gt;
+    &lt;artifact type=&quot;build&quot; src=&quot;target/**/*.xml&quot; /&gt;
+  &lt;/artifacts&gt;
+&lt;/job&gt;
+</code></pre>
+
+<p><a href="#top">top</a></p>
+
+<h3 id="examples-for-test-artifact">Examples for test artifact</h3>
+
+<pre><code class="language-xml">&lt;job name=&quot;unit&quot;&gt;
+  &lt;artifacts&gt;
+    &lt;artifact type=&quot;test&quot; src=&quot;target/junit-output&quot; dest=&quot;junit&quot;/&gt;
+  &lt;/artifacts&gt;
+&lt;/job&gt;
+</code></pre>
+
+<h3 id="examples-for-external-artifact">Examples for external artifact</h3>
+
+<pre><code class="language-xml">&lt;job name=&quot;build_image&quot;&gt;
+  &lt;artifacts&gt;
+    &lt;artifact type=&quot;external&quot; id=&quot;docker-image&quot; storeId=&quot;dockerhub&quot;&gt;
+      &lt;configuration&gt;
+        &lt;property&gt;
+          &lt;key&gt;Image&lt;/key&gt;
+          &lt;value&gt;gocd/gocd-demo&lt;/value&gt;
+        &lt;/property&gt;
+        &lt;property&gt;
+          &lt;key&gt;Tag&lt;/key&gt;
+          &lt;value&gt;v${GO_PIPELINE_COUNTER}&lt;/value&gt;
+        &lt;/property&gt;
+      &lt;/configuration&gt;
+    &lt;/artifact&gt;
+  &lt;/artifacts&gt;
+&lt;/job&gt;
+</code></pre>
+
+<p><a href="#top">top</a></p>
+
+<h2 id="tabs">&lt;tabs&gt;</h2>
+
+<p>The <code>&lt;tabs&gt;</code> element allows you to add tabs to the Job Details page. You can put any artifact that can be rendered by a web browser into a tab. For example, if your coverage tool produces an html report, you can easily place that report into a tab. Tabs are implemented as iframes (see W3C iframe definition ).</p>
+
+<h3 id="example-14">Example:</h3>
+
+<pre><code class="language-xml">&lt;job name=&quot;unit&quot;&gt;
+  &lt;artifacts&gt;
+    &lt;artifact type=&quot;build&quot; src=&quot;target/jcoverage&quot; dest=&quot;Jcoverage&quot;/&gt;
+  &lt;/artifacts&gt;
+  &lt;tabs&gt;
+    &lt;tab name=&quot;coverage&quot; path=&quot;Jcoverage/index.html&quot;/&gt;
+  &lt;/tabs&gt;
+&lt;/job&gt;
+</code></pre>
+
+<p><a href="#top">top</a></p>
+
+<h2 id="tab">&lt;tab&gt;</h2>
+
+<p>Define a tab with specific name and artifact to show.</p>
+
+<h3 id="attributes-38">Attributes</h3>
+
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>name</td>
+<td>Yes</td>
+<td>The name of the tab. If should be unique in that job.</td>
+</tr>
+
+<tr>
+<td>path</td>
+<td>Yes</td>
+<td>The relative path of a file in the artifact repository of the job.</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="example-15">Example:</h3>
+
+<p>Given some coverage information in &lsquo;target/Jcoverage&rsquo; folder on the agent side, We configure a tab to show the coverage information by specifying a tab with the index.html file.</p>
+
+<pre><code class="language-xml">&lt;job name=&quot;unit&quot;&gt;
+  &lt;artifacts&gt;
+    &lt;artifact type=&quot;build&quot; src=&quot;target/jcoverage&quot; dest=&quot;Jcoverage&quot;/&gt;
+  &lt;/artifacts&gt;
+  &lt;tabs&gt;
+    &lt;tab name=&quot;coverage&quot; path=&quot;Jcoverage/index.html&quot;/&gt;
+  &lt;/tabs&gt;
+&lt;/job&gt;
+</code></pre>
+
+<h2 id="properties">&lt;properties&gt;</h2>
+
+<p>The <code>&lt;properties&gt;</code> element allows you to create properties of the build from XML files or artifacts created during your build. You can export
+the values of properties over time. This allows you to track properties against certain builds, for example to see whether build time is
+improving or getting worse.</p>
+
+<h3 id="example-16">Example:</h3>
+
+<pre><code class="language-xml">&lt;job name=&quot;emma&quot;&gt;
+  &lt;artifacts&gt;
+    &lt;artifact type=&quot;build&quot; src=&quot;target/emma&quot; dest=&quot;analysis&quot; /&gt;
+  &lt;/artifacts&gt;
+  &lt;tasks&gt;
+    &lt;ant target=&quot;emma&quot; /&gt;
+  &lt;/tasks&gt;
+  &lt;properties&gt;
+    &lt;property name=&quot;coverage.class&quot; src=&quot;target/emma/coverage.xml&quot; xpath=&quot;substring-before(//report/data/all/coverage[starts-with(@type,'class')]/@value, '%')&quot; /&gt;
+    &lt;property name=&quot;coverage.method&quot; src=&quot;target/emma/coverage.xml&quot; xpath=&quot;substring-before(//report/data/all/coverage[starts-with(@type,'method')]/@value, '%')&quot; /&gt;
+    &lt;property name=&quot;coverage.block&quot; src=&quot;target/emma/coverage.xml&quot; xpath=&quot;substring-before(//report/data/all/coverage[starts-with(@type,'block')]/@value, '%')&quot; /&gt;
+    &lt;property name=&quot;coverage.line&quot; src=&quot;target/emma/coverage.xml&quot; xpath=&quot;substring-before(//report/data/all/coverage[starts-with(@type,'line')]/@value, '%')&quot; /&gt;
+  &lt;/properties&gt;
+&lt;/job&gt;
+</code></pre>
+
+<p><a href="#top">top</a></p>
+
+<h2 id="property-1">&lt;property&gt;</h2>
+
+<p>Define a Property based on the contents of an XML file.</p>
+
+<h3 id="attributes-39">Attributes</h3>
+
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>name</td>
+<td>Yes</td>
+<td>The name of the property. It has to be unique within a <code>&lt;job&gt;</code>. The name can contain: a-z, A-Z, 0-9, fullstop, underscore and hyphen only. Spaces are not allowed. Name is case-sensitive.</td>
+</tr>
+
+<tr>
+<td>src</td>
+<td>Yes</td>
+<td>The xml file containing the data that you want to use to create the property, and it isn&rsquo;t allowed to start from &lsquo;.&rsquo; Properties are set on the Agent at the end of the build and does not need to be an artifact that will be uploaded to the server.</td>
+</tr>
+
+<tr>
+<td>xpath</td>
+<td>Yes</td>
+<td>The XPath that will be used to create the property.</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="example-17">Example:</h3>
+
+<p>This is a simple example to parse the errors and failures count from a single junit file and turn them into properties.</p>
+
+<pre><code class="language-xml">&lt;job name=&quot;junit&quot;&gt;
+  &lt;tasks&gt;
+    &lt;ant target=&quot;unittest&quot;&gt;
+  &lt;/tasks&gt;
+  &lt;properties&gt;
+    &lt;property name=&quot;junit.errors&quot; src=&quot;target/junit-reports/TEST-MainAppTest.xml&quot; xpath=&quot;string(/testsuite/@errors)&quot; /&gt;
+    &lt;property name=&quot;junit.failures&quot; src=&quot;target/junit-reports/TEST-MainAppTest.xml&quot; xpath=&quot;string(/testsuite/@failures)&quot; /&gt;
+  &lt;/properties&gt;
+&lt;/job&gt;
+</code></pre>
+
+<p>Here&rsquo;s a more complex example. This will parse the class, method, block, and line coverage out of an <a href="http://emma.sourceforge.net/">EMMA</a>
+coverage.xml file.</p>
+
+<pre><code class="language-xml">&lt;job name=&quot;emma&quot;&gt;
+  &lt;artifacts&gt;
+    &lt;artifact type=&quot;build&quot; src=&quot;target/emma&quot; dest=&quot;analysis&quot; /&gt;
+  &lt;/artifacts&gt;
+  &lt;tasks&gt;
+    &lt;ant target=&quot;emma&quot; /&gt;
+  &lt;/tasks&gt;
+  &lt;properties&gt;
+    &lt;property name=&quot;coverage.class&quot; src=&quot;target/emma/coverage.xml&quot; xpath=&quot;substring-before(//report/data/all/coverage[starts-with(@type,'class')]/@value, '%')&quot; /&gt;
+    &lt;property name=&quot;coverage.method&quot; src=&quot;target/emma/coverage.xml&quot; xpath=&quot;substring-before(//report/data/all/coverage[starts-with(@type,'method')]/@value, '%')&quot; /&gt;
+    &lt;property name=&quot;coverage.block&quot; src=&quot;target/emma/coverage.xml&quot; xpath=&quot;substring-before(//report/data/all/coverage[starts-with(@type,'block')]/@value, '%')&quot; /&gt;
+    &lt;property name=&quot;coverage.line&quot; src=&quot;target/emma/coverage.xml&quot; xpath=&quot;substring-before(//report/data/all/coverage[starts-with(@type,'line')]/@value, '%')&quot; /&gt;
+  &lt;/properties&gt;
+&lt;/job&gt;
+</code></pre>
+
+<p><a href="#top">top</a></p>
+
+<h2 id="approval">&lt;approval&gt;</h2>
+
+<p>Specifies how a stage should be triggered. <code>&lt;approval&gt;</code> of type &lsquo;manual&rsquo; or &lsquo;success&rsquo; can be used to stop a pipeline execution at the start of a stage and can only be resumed when it is manually approved on the pipeline activity page, stage details page or through RESTful url.</p>
+
+<h3 id="attributes-40">Attributes</h3>
+
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>type</td>
+<td>Yes</td>
+<td>Either &lsquo;manual&rsquo; or &lsquo;success&rsquo;. &lsquo;manual&rsquo; means the stage needs to be approved manually. &lsquo;success&rsquo; means the stage will be automatically triggered when the previous stage passes.</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Notes:</strong></p>
+
+<ul>
+<li><code>&lt;approval&gt;</code> must be the first sub-element of <a href="#stage"><code>&lt;stage&gt;</code></a>.</li>
+<li>If an approval is not specified then the behavior is same as &lsquo;success&rsquo; i.e. the stage will be automatically triggered when the previous stage passes.</li>
+</ul>
+
+<h3 id="example-18">Example:</h3>
+
+<pre><code class="language-xml">&lt;stage name=&quot;ut&quot;&gt;
+  &lt;approval type=&quot;manual&quot; /&gt;
+  ...
+&lt;/stage&gt;
+</code></pre>
+
+<p><a href="#top">top</a></p>
+
+<h2 id="authorization-1">&lt;authorization&gt;</h2>
+
+<p>You can use <code>&lt;authorization&gt;</code> under an <a href="#approval"><code>&lt;approval&gt;</code></a> with a &lsquo;manual&rsquo; or &lsquo;success&rsquo; type to specify who can approve this stage. There
+are two sub-elements: <a href="#user"><code>&lt;user&gt;</code></a> and <a href="#role"><code>&lt;role&gt;</code></a>.</p>
+
+<h3 id="examples-46">Examples</h3>
+
+<pre><code class="language-xml">&lt;approval type=&quot;manual&quot;&gt;
+  &lt;authorization&gt;
+    &lt;user&gt;lqiao&lt;/user&gt;
+    &lt;role&gt;go_admins&lt;/role&gt;
+  &lt;/authorization&gt;
+&lt;/approval&gt;
+</code></pre>
+
+<pre><code class="language-xml">&lt;approval type=&quot;success&quot;&gt;
+  &lt;authorization&gt;
+    &lt;user&gt;lqiao&lt;/user&gt;
+    &lt;role&gt;go_admins&lt;/role&gt;
+  &lt;/authorization&gt;
+&lt;/approval&gt;
+</code></pre>
+
+<p><a href="#top">top</a></p>
+
+<h2 id="templates">&lt;templates&gt;</h2>
+
+<p>The <code>&lt;templates&gt;</code> element specifies the set of templates known by the server.</p>
+
+<p><a href="#top">top</a></p>
+
+<h2 id="pipeline-2">&lt;pipeline&gt;</h2>
+
+<p>Allows you to provide a template for pipeline definition</p>
+
+<h3 id="attributes-41">Attributes</h3>
+
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>name</td>
+<td>Yes</td>
+<td>Identifier for the pipeline template</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="examples-47">Examples</h3>
+
+<pre><code class="language-xml">&lt;cruise&gt;
+  ...
+  &lt;pipelines group=&quot;studios&quot; &gt;
+    &lt;pipeline name=&quot;yourproject&quot; template=&quot;project-template&quot; &gt;
+      &lt;materials&gt;
+        &lt;svn url=&quot;http://your-svn/&quot;/&gt;
+      &lt;/materials&gt;
+    &lt;/pipeline&gt;
+  &lt;/pipelines&gt;
+  &lt;templates&gt;
+    &lt;pipeline name=&quot;project-template&quot;&gt;
+        &lt;authorization&gt;
+            &lt;admins&gt;
+                &lt;user&gt;jez&lt;/user&gt;
+            &lt;/admins&gt;
+        &lt;/authorization&gt;
+      &lt;stage name=&quot;ut&quot;&gt;
+    &lt;jobs&gt;
+      &lt;job name=&quot;linux&quot;&gt;
+        &lt;resources&gt;
+          &lt;resource&gt;linux&lt;/resource&gt;
+        &lt;/resources&gt;
+        &lt;tasks&gt;
+          &lt;ant target=&quot;unit-test&quot; /&gt;
+        &lt;/tasks&gt;
+      &lt;/job&gt;
+    &lt;/jobs&gt;
+      &lt;/stage&gt;
+    &lt;/pipeline&gt;
+  &lt;/templates&gt;
+&lt;/cruise&gt;
+</code></pre>
+
+<p><a href="#top">top</a></p>
+
+<h2 id="environments">&lt;environments&gt;</h2>
+
+<p>The <code>&lt;environments&gt;</code> element specifies the set of environments known by the server.</p>
+
+<p><a href="#top">top</a></p>
+
+<h2 id="environment">&lt;environment&gt;</h2>
+
+<p>Allows you to group a set of agents together for exclusive use.</p>
+
+<h3 id="attributes-42">Attributes</h3>
+
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>name</td>
+<td>Yes</td>
+<td>Identifier for an environment</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="examples-48">Examples</h3>
+
+<pre><code class="language-xml">&lt;cruise&gt;
+  ...
+  &lt;pipelines group=&quot;studios&quot; /&gt;
+    &lt;pipeline name=&quot;yourproject&quot; labeltemplate=&quot;foo-1.0.${COUNT}&quot; &gt;
+    ...
+    &lt;/pipeline&gt;
+  &lt;/pipelines&gt;
+  &lt;environments&gt;
+    &lt;environment name=&quot;UAT&quot;&gt;
+      &lt;environmentvariables&gt;
+      &lt;variable name=&quot;FOO&quot;&gt;&lt;value&gt;bar&lt;/value&gt;&lt;/variable&gt;
+      &lt;/environmentvariables&gt;
+      &lt;agents&gt;
+        &lt;physical uuid=&quot;94fcb7ad-8b97-4078-b5f6-3c7436d6a390&quot;/&gt;
+      &lt;/agents&gt;
+      &lt;pipelines&gt;
+        &lt;pipeline name=&quot;yourproject&quot;/&gt;
+      &lt;/pipelines&gt;
+    &lt;/environment&gt;
+  &lt;/environments&gt;
+  &lt;agents&gt;
+    &lt;agent hostname=&quot;agent01&quot; ipaddress=&quot;192.168.0.1&quot; uuid=&quot;94fcb7ad-8b97-4078-b5f6-3c7436d6a390&quot; /&gt;
+  &lt;/agents&gt;
+&lt;/cruise&gt;
+</code></pre>
+
+<p><a href="#top">top</a></p>
+
+<h2 id="environment-agents">&lt;agents&gt;</h2>
+
+<p>The <code>&lt;agents&gt;</code> element inside the <a href="#environment"><code>&lt;environment&gt;</code></a> element specifies the set of agents that it references.</p>
+
+<p><a href="#top">top</a></p>
+
+<h2 id="environmentvariables">&lt;environmentvariables&gt;</h2>
+
+<p><code>&lt;environmentvariables&gt;</code> specifies the <a href="#variable">variables</a> to pass to jobs and their tasks. You can specify these on a <a href="#pipeline"><code>&lt;pipeline&gt;</code></a>, <a href="#stage"><code>&lt;stage&gt;</code></a>, <a href="#job"><code>&lt;job&gt;</code></a> or an <a href="#environment"><code>&lt;environment&gt;</code></a>. If the same environment variable is definied either on the agent where the job runs or on the pipeline/stage/environment of the job, the precedence is in the order <a href="#job"><code>&lt;job&gt;</code></a>, <a href="#stage"><code>&lt;stage&gt;</code></a>, <a href="#pipeline"><code>&lt;pipeline&gt;</code></a>, <a href="#environment"><code>&lt;environment&gt;</code></a> and the system environment variable. For example, variable &ldquo;FOO&rdquo; defined in a job overrides the variable definied in the job&rsquo;s stage.</p>
+
+<p><a href="#top">top</a></p>
+
+<h2 id="variable">&lt;variable&gt;</h2>
+
+<p>A <code>&lt;variable&gt;</code> defines the variable name and property value that will be passed to a job. It will be set on the system environment when the job
+is run. The value can be include multiple lines or CDATA. Note that the behaviour is operating system dependent. Your operating system may not
+allow certain variable names and/or values.</p>
+
+<h3 id="attributes-43">Attributes</h3>
+
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>name</td>
+<td>Yes</td>
+<td>Identifier for an environment variable</td>
+</tr>
+
+<tr>
+<td>secure</td>
+<td>No</td>
+<td>This attribute is applicable only at the pipeline level and when set to true, encrypts the environment variable value.</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="example-19">Example:</h3>
+
+<pre><code class="language-xml">  &lt;environmentvariables&gt;
+     &lt;variable name=&quot;FOO&quot;&gt;&lt;value&gt;bar&lt;/value&gt;&lt;/variable&gt;
+     &lt;variable name=&quot;MULTIPLE_LINES&quot;&gt;&lt;value&gt;multiplelines&lt;/value&gt;&lt;/variable&gt;
+     &lt;variable name=&quot;COMPLEX&quot;&gt;&lt;value&gt;![CDATA[This has very &lt;complex&gt; data]]&lt;/value&gt;&lt;/variable&gt;
+  &lt;/environmentvariables&gt;
+</code></pre>
+
+<p><a href="#top">top</a></p>
+
+<h2 id="environment-agents-physical">&lt;physical&gt;</h2>
+
+<p>References a physical agent to be associated with this environment.</p>
+
+<h3 id="attributes-44">Attributes</h3>
+
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>uuid</td>
+<td>Yes</td>
+<td>Identifier to an agent (must exist in the config file).</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="examples-49">Examples</h3>
+
+<pre><code class="language-xml">&lt;environment name=&quot;UAT&quot;&gt;
+  &lt;agents&gt;
+    &lt;physical uuid=&quot;94fcb7ad-8b97-4078-b5f6-3c7436d6a390&quot;/&gt;
+  &lt;/agents&gt;
+&lt;/environment&gt;
+</code></pre>
+
+<p><a href="#top">top</a></p>
+
+<h2 id="environment-pipelines">&lt;pipelines&gt;</h2>
+
+<p>The <code>&lt;pipelines&gt;</code> element inside the <a href="#environment"><code>&lt;environment&gt;</code></a> element specifies the set of pipelines that it references.</p>
+
+<p><a href="#top">top</a></p>
+
+<h2 id="environment-pipeline">&lt;pipeline&gt;</h2>
+
+<p>References a pipeline to be associated with this environment.</p>
+
+<h3 id="attributes-45">Attributes</h3>
+
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>name</td>
+<td>Yes</td>
+<td>Identifier to an pipeline (must exist in the config file).</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="examples-50">Examples</h3>
+
+<pre><code class="language-xml">&lt;environment name=&quot;UAT&quot;&gt;
+  &lt;pipelines&gt;
+    &lt;pipeline name=&quot;yourproject&quot;/&gt;
+  &lt;/pipelines&gt;
+&lt;/environment&gt;
+</code></pre>
+
+<p><a href="#top">top</a></p>
+
+<h2 id="agents">&lt;agents&gt;</h2>
+
+<p>The <code>&lt;agents&gt;</code> element specifies the set of agents known by the server.</p>
+
+<p><strong>Notes:</strong></p>
+
+<p>Do not change it manually. You can manage these through the Agents tab.</p>
+
+<p><a href="#top">top</a></p>
+
+<h2 id="agent">&lt;agent&gt;</h2>
+
+<p>An approved agent. Before it is approved, the agent is displayed on the top of the agent tab with a grey bar.</p>
+
+<h3 id="attributes-46">Attributes</h3>
+
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>hostname</td>
+<td>Yes</td>
+<td>Name of your agent. This defaults to the hostname of the agent when it is approved.</td>
+</tr>
+
+<tr>
+<td>ipaddress</td>
+<td>Yes</td>
+<td>IP for the agent.</td>
+</tr>
+
+<tr>
+<td>uuid</td>
+<td>Yes</td>
+<td>Identifier for the agent. It is created by Go automatically.</td>
+</tr>
+
+<tr>
+<td>isDisabled</td>
+<td>No</td>
+<td>The values should be one of &lsquo;true&rsquo; or &lsquo;false&rsquo; (or 1 / 0). &lsquo;true&rsquo; or &lsquo;1&rsquo; means that the agent is denied. Go doesn&rsquo;t assign jobs to a denied agent.</td>
+</tr>
+
+<tr>
+<td>elasticAgentId</td>
+<td>No</td>
+<td>Id of your elastic agent. <strong>This attribute is only required for elastic agents.</strong></td>
+</tr>
+
+<tr>
+<td>elasticPluginId</td>
+<td>No</td>
+<td>Elastic-agent plugin Id. <strong>This attribute is only required for elastic agents.</strong></td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="notes-15">Notes:</h3>
+
+<p>A local agent will be approved automatically.</p>
+
+<p><a href="#top">top</a></p>
+
+<h2 id="agentresources">&lt;resources&gt;</h2>
+
+<p><code>&lt;resources&gt;</code> describes the resources available on a particular agent.</p>
+
+<p><strong>Note:</strong></p>
+
+<p>An agent without any resources will build any jobs that don&rsquo;t specify resources. Refer to the <a href="#resources"><code>&lt;resources&gt;</code></a> of <a href="#job"><code>&lt;job&gt;</code></a>.</p>
+
+<p><a href="#top">top</a></p>
+
+<h2 id="agentresource">&lt;resource&gt;</h2>
+
+<p>Resources names can contain the following characters: a-z, A-Z, 0-9, fullstop, underscore and hyphen. Spaces are not allowed.</p>
+
+<h3 id="examples-51">Examples</h3>
+
+<pre><code class="language-xml">&lt;agents&gt;
+  &lt;agent hostname=&quot;agent01&quot; ipaddress=&quot;192.168.0.1&quot; uuid=&quot;94fcb7ad-8b97-4078-b5f6-3c7436d6a390&quot;&gt;
+    &lt;resources&gt;
+      &lt;resource&gt;java&lt;/resource&gt;
+      &lt;resource&gt;linux&lt;/resource&gt;
+    &lt;/resources&gt;
+  &lt;/agent&gt;
+&lt;/agents&gt;
+</code></pre>
+</article>
+
+      
+
+    </div>
+
+    
+  
+  
+  <aside class="book-toc fixed">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#gocd-configuration-reference">GoCD Configuration Reference</a></li>
+<li><a href="#configuration-reference">Configuration reference</a>
+<ul>
+<li><a href="#cruise">&lt;cruise&gt;</a></li>
+<li><a href="#server">&lt;server&gt;</a>
+<ul>
+<li><a href="#attributes">Attributes</a></li>
+<li><a href="#notes">Notes:</a></li>
+<li><a href="#examples">Examples</a></li>
+</ul></li>
+<li><a href="#security">&lt;security&gt;</a>
+<ul>
+<li><a href="#attributes-1">Attributes</a></li>
+<li><a href="#examples-1">Examples</a></li>
+</ul></li>
+<li><a href="#mailhost">&lt;mailhost&gt;</a>
+<ul>
+<li><a href="#examples-2">Examples</a></li>
+</ul></li>
+<li><a href="#backup">&lt;backup&gt;</a>
+<ul>
+<li><a href="#examples-3">Examples</a></li>
+<li><a href="#format">Format</a></li>
+<li><a href="#special-characters">Special characters</a></li>
+<li><a href="#examples-4">Examples</a></li>
+<li><a href="#notes-1">Notes</a></li>
+</ul></li>
+<li><a href="#ldap">&lt;ldap&gt;</a>
+<ul>
+<li><a href="#attributes-2">Attributes</a></li>
+<li><a href="#examples-5">Examples</a></li>
+</ul></li>
+<li><a href="#bases">&lt;bases&gt;</a></li>
+<li><a href="#base">&lt;base&gt;</a></li>
+<li><a href="#passwordFile">&lt;passwordFile&gt;</a>
+<ul>
+<li><a href="#examples-6">Examples</a></li>
+</ul></li>
+<li><a href="#authConfigs">&lt;authConfigs&gt;</a>
+<ul>
+<li><a href="#example">Example</a></li>
+</ul></li>
+<li><a href="#authConfig">&lt;authConfig&gt;</a>
+<ul>
+<li><a href="#attributes-3">Attributes</a></li>
+<li><a href="#example-1">Example:</a></li>
+</ul></li>
+<li><a href="#roles">&lt;roles&gt;</a>
+<ul>
+<li><a href="#examples-7">Examples</a></li>
+</ul></li>
+<li><a href="#role_definition">&lt;role&gt;</a>
+<ul>
+<li><a href="#examples-8">Examples</a></li>
+</ul></li>
+<li><a href="#usersinrole">&lt;users&gt;</a></li>
+<li><a href="#userinrole">&lt;user&gt;</a>
+<ul>
+<li><a href="#examples-9">Examples</a></li>
+</ul></li>
+<li><a href="#plugin_role_definition">&lt;pluginRole&gt;</a>
+<ul>
+<li><a href="#examples-10">Examples</a></li>
+</ul></li>
+<li><a href="#admins">&lt;admins&gt;</a>
+<ul>
+<li><a href="#examples-11">Examples</a></li>
+</ul></li>
+<li><a href="#roleinadmin">&lt;role&gt;</a>
+<ul>
+<li><a href="#examples-12">Examples</a></li>
+</ul></li>
+<li><a href="#user">&lt;user&gt;</a>
+<ul>
+<li><a href="#examples-13">Examples</a></li>
+</ul></li>
+<li><a href="#role">&lt;role&gt;</a>
+<ul>
+<li><a href="#examples-14">Examples</a></li>
+</ul></li>
+<li><a href="#elastic">&lt;elastic&gt;</a>
+<ul>
+<li><a href="#examples-15">Examples</a></li>
+</ul></li>
+<li><a href="#profiles">&lt;profiles&gt;</a>
+<ul>
+<li><a href="#examples-16">Examples</a></li>
+</ul></li>
+<li><a href="#profile">&lt;profile&gt;</a>
+<ul>
+<li><a href="#attributes-4">Attributes</a></li>
+<li><a href="#example-2">Example:</a></li>
+</ul></li>
+<li><a href="#config-repos">&lt;config-repos&gt;</a>
+<ul>
+<li><a href="#example-3">Example</a></li>
+</ul></li>
+<li><a href="#config-repo">&lt;config-repo&gt;</a>
+<ul>
+<li><a href="#attributes-5">Attributes</a></li>
+<li><a href="#example-4">Example</a></li>
+<li><a href="#config-repo-configuration">&lt;configuration&gt;</a>
+<ul>
+<li><a href="#example-5">Example</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#config-repo-svn">&lt;svn&gt;</a>
+<ul>
+<li><a href="#attributes-6">Attributes</a></li>
+<li><a href="#notes-2">Notes:</a></li>
+<li><a href="#examples-17">Examples:</a></li>
+</ul></li>
+<li><a href="#config-repo-hg">&lt;hg&gt;</a>
+<ul>
+<li><a href="#notes-3">Notes:</a></li>
+<li><a href="#attributes-7">Attributes</a></li>
+<li><a href="#examples-18">Examples</a>
+<ul>
+<li><a href="#specifying-a-mercurial-branch">Specifying a mercurial branch.</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#config-repo-p4">&lt;p4&gt;</a>
+<ul>
+<li><a href="#attributes-8">Attributes</a></li>
+<li><a href="#notes-4">Notes:</a></li>
+</ul></li>
+<li><a href="#config-repo-git">&lt;git&gt;</a>
+<ul>
+<li><a href="#notes-5">Notes:</a></li>
+<li><a href="#attributes-9">Attributes</a></li>
+<li><a href="#examples-are">Examples are:</a></li>
+</ul></li>
+<li><a href="#config-repo-tfs">&lt;tfs&gt;</a>
+<ul>
+<li><a href="#attributes-10">Attributes</a></li>
+<li><a href="#examples-are-1">Examples are:</a></li>
+</ul></li>
+<li><a href="#config-repo-scm">&lt;scm&gt;</a>
+<ul>
+<li><a href="#attributes-11">Attributes</a></li>
+<li><a href="#examples-are-2">Examples are:</a></li>
+</ul></li>
+<li><a href="#repositories">&lt;repositories&gt;</a>
+<ul>
+<li><a href="#example-6">Example</a></li>
+</ul></li>
+<li><a href="#repository">&lt;repository&gt;</a>
+<ul>
+<li><a href="#attributes-12">Attributes</a></li>
+<li><a href="#example-7">Example</a></li>
+</ul></li>
+<li><a href="#pluginConfiguration">&lt;pluginConfiguration&gt;</a>
+<ul>
+<li><a href="#attributes-13">Attributes</a></li>
+</ul></li>
+<li><a href="#configuration">&lt;configuration&gt;</a></li>
+<li><a href="#property">&lt;property&gt;</a></li>
+<li><a href="#key">&lt;key&gt;</a></li>
+<li><a href="#value">&lt;value&gt;</a></li>
+<li><a href="#packages">&lt;packages&gt;</a></li>
+<li><a href="#package">&lt;package&gt;</a>
+<ul>
+<li><a href="#attributes-14">Attributes</a></li>
+</ul></li>
+<li><a href="#artifactStores">&lt;artifactStores&gt;</a>
+<ul>
+<li><a href="#example-8">Example</a></li>
+</ul></li>
+<li><a href="#artifactStore">&lt;artifactStore&gt;</a>
+<ul>
+<li><a href="#attributes-15">Attributes</a></li>
+</ul></li>
+<li><a href="#pipelines">&lt;pipelines&gt;</a>
+<ul>
+<li><a href="#attributes-16">Attributes</a></li>
+<li><a href="#examples-19">Examples</a></li>
+</ul></li>
+<li><a href="#authorization">&lt;authorization&gt;</a></li>
+<li><a href="#admins-1">&lt;admins&gt;</a>
+<ul>
+<li><a href="#examples-20">Examples</a></li>
+</ul></li>
+<li><a href="#view">&lt;view&gt;</a>
+<ul>
+<li><a href="#examples-21">Examples</a></li>
+</ul></li>
+<li><a href="#operate">&lt;operate&gt;</a>
+<ul>
+<li><a href="#examples-22">Examples</a></li>
+</ul></li>
+<li><a href="#pipeline">&lt;pipeline&gt;</a>
+<ul>
+<li><a href="#attributes-17">Attributes</a></li>
+<li><a href="#examples-23">Examples</a></li>
+</ul></li>
+<li><a href="#params">&lt;params&gt;</a></li>
+<li><a href="#param">&lt;param&gt;</a>
+<ul>
+<li><a href="#example-9">Example:</a></li>
+</ul></li>
+<li><a href="#trackingtool">&lt;trackingtool&gt;</a>
+<ul>
+<li><a href="#attributes-18">Attributes</a></li>
+<li><a href="#examples-24">Examples</a></li>
+</ul></li>
+<li><a href="#mingle">&lt;mingle&gt;</a>
+<ul>
+<li><a href="#attributes-19">Attributes</a></li>
+<li><a href="#examples-25">Examples</a></li>
+</ul></li>
+<li><a href="#timer">&lt;timer&gt;</a>
+<ul>
+<li><a href="#attributes-20">Attributes</a></li>
+<li><a href="#examples-26">Examples</a></li>
+<li><a href="#format-1">Format</a></li>
+<li><a href="#special-characters-1">Special characters</a></li>
+<li><a href="#examples-27">Examples</a></li>
+<li><a href="#notes-6">Notes</a></li>
+</ul></li>
+<li><a href="#materials">&lt;materials&gt;</a>
+<ul>
+<li><a href="#examples-28">Examples</a></li>
+</ul></li>
+<li><a href="#filter">&lt;filter&gt;</a>
+<ul>
+<li><a href="#examples-29">Examples</a></li>
+</ul></li>
+<li><a href="#ignore">&lt;ignore&gt;</a>
+<ul>
+<li><a href="#attributes-21">Attributes</a></li>
+<li><a href="#notes-7">Notes</a></li>
+<li><a href="#examples-30">Examples:</a></li>
+</ul></li>
+<li><a href="#svn">&lt;svn&gt;</a>
+<ul>
+<li><a href="#attributes-22">Attributes</a></li>
+<li><a href="#notes-8">Notes:</a></li>
+<li><a href="#examples-31">Examples:</a></li>
+</ul></li>
+<li><a href="#hg">&lt;hg&gt;</a>
+<ul>
+<li><a href="#notes-9">Notes:</a></li>
+<li><a href="#attributes-23">Attributes</a></li>
+<li><a href="#examples-32">Examples</a>
+<ul>
+<li><a href="#specifying-a-mercurial-branch-1">Specifying a mercurial branch.</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#p4">&lt;p4&gt;</a>
+<ul>
+<li><a href="#notes-10">Notes:</a></li>
+<li><a href="#attributes-24">Attributes</a></li>
+<li><a href="#notes-11">Notes:</a></li>
+</ul></li>
+<li><a href="#git">&lt;git&gt;</a>
+<ul>
+<li><a href="#notes-12">Notes:</a></li>
+<li><a href="#attributes-25">Attributes</a></li>
+<li><a href="#examples-are-3">Examples are:</a></li>
+</ul></li>
+<li><a href="#tfs">&lt;tfs&gt;</a>
+<ul>
+<li><a href="#attributes-26">Attributes</a></li>
+<li><a href="#examples-are-4">Examples are:</a></li>
+</ul></li>
+<li><a href="#package-1">&lt;package&gt;</a>
+<ul>
+<li><a href="#attributes-27">Attributes</a></li>
+<li><a href="#example-10">Example</a></li>
+</ul></li>
+<li><a href="#pipeline-1">&lt;pipeline&gt;</a>
+<ul>
+<li><a href="#attributes-28">Attributes</a></li>
+<li><a href="#notes-13">Notes:</a></li>
+<li><a href="#examples-33">Examples</a></li>
+</ul></li>
+<li><a href="#stage">&lt;stage&gt;</a>
+<ul>
+<li><a href="#attributes-29">Attributes</a></li>
+<li><a href="#examples-34">Examples</a></li>
+</ul></li>
+<li><a href="#jobs">&lt;jobs&gt;</a>
+<ul>
+<li><a href="#examples-35">Examples</a></li>
+</ul></li>
+<li><a href="#job">&lt;job&gt;</a>
+<ul>
+<li><a href="#attributes-30">Attributes</a></li>
+<li><a href="#examples-36">Examples</a></li>
+</ul></li>
+<li><a href="#resources">&lt;resources&gt;</a>
+<ul>
+<li><a href="#example-11">Example:</a></li>
+</ul></li>
+<li><a href="#resource">&lt;resource&gt;</a>
+<ul>
+<li><a href="#validations">Validations:</a></li>
+<li><a href="#example-12">Example:</a></li>
+</ul></li>
+<li><a href="#tasks">&lt;tasks&gt;</a>
+<ul>
+<li><a href="#examples-37">Examples</a></li>
+</ul></li>
+<li><a href="#ant">&lt;ant&gt;</a>
+<ul>
+<li><a href="#attributes-31">Attributes</a></li>
+<li><a href="#examples-38">Examples</a></li>
+</ul></li>
+<li><a href="#exec">&lt;exec&gt;</a>
+<ul>
+<li><a href="#attributes-32">Attributes</a></li>
+<li><a href="#examples-39">Examples</a></li>
+</ul></li>
+<li><a href="#arg">&lt;arg&gt;</a>
+<ul>
+<li><a href="#examples-40">Examples</a></li>
+</ul></li>
+<li><a href="#nant">&lt;nant&gt;</a>
+<ul>
+<li><a href="#attributes-33">Attributes</a></li>
+<li><a href="#examples-41">Examples</a></li>
+</ul></li>
+<li><a href="#rake">&lt;rake&gt;</a>
+<ul>
+<li><a href="#attributes-34">Attributes</a></li>
+<li><a href="#examples-42">Examples</a></li>
+</ul></li>
+<li><a href="#fetchartifact">&lt;fetchartifact&gt;</a>
+<ul>
+<li><a href="#attributes-35">Attributes</a></li>
+<li><a href="#example-13">Example:</a></li>
+</ul></li>
+<li><a href="#runif">&lt;runif&gt;</a>
+<ul>
+<li><a href="#attributes-36">Attributes</a></li>
+<li><a href="#notes-14"><strong>Notes:</strong></a></li>
+<li><a href="#examples-43">Examples</a>
+<ul>
+<li><a href="#scenario-one">Scenario one:</a></li>
+<li><a href="#scenario-two">Scenario two:</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#oncancel">&lt;oncancel&gt;</a>
+<ul>
+<li><a href="#examples-44">Examples</a></li>
+</ul></li>
+<li><a href="#artifacts">&lt;artifacts&gt;</a>
+<ul>
+<li><a href="#examples-45">Examples</a></li>
+</ul></li>
+<li><a href="#artifact">&lt;artifact&gt;</a>
+<ul>
+<li><a href="#attributes-37">Attributes</a></li>
+<li><a href="#examples-for-build-artifact">Examples for build artifact</a></li>
+<li><a href="#examples-for-test-artifact">Examples for test artifact</a></li>
+<li><a href="#examples-for-external-artifact">Examples for external artifact</a></li>
+</ul></li>
+<li><a href="#tabs">&lt;tabs&gt;</a>
+<ul>
+<li><a href="#example-14">Example:</a></li>
+</ul></li>
+<li><a href="#tab">&lt;tab&gt;</a>
+<ul>
+<li><a href="#attributes-38">Attributes</a></li>
+<li><a href="#example-15">Example:</a></li>
+</ul></li>
+<li><a href="#properties">&lt;properties&gt;</a>
+<ul>
+<li><a href="#example-16">Example:</a></li>
+</ul></li>
+<li><a href="#property-1">&lt;property&gt;</a>
+<ul>
+<li><a href="#attributes-39">Attributes</a></li>
+<li><a href="#example-17">Example:</a></li>
+</ul></li>
+<li><a href="#approval">&lt;approval&gt;</a>
+<ul>
+<li><a href="#attributes-40">Attributes</a></li>
+<li><a href="#example-18">Example:</a></li>
+</ul></li>
+<li><a href="#authorization-1">&lt;authorization&gt;</a>
+<ul>
+<li><a href="#examples-46">Examples</a></li>
+</ul></li>
+<li><a href="#templates">&lt;templates&gt;</a></li>
+<li><a href="#pipeline-2">&lt;pipeline&gt;</a>
+<ul>
+<li><a href="#attributes-41">Attributes</a></li>
+<li><a href="#examples-47">Examples</a></li>
+</ul></li>
+<li><a href="#environments">&lt;environments&gt;</a></li>
+<li><a href="#environment">&lt;environment&gt;</a>
+<ul>
+<li><a href="#attributes-42">Attributes</a></li>
+<li><a href="#examples-48">Examples</a></li>
+</ul></li>
+<li><a href="#environment-agents">&lt;agents&gt;</a></li>
+<li><a href="#environmentvariables">&lt;environmentvariables&gt;</a></li>
+<li><a href="#variable">&lt;variable&gt;</a>
+<ul>
+<li><a href="#attributes-43">Attributes</a></li>
+<li><a href="#example-19">Example:</a></li>
+</ul></li>
+<li><a href="#environment-agents-physical">&lt;physical&gt;</a>
+<ul>
+<li><a href="#attributes-44">Attributes</a></li>
+<li><a href="#examples-49">Examples</a></li>
+</ul></li>
+<li><a href="#environment-pipelines">&lt;pipelines&gt;</a></li>
+<li><a href="#environment-pipeline">&lt;pipeline&gt;</a>
+<ul>
+<li><a href="#attributes-45">Attributes</a></li>
+<li><a href="#examples-50">Examples</a></li>
+</ul></li>
+<li><a href="#agents">&lt;agents&gt;</a></li>
+<li><a href="#agent">&lt;agent&gt;</a>
+<ul>
+<li><a href="#attributes-46">Attributes</a></li>
+<li><a href="#notes-15">Notes:</a></li>
+</ul></li>
+<li><a href="#agentresources">&lt;resources&gt;</a></li>
+<li><a href="#agentresource">&lt;resource&gt;</a>
+<ul>
+<li><a href="#examples-51">Examples</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+  </aside>
+
+
+
+  </main>
+
+  
+  
+</body>
+
+</html>

@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Managing Artifacts and Reports | GoCD User Documentation</title>
+
+<link href="https://fonts.googleapis.com/css?family=Oxygen|Oxygen+Mono:300,400,700" rel="stylesheet">
+<link rel="stylesheet" href="../normalize.min.css">
+
+<link rel="stylesheet" href="../book.min.29d743ffb6d61ecbfc9bb21b7eab17d63b577d4bd547c3f095addb1c793ab1b1.css">
+  
+</head>
+
+<body>
+  <input type="checkbox" style="display: none" id="menu-control" />
+  <main class="flex container">
+
+    <aside class="book-menu fixed">
+      <nav role="navigation">
+
+
+
+    <ul>
+<li><a href="../"><strong>Introduction</strong></a></li>
+<li><a href="../navigation.html"><strong>GoCD Tour</strong></a>
+
+<ul>
+<li><a href="../navigation/pipelines_dashboard_page.html">Pipeline Dashboard</a></li>
+<li><a href="../navigation/agents_page.html">Agents</a></li>
+<li><a href="../navigation/agent_details.html">Agent Details</a></li>
+<li><a href="../navigation/pipeline_activity_page.html">Pipeline Activity</a></li>
+<li><a href="../navigation/stage_details_page.html">Stage Details</a></li>
+<li><a href="../navigation/job_details_page.html">Job Details</a></li>
+<li><a href="../navigation/administration_page.html">Administration</a></li>
+<li><a href="../navigation/server_details_page.html">Server Details</a></li>
+<li><a href="../navigation/environments_page.html">Environments</a></li>
+<li><a href="../navigation/value_stream_map.html">Value Stream Map</a></li>
+</ul></li>
+<li><a href="../configuration.html"><strong>Configuration</strong></a>
+
+<ul>
+<li><a href="../configuration/quick_pipeline_setup.html">Setup a New Pipeline</a></li>
+<li><a href="../configuration/managing_pipelines.html">Managing Pipelines</a></li>
+<li><a href="../configuration/managing_dependencies.html">Managing Dependencies</a></li>
+<li><a href="../configuration/managing_a_build_cloud.html">Managing Agents</a></li>
+<li><a href="../configuration/managing_environments.html">Managing Environments</a></li>
+<li><a href="../configuration/build_labelling.html">Pipeline Labelling</a></li>
+<li><a href="../configuration/pipeline_scheduling.html">Pipeline Scheduling</a></li>
+<li><a href="../configuration/admin_use_parameters_in_configuration.html">Parameterize a Pipeline</a></li>
+<li><a href="../configuration/admin_use_custom_pipeline_label.html">Customize a Pipeline Label</a></li>
+<li><a href="../configuration/admin_clone_pipeline.html">Clone a Pipeline</a></li>
+<li><a href="../configuration/admin_lock_pipelines.html">Lock a Pipeline</a></li>
+<li><a href="../configuration/admin_add_material.html">Add Material to Existing Pipeline</a></li>
+<li><a href="../configuration/admin_add_stage.html">Add Stage to Existing Pipeline</a></li>
+<li><a href="../configuration/admin_add_job.html">Add job to Existing Stage</a></li>
+<li><a href="../configuration/admin_add_task.html">Add task to Existing Job</a></li>
+<li><a href="../configuration/pipeline_templates.html">Pipeline Templates</a></li>
+<li><a href="../configuration/elastic_agents.html">Elastic Agents</a></li>
+<li><a href="../configuration/dev_choose_when_stage_runs.html">Choose When a Stage Runs</a></li>
+<li><a href="../configuration/admin_timer.html">Timer Trigger</a></li>
+<li><a href="../configuration/job_timeout.html">Job Timeout</a></li>
+<li><a href="../configuration/managing_users.html">Managing Users</a></li>
+<li><a href="../configuration/dev_authentication.html">Authentication</a></li>
+<li><a href="../configuration/dev_authorization.html">Authorizing Users</a></li>
+<li><a href="../configuration/delegating_group_administration.html">Delegating Group Administration</a></li>
+<li><a href="../configuration/pipeline_group_admin_config.html">Pipeline Group Administration</a></li>
+<li><a href="../configuration/dev_upload_test_report.html">Publish Reports and Artifacts</a></li>
+<li><a href="../configuration/managing_artifacts_and_reports.html">Managing Artifacts and Reports</a></li>
+<li><a href="../configuration/delete_artifacts.html">Auto Delete Artifacts</a></li>
+<li><a href="../configuration/ui_testing.html">UI Testing</a></li>
+<li><a href="../configuration/admin_mailhost_info.html">Mailhost Information</a></li>
+<li><a href="../configuration/dev_notifications.html">Notifications</a></li>
+<li><a href="../configuration/tfs_config.html">TFS Material configuration</a></li>
+<li><a href="../configuration/configuration_reference.html">Reference</a></li>
+<li><a href="../configuration/schema.html">Schema</a></li>
+</ul></li>
+<li><a href="../faq.html"><strong>FAQ/Troubleshooting</strong></a>
+
+<ul>
+<li><a href="../faq/ordering_of_pipelines.html">Ordering of Pipelines</a></li>
+<li><a href="../faq/stage_old_config.html">Historical Configuration</a></li>
+<li><a href="../faq/concurrent_config_modifications.html">Concurrent Modifications to Config</a></li>
+<li><a href="../faq/dev_understand_why_build_broken.html">Why the Build is Broken?</a></li>
+<li><a href="../faq/dev_see_artifact_as_tab.html">See artifacts as sub-tabs</a></li>
+<li><a href="../faq/dev_save_properties.html">Save Properties for a Build</a></li>
+<li><a href="../faq/environment_variables.html">Using Environment variables</a></li>
+<li><a href="../faq/rm_deploy_to_environment.html">Deploy to an environment</a></li>
+<li><a href="../faq/tester_what_has_changed.html">See changes in new binary</a></li>
+<li><a href="../faq/dependency_management.html">Run Tests against new Builds</a></li>
+<li><a href="../faq/rm_what_is_deployed.html">Check What&rsquo;s Deployed</a></li>
+<li><a href="../faq/deploy_a_specific_build_to_an_environment.html">Deploy a Specific Build</a></li>
+<li><a href="../faq/agent_guid_issue.html">Clone/Copy an Existing Agents</a></li>
+<li><a href="../faq/job_rerun.html">How do I re-run jobs?</a></li>
+<li><a href="../faq/material_update_hung.html">Go unable to poll for changes</a></li>
+<li><a href="../faq/artifact_integrity.html">Artifact integrity verification</a></li>
+<li><a href="../faq/notifications_page.html">Email Notifications</a></li>
+<li><a href="../faq/admin_out_of_disk_space.html">Running out of Disk Space</a></li>
+<li><a href="../faq/docker_container_ssh_keys.html">Configure SSH Keys for dockerized GoCD</a></li>
+</ul></li>
+</ul>
+
+
+
+
+</nav>
+    </aside>
+
+    <div class="book-page">
+      <header class="align-center justify-between book-header">
+  <label for="menu-control">
+    <img src="../svg/menu.svg" />
+  </label>
+  <strong>Managing Artifacts and Reports</strong>
+</header>
+
+      
+<article class="markdown">
+
+<h1 id="managing-artifacts-and-reports">Managing artifacts and reports</h1>
+
+<p>Because all your work is done on remote agents, GoCD provides a mechanism for files to be automatically uploaded to GoCD server following the completion of every job. These files can then be accessed via the GoCD server dashboard, or via the RESTful API.</p>
+
+<h2 id="publishing-artifacts">Publishing artifacts</h2>
+
+<p>The first step in using the artifact repository is to tell GoCD which files you want to publish. To do this just specify the path to the file or directory relative to the root of the source control checkout. You also need to specify where GoCD will publish the artifact. You can add as many files and directories as you like.</p>
+
+<p>To configure an artifact:</p>
+
+<ul>
+<li>Navigate to <strong>Admin → Pipelines</strong></li>
+<li>Edit the pipeline you want to configure artifacts for</li>
+<li>Expand the left tree navigator and click on your job</li>
+<li>Click on the <strong>Artifacts</strong> tab</li>
+<li>Enter the source (where the artifact will be found) and destination (where the artifact should be saved on the Go server)</li>
+</ul>
+
+<p><img src="../images/job_artifacts.png" alt="" /></p>
+
+<p>For power users, here&rsquo;s how you would configure this via Config XML:</p>
+
+<pre><code class="language-xml">&lt;artifacts&gt;
+  &lt;artifact src=&quot;target/commonlib.dll&quot; dest=&quot;pkg&quot; /&gt;
+&lt;/artifacts&gt;
+</code></pre>
+
+<h2 id="using-tabs">Using tabs</h2>
+
+<p>Once your artifacts are safely in GoCD server&rsquo;s artifact repository, you can have the dashboard display them in tabs.</p>
+
+<p>GoCD can display images, text files, or anything else that a browser will normally render in an IFrame. If you display an html page which references other resources (such as images, Flash files or whatever), so long as the resources are referenced with relative paths, they will display correctly.</p>
+
+<p>This mechanism is a simple way to include reports (for example code coverage) in Go.</p>
+
+<h4 id="example">Example</h4>
+
+<p>The console tab shows output information from all the phases of the job. This also includes information from the version control system and details regarding the artifacts created and published during the job.</p>
+
+<p><img src="../images/console_out.png" alt="" /></p>
+
+<p>If you produce an html page with an embedded Flash file into your artifact repository:</p>
+
+<p><img src="../images/select_artifact.png" alt="" /></p>
+
+<p>You can use the following configuration to display it in a tab:</p>
+
+<pre><code class="language-xml">&lt;tabs&gt;
+  &lt;tab name=&quot;Recording&quot; path=&quot;deployment/drop/smoke/smoke-recording.html&quot; /&gt;
+&lt;/tabs&gt;
+</code></pre>
+
+<p>GoCD will create a tab called &ldquo;Recording&rdquo; and display the contents of the file in the tab when you click on it:</p>
+
+<p><img src="../images/recording.png" alt="" /></p>
+
+<h3 id="publishing-tests">Publishing tests</h3>
+
+<p>GoCD has support for publishing tests from JUnit or NUnit test reports.</p>
+
+<p>To configure a test artifact:</p>
+
+<ul>
+<li>Navigate to <strong>Admin → Pipelines</strong></li>
+<li>Edit the pipeline you want to configure artifacts for</li>
+<li>Expand the left tree navigator and click on your job</li>
+<li>Click on the <strong>Artifacts</strong> tab</li>
+<li>Enter the source (where the artifact will be found) and destination (where the artifact should be saved on the Go server)</li>
+<li>From the <strong>Type</strong> dropdown, select <strong>Test Artifact</strong></li>
+</ul>
+
+<p><img src="../images/job_test_artifacts.png" alt="" /></p>
+
+<p>For power users, here&rsquo;s how you would configure this via Config XML:</p>
+
+<pre><code class="language-xml">&lt;artifacts&gt;
+  &lt;test src=&quot;xstream/target/test-reports&quot; /&gt;
+&lt;/artifacts&gt;
+</code></pre>
+
+<p>GoCD will:</p>
+
+<ul>
+<li>add a tab called Tests that lists the tests in the project</li>
+<li>add a list of the failed tests to the Failures tab</li>
+<li>set the properties associated with tests on the job. These include failed-test-count, ignored-test-count, test-time and total-test-count</li>
+<li>copy the artifacts into the repository. In this case the test reports will be copied into a new directory test-reports in the artifact repository</li>
+</ul>
+
+<h3 id="restful-api">RESTful API</h3>
+
+<p>GoCD publishes all of its information as resources that can be queried through http in the form of RESTful API. See the <a href="../integration/index.html">Go integration</a> page for more information.</p>
+</article>
+
+      
+
+    </div>
+
+    
+  
+  
+  <aside class="book-toc fixed">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#managing-artifacts-and-reports">Managing artifacts and reports</a>
+<ul>
+<li><a href="#publishing-artifacts">Publishing artifacts</a></li>
+<li><a href="#using-tabs">Using tabs</a>
+<ul>
+<li>
+<ul>
+<li><a href="#example">Example</a></li>
+</ul></li>
+<li><a href="#publishing-tests">Publishing tests</a></li>
+<li><a href="#restful-api">RESTful API</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+  </aside>
+
+
+
+  </main>
+
+  
+  
+</body>
+
+</html>

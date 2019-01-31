@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pipeline Templates | GoCD User Documentation</title>
+
+<link href="https://fonts.googleapis.com/css?family=Oxygen|Oxygen+Mono:300,400,700" rel="stylesheet">
+<link rel="stylesheet" href="../normalize.min.css">
+
+<link rel="stylesheet" href="../book.min.29d743ffb6d61ecbfc9bb21b7eab17d63b577d4bd547c3f095addb1c793ab1b1.css">
+  
+</head>
+
+<body>
+  <input type="checkbox" style="display: none" id="menu-control" />
+  <main class="flex container">
+
+    <aside class="book-menu fixed">
+      <nav role="navigation">
+
+
+
+    <ul>
+<li><a href="../"><strong>Introduction</strong></a></li>
+<li><a href="../navigation.html"><strong>GoCD Tour</strong></a>
+
+<ul>
+<li><a href="../navigation/pipelines_dashboard_page.html">Pipeline Dashboard</a></li>
+<li><a href="../navigation/agents_page.html">Agents</a></li>
+<li><a href="../navigation/agent_details.html">Agent Details</a></li>
+<li><a href="../navigation/pipeline_activity_page.html">Pipeline Activity</a></li>
+<li><a href="../navigation/stage_details_page.html">Stage Details</a></li>
+<li><a href="../navigation/job_details_page.html">Job Details</a></li>
+<li><a href="../navigation/administration_page.html">Administration</a></li>
+<li><a href="../navigation/server_details_page.html">Server Details</a></li>
+<li><a href="../navigation/environments_page.html">Environments</a></li>
+<li><a href="../navigation/value_stream_map.html">Value Stream Map</a></li>
+</ul></li>
+<li><a href="../configuration.html"><strong>Configuration</strong></a>
+
+<ul>
+<li><a href="../configuration/quick_pipeline_setup.html">Setup a New Pipeline</a></li>
+<li><a href="../configuration/managing_pipelines.html">Managing Pipelines</a></li>
+<li><a href="../configuration/managing_dependencies.html">Managing Dependencies</a></li>
+<li><a href="../configuration/managing_a_build_cloud.html">Managing Agents</a></li>
+<li><a href="../configuration/managing_environments.html">Managing Environments</a></li>
+<li><a href="../configuration/build_labelling.html">Pipeline Labelling</a></li>
+<li><a href="../configuration/pipeline_scheduling.html">Pipeline Scheduling</a></li>
+<li><a href="../configuration/admin_use_parameters_in_configuration.html">Parameterize a Pipeline</a></li>
+<li><a href="../configuration/admin_use_custom_pipeline_label.html">Customize a Pipeline Label</a></li>
+<li><a href="../configuration/admin_clone_pipeline.html">Clone a Pipeline</a></li>
+<li><a href="../configuration/admin_lock_pipelines.html">Lock a Pipeline</a></li>
+<li><a href="../configuration/admin_add_material.html">Add Material to Existing Pipeline</a></li>
+<li><a href="../configuration/admin_add_stage.html">Add Stage to Existing Pipeline</a></li>
+<li><a href="../configuration/admin_add_job.html">Add job to Existing Stage</a></li>
+<li><a href="../configuration/admin_add_task.html">Add task to Existing Job</a></li>
+<li><a href="../configuration/pipeline_templates.html">Pipeline Templates</a></li>
+<li><a href="../configuration/elastic_agents.html">Elastic Agents</a></li>
+<li><a href="../configuration/dev_choose_when_stage_runs.html">Choose When a Stage Runs</a></li>
+<li><a href="../configuration/admin_timer.html">Timer Trigger</a></li>
+<li><a href="../configuration/job_timeout.html">Job Timeout</a></li>
+<li><a href="../configuration/managing_users.html">Managing Users</a></li>
+<li><a href="../configuration/dev_authentication.html">Authentication</a></li>
+<li><a href="../configuration/dev_authorization.html">Authorizing Users</a></li>
+<li><a href="../configuration/delegating_group_administration.html">Delegating Group Administration</a></li>
+<li><a href="../configuration/pipeline_group_admin_config.html">Pipeline Group Administration</a></li>
+<li><a href="../configuration/dev_upload_test_report.html">Publish Reports and Artifacts</a></li>
+<li><a href="../configuration/managing_artifacts_and_reports.html">Managing Artifacts and Reports</a></li>
+<li><a href="../configuration/delete_artifacts.html">Auto Delete Artifacts</a></li>
+<li><a href="../configuration/ui_testing.html">UI Testing</a></li>
+<li><a href="../configuration/admin_mailhost_info.html">Mailhost Information</a></li>
+<li><a href="../configuration/dev_notifications.html">Notifications</a></li>
+<li><a href="../configuration/tfs_config.html">TFS Material configuration</a></li>
+<li><a href="../configuration/configuration_reference.html">Reference</a></li>
+<li><a href="../configuration/schema.html">Schema</a></li>
+</ul></li>
+<li><a href="../faq.html"><strong>FAQ/Troubleshooting</strong></a>
+
+<ul>
+<li><a href="../faq/ordering_of_pipelines.html">Ordering of Pipelines</a></li>
+<li><a href="../faq/stage_old_config.html">Historical Configuration</a></li>
+<li><a href="../faq/concurrent_config_modifications.html">Concurrent Modifications to Config</a></li>
+<li><a href="../faq/dev_understand_why_build_broken.html">Why the Build is Broken?</a></li>
+<li><a href="../faq/dev_see_artifact_as_tab.html">See artifacts as sub-tabs</a></li>
+<li><a href="../faq/dev_save_properties.html">Save Properties for a Build</a></li>
+<li><a href="../faq/environment_variables.html">Using Environment variables</a></li>
+<li><a href="../faq/rm_deploy_to_environment.html">Deploy to an environment</a></li>
+<li><a href="../faq/tester_what_has_changed.html">See changes in new binary</a></li>
+<li><a href="../faq/dependency_management.html">Run Tests against new Builds</a></li>
+<li><a href="../faq/rm_what_is_deployed.html">Check What&rsquo;s Deployed</a></li>
+<li><a href="../faq/deploy_a_specific_build_to_an_environment.html">Deploy a Specific Build</a></li>
+<li><a href="../faq/agent_guid_issue.html">Clone/Copy an Existing Agents</a></li>
+<li><a href="../faq/job_rerun.html">How do I re-run jobs?</a></li>
+<li><a href="../faq/material_update_hung.html">Go unable to poll for changes</a></li>
+<li><a href="../faq/artifact_integrity.html">Artifact integrity verification</a></li>
+<li><a href="../faq/notifications_page.html">Email Notifications</a></li>
+<li><a href="../faq/admin_out_of_disk_space.html">Running out of Disk Space</a></li>
+<li><a href="../faq/docker_container_ssh_keys.html">Configure SSH Keys for dockerized GoCD</a></li>
+</ul></li>
+</ul>
+
+
+
+
+</nav>
+    </aside>
+
+    <div class="book-page">
+      <header class="align-center justify-between book-header">
+  <label for="menu-control">
+    <img src="../svg/menu.svg" />
+  </label>
+  <strong>Pipeline Templates</strong>
+</header>
+
+      
+<article class="markdown">
+
+<h1 id="gocd-pipeline-templates">GoCD Pipeline Templates</h1>
+
+<p>Templating helps to create reusable workflows in order to make tasks like creating and maintaining branches, and managing large number of pipelines easier.</p>
+
+<h2 id="creating-pipeline-templates">Creating Pipeline Templates</h2>
+
+<p>Pipeline Templates can be managed from the Templates tab on the Administration Page.</p>
+
+<p><img src="../images/pipeline_templates.png" alt="" /></p>
+
+<p>Clicking on the &ldquo;Add New Template&rdquo; brings up the following form which allows you to create a fresh template, or extract it from an existing pipeline. Once saved, the pipeline indicated will also start using this newly created template.</p>
+
+<p><img src="../images/add_new_template.png" alt="" /></p>
+
+<p>A template can also be extracted from a pipeline using the &ldquo;Extract Template&rdquo; link. This can be found on the &ldquo;Pipelines&rdquo; tab in the Administration page.</p>
+
+<p><img src="../images/extract_template_from_pipeline.png" alt="" /></p>
+
+<h3 id="example">Example</h3>
+
+<p>As an example, assume that there is a pipeline group called &ldquo;my-app&rdquo; and it contains a pipeline called &ldquo;app-trunk&rdquo; which builds the application from trunk. Now, if we need to create another pipeline called &ldquo;app-1.0-branch&rdquo; which builds 1.0 version of the application, we can use Pipeline Templates as follows</p>
+
+<h2 id="using-administration-ui">Using Administration UI</h2>
+
+<ul>
+<li>Create a template &ldquo;my-app-build&rdquo; by extracting it from the pipeline &ldquo;app-trunk&rdquo;, as shown in the previous section.</li>
+<li>Create a new pipeline &ldquo;app-1.0-branch&rdquo; which defines SCM material with the branch url and uses the template &ldquo;my-app-build&rdquo;.</li>
+</ul>
+
+<h2 id="using-xml">Using XML</h2>
+
+<p>Power users can configure the above as follows:</p>
+
+<pre><code class="language-xml">&lt;pipelines group=&quot;my-app&quot;&gt;
+  &lt;pipeline name=&quot;app-trunk&quot; template=&quot;my-app-build&quot;&gt;
+    &lt;materials&gt;
+      &lt;svn url=&quot;http://my-svn-url/trunk&quot; /&gt;
+    &lt;/materials&gt;
+  &lt;/pipeline&gt;
+  &lt;pipeline name=&quot;app-1.0-branch&quot; template=&quot;my-app-build&quot;&gt;
+    &lt;materials&gt;
+      &lt;svn url=&quot;http://my-svn-url/branches/1.0&quot; /&gt;
+    &lt;/materials&gt;
+  &lt;/pipeline&gt;
+&lt;/pipelines&gt;
+&lt;templates&gt;
+  &lt;pipeline name=&quot;my-app-build&quot;&gt;
+    &lt;stage name=&quot;build&quot;&gt;
+      &lt;jobs&gt;
+        &lt;job name=&quot;compile&quot;&gt;
+          &lt;tasks&gt;
+            &lt;ant target=&quot;compile&quot; /&gt;
+          &lt;/tasks&gt;
+        &lt;/job&gt;
+      &lt;/jobs&gt;
+    &lt;/stage&gt;
+  &lt;/pipeline&gt;
+&lt;/templates&gt;
+</code></pre>
+
+<h3 id="editing-pipeline-templates">Editing Pipeline Templates</h3>
+
+<p>GoCD Administrators can now enable any GoCD user to edit a template by <a href="dev_authorization.html#specifying-permissions-for-templates">making them a template administrator</a>.</p>
+
+<p>Template administrators can view and edit the templates to which they have permissions, on the template tab of the admin page. Template Administrators, will however not be able to add, delete or change permissions for a template. They will also be able to see the number of pipelines in which the template is being used, but not the details of those pipelines.</p>
+
+<p><img src="../images/template_admin_edit_template.png" alt="" /></p>
+
+<h3 id="viewing-pipeline-templates">Viewing Pipeline Templates</h3>
+
+<p>Pipeline Templates can now be viewed by Administrators and Pipeline Group Administrators while editing or creating a Pipeline.</p>
+
+<p><img src="../images/template_view_on_pipeline_tab.png" alt="" /></p>
+
+<p>Clicking on the icon indicated by arrow will display the following:</p>
+
+<p><img src="../images/view_template_popup.png" alt="" /></p>
+
+<p>The pop-up shows the extract of the template &ldquo;Services-Template&rdquo; configured for the pipeline &ldquo;Service_1&rdquo;.</p>
+
+<ol>
+<li>Shows the details of the job &ldquo;compile-job&rdquo; configured for the stage &ldquo;compile&rdquo;.</li>
+<li>Indicates that the working directory set for the task is &ldquo;go/service_1&rdquo;, which is followed by the &ldquo;\$&rdquo; symbol and then the command.</li>
+<li>If any &ldquo;On Cancel Task&rdquo; has been configured, it will be indicated like this.</li>
+<li>Shows the &ldquo;Run If Condition&rdquo; for this task.</li>
+</ol>
+
+<h4 id="see-also">See also&hellip;</h4>
+
+<ul>
+<li><a href="configuration_reference.html#templates">Templates - Configuration Reference</a></li>
+</ul>
+</article>
+
+      
+
+    </div>
+
+    
+  
+  
+  <aside class="book-toc fixed">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#gocd-pipeline-templates">GoCD Pipeline Templates</a>
+<ul>
+<li><a href="#creating-pipeline-templates">Creating Pipeline Templates</a>
+<ul>
+<li><a href="#example">Example</a></li>
+</ul></li>
+<li><a href="#using-administration-ui">Using Administration UI</a></li>
+<li><a href="#using-xml">Using XML</a>
+<ul>
+<li><a href="#editing-pipeline-templates">Editing Pipeline Templates</a></li>
+<li><a href="#viewing-pipeline-templates">Viewing Pipeline Templates</a>
+<ul>
+<li><a href="#see-also">See also&hellip;</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+  </aside>
+
+
+
+  </main>
+
+  
+  
+</body>
+
+</html>

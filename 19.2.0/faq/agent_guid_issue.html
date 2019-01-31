@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Clone/Copy an Existing Agents | GoCD User Documentation</title>
+
+<link href="https://fonts.googleapis.com/css?family=Oxygen|Oxygen+Mono:300,400,700" rel="stylesheet">
+<link rel="stylesheet" href="../normalize.min.css">
+
+<link rel="stylesheet" href="../book.min.29d743ffb6d61ecbfc9bb21b7eab17d63b577d4bd547c3f095addb1c793ab1b1.css">
+  
+</head>
+
+<body>
+  <input type="checkbox" style="display: none" id="menu-control" />
+  <main class="flex container">
+
+    <aside class="book-menu fixed">
+      <nav role="navigation">
+
+
+
+    <ul>
+<li><a href="../"><strong>Introduction</strong></a></li>
+<li><a href="../navigation.html"><strong>GoCD Tour</strong></a>
+
+<ul>
+<li><a href="../navigation/pipelines_dashboard_page.html">Pipeline Dashboard</a></li>
+<li><a href="../navigation/agents_page.html">Agents</a></li>
+<li><a href="../navigation/agent_details.html">Agent Details</a></li>
+<li><a href="../navigation/pipeline_activity_page.html">Pipeline Activity</a></li>
+<li><a href="../navigation/stage_details_page.html">Stage Details</a></li>
+<li><a href="../navigation/job_details_page.html">Job Details</a></li>
+<li><a href="../navigation/administration_page.html">Administration</a></li>
+<li><a href="../navigation/server_details_page.html">Server Details</a></li>
+<li><a href="../navigation/environments_page.html">Environments</a></li>
+<li><a href="../navigation/value_stream_map.html">Value Stream Map</a></li>
+</ul></li>
+<li><a href="../configuration.html"><strong>Configuration</strong></a>
+
+<ul>
+<li><a href="../configuration/quick_pipeline_setup.html">Setup a New Pipeline</a></li>
+<li><a href="../configuration/managing_pipelines.html">Managing Pipelines</a></li>
+<li><a href="../configuration/managing_dependencies.html">Managing Dependencies</a></li>
+<li><a href="../configuration/managing_a_build_cloud.html">Managing Agents</a></li>
+<li><a href="../configuration/managing_environments.html">Managing Environments</a></li>
+<li><a href="../configuration/build_labelling.html">Pipeline Labelling</a></li>
+<li><a href="../configuration/pipeline_scheduling.html">Pipeline Scheduling</a></li>
+<li><a href="../configuration/admin_use_parameters_in_configuration.html">Parameterize a Pipeline</a></li>
+<li><a href="../configuration/admin_use_custom_pipeline_label.html">Customize a Pipeline Label</a></li>
+<li><a href="../configuration/admin_clone_pipeline.html">Clone a Pipeline</a></li>
+<li><a href="../configuration/admin_lock_pipelines.html">Lock a Pipeline</a></li>
+<li><a href="../configuration/admin_add_material.html">Add Material to Existing Pipeline</a></li>
+<li><a href="../configuration/admin_add_stage.html">Add Stage to Existing Pipeline</a></li>
+<li><a href="../configuration/admin_add_job.html">Add job to Existing Stage</a></li>
+<li><a href="../configuration/admin_add_task.html">Add task to Existing Job</a></li>
+<li><a href="../configuration/pipeline_templates.html">Pipeline Templates</a></li>
+<li><a href="../configuration/elastic_agents.html">Elastic Agents</a></li>
+<li><a href="../configuration/dev_choose_when_stage_runs.html">Choose When a Stage Runs</a></li>
+<li><a href="../configuration/admin_timer.html">Timer Trigger</a></li>
+<li><a href="../configuration/job_timeout.html">Job Timeout</a></li>
+<li><a href="../configuration/managing_users.html">Managing Users</a></li>
+<li><a href="../configuration/dev_authentication.html">Authentication</a></li>
+<li><a href="../configuration/dev_authorization.html">Authorizing Users</a></li>
+<li><a href="../configuration/delegating_group_administration.html">Delegating Group Administration</a></li>
+<li><a href="../configuration/pipeline_group_admin_config.html">Pipeline Group Administration</a></li>
+<li><a href="../configuration/dev_upload_test_report.html">Publish Reports and Artifacts</a></li>
+<li><a href="../configuration/managing_artifacts_and_reports.html">Managing Artifacts and Reports</a></li>
+<li><a href="../configuration/delete_artifacts.html">Auto Delete Artifacts</a></li>
+<li><a href="../configuration/ui_testing.html">UI Testing</a></li>
+<li><a href="../configuration/admin_mailhost_info.html">Mailhost Information</a></li>
+<li><a href="../configuration/dev_notifications.html">Notifications</a></li>
+<li><a href="../configuration/tfs_config.html">TFS Material configuration</a></li>
+<li><a href="../configuration/configuration_reference.html">Reference</a></li>
+<li><a href="../configuration/schema.html">Schema</a></li>
+</ul></li>
+<li><a href="../faq.html"><strong>FAQ/Troubleshooting</strong></a>
+
+<ul>
+<li><a href="../faq/ordering_of_pipelines.html">Ordering of Pipelines</a></li>
+<li><a href="../faq/stage_old_config.html">Historical Configuration</a></li>
+<li><a href="../faq/concurrent_config_modifications.html">Concurrent Modifications to Config</a></li>
+<li><a href="../faq/dev_understand_why_build_broken.html">Why the Build is Broken?</a></li>
+<li><a href="../faq/dev_see_artifact_as_tab.html">See artifacts as sub-tabs</a></li>
+<li><a href="../faq/dev_save_properties.html">Save Properties for a Build</a></li>
+<li><a href="../faq/environment_variables.html">Using Environment variables</a></li>
+<li><a href="../faq/rm_deploy_to_environment.html">Deploy to an environment</a></li>
+<li><a href="../faq/tester_what_has_changed.html">See changes in new binary</a></li>
+<li><a href="../faq/dependency_management.html">Run Tests against new Builds</a></li>
+<li><a href="../faq/rm_what_is_deployed.html">Check What&rsquo;s Deployed</a></li>
+<li><a href="../faq/deploy_a_specific_build_to_an_environment.html">Deploy a Specific Build</a></li>
+<li><a href="../faq/agent_guid_issue.html">Clone/Copy an Existing Agents</a></li>
+<li><a href="../faq/job_rerun.html">How do I re-run jobs?</a></li>
+<li><a href="../faq/material_update_hung.html">Go unable to poll for changes</a></li>
+<li><a href="../faq/artifact_integrity.html">Artifact integrity verification</a></li>
+<li><a href="../faq/notifications_page.html">Email Notifications</a></li>
+<li><a href="../faq/admin_out_of_disk_space.html">Running out of Disk Space</a></li>
+<li><a href="../faq/docker_container_ssh_keys.html">Configure SSH Keys for dockerized GoCD</a></li>
+</ul></li>
+</ul>
+
+
+
+
+</nav>
+    </aside>
+
+    <div class="book-page">
+      <header class="align-center justify-between book-header">
+  <label for="menu-control">
+    <img src="../svg/menu.svg" />
+  </label>
+  <strong>Clone/Copy an Existing Agents</strong>
+</header>
+
+      
+<article class="markdown">
+
+<h1 id="setting-up-a-new-agent-by-cloning-an-existing-agent-in-gocd">Setting up a new agent by cloning an existing agent in GoCD</h1>
+
+<h2 id="clone-the-agent">Clone the agent</h2>
+
+<p>An easy way to set up a new agent is to clone an existing one which is already set up and is known to work correctly. You can clone an agent in a couple different ways:</p>
+
+<ul>
+<li>Copy the entire agent directory structure to a new location (can be on the same machine or on a different one).</li>
+<li>If you use a virtual machine to run your agent, clone the entire VM.</li>
+</ul>
+
+<h2 id="remove-duplicate-guid">Remove duplicate GUID</h2>
+
+<p>Once the agent has been cloned, you&rsquo;ll need to delete the GUID file so that GoCD server does not confuse the new agent for the old one. The GUID file can be found at <em>[agent working dir]/config/guid.txt</em> - delete this file from the new agent.</p>
+
+<h2 id="approve-the-new-agent">Approve the new agent</h2>
+
+<p>You may now start your agent and it should appear under the Agents tab on the GoCD server. Approve it as you would any new agent and you&rsquo;re ready to go.</p>
+</article>
+
+      
+
+    </div>
+
+    
+  
+  
+  <aside class="book-toc fixed">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#setting-up-a-new-agent-by-cloning-an-existing-agent-in-gocd">Setting up a new agent by cloning an existing agent in GoCD</a>
+<ul>
+<li><a href="#clone-the-agent">Clone the agent</a></li>
+<li><a href="#remove-duplicate-guid">Remove duplicate GUID</a></li>
+<li><a href="#approve-the-new-agent">Approve the new agent</a></li>
+</ul></li>
+</ul>
+</nav>
+  </aside>
+
+
+
+  </main>
+
+  
+  
+</body>
+
+</html>

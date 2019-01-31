@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Managing Pipelines | GoCD User Documentation</title>
+
+<link href="https://fonts.googleapis.com/css?family=Oxygen|Oxygen+Mono:300,400,700" rel="stylesheet">
+<link rel="stylesheet" href="../normalize.min.css">
+
+<link rel="stylesheet" href="../book.min.29d743ffb6d61ecbfc9bb21b7eab17d63b577d4bd547c3f095addb1c793ab1b1.css">
+  
+</head>
+
+<body>
+  <input type="checkbox" style="display: none" id="menu-control" />
+  <main class="flex container">
+
+    <aside class="book-menu fixed">
+      <nav role="navigation">
+
+
+
+    <ul>
+<li><a href="../"><strong>Introduction</strong></a></li>
+<li><a href="../navigation.html"><strong>GoCD Tour</strong></a>
+
+<ul>
+<li><a href="../navigation/pipelines_dashboard_page.html">Pipeline Dashboard</a></li>
+<li><a href="../navigation/agents_page.html">Agents</a></li>
+<li><a href="../navigation/agent_details.html">Agent Details</a></li>
+<li><a href="../navigation/pipeline_activity_page.html">Pipeline Activity</a></li>
+<li><a href="../navigation/stage_details_page.html">Stage Details</a></li>
+<li><a href="../navigation/job_details_page.html">Job Details</a></li>
+<li><a href="../navigation/administration_page.html">Administration</a></li>
+<li><a href="../navigation/server_details_page.html">Server Details</a></li>
+<li><a href="../navigation/environments_page.html">Environments</a></li>
+<li><a href="../navigation/value_stream_map.html">Value Stream Map</a></li>
+</ul></li>
+<li><a href="../configuration.html"><strong>Configuration</strong></a>
+
+<ul>
+<li><a href="../configuration/quick_pipeline_setup.html">Setup a New Pipeline</a></li>
+<li><a href="../configuration/managing_pipelines.html">Managing Pipelines</a></li>
+<li><a href="../configuration/managing_dependencies.html">Managing Dependencies</a></li>
+<li><a href="../configuration/managing_a_build_cloud.html">Managing Agents</a></li>
+<li><a href="../configuration/managing_environments.html">Managing Environments</a></li>
+<li><a href="../configuration/build_labelling.html">Pipeline Labelling</a></li>
+<li><a href="../configuration/pipeline_scheduling.html">Pipeline Scheduling</a></li>
+<li><a href="../configuration/admin_use_parameters_in_configuration.html">Parameterize a Pipeline</a></li>
+<li><a href="../configuration/admin_use_custom_pipeline_label.html">Customize a Pipeline Label</a></li>
+<li><a href="../configuration/admin_clone_pipeline.html">Clone a Pipeline</a></li>
+<li><a href="../configuration/admin_lock_pipelines.html">Lock a Pipeline</a></li>
+<li><a href="../configuration/admin_add_material.html">Add Material to Existing Pipeline</a></li>
+<li><a href="../configuration/admin_add_stage.html">Add Stage to Existing Pipeline</a></li>
+<li><a href="../configuration/admin_add_job.html">Add job to Existing Stage</a></li>
+<li><a href="../configuration/admin_add_task.html">Add task to Existing Job</a></li>
+<li><a href="../configuration/pipeline_templates.html">Pipeline Templates</a></li>
+<li><a href="../configuration/elastic_agents.html">Elastic Agents</a></li>
+<li><a href="../configuration/dev_choose_when_stage_runs.html">Choose When a Stage Runs</a></li>
+<li><a href="../configuration/admin_timer.html">Timer Trigger</a></li>
+<li><a href="../configuration/job_timeout.html">Job Timeout</a></li>
+<li><a href="../configuration/managing_users.html">Managing Users</a></li>
+<li><a href="../configuration/dev_authentication.html">Authentication</a></li>
+<li><a href="../configuration/dev_authorization.html">Authorizing Users</a></li>
+<li><a href="../configuration/delegating_group_administration.html">Delegating Group Administration</a></li>
+<li><a href="../configuration/pipeline_group_admin_config.html">Pipeline Group Administration</a></li>
+<li><a href="../configuration/dev_upload_test_report.html">Publish Reports and Artifacts</a></li>
+<li><a href="../configuration/managing_artifacts_and_reports.html">Managing Artifacts and Reports</a></li>
+<li><a href="../configuration/delete_artifacts.html">Auto Delete Artifacts</a></li>
+<li><a href="../configuration/ui_testing.html">UI Testing</a></li>
+<li><a href="../configuration/admin_mailhost_info.html">Mailhost Information</a></li>
+<li><a href="../configuration/dev_notifications.html">Notifications</a></li>
+<li><a href="../configuration/tfs_config.html">TFS Material configuration</a></li>
+<li><a href="../configuration/configuration_reference.html">Reference</a></li>
+<li><a href="../configuration/schema.html">Schema</a></li>
+</ul></li>
+<li><a href="../faq.html"><strong>FAQ/Troubleshooting</strong></a>
+
+<ul>
+<li><a href="../faq/ordering_of_pipelines.html">Ordering of Pipelines</a></li>
+<li><a href="../faq/stage_old_config.html">Historical Configuration</a></li>
+<li><a href="../faq/concurrent_config_modifications.html">Concurrent Modifications to Config</a></li>
+<li><a href="../faq/dev_understand_why_build_broken.html">Why the Build is Broken?</a></li>
+<li><a href="../faq/dev_see_artifact_as_tab.html">See artifacts as sub-tabs</a></li>
+<li><a href="../faq/dev_save_properties.html">Save Properties for a Build</a></li>
+<li><a href="../faq/environment_variables.html">Using Environment variables</a></li>
+<li><a href="../faq/rm_deploy_to_environment.html">Deploy to an environment</a></li>
+<li><a href="../faq/tester_what_has_changed.html">See changes in new binary</a></li>
+<li><a href="../faq/dependency_management.html">Run Tests against new Builds</a></li>
+<li><a href="../faq/rm_what_is_deployed.html">Check What&rsquo;s Deployed</a></li>
+<li><a href="../faq/deploy_a_specific_build_to_an_environment.html">Deploy a Specific Build</a></li>
+<li><a href="../faq/agent_guid_issue.html">Clone/Copy an Existing Agents</a></li>
+<li><a href="../faq/job_rerun.html">How do I re-run jobs?</a></li>
+<li><a href="../faq/material_update_hung.html">Go unable to poll for changes</a></li>
+<li><a href="../faq/artifact_integrity.html">Artifact integrity verification</a></li>
+<li><a href="../faq/notifications_page.html">Email Notifications</a></li>
+<li><a href="../faq/admin_out_of_disk_space.html">Running out of Disk Space</a></li>
+<li><a href="../faq/docker_container_ssh_keys.html">Configure SSH Keys for dockerized GoCD</a></li>
+</ul></li>
+</ul>
+
+
+
+
+</nav>
+    </aside>
+
+    <div class="book-page">
+      <header class="align-center justify-between book-header">
+  <label for="menu-control">
+    <img src="../svg/menu.svg" />
+  </label>
+  <strong>Managing Pipelines</strong>
+</header>
+
+      
+<article class="markdown">
+
+<h1 id="managing-gocd-pipelines">Managing GoCD pipelines</h1>
+
+<p>GoCD can be configured using <a href="../navigation/administration_page.html">Administration</a> Tab. You can perform operations like add/edit Pipelines, Stages, Jobs, Tasks, Templates and Pipeline group. You can also configure GoCD by editing the full XML file if you wish, by clicking on the <strong>Config XML</strong> section of the <a href="../navigation/administration_page.html">Administration</a> tab. GoCD will check the syntax of the configuration before it saves it again</p>
+
+<h2 id="creating-a-new-pipeline">Creating a new pipeline</h2>
+
+<p>To create a new pipeline, go to the <strong>Pipelines</strong> sub-tab of the <a href="../navigation/administration_page.html">Administration</a> tab and click on the <a href="quick_pipeline_setup.html">&ldquo;Create a new pipeline within this group&rdquo;</a> link as shown in the screen shot below.</p>
+
+<p><img src="../images/create_new_pipeline_link.png" alt="" /></p>
+
+<h2 id="add-a-new-material-to-an-existing-pipeline">Add a new material to an existing pipeline</h2>
+
+<p>Now that you have a pipeline, lets add another material to it.</p>
+
+<ul>
+<li>Navigate to the new pipeline you created by clicking on the <strong>Edit</strong> link under the Actions against it. You can also click on the name of the pipeline.</li>
+</ul>
+
+<p><img src="../images/edit_pipeline_link.png" alt="" /></p>
+
+<ul>
+<li>Click on the Materials tab.</li>
+</ul>
+
+<p><img src="../images/pipeline_general_options.png" alt="" /></p>
+
+<ul>
+<li>You will notice an existing material . Click on the &ldquo;Add new material&rdquo; link.</li>
+</ul>
+
+<p><img src="../images/add_new_material.png" alt="" /></p>
+
+<ul>
+<li>You will get the following message</li>
+</ul>
+
+<p><img src="../images/define_destination_folder.png" alt="" /></p>
+
+<ul>
+<li>Edit the existing material and specify the destination directory</li>
+</ul>
+
+<p><img src="../images/edit_material.png" alt="" /></p>
+
+<ul>
+<li>Click &ldquo;Save&rdquo;.</li>
+</ul>
+
+<h2 id="blacklist">Blacklist</h2>
+
+<p>Often you do want to specify a set of files that Go should ignore when it checks for changes. Repository changesets which contain only these files will not automatically trigger a pipeline. These are detailed in the <a href="configuration_reference.html#ignore">ignore</a> section of the <a href="configuration_reference.html">configuration reference</a>.</p>
+
+<ul>
+<li>Enter the items to blacklist using ant-style syntax below</li>
+</ul>
+
+<p><img src="../images/edit_material_blacklist.png" alt="" /></p>
+
+<ul>
+<li>Click &ldquo;Save&rdquo;.</li>
+</ul>
+
+<h2 id="add-a-new-stage-to-an-existing-pipeline">Add a new stage to an existing pipeline</h2>
+
+<p>Now that you have a pipeline with a single stage, lets add more stages to it.</p>
+
+<ul>
+<li>Navigate to the new pipeline you created by clicking on the <strong>Edit</strong> link under the Actions against it. You can also click on the name of the pipeline.</li>
+</ul>
+
+<p><img src="../images/edit_pipeline_link.png" alt="" /></p>
+
+<ul>
+<li>Click on the Stages tab.</li>
+</ul>
+
+<p><img src="../images/pipeline_general_options.png" alt="" /></p>
+
+<ul>
+<li>You will notice that a defaultStage exists. Click on the &ldquo;Add new stage&rdquo; link.</li>
+</ul>
+
+<p><img src="../images/stages_listing_with_add_stage_highlight.png" alt="" /></p>
+
+<ul>
+<li><p>Fill stage name and trigger type.</p></li>
+
+<li><p>Fill in the details for the first job and first task belonging to this job. You can <a href="admin_add_job.html">add more jobs</a> and <a href="admin_add_task.html">add more tasks</a> to the jobs.</p></li>
+
+<li><p>Click on help icon next to the fields to get additional details about the fields you are editing.</p></li>
+</ul>
+
+<p><img src="../images/add_stage_window.png" alt="" /></p>
+
+<ul>
+<li>Click &ldquo;Save&rdquo;.</li>
+</ul>
+
+<h2 id="add-a-new-job-to-an-existing-stage">Add a new job to an existing stage</h2>
+
+<p>Now that we have a pipeline with stage(s), we can add more jobs to any of the existing stages. You can now use the tree navigation on the left side of the screen to edit a stage or a job under a pipeline.</p>
+
+<ul>
+<li>Click on the stage name that you want to edit on the tree as shown below. The &ldquo;defaultStage&rdquo; is being edited.</li>
+</ul>
+
+<p><img src="../images/edit_stage_link_on_tree.png" alt="" /></p>
+
+<ul>
+<li><p>Click on the Jobs tab</p></li>
+
+<li><p>Click on &ldquo;Add new job&rdquo;</p></li>
+</ul>
+
+<p><img src="../images/add_new_job_link.png" alt="" /></p>
+
+<ul>
+<li>Fill job name and job details</li>
+</ul>
+
+<p><img src="../images/add_new_job_window.png" alt="" /></p>
+
+<ul>
+<li><p>Fill in the details for the initial task belonging to this job. You can edit this job later to <a href="admin_add_task.html">add more tasks</a></p></li>
+
+<li><p>You can choose the type of the task as required.</p></li>
+
+<li><p>For task types Ant, Nant and Rake, the build file and target will default as per the tool used. For example, Ant task, would look for build.xml in the working directory, and use the default task if nothing is mentioned.</p></li>
+
+<li><p>Click on help icon next to the fields to get additional details about the fields you are editing.</p></li>
+
+<li><p>Click &ldquo;Save&rdquo;</p></li>
+</ul>
+
+<h2 id="add-a-new-task-to-an-existing-job">Add a new task to an existing Job</h2>
+
+<p>Now that we have a pipeline with stage(s) containing job(s) we can add tasks to any of the existing jobs. You can now use the tree navigation on the left side of the screen to edit a job under a stage.</p>
+
+<ul>
+<li>Click on the job name that you want to edit on the tree as shown below. The &ldquo;defaultJob&rdquo; is being edited.</li>
+</ul>
+
+<p><img src="../images/edit_job_link_on_tree.png" alt="" /></p>
+
+<ul>
+<li>Click on &ldquo;Add new task&rdquo;. You can choose the task type from Ant, Nant, Rake and Fetch Artifact. Or you can choose &ldquo;More&hellip;&rdquo; to choose a command from <a href="../advanced_usage/command_repository.html">command repository</a> or specify your own command</li>
+</ul>
+
+<p><img src="../images/add_new_task_link.png" alt="" /></p>
+
+<ul>
+<li><p>Fill the basic settings for the task</p></li>
+
+<li><p>Click on help icon next to the fields to get additional details about the fields you are editing.</p></li>
+
+<li><p>Click &ldquo;Save&rdquo;</p></li>
+</ul>
+
+<p><img src="../images/add_new_task_window.png" alt="" /></p>
+
+<ul>
+<li>Advanced Options section allows you to specify a Task in which you can provide the actions (typically clean up) that needs to be taken when users chooses to cancel the stage.</li>
+</ul>
+
+<h2 id="clone-an-existing-pipeline">Clone an existing pipeline</h2>
+
+<p>Clone pipeline functionality helps you create a new pipeline from an existing pipeline by giving it a new name. Typically when setting up a pipeline for a new branch, it is very useful to take an existing pipeline and clone it.</p>
+
+<p>If the user is a pipeline group admin, she can clone the new pipeline into a group that she has access to. If the user is an admin she can clone the pipeline into any group or give a new group name, in which case the group gets created.</p>
+
+<ul>
+<li><p>Navigate to the Admin tab</p></li>
+
+<li><p>Locate the pipeline that needs to be cloned</p></li>
+
+<li><p>In that row, click on the &ldquo;Clone&rdquo; icon.</p></li>
+</ul>
+
+<p><img src="../images/clone_icon.png" alt="" /></p>
+
+<ul>
+<li>Fill in the name of the new pipeline</li>
+</ul>
+
+<p><img src="../images/clone_pipeline.png" alt="" /></p>
+
+<ul>
+<li><p>Select a pipeline group. If you are an admin, you will be able to enter the name of the pipeline group using the auto suggest or enter a new group name</p></li>
+
+<li><p>Click &ldquo;Save&rdquo;</p></li>
+</ul>
+
+<h2 id="delete-an-existing-pipeline">Delete an existing pipeline</h2>
+
+<p>Deleting a pipeline removes an existing pipeline from the config.</p>
+
+<p><strong>Warning</strong>: Pipeline history is not removed from the database and artifacts are not removed from artifact storage, which may cause conflicts if a pipeline with the same name is later re-created.</p>
+
+<ul>
+<li><p>Navigate to the Admin tab</p></li>
+
+<li><p>Locate the pipeline that needs to be deleted</p></li>
+
+<li><p>In that row, click on the &ldquo;Delete&rdquo; icon.</p></li>
+</ul>
+
+<h2 id="pipeline-templates">Pipeline Templates</h2>
+
+<p>Templating helps to create reusable workflows in order to make tasks like creating and maintaining branches, and managing large number of pipelines easier.</p>
+
+<h3 id="creating-pipeline-templates">Creating Pipeline Templates</h3>
+
+<p>Pipeline Templates can be managed from the Templates tab on the Administration Page.</p>
+
+<p><img src="../images/pipeline_templates.png" alt="" /></p>
+
+<p>Clicking on the &ldquo;Add New Template&rdquo; brings up the following form which allows you to create a fresh template, or extract it from an existing pipeline. Once saved, the pipeline indicated will also start using this newly created template.</p>
+
+<p><img src="../images/add_new_template.png" alt="" /></p>
+
+<p>A template can also be extracted from a pipeline using the &ldquo;Extract Template&rdquo; link. This can be found on the &ldquo;Pipelines&rdquo; tab in the Administration page.</p>
+
+<p><img src="../images/extract_template_from_pipeline.png" alt="" /></p>
+
+<h3 id="example">Example</h3>
+
+<p>As an example, assume that there is a pipeline group called &ldquo;my-app&rdquo; and it contains a pipeline called &ldquo;app-trunk&rdquo; which builds the application from trunk. Now, if we need to create another pipeline called &ldquo;app-1.0-branch&rdquo; which builds 1.0 version of the application, we can use Pipeline Templates as follows</p>
+
+<h4 id="using-administration-ui">Using Administration UI</h4>
+
+<ul>
+<li>Create a template &ldquo;my-app-build&rdquo; by extracting it from the pipeline &ldquo;app-trunk&rdquo;, as shown in the previous section.</li>
+<li>Create a new pipeline &ldquo;app-1.0-branch&rdquo; which defines SCM material with the branch url and uses the template &ldquo;my-app-build&rdquo;.</li>
+</ul>
+
+<h4 id="using-xml">Using XML</h4>
+
+<p>Power users can configure the above as follows:</p>
+
+<pre><code class="language-xml">&lt;pipelines group=&quot;my-app&quot;&gt;
+  &lt;pipeline name=&quot;app-trunk&quot; template=&quot;my-app-build&quot;&gt;
+    &lt;materials&gt;
+      &lt;svn url=&quot;http://my-svn-url/trunk&quot; /&gt;
+    &lt;/materials&gt;
+  &lt;/pipeline&gt;
+  &lt;pipeline name=&quot;app-1.0-branch&quot; template=&quot;my-app-build&quot;&gt;
+    &lt;materials&gt;
+      &lt;svn url=&quot;http://my-svn-url/branches/1.0&quot; /&gt;
+    &lt;/materials&gt;
+  &lt;/pipeline&gt;
+&lt;/pipelines&gt;
+&lt;templates&gt;
+  &lt;pipeline name=&quot;my-app-build&quot;&gt;
+    &lt;stage name=&quot;build&quot;&gt;
+      &lt;jobs&gt;
+        &lt;job name=&quot;compile&quot;&gt;
+          &lt;tasks&gt;
+            &lt;ant target=&quot;compile&quot; /&gt;
+          &lt;/tasks&gt;
+        &lt;/job&gt;
+      &lt;/jobs&gt;
+    &lt;/stage&gt;
+  &lt;/pipeline&gt;
+&lt;/templates&gt;
+</code></pre>
+
+<h3 id="editing-pipeline-templates">Editing Pipeline Templates</h3>
+
+<p>Go Administrators can now enable any Go user to edit a template by <a href="dev_authorization.html#specifying-permissions-for-templates">making them a template administrator</a>.</p>
+
+<p>Template administrators can view and edit the templates to which they have permissions, on the template tab of the admin page. Template Administrators, will however not be able to add, delete or change permissions for a template. They will also be able to see the number of pipelines in which the template is being used, but not the details of those pipelines.</p>
+
+<p><img src="../images/template_admin_edit_template.png" alt="" /></p>
+
+<h3 id="viewing-pipeline-templates">Viewing Pipeline Templates</h3>
+
+<p>Pipeline Templates can now be viewed by Administrators and Pipeline Group Administrators while editing or creating a Pipeline.</p>
+
+<p><img src="../images/template_view_on_pipeline_tab.png" alt="" /></p>
+
+<p>Clicking on the icon indicated by arrow will display the following:</p>
+
+<p><img src="../images/view_template_popup.png" alt="" /></p>
+
+<p>The pop-up shows the extract of the template &ldquo;Services-Template&rdquo; configured for the pipeline &ldquo;Service_1&rdquo;.</p>
+
+<ol>
+<li>Shows the details of the job &ldquo;compile-job&rdquo; configured for the stage &ldquo;compile&rdquo;.</li>
+<li>Indicates that the working directory set for the task is &ldquo;go/service_1&rdquo;, which is followed by the &ldquo;\$&rdquo; symbol and then the command.</li>
+<li>If any &ldquo;On Cancel Task&rdquo; has been configured, it will be indicated like this.</li>
+<li>Shows the &ldquo;Run If Condition&rdquo; for this task.</li>
+</ol>
+
+<h4 id="see-also">See also&hellip;</h4>
+
+<ul>
+<li><a href="configuration_reference.html#templates">Templates - Configuration Reference</a></li>
+</ul>
+
+<h2 id="stage-approvals-in-action">Stage approvals in action</h2>
+
+<p>By default, when one stage completes successfully, the next stage is automatically triggered by Go. However sometimes you don&rsquo;t want the next stage to be triggered automatically. This might be the case if you have a stage that deploys your application to a testing, staging or production environment. Another case can be when you don&rsquo;t want your pipeline to be automatically triggered by changes in version control. In these situations, you want the stage triggered by manual intervention. This can be done through manual <a href="configuration_reference.html#approval">approvals</a>.</p>
+
+<p>If you add a manual approval to the first stage in a pipeline, it will prevent the pipeline from being triggered from version control. Instead, it will only pick up changes when you trigger the pipeline manually (this is sometimes known as &ldquo;forcing the build&rdquo;).</p>
+
+<p>You can control who can trigger manual approvals. See the section on <a href="dev_authorization.html#adding-authorization-to-approvals">Adding authorization to approvals</a> for more details.</p>
+
+<h2 id="managing-pipeline-groups">Managing pipeline groups</h2>
+
+<p>There is support for collecting multiple pipelines into a single named group. See the section on <a href="dev_authorization.html#specifying-permissions-for-pipeline-groups">Specifying who can view and operate pipeline groups</a> for more details.</p>
+</article>
+
+      
+
+    </div>
+
+    
+  
+  
+  <aside class="book-toc fixed">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#managing-gocd-pipelines">Managing GoCD pipelines</a>
+<ul>
+<li><a href="#creating-a-new-pipeline">Creating a new pipeline</a></li>
+<li><a href="#add-a-new-material-to-an-existing-pipeline">Add a new material to an existing pipeline</a></li>
+<li><a href="#blacklist">Blacklist</a></li>
+<li><a href="#add-a-new-stage-to-an-existing-pipeline">Add a new stage to an existing pipeline</a></li>
+<li><a href="#add-a-new-job-to-an-existing-stage">Add a new job to an existing stage</a></li>
+<li><a href="#add-a-new-task-to-an-existing-job">Add a new task to an existing Job</a></li>
+<li><a href="#clone-an-existing-pipeline">Clone an existing pipeline</a></li>
+<li><a href="#delete-an-existing-pipeline">Delete an existing pipeline</a></li>
+<li><a href="#pipeline-templates">Pipeline Templates</a>
+<ul>
+<li><a href="#creating-pipeline-templates">Creating Pipeline Templates</a></li>
+<li><a href="#example">Example</a>
+<ul>
+<li><a href="#using-administration-ui">Using Administration UI</a></li>
+<li><a href="#using-xml">Using XML</a></li>
+</ul></li>
+<li><a href="#editing-pipeline-templates">Editing Pipeline Templates</a></li>
+<li><a href="#viewing-pipeline-templates">Viewing Pipeline Templates</a>
+<ul>
+<li><a href="#see-also">See also&hellip;</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#stage-approvals-in-action">Stage approvals in action</a></li>
+<li><a href="#managing-pipeline-groups">Managing pipeline groups</a></li>
+</ul></li>
+</ul>
+</nav>
+  </aside>
+
+
+
+  </main>
+
+  
+  
+</body>
+
+</html>

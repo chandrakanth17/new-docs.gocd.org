@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Configure SSH Keys for dockerized GoCD | GoCD User Documentation</title>
+
+<link href="https://fonts.googleapis.com/css?family=Oxygen|Oxygen+Mono:300,400,700" rel="stylesheet">
+<link rel="stylesheet" href="../normalize.min.css">
+
+<link rel="stylesheet" href="../book.min.29d743ffb6d61ecbfc9bb21b7eab17d63b577d4bd547c3f095addb1c793ab1b1.css">
+  
+</head>
+
+<body>
+  <input type="checkbox" style="display: none" id="menu-control" />
+  <main class="flex container">
+
+    <aside class="book-menu fixed">
+      <nav role="navigation">
+
+
+
+    <ul>
+<li><a href="../"><strong>Introduction</strong></a></li>
+<li><a href="../navigation.html"><strong>GoCD Tour</strong></a>
+
+<ul>
+<li><a href="../navigation/pipelines_dashboard_page.html">Pipeline Dashboard</a></li>
+<li><a href="../navigation/agents_page.html">Agents</a></li>
+<li><a href="../navigation/agent_details.html">Agent Details</a></li>
+<li><a href="../navigation/pipeline_activity_page.html">Pipeline Activity</a></li>
+<li><a href="../navigation/stage_details_page.html">Stage Details</a></li>
+<li><a href="../navigation/job_details_page.html">Job Details</a></li>
+<li><a href="../navigation/administration_page.html">Administration</a></li>
+<li><a href="../navigation/server_details_page.html">Server Details</a></li>
+<li><a href="../navigation/environments_page.html">Environments</a></li>
+<li><a href="../navigation/value_stream_map.html">Value Stream Map</a></li>
+</ul></li>
+<li><a href="../configuration.html"><strong>Configuration</strong></a>
+
+<ul>
+<li><a href="../configuration/quick_pipeline_setup.html">Setup a New Pipeline</a></li>
+<li><a href="../configuration/managing_pipelines.html">Managing Pipelines</a></li>
+<li><a href="../configuration/managing_dependencies.html">Managing Dependencies</a></li>
+<li><a href="../configuration/managing_a_build_cloud.html">Managing Agents</a></li>
+<li><a href="../configuration/managing_environments.html">Managing Environments</a></li>
+<li><a href="../configuration/build_labelling.html">Pipeline Labelling</a></li>
+<li><a href="../configuration/pipeline_scheduling.html">Pipeline Scheduling</a></li>
+<li><a href="../configuration/admin_use_parameters_in_configuration.html">Parameterize a Pipeline</a></li>
+<li><a href="../configuration/admin_use_custom_pipeline_label.html">Customize a Pipeline Label</a></li>
+<li><a href="../configuration/admin_clone_pipeline.html">Clone a Pipeline</a></li>
+<li><a href="../configuration/admin_lock_pipelines.html">Lock a Pipeline</a></li>
+<li><a href="../configuration/admin_add_material.html">Add Material to Existing Pipeline</a></li>
+<li><a href="../configuration/admin_add_stage.html">Add Stage to Existing Pipeline</a></li>
+<li><a href="../configuration/admin_add_job.html">Add job to Existing Stage</a></li>
+<li><a href="../configuration/admin_add_task.html">Add task to Existing Job</a></li>
+<li><a href="../configuration/pipeline_templates.html">Pipeline Templates</a></li>
+<li><a href="../configuration/elastic_agents.html">Elastic Agents</a></li>
+<li><a href="../configuration/dev_choose_when_stage_runs.html">Choose When a Stage Runs</a></li>
+<li><a href="../configuration/admin_timer.html">Timer Trigger</a></li>
+<li><a href="../configuration/job_timeout.html">Job Timeout</a></li>
+<li><a href="../configuration/managing_users.html">Managing Users</a></li>
+<li><a href="../configuration/dev_authentication.html">Authentication</a></li>
+<li><a href="../configuration/dev_authorization.html">Authorizing Users</a></li>
+<li><a href="../configuration/delegating_group_administration.html">Delegating Group Administration</a></li>
+<li><a href="../configuration/pipeline_group_admin_config.html">Pipeline Group Administration</a></li>
+<li><a href="../configuration/dev_upload_test_report.html">Publish Reports and Artifacts</a></li>
+<li><a href="../configuration/managing_artifacts_and_reports.html">Managing Artifacts and Reports</a></li>
+<li><a href="../configuration/delete_artifacts.html">Auto Delete Artifacts</a></li>
+<li><a href="../configuration/ui_testing.html">UI Testing</a></li>
+<li><a href="../configuration/admin_mailhost_info.html">Mailhost Information</a></li>
+<li><a href="../configuration/dev_notifications.html">Notifications</a></li>
+<li><a href="../configuration/tfs_config.html">TFS Material configuration</a></li>
+<li><a href="../configuration/configuration_reference.html">Reference</a></li>
+<li><a href="../configuration/schema.html">Schema</a></li>
+</ul></li>
+<li><a href="../faq.html"><strong>FAQ/Troubleshooting</strong></a>
+
+<ul>
+<li><a href="../faq/ordering_of_pipelines.html">Ordering of Pipelines</a></li>
+<li><a href="../faq/stage_old_config.html">Historical Configuration</a></li>
+<li><a href="../faq/concurrent_config_modifications.html">Concurrent Modifications to Config</a></li>
+<li><a href="../faq/dev_understand_why_build_broken.html">Why the Build is Broken?</a></li>
+<li><a href="../faq/dev_see_artifact_as_tab.html">See artifacts as sub-tabs</a></li>
+<li><a href="../faq/dev_save_properties.html">Save Properties for a Build</a></li>
+<li><a href="../faq/environment_variables.html">Using Environment variables</a></li>
+<li><a href="../faq/rm_deploy_to_environment.html">Deploy to an environment</a></li>
+<li><a href="../faq/tester_what_has_changed.html">See changes in new binary</a></li>
+<li><a href="../faq/dependency_management.html">Run Tests against new Builds</a></li>
+<li><a href="../faq/rm_what_is_deployed.html">Check What&rsquo;s Deployed</a></li>
+<li><a href="../faq/deploy_a_specific_build_to_an_environment.html">Deploy a Specific Build</a></li>
+<li><a href="../faq/agent_guid_issue.html">Clone/Copy an Existing Agents</a></li>
+<li><a href="../faq/job_rerun.html">How do I re-run jobs?</a></li>
+<li><a href="../faq/material_update_hung.html">Go unable to poll for changes</a></li>
+<li><a href="../faq/artifact_integrity.html">Artifact integrity verification</a></li>
+<li><a href="../faq/notifications_page.html">Email Notifications</a></li>
+<li><a href="../faq/admin_out_of_disk_space.html">Running out of Disk Space</a></li>
+<li><a href="../faq/docker_container_ssh_keys.html">Configure SSH Keys for dockerized GoCD</a></li>
+</ul></li>
+</ul>
+
+
+
+
+</nav>
+    </aside>
+
+    <div class="book-page">
+      <header class="align-center justify-between book-header">
+  <label for="menu-control">
+    <img src="../svg/menu.svg" />
+  </label>
+  <strong>Configure SSH Keys for dockerized GoCD</strong>
+</header>
+
+      
+<article class="markdown">
+
+<h1 id="using-ssh-keys-to-access-gocd-materials-in-a-containerized-gocd-server-and-agent">Using SSH keys to access GoCD materials in a containerized GoCD server and agent</h1>
+
+<p>If you have configured a git repository as a GoCD material, then there are several ways to let GoCD access the repository.
+One of the popular methods to do so is configuring SSH keys. When using docker for gocd server and agents, it becomes slightly more complex to do this. Below are the steps to configure the ssh keys that can be used with multiple containers at once.</p>
+
+<ul>
+<li>Create a docker container using the gocd-server image:</li>
+</ul>
+
+<pre><code class="language-bash">docker run -itd -v/some/location/on/host:/home/go/.ssh gocd/gocd-server:v18.12.0
+</code></pre>
+
+<p>Once the container has started, the container id is provided.</p>
+
+<ul>
+<li>Exec into the container as the <code>go</code> user</li>
+</ul>
+
+<pre><code class="language-bash">docker exec -it -u go -w /home/go &lt;container_id&gt; /bin/bash
+</code></pre>
+
+<ul>
+<li>Generate ssh keys for the <code>go</code> user.</li>
+</ul>
+
+<pre><code class="language-bash">ssh-keygen -t rsa -b 4096 -C &quot;something to identify this key: like an email address&quot;
+</code></pre>
+
+<p>After executing the above command, you will notice that there are 2 files created in <code>/home/go/.ssh</code> called <code>id_rsa</code> and <code>id_rsa.pub</code>.</p>
+
+<p><code>id_rsa</code> corresponds to the private key, which you will later provide GoCD to access the private repository with.
+<code>id_rsa.pub</code> is the public key that needs to be added to your SCM account.</p>
+
+<p>Follow the instructions provided below to add a new ssh key for your respective provider:</p>
+
+<p>Github: <a href="https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/">https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/</a></p>
+
+<p>Bitbucket: <a href="https://confluence.atlassian.com/bitbucket/set-up-an-ssh-key-728138079.html">https://confluence.atlassian.com/bitbucket/set-up-an-ssh-key-728138079.html</a></p>
+
+<p>Gitlab: <a href="https://docs.gitlab.com/ee/gitlab-basics/create-your-ssh-keys.html">https://docs.gitlab.com/ee/gitlab-basics/create-your-ssh-keys.html</a></p>
+
+<ul>
+<li>Once the public key has been added to your account, try accessing a private repository by doing <code>git clone</code> on the private repository using the SSH protocol. Most SCMs provide the command to clone with SSH when you access the repository on the browser.
+A prompt appears when you execute the git clone command for the first time. Choose yes and continue with the cloning. This will create a file called <code>known_hosts</code> in <code>/home/go/.ssh</code> . Alternatively use the <code>ssh-keyscan</code> command to create <code>known_hosts</code>.</li>
+</ul>
+
+<pre><code class="language-bash">ssh-keyscan [host] &gt; /home/go/.ssh/known_hosts
+</code></pre>
+
+<p>where [host] can be github.com, bitbucket.com, gitlab.com etc.</p>
+
+<ul>
+<li>The ownership and permissions of files in <code>/home/go/.ssh</code> is:
+<code>bash
+-rw-------    1 go       go            3243 Jan 11 07:00 id_rsa
+-rw-r--r--    1 go       go             754 Jan 11 07:00 id_rsa.pub
+-rw-r--r--    1 go       go             407 Jan 11 07:01 known_hosts
+</code></li>
+</ul>
+
+<p>They should <em>not</em> be tampered with.</p>
+
+<ul>
+<li>On the host, the same files will be present as shown below:</li>
+</ul>
+
+<pre><code class="language-bash">ls -l /some/location/on/host
+total 24
+-rw-------  1 1000  1000  3243 Jan 10 23:10 id_rsa
+-rw-r--r--  1 1000  1000   754 Jan 10 23:10 id_rsa.pub
+-rw-r--r--  1 1000  1000   407 Jan 10 23:10 known_hosts
+</code></pre>
+
+<p>The above is for linux. It can look slightly different if you have a user on the host with UID and GID 1000. For mac, it will look slightly different.</p>
+
+<ul>
+<li>Using in multiple containers</li>
+</ul>
+
+<p>Now that the ssh keys have been created for <code>go</code>, you can use them in different gocd servers and agents</p>
+
+<pre><code class="language-bash">docker run -itd -v/some/location/on/host:/home/go/.ssh gocd/gocd-server:v18.12.0
+docker run -itd -v/some/location/on/host:/home/go/.ssh gocd/gocd-agent-alpine-3.6:v18.12.0
+</code></pre>
+</article>
+
+      
+
+    </div>
+
+    
+  
+  
+  <aside class="book-toc fixed">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#using-ssh-keys-to-access-gocd-materials-in-a-containerized-gocd-server-and-agent">Using SSH keys to access GoCD materials in a containerized GoCD server and agent</a></li>
+</ul>
+</nav>
+  </aside>
+
+
+
+  </main>
+
+  
+  
+</body>
+
+</html>
