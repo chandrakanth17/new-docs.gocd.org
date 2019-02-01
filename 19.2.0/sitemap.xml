@@ -3,6 +3,14 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>/advanced_usage.html</loc>
+  </url>
+  
+  <url>
+    <loc>/beta.html</loc>
+  </url>
+  
+  <url>
     <loc>/faq/dev_use_current_revision_in_build.html</loc>
   </url>
   
@@ -35,6 +43,10 @@
   </url>
   
   <url>
+    <loc>/advanced_usage/agent-health-check-api.html</loc>
+  </url>
+  
+  <url>
     <loc>/navigation/agents_page.html</loc>
   </url>
   
@@ -55,6 +67,14 @@
   </url>
   
   <url>
+    <loc>/advanced_usage/agent_auto_register.html</loc>
+  </url>
+  
+  <url>
+    <loc>/advanced_usage/one_click_backup.html</loc>
+  </url>
+  
+  <url>
     <loc>/categories.html</loc>
     <priority>0</priority>
   </url>
@@ -68,6 +88,10 @@
   </url>
   
   <url>
+    <loc>/advanced_usage/dev_clean_up_when_cancel.html</loc>
+  </url>
+  
+  <url>
     <loc>/configuration/admin_clone_pipeline.html</loc>
   </url>
   
@@ -76,7 +100,27 @@
   </url>
   
   <url>
+    <loc>/advanced_usage/command_repository.html</loc>
+  </url>
+  
+  <url>
+    <loc>/beta/comment_on_pipeline_run.html</loc>
+  </url>
+  
+  <url>
+    <loc>/advanced_usage/compare_pipelines.html</loc>
+  </url>
+  
+  <url>
     <loc>/faq/concurrent_config_modifications.html</loc>
+  </url>
+  
+  <url>
+    <loc>/advanced_usage/dev_conditional_task_execution.html</loc>
+  </url>
+  
+  <url>
+    <loc>/advanced_usage/config_repo.html</loc>
   </url>
   
   <url>
@@ -120,7 +164,15 @@
   </url>
   
   <url>
+    <loc>/advanced_usage/fan_in.html</loc>
+  </url>
+  
+  <url>
     <loc>/faq/material_update_hung.html</loc>
+  </url>
+  
+  <url>
+    <loc>/advanced_usage/stage_duration_chart.html</loc>
   </url>
   
   <url>
@@ -148,7 +200,15 @@
   </url>
   
   <url>
+    <loc>/advanced_usage/logging.html</loc>
+  </url>
+  
+  <url>
     <loc>/configuration/admin_mailhost_info.html</loc>
+  </url>
+  
+  <url>
+    <loc>/advanced_usage/maintenance_mode.html</loc>
   </url>
   
   <url>
@@ -176,6 +236,10 @@
   </url>
   
   <url>
+    <loc>/advanced_usage/admin_install_multiple_agents.html</loc>
+  </url>
+  
+  <url>
     <loc>/navigation.html</loc>
   </url>
   
@@ -185,6 +249,10 @@
   
   <url>
     <loc>/faq/ordering_of_pipelines.html</loc>
+  </url>
+  
+  <url>
+    <loc>/advanced_usage/other_config_options.html</loc>
   </url>
   
   <url>
@@ -213,6 +281,14 @@
   
   <url>
     <loc>/configuration/pipeline_templates.html</loc>
+  </url>
+  
+  <url>
+    <loc>/advanced_usage/pipelines_as_code.html</loc>
+  </url>
+  
+  <url>
+    <loc>/advanced_usage/properties.html</loc>
   </url>
   
   <url>
@@ -256,6 +332,10 @@
   </url>
   
   <url>
+    <loc>/advanced_usage/admin_spawn_multiple_jobs.html</loc>
+  </url>
+  
+  <url>
     <loc>/navigation/stage_details_page.html</loc>
   </url>
   
@@ -269,7 +349,15 @@
   </url>
   
   <url>
+    <loc>/advanced_usage/cron_backup.html</loc>
+  </url>
+  
+  <url>
     <loc>/configuration/admin_timer.html</loc>
+  </url>
+  
+  <url>
+    <loc>/advanced_usage/trigger_with_options.html</loc>
   </url>
   
   <url>
