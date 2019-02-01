@@ -7,5 +7,8 @@ do
   mv content/$dir/index.md content/$dir/_index.md
 done
 
+cp -R $SOURCE/resources/images/* static/images/
+cp -R $SOURCE/resources/javascripts/* static/javascripts/
 grep -rl 'resources/images' content | xargs sed -i '' -e 's/resources\/images/images/g'
+grep -rl 'resources/javascripts' content | xargs sed -i '' -e 's/resources\/javascripts/javascripts/g'
 grep -rl '.md' --exclude=content/menu/index.md content | xargs sed -i '' -e 's/\.md/\.html/g'
