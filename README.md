@@ -24,18 +24,8 @@ Point your browser to [http://localhost:1313/](http://localhost:1313/)
 
 ### Publish to github pages
 ```
-Checkout the gh-pages branch to a local build directory
-$ git clone git@github.com:gocd-private/docs.gocd.org.git --branch gh-pages build --depth 1
+The contents of the `public` directory needs to be pushed out to the *[gh-pages](https://github.com/gocd/new-docs.go.cd/tree/gh-pages)* branch of the repository.
 
-Generate the production build
-$ yarn run hugo
-
-Update the build folder with the latest build from public 
-$ cp -R ../public/* .
-
-Commit your changes and push to gh-pages branch
-$ git commit -am 'Updating...'
-$ git push
 
 ```
 Check the latest changes deployed [here](https://gocd-private.github.io/docs.gocd.org/)
@@ -47,4 +37,35 @@ Run the sync script to copy over changes from the current [docs repository](http
 Go through the changes to see if everything can be committed and then push the code.
 ```
  $ sync.sh
+```
+
+## Contributing
+
+We encourage you to contribute to Go. For information on contributing to this project, please see our [contributor's guide](https://www.gocd.org/contribute).
+A lot of useful information like links to user documentation, design documentation, mailing lists etc. can be found in the [resources](https://www.gocd.org/community/resources.html) section.
+
+### Releasing a new version of the documentation
+
+Assuming current stable is `17.4.0`, you are about to release `17.5.0` and the next version is going to be `17.6.0`, you would execute —
+
+```
+CURRENT_VERSION=17.4.0 VERSION_TO_RELEASE=17.5.0  NEXT_VERSION=17.6.0 REMOTE_NAME=upstream rake bump_version
+```
+
+## License
+
+```plain
+Copyright 2018 ThoughtWorks, Inc.
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
 ```
