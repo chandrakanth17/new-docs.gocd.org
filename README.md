@@ -4,39 +4,42 @@ This repository contains the user documentation for [GoCD](https://www.gocd.org/
 
 ## Contributing
 
-### Build the documentation locally
+1. Install all dependencies
 
-```
-$ bundle install
-$ bundle exec rake build
+    ```shell
+    bundle install --jobs 4 --path .bundle --clean
+    ```
 
- To genenerate the local build and verify by serving a local server under the `public` directory
-$ yarn run local-build 
-```
+2. Run the documentation on the local server (defaults to http://localhost:1313)
 
-### Serve the documentation locally
+    ```shell
+    yarn run serve
+    ```
 
-```
-$ yarn run serve -D
-```
+3. Publish to github pages
 
-Point your browser to [http://localhost:1313/](http://localhost:1313/)
+    The contents of the `public` directory needs to be pushed out to the *[gh-pages](https://github.com/gocd/new-docs.go.cd/tree/gh-pages)* branch of the repository.
 
-### Publish to github pages
-```
-The contents of the `public` directory needs to be pushed out to the *[gh-pages](https://github.com/gocd/new-docs.go.cd/tree/gh-pages)* branch of the repository.
+    ```shell
+    bundle exec rake publish
+    ```
 
+    Check the latest changes deployed [here](https://gocd.github.io/new-docs.go.cd/)
 
-```
-Check the latest changes deployed [here](https://gocd-private.github.io/docs.gocd.org/)
+4. To run hugo with any specific args
+
+    ```shell
+    yarn run hugo [arguments]
+    ```
 
 ### Update this repository with Current docs changes
 
 Update the list of directories to be updated in the sync script.
 Run the sync script to copy over changes from the current [docs repository](https://github.com/gocd/docs.go.cd)
 Go through the changes to see if everything can be committed and then push the code.
-```
- $ sync.sh
+
+```shell
+bash ./sync.sh
 ```
 
 ## Contributing
@@ -55,7 +58,7 @@ CURRENT_VERSION=17.4.0 VERSION_TO_RELEASE=17.5.0  NEXT_VERSION=17.6.0 REMOTE_NAM
 ## License
 
 ```plain
-Copyright 2018 ThoughtWorks, Inc.
+Copyright 2019 ThoughtWorks, Inc.
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
