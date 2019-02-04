@@ -6,10 +6,11 @@ This repository contains the user documentation for [GoCD](https://www.gocd.org/
 
 1. Install all dependencies
 
-    ```shell
-    bundle install --jobs 4 --path .bundle --clean
-    ```
-
+Install yarn, nodejs required to build the repository based on your development environment.
+Ensure Ruby and bundler are installed. 
+```shell
+ bundle install --jobs 4 --path .bundle --clean
+```
 2. Run the documentation on the local server (defaults to http://localhost:1313)
 
     ```shell
