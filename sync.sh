@@ -3,8 +3,8 @@ SOURCE=/Users/sanjanb/Projects/go/gitbook/docs.go.cd
 declare -a dirs=("navigation" "faq" "configuration")
 for dir in "${dirs[@]}"
 do
-  cp -R $SOURCE/$dir/* content/$dir
-  mv content/$dir/index.md content/$dir/_index.md
+  cp -R ${SOURCE}/${dir}/. content/${dir}
+  mv content/${dir}/index.md content/${dir}/_index.md
 done
 
 cp -R $SOURCE/resources/images/* static/images/
