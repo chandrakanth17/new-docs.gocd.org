@@ -5,3 +5,4 @@
 * Re-structure the documentation - based on community's decision.
 * command_repository.md - change the link to new command repository once it's moved to gocd account. - @mdaliejaz looking into it
 * package_repository_extension.md - need to finalise on plugins list URL, and change the link of go-command-repo - @mdaliejaz looking into it
+* Set up Redirect link for notification_extension

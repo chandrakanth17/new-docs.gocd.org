@@ -10,7 +10,7 @@ The [health check API](https://api.gocd.org/current/#agent-health) allows users 
 
 ## Configurations
 
-The API uses the following configurable [agent system properties](https://docs.gocd.org/current/installation/configure-agent-proxy.html#configuring-an-agent-on-linux).
+The API uses the following configurable [agent system properties](../installation/configure-agent-proxy.html#configuring-an-agent-on-linux).
 
 | Property | Values |
 | :---: | :---: |
@@ -36,5 +36,5 @@ Or have the following property set in the agent shell
 
 #### On Windows Machine
 
-Follow the [instructions](https://docs.gocd.org/current/installation/install/server/windows.html#overriding-default-startup-arguments-and-environment) to add a new property for GoCD agents setup on windows
+Follow the [instructions](../installation/install/server/windows.html#overriding-default-startup-arguments-and-environment) to add a new property for GoCD agents setup on windows
 

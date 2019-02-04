@@ -13,7 +13,7 @@ You can turn on additional logging to diagnose and troubleshoot issues with the 
 ## Log location
 
 To change where the GoCD server logs or GoCD agent logs are stored, use the system properties `gocd.server.log.dir` and `gocd.agent.log.dir` respectively.
-Refer to the [system properties](https://docs.gocd.org/current/advanced_usage/other_config_options.html#system-properties) documentation to find out how to set the system property on the gocd server or agent.
+Refer to the [system properties](../advanced_usage/other_config_options.html#system-properties) documentation to find out how to set the system property on the gocd server or agent.
 
 Note: The system property deals with configuring the log location for the GoCD server or agent related logs and not the plugin logs.
 
