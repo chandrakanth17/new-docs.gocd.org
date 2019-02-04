@@ -31,6 +31,42 @@
   </url>
   
   <url>
+    <loc>/installation/configure_proxy.html</loc>
+  </url>
+  
+  <url>
+    <loc>/installation/install/_apt_repo.html</loc>
+  </url>
+  
+  <url>
+    <loc>/installation/install/_install_windows_headless_message.html</loc>
+  </url>
+  
+  <url>
+    <loc>/installation/install/_yum_repo.html</loc>
+  </url>
+  
+  <url>
+    <loc>/installation/install/agent/_register_with_server.html</loc>
+  </url>
+  
+  <url>
+    <loc>/installation/install/server/_install_server_footer.html</loc>
+  </url>
+  
+  <url>
+    <loc>/installation/ssl_tls/custom_certificate.html</loc>
+  </url>
+  
+  <url>
+    <loc>/installation/troubleshoot_installer.html</loc>
+  </url>
+  
+  <url>
+    <loc>/installation/troubleshooting.html</loc>
+  </url>
+  
+  <url>
     <loc>/release_history.html</loc>
   </url>
   
@@ -96,6 +132,10 @@
   </url>
   
   <url>
+    <loc>/installation/ssl_tls/custom_server_certificate.html</loc>
+  </url>
+  
+  <url>
     <loc>/faq/rm_what_is_deployed.html</loc>
   </url>
   
@@ -128,6 +168,14 @@
   </url>
   
   <url>
+    <loc>/introduction.html</loc>
+  </url>
+  
+  <url>
+    <loc>/introduction/concepts_in_go.html</loc>
+  </url>
+  
+  <url>
     <loc>/faq/concurrent_config_modifications.html</loc>
   </url>
   
@@ -152,11 +200,31 @@
   </url>
   
   <url>
+    <loc>/installation/configure-reverse-proxy.html</loc>
+  </url>
+  
+  <url>
+    <loc>/installation/configure-agent-proxy.html</loc>
+  </url>
+  
+  <url>
     <loc>/gocd_on_kubernetes/gocd_helm_chart/configure_k8s_ea_plugin.html</loc>
   </url>
   
   <url>
     <loc>/gocd_on_kubernetes/gocd_helm_chart/configure_cluster.html</loc>
+  </url>
+  
+  <url>
+    <loc>/installation/ssl_tls/configuring_hsts_header.html</loc>
+  </url>
+  
+  <url>
+    <loc>/installation/ssl_tls_config.html</loc>
+  </url>
+  
+  <url>
+    <loc>/installation/configuring_server_details.html</loc>
   </url>
   
   <url>
@@ -173,6 +241,10 @@
   
   <url>
     <loc>/configuration/admin_use_custom_pipeline_label.html</loc>
+  </url>
+  
+  <url>
+    <loc>/installation/ssl_tls/setting_up_ciphers.html</loc>
   </url>
   
   <url>
@@ -200,6 +272,10 @@
   </url>
   
   <url>
+    <loc>/installation/ssl_tls/end_to_end_transport_security.html</loc>
+  </url>
+  
+  <url>
     <loc>/navigation/environments_page.html</loc>
   </url>
   
@@ -216,11 +292,23 @@
   </url>
   
   <url>
+    <loc>/installation/install/agent/zip.html</loc>
+  </url>
+  
+  <url>
+    <loc>/installation/install/server/zip.html</loc>
+  </url>
+  
+  <url>
     <loc>/faq/material_update_hung.html</loc>
   </url>
   
   <url>
     <loc>/advanced_usage/stage_duration_chart.html</loc>
+  </url>
+  
+  <url>
+    <loc>/installation/hardware_specifications.html</loc>
   </url>
   
   <url>
@@ -233,6 +321,22 @@
   
   <url>
     <loc>/gocd_on_kubernetes/gocd_helm_chart/helm_install.html</loc>
+  </url>
+  
+  <url>
+    <loc>/installation.html</loc>
+  </url>
+  
+  <url>
+    <loc>/installation/installing_go_agent.html</loc>
+  </url>
+  
+  <url>
+    <loc>/installation/installing_go_server.html</loc>
+  </url>
+  
+  <url>
+    <loc>/integration.html</loc>
   </url>
   
   <url>
@@ -252,11 +356,27 @@
   </url>
   
   <url>
+    <loc>/installation/install/agent/linux.html</loc>
+  </url>
+  
+  <url>
+    <loc>/installation/install/server/linux.html</loc>
+  </url>
+  
+  <url>
     <loc>/configuration/admin_lock_pipelines.html</loc>
   </url>
   
   <url>
     <loc>/advanced_usage/logging.html</loc>
+  </url>
+  
+  <url>
+    <loc>/installation/install/agent/osx.html</loc>
+  </url>
+  
+  <url>
+    <loc>/installation/install/server/osx.html</loc>
   </url>
   
   <url>
@@ -317,6 +437,10 @@
   
   <url>
     <loc>/configuration/admin_use_parameters_in_configuration.html</loc>
+  </url>
+  
+  <url>
+    <loc>/installation/performance_tuning.html</loc>
   </url>
   
   <url>
@@ -420,6 +544,10 @@
   </url>
   
   <url>
+    <loc>/installation/system_requirements.html</loc>
+  </url>
+  
+  <url>
     <loc>/configuration/tfs_config.html</loc>
   </url>
   
@@ -453,11 +581,23 @@
   </url>
   
   <url>
+    <loc>/installation/upgrading_go.html</loc>
+  </url>
+  
+  <url>
     <loc>/navigation/value_stream_map.html</loc>
   </url>
   
   <url>
     <loc>/faq/dev_understand_why_build_broken.html</loc>
+  </url>
+  
+  <url>
+    <loc>/installation/install/agent/windows.html</loc>
+  </url>
+  
+  <url>
+    <loc>/installation/install/server/windows.html</loc>
   </url>
   
   <url>

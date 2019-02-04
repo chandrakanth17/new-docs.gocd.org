@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Configure a Reverse Proxy | GoCD User Documentation</title>
+
+<meta name="description" content="Tip and examples on how to configure a Proxy server to use with GoCD server"/>
+<meta name="keywords" content="[proxy server, configure proxy server, gocd apache, gocd nginx, custom ssl ports, continuous delivery]"/>
+<link rel="canonical" href="https://gocd.github.io/new-docs.gocd.org/current//installation/configure-reverse-proxy.html"/>
+<script async src="../javascripts/_gdpr-banner.js" type="text/javascript"></script>
+<link href="https://fonts.googleapis.com/css?family=Oxygen|Oxygen+Mono:300,400,700" rel="stylesheet"/>
+<link rel="stylesheet" href="../normalize.min.css"/>
+
+<link rel="stylesheet" href="../book.min.87a2ae978f4eef197028ff1dc9c46e406d1b1133dcefddfe618d4d6d73fc362e.css"/>
+  
+</head>
+
+<body>
+  <input type="checkbox" style="display: none" id="menu-control" />
+  <main class="flex container">
+
+    <aside class="book-menu fixed">
+      <nav role="navigation">
+
+
+
+    <ul>
+<li><a href="../"><strong>Introduction</strong></a></li>
+<li><a href="../introduction.html"><strong>Concepts In GoCD</strong></a>
+
+<ul>
+<li><a href="../introduction/concepts_in_go.html">Concepts In GoCD</a></li>
+</ul></li>
+<li><a href="../navigation.html"><strong>GoCD Tour</strong></a>
+
+<ul>
+<li><a href="../navigation/pipelines_dashboard_page.html">Pipeline Dashboard</a></li>
+<li><a href="../navigation/agents_page.html">Agents</a></li>
+<li><a href="../navigation/agent_details.html">Agent Details</a></li>
+<li><a href="../navigation/pipeline_activity_page.html">Pipeline Activity</a></li>
+<li><a href="../navigation/stage_details_page.html">Stage Details</a></li>
+<li><a href="../navigation/job_details_page.html">Job Details</a></li>
+<li><a href="../navigation/administration_page.html">Administration</a></li>
+<li><a href="../navigation/server_details_page.html">Server Details</a></li>
+<li><a href="../navigation/environments_page.html">Environments</a></li>
+<li><a href="../navigation/value_stream_map.html">Value Stream Map</a></li>
+</ul></li>
+<li><a href="../installation.html"><strong>Installing GoCD</strong></a>
+
+<ul>
+<li><a href="../installation/system_requirements.html">System requirements</a></li>
+<li><a href="../installation/installing_go_server.html">Installing GoCD Server</a>
+
+<ul>
+<li><a href="../installation/install/server/linux.html">Linux</a></li>
+<li><a href="../installation/install/server/windows.html">Windows</a></li>
+<li><a href="../installation/install/server/osx.html">Mac OS X</a></li>
+<li><a href="../installation/install/server/zip.html">Generic Zip</a></li>
+</ul></li>
+<li><a href="../installation/installing_go_agent.html">Installing GoCD Agent</a>
+
+<ul>
+<li><a href="../installation/install/agent/linux.html">Linux</a></li>
+<li><a href="../installation/install/agent/windows.html">Windows</a></li>
+<li><a href="../installation/install/agent/osx.html">Mac OS X</a></li>
+<li><a href="../installation/install/agent/zip.html">Generic Zip</a></li>
+</ul></li>
+<li><a href="../installation/upgrading_go.html">Upgrading GoCD</a></li>
+<li><a href="../installation/configuring_server_details.html">Configuring Server Details</a></li>
+<li><a href="../installation/configure-reverse-proxy.html">Configure a Reverse Proxy</a></li>
+<li><a href="../installation/configure-agent-proxy.html">Configure an agent with proxy</a></li>
+<li><a href="../installation/ssl_tls_config.html">Configuring SSL/TLS</a>
+
+<ul>
+<li><a href="../installation/ssl_tls/setting_up_ciphers.html">Customizing Ciphers</a></li>
+<li><a href="../installation/ssl_tls/custom_server_certificate.html">Change SSL Certificates</a></li>
+<li><a href="../installation/ssl_tls/end_to_end_transport_security.html">End to end transport security</a></li>
+<li><a href="../installation/ssl_tls/configuring_hsts_header.html">Configuring HSTS Header</a></li>
+</ul></li>
+<li><a href="../installation/performance_tuning.html">Performance Tuning</a></li>
+<li><a href="../installation/hardware_specifications.html">Hardware Specifications</a></li>
+<li><a href="../installation/troubleshooting.html">Troubleshooting</a></li>
+</ul></li>
+<li><a href="../configuration.html"><strong>Configuration</strong></a>
+
+<ul>
+<li><a href="../configuration/quick_pipeline_setup.html">Setup a New Pipeline</a></li>
+<li><a href="../configuration/managing_pipelines.html">Managing Pipelines</a></li>
+<li><a href="../configuration/managing_dependencies.html">Managing Dependencies</a></li>
+<li><a href="../configuration/managing_a_build_cloud.html">Managing Agents</a></li>
+<li><a href="../configuration/managing_environments.html">Managing Environments</a></li>
+<li><a href="../configuration/build_labelling.html">Pipeline Labelling</a></li>
+<li><a href="../configuration/pipeline_scheduling.html">Pipeline Scheduling</a></li>
+<li><a href="../configuration/admin_use_parameters_in_configuration.html">Parameterize a Pipeline</a></li>
+<li><a href="../configuration/admin_use_custom_pipeline_label.html">Customize a Pipeline Label</a></li>
+<li><a href="../configuration/admin_clone_pipeline.html">Clone a Pipeline</a></li>
+<li><a href="../configuration/admin_lock_pipelines.html">Lock a Pipeline</a></li>
+<li><a href="../configuration/admin_add_material.html">Add Material to Existing Pipeline</a></li>
+<li><a href="../configuration/admin_add_stage.html">Add Stage to Existing Pipeline</a></li>
+<li><a href="../configuration/admin_add_job.html">Add job to Existing Stage</a></li>
+<li><a href="../configuration/admin_add_task.html">Add task to Existing Job</a></li>
+<li><a href="../configuration/pipeline_templates.html">Pipeline Templates</a></li>
+<li><a href="../configuration/elastic_agents.html">Elastic Agents</a></li>
+<li><a href="../configuration/dev_choose_when_stage_runs.html">Choose When a Stage Runs</a></li>
+<li><a href="../configuration/admin_timer.html">Timer Trigger</a></li>
+<li><a href="../configuration/job_timeout.html">Job Timeout</a></li>
+<li><a href="../configuration/managing_users.html">Managing Users</a></li>
+<li><a href="../configuration/dev_authentication.html">Authentication</a></li>
+<li><a href="../configuration/dev_authorization.html">Authorizing Users</a></li>
+<li><a href="../configuration/delegating_group_administration.html">Delegating Group Administration</a></li>
+<li><a href="../configuration/pipeline_group_admin_config.html">Pipeline Group Administration</a></li>
+<li><a href="../configuration/dev_upload_test_report.html">Publish Reports and Artifacts</a></li>
+<li><a href="../configuration/managing_artifacts_and_reports.html">Managing Artifacts and Reports</a></li>
+<li><a href="../configuration/delete_artifacts.html">Auto Delete Artifacts</a></li>
+<li><a href="../configuration/ui_testing.html">UI Testing</a></li>
+<li><a href="../configuration/admin_mailhost_info.html">Mailhost Information</a></li>
+<li><a href="../configuration/dev_notifications.html">Notifications</a></li>
+<li><a href="../configuration/tfs_config.html">TFS Material configuration</a></li>
+<li><a href="../configuration/configuration_reference.html">Reference</a></li>
+<li><a href="../configuration/schema.html">Schema</a></li>
+</ul></li>
+<li><a href="../advanced_usage.html"><strong>Advanced Usage</strong></a>
+
+<ul>
+<li><a href="../advanced_usage/pipelines_as_code.html">Pipelines as code</a></li>
+<li><a href="../advanced_usage/agent_auto_register.html">Auto Register a Remote Agent</a></li>
+<li><a href="../advanced_usage/admin_spawn_multiple_jobs.html">Spawn multiple instances of a Job</a></li>
+<li><a href="../advanced_usage/admin_install_multiple_agents.html">Multiple Agents on One Machine</a></li>
+<li><a href="../advanced_usage/dev_clean_up_when_cancel.html">Clean on Task Cancel</a></li>
+<li><a href="../advanced_usage/dev_conditional_task_execution.html">Conditional Task Execution</a></li>
+<li><a href="../advanced_usage/trigger_with_options.html">Trigger With Options</a></li>
+<li><a href="../advanced_usage/fan_in.html">Fan In</a></li>
+<li><a href="../advanced_usage/properties.html">Properties</a></li>
+<li><a href="../advanced_usage/logging.html">Logging</a></li>
+<li><a href="../advanced_usage/compare_pipelines.html">Compare Builds</a></li>
+<li><a href="../advanced_usage/stage_duration_chart.html">Graphs</a></li>
+<li><a href="../advanced_usage/command_repository.html">Command Repository</a></li>
+<li><a href="../advanced_usage/one_click_backup.html">Backup GoCD Server</a></li>
+<li><a href="../advanced_usage/cron_backup.html">Timer Based GoCD Server Backup</a></li>
+<li><a href="../advanced_usage/config_repo.html">Config Repository</a></li>
+<li><a href="../advanced_usage/other_config_options.html">Other Config Options</a></li>
+<li><a href="../advanced_usage/agent-health-check-api.html">Agent Health Check API</a></li>
+<li><a href="../advanced_usage/maintenance_mode.html">Maintenance Mode</a><br /></li>
+</ul></li>
+<li><a href="../integration.html"><strong>Integrating GoCD With Other Tools</strong></a><br /></li>
+<li><a href="../extension_points.html"><strong>Extension Points Of GoCD</strong></a>
+
+<ul>
+<li><a href="../extension_points/plugin_user_guide.html">Plugin User Guide</a></li>
+<li><a href="../extension_points/package_repository_extension.html">Package Repository Extension</a></li>
+<li><a href="../extension_points/yum_repository_poller.html">Yum Repository Poller</a></li>
+<li><a href="../extension_points/scm_extension.html">SCM Extension</a></li>
+<li><a href="../extension_points/task_extension.html">Task Extension</a></li>
+<li><a href="../extension_points/notification_extension.html">Notification Extension</a></li>
+<li><a href="../extension_points/configrepo_extension.html">Configuration repository Extension</a></li>
+</ul></li>
+<li><a href="../gocd_on_kubernetes.html"><strong>GoCD on Kubernetes</strong></a>
+
+<ul>
+<li><a href="../gocd_on_kubernetes/introduction.html">Introduction</a></li>
+<li><a href="../gocd_on_kubernetes/gocd_helm_chart/setup_and_configuration.html">Setup and configuration</a>
+
+<ul>
+<li><a href="../gocd_on_kubernetes/gocd_helm_chart/setup.html">Setup</a></li>
+<li><a href="../gocd_on_kubernetes/gocd_helm_chart/configure_cluster.html">Configure your Kubernetes Cluster</a></li>
+<li><a href="../gocd_on_kubernetes/gocd_helm_chart/helm_install.html">Install the GoCD Helm chart</a></li>
+</ul></li>
+<li><a href="../gocd_on_kubernetes/designing_a_cd_pipeline.html">Designing a CD Pipeline</a>
+
+<ul>
+<li><a href="../gocd_on_kubernetes/designing_a_cd_pipeline/creating_a_build_pipeline.html">Create a pipeline to build application</a></li>
+<li><a href="../gocd_on_kubernetes/designing_a_cd_pipeline/creating_a_test_pipeline.html">Create a pipeline to test the built application</a></li>
+<li><a href="../gocd_on_kubernetes/designing_a_cd_pipeline/creating_a_deploy_pipeline.html">Create a pipeline to deploy on Kubernetes</a></li>
+<li><a href="../gocd_on_kubernetes/designing_a_cd_pipeline/docker_workflows.html">Docker workflows</a></li>
+<li><a href="../gocd_on_kubernetes/gocd_helm_chart/configure_k8s_ea_plugin.html">Configure the Kubernetes Elastic Agent plugin</a></li>
+</ul></li>
+<li><a href="../gocd_on_kubernetes/gocd_helm_chart/troubleshooting.html">Troubleshooting</a></li>
+</ul></li>
+<li><a href="../faq.html"><strong>FAQ/Troubleshooting</strong></a>
+
+<ul>
+<li><a href="../faq/ordering_of_pipelines.html">Ordering of Pipelines</a></li>
+<li><a href="../faq/stage_old_config.html">Historical Configuration</a></li>
+<li><a href="../faq/concurrent_config_modifications.html">Concurrent Modifications to Config</a></li>
+<li><a href="../faq/dev_understand_why_build_broken.html">Why the Build is Broken?</a></li>
+<li><a href="../faq/dev_see_artifact_as_tab.html">See artifacts as sub-tabs</a></li>
+<li><a href="../faq/dev_save_properties.html">Save Properties for a Build</a></li>
+<li><a href="../faq/environment_variables.html">Using Environment variables</a></li>
+<li><a href="../faq/rm_deploy_to_environment.html">Deploy to an environment</a></li>
+<li><a href="../faq/tester_what_has_changed.html">See changes in new binary</a></li>
+<li><a href="../faq/dependency_management.html">Run Tests against new Builds</a></li>
+<li><a href="../faq/rm_what_is_deployed.html">Check What&rsquo;s Deployed</a></li>
+<li><a href="../faq/deploy_a_specific_build_to_an_environment.html">Deploy a Specific Build</a></li>
+<li><a href="../faq/agent_guid_issue.html">Clone/Copy an Existing Agents</a></li>
+<li><a href="../faq/job_rerun.html">How do I re-run jobs?</a></li>
+<li><a href="../faq/material_update_hung.html">Go unable to poll for changes</a></li>
+<li><a href="../faq/artifact_integrity.html">Artifact integrity verification</a></li>
+<li><a href="../faq/notifications_page.html">Email Notifications</a></li>
+<li><a href="../faq/admin_out_of_disk_space.html">Running out of Disk Space</a></li>
+<li><a href="../faq/docker_container_ssh_keys.html">Configure SSH Keys for dockerized GoCD</a></li>
+</ul></li>
+<li><a href="../beta.html"><strong>Beta features</strong></a>
+
+<ul>
+<li><a href="../beta/comment_on_pipeline_run.html">Comment on a pipeline run</a><br /></li>
+</ul></li>
+<li><a href="../release_history.html"><strong>Release History</strong></a>
+
+<ul>
+<li><a href="../release_history/whats_new_in_go.html">What&rsquo;s New in Go</a><br /></li>
+</ul></li>
+</ul>
+
+
+
+
+</nav>
+    </aside>
+
+    <div class="book-page">
+      <header class="align-center justify-between book-header">
+  <label for="menu-control">
+    <img src="../svg/menu.svg" />
+  </label>
+  <strong>Configure a Reverse Proxy</strong>
+</header>
+
+      
+<article class="markdown">
+
+<h1 id="configure-a-reverse-proxy-server-to-use-with-gocd-server">Configure a reverse proxy server to use with GoCD server</h1>
+
+<p>It is sometimes useful to front GoCD with a proxy server. In this section, we give you some tips and examples on how to achieve this.</p>
+
+<h2 id="gocd-with-apache">GoCD with Apache</h2>
+
+<p>An example of how to configure GoCD with Apache is shown below.</p>
+
+<p><strong>Assumptions:</strong></p>
+
+<ul>
+<li>You have Apache with <code>mod_proxy</code> installed</li>
+<li>The Apache server sits on the same machine as the GoCD server (localhost)</li>
+</ul>
+
+<pre><code class="language-apache">Listen nnn.nnn.nnn.nnn:80
+NameVirtualHost nnn.nnn.nnn.nnn:80
+
+&lt;VirtualHost nnn.nnn.nnn.nnn:80&gt;
+  ServerName go.yourdomain.com
+  DocumentRoot /var/www/html
+
+  &lt;IfVersion &gt;= 2.4&gt;
+    ProxyPass         /  ws://localhost:8153/
+    ProxyPassReverse  /  ws://localhost:8153/
+  &lt;/IfVersion&gt;
+
+  &lt;IfVersion &lt; 2.4&gt;
+    ProxyPass         /  http://localhost:8153/
+    ProxyPassReverse  /  http://localhost:8153/
+  &lt;/IfVersion&gt;
+
+  ProxyPreserveHost On
+&lt;/VirtualHost&gt;
+</code></pre>
+
+<p>If you&rsquo;re additionally using SSL (highly recommended), you may use the following snippet -</p>
+
+<pre><code class="language-apache">Listen nnn.nnn.nnn.nnn:80
+NameVirtualHost nnn.nnn.nnn.nnn:80
+
+&lt;VirtualHost nnn.nnn.nnn.nnn:80&gt;
+  ServerName gocd.example.com
+
+  # Redirect any http requests to https
+  RewriteEngine On
+  RewriteRule ^/(.*)$ https://%{SERVER_NAME}/$1 [R=permanent,L]
+&lt;/VirtualHost&gt;
+
+&lt;VirtualHost nnn.nnn.nnn.nnn:443&gt;
+  ServerName gocd.example.com
+
+  # Proxy everything over to the GoCD server
+  ProxyPass         /  http://localhost:8153/
+  ProxyPassReverse  /  http://localhost:8153/
+  ProxyPreserveHost On
+  RequestHeader set X-Forwarded-Proto &quot;https&quot;
+
+  &lt;Location /&gt;
+    Order allow,deny
+    Allow from all
+  &lt;/Location&gt;
+
+  # SSL configuration
+  SSLEngine on
+
+  SSLCertificateFile /etc/pki/tls/certs/gocd.example.com.pem
+  SSLCertificateKeyFile /etc/pki/tls/private/gocd.example.com.key
+  SSLCertificateChainFile /etc/pki/tls/certs/gocd.example.com.pem.chained.pem
+&lt;/VirtualHost&gt;
+</code></pre>
+
+<h2 id="gocd-with-nginx">GoCD with NGINX</h2>
+
+<pre><code class="language-nginx">server {
+  # Redirect any http requests to https
+  listen         80;
+  server_name    gocd.example.com;
+  return 301     https://gocd.example.com$request_uri;
+}
+
+map $http_upgrade $connection_upgrade {
+  default upgrade;
+  '' close;
+}
+
+server {
+  listen                    443 ssl;
+  server_name               gocd.example.com;
+
+  ssl_certificate           /etc/pki/tls/certs/gocd.example.com.chained.pem;
+  ssl_certificate_key       /etc/pki/tls/private/gocd.example.com.key;
+
+  # Proxy everything over to the GoCD server
+  location / {
+    proxy_set_header        Host            $host;
+    proxy_set_header        X-Real-IP       $remote_addr;
+    proxy_set_header        X-Forwarded-For $proxy_add_x_forwarded_for;
+    proxy_set_header        X-Forwarded-Proto $scheme;
+    proxy_http_version      1.1;
+    proxy_set_header 	    Upgrade $http_upgrade;
+    proxy_set_header 	    Connection $connection_upgrade;
+  }
+}
+</code></pre>
+
+<p><a id="agents-and-custom-ssl-ports"></a></p>
+
+<h2 id="agents-and-reverse-proxies">Agents and reverse proxies</h2>
+
+<p>The GoCD server requires that the agents connect to it directly without any reverse-proxies in between that perform SSL termination. This is because GoCD agent-server communication is authenticated using SSL/TLS client certificates, a reverse-proxy will be interpreted as a MITM (man-in-the-middle-attack) and the agents will not be able to connect to the server.</p>
+
+<h2 id="also-see">Also see&hellip;</h2>
+
+<ul>
+<li><a href="../installation/configuring_server_details.html#configure-site-urls">Configure site URLs</a></li>
+</ul>
+</article>
+
+      
+
+    </div>
+
+    
+  
+  
+  <aside class="book-toc fixed">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#configure-a-reverse-proxy-server-to-use-with-gocd-server">Configure a reverse proxy server to use with GoCD server</a>
+<ul>
+<li><a href="#gocd-with-apache">GoCD with Apache</a></li>
+<li><a href="#gocd-with-nginx">GoCD with NGINX</a></li>
+<li><a href="#agents-and-reverse-proxies">Agents and reverse proxies</a></li>
+<li><a href="#also-see">Also see&hellip;</a></li>
+</ul></li>
+</ul>
+</nav>
+  </aside>
+
+
+
+  </main>
+
+  
+  
+</body>
+
+</html>
