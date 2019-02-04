@@ -11,11 +11,27 @@
   </url>
   
   <url>
+    <loc>/extension_points/notification_extension.html</loc>
+  </url>
+  
+  <url>
     <loc>/faq/dev_use_current_revision_in_build.html</loc>
   </url>
   
   <url>
     <loc>/faq/environment_variables.html</loc>
+  </url>
+  
+  <url>
+    <loc>/gocd_on_kubernetes.html</loc>
+  </url>
+  
+  <url>
+    <loc>/gocd_on_kubernetes/designing_a_cd_pipeline.html</loc>
+  </url>
+  
+  <url>
+    <loc>/release_history.html</loc>
   </url>
   
   <url>
@@ -128,7 +144,31 @@
   </url>
   
   <url>
+    <loc>/extension_points/configrepo_extension.html</loc>
+  </url>
+  
+  <url>
     <loc>/faq/docker_container_ssh_keys.html</loc>
+  </url>
+  
+  <url>
+    <loc>/gocd_on_kubernetes/gocd_helm_chart/configure_k8s_ea_plugin.html</loc>
+  </url>
+  
+  <url>
+    <loc>/gocd_on_kubernetes/gocd_helm_chart/configure_cluster.html</loc>
+  </url>
+  
+  <url>
+    <loc>/gocd_on_kubernetes/designing_a_cd_pipeline/creating_a_build_pipeline.html</loc>
+  </url>
+  
+  <url>
+    <loc>/gocd_on_kubernetes/designing_a_cd_pipeline/creating_a_deploy_pipeline.html</loc>
+  </url>
+  
+  <url>
+    <loc>/gocd_on_kubernetes/designing_a_cd_pipeline/creating_a_test_pipeline.html</loc>
   </url>
   
   <url>
@@ -148,6 +188,10 @@
   </url>
   
   <url>
+    <loc>/gocd_on_kubernetes/designing_a_cd_pipeline/docker_workflows.html</loc>
+  </url>
+  
+  <url>
     <loc>/configuration/elastic_agents.html</loc>
   </url>
   
@@ -157,6 +201,10 @@
   
   <url>
     <loc>/navigation/environments_page.html</loc>
+  </url>
+  
+  <url>
+    <loc>/extension_points.html</loc>
   </url>
   
   <url>
@@ -184,7 +232,15 @@
   </url>
   
   <url>
+    <loc>/gocd_on_kubernetes/gocd_helm_chart/helm_install.html</loc>
+  </url>
+  
+  <url>
     <loc>/</loc>
+  </url>
+  
+  <url>
+    <loc>/gocd_on_kubernetes/introduction.html</loc>
   </url>
   
   <url>
@@ -256,6 +312,10 @@
   </url>
   
   <url>
+    <loc>/extension_points/package_repository_extension.html</loc>
+  </url>
+  
+  <url>
     <loc>/configuration/admin_use_parameters_in_configuration.html</loc>
   </url>
   
@@ -288,6 +348,10 @@
   </url>
   
   <url>
+    <loc>/extension_points/plugin_user_guide.html</loc>
+  </url>
+  
+  <url>
     <loc>/advanced_usage/properties.html</loc>
   </url>
   
@@ -300,11 +364,19 @@
   </url>
   
   <url>
+    <loc>/release_history/whats_new_in_go.html</loc>
+  </url>
+  
+  <url>
     <loc>/faq/dependency_management.html</loc>
   </url>
   
   <url>
     <loc>/faq/admin_out_of_disk_space.html</loc>
+  </url>
+  
+  <url>
+    <loc>/extension_points/scm_extension.html</loc>
   </url>
   
   <url>
@@ -328,7 +400,15 @@
   </url>
   
   <url>
+    <loc>/gocd_on_kubernetes/gocd_helm_chart/setup.html</loc>
+  </url>
+  
+  <url>
     <loc>/configuration/quick_pipeline_setup.html</loc>
+  </url>
+  
+  <url>
+    <loc>/gocd_on_kubernetes/gocd_helm_chart/setup_and_configuration.html</loc>
   </url>
   
   <url>
@@ -349,6 +429,10 @@
   </url>
   
   <url>
+    <loc>/extension_points/task_extension.html</loc>
+  </url>
+  
+  <url>
     <loc>/advanced_usage/cron_backup.html</loc>
   </url>
   
@@ -361,6 +445,10 @@
   </url>
   
   <url>
+    <loc>/gocd_on_kubernetes/gocd_helm_chart/troubleshooting.html</loc>
+  </url>
+  
+  <url>
     <loc>/configuration/ui_testing.html</loc>
   </url>
   
@@ -370,6 +458,10 @@
   
   <url>
     <loc>/faq/dev_understand_why_build_broken.html</loc>
+  </url>
+  
+  <url>
+    <loc>/extension_points/yum_repository_poller.html</loc>
   </url>
   
 </urlset>

@@ -12,6 +12,15 @@
     
     <item>
       <title></title>
+      <link>/extension_points/notification_extension.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/extension_points/notification_extension.html</guid>
+      <description>!REDIRECT &amp;ldquo;https://plugin-api.gocd.org/current/notifications&amp;quot;</description>
+    </item>
+    
+    <item>
+      <title></title>
       <link>/faq/dev_use_current_revision_in_build.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -285,12 +294,75 @@ NOTE: This repo must not be altered externally as this will lead to errors in Go
     </item>
     
     <item>
+      <title>Configuration repository Extension</title>
+      <link>/extension_points/configrepo_extension.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/extension_points/configrepo_extension.html</guid>
+      <description>Configuration repository Extension GoCD supports writing configuration plugins starting 16.7.
+It is a feature which allows you to move pipeline configurations out of GoCD and its cruise-config.xml file into one or more source-control repositories (e.g. git), so that you can modify them externally. Such modifications will be seen by a periodic poller in the GoCD server and it will merge those pipeline configurations into the pipelines it finds in the main configuration XML file.</description>
+    </item>
+    
+    <item>
       <title>Configure SSH Keys for dockerized GoCD</title>
       <link>/faq/docker_container_ssh_keys.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/faq/docker_container_ssh_keys.html</guid>
       <description>Using SSH keys to access GoCD materials in a containerized GoCD server and agent If you have configured a git repository as a GoCD material, then there are several ways to let GoCD access the repository. One of the popular methods to do so is configuring SSH keys. When using docker for gocd server and agents, it becomes slightly more complex to do this. Below are the steps to configure the ssh keys that can be used with multiple containers at once.</description>
+    </item>
+    
+    <item>
+      <title>Configure the Kubernetes Elastic Agent plugin</title>
+      <link>/gocd_on_kubernetes/gocd_helm_chart/configure_k8s_ea_plugin.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/gocd_on_kubernetes/gocd_helm_chart/configure_k8s_ea_plugin.html</guid>
+      <description>Kubernetes elastic agent plugin  GoCD agents are “workers” and execute tasks that make up jobs, stages and the pipeline. GoCD Elastic agents spin up agents on demand, depending on the intensity of the tasks and availability of processing power.
+ The Kubernetes elastic agent plugin is bundled with the GoCD Helm chart. This plugin spins up GoCD agent pods in the Kubernetes cluster in response to build workload.</description>
+    </item>
+    
+    <item>
+      <title>Configure your Kubernetes Cluster</title>
+      <link>/gocd_on_kubernetes/gocd_helm_chart/configure_cluster.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/gocd_on_kubernetes/gocd_helm_chart/configure_cluster.html</guid>
+      <description>Configure your Kubernetes Cluster Now that you have your Kubernetes cluster set up and running, you’ll need to make the following configuration changes. This configuration will be specific to your target Kubernetes environment. We have specified the required actions for Minikube, GKE, AWS below.
+1. Enable Ingress - to be able to expose the GoCD application over your network, you will need an Ingress controller.
+2. Configure Service Account - A service account is how Kubernetes manages roles and permissions.</description>
+    </item>
+    
+    <item>
+      <title>Create a pipeline to build application</title>
+      <link>/gocd_on_kubernetes/designing_a_cd_pipeline/creating_a_build_pipeline.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/gocd_on_kubernetes/designing_a_cd_pipeline/creating_a_build_pipeline.html</guid>
+      <description>Create a pipeline to build and publish your application image In this section, we&amp;rsquo;ll go over how to design CD pipelines that build and publish an application image. As an example, we&amp;rsquo;ve used a sample nodejs application called &amp;lsquo;Bulletin Board&amp;rsquo;.
+Prerequisites We’ll be building our application as a docker image artifact and publishing it to Docker Hub. To do this, make sure you have a Docker Hub account.
+Quick links  Getting started with GoCD  Build an application artifact  Click on the Pipelines link on the top menu to create your first pipeline.</description>
+    </item>
+    
+    <item>
+      <title>Create a pipeline to deploy on Kubernetes</title>
+      <link>/gocd_on_kubernetes/designing_a_cd_pipeline/creating_a_deploy_pipeline.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/gocd_on_kubernetes/designing_a_cd_pipeline/creating_a_deploy_pipeline.html</guid>
+      <description>Create a pipeline to deploy the published artifact In this section, we’ll learn to design a deployment pipeline to deploy to Kubernetes. After you&amp;rsquo;ve designed and run the build pipeline, you&amp;rsquo;ll see that for every successful build, a new image gets created with a new tag. To create a pipeline to deploy the published artifact, follow these steps:
+Quick Links Modeling Deployment Pipelines
+Deploy application to Kubernetes  Navigate to Admin -&amp;gt; Pipelines and click on Create a pipeline within this group.</description>
+    </item>
+    
+    <item>
+      <title>Create a pipeline to test the built application</title>
+      <link>/gocd_on_kubernetes/designing_a_cd_pipeline/creating_a_test_pipeline.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/gocd_on_kubernetes/designing_a_cd_pipeline/creating_a_test_pipeline.html</guid>
+      <description>Create a pipeline to test the built application image In the previous section, we built and pushed a docker image to Docker Hub. In this section, we will look at how to pull the built docker image and runs tests against it.
+Quick links  Getting started with GoCD  Test the application artifact To pull our application docker image artifact from Docker Hub and run tests, follow these steps.</description>
     </item>
     
     <item>
@@ -331,6 +403,16 @@ Select specific revisions of materials to deploy Consider the case where a deplo
       
       <guid>/faq/rm_deploy_to_environment.html</guid>
       <description>Releasing into an environment One of the most useful aspects of having your build mapped as a pipeline, is being able to know exactly what is in a particular environment. For example, you might have a User Acceptance Testing environment into which you want GoCD to automatically deploy your binary. Due to process restriction within your company, you might want to manually install a binary yourself, but have GoCD still retain the information of what is currently released.</description>
+    </item>
+    
+    <item>
+      <title>Docker workflows</title>
+      <link>/gocd_on_kubernetes/designing_a_cd_pipeline/docker_workflows.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/gocd_on_kubernetes/designing_a_cd_pipeline/docker_workflows.html</guid>
+      <description>Docker workflows Using docker containers to execute docker commands can be done in the following ways. This section identifies the approaches and the drawbacks to keep in mind when using these approaches.
+Docker in Docker (DinD) Docker in Docker involves setting up a docker binary and running an isolated docker daemon inside the container. This requires that the host docker container be run in privileged mode. The privileged flag enables the host container to do almost all of the things that the underlying host machine can do.</description>
     </item>
     
     <item>
@@ -410,6 +492,29 @@ To navigate to the Graphs:  Click on the stage bar of the relevant stage on the 
       <guid>/faq/job_rerun.html</guid>
       <description>Re-running Job(s) in GoCD You may sometimes encounter situations where you want to re-run only a subset of jobs within a stage rather than the entire stage or pipeline. Examples of such scenarios include:
  Environmental problems on a particular agent caused a job to fail Unsuccessful build deployment to one (or more) servers within a cluster of servers  To re-run a job  Navigate to the Stage Details screen of the stage who&amp;rsquo;s job you want to re-run.</description>
+    </item>
+    
+    <item>
+      <title>Install the GoCD Helm chart</title>
+      <link>/gocd_on_kubernetes/gocd_helm_chart/helm_install.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/gocd_on_kubernetes/gocd_helm_chart/helm_install.html</guid>
+      <description>Install the GoCD Helm chart Helm is a package manager for Kubernetes. Kubernetes packages are called charts. Charts are curated applications for Kubernetes.
+Install the GoCD Helm chart with these commands:
+helm repo add stable https://kubernetes-charts.storage.googleapis.com helm install stable/gocd --name gocd --namespace gocd  Access the GoCD server After you’ve installed the GoCD helm chart, you should be able to access the GoCD server from the Ingress IP.
+The Ingress IP address can be obtained as specified below:</description>
+    </item>
+    
+    <item>
+      <title>Introduction</title>
+      <link>/gocd_on_kubernetes/introduction.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/gocd_on_kubernetes/introduction.html</guid>
+      <description>Introduction GoCD gives you the flexibility to effectively represent CD pipelines that suit your organization’s processes. Kubernetes gives you a highly programmable delivery infrastructure platform. And together, they provide the foundation for a powerful Continuous Delivery platform.
+With this documentation guide, you’ll be able to
+ Setup and configure an instance of GoCD on a Kubernetes cluster. Design a continuous delivery pipeline to deploy a sample application to Kubernetes. Publish to and fetch artifacts from an external respository like Docker Hub Registry .</description>
     </item>
     
     <item>
@@ -579,6 +684,16 @@ How to set these options Environment variables If an option specified below is o
     </item>
     
     <item>
+      <title>Package Repository Extension</title>
+      <link>/extension_points/package_repository_extension.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/extension_points/package_repository_extension.html</guid>
+      <description>GoCD Package Material Introduction Poll from GoCD packages and more from GoCD 13.3 onwards Pipelines in GoCD can poll packages in repositories similar to how they poll version control systems. A build typically consumes source code maintained in a version control system (VCS/SCM). What about a typical deployment? Increasingly, the input for deployments is the build result packaged as:
+ jar, war or ear file in case of Java nuget/ chocolatey package in case of .</description>
+    </item>
+    
+    <item>
       <title>Parameterize a pipeline</title>
       <link>/configuration/admin_use_parameters_in_configuration.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -660,6 +775,15 @@ Clicking on the &amp;ldquo;Add New Template&amp;rdquo; brings up the following f
     </item>
     
     <item>
+      <title>Plugin User Guide</title>
+      <link>/extension_points/plugin_user_guide.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/extension_points/plugin_user_guide.html</guid>
+      <description>GoCD Plugin User Guide Introduction Plugins allow users to extend the functionality of GoCD. Each plugin is assigned an identifier which is determined by the id attribute provided in plugin metadata file packaged along with the plugin jar. If the metadata file is not packaged, plugin jar file name will be taken as plugin id. Plugins are classified into two categories - Bundled and External. During startup, GoCD server would try to load all the plugins.</description>
+    </item>
+    
+    <item>
       <title>Properties</title>
       <link>/advanced_usage/properties.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -688,6 +812,15 @@ Property history GoCD allows you to download the history of properties that you 
     </item>
     
     <item>
+      <title>Release History</title>
+      <link>/release_history/whats_new_in_go.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/release_history/whats_new_in_go.html</guid>
+      <description>What&amp;rsquo;s new in GoCD GoCD has changed its release naming convention from the previous practice of major.minor.bugfix nomenclature. The major version will now be the year of release (YY). The minor version n will indicate the nth release for the year. For ex: 13.2 will be the second release in 2013.</description>
+    </item>
+    
+    <item>
       <title>Run Tests against new Builds</title>
       <link>/faq/dependency_management.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -705,6 +838,16 @@ Property history GoCD allows you to download the history of properties that you 
       <description>Running out of disk space After you&amp;rsquo;ve had GoCD running for a while, you may notice the following warning box when browsing GoCD:
 If you don&amp;rsquo;t do anything about it, you&amp;rsquo;ll end up seeing the following error:
 GoCD will stop scheduling new pipelines until you make more room, either by compressing large files, attaching a larger hard drive, or by deleting unused artifacts. You could also let GoCD manage artifact disk space by enabling auto purge of old artifacts.</description>
+    </item>
+    
+    <item>
+      <title>SCM Extension</title>
+      <link>/extension_points/scm_extension.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/extension_points/scm_extension.html</guid>
+      <description>SCM Material Introduction A build typically consumes source code maintained in a version control system (VCS/SCM). GoCD has built-in support for Git, Mercurial, SVN, TFS &amp;amp; Perforce. Users can use SCM plugins to integrate with other SCMs.
+SCMs and Materials Unlike built-in VCS/SCM materials, the material definition in case of plugin SCMs is not contained within the pipeline definition. They are global entities. Many pipelines may have material definitions referring to the same SCM.</description>
     </item>
     
     <item>
@@ -757,6 +900,17 @@ This box lists all the server Information.</description>
     </item>
     
     <item>
+      <title>Setup</title>
+      <link>/gocd_on_kubernetes/gocd_helm_chart/setup.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/gocd_on_kubernetes/gocd_helm_chart/setup.html</guid>
+      <description>Setup Before you can get started with GoCD on Kubernetes, make sure that you have taken a look at the list below.
+1. Install kubectl The Kubernetes CLI kubectl is used for cluster management purposes. The Kubernetes install documentation provides various ways of installing kubectl for different platforms.
+2. Setup a Kubernetes Cluster Before installing GoCD, you need to setup a Kubernetes cluster. You can do this using any of the following tools:</description>
+    </item>
+    
+    <item>
       <title>Setup a New Pipeline</title>
       <link>/configuration/quick_pipeline_setup.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -764,6 +918,16 @@ This box lists all the server Information.</description>
       <guid>/configuration/quick_pipeline_setup.html</guid>
       <description>Setup a new pipeline New Pipeline Wizard After you&amp;rsquo;ve entered your license information, clicking on the Pipelines tab will take you to the &amp;ldquo;Add new pipeline&amp;rdquo; page. You can also add a pipeline by navigating to the Admin page and clicking on the &amp;ldquo;Create a new pipeline within a group&amp;rdquo; link. You can create a pipeline in 3 steps.
 Step 1: Basic Settings  Fill in the pipeline name Fill in the pipeline group  Step 2: Material  Choose the material type.</description>
+    </item>
+    
+    <item>
+      <title>Setup and configuration</title>
+      <link>/gocd_on_kubernetes/gocd_helm_chart/setup_and_configuration.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/gocd_on_kubernetes/gocd_helm_chart/setup_and_configuration.html</guid>
+      <description>Getting Started with GoCD on Kubernetes
+Step 1: Setup and Configuration</description>
     </item>
     
     <item>
@@ -798,6 +962,16 @@ You will need to configure the following to add a TFS material:
     </item>
     
     <item>
+      <title>Task Extension</title>
+      <link>/extension_points/task_extension.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/extension_points/task_extension.html</guid>
+      <description>Task Extension Overview GoCD supports configuring a few kinds of tasks (Nant, Ant and Rake), directly, from the configuration UI, without specifying them as a custom command. For instance, if you go to the configuration UI for a job, you&amp;rsquo;ll see something like this:
+A task plugin allows you to extend this so that you can have other tasks available here. The plugin also allows you to control the UI, as well as the data stored for this task.</description>
+    </item>
+    
+    <item>
       <title>Timer Based GoCD Server Backup</title>
       <link>/advanced_usage/cron_backup.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -826,6 +1000,16 @@ Note that a pipeline will still schedule normally if changes are checked in. If 
       <description>Trigger with a different revision of material GoCD supports a Trigger with option that allows you to run the pipeline with a specific revision of the material(s).
 Trigger with options Information The following information are displayed for the last 5 revisions. For an SCM material, the following information is shown
  Revision hash or pipeline label Committer Check-in comment for the revision Check-in time of the revision  For a pipeline material, the pipeline label and the corresponding run time is shown</description>
+    </item>
+    
+    <item>
+      <title>Troubleshooting</title>
+      <link>/gocd_on_kubernetes/gocd_helm_chart/troubleshooting.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/gocd_on_kubernetes/gocd_helm_chart/troubleshooting.html</guid>
+      <description>Troubleshooting  Elevated privileges error:
+ User &amp;quot;system:serviceaccount:kube-system:default&amp;quot; cannot get namespaces in the namespace &amp;quot;gocd&amp;quot;: Unknown user &amp;quot;system:serviceaccount:kube-system:default&amp;quot; Error: release gocd failed: clusterroles.rbac.authorization.k8s.io &amp;quot;&amp;lt;RBAC&amp;gt;&amp;quot; is forbidden: attempt to grant extra privileges:  The above 2 error messages occur if the service account associated with the tiller pod does not have the permissions to create the resources. Refer to the privileges section in the prerequisites to provide tiller elevated privileges.</description>
     </item>
     
     <item>
@@ -860,6 +1044,16 @@ A value stream map can be drawn for every instance of a pipeline. It provides yo
 Example usage Usage: As a developer, I want to understand why the build is broken.
 Let&amp;rsquo;s assume that in this case, we are on a java project using JUnit as our testing library.
  If we&amp;rsquo;re not already, we need to configure Go to upload JUnit xml reports Click on the Pipelines tab   Click on the failed stage you want to investigate   Click on the failed job   The &amp;ldquo;Failures&amp;rdquo; sub-tab should help you diagnose what is wrong with your build   If you need more information, the &amp;ldquo;Console&amp;rdquo; sub-tab contains everything that was written out to the console (including extra information from Go)  </description>
+    </item>
+    
+    <item>
+      <title>Yum Repository Poller</title>
+      <link>/extension_points/yum_repository_poller.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/extension_points/yum_repository_poller.html</guid>
+      <description>Yum Repository Poller Note: This plugin is available for GoCD servers running on Linux nodes having repoquery installed (part of the yum-utils package, Ubuntu, CentOS)
+Introduction The Yum repository poller is a bundled package material plugin capable of polling yum repositories for rpm packages. GoCD server interacts with this plugin via package material plugin interfaces. The plugin makes use of a command similar to the following to poll the server.</description>
     </item>
     
   </channel>
