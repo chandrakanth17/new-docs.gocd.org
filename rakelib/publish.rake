@@ -19,7 +19,7 @@ task :publish => :build do
   repo_url = `git config --get remote.#{remote_name}.url`.strip
 
   rm_rf "build"
-  sh("git clone #{repo_url} build --branch gh-pages --depth 1 --quiet")
+  sh("git clone --branch gh-pages --depth 1 --quiet #{repo_url} build")
   cd "build" do
     rm_rf GOCD_VERSION
     cp_r '../public', GOCD_VERSION
