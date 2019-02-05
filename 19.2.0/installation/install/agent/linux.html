@@ -243,7 +243,12 @@
 
 <p>The GoCD agent RPM installer has been tested on RedHat Enterprise Linux and CentOS. It should work on most RPM based Linux distributions.</p>
 
-<p>!INCLUDE &ldquo;../_yum_repo.html&rdquo;</p>
+<p>If you prefer to use the YUM repository and install via YUM, paste the following in your shell —</p>
+
+<pre><code class="language-bash">sudo curl https://download.gocd.org/gocd.repo -o /etc/yum.repos.d/gocd.repo
+sudo yum install -y java-1.8.0-openjdk #atleast Java 8 is required, you may use other jre/jdk if you prefer
+</code></pre>
+
 
 <p>Once you have the repository setup, execute</p>
 
@@ -260,7 +265,20 @@ sudo rpm -i go-agent-${version}.noarch.rpm
 
 <p>The GoCD agent .deb installer has been tested on Ubuntu. However it should work on most Linux distributions which use debs.</p>
 
-<p>!INCLUDE &ldquo;../_apt_repo.html&rdquo;</p>
+<p>If you prefer to use the APT repository and install via <code>apt-get</code>, paste the following in your shell —</p>
+
+<pre><code class="language-bash">echo &quot;deb https://download.gocd.org /&quot; | sudo tee /etc/apt/sources.list.d/gocd.list
+curl https://download.gocd.org/GOCD-GPG-KEY.asc | sudo apt-key add -
+sudo apt-get update
+</code></pre>
+
+<p>Note: The GoCD server and agent require Java 8 to be installed.</p>
+
+<pre><code class="language-bash">sudo add-apt-repository ppa:openjdk-r/ppa
+sudo apt-get update
+sudo apt-get install -y openjdk-8-jre
+</code></pre>
+
 
 <p>Once you have the repository setup, execute</p>
 
@@ -313,7 +331,15 @@ sudo rpm -i go-agent-${version}.noarch.rpm
 <pre><code class="language-bash"> export GO_AGENT_SYSTEM_PROPERTIES=&quot;$GO_AGENT_SYSTEM_PROPERTIES -Dgo.agent.websocket.enabled=true&quot;
 </code></pre>
 
-<p>!INCLUDE &ldquo;_register_with_server.html&rdquo;</p>
+<h2 id="registering-your-agent-with-the-server">Registering your agent with the server</h2>
+
+<p>For security reasons, all newly installed Go agents need to be enabled on the Go server before work is assigned to them. This prevents an unauthorized person from getting access to your source code. To enable a newly installed Go agent, do the following:</p>
+
+<ol>
+<li>Open the Go server dashboard</li>
+<li>Follow the instructions <a href="../../../configuration/managing_a_build_cloud.html">here</a> to find the agent you&rsquo;ve just installed on the list and add the agent to your cloud. The Go server will now schedule work for this agent.</li>
+</ol>
+
 </article>
 
       

@@ -243,7 +243,12 @@
 
 <p>The GoCD server RPM installer has been tested on RedHat Enterprise Linux and CentOS. It should work on most RPM based Linux distributions.</p>
 
-<p>!INCLUDE &ldquo;../_yum_repo.html&rdquo;</p>
+<p>If you prefer to use the YUM repository and install via YUM, paste the following in your shell —</p>
+
+<pre><code class="language-bash">sudo curl https://download.gocd.org/gocd.repo -o /etc/yum.repos.d/gocd.repo
+sudo yum install -y java-1.8.0-openjdk #atleast Java 8 is required, you may use other jre/jdk if you prefer
+</code></pre>
+
 
 <p>Once you have the repository setup, execute</p>
 
@@ -260,7 +265,20 @@ sudo rpm -i go-server-${version}.noarch.rpm
 
 <p>The GoCD server .deb installer has been tested on Ubuntu. However it should work on most Linux distributions which use debs.</p>
 
-<p>!INCLUDE &ldquo;../_apt_repo.html&rdquo;</p>
+<p>If you prefer to use the APT repository and install via <code>apt-get</code>, paste the following in your shell —</p>
+
+<pre><code class="language-bash">echo &quot;deb https://download.gocd.org /&quot; | sudo tee /etc/apt/sources.list.d/gocd.list
+curl https://download.gocd.org/GOCD-GPG-KEY.asc | sudo apt-key add -
+sudo apt-get update
+</code></pre>
+
+<p>Note: The GoCD server and agent require Java 8 to be installed.</p>
+
+<pre><code class="language-bash">sudo add-apt-repository ppa:openjdk-r/ppa
+sudo apt-get update
+sudo apt-get install -y openjdk-8-jre
+</code></pre>
+
 
 <p>Once you have the repository setup, execute</p>
 
@@ -301,7 +319,28 @@ sudo rpm -i go-server-${version}.noarch.rpm
 <pre><code class="language-bash"> export GO_SERVER_SYSTEM_PROPERTIES=&quot;$GO_SERVER_SYSTEM_PROPERTIES -Dgo.server.session.timeout.seconds=60&quot;
 </code></pre>
 
-<p>!INCLUDE &ldquo;_install_server_footer.html&rdquo;</p>
+<h2 id="copying-existing-config-to-a-new-gocd-server-instance">Copying existing config to a new GoCD Server instance</h2>
+
+<p>You can replicate a GoCD server with all the pipeline, stage, job, tasks and materials definitions/configuration intact.</p>
+
+<p>To do this, the administrator should copy <code>/etc/go/cruise-config.xml</code> from the config directory (<code>/etc/go</code>) to the new server and clear
+<code>serverId</code> attribute of <code>server</code> tag.</p>
+
+<blockquote>
+<p><strong>Note:</strong> Copying just the <code>cruise-config.xml</code> file will not migrate the historical pipeline data and
+artifacts. Please see the page on <a href="../../../advanced_usage/one_click_backup.html">backing up the GoCD Server</a> to fully
+migrate an existing GoCD server.</p>
+</blockquote>
+
+<p><strong>Also see&hellip;</strong></p>
+
+<ul>
+<li><a href="../../installing_go_agent.html">Installing GoCD agents</a></li>
+<li><a href="../../configuring_server_details.html">Configuring server details</a></li>
+<li><a href="../../configure-reverse-proxy.html">Configure GoCD to work with a proxy</a></li>
+<li><a href="../../../advanced_usage/one_click_backup.html">Backing up a GoCD server</a></li>
+</ul>
+
 </article>
 
       

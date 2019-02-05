@@ -284,7 +284,10 @@
 <pre><code>C:\&gt; go-server-16.1.0-1234-setup.exe /S /D=C:\go\server
 </code></pre>
 
-<p>!INCLUDE &ldquo;../_install_windows_headless_message.html&rdquo;</p>
+<p>If User Access Control feature is enabled on your Windows system, it needs to be turned off for silent installation to work.</p>
+
+<p>If you are using the silent installation to upgrade GoCD, you should not specify the Installation-Directory option.</p>
+
 
 <h2 id="overriding-default-startup-arguments-and-environment">Overriding default startup arguments and environment</h2>
 
@@ -322,7 +325,28 @@ wrapper.java.additional.17=-Dcruise.config.other=baz
 
 <p>All the files for the GoCD server are under the root installation path on Windows. The default location is <code>C:\Program Files\Go Server</code>.</p>
 
-<p>!INCLUDE &ldquo;_install_server_footer.html&rdquo;</p>
+<h2 id="copying-existing-config-to-a-new-gocd-server-instance">Copying existing config to a new GoCD Server instance</h2>
+
+<p>You can replicate a GoCD server with all the pipeline, stage, job, tasks and materials definitions/configuration intact.</p>
+
+<p>To do this, the administrator should copy <code>/etc/go/cruise-config.xml</code> from the config directory (<code>/etc/go</code>) to the new server and clear
+<code>serverId</code> attribute of <code>server</code> tag.</p>
+
+<blockquote>
+<p><strong>Note:</strong> Copying just the <code>cruise-config.xml</code> file will not migrate the historical pipeline data and
+artifacts. Please see the page on <a href="../../../advanced_usage/one_click_backup.html">backing up the GoCD Server</a> to fully
+migrate an existing GoCD server.</p>
+</blockquote>
+
+<p><strong>Also see&hellip;</strong></p>
+
+<ul>
+<li><a href="../../installing_go_agent.html">Installing GoCD agents</a></li>
+<li><a href="../../configuring_server_details.html">Configuring server details</a></li>
+<li><a href="../../configure-reverse-proxy.html">Configure GoCD to work with a proxy</a></li>
+<li><a href="../../../advanced_usage/one_click_backup.html">Backing up a GoCD server</a></li>
+</ul>
+
 </article>
 
       

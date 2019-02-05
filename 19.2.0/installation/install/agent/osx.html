@@ -279,7 +279,15 @@ GoCD server. By default it will try connecting to the local machine. Click the O
 
 <p>You can specify the server location in the GUI, but you can also modify the properties file itself (when the Go agent app is not running). This allows you to set a custom port number, which is not possible in the GUI (<a href="../../configure-reverse-proxy.html#agents-and-reverse-proxies">be aware that this might not always work as you expect</a>). The properties file is located in <code>~/Library/Preferences/com.thoughtworks.go.agent.properties</code>, and has a <code>serverUrl</code> and a <code>sslVerificationMode</code> property.</p>
 
-<p>!INCLUDE &ldquo;_register_with_server.html&rdquo;</p>
+<h2 id="registering-your-agent-with-the-server">Registering your agent with the server</h2>
+
+<p>For security reasons, all newly installed Go agents need to be enabled on the Go server before work is assigned to them. This prevents an unauthorized person from getting access to your source code. To enable a newly installed Go agent, do the following:</p>
+
+<ol>
+<li>Open the Go server dashboard</li>
+<li>Follow the instructions <a href="../../../configuration/managing_a_build_cloud.html">here</a> to find the agent you&rsquo;ve just installed on the list and add the agent to your cloud. The Go server will now schedule work for this agent.</li>
+</ol>
+
 </article>
 
       
