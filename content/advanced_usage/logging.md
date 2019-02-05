@@ -159,7 +159,7 @@ For e.g. to send logs to logstash (using [logstash-logback-encoder](https://gith
   - `jackson-annotations-2.9.1.jar`
   - `jackson-core-2.9.1.jar`
 
-Then follow the instructions on the [README](https://github.com/logstash/logstash-logback-encoder) to configure your `logback-include.xml` to setup relevant appenders and encoders:
+Then follow the instructions on the [README](https://github.com/logstash/logstash-logback-encoder#readme) to configure your `logback-include.xml` to setup relevant appenders and encoders:
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>

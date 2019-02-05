@@ -14,7 +14,7 @@ namespace :static_checks do
 
   options = {
       :disable_external     => should_not_run_external_url_checks?,
-      :url_ignore           => %w(http://localhost:1313 http://localhost:8153/ https://localhost:8154/ https://localhost:8154/go http://your-server-installation-hostname:8153/ http://your-trackingtool/yourproject/512 http://your-go-server:8153/),
+      :url_ignore           => [/([https]:\/\/(localhost):*)|([a-z0-9:\/-]*:8154)|([a-z0-9:\/-]*:8153)|(your)|(svn)|([a-zA-z@:\/_]*.git)/],
       :allow_hash_href      => true,
       :allow_missing_href   => true,
       :href_ignore          => ['/https:\/\/www\.youtube\.com\/.*/'],
