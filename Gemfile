@@ -2,3 +2,5 @@ source 'https://rubygems.org'
 
 gem 'rake', '~> 10.4.2'
 gem 'aws-sdk'
+gem 'parallel'
+gem 'mime-types'
