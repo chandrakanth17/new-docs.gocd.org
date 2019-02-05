@@ -20,4 +20,4 @@ If you want to run GoCD on a platform which does not have a native installer or 
 
 GoCD agent, by default, will attempt to connect to the GoCD server running on the same system. If you want it to connect to a different GoCD server, set the environment variable ```GO_SERVER``` or edit the startup scripts suitably
 
-!INCLUDE "_register_with_server.html"
+{{< include file="/installation/install/agent/_register_with_server.md" markdown="true" >}}

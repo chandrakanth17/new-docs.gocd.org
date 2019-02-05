@@ -43,4 +43,4 @@ The GoCD server installs its files in the following locations on your filesystem
 
 Some logging information is also written to ```/var/log/system.log```
 
-!INCLUDE "_install_server_footer.html"
+{{< include file="/installation/install/server/_install_server_footer.md" markdown="true" >}}
