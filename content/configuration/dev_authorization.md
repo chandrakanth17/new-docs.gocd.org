@@ -36,7 +36,7 @@ For power users, here's how you would configure roles via "Config XML":
 ```xml
 <cruise>
   <server>
-    <license ... />
+    <license... />
     <security>
       <passwordFile path="/etc/go-server/passwords.properties" />
 
@@ -145,6 +145,7 @@ For power users, here's how you would configure authorization for approvals for 
 
 ```
 
+<a id="template-admin"></a>
 ## Specifying permissions for templates
 
 A GoCD Administrator can make any user a template administrator for a specific template. As a template administrator, a user can now view and edit the template to which he has permissions.
