@@ -137,7 +137,7 @@ moreinfo: http://curl.haxx.se/docs/manual.html
 
 This is an example of valid command syntax. The command attribute is mandatory. No other attributes are valid. Zero or more arg child elements can be specified. No other child elements are allowed. One command file may only contain one command.
 
->**Please refer the [README](https://github.com/gocd/go-command-repo/blob/master/README.html) for full command and documentation syntax.**
+>**Please refer the [README](https://github.com/gocd/go-command-repo#readme) for full command and documentation syntax.**
 
 When you lookup a command, the following logic is used to sort the resulting suggestions:
 

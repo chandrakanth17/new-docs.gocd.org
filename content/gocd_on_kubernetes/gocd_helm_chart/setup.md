@@ -33,7 +33,7 @@ Before installing GoCD, you need to setup a Kubernetes cluster. You can do this 
     gke_my-project_us-central1-a_gocd-cluster
   ```
 
-- Option 3: Kubernetes Operations on AWS/GCE or kops ([setup guide](https://github.com/kubernetes/kops/blob/master/docs/README.html))
+- Option 3: Kubernetes Operations on AWS/GCE or kops ([setup guide](https://github.com/kubernetes/kops#readme))
 
   ##### Other References
 
@@ -48,9 +48,9 @@ Helm has two parts to it, a client and a server called `Tiller`.
 
 #### Install the Helm client
 
-The helm client is a CLI that let’s you install and update packaged applications on Kubernetes.
+The helm client is a CLI that let's you install and update packaged applications on Kubernetes.
 
-Please refer to the helm [install documentation](https://github.com/kubernetes/helm/blob/master/docs/install.html) for alternative methods of installation.
+Please refer to the helm [install documentation](https://github.com/helm/helm#user-content-install) for alternative methods of installation.
 
 #### Install the Helm server
 

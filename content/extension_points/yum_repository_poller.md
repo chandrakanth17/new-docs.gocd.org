@@ -7,7 +7,7 @@ title: Yum Repository Poller
 
 # Yum Repository Poller
 
-**Note:** This plugin is available for GoCD servers running on Linux nodes having repoquery installed (part of the [yum-utils](http://linux.die.net/man/1/yum-utils) package, [Ubuntu](http://manpages.ubuntu.com/manpages/latest/man1/yum-utils.1.html), [CentOS](http://rpmfind.net/linux/rpm2html/search.php?query=yum-utils&system=centos))
+**Note:** This plugin is available for GoCD servers running on Linux nodes having repoquery installed (part of the [yum-utils](http://linux.die.net/man/1/yum-utils) package, [Ubuntu](http://manpages.ubuntu.com/manpages/cosmic/en/man1/yum-utils.1.html), [CentOS](http://rpmfind.net/linux/rpm2html/search.php?query=yum-utils&system=centos))
 
 ## Introduction
 
@@ -27,7 +27,7 @@ Using the [Yum plugin for Nexus](https://github.com/sonatype/nexus-yum-plugin), 
 
 ### Repository definition
 
-Repo URL must be a valid http, https or file URL. This plugin looks for the presence of **\$REPO\_URL/repodata/[repomd.xml](http://createrepo.baseurl.org/wiki)** to ascertain validity. Basic authentication (user:password@domain/path) is supported for http and https repositories.
+Repo URL must be a valid http, https or file URL. This plugin looks for the presence of **\$REPO\_URL/repodata/[repomd.xml](http://createrepo.baseurl.org)** to ascertain validity. Basic authentication (user:password@domain/path) is supported for http and https repositories.
 
 ### Package definition
 
@@ -47,7 +47,7 @@ epoch:name-ver-rel.arch
 
 ### Package Metadata
 
-The following [rpm metadata](http://www.rpm.org/max-rpm-snapshot/s1-rpm-inside-tags.html) is accessed by the plugin
+The following [rpm metadata](http://ftp.rpm.org/max-rpm/s1-rpm-inside-tags.html) is accessed by the plugin
 
 1.  BuildTime (required, automatically set by rpmbuild) - Used by the plugin to validate if the package is newer than what was last seen by GoCD. GoCD displays this field as *Modified On*.
 2.  Packager - GoCD displays this field as *Modified By*. If not provided, it is shown as anonymous

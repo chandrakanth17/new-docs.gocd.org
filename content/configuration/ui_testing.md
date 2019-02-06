@@ -13,7 +13,7 @@ Because GoCD installs itself as a service (Windows) or daemon (Linux) by default
 The first step is to disable the GoCD agent service. To do this:
 
 1.  Log in to your Windows machine as an Administrative user.
-2.  Click on Start → Control Panel → Administrative Tools → Services.
+2.  Click on Start &rarr; Control Panel &rarr; Administrative Tools &rarr; Services.
 3.  Double click on 'Go Agent'.
 4.  Change the Startup Type to 'Disabled'.
 5.  Click 'Stop' to stop the service.
@@ -21,7 +21,7 @@ The first step is to disable the GoCD agent service. To do this:
 
 The next step is to start the Go agent as an application.
 
-1.  Click on Start → All Programs → Go Agent → Run Go Agent.
+1.  Click on Start &rarr; All Programs &rarr; Go Agent &rarr; Run Go Agent.
 2.  To get the Go agent to start every time you log in, copy the Run Go Agent shortcut to the Startup folder of your start menu.
 
 ## Linux

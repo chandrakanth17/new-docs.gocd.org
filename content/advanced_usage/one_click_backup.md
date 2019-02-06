@@ -27,10 +27,10 @@ The backup will be performed into the **{ARTIFACT\_REPOSITORY\_LOCATION}/serverB
 
 The backup directory will be named **backup\_{TIMESTAMP}** where the **{TIMESTAMP}** is the time when the backup was initiated.
 
--   Database – This is in a zip called **db.zip** . The zip has a single DB file called **cruise.h2.db**
--   Configuration – This is in a zip called **config-dir.zip** . This zip contains the XML configuration, Jetty server configuration, Keystores and all other GoCD's internal configurations.
--   XML Configuration Version Repo – This is in a zip called **config-repo.zip** . This zip contains the Git repository of the XML configuration file.
--   GoCD version – This is a file called **version.txt** . This file contains the version of the GoCD server when the backup was initiated
+-   Database - This is in a zip called **db.zip** . The zip has a single DB file called **cruise.h2.db**
+-   Configuration - This is in a zip called **config-dir.zip** . This zip contains the XML configuration, Jetty server configuration, Keystores and all other GoCD's internal configurations.
+-   XML Configuration Version Repo - This is in a zip called **config-repo.zip** . This zip contains the Git repository of the XML configuration file.
+-   GoCD version - This is a file called **version.txt** . This file contains the version of the GoCD server when the backup was initiated
 
 ### What is not backed up?
 
@@ -73,7 +73,7 @@ The restoration process is not automated and needs to be done manually. Please r
 
 -   You might want to keep a copy of all the files and directories that are involved in restoration. This will help in troubleshooting if there was a problem. Following this, make sure all the destination directories mentioned in the following steps are empty.<br>
     *For example:* Before restoring the Database, make sure the **{SERVER\_INSTALLATION\_DIR}/db/h2db** is backed up and the directory is emptied.
--   Database – Unzip the **db.zip** found in the backup directory. Unzip will create a file called **cruise.h2.db** . Copy this file to the directory **{SERVER\_INSTALLATION\_DIR}/db/h2db** .
+-   Database - Unzip the **db.zip** found in the backup directory. Unzip will create a file called **cruise.h2.db** . Copy this file to the directory **{SERVER\_INSTALLATION\_DIR}/db/h2db** .
 -   Configuration - Unzip the **config-dir.zip** into a temp directory. Copy all the files from this directory to **{SERVER\_INSTALLATION\_DIR}/config** directory on Windows and Mac or **/etc/go** on Linux.
 -   Configuration History - Unzip the **config-repo.zip** into temp directory. Recursively copy all the contents from this directory to **{SERVER\_INSTALLATION\_DIR}/db/config.git** .
 -   Make sure the ownership of all the files that are restored are the same as the user running the Go server.<br>

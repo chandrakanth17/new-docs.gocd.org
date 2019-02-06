@@ -36,20 +36,20 @@ To specify the resources that a job needs, go to the **Pipelines configuration**
 
 ![](../images/edit_job_resources.png)
 
-Once you’ve specified the resources your jobs need, you’ll want to describe the resources your agents have. You can do this very easily in the [Agents](../navigation/agents_page.html) tab. Just select the agents you want to describe, and click on the **Resources** button.
+Once you've specified the resources your jobs need, you'll want to describe the resources your agents have. You can do this very easily in the [Agents](../navigation/agents_page.html) tab. Just select the agents you want to describe, and click on the **Resources** button.
 
 ### Associate selected agent(s) with a newly created resource
 
-Enter the name of the new resource and click the “Add” button.
+Enter the name of the new resource and click the "Add" button.
 
 ![](../images/associate_agent_resources_new.png)
 
 ### Associate selected agent(s) with existing resources
 
-All existing resources across your agents and jobs will appear in alphabetical order. Select one of three states for all resources you want to associate and then click the “Apply” button.
+All existing resources across your agents and jobs will appear in alphabetical order. Select one of three states for all resources you want to associate and then click the "Apply" button.
 
 -   A resource **with a check** will add the resource to all selected agents.
--   A resource **with a hyphen** means some of your selected agents are associated to it. No change will occur after clicking “Apply”.
+-   A resource **with a hyphen** means some of your selected agents are associated to it. No change will occur after clicking "Apply".
 -   A resource **without a check** will remove the resource from all selected agents.
 
 ![](../images/associate_agent_resources_existing.png)

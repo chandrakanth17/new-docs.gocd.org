@@ -5,7 +5,7 @@ title: Create a pipeline to deploy on Kubernetes
 ---
 # Create a pipeline to deploy the published artifact
 
-In this section, we’ll learn to design a deployment pipeline to deploy to Kubernetes. After you've designed and run the build pipeline, you'll see that for every successful build, a new image gets created with a new tag. To create a pipeline to deploy the published artifact, follow these steps:   
+In this section, we'll learn to design a deployment pipeline to deploy to Kubernetes. After you've designed and run the build pipeline, you'll see that for every successful build, a new image gets created with a new tag. To create a pipeline to deploy the published artifact, follow these steps:   
 
 ##### Quick Links
 
@@ -108,11 +108,11 @@ If you're able to see a screen similar to the screenshot above, then the plugin 
 
 ### Step 3: Configure elastic profile ID for the job
 
-Before you can run the pipeline, you’ll need to associate an elastic profile ID with the job to be executed. To do this, go to the `Job Settings` tab of the specific job.
+Before you can run the pipeline, you'll need to associate an elastic profile ID with the job to be executed. To do this, go to the `Job Settings` tab of the specific job.
 
 *Tip: Use the tree on the left to navigate to the job `deploy_to_cluster`. Once you're here, you can associate the profile ID under the Job Settings tab.*
 
-Once you’ve associated the job to the profile, you’re ready to run the pipeline.
+Once you've associated the job to the profile, you're ready to run the pipeline.
 
 ![](../../images/gocd-helm-chart/deploy_associate_with_profile.png)
 

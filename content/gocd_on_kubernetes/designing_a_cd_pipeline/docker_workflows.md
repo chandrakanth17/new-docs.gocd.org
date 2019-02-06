@@ -32,4 +32,4 @@ $ docker run -it -v /var/run/docker.sock:/var/run/docker.sock -e GO_SERVER_URL="
 
 ## Using a single docker GoCD agent image
 
-In cases where DinD and DooD both don’t work for your use case, an alternative is to package all the build time dependencies into a single docker image. Use this docker image with the GoCD Elastic Agents to run the builds. This works only if you are not choosing to containerize your application builds and tests. In other words, this works well for a workflow that doesn't involve running docker related commands using elastic agents.
+In cases where DinD and DooD both don't work for your use case, an alternative is to package all the build time dependencies into a single docker image. Use this docker image with the GoCD Elastic Agents to run the builds. This works only if you are not choosing to containerize your application builds and tests. In other words, this works well for a workflow that doesn't involve running docker related commands using elastic agents.

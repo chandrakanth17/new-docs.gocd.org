@@ -17,7 +17,7 @@ helm install stable/gocd --name gocd --namespace gocd
 
 ## Access the GoCD server
 
-After you’ve installed the GoCD helm chart, you should be able to access the GoCD server from the Ingress IP.
+After you've installed the GoCD helm chart, you should be able to access the GoCD server from the Ingress IP.
 
 The Ingress IP address can be obtained as specified below:
 

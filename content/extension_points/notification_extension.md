@@ -1,2 +1,2 @@
-!REDIRECT "https://plugin-api.gocd.org/current/notifications"
+!REDIRECT https://plugin-api.gocd.org/current/notifications
 

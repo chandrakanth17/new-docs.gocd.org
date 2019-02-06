@@ -1039,7 +1039,7 @@ The config repo `<p4>` material element specifies the location of your code base
 | username | No | Perforce username to use. |
 | password | No | Password for the specified user. |
 | encryptedPassword | No | Encrypted Password for the specified user. |
-| useTickets | No | Set to true to work with perforce tickets. Go will do a p4 login using the supplied password before each command. We recommend that you make your user a part of a p4 group, and set the ticket timeout to unlimited as described [here](http://www.perforce.com/perforce/doc.current/manuals/cmdref/login.html). |
+| useTickets | No | Set to true to work with perforce tickets. Go will do a p4 login using the supplied password before each command. We recommend that you make your user a part of a p4 group, and set the ticket timeout to unlimited as described [here](https://www.perforce.com/manuals/cmdref/Content/CmdRef/p4_login.html). |
 | view | Yes | Valid Perforce view. The view should be a sub-element of P4. Click [here](http://www.perforce.com/perforce/doc.082/manuals/p4guide/02_config.html#1066090) to see details about VIEW of Perforce. |
 | materialName | No | The name to identify a material. Material name can contain the following characters: a-z, A-Z, 0-9, fullstop, underscore and hyphen. Spaces are not allowed. Material name is case insensitive. The max length is 255 characters. |
 | autoUpdate | No | By default Go polls the repository for changes automatically. If autoUpdate is set to false then Go will not poll the repository for changes. For config repo materials, autoUpdate is always set to true. |
@@ -1589,7 +1589,7 @@ For example: If you use [Mingle](http://www.thoughtworks.com/products/mingle-agi
 
 ## &lt;mingle&gt; {#mingle}
 
-This element let's you associate a [Mingle](http://www.thoughtworks-studios.com/mingle) project to a pipeline. Once associated, you will be able to track Mingle cards from within Go.
+This element let's you associate a [Mingle](http://www.thoughtworks.com/mingle) project to a pipeline. Once associated, you will be able to track Mingle cards from within Go.
 
 **Note:** You cannot configure a [trackingtool](#trackingtool) if mingle is configured for a pipeline.
 
@@ -1913,7 +1913,7 @@ Go will use directory under pipelines/{pipelineName} in agent side as Perforce r
 | port | Yes | Perforce server connection to use (host:port). This is the same as you would pass in the p4port parameter for the p4 command line or in the P4PORT environment variable. |
 | username | No | Perforce username to use. |
 | password | No | Password for the specified user. |
-| useTickets | No | Set to true to work with perforce tickets. Go will do a p4 login using the supplied password before each command. We recommend that you make your user a part of a p4 group, and set the ticket timeout to unlimited as described [here](http://www.perforce.com/perforce/doc.current/manuals/cmdref/login.html). |
+| useTickets | No | Set to true to work with perforce tickets. Go will do a p4 login using the supplied password before each command. We recommend that you make your user a part of a p4 group, and set the ticket timeout to unlimited as described [here](https://www.perforce.com/manuals/cmdref/Content/CmdRef/p4_login.html). |
 | dest | Only for multiple materials | The directory where the code will be checked out. This is relative to the sandbox of the Go Agent. Go prevents the destination folder from being outside the agent's sandbox. |
 | view | Yes | Valid Perforce view. The view should be a sub-element of P4. Click [here](http://www.perforce.com/perforce/doc.082/manuals/p4guide/02_config.html#1066090) to see details about VIEW of Perforce. |
 | materialName | Required if this material is referenced in pipeline labeltemplate | The name to identify a material. Material name can contain the following characters: a-z, A-Z, 0-9, fullstop, underscore and hyphen. Spaces are not allowed. Material name is case insensitive. It needs to be unique within a pipeline. The max length is 255 characters. |
@@ -2329,7 +2329,7 @@ The following environment variables are set for all tasks:
 | `GO_STAGE_NAME` | The name of the stage to which the job belongs to |
 | `GO_STAGE_COUNTER` | The re-run counter of the stage to which the job belongs to |
 | `GO_JOB_NAME` | The name of the job that is being run |
-| `GO_DEPENDENCY_LABEL_ <upstream_pipeline_name>_<upstream_stage_name>` | The label of the upstream pipeline which triggered the pipeline which the job belongs to. For example: 'GO_DEPENDENCY_LABEL_FRAMEWORK_DEV' is the environment variable where the name of the upstream pipeline is 'framework' and the upstream stage is 'dev'. Hyphen ('-') is an illegal character in an environment variable. So if a pipeline name or stage name contains '-', it will be converted into an underscore. For example, ‘pipeline-foo’ with stage ‘stage-foo’ becomes: GO_DEPENDENCY_LABEL_PIPELINE_FOO_STAGE_FOO. |
+| `GO_DEPENDENCY_LABEL_ <upstream_pipeline_name>_<upstream_stage_name>` | The label of the upstream pipeline which triggered the pipeline which the job belongs to. For example: 'GO_DEPENDENCY_LABEL_FRAMEWORK_DEV' is the environment variable where the name of the upstream pipeline is 'framework' and the upstream stage is 'dev'. Hyphen ('-') is an illegal character in an environment variable. So if a pipeline name or stage name contains '-', it will be converted into an underscore. For example, 'pipeline-foo' with stage 'stage-foo' becomes: GO_DEPENDENCY_LABEL_PIPELINE_FOO_STAGE_FOO. |
 | <span id="env-var-GO_TO_REVISION">`GO_TO_REVISION_<material_name>`</span> | The lastest revision in modifications that the build running against for each configured SCM material. |
 | <span id="env-var-GO_FROM_REVISION">`GO_FROM_REVISION_<material_name>`</span> | The earlist revision in modifications that the build running against for each configured SCM material. |
 
@@ -2347,7 +2347,7 @@ The following environment variables are set for all tasks:
 
 ## &lt;ant&gt; {#ant}
 
-Specifies an Ant build to run. Ant is assumed to be present from the command line on the agent. Go depends on and uses JDK 1.6. If JDK 1.4 or 1.5 binaries are required by a build, it can be specified in the Ant [javac](http://ant.apache.org/manual/CoreTasks/javac.html) task.
+Specifies an Ant build to run. Ant is assumed to be present from the command line on the agent. Go depends on and uses JDK 1.6. If JDK 1.4 or 1.5 binaries are required by a build, it can be specified in the Ant [javac](https://ant.apache.org/manual/Tasks/javac.html) task.
 
 All paths specified are relative to the pipeline working directory.
 
@@ -2614,10 +2614,10 @@ Go will not fetch the artifact again if it has not changed. The directory path i
 
 Specifies when a task should be allowed to run. Multiple conditions may be defined for each task.
 
-A running job on an agent has two possible states: passed or failed. A job starts in the state “passed”. If any task fails, it transitions to
-the state “failed”.
+A running job on an agent has two possible states: passed or failed. A job starts in the state "passed". If any task fails, it transitions to
+the state "failed""".
 
-A task can specify any of three possible runif filters: 'passed', 'failed' or 'any'. (‘passed’ is the default)
+A task can specify any of three possible runif filters: 'passed', 'failed' or 'any'. ('passed' is the default)
 
 ### Attributes
 

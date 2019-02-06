@@ -6,11 +6,11 @@ title: Introduction
 
 # Introduction
 
-GoCD gives you the flexibility to effectively represent CD pipelines that suit your organization’s processes. Kubernetes gives you a highly programmable delivery infrastructure platform. And together, they provide the foundation for a powerful Continuous Delivery platform.
+GoCD gives you the flexibility to effectively represent CD pipelines that suit your organization's processes. Kubernetes gives you a highly programmable delivery infrastructure platform. And together, they provide the foundation for a powerful Continuous Delivery platform.
 
    ![](../images/gocd-helm-chart/gocd_kubernetes.png)
 
-With this documentation guide, you’ll be able to
+With this documentation guide, you'll be able to
 
 - [Setup and configure](gocd_helm_chart/setup_and_configuration.html) an instance of GoCD on a Kubernetes cluster.
 - [Design a continuous delivery pipeline](designing_a_cd_pipeline/index.html) to deploy a sample application to Kubernetes.
