@@ -23,12 +23,12 @@ server are 8153 (HTTP port) and 8154 (HTTPS port). So, after installation you sh
 http://localhost:8153 or http://your-server-installation-hostname:8153 and you should see a screen
 such as this:
 
-![Initial screen, upon installation](../images/gocd_new_installation_startup.png)
+![Initial screen, upon installation](/images/gocd_new_installation_startup.png)
 
 Once the agent is started, switching to the agents tab by clicking on the "Agents" link in the header should take you to
 a screen where the agent shows up and is idle. Like this:
 
-![Agents screen, with one idle agent](../images/gocd_new_installation_agents_page.png)
+![Agents screen, with one idle agent](/images/gocd_new_installation_agents_page.png)
 
 An agent or agents can be installed on any node, and not necessarily the node that the GoCD Server is installed on. The
 only requirements are that ports 8153 and 8154 of the GoCD Server are accessible from the node that the agents are
