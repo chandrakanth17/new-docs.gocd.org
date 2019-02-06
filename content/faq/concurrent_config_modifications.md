@@ -8,7 +8,7 @@ title: Concurrent Modifications to Config
 
 GoCD handles concurrent modifications to its configuration. Multiple modifications are merged and saved successfully. Modifications to the same area of configuration would result in a conflict.
 
-Note: Configuration file is maintained in git version control system. GoCD leverages git’s merge feature to merge changes from multiple users. As expected, concurrent changes to the same section by users would result in a conflict.
+Note: Configuration file is maintained in git version control system. GoCD leverages git's merge feature to merge changes from multiple users. As expected, concurrent changes to the same section by users would result in a conflict.
 
 ## Successful Merge
 
@@ -32,8 +32,8 @@ User needs to re-apply their changes displayed on the left-hand pane, to the edi
 
 ### Handling conflict while updating configuration via other Admin tabs
 
-If two users make similar changes to a pipeline using the ‘Edit Pipeline’ UI, the second user would see the error as displayed below.
+If two users make similar changes to a pipeline using the 'Edit Pipeline' UI, the second user would see the error as displayed below.
 
-User should backup the required changes from the page. Clicking on ‘RELOAD’ button, would discard user’s changes and reload the page with latest version of the pipeline configuration. User should re-apply his/her changes from backup and save again.
+User should backup the required changes from the page. Clicking on 'RELOAD' button, would discard user's changes and reload the page with latest version of the pipeline configuration. User should re-apply his/her changes from backup and save again.
 
 ![](../images/clicky_admin_merge_conflict.png)

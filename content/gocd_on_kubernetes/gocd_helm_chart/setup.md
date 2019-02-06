@@ -48,7 +48,7 @@ Helm has two parts to it, a client and a server called `Tiller`.
 
 #### Install the Helm client
 
-The helm client is a CLI that let’s you install and update packaged applications on Kubernetes.
+The helm client is a CLI that let's you install and update packaged applications on Kubernetes.
 
 Please refer to the helm [install documentation](https://github.com/helm/helm#user-content-install) for alternative methods of installation.
 

@@ -25,10 +25,10 @@ For power users, here's how you'd assign the same permissions via Config XML:
 
 ```xml
 <pipelines group="studios">
-     <authorization> 
-         <admins> 
-            <user> jez </user> 
-            <role> groupAdminRole </role> 
+    <authorization>
+        <admins>
+            <user> jez </user>
+            <role> groupAdminRole </role>
          </admins>
      </authorization>
      <pipeline name="go_pipeline">

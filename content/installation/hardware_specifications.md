@@ -45,7 +45,7 @@ Each GoCD agent that is connected to the server will poll the GoCD server every 
 
 When a build starts off on an agent, it will first perform an SCM checkout operation to update to the correct revision that must be built. If the job requires that artifacts from other dependent jobs be downloaded, the agent will download the artifacts from the server. During a job run, the agent will send the console logs every few seconds and at the end of the build, an agent may upload artifacts to the server if it is configured to do so.
 
-To cope up with the number of agents, artifact uploads and downloads, ensure that the server has —
+To cope up with the number of agents, artifact uploads and downloads, ensure that the server has -
 
 * enough disk space to store the artifacts
 * enough consistent IO baseline throughput to be able to handle simultaneous uploads and downloads from several agents at the same time
@@ -61,14 +61,14 @@ GoCD uses up-to 10 processes (configurable) to check if updates are available fo
 
 If you have hundreds of SCMs, depending on the performance of your source control updates, the update checks for SCMs may queue up and negatively affect the performance.
 
-Ensure that —
+Ensure that -
 
 * your SCM server(s) can handle the load of several SCM checkout and update operations (both from the server and the agent)
 * there is enough IOPS, IO throughput, memory and cores available to ensure that you can poll all your SCMs without the update checks queueing up, or eating away too many resources that would otherwise be used by the GoCD server process.
 
 You can find out the amount of time it takes to perform an SCM update check by turning on performance logging on your GoCD server.
 
-If you find that material updates are taking too much of your CPU time, you may try one or more of these options —
+If you find that material updates are taking too much of your CPU time, you may try one or more of these options -
 
 * turn off polling for materials that don't update frequently
 * reduce the interval between polls

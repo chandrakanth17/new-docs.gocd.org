@@ -14,7 +14,7 @@ The first step in using the artifact repository is to tell GoCD which files you 
 
 To configure an artifact:
 
--   Navigate to **Admin → Pipelines**
+-   Navigate to **Admin &rarr; Pipelines**
 -   Edit the pipeline you want to configure artifacts for
 -   Expand the left tree navigator and click on your job
 -   Click on the **Artifacts** tab
@@ -66,7 +66,7 @@ GoCD has support for publishing tests from JUnit or NUnit test reports.
 
 To configure a test artifact:
 
--   Navigate to **Admin → Pipelines**
+-   Navigate to **Admin &rarr; Pipelines**
 -   Edit the pipeline you want to configure artifacts for
 -   Expand the left tree navigator and click on your job
 -   Click on the **Artifacts** tab

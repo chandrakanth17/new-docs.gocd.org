@@ -2329,7 +2329,7 @@ The following environment variables are set for all tasks:
 | `GO_STAGE_NAME` | The name of the stage to which the job belongs to |
 | `GO_STAGE_COUNTER` | The re-run counter of the stage to which the job belongs to |
 | `GO_JOB_NAME` | The name of the job that is being run |
-| `GO_DEPENDENCY_LABEL_ <upstream_pipeline_name>_<upstream_stage_name>` | The label of the upstream pipeline which triggered the pipeline which the job belongs to. For example: 'GO_DEPENDENCY_LABEL_FRAMEWORK_DEV' is the environment variable where the name of the upstream pipeline is 'framework' and the upstream stage is 'dev'. Hyphen ('-') is an illegal character in an environment variable. So if a pipeline name or stage name contains '-', it will be converted into an underscore. For example, ‘pipeline-foo’ with stage ‘stage-foo’ becomes: GO_DEPENDENCY_LABEL_PIPELINE_FOO_STAGE_FOO. |
+| `GO_DEPENDENCY_LABEL_ <upstream_pipeline_name>_<upstream_stage_name>` | The label of the upstream pipeline which triggered the pipeline which the job belongs to. For example: 'GO_DEPENDENCY_LABEL_FRAMEWORK_DEV' is the environment variable where the name of the upstream pipeline is 'framework' and the upstream stage is 'dev'. Hyphen ('-') is an illegal character in an environment variable. So if a pipeline name or stage name contains '-', it will be converted into an underscore. For example, 'pipeline-foo' with stage 'stage-foo' becomes: GO_DEPENDENCY_LABEL_PIPELINE_FOO_STAGE_FOO. |
 | <span id="env-var-GO_TO_REVISION">`GO_TO_REVISION_<material_name>`</span> | The lastest revision in modifications that the build running against for each configured SCM material. |
 | <span id="env-var-GO_FROM_REVISION">`GO_FROM_REVISION_<material_name>`</span> | The earlist revision in modifications that the build running against for each configured SCM material. |
 
@@ -2614,10 +2614,10 @@ Go will not fetch the artifact again if it has not changed. The directory path i
 
 Specifies when a task should be allowed to run. Multiple conditions may be defined for each task.
 
-A running job on an agent has two possible states: passed or failed. A job starts in the state “passed”. If any task fails, it transitions to
-the state “failed”.
+A running job on an agent has two possible states: passed or failed. A job starts in the state "passed". If any task fails, it transitions to
+the state "failed""".
 
-A task can specify any of three possible runif filters: 'passed', 'failed' or 'any'. (‘passed’ is the default)
+A task can specify any of three possible runif filters: 'passed', 'failed' or 'any'. ('passed' is the default)
 
 ### Attributes
 

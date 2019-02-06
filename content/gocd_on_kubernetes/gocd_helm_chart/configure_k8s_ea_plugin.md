@@ -4,7 +4,7 @@ title: Configure the Kubernetes Elastic Agent plugin
 ---
 # Kubernetes elastic agent plugin
 
-> GoCD agents are “workers” and execute tasks that make up jobs, stages and the pipeline. GoCD [Elastic agents](https://www.gocd.org/elastic-agents) spin up agents on demand, depending on the intensity of the tasks and availability of processing power.
+> GoCD agents are "workers" and execute tasks that make up jobs, stages and the pipeline. GoCD [Elastic agents](https://www.gocd.org/elastic-agents) spin up agents on demand, depending on the intensity of the tasks and availability of processing power.
 
 The Kubernetes elastic agent plugin is bundled with the GoCD Helm chart. This plugin spins up GoCD agent pods in the Kubernetes cluster in response to build workload.
 
@@ -14,7 +14,7 @@ We need to configure the plugin to point to the right Kubernetes cluster. Naviga
 
   ![](../../images/gocd-helm-chart/plugins_page.png)
 
-Click on the ‘gear’ icon for the Kubernetes Elastic Agent plugin to edit its settings.
+Click on the 'gear' icon for the Kubernetes Elastic Agent plugin to edit its settings.
 
   ![](../../images/gocd-helm-chart/plugin_settings.png)
 

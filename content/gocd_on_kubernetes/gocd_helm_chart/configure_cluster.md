@@ -6,7 +6,7 @@ title: Configure your Kubernetes Cluster
 
 # Configure your Kubernetes Cluster
 
-Now that you have your Kubernetes cluster [set up and running](setup.html), you’ll need to make the following configuration changes. This configuration will be specific to your target Kubernetes environment. We have specified the required actions for Minikube, GKE, AWS below.
+Now that you have your Kubernetes cluster [set up and running](setup.html), you'll need to make the following configuration changes. This configuration will be specific to your target Kubernetes environment. We have specified the required actions for Minikube, GKE, AWS below.
 
 **1. Enable Ingress** - to be able to expose the GoCD application over your network, you will need an [Ingress controller](https://kubernetes.io/docs/concepts/services-networking/ingress/#ingress-controllers).
 

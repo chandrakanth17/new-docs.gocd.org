@@ -22,7 +22,7 @@ Maintenance mode is a maintenance mode which can be utilized by the GoCD system 
   - Prevents users from modifying config.
   - Prevents users from almost all activity which can modify state in the database or filesystem.
 
-  - Stops the agent subsystem, so that no agents can pick up work if they’re idle.
+  - Stops the agent subsystem, so that no agents can pick up work if they're idle.
   - Allows all agents currently busy running jobs to finish.
 
   - Provides a single location to put GoCD into or bring it out of maintenance mode.
