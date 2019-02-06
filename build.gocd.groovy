@@ -11,7 +11,7 @@ def buildStage = {
             commandString = "bundle install --path .bundle --jobs 4"
           }
           bash {
-            commandString = "bundle exec rake build"
+            commandString = "RUN_EXTERNAL_CHECKS=true bundle exec rake build"
           }
         }
       }

@@ -17,3 +17,11 @@ relativeURLs = true
   # You can also set value to "*" to render all sections to menu
   BookSection = "*"
   currentBaseURL = "http://localhost:1313/current"
+
+  # Set source repository location.
+  # Used for 'Last Modified' and 'Edit this page' links.
+  BookRepo = "https://github.com/gocd/new-docs.gocd.org"
+
+  # Enable "Edit this page" links for 'doc' page type.
+  # Disabled by default. Uncomment to enable. Requires 'BookRepo' param.
+  BookEditPath = "edit/master/content"

@@ -1,4 +1,5 @@
 @import "variables";
+@import "font-face";
 @import "markdown";
 @import "utils";
 
@@ -18,7 +19,7 @@ body {
   color: $body-font-color;
   background: $body-background;
 
-  font-family: "Oxygen", sans-serif;
+  font-family: "Open Sans", Helvetica, sans-serif;
   font-weight: $body-font-weight;
 
   text-rendering: optimizeLegibility;
@@ -110,6 +111,9 @@ ul.pagination {
 .book-page {
   min-width: $body-min-width;
   padding: $padding-16;
+  a{
+    font-weight: 600;
+  }
 }
 
 .book-header {
@@ -204,4 +208,17 @@ aside nav,
   .book-toc nav {
     padding: $padding-16 * 2 $padding-16;
   }
+}
+
+img.icon{
+  width: 200px;
+  height: 150px;
+}
+
+h1,h2,h3{
+  padding-top: 20px;
+}
+
+h3{
+  font-weight: bold;
 }
