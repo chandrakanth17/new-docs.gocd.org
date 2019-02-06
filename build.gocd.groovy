@@ -26,13 +26,31 @@ def pushToGHPages = {
         elasticProfileId = 'azure-plugin-ubuntu-with-ruby'
         tasks {
           bash {
-            commandString = "git remote add upstream 'https://\${BUILD_MAP_USER}:\${BUILD_MAP_PASSWORD}@github.com/gocd/new-docs.gocd.org'"
+            commandString = "git remote set-url upstream 'https://\${BUILD_MAP_USER}:\${BUILD_MAP_PASSWORD}@github.com/gocd/new-docs.gocd.org'"
           }
           bash {
             commandString = "bundle install --path .bundle --jobs 4"
           }
           bash {
             commandString = "ALLOW_DIRTY=true REMOTE_NAME=upstream bundle exec rake publish"
+          }
+        }
+      }
+    }
+  })
+}
+
+def publishToS3 = {
+  new Stage("S3Sync", {
+    jobs {
+      job("upload") {
+        elasticProfileId = 'azure-plugin-ubuntu-with-ruby'
+        tasks {
+          bash {
+            commandString = "bundle install --path .bundle --jobs 4"
+          }
+          bash {
+            commandString = "bundle exec rake upload_to_s3"
           }
         }
       }
@@ -53,6 +71,11 @@ GoCD.script { GoCD buildScript ->
           shallowClone = true
         }
       }
+
+      environmentVariables = [
+          'S3_BUCKET': 'new-docs-website-test'
+      ]
+
       trackingTool {
         link = 'https://github.com/gocd/new-docs.gocd.org/issues/${ID}'
         regex = ~/##(\\d+)/
@@ -60,6 +83,7 @@ GoCD.script { GoCD buildScript ->
       stages {
         add(buildStage())
         add(pushToGHPages())
+        add(publishToS3())
       }
     }
 
