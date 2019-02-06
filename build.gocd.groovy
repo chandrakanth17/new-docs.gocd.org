@@ -26,7 +26,7 @@ def pushToGHPages = {
         elasticProfileId = 'azure-plugin-ubuntu-with-ruby'
         tasks {
           bash {
-            commandString = "git remote set-url upstream 'https://\${BUILD_MAP_USER}:\${BUILD_MAP_PASSWORD}@github.com/gocd/new-docs.gocd.org'"
+            commandString = "git remote add upstream 'https://\${BUILD_MAP_USER}:\${BUILD_MAP_PASSWORD}@github.com/gocd/new-docs.gocd.org'"
           }
           bash {
             commandString = "bundle install --path .bundle --jobs 4"
