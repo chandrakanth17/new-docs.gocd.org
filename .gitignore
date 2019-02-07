@@ -1,6 +1,9 @@
+*.iml
+.bundle
+.DS_Store
 .idea
-node_modules
-public
 bin
 build
+node_modules
+public
 resources
