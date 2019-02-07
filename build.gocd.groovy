@@ -72,8 +72,10 @@ GoCD.script { GoCD buildScript ->
         }
       }
 
-      environmentVariables = [
-          'S3_BUCKET': 'new-docs-website-test'
+      secureEnvironmentVariables = [
+          S3_BUCKET: 'AES:wApT20gDs92BBye8P4KRdQ==:s7UcbL2meF2oaJByRVByctUhP4zJ3tYbWb8yRA9XhxfjZVgiZGIjsNBBFRWwXSab',
+          AWS_ACCESS_KEY_ID: 'AES:95gXr1OS5axZIU3/M87fEQ==:z+klSBd3uRG4FAaQeQXiUqQPhdL5Q1e2e01Lf6AxKQQ=',
+          AWS_SECRET_ACCESS_KEY: 'AES:6cotZPRM2XvOcWChu/ckEQ==:QqDO6vq2N8nE8c3thzATmVi0UEhEmTNaJvjUMXB9G9JaZF4dLQpjY5qnbVvJ8wa8'
       ]
 
       trackingTool {
