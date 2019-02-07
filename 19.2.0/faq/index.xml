@@ -66,7 +66,7 @@ Example usage For this example, we will assume we have a stage name &amp;ldquo;p
       
       <guid>/faq/concurrent_config_modifications.html</guid>
       <description>Concurrent Modifications to GoCD&amp;rsquo;s Configuration GoCD handles concurrent modifications to its configuration. Multiple modifications are merged and saved successfully. Modifications to the same area of configuration would result in a conflict.
-Note: Configuration file is maintained in git version control system. GoCD leverages git’s merge feature to merge changes from multiple users. As expected, concurrent changes to the same section by users would result in a conflict.
+Note: Configuration file is maintained in git version control system. GoCD leverages git&amp;rsquo;s merge feature to merge changes from multiple users. As expected, concurrent changes to the same section by users would result in a conflict.
 Successful Merge In case of a successful merge, user would see a success message as below:</description>
     </item>
     

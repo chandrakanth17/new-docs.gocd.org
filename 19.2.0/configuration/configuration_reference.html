@@ -11,10 +11,9 @@
 <meta name="keywords" content="[GoCD configuration, reference index]"/>
 <link rel="canonical" href="https://gocd.github.io/new-docs.gocd.org/current//configuration/configuration_reference.html"/>
 <script async src="../javascripts/_gdpr-banner.js" type="text/javascript"></script>
-<link href="https://fonts.googleapis.com/css?family=Oxygen|Oxygen+Mono:300,400,700" rel="stylesheet"/>
 <link rel="stylesheet" href="../normalize.min.css"/>
 
-<link rel="stylesheet" href="../book.min.87a2ae978f4eef197028ff1dc9c46e406d1b1133dcefddfe618d4d6d73fc362e.css"/>
+<link rel="stylesheet" href="../book.min.3ebd28c907bab09ffb3238a8742a29b1191cc675d635ee7fb6f3fa4d7f9d4ed2.css"/>
   
 </head>
 
@@ -24,7 +23,7 @@
 
     <aside class="book-menu fixed">
       <nav role="navigation">
-
+<a href="https://www.gocd.org"> <img src="../svg/product_ui_logo_go.svg" class="icon" /></a>
 
 
     <ul>
@@ -1790,7 +1789,7 @@ and as the user &lsquo;go&rsquo; do a command &ldquo;svn update&rdquo; to store 
 <tr>
 <td>useTickets</td>
 <td>No</td>
-<td>Set to true to work with perforce tickets. Go will do a p4 login using the supplied password before each command. We recommend that you make your user a part of a p4 group, and set the ticket timeout to unlimited as described <a href="http://www.perforce.com/perforce/doc.current/manuals/cmdref/login.html">here</a>.</td>
+<td>Set to true to work with perforce tickets. Go will do a p4 login using the supplied password before each command. We recommend that you make your user a part of a p4 group, and set the ticket timeout to unlimited as described <a href="https://www.perforce.com/manuals/cmdref/Content/CmdRef/p4_login.html">here</a>.</td>
 </tr>
 
 <tr>
@@ -2578,7 +2577,7 @@ box as a link. When you click it, Go will take you to the web page &lsquo;<a hre
 
 <h2 id="mingle">&lt;mingle&gt;</h2>
 
-<p>This element let&rsquo;s you associate a <a href="http://www.thoughtworks-studios.com/mingle">Mingle</a> project to a pipeline. Once associated, you will be able to track Mingle cards from within Go.</p>
+<p>This element let&rsquo;s you associate a <a href="http://www.thoughtworks.com/mingle">Mingle</a> project to a pipeline. Once associated, you will be able to track Mingle cards from within Go.</p>
 
 <p><strong>Note:</strong> You cannot configure a <a href="#trackingtool">trackingtool</a> if mingle is configured for a pipeline.</p>
 
@@ -3196,7 +3195,7 @@ and as the user &lsquo;go&rsquo; do a command &ldquo;svn update&rdquo; to store 
 <tr>
 <td>useTickets</td>
 <td>No</td>
-<td>Set to true to work with perforce tickets. Go will do a p4 login using the supplied password before each command. We recommend that you make your user a part of a p4 group, and set the ticket timeout to unlimited as described <a href="http://www.perforce.com/perforce/doc.current/manuals/cmdref/login.html">here</a>.</td>
+<td>Set to true to work with perforce tickets. Go will do a p4 login using the supplied password before each command. We recommend that you make your user a part of a p4 group, and set the ticket timeout to unlimited as described <a href="https://www.perforce.com/manuals/cmdref/Content/CmdRef/p4_login.html">here</a>.</td>
 </tr>
 
 <tr>
@@ -3850,7 +3849,7 @@ If a Job has no resources then it can be built by any Agent (But not by an elast
 
 <tr>
 <td><code>GO_DEPENDENCY_LABEL_ &lt;upstream_pipeline_name&gt;_&lt;upstream_stage_name&gt;</code></td>
-<td>The label of the upstream pipeline which triggered the pipeline which the job belongs to. For example: &lsquo;GO_DEPENDENCY_LABEL_FRAMEWORK_DEV&rsquo; is the environment variable where the name of the upstream pipeline is &lsquo;framework&rsquo; and the upstream stage is &lsquo;dev&rsquo;. Hyphen (&lsquo;-&rsquo;) is an illegal character in an environment variable. So if a pipeline name or stage name contains &lsquo;-&rsquo;, it will be converted into an underscore. For example, ‘pipeline-foo’ with stage ‘stage-foo’ becomes: GO_DEPENDENCY_LABEL_PIPELINE_FOO_STAGE_FOO.</td>
+<td>The label of the upstream pipeline which triggered the pipeline which the job belongs to. For example: &lsquo;GO_DEPENDENCY_LABEL_FRAMEWORK_DEV&rsquo; is the environment variable where the name of the upstream pipeline is &lsquo;framework&rsquo; and the upstream stage is &lsquo;dev&rsquo;. Hyphen (&lsquo;-&rsquo;) is an illegal character in an environment variable. So if a pipeline name or stage name contains &lsquo;-&rsquo;, it will be converted into an underscore. For example, &lsquo;pipeline-foo&rsquo; with stage &lsquo;stage-foo&rsquo; becomes: GO_DEPENDENCY_LABEL_PIPELINE_FOO_STAGE_FOO.</td>
 </tr>
 
 <tr>
@@ -3878,7 +3877,7 @@ If a Job has no resources then it can be built by any Agent (But not by an elast
 
 <h2 id="ant">&lt;ant&gt;</h2>
 
-<p>Specifies an Ant build to run. Ant is assumed to be present from the command line on the agent. Go depends on and uses JDK 1.6. If JDK 1.4 or 1.5 binaries are required by a build, it can be specified in the Ant <a href="http://ant.apache.org/manual/CoreTasks/javac.html">javac</a> task.</p>
+<p>Specifies an Ant build to run. Ant is assumed to be present from the command line on the agent. Go depends on and uses JDK 1.6. If JDK 1.4 or 1.5 binaries are required by a build, it can be specified in the Ant <a href="https://ant.apache.org/manual/Tasks/javac.html">javac</a> task.</p>
 
 <p>All paths specified are relative to the pipeline working directory.</p>
 
@@ -4300,10 +4299,10 @@ Go will not fetch the artifact again if it has not changed. The directory path i
 
 <p>Specifies when a task should be allowed to run. Multiple conditions may be defined for each task.</p>
 
-<p>A running job on an agent has two possible states: passed or failed. A job starts in the state “passed”. If any task fails, it transitions to
-the state “failed”.</p>
+<p>A running job on an agent has two possible states: passed or failed. A job starts in the state &ldquo;passed&rdquo;. If any task fails, it transitions to
+the state &ldquo;failed&rdquo;&ldquo;&rdquo;.</p>
 
-<p>A task can specify any of three possible runif filters: &lsquo;passed&rsquo;, &lsquo;failed&rsquo; or &lsquo;any&rsquo;. (‘passed’ is the default)</p>
+<p>A task can specify any of three possible runif filters: &lsquo;passed&rsquo;, &lsquo;failed&rsquo; or &lsquo;any&rsquo;. (&lsquo;passed&rsquo; is the default)</p>
 
 <h3 id="attributes-36">Attributes</h3>
 
@@ -5125,6 +5124,17 @@ allow certain variable names and/or values.</p>
 </article>
 
       
+<div class="align-center book-git-footer justify-end">
+  
+  
+  <div>
+    <a href="https://github.com/gocd/new-docs.gocd.org/edit/master/content/configuration/configuration_reference.md" target="_blank" rel="noopener">
+      <img src="../svg/code-fork.svg" /> Edit this page
+    </a>
+  </div>
+  
+</div>
+
 
     </div>
 

@@ -11,10 +11,9 @@
 <meta name="keywords" content="[concurrent modification, multiple modifications, GoCD configuration, successful merge, merge conflict]"/>
 <link rel="canonical" href="https://gocd.github.io/new-docs.gocd.org/current//faq/concurrent_config_modifications.html"/>
 <script async src="../javascripts/_gdpr-banner.js" type="text/javascript"></script>
-<link href="https://fonts.googleapis.com/css?family=Oxygen|Oxygen+Mono:300,400,700" rel="stylesheet"/>
 <link rel="stylesheet" href="../normalize.min.css"/>
 
-<link rel="stylesheet" href="../book.min.87a2ae978f4eef197028ff1dc9c46e406d1b1133dcefddfe618d4d6d73fc362e.css"/>
+<link rel="stylesheet" href="../book.min.3ebd28c907bab09ffb3238a8742a29b1191cc675d635ee7fb6f3fa4d7f9d4ed2.css"/>
   
 </head>
 
@@ -24,7 +23,7 @@
 
     <aside class="book-menu fixed">
       <nav role="navigation">
-
+<a href="https://www.gocd.org"> <img src="../svg/product_ui_logo_go.svg" class="icon" /></a>
 
 
     <ul>
@@ -235,7 +234,7 @@
 
 <p>GoCD handles concurrent modifications to its configuration. Multiple modifications are merged and saved successfully. Modifications to the same area of configuration would result in a conflict.</p>
 
-<p>Note: Configuration file is maintained in git version control system. GoCD leverages git’s merge feature to merge changes from multiple users. As expected, concurrent changes to the same section by users would result in a conflict.</p>
+<p>Note: Configuration file is maintained in git version control system. GoCD leverages git&rsquo;s merge feature to merge changes from multiple users. As expected, concurrent changes to the same section by users would result in a conflict.</p>
 
 <h2 id="successful-merge">Successful Merge</h2>
 
@@ -259,14 +258,25 @@
 
 <h3 id="handling-conflict-while-updating-configuration-via-other-admin-tabs">Handling conflict while updating configuration via other Admin tabs</h3>
 
-<p>If two users make similar changes to a pipeline using the ‘Edit Pipeline’ UI, the second user would see the error as displayed below.</p>
+<p>If two users make similar changes to a pipeline using the &lsquo;Edit Pipeline&rsquo; UI, the second user would see the error as displayed below.</p>
 
-<p>User should backup the required changes from the page. Clicking on ‘RELOAD’ button, would discard user’s changes and reload the page with latest version of the pipeline configuration. User should re-apply his/her changes from backup and save again.</p>
+<p>User should backup the required changes from the page. Clicking on &lsquo;RELOAD&rsquo; button, would discard user&rsquo;s changes and reload the page with latest version of the pipeline configuration. User should re-apply his/her changes from backup and save again.</p>
 
 <p><img src="../images/clicky_admin_merge_conflict.png" alt="" /></p>
 </article>
 
       
+<div class="align-center book-git-footer justify-end">
+  
+  
+  <div>
+    <a href="https://github.com/gocd/new-docs.gocd.org/edit/master/content/faq/concurrent_config_modifications.md" target="_blank" rel="noopener">
+      <img src="../svg/code-fork.svg" /> Edit this page
+    </a>
+  </div>
+  
+</div>
+
 
     </div>
 

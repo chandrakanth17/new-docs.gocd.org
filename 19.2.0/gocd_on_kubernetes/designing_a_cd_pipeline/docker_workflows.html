@@ -11,10 +11,9 @@
 <meta name="keywords" content="[gocd helm chart, cd pipeline]"/>
 <link rel="canonical" href="https://gocd.github.io/new-docs.gocd.org/current//gocd_on_kubernetes/designing_a_cd_pipeline/docker_workflows.html"/>
 <script async src="../../javascripts/_gdpr-banner.js" type="text/javascript"></script>
-<link href="https://fonts.googleapis.com/css?family=Oxygen|Oxygen+Mono:300,400,700" rel="stylesheet"/>
 <link rel="stylesheet" href="../../normalize.min.css"/>
 
-<link rel="stylesheet" href="../../book.min.87a2ae978f4eef197028ff1dc9c46e406d1b1133dcefddfe618d4d6d73fc362e.css"/>
+<link rel="stylesheet" href="../../book.min.3ebd28c907bab09ffb3238a8742a29b1191cc675d635ee7fb6f3fa4d7f9d4ed2.css"/>
   
 </head>
 
@@ -24,7 +23,7 @@
 
     <aside class="book-menu fixed">
       <nav role="navigation">
-
+<a href="https://www.gocd.org"> <img src="../../svg/product_ui_logo_go.svg" class="icon" /></a>
 
 
     <ul>
@@ -262,10 +261,21 @@
 
 <h2 id="using-a-single-docker-gocd-agent-image">Using a single docker GoCD agent image</h2>
 
-<p>In cases where DinD and DooD both don’t work for your use case, an alternative is to package all the build time dependencies into a single docker image. Use this docker image with the GoCD Elastic Agents to run the builds. This works only if you are not choosing to containerize your application builds and tests. In other words, this works well for a workflow that doesn&rsquo;t involve running docker related commands using elastic agents.</p>
+<p>In cases where DinD and DooD both don&rsquo;t work for your use case, an alternative is to package all the build time dependencies into a single docker image. Use this docker image with the GoCD Elastic Agents to run the builds. This works only if you are not choosing to containerize your application builds and tests. In other words, this works well for a workflow that doesn&rsquo;t involve running docker related commands using elastic agents.</p>
 </article>
 
       
+<div class="align-center book-git-footer justify-end">
+  
+  
+  <div>
+    <a href="https://github.com/gocd/new-docs.gocd.org/edit/master/content/gocd_on_kubernetes/designing_a_cd_pipeline/docker_workflows.md" target="_blank" rel="noopener">
+      <img src="../../svg/code-fork.svg" /> Edit this page
+    </a>
+  </div>
+  
+</div>
+
 
     </div>
 

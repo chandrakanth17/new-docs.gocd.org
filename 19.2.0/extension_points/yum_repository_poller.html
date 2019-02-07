@@ -11,10 +11,9 @@
 <meta name="keywords" content="[yum repository poller, yum plugin, gocd plugins, jenkins plugins, rpm packages, poll server, environment variables]"/>
 <link rel="canonical" href="https://gocd.github.io/new-docs.gocd.org/current//extension_points/yum_repository_poller.html"/>
 <script async src="../javascripts/_gdpr-banner.js" type="text/javascript"></script>
-<link href="https://fonts.googleapis.com/css?family=Oxygen|Oxygen+Mono:300,400,700" rel="stylesheet"/>
 <link rel="stylesheet" href="../normalize.min.css"/>
 
-<link rel="stylesheet" href="../book.min.87a2ae978f4eef197028ff1dc9c46e406d1b1133dcefddfe618d4d6d73fc362e.css"/>
+<link rel="stylesheet" href="../book.min.3ebd28c907bab09ffb3238a8742a29b1191cc675d635ee7fb6f3fa4d7f9d4ed2.css"/>
   
 </head>
 
@@ -24,7 +23,7 @@
 
     <aside class="book-menu fixed">
       <nav role="navigation">
-
+<a href="https://www.gocd.org"> <img src="../svg/product_ui_logo_go.svg" class="icon" /></a>
 
 
     <ul>
@@ -233,7 +232,7 @@
 
 <h1 id="yum-repository-poller">Yum Repository Poller</h1>
 
-<p><strong>Note:</strong> This plugin is available for GoCD servers running on Linux nodes having repoquery installed (part of the <a href="http://linux.die.net/man/1/yum-utils">yum-utils</a> package, <a href="http://manpages.ubuntu.com/manpages/latest/man1/yum-utils.1.html">Ubuntu</a>, <a href="http://rpmfind.net/linux/rpm2html/search.php?query=yum-utils&amp;system=centos">CentOS</a>)</p>
+<p><strong>Note:</strong> This plugin is available for GoCD servers running on Linux nodes having repoquery installed (part of the <a href="http://linux.die.net/man/1/yum-utils">yum-utils</a> package, <a href="http://manpages.ubuntu.com/manpages/cosmic/en/man1/yum-utils.1.html">Ubuntu</a>, <a href="http://rpmfind.net/linux/rpm2html/search.php?query=yum-utils&amp;system=centos">CentOS</a>)</p>
 
 <h2 id="introduction">Introduction</h2>
 
@@ -252,7 +251,7 @@ Using the [Yum plugin for Nexus](https://github.com/sonatype/nexus-yum-plugin), 
 
 <h3 id="repository-definition">Repository definition</h3>
 
-<p>Repo URL must be a valid http, https or file URL. This plugin looks for the presence of <strong>\$REPO_URL/repodata/<a href="http://createrepo.baseurl.org/wiki">repomd.xml</a></strong> to ascertain validity. Basic authentication (user:password@domain/path) is supported for http and https repositories.</p>
+<p>Repo URL must be a valid http, https or file URL. This plugin looks for the presence of <strong>\$REPO_URL/repodata/<a href="http://createrepo.baseurl.org">repomd.xml</a></strong> to ascertain validity. Basic authentication (user:password@domain/path) is supported for http and https repositories.</p>
 
 <h3 id="package-definition">Package definition</h3>
 
@@ -271,7 +270,7 @@ epoch:name-ver-rel.arch
 
 <h3 id="package-metadata">Package Metadata</h3>
 
-<p>The following <a href="http://www.rpm.org/max-rpm-snapshot/s1-rpm-inside-tags.html">rpm metadata</a> is accessed by the plugin</p>
+<p>The following <a href="http://ftp.rpm.org/max-rpm/s1-rpm-inside-tags.html">rpm metadata</a> is accessed by the plugin</p>
 
 <ol>
 <li>BuildTime (required, automatically set by rpmbuild) - Used by the plugin to validate if the package is newer than what was last seen by GoCD. GoCD displays this field as <em>Modified On</em>.</li>
@@ -363,6 +362,17 @@ server</p>
 </article>
 
       
+<div class="align-center book-git-footer justify-end">
+  
+  
+  <div>
+    <a href="https://github.com/gocd/new-docs.gocd.org/edit/master/content/extension_points/yum_repository_poller.md" target="_blank" rel="noopener">
+      <img src="../svg/code-fork.svg" /> Edit this page
+    </a>
+  </div>
+  
+</div>
+
 
     </div>
 

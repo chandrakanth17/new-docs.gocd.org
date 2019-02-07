@@ -16,7 +16,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/extension_points/notification_extension.html</guid>
-      <description>!REDIRECT &amp;ldquo;https://plugin-api.gocd.org/current/notifications&amp;quot;</description>
+      <description>!REDIRECT https://plugin-api.gocd.org/current/notifications</description>
     </item>
     
     <item>
@@ -52,7 +52,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/installation/install/_apt_repo.html</guid>
-      <description>If you prefer to use the APT repository and install via apt-get, paste the following in your shell —
+      <description>If you prefer to use the APT repository and install via apt-get, paste the following in your shell -
 echo &amp;quot;deb https://download.gocd.org /&amp;quot; | sudo tee /etc/apt/sources.list.d/gocd.list curl https://download.gocd.org/GOCD-GPG-KEY.asc | sudo apt-key add - sudo apt-get update  Note: The GoCD server and agent require Java 8 to be installed.
 sudo add-apt-repository ppa:openjdk-r/ppa sudo apt-get update sudo apt-get install -y openjdk-8-jre  </description>
     </item>
@@ -73,7 +73,7 @@ If you are using the silent installation to upgrade GoCD, you should not specify
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/installation/install/_yum_repo.html</guid>
-      <description>If you prefer to use the YUM repository and install via YUM, paste the following in your shell —
+      <description>If you prefer to use the YUM repository and install via YUM, paste the following in your shell -
 sudo curl https://download.gocd.org/gocd.repo -o /etc/yum.repos.d/gocd.repo sudo yum install -y java-1.8.0-openjdk #atleast Java 8 is required, you may use other jre/jdk if you prefer  </description>
     </item>
     
@@ -379,7 +379,7 @@ If you&amp;rsquo;re very new to GoCD, the Getting Started Guide is a good starti
       
       <guid>/faq/concurrent_config_modifications.html</guid>
       <description>Concurrent Modifications to GoCD&amp;rsquo;s Configuration GoCD handles concurrent modifications to its configuration. Multiple modifications are merged and saved successfully. Modifications to the same area of configuration would result in a conflict.
-Note: Configuration file is maintained in git version control system. GoCD leverages git’s merge feature to merge changes from multiple users. As expected, concurrent changes to the same section by users would result in a conflict.
+Note: Configuration file is maintained in git version control system. GoCD leverages git&amp;rsquo;s merge feature to merge changes from multiple users. As expected, concurrent changes to the same section by users would result in a conflict.
 Successful Merge In case of a successful merge, user would see a success message as below:</description>
     </item>
     
@@ -452,7 +452,7 @@ Proxy support is configured with GoCD agents by passing certain system propertie
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/gocd_on_kubernetes/gocd_helm_chart/configure_k8s_ea_plugin.html</guid>
-      <description>Kubernetes elastic agent plugin  GoCD agents are “workers” and execute tasks that make up jobs, stages and the pipeline. GoCD Elastic agents spin up agents on demand, depending on the intensity of the tasks and availability of processing power.
+      <description>Kubernetes elastic agent plugin  GoCD agents are &amp;ldquo;workers&amp;rdquo; and execute tasks that make up jobs, stages and the pipeline. GoCD Elastic agents spin up agents on demand, depending on the intensity of the tasks and availability of processing power.
  The Kubernetes elastic agent plugin is bundled with the GoCD Helm chart. This plugin spins up GoCD agent pods in the Kubernetes cluster in response to build workload.</description>
     </item>
     
@@ -462,7 +462,7 @@ Proxy support is configured with GoCD agents by passing certain system propertie
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/gocd_on_kubernetes/gocd_helm_chart/configure_cluster.html</guid>
-      <description>Configure your Kubernetes Cluster Now that you have your Kubernetes cluster set up and running, you’ll need to make the following configuration changes. This configuration will be specific to your target Kubernetes environment. We have specified the required actions for Minikube, GKE, AWS below.
+      <description>Configure your Kubernetes Cluster Now that you have your Kubernetes cluster set up and running, you&amp;rsquo;ll need to make the following configuration changes. This configuration will be specific to your target Kubernetes environment. We have specified the required actions for Minikube, GKE, AWS below.
 1. Enable Ingress - to be able to expose the GoCD application over your network, you will need an Ingress controller.
 2. Configure Service Account - A service account is how Kubernetes manages roles and permissions.</description>
     </item>
@@ -503,7 +503,7 @@ Once you have created a new disk partition, you need to tell GoCD where to find 
       
       <guid>/gocd_on_kubernetes/designing_a_cd_pipeline/creating_a_build_pipeline.html</guid>
       <description>Create a pipeline to build and publish your application image In this section, we&amp;rsquo;ll go over how to design CD pipelines that build and publish an application image. As an example, we&amp;rsquo;ve used a sample nodejs application called &amp;lsquo;Bulletin Board&amp;rsquo;.
-Prerequisites We’ll be building our application as a docker image artifact and publishing it to Docker Hub. To do this, make sure you have a Docker Hub account.
+Prerequisites We&amp;rsquo;ll be building our application as a docker image artifact and publishing it to Docker Hub. To do this, make sure you have a Docker Hub account.
 Quick links  Getting started with GoCD  Build an application artifact  Click on the Pipelines link on the top menu to create your first pipeline.</description>
     </item>
     
@@ -513,7 +513,7 @@ Quick links  Getting started with GoCD  Build an application artifact  Click on 
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/gocd_on_kubernetes/designing_a_cd_pipeline/creating_a_deploy_pipeline.html</guid>
-      <description>Create a pipeline to deploy the published artifact In this section, we’ll learn to design a deployment pipeline to deploy to Kubernetes. After you&amp;rsquo;ve designed and run the build pipeline, you&amp;rsquo;ll see that for every successful build, a new image gets created with a new tag. To create a pipeline to deploy the published artifact, follow these steps:
+      <description>Create a pipeline to deploy the published artifact In this section, we&amp;rsquo;ll learn to design a deployment pipeline to deploy to Kubernetes. After you&amp;rsquo;ve designed and run the build pipeline, you&amp;rsquo;ll see that for every successful build, a new image gets created with a new tag. To create a pipeline to deploy the published artifact, follow these steps:
 Quick Links Modeling Deployment Pipelines
 Deploy application to Kubernetes  Navigate to Admin -&amp;gt; Pipelines and click on Create a pipeline within this group.</description>
     </item>
@@ -719,7 +719,7 @@ Agent hardware requirements The agent hardware requirements are basically determ
       <guid>/gocd_on_kubernetes/gocd_helm_chart/helm_install.html</guid>
       <description>Install the GoCD Helm chart Helm is a package manager for Kubernetes. Kubernetes packages are called charts. Charts are curated applications for Kubernetes.
 Install the GoCD Helm chart with these commands:
-helm repo add stable https://kubernetes-charts.storage.googleapis.com helm install stable/gocd --name gocd --namespace gocd  Access the GoCD server After you’ve installed the GoCD helm chart, you should be able to access the GoCD server from the Ingress IP.
+helm repo add stable https://kubernetes-charts.storage.googleapis.com helm install stable/gocd --name gocd --namespace gocd  Access the GoCD server After you&amp;rsquo;ve installed the GoCD helm chart, you should be able to access the GoCD server from the Ingress IP.
 The Ingress IP address can be obtained as specified below:</description>
     </item>
     
@@ -750,8 +750,8 @@ Choose your operating system  Linux Windows Mac OS X Generic Zip  </description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/gocd_on_kubernetes/introduction.html</guid>
-      <description>Introduction GoCD gives you the flexibility to effectively represent CD pipelines that suit your organization’s processes. Kubernetes gives you a highly programmable delivery infrastructure platform. And together, they provide the foundation for a powerful Continuous Delivery platform.
-With this documentation guide, you’ll be able to
+      <description>Introduction GoCD gives you the flexibility to effectively represent CD pipelines that suit your organization&amp;rsquo;s processes. Kubernetes gives you a highly programmable delivery infrastructure platform. And together, they provide the foundation for a powerful Continuous Delivery platform.
+With this documentation guide, you&amp;rsquo;ll be able to
  Setup and configure an instance of GoCD on a Kubernetes cluster. Design a continuous delivery pipeline to deploy a sample application to Kubernetes. Publish to and fetch artifacts from an external respository like Docker Hub Registry .</description>
     </item>
     

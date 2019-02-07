@@ -11,10 +11,9 @@
 <meta name="keywords" content="[GoCD configuration, authorization, administration, users, roles, role-based security, security, security configuration, user permissions, pipeline groups, pipeline permissions, GoCD administration]"/>
 <link rel="canonical" href="https://gocd.github.io/new-docs.gocd.org/current//configuration/dev_authorization.html"/>
 <script async src="../javascripts/_gdpr-banner.js" type="text/javascript"></script>
-<link href="https://fonts.googleapis.com/css?family=Oxygen|Oxygen+Mono:300,400,700" rel="stylesheet"/>
 <link rel="stylesheet" href="../normalize.min.css"/>
 
-<link rel="stylesheet" href="../book.min.87a2ae978f4eef197028ff1dc9c46e406d1b1133dcefddfe618d4d6d73fc362e.css"/>
+<link rel="stylesheet" href="../book.min.3ebd28c907bab09ffb3238a8742a29b1191cc675d635ee7fb6f3fa4d7f9d4ed2.css"/>
   
 </head>
 
@@ -24,7 +23,7 @@
 
     <aside class="book-menu fixed">
       <nav role="navigation">
-
+<a href="https://www.gocd.org"> <img src="../svg/product_ui_logo_go.svg" class="icon" /></a>
 
 
     <ul>
@@ -264,7 +263,7 @@
 
 <pre><code class="language-xml">&lt;cruise&gt;
   &lt;server&gt;
-    &lt;license ... /&gt;
+    &lt;license... /&gt;
     &lt;security&gt;
       &lt;passwordFile path=&quot;/etc/go-server/passwords.properties&quot; /&gt;
 
@@ -373,6 +372,8 @@
 
 </code></pre>
 
+<p><a id="template-admin"></a></p>
+
 <h2 id="specifying-permissions-for-templates">Specifying permissions for templates</h2>
 
 <p>A GoCD Administrator can make any user a template administrator for a specific template. As a template administrator, a user can now view and edit the template to which he has permissions.</p>
@@ -407,6 +408,17 @@
 </article>
 
       
+<div class="align-center book-git-footer justify-end">
+  
+  
+  <div>
+    <a href="https://github.com/gocd/new-docs.gocd.org/edit/master/content/configuration/dev_authorization.md" target="_blank" rel="noopener">
+      <img src="../svg/code-fork.svg" /> Edit this page
+    </a>
+  </div>
+  
+</div>
+
 
     </div>
 

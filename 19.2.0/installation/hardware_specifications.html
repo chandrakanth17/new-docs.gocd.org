@@ -11,10 +11,9 @@
 <meta name="keywords" content="[gocd server, gocd continuous delivery, jenkins, hardware specficiations, server requirements, agent requirements]"/>
 <link rel="canonical" href="https://gocd.github.io/new-docs.gocd.org/current//installation/hardware_specifications.html"/>
 <script async src="../javascripts/_gdpr-banner.js" type="text/javascript"></script>
-<link href="https://fonts.googleapis.com/css?family=Oxygen|Oxygen+Mono:300,400,700" rel="stylesheet"/>
 <link rel="stylesheet" href="../normalize.min.css"/>
 
-<link rel="stylesheet" href="../book.min.87a2ae978f4eef197028ff1dc9c46e406d1b1133dcefddfe618d4d6d73fc362e.css"/>
+<link rel="stylesheet" href="../book.min.3ebd28c907bab09ffb3238a8742a29b1191cc675d635ee7fb6f3fa4d7f9d4ed2.css"/>
   
 </head>
 
@@ -24,7 +23,7 @@
 
     <aside class="book-menu fixed">
       <nav role="navigation">
-
+<a href="https://www.gocd.org"> <img src="../svg/product_ui_logo_go.svg" class="icon" /></a>
 
 
     <ul>
@@ -278,7 +277,7 @@
 
 <p>When a build starts off on an agent, it will first perform an SCM checkout operation to update to the correct revision that must be built. If the job requires that artifacts from other dependent jobs be downloaded, the agent will download the artifacts from the server. During a job run, the agent will send the console logs every few seconds and at the end of the build, an agent may upload artifacts to the server if it is configured to do so.</p>
 
-<p>To cope up with the number of agents, artifact uploads and downloads, ensure that the server has —</p>
+<p>To cope up with the number of agents, artifact uploads and downloads, ensure that the server has -</p>
 
 <ul>
 <li>enough disk space to store the artifacts</li>
@@ -298,7 +297,7 @@
 
 <p>If you have hundreds of SCMs, depending on the performance of your source control updates, the update checks for SCMs may queue up and negatively affect the performance.</p>
 
-<p>Ensure that —</p>
+<p>Ensure that -</p>
 
 <ul>
 <li>your SCM server(s) can handle the load of several SCM checkout and update operations (both from the server and the agent)</li>
@@ -307,7 +306,7 @@
 
 <p>You can find out the amount of time it takes to perform an SCM update check by turning on performance logging on your GoCD server.</p>
 
-<p>If you find that material updates are taking too much of your CPU time, you may try one or more of these options —</p>
+<p>If you find that material updates are taking too much of your CPU time, you may try one or more of these options -</p>
 
 <ul>
 <li>turn off polling for materials that don&rsquo;t update frequently</li>
@@ -385,6 +384,17 @@ Swap:            0          0          0
 </article>
 
       
+<div class="align-center book-git-footer justify-end">
+  
+  
+  <div>
+    <a href="https://github.com/gocd/new-docs.gocd.org/edit/master/content/installation/hardware_specifications.md" target="_blank" rel="noopener">
+      <img src="../svg/code-fork.svg" /> Edit this page
+    </a>
+  </div>
+  
+</div>
+
 
     </div>
 

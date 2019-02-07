@@ -25,7 +25,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/installation/install/_apt_repo.html</guid>
-      <description>If you prefer to use the APT repository and install via apt-get, paste the following in your shell —
+      <description>If you prefer to use the APT repository and install via apt-get, paste the following in your shell -
 echo &amp;quot;deb https://download.gocd.org /&amp;quot; | sudo tee /etc/apt/sources.list.d/gocd.list curl https://download.gocd.org/GOCD-GPG-KEY.asc | sudo apt-key add - sudo apt-get update  Note: The GoCD server and agent require Java 8 to be installed.
 sudo add-apt-repository ppa:openjdk-r/ppa sudo apt-get update sudo apt-get install -y openjdk-8-jre  </description>
     </item>
@@ -46,7 +46,7 @@ If you are using the silent installation to upgrade GoCD, you should not specify
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/installation/install/_yum_repo.html</guid>
-      <description>If you prefer to use the YUM repository and install via YUM, paste the following in your shell —
+      <description>If you prefer to use the YUM repository and install via YUM, paste the following in your shell -
 sudo curl https://download.gocd.org/gocd.repo -o /etc/yum.repos.d/gocd.repo sudo yum install -y java-1.8.0-openjdk #atleast Java 8 is required, you may use other jre/jdk if you prefer  </description>
     </item>
     

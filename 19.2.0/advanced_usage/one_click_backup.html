@@ -11,10 +11,9 @@
 <meta name="keywords" content="[GoCD server, GoCD backup, administration interface, backup API]"/>
 <link rel="canonical" href="https://gocd.github.io/new-docs.gocd.org/current//advanced_usage/one_click_backup.html"/>
 <script async src="../javascripts/_gdpr-banner.js" type="text/javascript"></script>
-<link href="https://fonts.googleapis.com/css?family=Oxygen|Oxygen+Mono:300,400,700" rel="stylesheet"/>
 <link rel="stylesheet" href="../normalize.min.css"/>
 
-<link rel="stylesheet" href="../book.min.87a2ae978f4eef197028ff1dc9c46e406d1b1133dcefddfe618d4d6d73fc362e.css"/>
+<link rel="stylesheet" href="../book.min.3ebd28c907bab09ffb3238a8742a29b1191cc675d635ee7fb6f3fa4d7f9d4ed2.css"/>
   
 </head>
 
@@ -24,7 +23,7 @@
 
     <aside class="book-menu fixed">
       <nav role="navigation">
-
+<a href="https://www.gocd.org"> <img src="../svg/product_ui_logo_go.svg" class="icon" /></a>
 
 
     <ul>
@@ -256,10 +255,10 @@
 <p>The backup directory will be named <strong>backup_{TIMESTAMP}</strong> where the <strong>{TIMESTAMP}</strong> is the time when the backup was initiated.</p>
 
 <ul>
-<li>Database – This is in a zip called <strong>db.zip</strong> . The zip has a single DB file called <strong>cruise.h2.db</strong></li>
-<li>Configuration – This is in a zip called <strong>config-dir.zip</strong> . This zip contains the XML configuration, Jetty server configuration, Keystores and all other GoCD&rsquo;s internal configurations.</li>
-<li>XML Configuration Version Repo – This is in a zip called <strong>config-repo.zip</strong> . This zip contains the Git repository of the XML configuration file.</li>
-<li>GoCD version – This is a file called <strong>version.txt</strong> . This file contains the version of the GoCD server when the backup was initiated</li>
+<li>Database - This is in a zip called <strong>db.zip</strong> . The zip has a single DB file called <strong>cruise.h2.db</strong></li>
+<li>Configuration - This is in a zip called <strong>config-dir.zip</strong> . This zip contains the XML configuration, Jetty server configuration, Keystores and all other GoCD&rsquo;s internal configurations.</li>
+<li>XML Configuration Version Repo - This is in a zip called <strong>config-repo.zip</strong> . This zip contains the Git repository of the XML configuration file.</li>
+<li>GoCD version - This is a file called <strong>version.txt</strong> . This file contains the version of the GoCD server when the backup was initiated</li>
 </ul>
 
 <h3 id="what-is-not-backed-up">What is not backed up?</h3>
@@ -313,7 +312,7 @@
 <li><p>You might want to keep a copy of all the files and directories that are involved in restoration. This will help in troubleshooting if there was a problem. Following this, make sure all the destination directories mentioned in the following steps are empty.<br>
 <em>For example:</em> Before restoring the Database, make sure the <strong>{SERVER_INSTALLATION_DIR}/db/h2db</strong> is backed up and the directory is emptied.</p></li>
 
-<li><p>Database – Unzip the <strong>db.zip</strong> found in the backup directory. Unzip will create a file called <strong>cruise.h2.db</strong> . Copy this file to the directory <strong>{SERVER_INSTALLATION_DIR}/db/h2db</strong> .</p></li>
+<li><p>Database - Unzip the <strong>db.zip</strong> found in the backup directory. Unzip will create a file called <strong>cruise.h2.db</strong> . Copy this file to the directory <strong>{SERVER_INSTALLATION_DIR}/db/h2db</strong> .</p></li>
 
 <li><p>Configuration - Unzip the <strong>config-dir.zip</strong> into a temp directory. Copy all the files from this directory to <strong>{SERVER_INSTALLATION_DIR}/config</strong> directory on Windows and Mac or <strong>/etc/go</strong> on Linux.</p></li>
 
@@ -327,6 +326,17 @@
 </article>
 
       
+<div class="align-center book-git-footer justify-end">
+  
+  
+  <div>
+    <a href="https://github.com/gocd/new-docs.gocd.org/edit/master/content/advanced_usage/one_click_backup.md" target="_blank" rel="noopener">
+      <img src="../svg/code-fork.svg" /> Edit this page
+    </a>
+  </div>
+  
+</div>
+
 
     </div>
 

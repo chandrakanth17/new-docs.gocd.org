@@ -17,7 +17,7 @@
       
       <guid>/gocd_on_kubernetes/designing_a_cd_pipeline/creating_a_build_pipeline.html</guid>
       <description>Create a pipeline to build and publish your application image In this section, we&amp;rsquo;ll go over how to design CD pipelines that build and publish an application image. As an example, we&amp;rsquo;ve used a sample nodejs application called &amp;lsquo;Bulletin Board&amp;rsquo;.
-Prerequisites We’ll be building our application as a docker image artifact and publishing it to Docker Hub. To do this, make sure you have a Docker Hub account.
+Prerequisites We&amp;rsquo;ll be building our application as a docker image artifact and publishing it to Docker Hub. To do this, make sure you have a Docker Hub account.
 Quick links  Getting started with GoCD  Build an application artifact  Click on the Pipelines link on the top menu to create your first pipeline.</description>
     </item>
     
@@ -27,7 +27,7 @@ Quick links  Getting started with GoCD  Build an application artifact  Click on 
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/gocd_on_kubernetes/designing_a_cd_pipeline/creating_a_deploy_pipeline.html</guid>
-      <description>Create a pipeline to deploy the published artifact In this section, we’ll learn to design a deployment pipeline to deploy to Kubernetes. After you&amp;rsquo;ve designed and run the build pipeline, you&amp;rsquo;ll see that for every successful build, a new image gets created with a new tag. To create a pipeline to deploy the published artifact, follow these steps:
+      <description>Create a pipeline to deploy the published artifact In this section, we&amp;rsquo;ll learn to design a deployment pipeline to deploy to Kubernetes. After you&amp;rsquo;ve designed and run the build pipeline, you&amp;rsquo;ll see that for every successful build, a new image gets created with a new tag. To create a pipeline to deploy the published artifact, follow these steps:
 Quick Links Modeling Deployment Pipelines
 Deploy application to Kubernetes  Navigate to Admin -&amp;gt; Pipelines and click on Create a pipeline within this group.</description>
     </item>
