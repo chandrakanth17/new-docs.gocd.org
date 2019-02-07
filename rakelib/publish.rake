@@ -24,7 +24,7 @@ task :publish => :build do
     rm_rf GOCD_VERSION
     cp_r '../public', GOCD_VERSION
     sh("git add --all .")
-    sh("git commit -m 'Updating site to latest commit (#{git_short_sha})'")
-    sh("git push")
+    sh("git commit -m 'Updating site to latest commit (#{git_short_sha})' &> /dev/null")
+    sh("git push &> /dev/null")
   end
 end
