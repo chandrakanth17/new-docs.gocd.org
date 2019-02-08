@@ -1,39 +1,51 @@
 # Documentation for GoCD - Continuous Delivery server
 
-This repository contains the user documentation for [GoCD](https://www.gocd.org/).
+This repository contains the source code for the user documentation for [GoCD](https://www.gocd.org/). The documentation is available at https://docs.gocd.org/current/.
 
 ## Contributing
 
+We encourage you to contribute to GoCD. For information on contributing to GoCD, please see our [contributor's guide](https://www.gocd.org/contribute). A lot of useful information like links to user documentation, design documentation, mailing lists etc. can be found in the [resources](https://www.gocd.org/community/resources.html) section.
+
+To make changes to GoCD's documentation, you can do this:
+
 1. Install all dependencies
 
-Install yarn, nodejs required to build the repository based on your development environment.
-Ensure Ruby and bundler are installed. 
-```shell
- bundle install --jobs 4 --path .bundle --clean
-```
+    The dependencies for building the documentation are:
+  
+    - nodejs (known to work with v8.9.4)
+    - yarn (known to work with 1.13.0)
+    - Ruby (known to work with 2.3.6)
+    - Bundler gem (known to work with 1.17.2)
+    
+    Then run this to get all the dependent gems:
+  
+    ```shell
+    bundle install --jobs 4 --path .bundle --clean
+    ```
+
 2. Run the documentation on the local server (defaults to http://localhost:1313)
 
     ```shell
     yarn run serve
     ```
 
-3. Publish to github pages
+### Publishing to GitHub pages
 
-    The contents of the `public` directory needs to be pushed out to the *[gh-pages](https://github.com/gocd/new-docs.go.cd/tree/gh-pages)* branch of the repository.
+The contents of the `public` directory needs to be pushed out to the *[gh-pages](https://github.com/gocd/new-docs.go.cd/tree/gh-pages)* branch of the repository.
 
-    ```shell
-    bundle exec rake publish
-    ```
+```shell
+bundle exec rake publish
+```
 
-    Check the latest changes deployed [here](https://gocd.github.io/new-docs.go.cd/)
+Check the latest changes deployed [here](https://gocd.github.io/new-docs.go.cd/).
 
-4. To run hugo with any specific args
+#### To run hugo with different arguments
 
-    ```shell
-    yarn run hugo [arguments]
-    ```
+```shell
+yarn run hugo [arguments]
+```
 
-### Update this repository with Current docs changes
+### Update this repository with current docs changes
 
 Update the list of directories to be updated in the sync script.
 Run the sync script to copy over changes from the current [docs repository](https://github.com/gocd/docs.go.cd)
@@ -42,11 +54,6 @@ Go through the changes to see if everything can be committed and then push the c
 ```shell
 bash ./sync.sh
 ```
-
-## Contributing
-
-We encourage you to contribute to Go. For information on contributing to this project, please see our [contributor's guide](https://www.gocd.org/contribute).
-A lot of useful information like links to user documentation, design documentation, mailing lists etc. can be found in the [resources](https://www.gocd.org/community/resources.html) section.
 
 ### Releasing a new version of the documentation
 
