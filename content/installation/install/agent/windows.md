@@ -42,7 +42,7 @@ In case you are using `powershell.exe` for the silent installation, the `SERVERU
 C:\> go-agent-16.1.0-1234-setup.exe /S /SERVERURL=`"https://10.12.20.47:8154/go`" /D=C:\go\agent
 ```
 
-{{< include file="/installation/install/_install_windows_headless_message.md" markdown="true" >}}
+{{< include file="installation/install/_install_windows_headless_message.md" markdown="true" >}}
 
 
 ## Overriding default startup arguments and environment
@@ -79,4 +79,4 @@ C:\> go-agent-16.1.0-1234-setup.exe /S /SERVERURL=`"https://10.12.20.47:8154/go`
 
 All the files for the GoCD agent are under its root installation folder in Windows, the default location is `C:\Program Files\Go Agent`.
 
-{{< include file="/installation/install/agent/_register_with_server.md" markdown="true" >}}
+{{< include file="installation/install/agent/_register_with_server.md" markdown="true" >}}

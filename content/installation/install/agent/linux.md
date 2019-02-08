@@ -14,7 +14,7 @@ The installer will create a user called ```go``` if one does not exist on the ma
 
 The GoCD agent RPM installer has been tested on RedHat Enterprise Linux and CentOS. It should work on most RPM based Linux distributions.
 
-{{< include file="/installation/install/_yum_repo.md" markdown="true" >}}
+{{< include file="installation/install/_yum_repo.md" markdown="true" >}}
 
 Once you have the repository setup, execute
 
@@ -33,7 +33,7 @@ sudo rpm -i go-agent-${version}.noarch.rpm
 
 The GoCD agent .deb installer has been tested on Ubuntu. However it should work on most Linux distributions which use debs.
 
-{{< include file="/installation/install/_apt_repo.md" markdown="true" >}}
+{{< include file="installation/install/_apt_repo.md" markdown="true" >}}
 
 Once you have the repository setup, execute
 
@@ -87,4 +87,4 @@ For e.g To enable Websocket communication between the server and agent, user can
  export GO_AGENT_SYSTEM_PROPERTIES="$GO_AGENT_SYSTEM_PROPERTIES -Dgo.agent.websocket.enabled=true"
  ```
 
-{{< include file="/installation/install/agent/_register_with_server.md" markdown="true" >}}
+{{< include file="installation/install/agent/_register_with_server.md" markdown="true" >}}

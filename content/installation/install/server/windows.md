@@ -34,7 +34,7 @@ For example:
 C:\> go-server-16.1.0-1234-setup.exe /S /D=C:\go\server
 ```
 
-{{< include file="/installation/install/_install_windows_headless_message.md" markdown="true" >}}
+{{< include file="installation/install/_install_windows_headless_message.md" markdown="true" >}}
 
 
 ## Overriding default startup arguments and environment
@@ -68,4 +68,4 @@ C:\> go-server-16.1.0-1234-setup.exe /S /D=C:\go\server
 
 All the files for the GoCD server are under the root installation path on Windows. The default location is ```C:\Program Files\Go Server```.
 
-{{< include file="/installation/install/server/_install_server_footer.md" markdown="true" >}}
+{{< include file="installation/install/server/_install_server_footer.md" markdown="true" >}}

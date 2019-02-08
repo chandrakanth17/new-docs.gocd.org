@@ -16,4 +16,4 @@ If you want to run GoCD on a platform which does not have a native installer or 
     -   If you are on a Windows system, run ```start-server.bat```
     -   If you are on a Unix system, run ```server.sh```  (Ensure that ```server.sh``` is executable)
 
-{{< include file="/installation/install/server/_install_server_footer.md" markdown="true" >}}
+{{< include file="installation/install/server/_install_server_footer.md" markdown="true" >}}

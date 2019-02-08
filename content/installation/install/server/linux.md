@@ -14,7 +14,7 @@ The installer will create a user called ```go``` if one does not exist on the ma
 
 The GoCD server RPM installer has been tested on RedHat Enterprise Linux and CentOS. It should work on most RPM based Linux distributions.
 
-{{< include file="/installation/install/_yum_repo.md" markdown="true" >}}
+{{< include file="installation/install/_yum_repo.md" markdown="true" >}}
 
 Once you have the repository setup, execute
 
@@ -33,7 +33,7 @@ sudo rpm -i go-server-${version}.noarch.rpm
 
 The GoCD server .deb installer has been tested on Ubuntu. However it should work on most Linux distributions which use debs.
 
-{{< include file="/installation/install/_apt_repo.md" markdown="true" >}}
+{{< include file="installation/install/_apt_repo.md" markdown="true" >}}
 
 Once you have the repository setup, execute
 
@@ -79,5 +79,5 @@ For e.g To reduce the session timeout from default 14 days to 60 seconds, user c
  export GO_SERVER_SYSTEM_PROPERTIES="$GO_SERVER_SYSTEM_PROPERTIES -Dgo.server.session.timeout.seconds=60"
  ```
 
-{{< include file="/installation/install/server/_install_server_footer.md" markdown="true" >}}
+{{< include file="installation/install/server/_install_server_footer.md" markdown="true" >}}
 
