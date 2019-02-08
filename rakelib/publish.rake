@@ -1,5 +1,5 @@
 desc "publish the documentation"
-task :publish => :build do
+task :publish => :compile do
   def env(key, default=nil)
     value = ENV[key].to_s.strip
     if default

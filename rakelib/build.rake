@@ -13,4 +13,5 @@ task :run_hugo do
 end
 
 desc "build the documentation"
-task :build => [:clean, :init, :run_hugo, "static_checks:all"]
+task :compile => [:clean, :init, :run_hugo]
+task :build => [:compile, "static_checks:all"]
