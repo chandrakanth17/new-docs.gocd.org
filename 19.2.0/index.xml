@@ -48,58 +48,6 @@
     
     <item>
       <title></title>
-      <link>/installation/install/_apt_repo.html</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/installation/install/_apt_repo.html</guid>
-      <description>If you prefer to use the APT repository and install via apt-get, paste the following in your shell -
-echo &amp;quot;deb https://download.gocd.org /&amp;quot; | sudo tee /etc/apt/sources.list.d/gocd.list curl https://download.gocd.org/GOCD-GPG-KEY.asc | sudo apt-key add - sudo apt-get update  Note: The GoCD server and agent require Java 8 to be installed.
-sudo add-apt-repository ppa:openjdk-r/ppa sudo apt-get update sudo apt-get install -y openjdk-8-jre  </description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>/installation/install/_install_windows_headless_message.html</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/installation/install/_install_windows_headless_message.html</guid>
-      <description>If User Access Control feature is enabled on your Windows system, it needs to be turned off for silent installation to work.
-If you are using the silent installation to upgrade GoCD, you should not specify the Installation-Directory option.</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>/installation/install/_yum_repo.html</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/installation/install/_yum_repo.html</guid>
-      <description>If you prefer to use the YUM repository and install via YUM, paste the following in your shell -
-sudo curl https://download.gocd.org/gocd.repo -o /etc/yum.repos.d/gocd.repo sudo yum install -y java-1.8.0-openjdk #atleast Java 8 is required, you may use other jre/jdk if you prefer  </description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>/installation/install/agent/_register_with_server.html</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/installation/install/agent/_register_with_server.html</guid>
-      <description>Registering your agent with the server For security reasons, all newly installed Go agents need to be enabled on the Go server before work is assigned to them. This prevents an unauthorized person from getting access to your source code. To enable a newly installed Go agent, do the following:
- Open the Go server dashboard Follow the instructions here to find the agent you&amp;rsquo;ve just installed on the list and add the agent to your cloud.</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>/installation/install/server/_install_server_footer.html</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/installation/install/server/_install_server_footer.html</guid>
-      <description>Copying existing config to a new GoCD Server instance You can replicate a GoCD server with all the pipeline, stage, job, tasks and materials definitions/configuration intact.
-To do this, the administrator should copy /etc/go/cruise-config.xml from the config directory (/etc/go) to the new server and clear serverId attribute of server tag.
- Note: Copying just the cruise-config.xml file will not migrate the historical pipeline data and artifacts. Please see the page on backing up the GoCD Server to fully migrate an existing GoCD server.</description>
-    </item>
-    
-    <item>
-      <title></title>
       <link>/installation/ssl_tls/custom_certificate.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       

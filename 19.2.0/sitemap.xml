@@ -35,26 +35,6 @@
   </url>
   
   <url>
-    <loc>/installation/install/_apt_repo.html</loc>
-  </url>
-  
-  <url>
-    <loc>/installation/install/_install_windows_headless_message.html</loc>
-  </url>
-  
-  <url>
-    <loc>/installation/install/_yum_repo.html</loc>
-  </url>
-  
-  <url>
-    <loc>/installation/install/agent/_register_with_server.html</loc>
-  </url>
-  
-  <url>
-    <loc>/installation/install/server/_install_server_footer.html</loc>
-  </url>
-  
-  <url>
     <loc>/installation/ssl_tls/custom_certificate.html</loc>
   </url>
   
