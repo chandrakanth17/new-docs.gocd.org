@@ -10,3 +10,4 @@
 <link rel="stylesheet" href="{{ "stylesheets/website.css" | relURL }}"/>
 {{ $styles := resources.Get "book.scss" | resources.ToCSS | resources.Minify | resources.Fingerprint }}
 <link rel="stylesheet" href="{{ $styles.RelPermalink }}"/>
+{{ template "_internal/google_analytics_async.html" . }}
