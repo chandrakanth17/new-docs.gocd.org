@@ -1,4 +1,4 @@
 ---
 Title: Navigation
 ---
-Go TOUR
+GoCD TOUR
