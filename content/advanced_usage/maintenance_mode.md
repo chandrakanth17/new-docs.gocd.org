@@ -4,7 +4,7 @@ title: Maintenance Mode
 ---
 # **Maintenance Mode**
 
-**Note: **Using this feature requires atleast version `19.1.0`  of the GoCD server.
+**Note:** Using this feature requires atleast version `19.1.0`  of the GoCD server.
 
 The GoCD system includes a lot of internal subsystems and processes, which continuously do work.
 Some examples include the material subsystem which takes care of polling for materials, the scheduling subsystem which automatically starts pipelines and stages, the agent subsystem which continuously keeps tracks of agent states and provides them jobs to run, etc.
@@ -50,7 +50,7 @@ After all the sub-systems of GoCD are stopped during maintenance mode, GoCD serv
 
 ![](../images/advanced_usage/maintenance_mode/completed_maintenance_mode.png)
 
-**NOTE: ** `Upon a restart, the GoCD server will no longer be in maintenance mode and will start all subsystems.`
+**NOTE:** `Upon a restart, the GoCD server will no longer be in maintenance mode and will start all subsystems.`
 
 The [maintenance mode API](https://api.gocd.org/current/#maintenance-mode) allows GoCD Administrators to enable, disable and monitor the server maintenance mode state.
 
