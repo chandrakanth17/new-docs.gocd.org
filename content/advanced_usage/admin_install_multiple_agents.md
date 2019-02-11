@@ -26,9 +26,10 @@ Just after the line \#include ../conf/wrapper-license.conf, add
     - set.GO\_AGENT\_DIR=C:\\Program Files\\Go Agent 2
     - set.GO\_AGENT\_JAVA\_HOME=%GO\_AGENT\_DIR%\\jre
 - Run the following command
-```
+```bash
 sc create GoAgent2 binPath= "\"C:\Program Files\Go Agent 2\cruisewrapper.exe\" -s \"C:\Program Files\Go Agent 2\config\wrapper-agent.conf\""
 ```
+
 - Start "GoAgent2" service
 
 ### Running as Windows command
@@ -44,7 +45,7 @@ sc create GoAgent2 binPath= "\"C:\Program Files\Go Agent 2\cruisewrapper.exe\" -
 - Assuming your first agent in at /Applications/Go Agent.app, copy that to another location, say
   /Applications/Go Agent 2.app. Once you do that, you can start the application like this:
 
-  ```
+  ```bash
   GO_APPLICATION_NAME="Go Agent 2" open /Applications/Go\ Agent\ 2.app
   ```
 
@@ -61,7 +62,7 @@ sc create GoAgent2 binPath= "\"C:\Program Files\Go Agent 2\cruisewrapper.exe\" -
 
 - [Install your first agent with the installer](../installation/installing_go_agent.html)
 - To create a second agent on the same host, run this as root:
-    ```
+    ```bash
     cp /etc/init.d/go-agent /etc/init.d/go-agent-1
     sed -i 's/# Provides: go-agent$/# Provides: go-agent-1/g' /etc/init.d/go-agent-1
     ln -s /usr/share/go-agent /usr/share/go-agent-1
@@ -69,19 +70,22 @@ sc create GoAgent2 binPath= "\"C:\Program Files\Go Agent 2\cruisewrapper.exe\" -
     mkdir /var/{lib,log}/go-agent-1
     chown go:go /var/{lib,log}/go-agent-1
     ```
+    
 - To enable starting the go-agent service during system boot:
   - on Debian:
-  ```
-  insserv go-agent-1
-  ```
+    ```bash
+    insserv go-agent-1
+    ```
+    
   - on Ubuntu:
-  ```
-  update-rc.d go-agent-1 defaults
-  ```
+    ```bash
+    update-rc.d go-agent-1 defaults
+    ```
+    
   - on Centos and Redhat:
-  ```
-  chkconfig go-agent-1 on
-  ```
+    ```bash
+    chkconfig go-agent-1 on
+    ```
 
 - You can now start or stop the second agent using /etc/init.d/go-agent-1
   (passing it the start or stop) arguments as usual. Logs will be written to
@@ -95,6 +99,7 @@ sc create GoAgent2 binPath= "\"C:\Program Files\Go Agent 2\cruisewrapper.exe\" -
 -   [Install your first agent with the installer](../installation/installing_go_agent.html)
 -   Make an empty folder called /var/lib/go-agent-2
 -   In this folder, run
-```
-java -jar /usr/share/go-agent/agent-bootstrapper.jar -serverUrl https://127.0.0.1/go &
-```
+
+    ```bash
+    java -jar /usr/share/go-agent/agent-bootstrapper.jar -serverUrl https://127.0.0.1/go &
+    ```
