@@ -25,7 +25,9 @@ Microsft, explaining how to do this.
 On Linux, you can use the /etc/default/go-server file, since it gets sourced by
 the GoCD Server before it starts. A line like this:
 
-``` export ENVIRONMENT_VAR_1="My variable" ```
+```bash
+ export ENVIRONMENT_VAR_1="My variable" 
+```
 
 will make that variable (```ENVIRONMENT_VAR_1```) available to the GoCD Server.
 

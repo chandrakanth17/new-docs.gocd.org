@@ -21,13 +21,13 @@ Proxy support is configured with GoCD agents by passing certain system propertie
 
 If your proxy server is running on `proxy.example.com` port `3128`, you will need to setup the following system properties:
 
-```
+```shell
 -Dhttp.proxyHost=proxy.example.com -Dhttp.proxyPort=3128 -Dhttps.proxyHost=proxy.example.com -Dhttps.proxyPort=3128 -Dhttp.nonProxyHosts=localhost
 ```
 
 To avoid using proxies for certain hosts, you may use `http.nonProxyHosts` which is a list of hostnames or ip addresses separated by a pipe character(`|`), you may include a wildcard character (`*`) for matching. For example:
 
-```
+```shell
 -Dhttp.nonProxyHosts='*.foo.com|localhost'
 ```
 
@@ -48,7 +48,7 @@ AGENT_BOOTSTRAPPER_JVM_ARGS="${PROXY_SETTINGS}"
 
 Follow the [instructions](../installation/install/agent/windows.html#overriding-default-startup-arguments-and-environment) to add a new property for GoCD agents setup on windows, such as:
 
-```
+```shell
 wrapper.java.additional.17="-Dhttps.proxyHost=proxy.example.com -Dhttps.proxyPort=3128 -Dhttp.nonProxyHosts='localhost|*.department.acme.com'"
 set.AGENT_STARTUP_ARGS=%AGENT_STARTUP_ARGS% -Dhttps.proxyHost=proxy.example.com -Dhttps.proxyPort=3128 '-Dhttp.nonProxyHosts=localhost|*.department.acme.com'
 ```

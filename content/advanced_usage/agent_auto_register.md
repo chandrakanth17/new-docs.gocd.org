@@ -33,7 +33,7 @@ As a GoCD administrator, you can auto approve remote agents by using a shared ke
 
 Example
 
-```
+```bash
 agent.auto.register.key=388b633a88de126531afa41eff9aa69e
 agent.auto.register.resources=ant,java
 agent.auto.register.environments=QA,Performance

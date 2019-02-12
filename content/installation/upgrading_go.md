@@ -78,14 +78,14 @@ The installer will automatically start the service. Once GoCD completes its inte
 
 Run the GoCD installer as described
 
-```
+```bash
 sudo dpkg -i [go-server-package-name]
 ```
 
 #### RPM based distributions (i.e. RedHat)
 
 Run the GoCD installer as described
-```
+```bash
 sudo rpm -U [go-server-package-name]
 ```
 

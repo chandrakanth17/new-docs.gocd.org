@@ -51,7 +51,7 @@ In the configuration XML, the information entered for this task looks like this:
 
 When a build which uses the plugin runs, the output of the build looks something like this:
 
-```
+```shell
 [go] Start to execute task: Plugin with ID: curl.task.plugin.
 Launching command: [curl, -G, --insecure, -o, pipelines/up42/index.txt, http://www.google.com]
 Environment variables:

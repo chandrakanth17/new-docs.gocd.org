@@ -31,7 +31,7 @@ When you see warning messages like the one above
 -   Determine the process that's hung. The extra information like URL:"https://test@bitbucket.org/test/git_repo.git" in the warning information should help you with this.
 -   On linux system, you should see lines like these:
 
-    ```
+    ```shell
     go 31201 1  0 Feb07 ?  00:00:00 git clone https://test@bitbucket.org/test/git_repo.git /var/lib/cruise-server/pipelines/flyweight/b9ec0885-eb32-458c-bd6b-eeefe3ef9816
     ```
 
@@ -53,7 +53,7 @@ When you see warning messages like the one above
 
 -   On Windows, add the following line in the *[wrapper-properties.conf](../installation/installing_go_server.html)* file in the config folder of the GoCD server installation where **x** is 1 more than the highest number in *wrapper-server.conf* and *wrapper-properties.conf* combined.
 
-    ```
+    ```shell
     wrapper.java.additional.x='-Dmaterial.update.inactive.timeout=20'
     ```
 

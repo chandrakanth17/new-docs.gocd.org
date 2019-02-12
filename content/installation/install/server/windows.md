@@ -20,7 +20,7 @@ You must be logged in as a user with Administrator privileges to install the GoC
 
 You may use this method if you would like to script the installation of the GoCD server.
 
-```
+```bash
 go-server-${version}-setup.exe /S /GO_SERVER_JAVA_HOME=<PATH_TO_JAVA_HOME> /D=<PATH_TO_SERVER_DIRECTORY>
 ```
 
@@ -30,7 +30,7 @@ go-server-${version}-setup.exe /S /GO_SERVER_JAVA_HOME=<PATH_TO_JAVA_HOME> /D=<P
 |`PATH_TO_SERVER_DIRECTORY`  | No     | The path where the server should be installed. Defaults to `C:\Program Files(x86)\Go Server`.                                    |
 
 For example:
-```
+```bash
 C:\> go-server-16.1.0-1234-setup.exe /S /D=C:\go\server
 ```
 
@@ -42,19 +42,19 @@ C:\> go-server-16.1.0-1234-setup.exe /S /D=C:\go\server
 -   Create a file named ```config/wrapper-properties.conf``` where you installed the server
 -   Copy any specific properties, or add new properties from ```config/wrapper-server.conf``` into this file. Be sure to increment the property index if you're adding any new properties.
 -   For e.g. to override the `-Xmx` to `12GB`, override `wrapper.java.additional.2` -
-    ```
+    ```bash
     # config/wrapper-properties.conf
     wrapper.java.additional.2=-Xmx12g
     ```
 -   To append additional JVM args to the server
-    ```
+    ```bash
     # config/wrapper-properties.conf
     # since the last "wrapper.java.additional" index is 15, we use the next available index.
     wrapper.java.additional.16=-Dcruise.config.foo=bar
     ```
 -   Each property must be configured separately
 
-    ```
+    ```bash
     # Having a single property for multiple configurations is invalid, e.g
     wrapper.java.additional.16="-Dcruise.config.foo='bar' -Dcruise.config.other='baz'"
 

@@ -46,7 +46,7 @@ This is the default behavior. Multiple instances of a pipeline can run simultane
 To enable locking from the Config XML set the `lockBehavior` attribute to one of `unlockWhenFinished`, `lockOnFailure`
 or `none`, corresponding to the three options shown above:
 
-```
+```xml
 <pipeline name="my-locked-pipeline" lockBehavior="lockOnFailure">
     <materials>
         ...

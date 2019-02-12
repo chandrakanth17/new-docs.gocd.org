@@ -22,11 +22,7 @@ To enable run on all agents for a job, navigate to the Job settings page in the 
 
 ### Configure through the Config XML
 
-To specify that a job should run on all agents, add the attribute
-
-```
-runOnAllAgents="true"
-```
+To specify that a job should run on all agents, add the attribute ```runOnAllAgents="true"```
 
 to the job's definition (see configuration reference for [`<job>`](../configuration/configuration_reference.html#job))
 
@@ -52,11 +48,7 @@ To run 'x' instances of a job, navigate to the Job settings page in the job conf
 
 ### Configure through the Config XML
 
-To specify that 'x' instances of a job should run, add the attribute
-
-```
-runInstanceCount="5"
-```
+To specify that 'x' instances of a job should run, add the attribute ```runInstanceCount="5"```
 
 to the job's definition (see configuration reference for [`<job>`](../configuration/configuration_reference.html#job))
 

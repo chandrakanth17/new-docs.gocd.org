@@ -29,7 +29,7 @@ When the GoCD server is being scaled up to run with larger number of pipeline, a
 
 On linux, these can be added/updated in /etc/default/go-server. On Windows, copy the following lines in *[wrapper-properties.conf](installing_go_server.html)* and change it to desired value.
 
-```
+```shell
 wrapper.java.additional.1=-Xms512m
 wrapper.java.additional.2=-Xmx1024m
 ```
@@ -74,7 +74,7 @@ The two values above do not affect the frequency of material polling or pipeline
 
 An easy way to check the memory usage, heap size (initial and over time) and GC metrics of the application is by turning on GC logging. GC logging can be enabled using the following JVM arguments while starting the application (Note: the log file specified as file is reset each time the VM starts.)
 
-```
+```bash
 -verbose:gc -Xloggc:file -XX:+PrintGCTimeStamps
 ```
 
@@ -127,13 +127,13 @@ For Windows
 2.  To change the above mentioned default location: define environment variable ```YOURKIT_PATH``` with value equal to location of ```yjpagent.dll```.
 3.  If you are running the GoCD server as a service, you will need to perform an additional step. In the config folder of the GoCD server installation, edit the *[wrapper-properties.conf](installing_go_server.html)* file, and add an additional property with the following value
 
-    ```
+    ```bash
     "-agentpath: [Path to yjpagent.dll]=port=6133,builtinprobes=none"
     ```
 
     For example, if there are 16 properties already defined, add this 17th property as shown below
 
-    ```
+    ```bash
     wrapper.java.additional.17="-agentpath:C:\yjpagent.dll=port=6133,builtinprobes=none"
     ```
 
@@ -164,23 +164,23 @@ Use the following steps to take profile the application and take snapshots. The 
 
     To capture memory snapshot
 
-    ```
+    ```bash
     $ java -jar [yourkit_profiler_directory]/lib/yjp-controller-api-redist.jar hostname port capture-memory-snapshot
     ```
 
 4.  To stop profiling, run:
 
-    ```
+    ```bash
     $ java -jar [yourkit_profiler_directory]/lib/yjp-controller-api-redist.jar hostname port stop-cpu-profiling`
     ```
 
-    ```
+    ```bash
     $ java -jar [yourkit_profiler_directory]/lib/yjp-controller-api-redist.jar hostname port stop-monitor-profiling
     ```
 
     If memory profiling was turned on,s top it using the following command
 
-    ```
+    ```bash
     $ java -jar [yourkit_profiler_directory]/lib/yjp-controller-api-redist.jar hostname port stop-alloc-recording
     ```
 
@@ -188,7 +188,7 @@ Use the following steps to take profile the application and take snapshots. The 
 
     In case of linux, run the following command:
 
-    ```
+    ```bash
     $ sudo rm /usr/lib/yourkit/libyjpagent.so
     ```
 

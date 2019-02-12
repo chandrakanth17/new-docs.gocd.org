@@ -60,7 +60,7 @@ You can disallow deletion of artifacts from a particular stage so that those art
 
 In many cases, the easiest thing to do is compress some of the larger artifacts that you won't frequently have need for. For example, if you have a large log file named 'test.log' and you're running GoCD server on a unix machine, the following script will gzip those files that haven't been modified in the last 10 days
 
-```
+```shell
 find /var/lib/go-server/logs/pipelines -name test.log -mtime +10 -type f -exec gzip -v '{}' \;
 ```
 
@@ -80,7 +80,7 @@ If compressing large artifacts is not giving you enough free space, another thin
 -   Shut down GoCD server
 -   Copy all files from the original artifact repository location to the new drive
 -   Change the artifact repository location in the configuration file
-``` 
+```xml 
 <server artifactsDir="/path/to/new/artifacts">
     ...
 </server>
@@ -92,7 +92,7 @@ If compressing large artifacts is not giving you enough free space, another thin
 Another option for making more room is to remove unused (or easily recreatable) artifacts. You may also have old pipelines that you no longer need.
 
 The directory structure of the artifact repository makes selecting which artifacts are safe to delete easier. The format is:
-```
+```shell
 [artifacts-dir]/pipelines/[pipelineName]/[pipelineLabel]/[stageName]/[stageCounter]/[jobName]
 ```
 > Keep in mind that there are two files that GoCD needs in order to display the [Job](../navigation/job_details_page.html) or [Stage](../navigation/stage_details_page.html) details pages

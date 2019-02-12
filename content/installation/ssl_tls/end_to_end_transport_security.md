@@ -22,7 +22,7 @@ The `-rootCertFile` option must point to the root certificate from the GoCD serv
 
 If you have the openssl binary available then you can also run the command below to export the root certificate from the GoCD server:
 
-```
+```bash
 openssl s_client -showcerts -connect HOSTNAME:PORT </dev/null 2>/dev/null|openssl x509 -outform PEM
 ```
 

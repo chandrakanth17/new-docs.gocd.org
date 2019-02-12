@@ -107,7 +107,7 @@ How to configure:
 
     On windows, in the config folder of the GoCD server installation, edit the wrapper-server.conf file, and add an additional property with the value '-Dresolve.fanin.revisions=N'. For example:
 
-    ```
+    ```bash
     wrapper.java.additional.17='-Dresolve.fanin.revisions=N'
     ```
 

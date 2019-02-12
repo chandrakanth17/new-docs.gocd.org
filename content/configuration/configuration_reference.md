@@ -562,7 +562,7 @@ The configuration could look like:
 
 The username and password could be set in admins.properties as follows:
 
-```
+```bash
 Jez=ThmbShxAtJepX80c2JY1FzOEmUk
 lqiao=TfkgShslgJepX80c2JY1trwEskT
 ```

@@ -37,7 +37,7 @@ If you have switched on security in your configuration you can use BASIC authent
 
 For example:
 
-```
+```bash
 http://[username]:[password]@[your_go_server]:8153/go/cctray.xml
 ```
 

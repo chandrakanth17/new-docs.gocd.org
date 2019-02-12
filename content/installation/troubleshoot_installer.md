@@ -241,7 +241,7 @@ you might have a Java installation in either a non-standard location or older
 than Java 1.7. The GoCD Mac application tries to find the correct Java
 installation to use, using this command:
 
-```
+```bash
 /usr/libexec/java_home -v "1.7+"
 ```
 
@@ -255,7 +255,7 @@ installation you want GoCD to use is at: ```/Library/MY_Java/Contents/Home```,
 then you can start the GoCD Server with that Java using this (in a terminal
 emulator):
 
-```
+```bash
 GO_JAVA_HOME="/Library/MY_Java/Contents/Home" open "/Applications/Go Server.app"
 ```
 

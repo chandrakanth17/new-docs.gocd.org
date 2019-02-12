@@ -61,7 +61,7 @@ Go team will continue to add (and sometimes update) commands to the repository o
 
 Here is a simple cron tab entry that you could add to Go service account's cron tab to pull commands once a day.
 
-```
+```bash
 @daily cd < go-server-install-root >/db/command_repository/default;git pull >>/var/go/cronrun 2>&1
 
 ```
@@ -71,7 +71,7 @@ Here is a simple cron tab entry that you could add to Go service account's cron 
 
 On Windows, you could set up a scheduled task to run this script on a schedule.
 
-```
+```bash
 echo %date% %time% >>c:\pull-log.txt 2>&1
 cd "C:\Program Files (x86)\Go Server\db\command_repository\default"
 git pull >>c:\pull-log.txt 2>&1

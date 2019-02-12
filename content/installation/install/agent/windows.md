@@ -21,7 +21,7 @@ You must be logged in as a user with Admin privileges to install the GoCD agent 
 
 You may use this method if you would like to script the installation of the GoCD agent.
 
-```
+```bash
 go-agent-${version}-setup.exe /S /START_AGENT=NO /SERVERURL="<SERVERURL>" /GO_AGENT_JAVA_HOME=<PATH_TO_JAVA_HOME> /D=<PATH_TO_AGENT_DIRECTORY>
 ```
 
@@ -33,12 +33,12 @@ go-agent-${version}-setup.exe /S /START_AGENT=NO /SERVERURL="<SERVERURL>" /GO_AG
 | `PATH_TO_AGENT_DIRECTORY` | No       | The path where the agent should be installed. Defaults to `C:\Program Files(x86)\Go Agent`.                                                                                                   |
 
 For example:
-```
+```shell
 C:\> go-agent-16.1.0-1234-setup.exe /S /SERVERURL="https://10.12.20.47:8154/go" /D=C:\go\agent
 ```
 
 In case you are using `powershell.exe` for the silent installation, the `SERVERURL` argument needs to be passed with quotes being escaped with backticks:
-```
+```shell
 C:\> go-agent-16.1.0-1234-setup.exe /S /SERVERURL=`"https://10.12.20.47:8154/go`" /D=C:\go\agent
 ```
 
@@ -51,20 +51,20 @@ C:\> go-agent-16.1.0-1234-setup.exe /S /SERVERURL=`"https://10.12.20.47:8154/go`
 -   Copy any specific properties, or add new properties from `config/wrapper-agent.conf` into this file. Be sure to increment the property index if you're adding any new properties.
 -   For e.g. to override the loglevel to debug, override `wrapper.console.loglevel` -  
 
-    ```
+    ```bash
     # config/wrapper-properties.conf
     wrapper.console.loglevel=DEBUG
     ```
 -   To append additional JVM args to the agent  
 
-    ```
+    ```bash
     # config/wrapper-properties.conf
     # since the last "wrapper.java.additional" index is 2, we use the next available index.
     wrapper.java.additional.3=-Xmx512mb
     ```
 -   Each property must be configured separately
 
-    ```
+    ```bash
     # Having a single property for multiple configurations is invalid, e.g
     wrapper.java.additional.16="-Dcruise.config.foo='bar' -Dcruise.config.other='baz'"
 

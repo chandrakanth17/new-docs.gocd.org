@@ -122,7 +122,7 @@ Reading from a disk is very slow as compared to reading from memory. Additionall
 
 Generally speaking, you should ensure that there is sufficient free memory for buffer cache to ensure optimal performance and reduced disk IO.
 
-```
+```bash
 [root@fmtgocdgo01 ~]# free -m
              total       used       free     shared    buffers     cached
 Mem:         11912      11633        278          0         20       2128

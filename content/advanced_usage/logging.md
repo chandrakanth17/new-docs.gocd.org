@@ -217,7 +217,7 @@ Another example setup using GELF (Graylog Extended Log Format) using [logback-ge
 
 Download `logback-gelf-1.1.0.jar` and place it in `libs` directory.
 On typical linux server, that can be done with
-```
+```bash
 wget "http://repo1.maven.org/maven2/de/siegmar/logback-gelf/1.1.0/logback-gelf-1.1.0.jar" -O /var/lib/go-server/libs/logback-gelf-1.1.0.jar
 ```
 

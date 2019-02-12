@@ -70,7 +70,7 @@ Cron expression to specify garbage collector execution time with default set to 
 overriding `go.config.repo.gc.cron` you need to escape special shell characters such `*` using a backward-slash. For
 example:
 
-```
+```bash
 GO_SERVER_SYSTEM_PROPERTIES="$GO_SERVER_SYSTEM_PROPERTIES -Dgo.config.repo.gc.cron='0 0 7 1/1 \* \?'"
 ```
 The above cron will set to run git gc at 7 am every day for every month.
