@@ -1,6 +1,9 @@
 ---
 headless: true
 ---
+- [**Back to GoCD.org**](https://www.gocd.org/)
+- [**Contribute**](https://github.com/gocd/docs.go.cd/)
+________________________________________
 - [**Introduction**]({{< relref "/" >}})
 - [**Concepts In GoCD**]({{< relref "introduction/_index.md" >}})
     - [Concepts In GoCD]({{< relref "introduction/concepts_in_go.md" >}})
