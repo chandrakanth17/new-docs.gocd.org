@@ -15,6 +15,18 @@
 <link rel="stylesheet" href="../stylesheets/website.css"/>
 
 <link rel="stylesheet" href="../book.min.f2a0cdad2e0137fc7e70bc050b9c5d2798b5b4f45b50cfb8e342022c8cfd0732.css"/>
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-48357651-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
   
 </head>
 
@@ -153,8 +165,8 @@
 <li><a href="../extension_points/package_repository_extension.html">Package Repository Extension</a></li>
 <li><a href="../extension_points/yum_repository_poller.html">Yum Repository Poller</a></li>
 <li><a href="../extension_points/scm_extension.html">SCM Extension</a></li>
-<li><a href="../extension_points/task_extension.html">Task Extension</a></li>
-<li><a href="../extension_points/notification_extension.html">Notification Extension</a></li>
+<li><a href="../extension_points/task_extension.html">Task Extension</a>
+<!---  - [Notification Extension](/extension_points/notification_extension.html)--></li>
 <li><a href="../extension_points/configrepo_extension.html">Configuration repository Extension</a></li>
 </ul></li>
 <li><a href="../gocd_on_kubernetes.html"><strong>GoCD on Kubernetes</strong></a>
@@ -230,6 +242,7 @@
 
       
 <article class="markdown">
+  <p>
 
 <h1 id="upgrading-gocd">Upgrading GoCD</h1>
 
@@ -365,17 +378,11 @@
 <h4 id="debian-based-distributions-i-e-ubuntu">Debian based distributions (i.e. Ubuntu)</h4>
 
 <p>Run the GoCD installer as described</p>
-
-<pre><code>sudo dpkg -i [go-server-package-name]
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo dpkg -i <span style="color:#f92672">[</span>go-server-package-name<span style="color:#f92672">]</span></code></pre></div>
 <h4 id="rpm-based-distributions-i-e-redhat">RPM based distributions (i.e. RedHat)</h4>
 
 <p>Run the GoCD installer as described</p>
-
-<pre><code>sudo rpm -U [go-server-package-name]
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo rpm -U <span style="color:#f92672">[</span>go-server-package-name<span style="color:#f92672">]</span></code></pre></div>
 <h4 id="macintosh-osx">Macintosh OSX</h4>
 
 <p>The Macintosh OSX edition of Go does not support upgrades. You should follow the steps above to backup your data, uninstall Go/Cruise (by dragging the application into trash), and then perform a fresh installation.</p>
@@ -387,6 +394,7 @@
 <h4 id="version-2-3">Version 2.3</h4>
 
 <p>As part of the 2.3 upgrade, the <code>dest</code> attribute of a material configured in a pipeline is case-insensitive. This would mean that if you have a pipeline P1 with two materials, say material M1 with <code>dest = &quot;foo&quot;</code> and material M2 with <code>dest = &quot;Foo&quot;</code>, after the upgrade the dest folders will be automatically changed to M1 <code>dest = &quot;foo_[random_string]&quot;</code> and M2 <code>dest = &quot;Foo_[random_string]&quot;</code></p>
+</p>
 </article>
 
       
@@ -445,6 +453,17 @@
 
   
   
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-48357651-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
 </body>
 
 </html>

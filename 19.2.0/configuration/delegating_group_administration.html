@@ -15,6 +15,18 @@
 <link rel="stylesheet" href="../stylesheets/website.css"/>
 
 <link rel="stylesheet" href="../book.min.f2a0cdad2e0137fc7e70bc050b9c5d2798b5b4f45b50cfb8e342022c8cfd0732.css"/>
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-48357651-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
   
 </head>
 
@@ -153,8 +165,8 @@
 <li><a href="../extension_points/package_repository_extension.html">Package Repository Extension</a></li>
 <li><a href="../extension_points/yum_repository_poller.html">Yum Repository Poller</a></li>
 <li><a href="../extension_points/scm_extension.html">SCM Extension</a></li>
-<li><a href="../extension_points/task_extension.html">Task Extension</a></li>
-<li><a href="../extension_points/notification_extension.html">Notification Extension</a></li>
+<li><a href="../extension_points/task_extension.html">Task Extension</a>
+<!---  - [Notification Extension](/extension_points/notification_extension.html)--></li>
 <li><a href="../extension_points/configrepo_extension.html">Configuration repository Extension</a></li>
 </ul></li>
 <li><a href="../gocd_on_kubernetes.html"><strong>GoCD on Kubernetes</strong></a>
@@ -230,6 +242,7 @@
 
       
 <article class="markdown">
+  <p>
 
 <h1 id="delegating-group-administration">Delegating Group Administration</h1>
 
@@ -251,21 +264,17 @@
 <p>In the above screenshot, the GoCD admin has delegated group admin privileges to a user &ldquo;jez&rdquo; and all users defined under the role &ldquo;groupAdminRole&rdquo;. The privileges of a Group Administrator have been described in the next section.</p>
 
 <p>For power users, here&rsquo;s how you&rsquo;d assign the same permissions via Config XML:</p>
-
-<pre><code class="language-xml">&lt;pipelines group=&quot;studios&quot;&gt;
-    &lt;authorization&gt;
-        &lt;admins&gt;
-            &lt;user&gt; jez &lt;/user&gt;
-            &lt;role&gt; groupAdminRole &lt;/role&gt;
-         &lt;/admins&gt;
-     &lt;/authorization&gt;
-     &lt;pipeline name=&quot;go_pipeline&quot;&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;pipelines</span> <span style="color:#a6e22e">group=</span><span style="color:#e6db74">&#34;studios&#34;</span><span style="color:#f92672">&gt;</span>
+    <span style="color:#f92672">&lt;authorization&gt;</span>
+        <span style="color:#f92672">&lt;admins&gt;</span>
+            <span style="color:#f92672">&lt;user&gt;</span> jez <span style="color:#f92672">&lt;/user&gt;</span>
+            <span style="color:#f92672">&lt;role&gt;</span> groupAdminRole <span style="color:#f92672">&lt;/role&gt;</span>
+         <span style="color:#f92672">&lt;/admins&gt;</span>
+     <span style="color:#f92672">&lt;/authorization&gt;</span>
+     <span style="color:#f92672">&lt;pipeline</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;go_pipeline&#34;</span><span style="color:#f92672">&gt;</span>
      ...
-     &lt;/pipeline&gt;
-&lt;/pipelines&gt;
-
-</code></pre>
-
+     <span style="color:#f92672">&lt;/pipeline&gt;</span>
+<span style="color:#f92672">&lt;/pipelines&gt;</span></code></pre></div>
 <h2 id="privileges-of-a-group-administrator">Privileges of a Group Administrator</h2>
 
 <p>As a group administrator of a pipeline group, a user is privileged to:</p>
@@ -284,6 +293,7 @@
 <blockquote>
 <p><strong>Note:</strong> A group administrator can access &ldquo;Pipelines&rdquo; and &ldquo;Config XML&rdquo; tabs on the Administration page to <a href="pipeline_group_admin_config.html">view and edit his/her pipeline groups</a>. He/She cannot access Server Configuration or perform user management. While a group administrator cannot access Pipeline Templates either, they can use existing templates for pipelines within their pipeline group.</p>
 </blockquote>
+</p>
 </article>
 
       
@@ -322,6 +332,17 @@
 
   
   
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-48357651-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
 </body>
 
 </html>

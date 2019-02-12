@@ -15,6 +15,18 @@
 <link rel="stylesheet" href="../../../stylesheets/website.css"/>
 
 <link rel="stylesheet" href="../../../book.min.f2a0cdad2e0137fc7e70bc050b9c5d2798b5b4f45b50cfb8e342022c8cfd0732.css"/>
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-48357651-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
   
 </head>
 
@@ -153,8 +165,8 @@
 <li><a href="../../../extension_points/package_repository_extension.html">Package Repository Extension</a></li>
 <li><a href="../../../extension_points/yum_repository_poller.html">Yum Repository Poller</a></li>
 <li><a href="../../../extension_points/scm_extension.html">SCM Extension</a></li>
-<li><a href="../../../extension_points/task_extension.html">Task Extension</a></li>
-<li><a href="../../../extension_points/notification_extension.html">Notification Extension</a></li>
+<li><a href="../../../extension_points/task_extension.html">Task Extension</a>
+<!---  - [Notification Extension](/extension_points/notification_extension.html)--></li>
 <li><a href="../../../extension_points/configrepo_extension.html">Configuration repository Extension</a></li>
 </ul></li>
 <li><a href="../../../gocd_on_kubernetes.html"><strong>GoCD on Kubernetes</strong></a>
@@ -230,6 +242,7 @@
 
       
 <article class="markdown">
+  <p>
 
 <h1 id="installing-gocd-agent-on-mac-os-x">Installing GoCD agent on Mac OS X</h1>
 
@@ -254,25 +267,18 @@ GoCD server. By default it will try connecting to the local machine. Click the O
 
 <ol>
 <li><p>Overriding them during startup when starting from the terminal</p>
-
-<pre><code class="language-bash">PATH=$PATH:/usr/local/bin open /Applications/Go\ Agent.app
-</code></pre></li>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">PATH<span style="color:#f92672">=</span>$PATH:/usr/local/bin open /Applications/Go<span style="color:#ae81ff">\ </span>Agent.app</code></pre></div></li>
 
 <li><p>Overriding them using a file <code>~/Library/Application Support/Go Agent/overrides.env</code>. This file is sourced during agent startup, and it can be setup to change environment variables.</p>
-
-<pre><code class="language-bash">PATH=$PATH:/usr/local/bin
-</code></pre></li>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">PATH<span style="color:#f92672">=</span>$PATH:/usr/local/bin</code></pre></div></li>
 </ol>
 
 <h2 id="location-of-gocd-agent-files">Location of GoCD agent files</h2>
 
 <p>The GoCD agent installs its files in the following locations on your filesystem:</p>
-
-<pre><code class="language-bash">/Applications/Go Agent.app                                                  # The go agent application
-~/Library/Preferences/com.thoughtworks.go.agent.properties                  # The agent properties (host and port are saved here)
-~/Library/Application Support/Go Agent                                      # The agent directory
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">/Applications/Go Agent.app                                                  <span style="color:#75715e"># The go agent application</span>
+~/Library/Preferences/com.thoughtworks.go.agent.properties                  <span style="color:#75715e"># The agent properties (host and port are saved here)</span>
+~/Library/Application Support/Go Agent                                      <span style="color:#75715e"># The agent directory</span></code></pre></div>
 <p>You can find logs in <code>~/Library/Application Support/Go Agent</code>. The <code>osx-app.log</code> file contains the info used to bootstrap the agent jar.</p>
 
 <h2 id="setting-the-server-location-without-the-gui">Setting the server location without the GUI</h2>
@@ -288,6 +294,7 @@ GoCD server. By default it will try connecting to the local machine. Click the O
 <li>Follow the instructions <a href="../../../configuration/managing_a_build_cloud.html">here</a> to find the agent you&rsquo;ve just installed on the list and add the agent to your cloud. The Go server will now schedule work for this agent.</li>
 </ol>
 
+</p>
 </article>
 
       
@@ -328,6 +335,17 @@ GoCD server. By default it will try connecting to the local machine. Click the O
 
   
   
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-48357651-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
 </body>
 
 </html>

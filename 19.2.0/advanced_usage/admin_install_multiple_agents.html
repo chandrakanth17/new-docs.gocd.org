@@ -15,6 +15,18 @@
 <link rel="stylesheet" href="../stylesheets/website.css"/>
 
 <link rel="stylesheet" href="../book.min.f2a0cdad2e0137fc7e70bc050b9c5d2798b5b4f45b50cfb8e342022c8cfd0732.css"/>
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-48357651-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
   
 </head>
 
@@ -153,8 +165,8 @@
 <li><a href="../extension_points/package_repository_extension.html">Package Repository Extension</a></li>
 <li><a href="../extension_points/yum_repository_poller.html">Yum Repository Poller</a></li>
 <li><a href="../extension_points/scm_extension.html">SCM Extension</a></li>
-<li><a href="../extension_points/task_extension.html">Task Extension</a></li>
-<li><a href="../extension_points/notification_extension.html">Notification Extension</a></li>
+<li><a href="../extension_points/task_extension.html">Task Extension</a>
+<!---  - [Notification Extension](/extension_points/notification_extension.html)--></li>
 <li><a href="../extension_points/configrepo_extension.html">Configuration repository Extension</a></li>
 </ul></li>
 <li><a href="../gocd_on_kubernetes.html"><strong>GoCD on Kubernetes</strong></a>
@@ -230,6 +242,7 @@
 
       
 <article class="markdown">
+  <p>
 
 <h1 id="install-multiple-agents-on-the-same-machine">Install multiple agents on the same machine</h1>
 
@@ -255,11 +268,11 @@ Just after the line #include ../conf/wrapper-license.conf, add
 <li>set.GO_AGENT_DIR=C:\Program Files\Go Agent 2</li>
 <li>set.GO_AGENT_JAVA_HOME=%GO_AGENT_DIR%\jre</li>
 </ul></li>
-<li>Run the following command
-<code>
-sc create GoAgent2 binPath= &quot;\&quot;C:\Program Files\Go Agent 2\cruisewrapper.exe\&quot; -s \&quot;C:\Program Files\Go Agent 2\config\wrapper-agent.conf\&quot;&quot;
-</code></li>
-<li>Start &ldquo;GoAgent2&rdquo; service</li>
+
+<li><p>Run the following command</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sc create GoAgent2 binPath<span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;\&#34;C:\Program Files\Go Agent 2\cruisewrapper.exe\&#34; -s \&#34;C:\Program Files\Go Agent 2\config\wrapper-agent.conf\&#34;&#34;</span></code></pre></div></li>
+
+<li><p>Start &ldquo;GoAgent2&rdquo; service</p></li>
 </ul>
 
 <h3 id="running-as-windows-command">Running as Windows command</h3>
@@ -280,10 +293,7 @@ sc create GoAgent2 binPath= &quot;\&quot;C:\Program Files\Go Agent 2\cruisewrapp
 <li>Assuming your first agent in at /Applications/Go Agent.app, copy that to another location, say
 /Applications/Go Agent 2.app. Once you do that, you can start the application like this:</li>
 </ul>
-
-<pre><code>  GO_APPLICATION_NAME=&quot;Go Agent 2&quot; open /Applications/Go\ Agent\ 2.app
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">  GO_APPLICATION_NAME<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Go Agent 2&#34;</span> open /Applications/Go<span style="color:#ae81ff">\ </span>Agent<span style="color:#ae81ff">\ </span><span style="color:#ae81ff">2</span>.app</code></pre></div>
 <p>The logs and other files related to the second agent should be available at
   &ldquo;<user-home>/Library/Application Support/Go Agent 2&rdquo; and the icon in the dock
   will be called &ldquo;Go Agent 2&rdquo; as well.</p>
@@ -297,31 +307,26 @@ sc create GoAgent2 binPath= &quot;\&quot;C:\Program Files\Go Agent 2\cruisewrapp
 
 <ul>
 <li><a href="../installation/installing_go_agent.html">Install your first agent with the installer</a></li>
-<li>To create a second agent on the same host, run this as root:
-<code>
-cp /etc/init.d/go-agent /etc/init.d/go-agent-1
-sed -i 's/# Provides: go-agent$/# Provides: go-agent-1/g' /etc/init.d/go-agent-1
+
+<li><p>To create a second agent on the same host, run this as root:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cp /etc/init.d/go-agent /etc/init.d/go-agent-1
+sed -i <span style="color:#e6db74">&#39;s/# Provides: go-agent$/# Provides: go-agent-1/g&#39;</span> /etc/init.d/go-agent-1
 ln -s /usr/share/go-agent /usr/share/go-agent-1
 cp -p /etc/default/go-agent /etc/default/go-agent-1
-mkdir /var/{lib,log}/go-agent-1
-chown go:go /var/{lib,log}/go-agent-1
-</code></li>
+mkdir /var/<span style="color:#f92672">{</span>lib,log<span style="color:#f92672">}</span>/go-agent-1
+chown go:go /var/<span style="color:#f92672">{</span>lib,log<span style="color:#f92672">}</span>/go-agent-1</code></pre></div></li>
 
 <li><p>To enable starting the go-agent service during system boot:</p>
 
 <ul>
-<li>on Debian:
-<code>
-insserv go-agent-1
-</code></li>
-<li>on Ubuntu:
-<code>
-update-rc.d go-agent-1 defaults
-</code></li>
-<li>on Centos and Redhat:
-<code>
-chkconfig go-agent-1 on
-</code></li>
+<li><p>on Debian:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">insserv go-agent-1</code></pre></div></li>
+
+<li><p>on Ubuntu:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">update-rc.d go-agent-1 defaults</code></pre></div></li>
+
+<li><p>on Centos and Redhat:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">chkconfig go-agent-1 on</code></pre></div></li>
 </ul></li>
 
 <li><p>You can now start or stop the second agent using /etc/init.d/go-agent-1
@@ -337,11 +342,11 @@ on.</p></li>
 <ul>
 <li><a href="../installation/installing_go_agent.html">Install your first agent with the installer</a></li>
 <li>Make an empty folder called /var/lib/go-agent-2</li>
-<li>In this folder, run
-<code>
-java -jar /usr/share/go-agent/agent-bootstrapper.jar -serverUrl https://127.0.0.1/go &amp;
-</code></li>
+
+<li><p>In this folder, run</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">java -jar /usr/share/go-agent/agent-bootstrapper.jar -serverUrl https://127.0.0.1/go &amp;</code></pre></div></li>
 </ul>
+</p>
 </article>
 
       
@@ -386,6 +391,17 @@ java -jar /usr/share/go-agent/agent-bootstrapper.jar -serverUrl https://127.0.0.
 
   
   
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-48357651-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
 </body>
 
 </html>

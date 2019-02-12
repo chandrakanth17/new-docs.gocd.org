@@ -15,6 +15,18 @@
 <link rel="stylesheet" href="../stylesheets/website.css"/>
 
 <link rel="stylesheet" href="../book.min.f2a0cdad2e0137fc7e70bc050b9c5d2798b5b4f45b50cfb8e342022c8cfd0732.css"/>
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-48357651-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
   
 </head>
 
@@ -153,8 +165,8 @@
 <li><a href="../extension_points/package_repository_extension.html">Package Repository Extension</a></li>
 <li><a href="../extension_points/yum_repository_poller.html">Yum Repository Poller</a></li>
 <li><a href="../extension_points/scm_extension.html">SCM Extension</a></li>
-<li><a href="../extension_points/task_extension.html">Task Extension</a></li>
-<li><a href="../extension_points/notification_extension.html">Notification Extension</a></li>
+<li><a href="../extension_points/task_extension.html">Task Extension</a>
+<!---  - [Notification Extension](/extension_points/notification_extension.html)--></li>
 <li><a href="../extension_points/configrepo_extension.html">Configuration repository Extension</a></li>
 </ul></li>
 <li><a href="../gocd_on_kubernetes.html"><strong>GoCD on Kubernetes</strong></a>
@@ -230,6 +242,7 @@
 
       
 <article class="markdown">
+  <p>
 
 <h1 id="auto-registration-of-remote-agents">Auto registration of remote agents</h1>
 
@@ -238,14 +251,11 @@
 <ul>
 <li>Add an attribute named &ldquo;agentAutoRegisterKey&rdquo;, for e.g., agentAutoRegisterKey=&ldquo;388b633a88de126531afa41eff9aa69e&rdquo;, in the server configuration fragment, in case it is not present.</li>
 </ul>
-
-<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
-&lt;cruise xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xsi:noNamespaceSchemaLocation=&quot;cruise-config.xsd&quot; schemaVersion=&quot;75&quot;&gt;
-  &lt;server agentAutoRegisterKey=&quot;388b633a88de126531afa41eff9aa69e&quot;&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#75715e">&lt;?xml version=&#34;1.0&#34; encoding=&#34;utf-8&#34;?&gt;</span>
+<span style="color:#f92672">&lt;cruise</span> <span style="color:#a6e22e">xmlns:xsi=</span><span style="color:#e6db74">&#34;http://www.w3.org/2001/XMLSchema-instance&#34;</span> <span style="color:#a6e22e">xsi:noNamespaceSchemaLocation=</span><span style="color:#e6db74">&#34;cruise-config.xsd&#34;</span> <span style="color:#a6e22e">schemaVersion=</span><span style="color:#e6db74">&#34;75&#34;</span><span style="color:#f92672">&gt;</span>
+  <span style="color:#f92672">&lt;server</span> <span style="color:#a6e22e">agentAutoRegisterKey=</span><span style="color:#e6db74">&#34;388b633a88de126531afa41eff9aa69e&#34;</span><span style="color:#f92672">&gt;</span>
   ...
-&lt;/cruise&gt;
-</code></pre>
-
+<span style="color:#f92672">&lt;/cruise&gt;</span></code></pre></div>
 <ul>
 <li><p>On the remote GoCD Agent machine, create a file named <code>&lt;agent_installation_directory&gt;/config/autoregister.properties</code>.</p>
 
@@ -301,20 +311,18 @@
 </table>
 
 <p>Example</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">agent.auto.register.key<span style="color:#f92672">=</span>388b633a88de126531afa41eff9aa69e
+agent.auto.register.resources<span style="color:#f92672">=</span>ant,java
+agent.auto.register.environments<span style="color:#f92672">=</span>QA,Performance
+agent.auto.register.hostname<span style="color:#f92672">=</span>Agent01
 
-<pre><code>agent.auto.register.key=388b633a88de126531afa41eff9aa69e
-agent.auto.register.resources=ant,java
-agent.auto.register.environments=QA,Performance
-agent.auto.register.hostname=Agent01
-
-# if you're using elastic agents, these would be needed as well
-agent.auto.register.elasticAgent.agentId=i-123456
-agent.auto.register.elasticAgent.pluginId=com.example.aws
-</code></pre>
-
+<span style="color:#75715e"># if you&#39;re using elastic agents, these would be needed as well</span>
+agent.auto.register.elasticAgent.agentId<span style="color:#f92672">=</span>i-123456
+agent.auto.register.elasticAgent.pluginId<span style="color:#f92672">=</span>com.example.aws</code></pre></div>
 <ul>
 <li>Now, bringing up the remote agent should automatically register with the GoCD Server without the administrator having to &lsquo;Enable&rsquo; the newly added agent and configure its resources and assign it to environments.</li>
 </ul>
+</p>
 </article>
 
       
@@ -349,6 +357,17 @@ agent.auto.register.elasticAgent.pluginId=com.example.aws
 
   
   
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-48357651-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
 </body>
 
 </html>

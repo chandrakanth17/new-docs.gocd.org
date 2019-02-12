@@ -15,6 +15,18 @@
 <link rel="stylesheet" href="../stylesheets/website.css"/>
 
 <link rel="stylesheet" href="../book.min.f2a0cdad2e0137fc7e70bc050b9c5d2798b5b4f45b50cfb8e342022c8cfd0732.css"/>
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-48357651-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
   
 </head>
 
@@ -153,8 +165,8 @@
 <li><a href="../extension_points/package_repository_extension.html">Package Repository Extension</a></li>
 <li><a href="../extension_points/yum_repository_poller.html">Yum Repository Poller</a></li>
 <li><a href="../extension_points/scm_extension.html">SCM Extension</a></li>
-<li><a href="../extension_points/task_extension.html">Task Extension</a></li>
-<li><a href="../extension_points/notification_extension.html">Notification Extension</a></li>
+<li><a href="../extension_points/task_extension.html">Task Extension</a>
+<!---  - [Notification Extension](/extension_points/notification_extension.html)--></li>
 <li><a href="../extension_points/configrepo_extension.html">Configuration repository Extension</a></li>
 </ul></li>
 <li><a href="../gocd_on_kubernetes.html"><strong>GoCD on Kubernetes</strong></a>
@@ -230,6 +242,7 @@
 
       
 <article class="markdown">
+  <p>
 
 <h1 id="configuring-gocd-server-details">Configuring GoCD server details</h1>
 
@@ -247,23 +260,17 @@
 
 <p>Power users can also configure this via the <strong>Config XML</strong> tab on the
 Admin section:</p>
-
-<pre><code class="language-xml">&lt;cruise&gt;
-  &lt;server artifactsdir=&quot;/path/to/artifacts/directory&quot;&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;cruise&gt;</span>
+  <span style="color:#f92672">&lt;server</span> <span style="color:#a6e22e">artifactsdir=</span><span style="color:#e6db74">&#34;/path/to/artifacts/directory&#34;</span><span style="color:#f92672">&gt;</span>
   ...
-  &lt;/server&gt;
-&lt;/cruise&gt;
-</code></pre>
-
+  <span style="color:#f92672">&lt;/server&gt;</span>
+<span style="color:#f92672">&lt;/cruise&gt;</span></code></pre></div>
 <p>In Windows, you may need to assign your artifact repository partition a separate drive letter. In Windows, your configuration might look like this:</p>
-
-<pre><code class="language-xml">&lt;cruise&gt;
-  &lt;server artifactsdir=&quot;E:\go-artifacts&quot;&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;cruise&gt;</span>
+  <span style="color:#f92672">&lt;server</span> <span style="color:#a6e22e">artifactsdir=</span><span style="color:#e6db74">&#34;E:\go-artifacts&#34;</span><span style="color:#f92672">&gt;</span>
   ...
-  &lt;/server&gt;
-&lt;/cruise&gt;
-</code></pre>
-
+  <span style="color:#f92672">&lt;/server&gt;</span>
+<span style="color:#f92672">&lt;/cruise&gt;</span></code></pre></div>
 <p>When you have entered this information, click &ldquo;Save&rdquo; to save the configuration file.</p>
 
 <p>You can change the artifacts directory location at any time using the method described above, even when GoCD is running. However GoCD will not move existing artifacts to the new location for you, and changing the location while GoCD is running won&rsquo;t take effect until GoCD Server is restarted.</p>
@@ -289,14 +296,11 @@ Admin section:</p>
 <p>GoCD generates URLs that are relative to the base URL of the request. However, there are scenarios, such as sending emails, generating feeds where GoCD cannot rely upon publishing URLs relative to a request. If you have fronted GoCD with a reverse proxy, this value should be the base URL for the proxy and not the internal GoCD address. For this reason, it is necessary to specify this configuration. This URL should contain the port if your base URL contains a non-standard port.</p>
 
 <p>Power users, if they so desire, can directly update the <a href="../configuration/configuration_reference.html#server">server</a> section.</p>
-
-<pre><code class="language-xml">&lt;cruise&gt;
-      &lt;server siteUrl=&quot;http://&lt;host&gt;:&lt;port&gt;&quot; secureSiteUrl=&quot;https://&lt;host&gt;:&lt;securePort&gt;&quot;&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;cruise&gt;</span>
+      <span style="color:#f92672">&lt;server</span> <span style="color:#a6e22e">siteUrl=</span><span style="color:#e6db74">&#34;http://&lt;host&gt;:&lt;port&gt;&#34;</span> <span style="color:#a6e22e">secureSiteUrl=</span><span style="color:#e6db74">&#34;https://&lt;host&gt;:&lt;securePort&gt;&#34;</span><span style="color:#f92672">&gt;</span>
         ...
-      &lt;/server&gt;
-&lt;/cruise&gt;
-</code></pre>
-
+      <span style="color:#f92672">&lt;/server&gt;</span>
+<span style="color:#f92672">&lt;/cruise&gt;</span></code></pre></div>
 <p>Certain features in GoCD, such as Mingle integration, require an HTTPS(SSL) endpoint. If you wish that your primary site URL be HTTP, but still want to have HTTPS endpoints for the features that require SSL, you can specify the secureSiteUrl attribute with a value of the base HTTPS URL.</p>
 
 <h3 id="also-see">Also see&hellip;</h3>
@@ -305,6 +309,7 @@ Admin section:</p>
 <li><a href="../installation/installing_go_agent.html">Installing GoCD agents</a></li>
 <li><a href="../installation/configure-reverse-proxy.html">Configure GoCD to work with a proxy</a></li>
 </ul>
+</p>
 </article>
 
       
@@ -346,6 +351,17 @@ Admin section:</p>
 
   
   
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-48357651-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
 </body>
 
 </html>

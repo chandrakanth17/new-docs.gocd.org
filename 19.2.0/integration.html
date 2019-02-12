@@ -15,6 +15,18 @@
 <link rel="stylesheet" href="./stylesheets/website.css"/>
 
 <link rel="stylesheet" href="./book.min.f2a0cdad2e0137fc7e70bc050b9c5d2798b5b4f45b50cfb8e342022c8cfd0732.css"/>
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-48357651-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
   
 </head>
 
@@ -153,8 +165,8 @@
 <li><a href="./extension_points/package_repository_extension.html">Package Repository Extension</a></li>
 <li><a href="./extension_points/yum_repository_poller.html">Yum Repository Poller</a></li>
 <li><a href="./extension_points/scm_extension.html">SCM Extension</a></li>
-<li><a href="./extension_points/task_extension.html">Task Extension</a></li>
-<li><a href="./extension_points/notification_extension.html">Notification Extension</a></li>
+<li><a href="./extension_points/task_extension.html">Task Extension</a>
+<!---  - [Notification Extension](/extension_points/notification_extension.html)--></li>
 <li><a href="./extension_points/configrepo_extension.html">Configuration repository Extension</a></li>
 </ul></li>
 <li><a href="./gocd_on_kubernetes.html"><strong>GoCD on Kubernetes</strong></a>
@@ -230,6 +242,7 @@
 
       
 <article class="markdown">
+  <p>
 
 <h1 id="gocd-integration-with-external-tools">GoCD Integration with external tools</h1>
 
@@ -244,13 +257,10 @@
 <p>The pattern has an extra &ldquo;#&rdquo; because it is an escape character for a parameter. <a href="../configuration/admin_use_parameters_in_configuration.html">More information&hellip;</a></p>
 
 <p>For power users, here&rsquo;s how you&rsquo;d do it from Config XML:</p>
-
-<pre><code class="language-xml">&lt;pipeline name=&quot;mypipeline&quot;&gt;
-  &lt;trackingtool link=&quot;http://mingle.thoughtworks.com/go/${ID}&quot; regex=&quot;##(\d+)&quot;/&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;pipeline</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;mypipeline&#34;</span><span style="color:#f92672">&gt;</span>
+  <span style="color:#f92672">&lt;trackingtool</span> <span style="color:#a6e22e">link=</span><span style="color:#e6db74">&#34;http://mingle.thoughtworks.com/go/${ID}&#34;</span> <span style="color:#a6e22e">regex=</span><span style="color:#e6db74">&#34;##(\d+)&#34;</span><span style="color:#f92672">/&gt;</span>
   ...
-&lt;/pipeline&gt;
-</code></pre>
-
+<span style="color:#f92672">&lt;/pipeline&gt;</span></code></pre></div>
 <p>Now, when a user commits code with comments like &ldquo;#4618 - Make sure the TrackingToolConfig and&hellip;&ldquo;, GoCD detects the modifications and automatically links story/bug numbers to the configured tracking tool:</p>
 
 <p><img src="./images/pipeline_activity_tracking_tool.png" alt="" /></p>
@@ -262,11 +272,9 @@
 <p>If you have switched on security in your configuration you can use BASIC authentication to connect. In many cases you can do this by including the username and password in the URL. The username and password should not include special characters.</p>
 
 <p>For example:</p>
-
-<pre><code>http://[username]:[password]@[your_go_server]:8153/go/cctray.xml
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">http://<span style="color:#f92672">[</span>username<span style="color:#f92672">]</span>:<span style="color:#f92672">[</span>password<span style="color:#f92672">]</span>@<span style="color:#f92672">[</span>your_go_server<span style="color:#f92672">]</span>:8153/go/cctray.xml</code></pre></div>
 <p>From 12.3, the CCTray feed includes a message tag with the &ldquo;breakers&rdquo; attribute that includes names of users who made the commit that broke the pipeline. Most CCTray clients support this message tag.</p>
+</p>
 </article>
 
       
@@ -305,6 +313,17 @@
 
   
   
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-48357651-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
 </body>
 
 </html>

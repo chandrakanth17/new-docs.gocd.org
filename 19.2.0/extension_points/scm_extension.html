@@ -15,6 +15,18 @@
 <link rel="stylesheet" href="../stylesheets/website.css"/>
 
 <link rel="stylesheet" href="../book.min.f2a0cdad2e0137fc7e70bc050b9c5d2798b5b4f45b50cfb8e342022c8cfd0732.css"/>
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-48357651-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
   
 </head>
 
@@ -153,8 +165,8 @@
 <li><a href="../extension_points/package_repository_extension.html">Package Repository Extension</a></li>
 <li><a href="../extension_points/yum_repository_poller.html">Yum Repository Poller</a></li>
 <li><a href="../extension_points/scm_extension.html">SCM Extension</a></li>
-<li><a href="../extension_points/task_extension.html">Task Extension</a></li>
-<li><a href="../extension_points/notification_extension.html">Notification Extension</a></li>
+<li><a href="../extension_points/task_extension.html">Task Extension</a>
+<!---  - [Notification Extension](/extension_points/notification_extension.html)--></li>
 <li><a href="../extension_points/configrepo_extension.html">Configuration repository Extension</a></li>
 </ul></li>
 <li><a href="../gocd_on_kubernetes.html"><strong>GoCD on Kubernetes</strong></a>
@@ -230,6 +242,7 @@
 
       
 <article class="markdown">
+  <p>
 
 <h1 id="scm-material">SCM Material</h1>
 
@@ -272,31 +285,28 @@ Cannot save SCM, found duplicate SCMs. [SCM Name: 'apple'], [SCM Name: 'orange']
 <h4 id="sample-xml-configuration">Sample XML Configuration</h4>
 
 <p>Here is a XML view of an SCM. Note the relation between SCM and pipeline material. Loosely typed property, key and value tags are used for SCM configuration in order to accommodate different plugins. If you choose to configure via direct XML edit, note that it isn&rsquo;t necessary to provide SCM IDs, GoCD server wil auto-generate them. However, not all validations that are performed while configuring via UI kick in while configuring via XML edit - the resulting failures will show up later in the server health message panel at the bottom right of the browser frame.</p>
-
-<pre><code class="language-xml">&lt;scms&gt;
-  &lt;scm id=&quot;3bfc282e-43a6-4795-ba9c-6c50665220dd&quot; name=&quot;git-repo&quot;&gt;
-    &lt;pluginConfiguration id=&quot;jgit&quot; version=&quot;1.0&quot; /&gt;
-    &lt;configuration&gt;
-      &lt;property&gt;
-        &lt;key&gt;url&lt;/key&gt;
-        &lt;value&gt;https://github.com/gocd/gocd.git&lt;/value&gt;
-      &lt;/property&gt;
-    &lt;/configuration&gt;
-  &lt;/scm&gt;
-&lt;/scms&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;scms&gt;</span>
+  <span style="color:#f92672">&lt;scm</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;3bfc282e-43a6-4795-ba9c-6c50665220dd&#34;</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;git-repo&#34;</span><span style="color:#f92672">&gt;</span>
+    <span style="color:#f92672">&lt;pluginConfiguration</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;jgit&#34;</span> <span style="color:#a6e22e">version=</span><span style="color:#e6db74">&#34;1.0&#34;</span> <span style="color:#f92672">/&gt;</span>
+    <span style="color:#f92672">&lt;configuration&gt;</span>
+      <span style="color:#f92672">&lt;property&gt;</span>
+        <span style="color:#f92672">&lt;key&gt;</span>url<span style="color:#f92672">&lt;/key&gt;</span>
+        <span style="color:#f92672">&lt;value&gt;</span>https://github.com/gocd/gocd.git<span style="color:#f92672">&lt;/value&gt;</span>
+      <span style="color:#f92672">&lt;/property&gt;</span>
+    <span style="color:#f92672">&lt;/configuration&gt;</span>
+  <span style="color:#f92672">&lt;/scm&gt;</span>
+<span style="color:#f92672">&lt;/scms&gt;</span>
 ...
-&lt;pipelines group=&quot;sample-group&quot;&gt;
-  &lt;pipeline name=&quot;upstream-pipeline&quot;&gt;
-    &lt;materials&gt;
-      &lt;scm ref=&quot;3bfc282e-43a6-4795-ba9c-6c50665220dd&quot; dest=&quot;dest&quot;&gt;
-        &lt;filter&gt;
-          &lt;ignore pattern=&quot;*.log&quot; /&gt;
-        &lt;/filter&gt;
-      &lt;/scm&gt;
-    &lt;/materials&gt;
-  ...
-</code></pre>
-
+<span style="color:#f92672">&lt;pipelines</span> <span style="color:#a6e22e">group=</span><span style="color:#e6db74">&#34;sample-group&#34;</span><span style="color:#f92672">&gt;</span>
+  <span style="color:#f92672">&lt;pipeline</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;upstream-pipeline&#34;</span><span style="color:#f92672">&gt;</span>
+    <span style="color:#f92672">&lt;materials&gt;</span>
+      <span style="color:#f92672">&lt;scm</span> <span style="color:#a6e22e">ref=</span><span style="color:#e6db74">&#34;3bfc282e-43a6-4795-ba9c-6c50665220dd&#34;</span> <span style="color:#a6e22e">dest=</span><span style="color:#e6db74">&#34;dest&#34;</span><span style="color:#f92672">&gt;</span>
+        <span style="color:#f92672">&lt;filter&gt;</span>
+          <span style="color:#f92672">&lt;ignore</span> <span style="color:#a6e22e">pattern=</span><span style="color:#e6db74">&#34;*.log&#34;</span> <span style="color:#f92672">/&gt;</span>
+        <span style="color:#f92672">&lt;/filter&gt;</span>
+      <span style="color:#f92672">&lt;/scm&gt;</span>
+    <span style="color:#f92672">&lt;/materials&gt;</span>
+  ...</code></pre></div>
 <h3 id="permissions">Permissions</h3>
 
 <p>Since SCMs are global entities changing a SCM definition will reflect on all pipelines that consume it - even those not in the same pipeline group as that of the person editing. To make the decision to &ldquo;edit&rdquo; / &ldquo;remove&rdquo; and &ldquo;add&rdquo; new material easier, we list all pipelines consuming the SCM.</p>
@@ -338,6 +348,7 @@ Cannot save SCM, found duplicate SCMs. [SCM Name: 'apple'], [SCM Name: 'orange']
 <li><a href="https://www.gocd.org/community/plugins.html#scm-plugins-count">SCM Plugins</a></li>
 <li><a href="https://github.com/gocd/gocd/issues/818">Github issue</a></li>
 </ul>
+</p>
 </article>
 
       
@@ -391,6 +402,17 @@ Cannot save SCM, found duplicate SCMs. [SCM Name: 'apple'], [SCM Name: 'orange']
 
   
   
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-48357651-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
 </body>
 
 </html>

@@ -15,6 +15,18 @@
 <link rel="stylesheet" href="../stylesheets/website.css"/>
 
 <link rel="stylesheet" href="../book.min.f2a0cdad2e0137fc7e70bc050b9c5d2798b5b4f45b50cfb8e342022c8cfd0732.css"/>
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-48357651-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
   
 </head>
 
@@ -153,8 +165,8 @@
 <li><a href="../extension_points/package_repository_extension.html">Package Repository Extension</a></li>
 <li><a href="../extension_points/yum_repository_poller.html">Yum Repository Poller</a></li>
 <li><a href="../extension_points/scm_extension.html">SCM Extension</a></li>
-<li><a href="../extension_points/task_extension.html">Task Extension</a></li>
-<li><a href="../extension_points/notification_extension.html">Notification Extension</a></li>
+<li><a href="../extension_points/task_extension.html">Task Extension</a>
+<!---  - [Notification Extension](/extension_points/notification_extension.html)--></li>
 <li><a href="../extension_points/configrepo_extension.html">Configuration repository Extension</a></li>
 </ul></li>
 <li><a href="../gocd_on_kubernetes.html"><strong>GoCD on Kubernetes</strong></a>
@@ -230,6 +242,7 @@
 
       
 <article class="markdown">
+  <p>
 
 <h1 id="gocd-fan-in-dependency-management">GoCD Fan-in Dependency Management</h1>
 
@@ -346,17 +359,13 @@
 
 <ul>
 <li><p>Fan-in as a feature is enabled by default. In case you need pipelines to trigger with every version regardless of ancestor versions you can disable fan-in. To disable fan-in you will need to add a system property and restart the GoCD server. On linux add the following line to /etc/default/go-server</p>
-
-<pre><code class="language-shell">export GO_SERVER_SYSTEM_PROPERTIES='-Dresolve.fanin.revisions=N'
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">export GO_SERVER_SYSTEM_PROPERTIES<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;-Dresolve.fanin.revisions=N&#39;</span></code></pre></div>
 <p>On windows, in the config folder of the GoCD server installation, edit the wrapper-server.conf file, and add an additional property with the value &lsquo;-Dresolve.fanin.revisions=N&rsquo;. For example:</p>
-
-<pre><code>wrapper.java.additional.17='-Dresolve.fanin.revisions=N'
-</code></pre></li>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">wrapper.java.additional.17<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;-Dresolve.fanin.revisions=N&#39;</span></code></pre></div></li>
 
 <li><p>GoCD will apply fan-in dependency resolution for pipelines that have auto trigger type only.</p></li>
 </ul>
+</p>
 </article>
 
       
@@ -402,6 +411,17 @@
 
   
   
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-48357651-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
 </body>
 
 </html>

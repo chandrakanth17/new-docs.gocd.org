@@ -15,6 +15,18 @@
 <link rel="stylesheet" href="../stylesheets/website.css"/>
 
 <link rel="stylesheet" href="../book.min.f2a0cdad2e0137fc7e70bc050b9c5d2798b5b4f45b50cfb8e342022c8cfd0732.css"/>
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-48357651-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
   
 </head>
 
@@ -153,8 +165,8 @@
 <li><a href="../extension_points/package_repository_extension.html">Package Repository Extension</a></li>
 <li><a href="../extension_points/yum_repository_poller.html">Yum Repository Poller</a></li>
 <li><a href="../extension_points/scm_extension.html">SCM Extension</a></li>
-<li><a href="../extension_points/task_extension.html">Task Extension</a></li>
-<li><a href="../extension_points/notification_extension.html">Notification Extension</a></li>
+<li><a href="../extension_points/task_extension.html">Task Extension</a>
+<!---  - [Notification Extension](/extension_points/notification_extension.html)--></li>
 <li><a href="../extension_points/configrepo_extension.html">Configuration repository Extension</a></li>
 </ul></li>
 <li><a href="../gocd_on_kubernetes.html"><strong>GoCD on Kubernetes</strong></a>
@@ -230,6 +242,7 @@
 
       
 <article class="markdown">
+  <p>
 
 <h1 id="configure-a-reverse-proxy-server-to-use-with-gocd-server">Configure a reverse proxy server to use with GoCD server</h1>
 
@@ -245,98 +258,89 @@
 <li>You have Apache with <code>mod_proxy</code> installed</li>
 <li>The Apache server sits on the same machine as the GoCD server (localhost)</li>
 </ul>
-
-<pre><code class="language-apache">Listen nnn.nnn.nnn.nnn:80
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-apache" data-lang="apache">Listen nnn.nnn.nnn.nnn:80
 NameVirtualHost nnn.nnn.nnn.nnn:80
 
-&lt;VirtualHost nnn.nnn.nnn.nnn:80&gt;
+<span style="color:#f92672">&lt;VirtualHost</span> <span style="color:#e6db74">nnn.nnn.nnn.nnn:80</span><span style="color:#f92672">&gt;</span>
   ServerName go.yourdomain.com
-  DocumentRoot /var/www/html
+  DocumentRoot <span style="color:#e6db74">/var/www/html</span>
 
-  &lt;IfVersion &gt;= 2.4&gt;
+  <span style="color:#f92672">&lt;IfVersion</span> <span style="color:#f92672">&gt;</span><span style="color:#960050;background-color:#1e0010">=</span> <span style="color:#960050;background-color:#1e0010">2</span>.<span style="color:#960050;background-color:#1e0010">4&gt;</span>
     ProxyPass         /  ws://localhost:8153/
     ProxyPassReverse  /  ws://localhost:8153/
-  &lt;/IfVersion&gt;
+  <span style="color:#f92672">&lt;/IfVersion&gt;</span>
 
-  &lt;IfVersion &lt; 2.4&gt;
+  <span style="color:#f92672">&lt;IfVersion</span> <span style="color:#e6db74">&lt; 2.4</span><span style="color:#f92672">&gt;</span>
     ProxyPass         /  http://localhost:8153/
     ProxyPassReverse  /  http://localhost:8153/
-  &lt;/IfVersion&gt;
+  <span style="color:#f92672">&lt;/IfVersion&gt;</span>
 
-  ProxyPreserveHost On
-&lt;/VirtualHost&gt;
-</code></pre>
-
+  ProxyPreserveHost <span style="color:#66d9ef">On</span>
+<span style="color:#f92672">&lt;/VirtualHost&gt;</span></code></pre></div>
 <p>If you&rsquo;re additionally using SSL (highly recommended), you may use the following snippet -</p>
-
-<pre><code class="language-apache">Listen nnn.nnn.nnn.nnn:80
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-apache" data-lang="apache">Listen nnn.nnn.nnn.nnn:80
 NameVirtualHost nnn.nnn.nnn.nnn:80
 
-&lt;VirtualHost nnn.nnn.nnn.nnn:80&gt;
+<span style="color:#f92672">&lt;VirtualHost</span> <span style="color:#e6db74">nnn.nnn.nnn.nnn:80</span><span style="color:#f92672">&gt;</span>
   ServerName gocd.example.com
 
-  # Redirect any http requests to https
-  RewriteEngine On
+  <span style="color:#75715e"># Redirect any http requests to https</span>
+  RewriteEngine <span style="color:#66d9ef">On</span>
   RewriteRule ^/(.*)$ https://%{SERVER_NAME}/$1 [R=permanent,L]
-&lt;/VirtualHost&gt;
+<span style="color:#f92672">&lt;/VirtualHost&gt;</span>
 
-&lt;VirtualHost nnn.nnn.nnn.nnn:443&gt;
+<span style="color:#f92672">&lt;VirtualHost</span> <span style="color:#e6db74">nnn.nnn.nnn.nnn:443</span><span style="color:#f92672">&gt;</span>
   ServerName gocd.example.com
 
-  # Proxy everything over to the GoCD server
+  <span style="color:#75715e"># Proxy everything over to the GoCD server</span>
   ProxyPass         /  http://localhost:8153/
   ProxyPassReverse  /  http://localhost:8153/
-  ProxyPreserveHost On
-  RequestHeader set X-Forwarded-Proto &quot;https&quot;
+  ProxyPreserveHost <span style="color:#66d9ef">On</span>
+  RequestHeader set X-Forwarded-Proto <span style="color:#e6db74">&#34;https&#34;</span>
 
-  &lt;Location /&gt;
+  <span style="color:#f92672">&lt;Location</span> <span style="color:#e6db74">/</span><span style="color:#f92672">&gt;</span>
     Order allow,deny
-    Allow from all
-  &lt;/Location&gt;
+    Allow from <span style="color:#66d9ef">all</span>
+  <span style="color:#f92672">&lt;/Location&gt;</span>
 
-  # SSL configuration
-  SSLEngine on
+  <span style="color:#75715e"># SSL configuration</span>
+  SSLEngine <span style="color:#66d9ef">on</span>
 
-  SSLCertificateFile /etc/pki/tls/certs/gocd.example.com.pem
-  SSLCertificateKeyFile /etc/pki/tls/private/gocd.example.com.key
-  SSLCertificateChainFile /etc/pki/tls/certs/gocd.example.com.pem.chained.pem
-&lt;/VirtualHost&gt;
-</code></pre>
-
+  SSLCertificateFile <span style="color:#e6db74">/etc/pki/tls/certs/gocd.example.com.pem</span>
+  SSLCertificateKeyFile <span style="color:#e6db74">/etc/pki/tls/private/gocd.example.com.key</span>
+  SSLCertificateChainFile <span style="color:#e6db74">/etc/pki/tls/certs/gocd.example.com.pem.chained.pem</span>
+<span style="color:#f92672">&lt;/VirtualHost&gt;</span></code></pre></div>
 <h2 id="gocd-with-nginx">GoCD with NGINX</h2>
-
-<pre><code class="language-nginx">server {
-  # Redirect any http requests to https
-  listen         80;
-  server_name    gocd.example.com;
-  return 301     https://gocd.example.com$request_uri;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-nginx" data-lang="nginx"><span style="color:#66d9ef">server</span> {
+  <span style="color:#75715e"># Redirect any http requests to https
+</span><span style="color:#75715e"></span>  <span style="color:#f92672">listen</span>         <span style="color:#ae81ff">80</span>;
+  <span style="color:#f92672">server_name</span>    <span style="color:#e6db74">gocd.example.com</span>;
+  <span style="color:#f92672">return</span> <span style="color:#ae81ff">301</span>     <span style="color:#e6db74">https://gocd.example.com</span>$request_uri;
 }
 
-map $http_upgrade $connection_upgrade {
-  default upgrade;
-  '' close;
+<span style="color:#66d9ef">map</span> $http_upgrade $connection_upgrade {
+  <span style="color:#f92672">default</span> <span style="color:#e6db74">upgrade</span>;
+  <span style="color:#f92672">&#39;&#39;</span> <span style="color:#e6db74">close</span>;
 }
 
-server {
-  listen                    443 ssl;
-  server_name               gocd.example.com;
+<span style="color:#66d9ef">server</span> {
+  <span style="color:#f92672">listen</span>                    <span style="color:#ae81ff">443</span> <span style="color:#e6db74">ssl</span>;
+  <span style="color:#f92672">server_name</span>               <span style="color:#e6db74">gocd.example.com</span>;
 
-  ssl_certificate           /etc/pki/tls/certs/gocd.example.com.chained.pem;
-  ssl_certificate_key       /etc/pki/tls/private/gocd.example.com.key;
+  <span style="color:#f92672">ssl_certificate</span>           <span style="color:#e6db74">/etc/pki/tls/certs/gocd.example.com.chained.pem</span>;
+  <span style="color:#f92672">ssl_certificate_key</span>       <span style="color:#e6db74">/etc/pki/tls/private/gocd.example.com.key</span>;
 
-  # Proxy everything over to the GoCD server
-  location / {
-    proxy_set_header        Host            $host;
-    proxy_set_header        X-Real-IP       $remote_addr;
-    proxy_set_header        X-Forwarded-For $proxy_add_x_forwarded_for;
-    proxy_set_header        X-Forwarded-Proto $scheme;
-    proxy_http_version      1.1;
-    proxy_set_header 	    Upgrade $http_upgrade;
-    proxy_set_header 	    Connection $connection_upgrade;
+  <span style="color:#75715e"># Proxy everything over to the GoCD server
+</span><span style="color:#75715e"></span>  <span style="color:#f92672">location</span> <span style="color:#e6db74">/</span> {
+    <span style="color:#f92672">proxy_set_header</span>        <span style="color:#e6db74">Host</span>            $host;
+    <span style="color:#f92672">proxy_set_header</span>        <span style="color:#e6db74">X-Real-IP</span>       $remote_addr;
+    <span style="color:#f92672">proxy_set_header</span>        <span style="color:#e6db74">X-Forwarded-For</span> $proxy_add_x_forwarded_for;
+    <span style="color:#f92672">proxy_set_header</span>        <span style="color:#e6db74">X-Forwarded-Proto</span> $scheme;
+    <span style="color:#f92672">proxy_http_version</span>      <span style="color:#ae81ff">1</span><span style="color:#e6db74">.1</span>;
+    <span style="color:#f92672">proxy_set_header</span> 	    <span style="color:#e6db74">Upgrade</span> $http_upgrade;
+    <span style="color:#f92672">proxy_set_header</span> 	    <span style="color:#e6db74">Connection</span> $connection_upgrade;
   }
-}
-</code></pre>
-
+}</code></pre></div>
 <p><a id="agents-and-custom-ssl-ports"></a></p>
 
 <h2 id="agents-and-reverse-proxies">Agents and reverse proxies</h2>
@@ -348,6 +352,7 @@ server {
 <ul>
 <li><a href="../installation/configuring_server_details.html#configure-site-urls">Configure site URLs</a></li>
 </ul>
+</p>
 </article>
 
       
@@ -388,6 +393,17 @@ server {
 
   
   
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-48357651-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
 </body>
 
 </html>

@@ -15,6 +15,18 @@
 <link rel="stylesheet" href="../stylesheets/website.css"/>
 
 <link rel="stylesheet" href="../book.min.f2a0cdad2e0137fc7e70bc050b9c5d2798b5b4f45b50cfb8e342022c8cfd0732.css"/>
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-48357651-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
   
 </head>
 
@@ -153,8 +165,8 @@
 <li><a href="../extension_points/package_repository_extension.html">Package Repository Extension</a></li>
 <li><a href="../extension_points/yum_repository_poller.html">Yum Repository Poller</a></li>
 <li><a href="../extension_points/scm_extension.html">SCM Extension</a></li>
-<li><a href="../extension_points/task_extension.html">Task Extension</a></li>
-<li><a href="../extension_points/notification_extension.html">Notification Extension</a></li>
+<li><a href="../extension_points/task_extension.html">Task Extension</a>
+<!---  - [Notification Extension](/extension_points/notification_extension.html)--></li>
 <li><a href="../extension_points/configrepo_extension.html">Configuration repository Extension</a></li>
 </ul></li>
 <li><a href="../gocd_on_kubernetes.html"><strong>GoCD on Kubernetes</strong></a>
@@ -230,16 +242,14 @@
 
       
 <article class="markdown">
+  <p>
 
 <h1 id="gocd-unable-to-poll-for-changes">GoCD unable to poll for changes</h1>
 
 <p>GoCD server polls for changes to all materials of &lsquo;Auto Triggered&rsquo; pipelines. By default, polling occurs every minute and ten materials at a time. The polling interval and the number of materials to be polled simultaneously are configurable.</p>
 
 <p>GoCD uses SCM commands to poll for changes. For example, to check for any new changes in SVN repository the following command is used:</p>
-
-<pre><code class="language-shell">svn log --non-interactive --xml -v -r HEAD:'revision' 'repository-URL'
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">svn log --non-interactive --xml -v -r HEAD:<span style="color:#e6db74">&#39;revision&#39;</span> <span style="color:#e6db74">&#39;repository-URL&#39;</span></code></pre></div>
 <p>The SCM command used by GoCD server can hang with no output. Invalid configuration, network issues, console input block are some of the causes for such a situation. Such scenarios cause pipeline scheduling delays and also lead to performance degradation</p>
 
 <p>Such a scenario is notified to the users by a warning in Server Health; when clicked shows a message similar to the one below.</p>
@@ -260,9 +270,7 @@
 <li><p>Determine the process that&rsquo;s hung. The extra information like URL:&ldquo;<a href="https://test@bitbucket.org/test/git_repo.git&quot;">https://test@bitbucket.org/test/git_repo.git&quot;</a> in the warning information should help you with this.</p></li>
 
 <li><p>On linux system, you should see lines like these:</p>
-
-<pre><code>go 31201 1  0 Feb07 ?  00:00:00 git clone https://test@bitbucket.org/test/git_repo.git /var/lib/cruise-server/pipelines/flyweight/b9ec0885-eb32-458c-bd6b-eeefe3ef9816
-</code></pre></li>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">go <span style="color:#ae81ff">31201</span> <span style="color:#ae81ff">1</span>  <span style="color:#ae81ff">0</span> Feb07 ?  <span style="color:#ae81ff">00</span>:00:00 git clone https://test@bitbucket.org/test/git_repo.git /var/lib/cruise-server/pipelines/flyweight/b9ec0885-eb32-458c-bd6b-eeefe3ef9816</code></pre></div></li>
 
 <li><p>Kill the process and all its children (the whole process tree).</p></li>
 
@@ -279,19 +287,14 @@
 <li>GoCD server waits for 15 minutes (of no output) before it warns user about possible hung material update. User can modify this wait time using a System Property: &lsquo;material.update.inactive.timeout&rsquo;.</li>
 
 <li><p>On linux installations of GoCD server, add the following line to /etc/default/go-server.</p>
-
-<pre><code class="language-shell">export GO_SERVER_SYSTEM_PROPERTIES='-Dmaterial.update.inactive.timeout=20'
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">export GO_SERVER_SYSTEM_PROPERTIES<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;-Dmaterial.update.inactive.timeout=20&#39;</span></code></pre></div>
 <p>The above configuration sets the time that GoCD server uses to determine if a material update is possibly hung, to 20 minutes.</p></li>
 
 <li><p>On Windows, add the following line in the <em><a href="../installation/installing_go_server.html">wrapper-properties.conf</a></em> file in the config folder of the GoCD server installation where <strong>x</strong> is 1 more than the highest number in <em>wrapper-server.conf</em> and <em>wrapper-properties.conf</em> combined.</p>
-
-<pre><code>wrapper.java.additional.x='-Dmaterial.update.inactive.timeout=20'
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">wrapper.java.additional.x<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;-Dmaterial.update.inactive.timeout=20&#39;</span></code></pre></div>
 <p>The above configuration sets the time that GoCD server uses to determine if a material update is possibly hung, to 20 minutes.</p></li>
 </ul>
+</p>
 </article>
 
       
@@ -330,6 +333,17 @@
 
   
   
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-48357651-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
 </body>
 
 </html>

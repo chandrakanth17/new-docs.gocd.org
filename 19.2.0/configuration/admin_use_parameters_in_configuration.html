@@ -15,6 +15,18 @@
 <link rel="stylesheet" href="../stylesheets/website.css"/>
 
 <link rel="stylesheet" href="../book.min.f2a0cdad2e0137fc7e70bc050b9c5d2798b5b4f45b50cfb8e342022c8cfd0732.css"/>
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-48357651-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
   
 </head>
 
@@ -153,8 +165,8 @@
 <li><a href="../extension_points/package_repository_extension.html">Package Repository Extension</a></li>
 <li><a href="../extension_points/yum_repository_poller.html">Yum Repository Poller</a></li>
 <li><a href="../extension_points/scm_extension.html">SCM Extension</a></li>
-<li><a href="../extension_points/task_extension.html">Task Extension</a></li>
-<li><a href="../extension_points/notification_extension.html">Notification Extension</a></li>
+<li><a href="../extension_points/task_extension.html">Task Extension</a>
+<!---  - [Notification Extension](/extension_points/notification_extension.html)--></li>
 <li><a href="../extension_points/configrepo_extension.html">Configuration repository Extension</a></li>
 </ul></li>
 <li><a href="../gocd_on_kubernetes.html"><strong>GoCD on Kubernetes</strong></a>
@@ -230,6 +242,7 @@
 
       
 <article class="markdown">
+  <p>
 
 <h1 id="parameterize-your-configuration">Parameterize your Configuration</h1>
 
@@ -244,24 +257,20 @@
 <h2 id="defining-and-using-a-parameter">Defining and using a parameter</h2>
 
 <p>Parameter values are defined in the <code>&lt;params&gt;</code> tag within a pipeline and can be used anywhere within that pipeline using #{param_name}. The following example defines a new parameter called &ldquo;myParam&rdquo; and uses it in a job.</p>
-
-<pre><code class="language-xml">&lt;pipeline name=&quot;my_pipeline&quot;&gt;
-  &lt;params&gt;
-    &lt;param name=&quot;myParam&quot;&gt;hello world&lt;/param&gt;
-  &lt;/params&gt;
-  &lt;stage name=&quot;my_stage&quot;&gt;
-    &lt;jobs&gt;
-      &lt;job name=&quot;my_job&quot;&gt;
-        &lt;tasks&gt;
-          &lt;exec command=&quot;echo&quot; args=&quot;#{myParam}&quot;/&gt;
-        &lt;/tasks&gt;
-      &lt;/job&gt;
-    &lt;/jobs&gt;
-  &lt;/stage&gt;
-&lt;/pipeline&gt;
-
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;pipeline</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;my_pipeline&#34;</span><span style="color:#f92672">&gt;</span>
+  <span style="color:#f92672">&lt;params&gt;</span>
+    <span style="color:#f92672">&lt;param</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;myParam&#34;</span><span style="color:#f92672">&gt;</span>hello world<span style="color:#f92672">&lt;/param&gt;</span>
+  <span style="color:#f92672">&lt;/params&gt;</span>
+  <span style="color:#f92672">&lt;stage</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;my_stage&#34;</span><span style="color:#f92672">&gt;</span>
+    <span style="color:#f92672">&lt;jobs&gt;</span>
+      <span style="color:#f92672">&lt;job</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;my_job&#34;</span><span style="color:#f92672">&gt;</span>
+        <span style="color:#f92672">&lt;tasks&gt;</span>
+          <span style="color:#f92672">&lt;exec</span> <span style="color:#a6e22e">command=</span><span style="color:#e6db74">&#34;echo&#34;</span> <span style="color:#a6e22e">args=</span><span style="color:#e6db74">&#34;#{myParam}&#34;</span><span style="color:#f92672">/&gt;</span>
+        <span style="color:#f92672">&lt;/tasks&gt;</span>
+      <span style="color:#f92672">&lt;/job&gt;</span>
+    <span style="color:#f92672">&lt;/jobs&gt;</span>
+  <span style="color:#f92672">&lt;/stage&gt;</span>
+<span style="color:#f92672">&lt;/pipeline&gt;</span></code></pre></div>
 <blockquote>
 <p><strong>NOTE:</strong> If you want to use the <strong>#</strong> literal, you can escape it using another <strong>#</strong> literal. For example, if the parameter &ldquo;foo&rdquo; has the value &ldquo;one&rdquo;, then:</p>
 </blockquote>
@@ -295,39 +304,31 @@
 <h2 id="using-parameters-in-pipeline-templates">Using parameters in pipeline templates</h2>
 
 <p>Parameter usage within <a href="pipeline_templates.html">templates</a> is similar to usage within pipelines. The only difference is that you cannot <strong>define</strong> parameters in a template.</p>
-
-<pre><code class="language-xml">&lt;pipeline name=&quot;trunk&quot; template=&quot;my_template&quot;&gt;
-  &lt;params&gt;
-    &lt;param name=&quot;WORKING_DIR&quot;&gt;trunk&lt;/param&gt;
-  &lt;/params&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;pipeline</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;trunk&#34;</span> <span style="color:#a6e22e">template=</span><span style="color:#e6db74">&#34;my_template&#34;</span><span style="color:#f92672">&gt;</span>
+  <span style="color:#f92672">&lt;params&gt;</span>
+    <span style="color:#f92672">&lt;param</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;WORKING_DIR&#34;</span><span style="color:#f92672">&gt;</span>trunk<span style="color:#f92672">&lt;/param&gt;</span>
+  <span style="color:#f92672">&lt;/params&gt;</span>
   ...
-&lt;/pipeline&gt;
+<span style="color:#f92672">&lt;/pipeline&gt;</span>
 
-&lt;pipeline name=&quot;branch&quot; template=&quot;my_template&quot;&gt;
-  &lt;params&gt;
-    &lt;param name=&quot;WORKING_DIR&quot;&gt;branch&lt;/param&gt;
-  &lt;/params&gt;
+<span style="color:#f92672">&lt;pipeline</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;branch&#34;</span> <span style="color:#a6e22e">template=</span><span style="color:#e6db74">&#34;my_template&#34;</span><span style="color:#f92672">&gt;</span>
+  <span style="color:#f92672">&lt;params&gt;</span>
+    <span style="color:#f92672">&lt;param</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;WORKING_DIR&#34;</span><span style="color:#f92672">&gt;</span>branch<span style="color:#f92672">&lt;/param&gt;</span>
+  <span style="color:#f92672">&lt;/params&gt;</span>
   ...
-&lt;/pipeline&gt;
-
-</code></pre>
-
+<span style="color:#f92672">&lt;/pipeline&gt;</span></code></pre></div>
 <p>The parameter defined above is used the template below.</p>
-
-<pre><code class="language-xml">&lt;pipeline name=&quot;my_template&quot;&gt;
-  &lt;stage name=&quot;my_stage&quot;&gt;
-    &lt;jobs&gt;
-      &lt;job name=&quot;my_job&quot;&gt;
-        &lt;tasks&gt;
-          &lt;exec command=&quot;echo&quot; args=&quot;Updating code from svn repository svn://codebase/#{WORKING_DIR}&quot;/&gt;
-        &lt;/tasks&gt;
-      &lt;/job&gt;
-    &lt;/jobs&gt;
-  &lt;/stage&gt;
-&lt;/pipeline&gt;
-
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;pipeline</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;my_template&#34;</span><span style="color:#f92672">&gt;</span>
+  <span style="color:#f92672">&lt;stage</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;my_stage&#34;</span><span style="color:#f92672">&gt;</span>
+    <span style="color:#f92672">&lt;jobs&gt;</span>
+      <span style="color:#f92672">&lt;job</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;my_job&#34;</span><span style="color:#f92672">&gt;</span>
+        <span style="color:#f92672">&lt;tasks&gt;</span>
+          <span style="color:#f92672">&lt;exec</span> <span style="color:#a6e22e">command=</span><span style="color:#e6db74">&#34;echo&#34;</span> <span style="color:#a6e22e">args=</span><span style="color:#e6db74">&#34;Updating code from svn repository svn://codebase/#{WORKING_DIR}&#34;</span><span style="color:#f92672">/&gt;</span>
+        <span style="color:#f92672">&lt;/tasks&gt;</span>
+      <span style="color:#f92672">&lt;/job&gt;</span>
+    <span style="color:#f92672">&lt;/jobs&gt;</span>
+  <span style="color:#f92672">&lt;/stage&gt;</span>
+<span style="color:#f92672">&lt;/pipeline&gt;</span></code></pre></div>
 <h2 id="rules-around-usage-of-parameters">Rules around usage of parameters</h2>
 
 <p>While parameters are generally very flexible, there are some restrictions.</p>
@@ -354,6 +355,7 @@
 <li>A parameter cannot be composed with another parameter i.e. #{foo#{bar}} will not be evaluated recursively.</li>
 <li>If a parameter is referenced but is not defined, then the configuration is invalid (Go will not let you save an invalid configuration).</li>
 </ul>
+</p>
 </article>
 
       
@@ -394,6 +396,17 @@
 
   
   
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-48357651-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
 </body>
 
 </html>

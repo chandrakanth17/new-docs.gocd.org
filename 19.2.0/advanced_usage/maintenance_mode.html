@@ -15,6 +15,18 @@
 <link rel="stylesheet" href="../stylesheets/website.css"/>
 
 <link rel="stylesheet" href="../book.min.f2a0cdad2e0137fc7e70bc050b9c5d2798b5b4f45b50cfb8e342022c8cfd0732.css"/>
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-48357651-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
   
 </head>
 
@@ -153,8 +165,8 @@
 <li><a href="../extension_points/package_repository_extension.html">Package Repository Extension</a></li>
 <li><a href="../extension_points/yum_repository_poller.html">Yum Repository Poller</a></li>
 <li><a href="../extension_points/scm_extension.html">SCM Extension</a></li>
-<li><a href="../extension_points/task_extension.html">Task Extension</a></li>
-<li><a href="../extension_points/notification_extension.html">Notification Extension</a></li>
+<li><a href="../extension_points/task_extension.html">Task Extension</a>
+<!---  - [Notification Extension](/extension_points/notification_extension.html)--></li>
 <li><a href="../extension_points/configrepo_extension.html">Configuration repository Extension</a></li>
 </ul></li>
 <li><a href="../gocd_on_kubernetes.html"><strong>GoCD on Kubernetes</strong></a>
@@ -230,10 +242,11 @@
 
       
 <article class="markdown">
+  <p>
 
 <h1 id="maintenance-mode"><strong>Maintenance Mode</strong></h1>
 
-<p>**Note: **Using this feature requires atleast version <code>19.1.0</code>  of the GoCD server.</p>
+<p><strong>Note:</strong> Using this feature requires atleast version <code>19.1.0</code>  of the GoCD server.</p>
 
 <p>The GoCD system includes a lot of internal subsystems and processes, which continuously do work.
 Some examples include the material subsystem which takes care of polling for materials, the scheduling subsystem which automatically starts pipelines and stages, the agent subsystem which continuously keeps tracks of agent states and provides them jobs to run, etc.</p>
@@ -294,9 +307,10 @@ Hence, GoCD does not allow cancellation of MDUs even during maintenance mode. Go
 
 <p><img src="../images/advanced_usage/maintenance_mode/completed_maintenance_mode.png" alt="" /></p>
 
-<p>**NOTE: ** <code>Upon a restart, the GoCD server will no longer be in maintenance mode and will start all subsystems.</code></p>
+<p><strong>NOTE:</strong> <code>Upon a restart, the GoCD server will no longer be in maintenance mode and will start all subsystems.</code></p>
 
 <p>The <a href="https://api.gocd.org/current/#maintenance-mode">maintenance mode API</a> allows GoCD Administrators to enable, disable and monitor the server maintenance mode state.</p>
+</p>
 </article>
 
       
@@ -339,6 +353,17 @@ Hence, GoCD does not allow cancellation of MDUs even during maintenance mode. Go
 
   
   
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-48357651-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
 </body>
 
 </html>

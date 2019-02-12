@@ -15,6 +15,18 @@
 <link rel="stylesheet" href="../stylesheets/website.css"/>
 
 <link rel="stylesheet" href="../book.min.f2a0cdad2e0137fc7e70bc050b9c5d2798b5b4f45b50cfb8e342022c8cfd0732.css"/>
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-48357651-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
   
 </head>
 
@@ -153,8 +165,8 @@
 <li><a href="../extension_points/package_repository_extension.html">Package Repository Extension</a></li>
 <li><a href="../extension_points/yum_repository_poller.html">Yum Repository Poller</a></li>
 <li><a href="../extension_points/scm_extension.html">SCM Extension</a></li>
-<li><a href="../extension_points/task_extension.html">Task Extension</a></li>
-<li><a href="../extension_points/notification_extension.html">Notification Extension</a></li>
+<li><a href="../extension_points/task_extension.html">Task Extension</a>
+<!---  - [Notification Extension](/extension_points/notification_extension.html)--></li>
 <li><a href="../extension_points/configrepo_extension.html">Configuration repository Extension</a></li>
 </ul></li>
 <li><a href="../gocd_on_kubernetes.html"><strong>GoCD on Kubernetes</strong></a>
@@ -230,6 +242,7 @@
 
       
 <article class="markdown">
+  <p>
 
 <h2 id="run-a-job-on-a-group-of-agents">Run a Job on a group of Agents</h2>
 
@@ -249,18 +262,12 @@
 
 <h3 id="configure-through-the-config-xml">Configure through the Config XML</h3>
 
-<p>To specify that a job should run on all agents, add the attribute</p>
-
-<pre><code>runOnAllAgents=&quot;true&quot;
-</code></pre>
+<p>To specify that a job should run on all agents, add the attribute <code>runOnAllAgents=&quot;true&quot;</code></p>
 
 <p>to the job&rsquo;s definition (see configuration reference for <a href="../configuration/configuration_reference.html#job"><code>&lt;job&gt;</code></a>)</p>
-
-<pre><code class="language-xml">&lt;job name=&quot;deploy&quot; runOnAllAgents=&quot;true&quot;&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;job</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;deploy&#34;</span> <span style="color:#a6e22e">runOnAllAgents=</span><span style="color:#e6db74">&#34;true&#34;</span><span style="color:#f92672">&gt;</span>
     ...
-&lt;/job&gt;
-</code></pre>
-
+<span style="color:#f92672">&lt;/job&gt;</span></code></pre></div>
 <h2 id="run-x-instances-of-a-job">Run &lsquo;X&rsquo; instances of a Job</h2>
 
 <p>If you want to run multiple instances of the same job configuration you do not have to maintain multiple copies of same job config. You can specify how many instances of job you need &amp; Go will take care of spawing the required number of job instances during scheduling.</p>
@@ -277,23 +284,18 @@
 
 <h3 id="configure-through-the-config-xml-1">Configure through the Config XML</h3>
 
-<p>To specify that &lsquo;x&rsquo; instances of a job should run, add the attribute</p>
-
-<pre><code>runInstanceCount=&quot;5&quot;
-</code></pre>
+<p>To specify that &lsquo;x&rsquo; instances of a job should run, add the attribute <code>runInstanceCount=&quot;5&quot;</code></p>
 
 <p>to the job&rsquo;s definition (see configuration reference for <a href="../configuration/configuration_reference.html#job"><code>&lt;job&gt;</code></a>)</p>
-
-<pre><code class="language-xml">&lt;job name=&quot;test&quot; runInstanceCount=&quot;5&quot;&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;job</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;test&#34;</span> <span style="color:#a6e22e">runInstanceCount=</span><span style="color:#e6db74">&#34;5&#34;</span><span style="color:#f92672">&gt;</span>
     ...
-&lt;/job&gt;
-</code></pre>
-
+<span style="color:#f92672">&lt;/job&gt;</span></code></pre></div>
 <h4 id="also-see">Also See&hellip;</h4>
 
 <ul>
 <li><a href="../faq/job_rerun.html">Re-running job(s)</a></li>
 </ul>
+</p>
 </article>
 
       
@@ -343,6 +345,17 @@
 
   
   
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-48357651-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
 </body>
 
 </html>

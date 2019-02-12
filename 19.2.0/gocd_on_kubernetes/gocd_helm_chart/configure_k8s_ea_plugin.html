@@ -15,6 +15,18 @@
 <link rel="stylesheet" href="../../stylesheets/website.css"/>
 
 <link rel="stylesheet" href="../../book.min.f2a0cdad2e0137fc7e70bc050b9c5d2798b5b4f45b50cfb8e342022c8cfd0732.css"/>
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-48357651-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
   
 </head>
 
@@ -153,8 +165,8 @@
 <li><a href="../../extension_points/package_repository_extension.html">Package Repository Extension</a></li>
 <li><a href="../../extension_points/yum_repository_poller.html">Yum Repository Poller</a></li>
 <li><a href="../../extension_points/scm_extension.html">SCM Extension</a></li>
-<li><a href="../../extension_points/task_extension.html">Task Extension</a></li>
-<li><a href="../../extension_points/notification_extension.html">Notification Extension</a></li>
+<li><a href="../../extension_points/task_extension.html">Task Extension</a>
+<!---  - [Notification Extension](/extension_points/notification_extension.html)--></li>
 <li><a href="../../extension_points/configrepo_extension.html">Configuration repository Extension</a></li>
 </ul></li>
 <li><a href="../../gocd_on_kubernetes.html"><strong>GoCD on Kubernetes</strong></a>
@@ -230,6 +242,7 @@
 
       
 <article class="markdown">
+  <p>
 
 <h1 id="kubernetes-elastic-agent-plugin">Kubernetes elastic agent plugin</h1>
 
@@ -255,18 +268,12 @@
 <li>The GoCD Server URL is required for the agents brought up by the plugin to connect to the GoCD server. A private GoCD server IP within the Kubernetes cluster can be obtained and specified with the following command.
 <br /></li>
 </ol>
-
-<pre><code class="language-bash">     echo &quot;https://$(kubectl --namespace=gocd get service gocd-server -o jsonpath='{.spec.clusterIP}'):8154/go&quot;
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">     echo <span style="color:#e6db74">&#34;https://</span><span style="color:#66d9ef">$(</span>kubectl --namespace<span style="color:#f92672">=</span>gocd get service gocd-server -o jsonpath<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;{.spec.clusterIP}&#39;</span><span style="color:#66d9ef">)</span><span style="color:#e6db74">:8154/go&#34;</span></code></pre></div>
 <ol>
 <li>The Cluster URL indicates the Kubernetes cluster in which the GoCD agent pods must be brought up. This can be obtained by running the following command
 <br /></li>
 </ol>
-
-<pre><code class="language-bash">     kubectl cluster-info
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">     kubectl cluster-info</code></pre></div>
 <p>The <code>Kubernetes master</code> url is the Cluster URL.</p>
 
 <ol>
@@ -283,11 +290,8 @@
 </ol>
 
 <p>The token can be obtained by:</p>
-
-<pre><code class="language-bash">     secret_name=$(kubectl --namespace=gocd get serviceaccount gocd -o jsonpath=&quot;{.secrets[0].name}&quot;)
-     kubectl --namespace=gocd get secret $secret_name -o jsonpath=&quot;{.data['token']}&quot; | base64 --decode
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">     secret_name<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>kubectl --namespace<span style="color:#f92672">=</span>gocd get serviceaccount gocd -o jsonpath<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{.secrets[0].name}&#34;</span><span style="color:#66d9ef">)</span>
+     kubectl --namespace<span style="color:#f92672">=</span>gocd get secret $secret_name -o jsonpath<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{.data[&#39;token&#39;]}&#34;</span> | base64 --decode</code></pre></div>
 <ol>
 <li>Once you save your configuration, navigate to the plugin status report page from the plugins page and confirm that you don&rsquo;t have configuration errors.</li>
 </ol>
@@ -314,6 +318,7 @@
 <p>You can see all of our docker images (both server and agent) <a href="https://hub.docker.com/r/gocd/">here</a>.</p>
 
 <p>Once you&rsquo;ve created an elastic profile, you can begin to associate the profile to jobs inorder to run them.</p>
+</p>
 </article>
 
       
@@ -352,6 +357,17 @@
 
   
   
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-48357651-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
 </body>
 
 </html>

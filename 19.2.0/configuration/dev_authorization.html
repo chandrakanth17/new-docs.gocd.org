@@ -15,6 +15,18 @@
 <link rel="stylesheet" href="../stylesheets/website.css"/>
 
 <link rel="stylesheet" href="../book.min.f2a0cdad2e0137fc7e70bc050b9c5d2798b5b4f45b50cfb8e342022c8cfd0732.css"/>
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-48357651-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
   
 </head>
 
@@ -153,8 +165,8 @@
 <li><a href="../extension_points/package_repository_extension.html">Package Repository Extension</a></li>
 <li><a href="../extension_points/yum_repository_poller.html">Yum Repository Poller</a></li>
 <li><a href="../extension_points/scm_extension.html">SCM Extension</a></li>
-<li><a href="../extension_points/task_extension.html">Task Extension</a></li>
-<li><a href="../extension_points/notification_extension.html">Notification Extension</a></li>
+<li><a href="../extension_points/task_extension.html">Task Extension</a>
+<!---  - [Notification Extension](/extension_points/notification_extension.html)--></li>
 <li><a href="../extension_points/configrepo_extension.html">Configuration repository Extension</a></li>
 </ul></li>
 <li><a href="../gocd_on_kubernetes.html"><strong>GoCD on Kubernetes</strong></a>
@@ -230,6 +242,7 @@
 
       
 <article class="markdown">
+  <p>
 
 <h1 id="authorization">Authorization</h1>
 
@@ -261,38 +274,34 @@
 <p><img src="../images/user_summary_add_user_to_role.png" alt="" /></p>
 
 <p>For power users, here&rsquo;s how you would configure roles via &ldquo;Config XML&rdquo;:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;cruise&gt;</span>
+  <span style="color:#f92672">&lt;server&gt;</span>
+    <span style="color:#f92672">&lt;license...</span> <span style="color:#f92672">/&gt;</span>
+    <span style="color:#f92672">&lt;security&gt;</span>
+      <span style="color:#f92672">&lt;passwordFile</span> <span style="color:#a6e22e">path=</span><span style="color:#e6db74">&#34;/etc/go-server/passwords.properties&#34;</span> <span style="color:#f92672">/&gt;</span>
 
-<pre><code class="language-xml">&lt;cruise&gt;
-  &lt;server&gt;
-    &lt;license... /&gt;
-    &lt;security&gt;
-      &lt;passwordFile path=&quot;/etc/go-server/passwords.properties&quot; /&gt;
+      <span style="color:#f92672">&lt;roles&gt;</span>
+        <span style="color:#f92672">&lt;role</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;qa&#34;</span><span style="color:#f92672">&gt;</span>
+          <span style="color:#f92672">&lt;users&gt;</span>
+            <span style="color:#f92672">&lt;user&gt;</span>dyang<span style="color:#f92672">&lt;/user&gt;</span>
+            <span style="color:#f92672">&lt;user&gt;</span>pavan<span style="color:#f92672">&lt;/user&gt;</span>
+          <span style="color:#f92672">&lt;/users&gt;</span>
+        <span style="color:#f92672">&lt;/role&gt;</span>
+        <span style="color:#f92672">&lt;role</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;go_admin&#34;</span><span style="color:#f92672">&gt;</span>
+          <span style="color:#f92672">&lt;users&gt;</span> 
+            <span style="color:#f92672">&lt;user&gt;</span>jhumble<span style="color:#f92672">&lt;/user&gt;</span>
+            <span style="color:#f92672">&lt;user&gt;</span>qiao<span style="color:#f92672">&lt;/user&gt;</span>
+          <span style="color:#f92672">&lt;/users&gt;</span>
+        <span style="color:#f92672">&lt;/role&gt;</span>
+      <span style="color:#f92672">&lt;/roles&gt;</span>
 
-      &lt;roles&gt;
-        &lt;role name=&quot;qa&quot;&gt;
-          &lt;users&gt;
-            &lt;user&gt;dyang&lt;/user&gt;
-            &lt;user&gt;pavan&lt;/user&gt;
-          &lt;/users&gt;
-        &lt;/role&gt;
-        &lt;role name=&quot;go_admin&quot;&gt;
-          &lt;users&gt; 
-            &lt;user&gt;jhumble&lt;/user&gt;
-            &lt;user&gt;qiao&lt;/user&gt;
-          &lt;/users&gt;
-        &lt;/role&gt;
-      &lt;/roles&gt;
-
-      &lt;admins&gt;
-        &lt;role&gt;go_admin&lt;/role&gt;
-        &lt;user&gt;chris&lt;/user&gt;
-      &lt;/admins&gt;
-    &lt;/security&gt;
-  &lt;/server&gt;
-&lt;/cruise&gt;
-
-</code></pre>
-
+      <span style="color:#f92672">&lt;admins&gt;</span>
+        <span style="color:#f92672">&lt;role&gt;</span>go_admin<span style="color:#f92672">&lt;/role&gt;</span>
+        <span style="color:#f92672">&lt;user&gt;</span>chris<span style="color:#f92672">&lt;/user&gt;</span>
+      <span style="color:#f92672">&lt;/admins&gt;</span>
+    <span style="color:#f92672">&lt;/security&gt;</span>
+  <span style="color:#f92672">&lt;/server&gt;</span>
+<span style="color:#f92672">&lt;/cruise&gt;</span></code></pre></div>
 <p>In this example, the &ldquo;qa&rdquo; role has two users: dyang and pavan. The &ldquo;go_admin&rdquo; role also has two users: jhumble and qiao.</p>
 
 <h2 id="specifying-permissions-for-pipeline-groups">Specifying permissions for pipeline groups</h2>
@@ -320,26 +329,23 @@
 <p>If no authorization is defined for a pipeline group, all GoCD users will have view and operate permissions to that group.</p>
 
 <p>For power users, here&rsquo;s how you would configure permissions via &ldquo;Config XML&rdquo;:</p>
-
-<pre><code class="language-xml">&lt;pipelines group=&quot;Shine&quot;&gt;
-  &lt;authorization&gt;
-    &lt;view&gt;
-      &lt;user&gt;aantony&lt;/user&gt;
-      &lt;user&gt;akrishna&lt;/user&gt;
-      &lt;role&gt;developer&lt;/role&gt;
-    &lt;/view&gt;
-    &lt;operate&gt;
-      &lt;user&gt;bot&lt;/user&gt;
-      &lt;role&gt;developer&lt;/role&gt;
-    &lt;/operate&gt;
-    &lt;admins&gt;
-      &lt;role&gt;admins&lt;/role&gt;
-    &lt;/admins&gt;
-  &lt;/authorization&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;pipelines</span> <span style="color:#a6e22e">group=</span><span style="color:#e6db74">&#34;Shine&#34;</span><span style="color:#f92672">&gt;</span>
+  <span style="color:#f92672">&lt;authorization&gt;</span>
+    <span style="color:#f92672">&lt;view&gt;</span>
+      <span style="color:#f92672">&lt;user&gt;</span>aantony<span style="color:#f92672">&lt;/user&gt;</span>
+      <span style="color:#f92672">&lt;user&gt;</span>akrishna<span style="color:#f92672">&lt;/user&gt;</span>
+      <span style="color:#f92672">&lt;role&gt;</span>developer<span style="color:#f92672">&lt;/role&gt;</span>
+    <span style="color:#f92672">&lt;/view&gt;</span>
+    <span style="color:#f92672">&lt;operate&gt;</span>
+      <span style="color:#f92672">&lt;user&gt;</span>bot<span style="color:#f92672">&lt;/user&gt;</span>
+      <span style="color:#f92672">&lt;role&gt;</span>developer<span style="color:#f92672">&lt;/role&gt;</span>
+    <span style="color:#f92672">&lt;/operate&gt;</span>
+    <span style="color:#f92672">&lt;admins&gt;</span>
+      <span style="color:#f92672">&lt;role&gt;</span>admins<span style="color:#f92672">&lt;/role&gt;</span>
+    <span style="color:#f92672">&lt;/admins&gt;</span>
+  <span style="color:#f92672">&lt;/authorization&gt;</span>
   ...
-&lt;/pipelines&gt;
-</code></pre>
-
+<span style="color:#f92672">&lt;/pipelines&gt;</span></code></pre></div>
 <h2 id="adding-authorization-to-approvals">Adding authorization to approvals</h2>
 
 <p>In GoCD, it is possible to specify <a href="managing_pipelines.html">manual approvals</a> between stages. You can also specify which user is allowed to trigger manual approvals.</p>
@@ -349,30 +355,26 @@
 <p><img src="../images/stage_permissions.png" alt="" /></p>
 
 <p>For power users, here&rsquo;s how you would configure authorization for approvals for a stage via &ldquo;Config XML&rdquo;:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;stage</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;defaultStage&#34;</span><span style="color:#f92672">&gt;</span>
 
-<pre><code class="language-xml">&lt;stage name=&quot;defaultStage&quot;&gt;
+  <span style="color:#f92672">&lt;approval</span> <span style="color:#a6e22e">type=</span><span style="color:#e6db74">&#34;manual&#34;</span><span style="color:#f92672">&gt;</span>
+    <span style="color:#f92672">&lt;authorization&gt;</span>
+      <span style="color:#f92672">&lt;role&gt;</span>admin<span style="color:#f92672">&lt;/role&gt;</span>
+      <span style="color:#f92672">&lt;user&gt;</span>goleys<span style="color:#f92672">&lt;/user&gt;</span>
+    <span style="color:#f92672">&lt;/authorization&gt;</span>
+  <span style="color:#f92672">&lt;/approval&gt;</span>
 
-  &lt;approval type=&quot;manual&quot;&gt;
-    &lt;authorization&gt;
-      &lt;role&gt;admin&lt;/role&gt;
-      &lt;user&gt;goleys&lt;/user&gt;
-    &lt;/authorization&gt;
-  &lt;/approval&gt;
-
-  &lt;jobs&gt;
-    &lt;job name=&quot;deploy&quot;&gt;
-      &lt;resources&gt;
-        &lt;resource&gt;uat&lt;/resource&gt;
-      &lt;/resources&gt;
-      &lt;tasks&gt;
-        &lt;ant target=&quot;deploy&quot; /&gt;
-      &lt;/tasks&gt;
-    &lt;/job&gt;
-  &lt;/jobs&gt;
-&lt;/stage&gt;
-
-</code></pre>
-
+  <span style="color:#f92672">&lt;jobs&gt;</span>
+    <span style="color:#f92672">&lt;job</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;deploy&#34;</span><span style="color:#f92672">&gt;</span>
+      <span style="color:#f92672">&lt;resources&gt;</span>
+        <span style="color:#f92672">&lt;resource&gt;</span>uat<span style="color:#f92672">&lt;/resource&gt;</span>
+      <span style="color:#f92672">&lt;/resources&gt;</span>
+      <span style="color:#f92672">&lt;tasks&gt;</span>
+        <span style="color:#f92672">&lt;ant</span> <span style="color:#a6e22e">target=</span><span style="color:#e6db74">&#34;deploy&#34;</span> <span style="color:#f92672">/&gt;</span>
+      <span style="color:#f92672">&lt;/tasks&gt;</span>
+    <span style="color:#f92672">&lt;/job&gt;</span>
+  <span style="color:#f92672">&lt;/jobs&gt;</span>
+<span style="color:#f92672">&lt;/stage&gt;</span></code></pre></div>
 <p><a id="template-admin"></a></p>
 
 <h2 id="specifying-permissions-for-templates">Specifying permissions for templates</h2>
@@ -388,24 +390,22 @@
 <p><img src="../images/add_template_permissions.png" alt="" /></p>
 
 <p>For power users, here&rsquo;s how you would configure permissions via &ldquo;Config XML&rdquo;:</p>
-
-<pre><code class="language-xml">&lt;templates&gt;
-    &lt;pipeline name=&quot;app-1-template&quot;&gt;
-      &lt;authorization&gt;
-        &lt;admins&gt;
-          &lt;user&gt;operate&lt;/user&gt;
-        &lt;/admins&gt;
-      &lt;/authorization&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;templates&gt;</span>
+    <span style="color:#f92672">&lt;pipeline</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;app-1-template&#34;</span><span style="color:#f92672">&gt;</span>
+      <span style="color:#f92672">&lt;authorization&gt;</span>
+        <span style="color:#f92672">&lt;admins&gt;</span>
+          <span style="color:#f92672">&lt;user&gt;</span>operate<span style="color:#f92672">&lt;/user&gt;</span>
+        <span style="color:#f92672">&lt;/admins&gt;</span>
+      <span style="color:#f92672">&lt;/authorization&gt;</span>
       ...
-    &lt;/pipeline&gt;
-  &lt;/templates&gt;
-</code></pre>
-
+    <span style="color:#f92672">&lt;/pipeline&gt;</span>
+  <span style="color:#f92672">&lt;/templates&gt;</span></code></pre></div>
 <h3 id="also-see">Also See</h3>
 
 <ul>
 <li><a href="delegating_group_administration.html">Delegating group administration</a></li>
 </ul>
+</p>
 </article>
 
       
@@ -450,6 +450,17 @@
 
   
   
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-48357651-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
 </body>
 
 </html>

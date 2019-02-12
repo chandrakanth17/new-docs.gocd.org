@@ -15,6 +15,18 @@
 <link rel="stylesheet" href="../stylesheets/website.css"/>
 
 <link rel="stylesheet" href="../book.min.f2a0cdad2e0137fc7e70bc050b9c5d2798b5b4f45b50cfb8e342022c8cfd0732.css"/>
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-48357651-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
   
 </head>
 
@@ -153,8 +165,8 @@
 <li><a href="../extension_points/package_repository_extension.html">Package Repository Extension</a></li>
 <li><a href="../extension_points/yum_repository_poller.html">Yum Repository Poller</a></li>
 <li><a href="../extension_points/scm_extension.html">SCM Extension</a></li>
-<li><a href="../extension_points/task_extension.html">Task Extension</a></li>
-<li><a href="../extension_points/notification_extension.html">Notification Extension</a></li>
+<li><a href="../extension_points/task_extension.html">Task Extension</a>
+<!---  - [Notification Extension](/extension_points/notification_extension.html)--></li>
 <li><a href="../extension_points/configrepo_extension.html">Configuration repository Extension</a></li>
 </ul></li>
 <li><a href="../gocd_on_kubernetes.html"><strong>GoCD on Kubernetes</strong></a>
@@ -230,6 +242,7 @@
 
       
 <article class="markdown">
+  <p>
 
 <h1 id="gocd-command-repository">GoCD Command Repository</h1>
 
@@ -268,19 +281,13 @@
 <h3 id="args-style-commands">Args style commands</h3>
 
 <p>The older <a href="../configuration/configuration_reference.html#exec">args</a> style commands are not supported by this feature. Please convert them to the new syntax using the config xml editor ( <strong>Admin &gt; Config XML</strong> ). For example:</p>
-
-<pre><code class="language-xml">&lt;exec command=&quot;touch&quot; args=&quot;a b c&quot;/&gt;
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;exec</span> <span style="color:#a6e22e">command=</span><span style="color:#e6db74">&#34;touch&#34;</span> <span style="color:#a6e22e">args=</span><span style="color:#e6db74">&#34;a b c&#34;</span><span style="color:#f92672">/&gt;</span></code></pre></div>
 <p>becomes</p>
-
-<pre><code class="language-xml">&lt;exec command=&quot;touch&quot;&gt;
-  &lt;arg&gt;a&lt;/arg&gt;
-  &lt;arg&gt;b&lt;/arg&gt;
-  &lt;arg&gt;c&lt;/arg&gt;
-&lt;/exec&gt;
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;exec</span> <span style="color:#a6e22e">command=</span><span style="color:#e6db74">&#34;touch&#34;</span><span style="color:#f92672">&gt;</span>
+  <span style="color:#f92672">&lt;arg&gt;</span>a<span style="color:#f92672">&lt;/arg&gt;</span>
+  <span style="color:#f92672">&lt;arg&gt;</span>b<span style="color:#f92672">&lt;/arg&gt;</span>
+  <span style="color:#f92672">&lt;arg&gt;</span>c<span style="color:#f92672">&lt;/arg&gt;</span>
+<span style="color:#f92672">&lt;/exec&gt;</span></code></pre></div>
 <h2 id="bundled-repository">Bundled Repository</h2>
 
 <p>The default set of commands come from <a href="https://github.com/gocd/go-command-repo">https://github.com/gocd/go-command-repo</a>. This repository is maintained by the Go team. The Go server installer bundles a clone of this Git repository under <code>&lt;server-install-root&gt;/db/command_repository/default</code>. Every upgrade of Go Server will overwrite the contents of this directory with an up to date set of commands. Hence, please do not add your commands here. Instead, set up a <a href="../advanced_usage/command_repository.html#private-repository">private repository</a>.</p>
@@ -292,11 +299,7 @@
 <h4 id="linux-unix">Linux/Unix</h4>
 
 <p>Here is a simple cron tab entry that you could add to Go service account&rsquo;s cron tab to pull commands once a day.</p>
-
-<pre><code>@daily cd &lt; go-server-install-root &gt;/db/command_repository/default;git pull &gt;&gt;/var/go/cronrun 2&gt;&amp;1
-
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">@daily cd &lt; go-server-install-root &gt;/db/command_repository/default;git pull &gt;&gt;/var/go/cronrun <span style="color:#ae81ff">2</span>&gt;&amp;<span style="color:#ae81ff">1</span></code></pre></div>
 <blockquote>
 <p><strong>Caution</strong>: Don&rsquo;t pull as root/administrator. Use the Go service account.</p>
 </blockquote>
@@ -304,21 +307,15 @@
 <h4 id="windows">Windows</h4>
 
 <p>On Windows, you could set up a scheduled task to run this script on a schedule.</p>
-
-<pre><code>echo %date% %time% &gt;&gt;c:\pull-log.txt 2&gt;&amp;1
-cd &quot;C:\Program Files (x86)\Go Server\db\command_repository\default&quot;
-git pull &gt;&gt;c:\pull-log.txt 2&gt;&amp;1
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">echo %date% %time% &gt;&gt;c:<span style="color:#ae81ff">\p</span>ull-log.txt <span style="color:#ae81ff">2</span>&gt;&amp;<span style="color:#ae81ff">1</span>
+cd <span style="color:#e6db74">&#34;C:\Program Files (x86)\Go Server\db\command_repository\default&#34;</span>
+git pull &gt;&gt;c:<span style="color:#ae81ff">\p</span>ull-log.txt <span style="color:#ae81ff">2</span>&gt;&amp;<span style="color:#ae81ff">1</span></code></pre></div>
 <p>Go caches these commands with a refresh interval of 30 minutes so you may not see the results of a pull immediately in the lookup unless you hit the reload cache button under the command repository section on the server configuration admin page.</p>
 
 <h4 id="via-api">Via API</h4>
 
 <p>You may make a <code>POST</code> request to the path <code>/go/api/admin/command-repo-cache/reload</code> in order to update the command repository with the latest.</p>
-
-<pre><code class="language-shell">$ curl -u username:password -X POST -H 'Confirm: true' http://goserver.com:8153/go/api/admin/command-repo-cache/reload
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ curl -u username:password -X POST -H <span style="color:#e6db74">&#39;Confirm: true&#39;</span> http://goserver.com:8153/go/api/admin/command-repo-cache/reload</code></pre></div>
 <h3 id="private-repository">Private Repository</h3>
 
 <p>If you want to add your own commands for look up, you should set up your own Git/Mercurial/Subversion/Perforce/TFS repository that your command authors can commit/check-in into.</p>
@@ -356,24 +353,21 @@ git pull &gt;&gt;c:\pull-log.txt 2&gt;&amp;1
 <p><img src="../images/cmd_repo_curl.png" alt="" /></p>
 
 <p>The above screenshot resulted from the command below:</p>
-
-<pre><code class="language-xml">&lt;!--
-name: curl
-description: Download from a protected Url and saveToFile
-author: Go Team
-authorinfo: http://support.thoughtworks.com/categories/20002778-go-community-support
-keywords: curl, http, download, wget
-moreinfo: http://curl.haxx.se/docs/manual.html
---&gt;
-&lt;exec command=&quot;curl&quot;&gt;
-  &lt;arg&gt;-o&lt;/arg&gt;
-  &lt;arg&gt;saveToFile&lt;/arg&gt;
-  &lt;arg&gt;-u&lt;/arg&gt;
-  &lt;arg&gt;user:password&lt;/arg&gt;
-  &lt;arg&gt;http://targeturl&lt;/arg&gt;
-&lt;/exec&gt;
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#75715e">&lt;!--
+</span><span style="color:#75715e">name: curl
+</span><span style="color:#75715e">description: Download from a protected Url and saveToFile
+</span><span style="color:#75715e">author: Go Team
+</span><span style="color:#75715e">authorinfo: http://support.thoughtworks.com/categories/20002778-go-community-support
+</span><span style="color:#75715e">keywords: curl, http, download, wget
+</span><span style="color:#75715e">moreinfo: http://curl.haxx.se/docs/manual.html
+</span><span style="color:#75715e">--&gt;</span>
+<span style="color:#f92672">&lt;exec</span> <span style="color:#a6e22e">command=</span><span style="color:#e6db74">&#34;curl&#34;</span><span style="color:#f92672">&gt;</span>
+  <span style="color:#f92672">&lt;arg&gt;</span>-o<span style="color:#f92672">&lt;/arg&gt;</span>
+  <span style="color:#f92672">&lt;arg&gt;</span>saveToFile<span style="color:#f92672">&lt;/arg&gt;</span>
+  <span style="color:#f92672">&lt;arg&gt;</span>-u<span style="color:#f92672">&lt;/arg&gt;</span>
+  <span style="color:#f92672">&lt;arg&gt;</span>user:password<span style="color:#f92672">&lt;/arg&gt;</span>
+  <span style="color:#f92672">&lt;arg&gt;</span>http://targeturl<span style="color:#f92672">&lt;/arg&gt;</span>
+<span style="color:#f92672">&lt;/exec&gt;</span></code></pre></div>
 <p>This is an example of valid command syntax. The command attribute is mandatory. No other attributes are valid. Zero or more arg child elements can be specified. No other child elements are allowed. One command file may only contain one command.</p>
 
 <blockquote>
@@ -402,6 +396,7 @@ moreinfo: http://curl.haxx.se/docs/manual.html
 </ol>
 
 <p>Accepted commands will be bundled into the next release.</p>
+</p>
 </article>
 
       
@@ -456,6 +451,17 @@ moreinfo: http://curl.haxx.se/docs/manual.html
 
   
   
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-48357651-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
 </body>
 
 </html>

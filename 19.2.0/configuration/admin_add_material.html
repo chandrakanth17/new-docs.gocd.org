@@ -15,6 +15,18 @@
 <link rel="stylesheet" href="../stylesheets/website.css"/>
 
 <link rel="stylesheet" href="../book.min.f2a0cdad2e0137fc7e70bc050b9c5d2798b5b4f45b50cfb8e342022c8cfd0732.css"/>
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-48357651-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
   
 </head>
 
@@ -153,8 +165,8 @@
 <li><a href="../extension_points/package_repository_extension.html">Package Repository Extension</a></li>
 <li><a href="../extension_points/yum_repository_poller.html">Yum Repository Poller</a></li>
 <li><a href="../extension_points/scm_extension.html">SCM Extension</a></li>
-<li><a href="../extension_points/task_extension.html">Task Extension</a></li>
-<li><a href="../extension_points/notification_extension.html">Notification Extension</a></li>
+<li><a href="../extension_points/task_extension.html">Task Extension</a>
+<!---  - [Notification Extension](/extension_points/notification_extension.html)--></li>
 <li><a href="../extension_points/configrepo_extension.html">Configuration repository Extension</a></li>
 </ul></li>
 <li><a href="../gocd_on_kubernetes.html"><strong>GoCD on Kubernetes</strong></a>
@@ -230,6 +242,7 @@
 
       
 <article class="markdown">
+  <p>
 
 <h1 id="add-a-new-material-to-an-existing-gocd-pipeline">Add a new material to an existing GoCD pipeline</h1>
 
@@ -272,36 +285,19 @@
 <p><strong>Note</strong> - <code>GoCD uses '**' for folder/path and '*' for files.</code></p>
 
 <h2 id="examples">Examples:</h2>
-
-<pre><code class="language-xml">&lt;ignore pattern=&quot;doc/**/*&quot; /&gt;
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;ignore</span> <span style="color:#a6e22e">pattern=</span><span style="color:#e6db74">&#34;doc/**/*&#34;</span> <span style="color:#f92672">/&gt;</span></code></pre></div>
 <p>Ignore everything under the folder <strong>&lsquo;doc&rsquo;</strong>, even deeper levels of subfolders/files under doc folder.</p>
-
-<pre><code class="language-xml">&lt;ignore pattern=&quot;doc/*&quot; /&gt;
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;ignore</span> <span style="color:#a6e22e">pattern=</span><span style="color:#e6db74">&#34;doc/*&#34;</span> <span style="color:#f92672">/&gt;</span></code></pre></div>
 <p>Ignore files under the folder <strong>&lsquo;doc&rsquo;</strong>, excluding any subfolder.</p>
-
-<pre><code class="language-xml">&lt;ignore pattern=&quot;framework/helper/*.doc&quot; /&gt;
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;ignore</span> <span style="color:#a6e22e">pattern=</span><span style="color:#e6db74">&#34;framework/helper/*.doc&#34;</span> <span style="color:#f92672">/&gt;</span></code></pre></div>
 <p>Ignore files that are under the directory &lsquo;framework/helper&rsquo; and the file extension is <strong>.doc</strong>.</p>
-
-<pre><code class="language-xml">&lt;ignore pattern=&quot;*.pdf&quot; /&gt;
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;ignore</span> <span style="color:#a6e22e">pattern=</span><span style="color:#e6db74">&#34;*.pdf&#34;</span> <span style="color:#f92672">/&gt;</span></code></pre></div>
 <p>Ignore files that are under the root directory of SCM repository and the file extension is <strong>.pdf</strong>.</p>
-
-<pre><code class="language-xml">&lt;ignore pattern=&quot;**/helper/*.pdf&quot; /&gt;
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;ignore</span> <span style="color:#a6e22e">pattern=</span><span style="color:#e6db74">&#34;**/helper/*.pdf&#34;</span> <span style="color:#f92672">/&gt;</span></code></pre></div>
 <p>Ignore all the files that is under any <strong>&lsquo;helper&rsquo;</strong> folder and the file extension is <strong>.pdf</strong>.</p>
-
-<pre><code class="language-xml">&lt;ignore pattern=&quot;helper/**/*.pdf&quot; /&gt;
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;ignore</span> <span style="color:#a6e22e">pattern=</span><span style="color:#e6db74">&#34;helper/**/*.pdf&#34;</span> <span style="color:#f92672">/&gt;</span></code></pre></div>
 <p>Ignore all the files that are in the nested directory under folder <strong>&lsquo;helper&rsquo;</strong> of the repository and the file extension is <strong>.pdf</strong>.</p>
+</p>
 </article>
 
       
@@ -341,6 +337,17 @@
 
   
   
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-48357651-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
 </body>
 
 </html>

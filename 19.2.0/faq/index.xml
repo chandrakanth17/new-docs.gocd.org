@@ -116,7 +116,7 @@ Key  The email address to which email notification from GoCD will be sent. Tick 
       <guid>/faq/material_update_hung.html</guid>
       <description>GoCD unable to poll for changes GoCD server polls for changes to all materials of &amp;lsquo;Auto Triggered&amp;rsquo; pipelines. By default, polling occurs every minute and ten materials at a time. The polling interval and the number of materials to be polled simultaneously are configurable.
 GoCD uses SCM commands to poll for changes. For example, to check for any new changes in SVN repository the following command is used:
-svn log --non-interactive --xml -v -r HEAD:&#39;revision&#39; &#39;repository-URL&#39;  The SCM command used by GoCD server can hang with no output.</description>
+svn log --non-interactive --xml -v -r HEAD:&amp;#39;revision&amp;#39; &amp;#39;repository-URL&amp;#39; The SCM command used by GoCD server can hang with no output.</description>
     </item>
     
     <item>

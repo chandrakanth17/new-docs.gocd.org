@@ -15,6 +15,18 @@
 <link rel="stylesheet" href="../../stylesheets/website.css"/>
 
 <link rel="stylesheet" href="../../book.min.f2a0cdad2e0137fc7e70bc050b9c5d2798b5b4f45b50cfb8e342022c8cfd0732.css"/>
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-48357651-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
   
 </head>
 
@@ -153,8 +165,8 @@
 <li><a href="../../extension_points/package_repository_extension.html">Package Repository Extension</a></li>
 <li><a href="../../extension_points/yum_repository_poller.html">Yum Repository Poller</a></li>
 <li><a href="../../extension_points/scm_extension.html">SCM Extension</a></li>
-<li><a href="../../extension_points/task_extension.html">Task Extension</a></li>
-<li><a href="../../extension_points/notification_extension.html">Notification Extension</a></li>
+<li><a href="../../extension_points/task_extension.html">Task Extension</a>
+<!---  - [Notification Extension](/extension_points/notification_extension.html)--></li>
 <li><a href="../../extension_points/configrepo_extension.html">Configuration repository Extension</a></li>
 </ul></li>
 <li><a href="../../gocd_on_kubernetes.html"><strong>GoCD on Kubernetes</strong></a>
@@ -230,6 +242,7 @@
 
       
 <article class="markdown">
+  <p>
 
 <h1 id="configure-end-to-end-transport-security">Configure end-to-end transport security</h1>
 
@@ -250,10 +263,7 @@
 <p><img src="../../images/agent_tls_cert_export_from_firefox.png" alt="Download TLS certificate from GoCD server using Firefox" /></p>
 
 <p>If you have the openssl binary available then you can also run the command below to export the root certificate from the GoCD server:</p>
-
-<pre><code>openssl s_client -showcerts -connect HOSTNAME:PORT &lt;/dev/null 2&gt;/dev/null|openssl x509 -outform PEM
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">openssl s_client -showcerts -connect HOSTNAME:PORT &lt;/dev/null <span style="color:#ae81ff">2</span>&gt;/dev/null|openssl x509 -outform PEM</code></pre></div>
 <h2 id="the-sslverificationmode-option">The <code>-sslVerificationMode</code> option</h2>
 
 <p>The <code>-sslVerificationMode</code> option allows you to choose the level of verification you&rsquo;d want.</p>
@@ -271,43 +281,32 @@
 <h3 id="if-you-re-running-the-gocd-agent-as-a-windows-service">If you&rsquo;re running the GoCD agent as a windows service</h3>
 
 <p>Edit the file (if it already does not exist) <code>GO_AGENT_INSTALL_DIR/config/wrapper-properties.conf</code> and add the following properties to it</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># config/wrapper-properties.conf</span>
 
-<pre><code class="language-shell"># config/wrapper-properties.conf
+<span style="color:#75715e"># set the ssl verification mode</span>
+wrapper.app.parameter.4<span style="color:#f92672">=</span>-sslVerificationMode
+wrapper.app.parameter.5<span style="color:#f92672">=</span>FULL
 
-# set the ssl verification mode
-wrapper.app.parameter.4=-sslVerificationMode
-wrapper.app.parameter.5=FULL
-
-# set the ssl root cert path (if the server is using a certificate that is not signed by a well known certificate-authority)
-wrapper.app.parameter.6=-rootCertFile
-wrapper.app.parameter.7=C:\Path\To\root-cert.pem
-</code></pre>
-
+<span style="color:#75715e"># set the ssl root cert path (if the server is using a certificate that is not signed by a well known certificate-authority)</span>
+wrapper.app.parameter.6<span style="color:#f92672">=</span>-rootCertFile
+wrapper.app.parameter.7<span style="color:#f92672">=</span>C:<span style="color:#ae81ff">\P</span>ath<span style="color:#ae81ff">\T</span>o<span style="color:#ae81ff">\r</span>oot-cert.pem</code></pre></div>
 <h3 id="if-you-re-running-the-gocd-agent-via-a-batch-file">If you&rsquo;re running the GoCD agent via a batch file</h3>
 
 <p>Setup the system environment <code>AGENT_BOOTSTRAPPER_ARGS</code> before running the batch file. You may either <code>set</code> it from the command line, or if you&rsquo;d like to make the change permanent, you may choose to set it from the &ldquo;<strong>Advanced system settings</strong>&rdquo; dialog from &ldquo;<strong>Control Panel</strong>&rdquo;.</p>
-
-<pre><code class="language-bash">C:\&gt; set AGENT_BOOTSTRAPPER_ARGS=-rootCertFile C:\Path\To\root-cert.pem -sslVerificationMode FULL
-C:\&gt; agent.cmd
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">C:<span style="color:#ae81ff">\&gt;</span> set AGENT_BOOTSTRAPPER_ARGS<span style="color:#f92672">=</span>-rootCertFile C:<span style="color:#ae81ff">\P</span>ath<span style="color:#ae81ff">\T</span>o<span style="color:#ae81ff">\r</span>oot-cert.pem -sslVerificationMode FULL
+C:<span style="color:#ae81ff">\&gt;</span> agent.cmd</code></pre></div>
 <h2 id="linux">Linux</h2>
 
 <h3 id="if-you-re-running-the-gocd-agent-as-a-service">If you&rsquo;re running the GoCD agent as a service</h3>
 
 <p>Edit the file <code>/etc/default/go-agent</code> and add the following lines to it</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># /etc/default/go-agent</span>
 
-<pre><code class="language-bash"># /etc/default/go-agent
-
-AGENT_BOOTSTRAPPER_ARGS=&quot;-rootCertFile /path/to/root-cert.pem -sslVerificationMode FULL&quot;
-</code></pre>
-
+AGENT_BOOTSTRAPPER_ARGS<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;-rootCertFile /path/to/root-cert.pem -sslVerificationMode FULL&#34;</span></code></pre></div>
 <h3 id="if-you-re-running-the-gocd-agent-from-the-command-line">If you&rsquo;re running the GoCD agent from the command line</h3>
-
-<pre><code class="language-bash">$ export GO_SERVER_URL='https://ci.example.com:8154/go'
-$ export AGENT_BOOTSTRAPPER_ARGS=&quot;-rootCertFile /path/to/root-cert.pem -sslVerificationMode FULL&quot;
-$ ./agent.sh
-</code></pre>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ export GO_SERVER_URL<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;https://ci.example.com:8154/go&#39;</span>
+$ export AGENT_BOOTSTRAPPER_ARGS<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;-rootCertFile /path/to/root-cert.pem -sslVerificationMode FULL&#34;</span>
+$ ./agent.sh</code></pre></div></p>
 </article>
 
       
@@ -359,6 +358,17 @@ $ ./agent.sh
 
   
   
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-48357651-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
 </body>
 
 </html>

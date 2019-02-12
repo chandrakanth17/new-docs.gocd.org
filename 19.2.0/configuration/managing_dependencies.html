@@ -15,6 +15,18 @@
 <link rel="stylesheet" href="../stylesheets/website.css"/>
 
 <link rel="stylesheet" href="../book.min.f2a0cdad2e0137fc7e70bc050b9c5d2798b5b4f45b50cfb8e342022c8cfd0732.css"/>
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-48357651-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
   
 </head>
 
@@ -153,8 +165,8 @@
 <li><a href="../extension_points/package_repository_extension.html">Package Repository Extension</a></li>
 <li><a href="../extension_points/yum_repository_poller.html">Yum Repository Poller</a></li>
 <li><a href="../extension_points/scm_extension.html">SCM Extension</a></li>
-<li><a href="../extension_points/task_extension.html">Task Extension</a></li>
-<li><a href="../extension_points/notification_extension.html">Notification Extension</a></li>
+<li><a href="../extension_points/task_extension.html">Task Extension</a>
+<!---  - [Notification Extension](/extension_points/notification_extension.html)--></li>
 <li><a href="../extension_points/configrepo_extension.html">Configuration repository Extension</a></li>
 </ul></li>
 <li><a href="../gocd_on_kubernetes.html"><strong>GoCD on Kubernetes</strong></a>
@@ -230,6 +242,7 @@
 
       
 <article class="markdown">
+  <p>
 
 <h1 id="managing-dependencies">Managing dependencies</h1>
 
@@ -251,16 +264,12 @@
 <p><img src="../images/pipeline_add_material.png" alt="" /></p>
 
 <p>Power users can also configure this via the <strong>Config XML</strong> tab on the Admin section (Configuration reference is <a href="../configuration/configuration_reference.html">here</a>):</p>
-
-<pre><code class="language-xml">&lt;pipeline name=&quot;downstream_pipeline&quot;&gt;
-  &lt;materials&gt;
-    &lt;pipeline pipelineName=&quot;upstream_pipeline&quot; stageName=&quot;AutoStage1&quot;/&gt;
-  &lt;/materials&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;pipeline</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;downstream_pipeline&#34;</span><span style="color:#f92672">&gt;</span>
+  <span style="color:#f92672">&lt;materials&gt;</span>
+    <span style="color:#f92672">&lt;pipeline</span> <span style="color:#a6e22e">pipelineName=</span><span style="color:#e6db74">&#34;upstream_pipeline&#34;</span> <span style="color:#a6e22e">stageName=</span><span style="color:#e6db74">&#34;AutoStage1&#34;</span><span style="color:#f92672">/&gt;</span>
+  <span style="color:#f92672">&lt;/materials&gt;</span>
   ...
-&lt;/pipeline&gt;
-
-</code></pre>
-
+<span style="color:#f92672">&lt;/pipeline&gt;</span></code></pre></div>
 <p>Now, when the stage &ldquo;AutoStage1&rdquo; of &ldquo;upstream_pipeline&rdquo; completes, the pipeline &ldquo;downstream_pipeline&rdquo; will start building. The Pipeline Dependency visualization shows you all the downstream instances that were triggered off the upstream instance (label 14) currently being viewed.</p>
 
 <p><img src="../images/dependent_build.png" alt="" /></p>
@@ -290,66 +299,63 @@
 <p><img src="../images/task_fetch_artifact_ancestor.png" alt="" /></p>
 
 <p>For power users, here&rsquo;s how you can configure this via the <strong>Config XML</strong> tab on the Admin section (Configuration reference is <a href="../configuration/configuration_reference.html">here</a>):</p>
-
-<pre><code class="language-xml">&lt;pipeline name=&quot;topmost_pipeline&quot;&gt;
-  &lt;materials&gt;
-    &lt;svn url=&quot;....&quot;/&gt;
-  &lt;/materials&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;pipeline</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;topmost_pipeline&#34;</span><span style="color:#f92672">&gt;</span>
+  <span style="color:#f92672">&lt;materials&gt;</span>
+    <span style="color:#f92672">&lt;svn</span> <span style="color:#a6e22e">url=</span><span style="color:#e6db74">&#34;....&#34;</span><span style="color:#f92672">/&gt;</span>
+  <span style="color:#f92672">&lt;/materials&gt;</span>
   ...
-  &lt;stage name=&quot;TopStage1&quot;&gt;
-    &lt;jobs&gt;
-    &lt;job name=&quot;topJob&quot;&gt;
-      &lt;tasks&gt;
-        &lt;nant /&gt;
-      &lt;/tasks&gt;
-      &lt;artifacts&gt;
-        &lt;artifact src=&quot;target/mylib.dll&quot; dest=&quot;lib&quot;/&gt;
-      &lt;/artifacts&gt;
-    &lt;/job&gt;
-   &lt;/jobs&gt;
-  &lt;/stage&gt;
-&lt;/pipeline&gt;
-&lt;pipeline name=&quot;upstream_pipeline&quot;&gt;
-  &lt;materials&gt;
-    &lt;svn url=&quot;....&quot;/&gt;
-    &lt;pipeline pipelineName=&quot;topmost_pipeline&quot; stageName=&quot;TopStage1&quot;/&gt;
-  &lt;/materials&gt;
+  <span style="color:#f92672">&lt;stage</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;TopStage1&#34;</span><span style="color:#f92672">&gt;</span>
+    <span style="color:#f92672">&lt;jobs&gt;</span>
+    <span style="color:#f92672">&lt;job</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;topJob&#34;</span><span style="color:#f92672">&gt;</span>
+      <span style="color:#f92672">&lt;tasks&gt;</span>
+        <span style="color:#f92672">&lt;nant</span> <span style="color:#f92672">/&gt;</span>
+      <span style="color:#f92672">&lt;/tasks&gt;</span>
+      <span style="color:#f92672">&lt;artifacts&gt;</span>
+        <span style="color:#f92672">&lt;artifact</span> <span style="color:#a6e22e">src=</span><span style="color:#e6db74">&#34;target/mylib.dll&#34;</span> <span style="color:#a6e22e">dest=</span><span style="color:#e6db74">&#34;lib&#34;</span><span style="color:#f92672">/&gt;</span>
+      <span style="color:#f92672">&lt;/artifacts&gt;</span>
+    <span style="color:#f92672">&lt;/job&gt;</span>
+   <span style="color:#f92672">&lt;/jobs&gt;</span>
+  <span style="color:#f92672">&lt;/stage&gt;</span>
+<span style="color:#f92672">&lt;/pipeline&gt;</span>
+<span style="color:#f92672">&lt;pipeline</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;upstream_pipeline&#34;</span><span style="color:#f92672">&gt;</span>
+  <span style="color:#f92672">&lt;materials&gt;</span>
+    <span style="color:#f92672">&lt;svn</span> <span style="color:#a6e22e">url=</span><span style="color:#e6db74">&#34;....&#34;</span><span style="color:#f92672">/&gt;</span>
+    <span style="color:#f92672">&lt;pipeline</span> <span style="color:#a6e22e">pipelineName=</span><span style="color:#e6db74">&#34;topmost_pipeline&#34;</span> <span style="color:#a6e22e">stageName=</span><span style="color:#e6db74">&#34;TopStage1&#34;</span><span style="color:#f92672">/&gt;</span>
+  <span style="color:#f92672">&lt;/materials&gt;</span>
   ...
-  &lt;stage name=&quot;AutoStage1&quot;&gt;
-    &lt;jobs&gt;
-    &lt;job name=&quot;firstJob&quot;&gt;
-      &lt;tasks&gt;
-        &lt;nant /&gt;
-      &lt;/tasks&gt;
-      &lt;artifacts&gt;
-        &lt;artifact src=&quot;target/commonlib.dll&quot; dest=&quot;pkg&quot;/&gt;
-      &lt;/artifacts&gt;
-    &lt;/job&gt;
-   &lt;/jobs&gt;
-  &lt;/stage&gt;
-&lt;/pipeline&gt;
-&lt;pipeline name=&quot;downstream_pipeline&quot;&gt;
-  &lt;materials&gt;
-    &lt;pipeline pipelineName=&quot;upstream_pipeline&quot; stageName=&quot;AutoStage1&quot;/&gt;
-  &lt;/materials&gt;
-  &lt;stage name=&quot;Stage&quot;&gt;
-    &lt;jobs&gt;
-    &lt;job name=&quot;fetchFromParentJob&quot;&gt;
-      &lt;tasks&gt;
-        &lt;fetchartifact pipeline=&quot;upstream_pipeline&quot; stage=&quot;AutoStage1&quot; job=&quot;firstJob&quot; srcfile=&quot;pkg/commonlib.dll&quot; dest=&quot;libs&quot;/&gt;
-      &lt;/tasks&gt;
-    &lt;/job&gt;
-    &lt;job name=&quot;fetchFromAncestorJob&quot;&gt;
-      &lt;tasks&gt;
-        &lt;fetchartifact pipeline=&quot;topmost_pipeline/upstream_pipeline&quot; stage=&quot;TopStage1&quot; job=&quot;topJob&quot; srcfile=&quot;lib/mylib.dll&quot; dest=&quot;libs&quot;/&gt;
-      &lt;/tasks&gt;
-    &lt;/job&gt;
-   &lt;jobs&gt;
-  &lt;/stage&gt;
+  <span style="color:#f92672">&lt;stage</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;AutoStage1&#34;</span><span style="color:#f92672">&gt;</span>
+    <span style="color:#f92672">&lt;jobs&gt;</span>
+    <span style="color:#f92672">&lt;job</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;firstJob&#34;</span><span style="color:#f92672">&gt;</span>
+      <span style="color:#f92672">&lt;tasks&gt;</span>
+        <span style="color:#f92672">&lt;nant</span> <span style="color:#f92672">/&gt;</span>
+      <span style="color:#f92672">&lt;/tasks&gt;</span>
+      <span style="color:#f92672">&lt;artifacts&gt;</span>
+        <span style="color:#f92672">&lt;artifact</span> <span style="color:#a6e22e">src=</span><span style="color:#e6db74">&#34;target/commonlib.dll&#34;</span> <span style="color:#a6e22e">dest=</span><span style="color:#e6db74">&#34;pkg&#34;</span><span style="color:#f92672">/&gt;</span>
+      <span style="color:#f92672">&lt;/artifacts&gt;</span>
+    <span style="color:#f92672">&lt;/job&gt;</span>
+   <span style="color:#f92672">&lt;/jobs&gt;</span>
+  <span style="color:#f92672">&lt;/stage&gt;</span>
+<span style="color:#f92672">&lt;/pipeline&gt;</span>
+<span style="color:#f92672">&lt;pipeline</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;downstream_pipeline&#34;</span><span style="color:#f92672">&gt;</span>
+  <span style="color:#f92672">&lt;materials&gt;</span>
+    <span style="color:#f92672">&lt;pipeline</span> <span style="color:#a6e22e">pipelineName=</span><span style="color:#e6db74">&#34;upstream_pipeline&#34;</span> <span style="color:#a6e22e">stageName=</span><span style="color:#e6db74">&#34;AutoStage1&#34;</span><span style="color:#f92672">/&gt;</span>
+  <span style="color:#f92672">&lt;/materials&gt;</span>
+  <span style="color:#f92672">&lt;stage</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;Stage&#34;</span><span style="color:#f92672">&gt;</span>
+    <span style="color:#f92672">&lt;jobs&gt;</span>
+    <span style="color:#f92672">&lt;job</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;fetchFromParentJob&#34;</span><span style="color:#f92672">&gt;</span>
+      <span style="color:#f92672">&lt;tasks&gt;</span>
+        <span style="color:#f92672">&lt;fetchartifact</span> <span style="color:#a6e22e">pipeline=</span><span style="color:#e6db74">&#34;upstream_pipeline&#34;</span> <span style="color:#a6e22e">stage=</span><span style="color:#e6db74">&#34;AutoStage1&#34;</span> <span style="color:#a6e22e">job=</span><span style="color:#e6db74">&#34;firstJob&#34;</span> <span style="color:#a6e22e">srcfile=</span><span style="color:#e6db74">&#34;pkg/commonlib.dll&#34;</span> <span style="color:#a6e22e">dest=</span><span style="color:#e6db74">&#34;libs&#34;</span><span style="color:#f92672">/&gt;</span>
+      <span style="color:#f92672">&lt;/tasks&gt;</span>
+    <span style="color:#f92672">&lt;/job&gt;</span>
+    <span style="color:#f92672">&lt;job</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;fetchFromAncestorJob&#34;</span><span style="color:#f92672">&gt;</span>
+      <span style="color:#f92672">&lt;tasks&gt;</span>
+        <span style="color:#f92672">&lt;fetchartifact</span> <span style="color:#a6e22e">pipeline=</span><span style="color:#e6db74">&#34;topmost_pipeline/upstream_pipeline&#34;</span> <span style="color:#a6e22e">stage=</span><span style="color:#e6db74">&#34;TopStage1&#34;</span> <span style="color:#a6e22e">job=</span><span style="color:#e6db74">&#34;topJob&#34;</span> <span style="color:#a6e22e">srcfile=</span><span style="color:#e6db74">&#34;lib/mylib.dll&#34;</span> <span style="color:#a6e22e">dest=</span><span style="color:#e6db74">&#34;libs&#34;</span><span style="color:#f92672">/&gt;</span>
+      <span style="color:#f92672">&lt;/tasks&gt;</span>
+    <span style="color:#f92672">&lt;/job&gt;</span>
+   <span style="color:#f92672">&lt;jobs&gt;</span>
+  <span style="color:#f92672">&lt;/stage&gt;</span>
   ...
-&lt;/pipeline&gt;
-
-</code></pre>
+<span style="color:#f92672">&lt;/pipeline&gt;</span></code></pre></div></p>
 </article>
 
       
@@ -390,6 +396,17 @@
 
   
   
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-48357651-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
 </body>
 
 </html>

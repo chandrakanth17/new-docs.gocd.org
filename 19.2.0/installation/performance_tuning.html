@@ -15,6 +15,18 @@
 <link rel="stylesheet" href="../stylesheets/website.css"/>
 
 <link rel="stylesheet" href="../book.min.f2a0cdad2e0137fc7e70bc050b9c5d2798b5b4f45b50cfb8e342022c8cfd0732.css"/>
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-48357651-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
   
 </head>
 
@@ -153,8 +165,8 @@
 <li><a href="../extension_points/package_repository_extension.html">Package Repository Extension</a></li>
 <li><a href="../extension_points/yum_repository_poller.html">Yum Repository Poller</a></li>
 <li><a href="../extension_points/scm_extension.html">SCM Extension</a></li>
-<li><a href="../extension_points/task_extension.html">Task Extension</a></li>
-<li><a href="../extension_points/notification_extension.html">Notification Extension</a></li>
+<li><a href="../extension_points/task_extension.html">Task Extension</a>
+<!---  - [Notification Extension](/extension_points/notification_extension.html)--></li>
 <li><a href="../extension_points/configrepo_extension.html">Configuration repository Extension</a></li>
 </ul></li>
 <li><a href="../gocd_on_kubernetes.html"><strong>GoCD on Kubernetes</strong></a>
@@ -230,6 +242,7 @@
 
       
 <article class="markdown">
+  <p>
 
 <h1 id="gocd-performance-tuning">GoCD Performance Tuning</h1>
 
@@ -254,11 +267,8 @@
 <p>When the GoCD server is being scaled up to run with larger number of pipeline, agents and materials, ensure that the JVM has been allocated appropriate heap sizes. The default values for the GoCD server are <code>-Xms512m</code> (minimum) and <code>-Xmx1024m</code> (maximum). These values can be increased by setting the environment variables <code>SERVER_MEM</code> (for minimum) and <code>SERVER_MAX_MEM</code> (for maximum).</p>
 
 <p>On linux, these can be added/updated in /etc/default/go-server. On Windows, copy the following lines in <em><a href="installing_go_server.html">wrapper-properties.conf</a></em> and change it to desired value.</p>
-
-<pre><code>wrapper.java.additional.1=-Xms512m
-wrapper.java.additional.2=-Xmx1024m
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">wrapper.java.additional.1<span style="color:#f92672">=</span>-Xms512m
+wrapper.java.additional.2<span style="color:#f92672">=</span>-Xmx1024m</code></pre></div>
 <p>For linux/unix users: If more than 100 agents are being used, an exception might be seen in <code>go-server.log</code> mentioning &ldquo;Too many open files&rdquo;. This may be an indication that there is a need to increase the number of file descriptors on the machine where GoCD Server is installed. On linux the command <code>ulimit -n</code> can be used to check the total number of file descriptors. To bump up the total number for file descriptors user and system, follow these steps:</p>
 
 <ol>
@@ -302,10 +312,7 @@ wrapper.java.additional.2=-Xmx1024m
 <h3 id="enable-gc-logging">Enable GC Logging</h3>
 
 <p>An easy way to check the memory usage, heap size (initial and over time) and GC metrics of the application is by turning on GC logging. GC logging can be enabled using the following JVM arguments while starting the application (Note: the log file specified as file is reset each time the VM starts.)</p>
-
-<pre><code>-verbose:gc -Xloggc:file -XX:+PrintGCTimeStamps
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">-verbose:gc -Xloggc:file -XX:+PrintGCTimeStamps</code></pre></div>
 <p>In case of the GoCD server, these arguments will have to be added in the script that starts the Go jar:</p>
 
 <ul>
@@ -318,10 +325,7 @@ wrapper.java.additional.2=-Xmx1024m
 <p>JConsole is a graphical monitoring tool to monitor Java Virtual Machine (JVM) which comes as part of the JDK installation. It can be used to monitor the current state of a process without much overhead. If the GoCD server&rsquo;s performance is slow, some metrics can be immediately analysed using jconsole.</p>
 
 <p>Since jconsole is a graphical tool, make sure you have an access to display, when running the following command. That is, use <code>ssh -X</code> or VNC if GoCD is on linux. Use remote desktop if the GoCD server is on windows.</p>
-
-<pre><code class="language-shell">$ jconsole
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ jconsole</code></pre></div>
 <p>Select the local process <code>go.jar</code> when the jconsole GUI opens up. This shows the current heap memory usage, threads, cpu usage etc. Screenshots of the VM Summary and the overview page can be taken to be sent to the GoCD Support team, if required.</p>
 
 <blockquote>
@@ -340,14 +344,9 @@ wrapper.java.additional.2=-Xmx1024m
 
 <ol>
 <li><p>Create a symlink for <code>libyjpagent.so</code> file to <code>/usr/lib/yourkit</code> folder. When the GoCD server starts up, it looks at this folder to see if it needs to start with profiling enabled or not. If you want to change the default path of the yourkit agent, you can edit <code>server.sh</code> at <code>/usr/share/go-server/server.sh</code></p>
-
-<pre><code class="language-shell">$ sudo ln -s [yourkit_profiler_directory]/bin/linux-x86-32/libyjpagent.so /usr/lib/yourkit/libyjpagent.so
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ sudo ln -s <span style="color:#f92672">[</span>yourkit_profiler_directory<span style="color:#f92672">]</span>/bin/linux-x86-32/libyjpagent.so /usr/lib/yourkit/libyjpagent.so</code></pre></div>
 <p>For 64-bit JVM, the command is:</p>
-
-<pre><code class="language-shell">$ sudo ln -s [yourkit_profiler_directory]/bin/linux-x86-64/libyjpagent.so /usr/lib/yourkit/libyjpagent.so
-</code></pre></li>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ sudo ln -s <span style="color:#f92672">[</span>yourkit_profiler_directory<span style="color:#f92672">]</span>/bin/linux-x86-64/libyjpagent.so /usr/lib/yourkit/libyjpagent.so</code></pre></div></li>
 
 <li><p>Restart the server after this, and the yourkit agent should get picked up by the server VM. Let the server start up and agents get registered.</p></li>
 </ol>
@@ -359,63 +358,35 @@ wrapper.java.additional.2=-Xmx1024m
 <li>To change the above mentioned default location: define environment variable <code>YOURKIT_PATH</code> with value equal to location of <code>yjpagent.dll</code>.</li>
 
 <li><p>If you are running the GoCD server as a service, you will need to perform an additional step. In the config folder of the GoCD server installation, edit the <em><a href="installing_go_server.html">wrapper-properties.conf</a></em> file, and add an additional property with the following value</p>
-
-<pre><code>&quot;-agentpath: [Path to yjpagent.dll]=port=6133,builtinprobes=none&quot;
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#e6db74">&#34;-agentpath: [Path to yjpagent.dll]=port=6133,builtinprobes=none&#34;</span></code></pre></div>
 <p>For example, if there are 16 properties already defined, add this 17th property as shown below</p>
-
-<pre><code>wrapper.java.additional.17=&quot;-agentpath:C:\yjpagent.dll=port=6133,builtinprobes=none&quot;
-</code></pre></li>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">wrapper.java.additional.17<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;-agentpath:C:\yjpagent.dll=port=6133,builtinprobes=none&#34;</span></code></pre></div></li>
 </ol>
 
 <p>Use the following steps to take profile the application and take snapshots. The <code>hostname</code> mentioned here is the hostname of the GoCD Server. In most cases, it would be &lsquo;localhost&rsquo;. The value of <code>port</code> is 6133, because GoCD starts the yjpagent on port 6133.</p>
 
 <ol>
 <li><p>To start profiling, run:</p>
-
-<pre><code class="language-shell">$ java -jar [yourkit_profiler_directory]/lib/yjp-controller-api-redist.jar hostname port  start-cpu-sampling
-</code></pre>
-
-<pre><code class="language-shell">$ java -jar [yourkit_profiler_directory]/lib/yjp-controller-api-redist.jar hostname port start-monitor-profiling
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ java -jar <span style="color:#f92672">[</span>yourkit_profiler_directory<span style="color:#f92672">]</span>/lib/yjp-controller-api-redist.jar hostname port  start-cpu-sampling</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ java -jar <span style="color:#f92672">[</span>yourkit_profiler_directory<span style="color:#f92672">]</span>/lib/yjp-controller-api-redist.jar hostname port start-monitor-profiling</code></pre></div>
 <p>If memory allocation profiling is also required:</p>
-
-<pre><code class="language-shell">$ java -jar [yourkit_profiler_directory]/lib/yjp-controller-api-redist.jar hostname port start-alloc-recording-adaptive
-</code></pre></li>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ java -jar <span style="color:#f92672">[</span>yourkit_profiler_directory<span style="color:#f92672">]</span>/lib/yjp-controller-api-redist.jar hostname port start-alloc-recording-adaptive</code></pre></div></li>
 
 <li><p>Let the server run for some time till you start seeing performance problems. 30 mins of snapshot should give us enough data.</p></li>
 
 <li><p>To capture the snapshot - Run:</p>
-
-<pre><code class="language-shell">$ java -jar [yourkit_profiler_directory]/lib/yjp-controller-api-redist.jar hostname port capture-performance-snapshot
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ java -jar <span style="color:#f92672">[</span>yourkit_profiler_directory<span style="color:#f92672">]</span>/lib/yjp-controller-api-redist.jar hostname port capture-performance-snapshot</code></pre></div>
 <p>To capture memory snapshot</p>
-
-<pre><code>$ java -jar [yourkit_profiler_directory]/lib/yjp-controller-api-redist.jar hostname port capture-memory-snapshot
-</code></pre></li>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ java -jar <span style="color:#f92672">[</span>yourkit_profiler_directory<span style="color:#f92672">]</span>/lib/yjp-controller-api-redist.jar hostname port capture-memory-snapshot</code></pre></div></li>
 
 <li><p>To stop profiling, run:</p>
-
-<pre><code>$ java -jar [yourkit_profiler_directory]/lib/yjp-controller-api-redist.jar hostname port stop-cpu-profiling`
-</code></pre>
-
-<pre><code>$ java -jar [yourkit_profiler_directory]/lib/yjp-controller-api-redist.jar hostname port stop-monitor-profiling
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ java -jar <span style="color:#f92672">[</span>yourkit_profiler_directory<span style="color:#f92672">]</span>/lib/yjp-controller-api-redist.jar hostname port stop-cpu-profiling<span style="color:#e6db74">`</span></code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ java -jar <span style="color:#f92672">[</span>yourkit_profiler_directory<span style="color:#f92672">]</span>/lib/yjp-controller-api-redist.jar hostname port stop-monitor-profiling</code></pre></div>
 <p>If memory profiling was turned on,s top it using the following command</p>
-
-<pre><code>$ java -jar [yourkit_profiler_directory]/lib/yjp-controller-api-redist.jar hostname port stop-alloc-recording
-</code></pre></li>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ java -jar <span style="color:#f92672">[</span>yourkit_profiler_directory<span style="color:#f92672">]</span>/lib/yjp-controller-api-redist.jar hostname port stop-alloc-recording</code></pre></div></li>
 
 <li><p>Once you&rsquo;re done profiling, run the following so that on the next GoCD server restart, the agent is not loaded into the JVM.</p>
 
 <p>In case of linux, run the following command:</p>
-
-<pre><code>$ sudo rm /usr/lib/yourkit/libyjpagent.so
-</code></pre></li>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ sudo rm /usr/lib/yourkit/libyjpagent.so</code></pre></div></li>
 </ol>
 
 <p>In case of windows, delete the file <code>C:\yjpagent.dll</code>. If you were using the variable <code>YOURKIT_PATH</code>, then remove the environment variable.</p>
@@ -447,6 +418,7 @@ wrapper.java.additional.2=-Xmx1024m
 
 <li><p>If any Yourkit and jconsole snapshots as mentioned in the previous points, its useful if that can be sent too.</p></li>
 </ol>
+</p>
 </article>
 
       
@@ -499,6 +471,17 @@ wrapper.java.additional.2=-Xmx1024m
 
   
   
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-48357651-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
 </body>
 
 </html>

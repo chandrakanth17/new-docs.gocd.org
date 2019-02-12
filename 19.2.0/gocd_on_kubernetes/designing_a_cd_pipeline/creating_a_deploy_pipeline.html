@@ -15,6 +15,18 @@
 <link rel="stylesheet" href="../../stylesheets/website.css"/>
 
 <link rel="stylesheet" href="../../book.min.f2a0cdad2e0137fc7e70bc050b9c5d2798b5b4f45b50cfb8e342022c8cfd0732.css"/>
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-48357651-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
   
 </head>
 
@@ -153,8 +165,8 @@
 <li><a href="../../extension_points/package_repository_extension.html">Package Repository Extension</a></li>
 <li><a href="../../extension_points/yum_repository_poller.html">Yum Repository Poller</a></li>
 <li><a href="../../extension_points/scm_extension.html">SCM Extension</a></li>
-<li><a href="../../extension_points/task_extension.html">Task Extension</a></li>
-<li><a href="../../extension_points/notification_extension.html">Notification Extension</a></li>
+<li><a href="../../extension_points/task_extension.html">Task Extension</a>
+<!---  - [Notification Extension](/extension_points/notification_extension.html)--></li>
 <li><a href="../../extension_points/configrepo_extension.html">Configuration repository Extension</a></li>
 </ul></li>
 <li><a href="../../gocd_on_kubernetes.html"><strong>GoCD on Kubernetes</strong></a>
@@ -230,6 +242,7 @@
 
       
 <article class="markdown">
+  <p>
 
 <h1 id="create-a-pipeline-to-deploy-the-published-artifact">Create a pipeline to deploy the published artifact</h1>
 
@@ -278,11 +291,8 @@ For convenience, you can use the secret associated with the service account we u
 </blockquote>
 
 <p><em>Note: The KUBE_TOKEN environment variable must be configured as a secure variable as shown in the image. This token should not be exposed.</em></p>
-
-<pre><code class="language-bash">kubectl describe sa default --namespace kube-system // to obtain the secret name
-kubectl describe secrets &lt;token_name&gt; --namespace kube-system
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl describe sa default --namespace kube-system // to obtain the secret name
+kubectl describe secrets &lt;token_name&gt; --namespace kube-system</code></pre></div>
 <p><img src="../../images/gocd-helm-chart/env_vars_deploy.png" alt="" /></p></li>
 
 <li><p>Configure a <code>Fetch Artifact Task</code> to fetch the docker image name. The docker image is the artifact that was published in upstream <code>build_and_publish_image</code>.</p>
@@ -369,18 +379,13 @@ kubectl describe secrets &lt;token_name&gt; --namespace kube-system
 <ul>
 <li>For Minikube,</li>
 </ul>
-
-<pre><code class="language-bash">minikube ip
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">minikube ip</code></pre></div>
 <ul>
 <li>For others,</li>
 </ul>
-
-<pre><code class="language-bash">echo &quot;http://$(kubectl get ingress bulletin-board-ingress --namespace $NAMESPACE -o jsonpath=&quot;{.status.loadBalancer.ingress[0]['ip']}&quot;)&quot;
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">echo <span style="color:#e6db74">&#34;http://</span><span style="color:#66d9ef">$(</span>kubectl get ingress bulletin-board-ingress --namespace $NAMESPACE -o jsonpath<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{.status.loadBalancer.ingress[0][&#39;ip&#39;]}&#34;</span><span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span></code></pre></div>
 <p><img src="../../images/gocd-helm-chart/sample_application.png" alt="" /></p>
+</p>
 </article>
 
       
@@ -438,6 +443,17 @@ kubectl describe secrets &lt;token_name&gt; --namespace kube-system
 
   
   
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-48357651-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
 </body>
 
 </html>

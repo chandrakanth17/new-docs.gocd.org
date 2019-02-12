@@ -15,6 +15,18 @@
 <link rel="stylesheet" href="../../../stylesheets/website.css"/>
 
 <link rel="stylesheet" href="../../../book.min.f2a0cdad2e0137fc7e70bc050b9c5d2798b5b4f45b50cfb8e342022c8cfd0732.css"/>
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-48357651-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
   
 </head>
 
@@ -153,8 +165,8 @@
 <li><a href="../../../extension_points/package_repository_extension.html">Package Repository Extension</a></li>
 <li><a href="../../../extension_points/yum_repository_poller.html">Yum Repository Poller</a></li>
 <li><a href="../../../extension_points/scm_extension.html">SCM Extension</a></li>
-<li><a href="../../../extension_points/task_extension.html">Task Extension</a></li>
-<li><a href="../../../extension_points/notification_extension.html">Notification Extension</a></li>
+<li><a href="../../../extension_points/task_extension.html">Task Extension</a>
+<!---  - [Notification Extension](/extension_points/notification_extension.html)--></li>
 <li><a href="../../../extension_points/configrepo_extension.html">Configuration repository Extension</a></li>
 </ul></li>
 <li><a href="../../../gocd_on_kubernetes.html"><strong>GoCD on Kubernetes</strong></a>
@@ -230,6 +242,7 @@
 
       
 <article class="markdown">
+  <p>
 
 <h1 id="installing-gocd-agent-on-windows">Installing GoCD agent on Windows</h1>
 
@@ -251,10 +264,7 @@
 <h1 id="silent-headless-installation">Silent (Headless) Installation</h1>
 
 <p>You may use this method if you would like to script the installation of the GoCD agent.</p>
-
-<pre><code>go-agent-${version}-setup.exe /S /START_AGENT=NO /SERVERURL=&quot;&lt;SERVERURL&gt;&quot; /GO_AGENT_JAVA_HOME=&lt;PATH_TO_JAVA_HOME&gt; /D=&lt;PATH_TO_AGENT_DIRECTORY&gt;
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">go-agent-<span style="color:#e6db74">${</span>version<span style="color:#e6db74">}</span>-setup.exe /S /START_AGENT<span style="color:#f92672">=</span>NO /SERVERURL<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&lt;SERVERURL&gt;&#34;</span> /GO_AGENT_JAVA_HOME<span style="color:#f92672">=</span>&lt;PATH_TO_JAVA_HOME&gt; /D<span style="color:#f92672">=</span>&lt;PATH_TO_AGENT_DIRECTORY&gt;</code></pre></div>
 <table>
 <thead>
 <tr>
@@ -292,15 +302,9 @@
 </table>
 
 <p>For example:</p>
-
-<pre><code>C:\&gt; go-agent-16.1.0-1234-setup.exe /S /SERVERURL=&quot;https://10.12.20.47:8154/go&quot; /D=C:\go\agent
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">C:<span style="color:#ae81ff">\&gt;</span> go-agent-16.1.0-1234-setup.exe /S /SERVERURL<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://10.12.20.47:8154/go&#34;</span> /D<span style="color:#f92672">=</span>C:<span style="color:#ae81ff">\g</span>o<span style="color:#ae81ff">\a</span>gent</code></pre></div>
 <p>In case you are using <code>powershell.exe</code> for the silent installation, the <code>SERVERURL</code> argument needs to be passed with quotes being escaped with backticks:</p>
-
-<pre><code>C:\&gt; go-agent-16.1.0-1234-setup.exe /S /SERVERURL=`&quot;https://10.12.20.47:8154/go`&quot; /D=C:\go\agent
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">C:<span style="color:#ae81ff">\&gt;</span> go-agent-16.1.0-1234-setup.exe /S /SERVERURL<span style="color:#f92672">=</span><span style="color:#e6db74">`</span><span style="color:#e6db74">&#34;https://10.12.20.47:8154/go`&#34;</span> /D<span style="color:#f92672">=</span>C:<span style="color:#ae81ff">\g</span>o<span style="color:#ae81ff">\a</span>gent</code></pre></div>
 <p>If User Access Control feature is enabled on your Windows system, it needs to be turned off for silent installation to work.</p>
 
 <p>If you are using the silent installation to upgrade GoCD, you should not specify the Installation-Directory option.</p>
@@ -313,28 +317,21 @@
 <li>Copy any specific properties, or add new properties from <code>config/wrapper-agent.conf</code> into this file. Be sure to increment the property index if you&rsquo;re adding any new properties.</li>
 
 <li><p>For e.g. to override the loglevel to debug, override <code>wrapper.console.loglevel</code> -</p>
-
-<pre><code># config/wrapper-properties.conf
-wrapper.console.loglevel=DEBUG
-</code></pre></li>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># config/wrapper-properties.conf</span>
+wrapper.console.loglevel<span style="color:#f92672">=</span>DEBUG</code></pre></div></li>
 
 <li><p>To append additional JVM args to the agent</p>
-
-<pre><code># config/wrapper-properties.conf
-# since the last &quot;wrapper.java.additional&quot; index is 2, we use the next available index.
-wrapper.java.additional.3=-Xmx512mb
-</code></pre></li>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># config/wrapper-properties.conf</span>
+<span style="color:#75715e"># since the last &#34;wrapper.java.additional&#34; index is 2, we use the next available index.</span>
+wrapper.java.additional.3<span style="color:#f92672">=</span>-Xmx512mb</code></pre></div></li>
 
 <li><p>Each property must be configured separately</p>
-
-<pre><code># Having a single property for multiple configurations is invalid, e.g
-wrapper.java.additional.16=&quot;-Dcruise.config.foo='bar' -Dcruise.config.other='baz'&quot;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Having a single property for multiple configurations is invalid, e.g</span>
+wrapper.java.additional.16<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;-Dcruise.config.foo=&#39;bar&#39; -Dcruise.config.other=&#39;baz&#39;&#34;</span>
 
 Valid properties,
-wrapper.java.additional.16=-Dcruise.config.foo=bar
-wrapper.java.additional.17=-Dcruise.config.other=baz
-</code></pre>
-
+wrapper.java.additional.16<span style="color:#f92672">=</span>-Dcruise.config.foo<span style="color:#f92672">=</span>bar
+wrapper.java.additional.17<span style="color:#f92672">=</span>-Dcruise.config.other<span style="color:#f92672">=</span>baz</code></pre></div>
 <p><strong>Please note</strong> : If the go-agent as an application is run by any user, then this user needs to have these required permissions to the go-agent folder, i.e. modify, read and execute, list folder contents and read permissions.</p></li>
 </ul>
 
@@ -351,6 +348,7 @@ wrapper.java.additional.17=-Dcruise.config.other=baz
 <li>Follow the instructions <a href="../../../configuration/managing_a_build_cloud.html">here</a> to find the agent you&rsquo;ve just installed on the list and add the agent to your cloud. The Go server will now schedule work for this agent.</li>
 </ol>
 
+</p>
 </article>
 
       
@@ -393,6 +391,17 @@ wrapper.java.additional.17=-Dcruise.config.other=baz
 
   
   
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-48357651-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
 </body>
 
 </html>

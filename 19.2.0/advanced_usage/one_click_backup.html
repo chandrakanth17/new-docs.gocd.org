@@ -15,6 +15,18 @@
 <link rel="stylesheet" href="../stylesheets/website.css"/>
 
 <link rel="stylesheet" href="../book.min.f2a0cdad2e0137fc7e70bc050b9c5d2798b5b4f45b50cfb8e342022c8cfd0732.css"/>
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-48357651-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
   
 </head>
 
@@ -153,8 +165,8 @@
 <li><a href="../extension_points/package_repository_extension.html">Package Repository Extension</a></li>
 <li><a href="../extension_points/yum_repository_poller.html">Yum Repository Poller</a></li>
 <li><a href="../extension_points/scm_extension.html">SCM Extension</a></li>
-<li><a href="../extension_points/task_extension.html">Task Extension</a></li>
-<li><a href="../extension_points/notification_extension.html">Notification Extension</a></li>
+<li><a href="../extension_points/task_extension.html">Task Extension</a>
+<!---  - [Notification Extension](/extension_points/notification_extension.html)--></li>
 <li><a href="../extension_points/configrepo_extension.html">Configuration repository Extension</a></li>
 </ul></li>
 <li><a href="../gocd_on_kubernetes.html"><strong>GoCD on Kubernetes</strong></a>
@@ -230,6 +242,7 @@
 
       
 <article class="markdown">
+  <p>
 
 <h1 id="backup-gocd-server">Backup GoCD Server</h1>
 
@@ -284,10 +297,7 @@
 <p>Artifacts and the Test Reporting Data keep getting new files and directories added to them. So, it is a good idea to use <strong>rsync</strong> to copy the contents of these two into a backup location.</p>
 
 <p><em>For Instance:</em> Lets say you have a copy of all the files till 12-02-2012 in a location. On 20-02-2012, you can do something like:</p>
-
-<pre><code class="language-shell">rsync -avzP {ARTIFACT_LOCATION} {BACKUP_LOCATION}
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">rsync -avzP <span style="color:#f92672">{</span>ARTIFACT_LOCATION<span style="color:#f92672">}</span> <span style="color:#f92672">{</span>BACKUP_LOCATION<span style="color:#f92672">}</span></code></pre></div>
 <p>This makes sure that only the files and directories that got newly added will be synced to the {BACKUP_LOCATION} and not the entire contents.</p>
 
 <h3 id="restoring-gocd-using-backup">Restoring GoCD using backup</h3>
@@ -324,6 +334,7 @@
 
 <li><p>Start the GoCD server</p></li>
 </ul>
+</p>
 </article>
 
       
@@ -372,6 +383,17 @@
 
   
   
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-48357651-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
 </body>
 
 </html>

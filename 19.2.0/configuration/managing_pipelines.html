@@ -15,6 +15,18 @@
 <link rel="stylesheet" href="../stylesheets/website.css"/>
 
 <link rel="stylesheet" href="../book.min.f2a0cdad2e0137fc7e70bc050b9c5d2798b5b4f45b50cfb8e342022c8cfd0732.css"/>
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-48357651-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
   
 </head>
 
@@ -153,8 +165,8 @@
 <li><a href="../extension_points/package_repository_extension.html">Package Repository Extension</a></li>
 <li><a href="../extension_points/yum_repository_poller.html">Yum Repository Poller</a></li>
 <li><a href="../extension_points/scm_extension.html">SCM Extension</a></li>
-<li><a href="../extension_points/task_extension.html">Task Extension</a></li>
-<li><a href="../extension_points/notification_extension.html">Notification Extension</a></li>
+<li><a href="../extension_points/task_extension.html">Task Extension</a>
+<!---  - [Notification Extension](/extension_points/notification_extension.html)--></li>
 <li><a href="../extension_points/configrepo_extension.html">Configuration repository Extension</a></li>
 </ul></li>
 <li><a href="../gocd_on_kubernetes.html"><strong>GoCD on Kubernetes</strong></a>
@@ -230,6 +242,7 @@
 
       
 <article class="markdown">
+  <p>
 
 <h1 id="managing-gocd-pipelines">Managing GoCD pipelines</h1>
 
@@ -469,34 +482,31 @@
 <h4 id="using-xml">Using XML</h4>
 
 <p>Power users can configure the above as follows:</p>
-
-<pre><code class="language-xml">&lt;pipelines group=&quot;my-app&quot;&gt;
-  &lt;pipeline name=&quot;app-trunk&quot; template=&quot;my-app-build&quot;&gt;
-    &lt;materials&gt;
-      &lt;svn url=&quot;http://my-svn-url/trunk&quot; /&gt;
-    &lt;/materials&gt;
-  &lt;/pipeline&gt;
-  &lt;pipeline name=&quot;app-1.0-branch&quot; template=&quot;my-app-build&quot;&gt;
-    &lt;materials&gt;
-      &lt;svn url=&quot;http://my-svn-url/branches/1.0&quot; /&gt;
-    &lt;/materials&gt;
-  &lt;/pipeline&gt;
-&lt;/pipelines&gt;
-&lt;templates&gt;
-  &lt;pipeline name=&quot;my-app-build&quot;&gt;
-    &lt;stage name=&quot;build&quot;&gt;
-      &lt;jobs&gt;
-        &lt;job name=&quot;compile&quot;&gt;
-          &lt;tasks&gt;
-            &lt;ant target=&quot;compile&quot; /&gt;
-          &lt;/tasks&gt;
-        &lt;/job&gt;
-      &lt;/jobs&gt;
-    &lt;/stage&gt;
-  &lt;/pipeline&gt;
-&lt;/templates&gt;
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;pipelines</span> <span style="color:#a6e22e">group=</span><span style="color:#e6db74">&#34;my-app&#34;</span><span style="color:#f92672">&gt;</span>
+  <span style="color:#f92672">&lt;pipeline</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;app-trunk&#34;</span> <span style="color:#a6e22e">template=</span><span style="color:#e6db74">&#34;my-app-build&#34;</span><span style="color:#f92672">&gt;</span>
+    <span style="color:#f92672">&lt;materials&gt;</span>
+      <span style="color:#f92672">&lt;svn</span> <span style="color:#a6e22e">url=</span><span style="color:#e6db74">&#34;http://my-svn-url/trunk&#34;</span> <span style="color:#f92672">/&gt;</span>
+    <span style="color:#f92672">&lt;/materials&gt;</span>
+  <span style="color:#f92672">&lt;/pipeline&gt;</span>
+  <span style="color:#f92672">&lt;pipeline</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;app-1.0-branch&#34;</span> <span style="color:#a6e22e">template=</span><span style="color:#e6db74">&#34;my-app-build&#34;</span><span style="color:#f92672">&gt;</span>
+    <span style="color:#f92672">&lt;materials&gt;</span>
+      <span style="color:#f92672">&lt;svn</span> <span style="color:#a6e22e">url=</span><span style="color:#e6db74">&#34;http://my-svn-url/branches/1.0&#34;</span> <span style="color:#f92672">/&gt;</span>
+    <span style="color:#f92672">&lt;/materials&gt;</span>
+  <span style="color:#f92672">&lt;/pipeline&gt;</span>
+<span style="color:#f92672">&lt;/pipelines&gt;</span>
+<span style="color:#f92672">&lt;templates&gt;</span>
+  <span style="color:#f92672">&lt;pipeline</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;my-app-build&#34;</span><span style="color:#f92672">&gt;</span>
+    <span style="color:#f92672">&lt;stage</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;build&#34;</span><span style="color:#f92672">&gt;</span>
+      <span style="color:#f92672">&lt;jobs&gt;</span>
+        <span style="color:#f92672">&lt;job</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;compile&#34;</span><span style="color:#f92672">&gt;</span>
+          <span style="color:#f92672">&lt;tasks&gt;</span>
+            <span style="color:#f92672">&lt;ant</span> <span style="color:#a6e22e">target=</span><span style="color:#e6db74">&#34;compile&#34;</span> <span style="color:#f92672">/&gt;</span>
+          <span style="color:#f92672">&lt;/tasks&gt;</span>
+        <span style="color:#f92672">&lt;/job&gt;</span>
+      <span style="color:#f92672">&lt;/jobs&gt;</span>
+    <span style="color:#f92672">&lt;/stage&gt;</span>
+  <span style="color:#f92672">&lt;/pipeline&gt;</span>
+<span style="color:#f92672">&lt;/templates&gt;</span></code></pre></div>
 <h3 id="editing-pipeline-templates">Editing Pipeline Templates</h3>
 
 <p>Go Administrators can now enable any Go user to edit a template by <a href="dev_authorization.html#specifying-permissions-for-templates">making them a template administrator</a>.</p>
@@ -541,6 +551,7 @@
 <h2 id="managing-pipeline-groups">Managing pipeline groups</h2>
 
 <p>There is support for collecting multiple pipelines into a single named group. See the section on <a href="dev_authorization.html#specifying-permissions-for-pipeline-groups">Specifying who can view and operate pipeline groups</a> for more details.</p>
+</p>
 </article>
 
       
@@ -601,6 +612,17 @@
 
   
   
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-48357651-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
 </body>
 
 </html>

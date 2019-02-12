@@ -15,6 +15,18 @@
 <link rel="stylesheet" href="../../stylesheets/website.css"/>
 
 <link rel="stylesheet" href="../../book.min.f2a0cdad2e0137fc7e70bc050b9c5d2798b5b4f45b50cfb8e342022c8cfd0732.css"/>
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-48357651-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
   
 </head>
 
@@ -153,8 +165,8 @@
 <li><a href="../../extension_points/package_repository_extension.html">Package Repository Extension</a></li>
 <li><a href="../../extension_points/yum_repository_poller.html">Yum Repository Poller</a></li>
 <li><a href="../../extension_points/scm_extension.html">SCM Extension</a></li>
-<li><a href="../../extension_points/task_extension.html">Task Extension</a></li>
-<li><a href="../../extension_points/notification_extension.html">Notification Extension</a></li>
+<li><a href="../../extension_points/task_extension.html">Task Extension</a>
+<!---  - [Notification Extension](/extension_points/notification_extension.html)--></li>
 <li><a href="../../extension_points/configrepo_extension.html">Configuration repository Extension</a></li>
 </ul></li>
 <li><a href="../../gocd_on_kubernetes.html"><strong>GoCD on Kubernetes</strong></a>
@@ -230,17 +242,15 @@
 
       
 <article class="markdown">
+  <p>
 
 <h1 id="install-the-gocd-helm-chart">Install the GoCD Helm chart</h1>
 
 <p>Helm is a package manager for Kubernetes. Kubernetes packages are called charts. Charts are curated applications for Kubernetes.</p>
 
 <p>Install the GoCD Helm chart with these commands:</p>
-
-<pre><code class="language-bash">helm repo add stable https://kubernetes-charts.storage.googleapis.com
-helm install stable/gocd --name gocd --namespace gocd
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">helm repo add stable https://kubernetes-charts.storage.googleapis.com
+helm install stable/gocd --name gocd --namespace gocd</code></pre></div>
 <h2 id="access-the-gocd-server">Access the GoCD server</h2>
 
 <p>After you&rsquo;ve installed the GoCD helm chart, you should be able to access the GoCD server from the Ingress IP.</p>
@@ -250,29 +260,21 @@ helm install stable/gocd --name gocd --namespace gocd
 <ul>
 <li>Minikube</li>
 </ul>
-
-<pre><code class="language-bash">minikube ip
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">minikube ip</code></pre></div>
 <ul>
 <li>Others</li>
 </ul>
-
-<pre><code class="language-bash">ip=$(kubectl get ingress --namespace gocd gocd-server -o jsonpath=&quot;{.status.loadBalancer.ingress[0].ip}&quot;)
-echo &quot;http://$ip&quot;
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ip<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>kubectl get ingress --namespace gocd gocd-server -o jsonpath<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{.status.loadBalancer.ingress[0].ip}&#34;</span><span style="color:#66d9ef">)</span>
+echo <span style="color:#e6db74">&#34;http://</span>$ip<span style="color:#e6db74">&#34;</span></code></pre></div>
 <p>It might take a few minutes for the GoCD server to come up for the first time. You can check if the GoCD server is up with this command:</p>
-
-<pre><code class="language-bash">kubectl get deployments --namespace gocd
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">kubectl get deployments --namespace gocd</code></pre></div>
 <p>The column <code>Available</code> should show 1 for gocd-server.</p>
 
 <p>The GoCD server on startup will look like this.
 <img src="../../images/gocd-helm-chart/first_screen.png" alt="" /></p>
 
 <p>Now that you have accessed the GoCD server successfully, you will need to configure the Kubernetes elastic agent plugin.</p>
+</p>
 </article>
 
       
@@ -310,6 +312,17 @@ echo &quot;http://$ip&quot;
 
   
   
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-48357651-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
 </body>
 
 </html>

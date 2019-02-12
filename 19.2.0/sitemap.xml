@@ -11,6 +11,10 @@
   </url>
   
   <url>
+    <loc>/configuration.html</loc>
+  </url>
+  
+  <url>
     <loc>/extension_points/notification_extension.html</loc>
   </url>
   
@@ -44,6 +48,10 @@
   
   <url>
     <loc>/installation/troubleshooting.html</loc>
+  </url>
+  
+  <url>
+    <loc>/navigation.html</loc>
   </url>
   
   <url>
@@ -165,10 +173,6 @@
   
   <url>
     <loc>/advanced_usage/config_repo.html</loc>
-  </url>
-  
-  <url>
-    <loc>/configuration.html</loc>
   </url>
   
   <url>
@@ -393,10 +397,6 @@
   
   <url>
     <loc>/advanced_usage/admin_install_multiple_agents.html</loc>
-  </url>
-  
-  <url>
-    <loc>/navigation.html</loc>
   </url>
   
   <url>

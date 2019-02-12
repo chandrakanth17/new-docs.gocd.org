@@ -15,6 +15,18 @@
 <link rel="stylesheet" href="../stylesheets/website.css"/>
 
 <link rel="stylesheet" href="../book.min.f2a0cdad2e0137fc7e70bc050b9c5d2798b5b4f45b50cfb8e342022c8cfd0732.css"/>
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-48357651-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
   
 </head>
 
@@ -153,8 +165,8 @@
 <li><a href="../extension_points/package_repository_extension.html">Package Repository Extension</a></li>
 <li><a href="../extension_points/yum_repository_poller.html">Yum Repository Poller</a></li>
 <li><a href="../extension_points/scm_extension.html">SCM Extension</a></li>
-<li><a href="../extension_points/task_extension.html">Task Extension</a></li>
-<li><a href="../extension_points/notification_extension.html">Notification Extension</a></li>
+<li><a href="../extension_points/task_extension.html">Task Extension</a>
+<!---  - [Notification Extension](/extension_points/notification_extension.html)--></li>
 <li><a href="../extension_points/configrepo_extension.html">Configuration repository Extension</a></li>
 </ul></li>
 <li><a href="../gocd_on_kubernetes.html"><strong>GoCD on Kubernetes</strong></a>
@@ -230,6 +242,7 @@
 
       
 <article class="markdown">
+  <p>
 
 <h1 id="yum-repository-poller">Yum Repository Poller</h1>
 
@@ -238,10 +251,7 @@
 <h2 id="introduction">Introduction</h2>
 
 <p>The Yum repository poller is a bundled <a href="package_repository_extension.html">package material</a> plugin capable of polling yum repositories for rpm packages. GoCD server interacts with this plugin via package material plugin interfaces. The plugin makes use of a command similar to the following to poll the server. So it does not depend on the files that yum depends on e.g. files under /etc/yum.repos.d</p>
-
-<pre><code class="language-shell">repoquery --repofrompath=uuid,$REPO_URL --repoid=uuid -q $PACKAGE_SPEC -qf &quot;%{LOCATION}...&quot;
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">repoquery --repofrompath<span style="color:#f92672">=</span>uuid,$REPO_URL --repoid<span style="color:#f92672">=</span>uuid -q $PACKAGE_SPEC -qf <span style="color:#e6db74">&#34;%{LOCATION}...&#34;</span></code></pre></div>
 <p>A given instance of polling is considered successful if repoquery returns a single package as output.</p>
 
 <!--
@@ -320,25 +330,16 @@ subsituted as below:</p>
 
 <p>Or, to simply pass it as an argument to a deploy script on a remote
 server</p>
-
-<pre><code class="language-xml">&lt;exec command=&quot;/bin/bash&quot;&gt;
-    &lt;arg&gt;-c&lt;/arg&gt;
-    &lt;arg&gt;ssh server &quot;cd /to/dest/dir;deploy.sh $GO_PACKAGE_ORA_GCC_LOCATION&quot;&lt;/arg&gt;
-&lt;/exec&gt;
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;exec</span> <span style="color:#a6e22e">command=</span><span style="color:#e6db74">&#34;/bin/bash&#34;</span><span style="color:#f92672">&gt;</span>
+    <span style="color:#f92672">&lt;arg&gt;</span>-c<span style="color:#f92672">&lt;/arg&gt;</span>
+    <span style="color:#f92672">&lt;arg&gt;</span>ssh server &#34;cd /to/dest/dir;deploy.sh $GO_PACKAGE_ORA_GCC_LOCATION&#34;<span style="color:#f92672">&lt;/arg&gt;</span>
+<span style="color:#f92672">&lt;/exec&gt;</span></code></pre></div>
 <h3 id="installing-rpms">Installing RPMs</h3>
 
 <p>For self contained packages (no external dependencies other than what is already installed on the target node), it is just enough to do:</p>
-
-<pre><code class="language-shell">rpm -U /path/to/downloaded/pkg.rpm
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">rpm -U /path/to/downloaded/pkg.rpm</code></pre></div>
 <p>On the other hand, if the package isn&rsquo;t self-contained, we&rsquo;d run:</p>
-
-<pre><code class="language-shell">yum install $GO_PACKAGE_ORA_GCC_LABEL
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">yum install $GO_PACKAGE_ORA_GCC_LABEL</code></pre></div>
 <p>This would require that /etc/yum.repos.d contain the repository definitions.</p>
 
 <h3 id="creating-and-publishing-rpms">Creating and Publishing RPMs</h3>
@@ -360,6 +361,7 @@ server</p>
 <li>Package groups are not supported.</li>
 <li>The <a href="https://github.com/gocd/go-command-repo/tree/master/package/rpm">GoCD command repository</a> has a bunch of commands related to rpm packages.</li>
 </ol>
+</p>
 </article>
 
       
@@ -407,6 +409,17 @@ server</p>
 
   
   
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-48357651-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
 </body>
 
 </html>

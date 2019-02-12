@@ -15,6 +15,18 @@
 <link rel="stylesheet" href="../stylesheets/website.css"/>
 
 <link rel="stylesheet" href="../book.min.f2a0cdad2e0137fc7e70bc050b9c5d2798b5b4f45b50cfb8e342022c8cfd0732.css"/>
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-48357651-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
   
 </head>
 
@@ -153,8 +165,8 @@
 <li><a href="../extension_points/package_repository_extension.html">Package Repository Extension</a></li>
 <li><a href="../extension_points/yum_repository_poller.html">Yum Repository Poller</a></li>
 <li><a href="../extension_points/scm_extension.html">SCM Extension</a></li>
-<li><a href="../extension_points/task_extension.html">Task Extension</a></li>
-<li><a href="../extension_points/notification_extension.html">Notification Extension</a></li>
+<li><a href="../extension_points/task_extension.html">Task Extension</a>
+<!---  - [Notification Extension](/extension_points/notification_extension.html)--></li>
 <li><a href="../extension_points/configrepo_extension.html">Configuration repository Extension</a></li>
 </ul></li>
 <li><a href="../gocd_on_kubernetes.html"><strong>GoCD on Kubernetes</strong></a>
@@ -230,6 +242,7 @@
 
       
 <article class="markdown">
+  <p>
 
 <h1 id="using-ssh-keys-to-access-gocd-materials-in-a-containerized-gocd-server-and-agent">Using SSH keys to access GoCD materials in a containerized GoCD server and agent</h1>
 
@@ -239,26 +252,17 @@ One of the popular methods to do so is configuring SSH keys. When using docker f
 <ul>
 <li>Create a docker container using the gocd-server image:</li>
 </ul>
-
-<pre><code class="language-bash">docker run -itd -v/some/location/on/host:/home/go/.ssh gocd/gocd-server:v18.12.0
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker run -itd -v/some/location/on/host:/home/go/.ssh gocd/gocd-server:v18.12.0</code></pre></div>
 <p>Once the container has started, the container id is provided.</p>
 
 <ul>
 <li>Exec into the container as the <code>go</code> user</li>
 </ul>
-
-<pre><code class="language-bash">docker exec -it -u go -w /home/go &lt;container_id&gt; /bin/bash
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker exec -it -u go -w /home/go &lt;container_id&gt; /bin/bash</code></pre></div>
 <ul>
 <li>Generate ssh keys for the <code>go</code> user.</li>
 </ul>
-
-<pre><code class="language-bash">ssh-keygen -t rsa -b 4096 -C &quot;something to identify this key: like an email address&quot;
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ssh-keygen -t rsa -b <span style="color:#ae81ff">4096</span> -C <span style="color:#e6db74">&#34;something to identify this key: like an email address&#34;</span></code></pre></div>
 <p>After executing the above command, you will notice that there are 2 files created in <code>/home/go/.ssh</code> called <code>id_rsa</code> and <code>id_rsa.pub</code>.</p>
 
 <p><code>id_rsa</code> corresponds to the private key, which you will later provide GoCD to access the private repository with.
@@ -276,10 +280,7 @@ One of the popular methods to do so is configuring SSH keys. When using docker f
 <li>Once the public key has been added to your account, try accessing a private repository by doing <code>git clone</code> on the private repository using the SSH protocol. Most SCMs provide the command to clone with SSH when you access the repository on the browser.
 A prompt appears when you execute the git clone command for the first time. Choose yes and continue with the cloning. This will create a file called <code>known_hosts</code> in <code>/home/go/.ssh</code> . Alternatively use the <code>ssh-keyscan</code> command to create <code>known_hosts</code>.</li>
 </ul>
-
-<pre><code class="language-bash">ssh-keyscan [host] &gt; /home/go/.ssh/known_hosts
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ssh-keyscan <span style="color:#f92672">[</span>host<span style="color:#f92672">]</span> &gt; /home/go/.ssh/known_hosts</code></pre></div>
 <p>where [host] can be github.com, bitbucket.com, gitlab.com etc.</p>
 
 <ul>
@@ -296,14 +297,11 @@ A prompt appears when you execute the git clone command for the first time. Choo
 <ul>
 <li>On the host, the same files will be present as shown below:</li>
 </ul>
-
-<pre><code class="language-bash">ls -l /some/location/on/host
-total 24
--rw-------  1 1000  1000  3243 Jan 10 23:10 id_rsa
--rw-r--r--  1 1000  1000   754 Jan 10 23:10 id_rsa.pub
--rw-r--r--  1 1000  1000   407 Jan 10 23:10 known_hosts
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ls -l /some/location/on/host
+total <span style="color:#ae81ff">24</span>
+-rw-------  <span style="color:#ae81ff">1</span> <span style="color:#ae81ff">1000</span>  <span style="color:#ae81ff">1000</span>  <span style="color:#ae81ff">3243</span> Jan <span style="color:#ae81ff">10</span> <span style="color:#ae81ff">23</span>:10 id_rsa
+-rw-r--r--  <span style="color:#ae81ff">1</span> <span style="color:#ae81ff">1000</span>  <span style="color:#ae81ff">1000</span>   <span style="color:#ae81ff">754</span> Jan <span style="color:#ae81ff">10</span> <span style="color:#ae81ff">23</span>:10 id_rsa.pub
+-rw-r--r--  <span style="color:#ae81ff">1</span> <span style="color:#ae81ff">1000</span>  <span style="color:#ae81ff">1000</span>   <span style="color:#ae81ff">407</span> Jan <span style="color:#ae81ff">10</span> <span style="color:#ae81ff">23</span>:10 known_hosts</code></pre></div>
 <p>The above is for linux. It can look slightly different if you have a user on the host with UID and GID 1000. For mac, it will look slightly different.</p>
 
 <ul>
@@ -311,10 +309,8 @@ total 24
 </ul>
 
 <p>Now that the ssh keys have been created for <code>go</code>, you can use them in different gocd servers and agents</p>
-
-<pre><code class="language-bash">docker run -itd -v/some/location/on/host:/home/go/.ssh gocd/gocd-server:v18.12.0
-docker run -itd -v/some/location/on/host:/home/go/.ssh gocd/gocd-agent-alpine-3.6:v18.12.0
-</code></pre>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker run -itd -v/some/location/on/host:/home/go/.ssh gocd/gocd-server:v18.12.0
+docker run -itd -v/some/location/on/host:/home/go/.ssh gocd/gocd-agent-alpine-3.6:v18.12.0</code></pre></div></p>
 </article>
 
       
@@ -349,6 +345,17 @@ docker run -itd -v/some/location/on/host:/home/go/.ssh gocd/gocd-agent-alpine-3.
 
   
   
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-48357651-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
 </body>
 
 </html>

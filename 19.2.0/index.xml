@@ -141,7 +141,7 @@ Agent Details tab This tab shows the configuration and runtime information of an
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/advanced_usage/agent-health-check-api.html</guid>
-      <description>Agent Health Check API **Note: **Using this feature requires atleast version 17.11.0 of the GoCD server and agent.
+      <description>Agent Health Check API Note: Using this feature requires atleast version 17.11.0 of the GoCD server and agent.
 The health check API allows users to monitor if the agent is connected to the server and is authorized to perform a build.
 Configurations The API uses the following configurable agent system properties.
    Property Values     go.agent.status.api.enabled Defaults to true. Set to false to disable health check api end-point   go.</description>
@@ -205,7 +205,7 @@ Configuration Specify artifact purge start and end limits You must be logged in 
       
       <guid>/advanced_usage/agent_auto_register.html</guid>
       <description>Auto registration of remote agents As a GoCD administrator, you can auto approve remote agents by using a shared key between the GoCD Agent and GoCD Server.
- Add an attribute named &amp;ldquo;agentAutoRegisterKey&amp;rdquo;, for e.g., agentAutoRegisterKey=&amp;ldquo;388b633a88de126531afa41eff9aa69e&amp;rdquo;, in the server configuration fragment, in case it is not present.  &amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;utf-8&amp;quot;?&amp;gt; &amp;lt;cruise xmlns:xsi=&amp;quot;http://www.w3.org/2001/XMLSchema-instance&amp;quot; xsi:noNamespaceSchemaLocation=&amp;quot;cruise-config.xsd&amp;quot; schemaVersion=&amp;quot;75&amp;quot;&amp;gt; &amp;lt;server agentAutoRegisterKey=&amp;quot;388b633a88de126531afa41eff9aa69e&amp;quot;&amp;gt; ... &amp;lt;/cruise&amp;gt;   On the remote GoCD Agent machine, create a file named &amp;lt;agent_installation_directory&amp;gt;/config/autoregister.</description>
+ Add an attribute named &amp;ldquo;agentAutoRegisterKey&amp;rdquo;, for e.g., agentAutoRegisterKey=&amp;ldquo;388b633a88de126531afa41eff9aa69e&amp;rdquo;, in the server configuration fragment, in case it is not present.  &amp;lt;?xml version=&amp;#34;1.0&amp;#34; encoding=&amp;#34;utf-8&amp;#34;?&amp;gt; &amp;lt;cruise xmlns:xsi=&amp;#34;http://www.w3.org/2001/XMLSchema-instance&amp;#34; xsi:noNamespaceSchemaLocation=&amp;#34;cruise-config.xsd&amp;#34; schemaVersion=&amp;#34;75&amp;#34;&amp;gt; &amp;lt;server agentAutoRegisterKey=&amp;#34;388b633a88de126531afa41eff9aa69e&amp;#34;&amp;gt; ... &amp;lt;/cruise&amp;gt;  On the remote GoCD Agent machine, create a file named &amp;lt;agent_installation_directory&amp;gt;/config/autoregister.</description>
     </item>
     
     <item>
@@ -616,7 +616,7 @@ Key  Name of the environment Name of each pipeline associated with the environme
       <guid>/faq/material_update_hung.html</guid>
       <description>GoCD unable to poll for changes GoCD server polls for changes to all materials of &amp;lsquo;Auto Triggered&amp;rsquo; pipelines. By default, polling occurs every minute and ten materials at a time. The polling interval and the number of materials to be polled simultaneously are configurable.
 GoCD uses SCM commands to poll for changes. For example, to check for any new changes in SVN repository the following command is used:
-svn log --non-interactive --xml -v -r HEAD:&#39;revision&#39; &#39;repository-URL&#39;  The SCM command used by GoCD server can hang with no output.</description>
+svn log --non-interactive --xml -v -r HEAD:&amp;#39;revision&amp;#39; &amp;#39;repository-URL&amp;#39; The SCM command used by GoCD server can hang with no output.</description>
     </item>
     
     <item>
@@ -667,7 +667,7 @@ Agent hardware requirements The agent hardware requirements are basically determ
       <guid>/gocd_on_kubernetes/gocd_helm_chart/helm_install.html</guid>
       <description>Install the GoCD Helm chart Helm is a package manager for Kubernetes. Kubernetes packages are called charts. Charts are curated applications for Kubernetes.
 Install the GoCD Helm chart with these commands:
-helm repo add stable https://kubernetes-charts.storage.googleapis.com helm install stable/gocd --name gocd --namespace gocd  Access the GoCD server After you&amp;rsquo;ve installed the GoCD helm chart, you should be able to access the GoCD server from the Ingress IP.
+helm repo add stable https://kubernetes-charts.storage.googleapis.com helm install stable/gocd --name gocd --namespace gocd Access the GoCD server After you&amp;rsquo;ve installed the GoCD helm chart, you should be able to access the GoCD server from the Ingress IP.
 The Ingress IP address can be obtained as specified below:</description>
     </item>
     
@@ -799,7 +799,7 @@ Note: The system property deals with configuring the log location for the GoCD s
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/advanced_usage/maintenance_mode.html</guid>
-      <description>Maintenance Mode **Note: **Using this feature requires atleast version 19.1.0 of the GoCD server.
+      <description>Maintenance Mode Note: Using this feature requires atleast version 19.1.0 of the GoCD server.
 The GoCD system includes a lot of internal subsystems and processes, which continuously do work. Some examples include the material subsystem which takes care of polling for materials, the scheduling subsystem which automatically starts pipelines and stages, the agent subsystem which continuously keeps tracks of agent states and provides them jobs to run, etc.
 Maintenance mode is a maintenance mode which can be utilized by the GoCD system administrator to safely restart or upgrade the GoCD server without having any running jobs reschedule when the server is back up.</description>
     </item>

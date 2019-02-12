@@ -15,6 +15,18 @@
 <link rel="stylesheet" href="../../stylesheets/website.css"/>
 
 <link rel="stylesheet" href="../../book.min.f2a0cdad2e0137fc7e70bc050b9c5d2798b5b4f45b50cfb8e342022c8cfd0732.css"/>
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-48357651-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
   
 </head>
 
@@ -153,8 +165,8 @@
 <li><a href="../../extension_points/package_repository_extension.html">Package Repository Extension</a></li>
 <li><a href="../../extension_points/yum_repository_poller.html">Yum Repository Poller</a></li>
 <li><a href="../../extension_points/scm_extension.html">SCM Extension</a></li>
-<li><a href="../../extension_points/task_extension.html">Task Extension</a></li>
-<li><a href="../../extension_points/notification_extension.html">Notification Extension</a></li>
+<li><a href="../../extension_points/task_extension.html">Task Extension</a>
+<!---  - [Notification Extension](/extension_points/notification_extension.html)--></li>
 <li><a href="../../extension_points/configrepo_extension.html">Configuration repository Extension</a></li>
 </ul></li>
 <li><a href="../../gocd_on_kubernetes.html"><strong>GoCD on Kubernetes</strong></a>
@@ -230,6 +242,7 @@
 
       
 <article class="markdown">
+  <p>
 
 <h1 id="create-a-pipeline-to-build-and-publish-your-application-image">Create a pipeline to build and publish your application image</h1>
 
@@ -270,10 +283,7 @@
 <ol>
 <li>Create a <a href="../../introduction/concepts_in_go.html#job">job</a> called <code>build_and_publish_image</code> with an initial task argument</li>
 </ol>
-
-<pre><code class="language-bash">    docker build -t $DOCKERHUB_USERNAME/bulletin-board:$GO_PIPELINE_LABEL . -f Dockerfile.application
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">    docker build -t $DOCKERHUB_USERNAME/bulletin-board:$GO_PIPELINE_LABEL . -f Dockerfile.application</code></pre></div>
 <blockquote>
 <p>The <code>GO_PIPELINE_LABEL</code> is an environment variable provided by GoCD which can be used to differentiate between builds from a repository.</p>
 </blockquote>
@@ -415,6 +425,7 @@
 <p>Once the pipeline has run successfully, you can go to your DockerHub account to verify if the image has been published.</p>
 
 <p>In the <a href="creating_a_test_pipeline.html">next section</a>, we&rsquo;ll look at how to configure a pipeline to test our sample application&rsquo;s docker image.</p>
+</p>
 </article>
 
       
@@ -468,6 +479,17 @@
 
   
   
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-48357651-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
 </body>
 
 </html>

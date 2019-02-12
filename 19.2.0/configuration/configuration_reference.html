@@ -15,6 +15,18 @@
 <link rel="stylesheet" href="../stylesheets/website.css"/>
 
 <link rel="stylesheet" href="../book.min.f2a0cdad2e0137fc7e70bc050b9c5d2798b5b4f45b50cfb8e342022c8cfd0732.css"/>
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-48357651-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
   
 </head>
 
@@ -153,8 +165,8 @@
 <li><a href="../extension_points/package_repository_extension.html">Package Repository Extension</a></li>
 <li><a href="../extension_points/yum_repository_poller.html">Yum Repository Poller</a></li>
 <li><a href="../extension_points/scm_extension.html">SCM Extension</a></li>
-<li><a href="../extension_points/task_extension.html">Task Extension</a></li>
-<li><a href="../extension_points/notification_extension.html">Notification Extension</a></li>
+<li><a href="../extension_points/task_extension.html">Task Extension</a>
+<!---  - [Notification Extension](/extension_points/notification_extension.html)--></li>
 <li><a href="../extension_points/configrepo_extension.html">Configuration repository Extension</a></li>
 </ul></li>
 <li><a href="../gocd_on_kubernetes.html"><strong>GoCD on Kubernetes</strong></a>
@@ -230,6 +242,7 @@
 
       
 <article class="markdown">
+  <p>
 
 <p><a id="top"></a></p>
 
@@ -564,13 +577,10 @@
 </ul>
 
 <h3 id="examples">Examples</h3>
-
-<pre><code class="language-xml">&lt;cruise&gt;
-  &lt;server artifactsdir=&quot;/var/lib/go/big-artifacts-folder&quot; siteUrl=&quot;http://go.example.com&quot; secureSiteUrl=&quot;https://go.example.com&quot; purgeStart='5' purgeUpto='10' jobTimeout='30'&gt;
-  &lt;/server&gt;
-&lt;/cruise&gt;
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;cruise&gt;</span>
+  <span style="color:#f92672">&lt;server</span> <span style="color:#a6e22e">artifactsdir=</span><span style="color:#e6db74">&#34;/var/lib/go/big-artifacts-folder&#34;</span> <span style="color:#a6e22e">siteUrl=</span><span style="color:#e6db74">&#34;http://go.example.com&#34;</span> <span style="color:#a6e22e">secureSiteUrl=</span><span style="color:#e6db74">&#34;https://go.example.com&#34;</span> <span style="color:#a6e22e">purgeStart=</span><span style="color:#e6db74">&#39;5&#39;</span> <span style="color:#a6e22e">purgeUpto=</span><span style="color:#e6db74">&#39;10&#39;</span> <span style="color:#a6e22e">jobTimeout=</span><span style="color:#e6db74">&#39;30&#39;</span><span style="color:#f92672">&gt;</span>
+  <span style="color:#f92672">&lt;/server&gt;</span>
+<span style="color:#f92672">&lt;/cruise&gt;</span></code></pre></div>
 <p><a href="#top">top</a></p>
 
 <h2 id="security">&lt;security&gt;</h2>
@@ -598,49 +608,46 @@
 </table>
 
 <h3 id="examples-1">Examples</h3>
-
-<pre><code class="language-xml">&lt;server artifactsdir=&quot;/var/lib/go/big-artifacts-folder&quot;&gt;
-  &lt;security allowOnlyKnownUsersToLogin=&quot;false&quot;&gt;
-    &lt;authConfigs&gt;
-     &lt;authConfig id=&quot;profile-id&quot; pluginId=&quot;cd.go.authentication.ldap&quot;&gt;
-       &lt;property&gt;
-         &lt;key&gt;Url&lt;/key&gt;
-         &lt;value&gt;ldap://xxx.yourcompany.com&lt;/value&gt;
-       &lt;/property&gt;
-       &lt;property&gt;
-         &lt;key&gt;ManagerDN&lt;/key&gt;
-         &lt;value&gt;cn=Acitivity Directory LDap User,ou=InformationSystems,ou=SharedAccounts,ou=Principal,dc=xxxx,dc=yyyy,dc=com&lt;/value&gt;
-       &lt;/property&gt;
-       &lt;property&gt;
-         &lt;key&gt;Password&lt;/key&gt;
-         &lt;value&gt;secret&lt;/value&gt;
-       &lt;/property&gt;
-       &lt;property&gt;
-         &lt;key&gt;SearchBases&lt;/key&gt;
-         &lt;value&gt;ou=Employees,ou=Enterprise,ou=Principal,dc=xxxx,dc=yyyy,dc=com&lt;/value&gt;
-       &lt;/property&gt;
-       &lt;property&gt;
-         &lt;key&gt;UserLoginFilter&lt;/key&gt;
-         &lt;value&gt;(sAMAccountName={0})&lt;/value&gt;
-       &lt;/property&gt;
-       &lt;property&gt;
-         &lt;key&gt;UserSearchFilter&lt;/key&gt;
-         &lt;value&gt;(sAMAccountName={0})&lt;/value&gt;
-       &lt;/property&gt;
-       &lt;property&gt;
-         &lt;key&gt;DisplayNameAttribute&lt;/key&gt;
-         &lt;value&gt;displayName&lt;/value&gt;
-       &lt;/property&gt;
-       &lt;property&gt;
-         &lt;key&gt;EmailAttribute&lt;/key&gt;
-         &lt;value&gt;mail&lt;/value&gt;
-       &lt;/property&gt;
-     &lt;/authConfig&gt;
-   &lt;/authConfigs&gt;
-  &lt;/security&gt;
-&lt;/server&gt;
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;server</span> <span style="color:#a6e22e">artifactsdir=</span><span style="color:#e6db74">&#34;/var/lib/go/big-artifacts-folder&#34;</span><span style="color:#f92672">&gt;</span>
+  <span style="color:#f92672">&lt;security</span> <span style="color:#a6e22e">allowOnlyKnownUsersToLogin=</span><span style="color:#e6db74">&#34;false&#34;</span><span style="color:#f92672">&gt;</span>
+    <span style="color:#f92672">&lt;authConfigs&gt;</span>
+     <span style="color:#f92672">&lt;authConfig</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;profile-id&#34;</span> <span style="color:#a6e22e">pluginId=</span><span style="color:#e6db74">&#34;cd.go.authentication.ldap&#34;</span><span style="color:#f92672">&gt;</span>
+       <span style="color:#f92672">&lt;property&gt;</span>
+         <span style="color:#f92672">&lt;key&gt;</span>Url<span style="color:#f92672">&lt;/key&gt;</span>
+         <span style="color:#f92672">&lt;value&gt;</span>ldap://xxx.yourcompany.com<span style="color:#f92672">&lt;/value&gt;</span>
+       <span style="color:#f92672">&lt;/property&gt;</span>
+       <span style="color:#f92672">&lt;property&gt;</span>
+         <span style="color:#f92672">&lt;key&gt;</span>ManagerDN<span style="color:#f92672">&lt;/key&gt;</span>
+         <span style="color:#f92672">&lt;value&gt;</span>cn=Acitivity Directory LDap User,ou=InformationSystems,ou=SharedAccounts,ou=Principal,dc=xxxx,dc=yyyy,dc=com<span style="color:#f92672">&lt;/value&gt;</span>
+       <span style="color:#f92672">&lt;/property&gt;</span>
+       <span style="color:#f92672">&lt;property&gt;</span>
+         <span style="color:#f92672">&lt;key&gt;</span>Password<span style="color:#f92672">&lt;/key&gt;</span>
+         <span style="color:#f92672">&lt;value&gt;</span>secret<span style="color:#f92672">&lt;/value&gt;</span>
+       <span style="color:#f92672">&lt;/property&gt;</span>
+       <span style="color:#f92672">&lt;property&gt;</span>
+         <span style="color:#f92672">&lt;key&gt;</span>SearchBases<span style="color:#f92672">&lt;/key&gt;</span>
+         <span style="color:#f92672">&lt;value&gt;</span>ou=Employees,ou=Enterprise,ou=Principal,dc=xxxx,dc=yyyy,dc=com<span style="color:#f92672">&lt;/value&gt;</span>
+       <span style="color:#f92672">&lt;/property&gt;</span>
+       <span style="color:#f92672">&lt;property&gt;</span>
+         <span style="color:#f92672">&lt;key&gt;</span>UserLoginFilter<span style="color:#f92672">&lt;/key&gt;</span>
+         <span style="color:#f92672">&lt;value&gt;</span>(sAMAccountName={0})<span style="color:#f92672">&lt;/value&gt;</span>
+       <span style="color:#f92672">&lt;/property&gt;</span>
+       <span style="color:#f92672">&lt;property&gt;</span>
+         <span style="color:#f92672">&lt;key&gt;</span>UserSearchFilter<span style="color:#f92672">&lt;/key&gt;</span>
+         <span style="color:#f92672">&lt;value&gt;</span>(sAMAccountName={0})<span style="color:#f92672">&lt;/value&gt;</span>
+       <span style="color:#f92672">&lt;/property&gt;</span>
+       <span style="color:#f92672">&lt;property&gt;</span>
+         <span style="color:#f92672">&lt;key&gt;</span>DisplayNameAttribute<span style="color:#f92672">&lt;/key&gt;</span>
+         <span style="color:#f92672">&lt;value&gt;</span>displayName<span style="color:#f92672">&lt;/value&gt;</span>
+       <span style="color:#f92672">&lt;/property&gt;</span>
+       <span style="color:#f92672">&lt;property&gt;</span>
+         <span style="color:#f92672">&lt;key&gt;</span>EmailAttribute<span style="color:#f92672">&lt;/key&gt;</span>
+         <span style="color:#f92672">&lt;value&gt;</span>mail<span style="color:#f92672">&lt;/value&gt;</span>
+       <span style="color:#f92672">&lt;/property&gt;</span>
+     <span style="color:#f92672">&lt;/authConfig&gt;</span>
+   <span style="color:#f92672">&lt;/authConfigs&gt;</span>
+  <span style="color:#f92672">&lt;/security&gt;</span>
+<span style="color:#f92672">&lt;/server&gt;</span></code></pre></div>
 <p><a href="#top">top</a></p>
 
 <h2 id="mailhost">&lt;mailhost&gt;</h2>
@@ -702,10 +709,7 @@
 </table>
 
 <h3 id="examples-2">Examples</h3>
-
-<pre><code class="language-xml">&lt;mailhost hostname=&quot;mailhost.yourcompany.com&quot; port=&quot;25&quot; username=&quot;go-user&quot; password=&quot;crs123&quot; tls=&quot;false&quot; from=&quot;go@yourcompany.com&quot; admin=&quot;goadministrator@yourcompany.com&quot; /&gt;
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;mailhost</span> <span style="color:#a6e22e">hostname=</span><span style="color:#e6db74">&#34;mailhost.yourcompany.com&#34;</span> <span style="color:#a6e22e">port=</span><span style="color:#e6db74">&#34;25&#34;</span> <span style="color:#a6e22e">username=</span><span style="color:#e6db74">&#34;go-user&#34;</span> <span style="color:#a6e22e">password=</span><span style="color:#e6db74">&#34;crs123&#34;</span> <span style="color:#a6e22e">tls=</span><span style="color:#e6db74">&#34;false&#34;</span> <span style="color:#a6e22e">from=</span><span style="color:#e6db74">&#34;go@yourcompany.com&#34;</span> <span style="color:#a6e22e">admin=</span><span style="color:#e6db74">&#34;goadministrator@yourcompany.com&#34;</span> <span style="color:#f92672">/&gt;</span></code></pre></div>
 <p><a href="#top">top</a></p>
 
 <h2 id="backup">&lt;backup&gt;</h2>
@@ -751,13 +755,10 @@
 <h3 id="examples-3">Examples</h3>
 
 <p>For example: to perform a backup once a night at 10pm on weekdays and call the <code>/usr/local/bin/upload-to-s3</code> script after the backup is done.</p>
-
-<pre><code class="language-xml">&lt;server&gt;
-  &lt;backup schedule=&quot;0 0 22 ? * MON-FRI&quot; postBackupScript=&quot;/usr/local/bin/upload-to-s3&quot; emailOnSuccess=&quot;false&quot; emailOnFailure=&quot;true&quot;/&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;server&gt;</span>
+  <span style="color:#f92672">&lt;backup</span> <span style="color:#a6e22e">schedule=</span><span style="color:#e6db74">&#34;0 0 22 ? * MON-FRI&#34;</span> <span style="color:#a6e22e">postBackupScript=</span><span style="color:#e6db74">&#34;/usr/local/bin/upload-to-s3&#34;</span> <span style="color:#a6e22e">emailOnSuccess=</span><span style="color:#e6db74">&#34;false&#34;</span> <span style="color:#a6e22e">emailOnFailure=</span><span style="color:#e6db74">&#34;true&#34;</span><span style="color:#f92672">/&gt;</span>
   ...
-&lt;/server&gt;
-</code></pre>
-
+<span style="color:#f92672">&lt;/server&gt;</span></code></pre></div>
 <p>Go uses the <a href="http://www.quartz-scheduler.org/documentation/quartz-2.x/quick-start">Quartz</a> scheduler internally. For convenience we reproduce the <a href="http://www.quartz-scheduler.org/documentation/quartz-2.x/tutorials/crontrigger">Quartz cron documentation</a> here:</p>
 
 <h3 id="format">Format</h3>
@@ -1015,29 +1016,26 @@ various combinations of the allowed special characters for that field. The field
 </table>
 
 <h3 id="examples-5">Examples</h3>
-
-<pre><code class="language-xml">&lt;security&gt;
-  &lt;ldap uri=&quot;ldap://xxx.yourcompany.com&quot;
-     managerDn=&quot;cn=Acitivity Directory LDap User,ou=InformationSystems,ou=SharedAccounts,ou=Principal,dc=xxxx,dc=yyyy,dc=com&quot;
-     managerPassword=&quot;password&quot;
-     searchFilter=&quot;(sAMAccountName={0})&quot; /&gt;
-     &lt;bases&gt;
-      &lt;base value=&quot;ou=Employees,ou=Enterprise,ou=Principal,dc=xxxx,dc=yyyy,dc=com&quot;/&gt;
-    &lt;/bases&gt;
-  &lt;passwordFile path=&quot;/home/go/admins.properties&quot;/&gt;
-  &lt;roles&gt;
-    &lt;role name=&quot;go-admin&quot;&gt;
-      &lt;user&gt;Jez&lt;/user&gt;
-      &lt;user&gt;lqiao&lt;/user&gt;
-    &lt;/role&gt;
-  &lt;/roles&gt;
-  &lt;admins&gt;
-    &lt;role&gt;go-admin&lt;/role&gt;
-    &lt;user&gt;lqiao&lt;/user&gt;
-  &lt;/admins&gt;
-&lt;/security&gt;
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;security&gt;</span>
+  <span style="color:#f92672">&lt;ldap</span> <span style="color:#a6e22e">uri=</span><span style="color:#e6db74">&#34;ldap://xxx.yourcompany.com&#34;</span>
+     <span style="color:#a6e22e">managerDn=</span><span style="color:#e6db74">&#34;cn=Acitivity Directory LDap User,ou=InformationSystems,ou=SharedAccounts,ou=Principal,dc=xxxx,dc=yyyy,dc=com&#34;</span>
+     <span style="color:#a6e22e">managerPassword=</span><span style="color:#e6db74">&#34;password&#34;</span>
+     <span style="color:#a6e22e">searchFilter=</span><span style="color:#e6db74">&#34;(sAMAccountName={0})&#34;</span> <span style="color:#f92672">/&gt;</span>
+     <span style="color:#f92672">&lt;bases&gt;</span>
+      <span style="color:#f92672">&lt;base</span> <span style="color:#a6e22e">value=</span><span style="color:#e6db74">&#34;ou=Employees,ou=Enterprise,ou=Principal,dc=xxxx,dc=yyyy,dc=com&#34;</span><span style="color:#f92672">/&gt;</span>
+    <span style="color:#f92672">&lt;/bases&gt;</span>
+  <span style="color:#f92672">&lt;passwordFile</span> <span style="color:#a6e22e">path=</span><span style="color:#e6db74">&#34;/home/go/admins.properties&#34;</span><span style="color:#f92672">/&gt;</span>
+  <span style="color:#f92672">&lt;roles&gt;</span>
+    <span style="color:#f92672">&lt;role</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;go-admin&#34;</span><span style="color:#f92672">&gt;</span>
+      <span style="color:#f92672">&lt;user&gt;</span>Jez<span style="color:#f92672">&lt;/user&gt;</span>
+      <span style="color:#f92672">&lt;user&gt;</span>lqiao<span style="color:#f92672">&lt;/user&gt;</span>
+    <span style="color:#f92672">&lt;/role&gt;</span>
+  <span style="color:#f92672">&lt;/roles&gt;</span>
+  <span style="color:#f92672">&lt;admins&gt;</span>
+    <span style="color:#f92672">&lt;role&gt;</span>go-admin<span style="color:#f92672">&lt;/role&gt;</span>
+    <span style="color:#f92672">&lt;user&gt;</span>lqiao<span style="color:#f92672">&lt;/user&gt;</span>
+  <span style="color:#f92672">&lt;/admins&gt;</span>
+<span style="color:#f92672">&lt;/security&gt;</span></code></pre></div>
 <p><a href="#top">top</a></p>
 
 <h2 id="bases">&lt;bases&gt;</h2>
@@ -1069,17 +1067,14 @@ the directory from which the LDAP search begins.</p>
 </tr>
 </tbody>
 </table>
-
-<pre><code class="language-xml">  &lt;ldap uri=&quot;ldap://xxx.yourcompany.com&quot;
-     managerDn=&quot;cn=Acitivity Directory LDap User,ou=InformationSystems,ou=SharedAccounts,ou=Principal,dc=xxxx,dc=yyyy,dc=com&quot;
-     managerPassword=&quot;password&quot;
-     searchFilter=&quot;(sAMAccountName={0})&quot; /&gt;
-     &lt;bases&gt;
-      &lt;base value=&quot;ou=Employees,ou=Enterprise,ou=Principal,dc=xxxx,dc=yyyy,dc=com&quot;/&gt;
-    &lt;/bases&gt;
-  &lt;/ldap&gt;
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml">  <span style="color:#f92672">&lt;ldap</span> <span style="color:#a6e22e">uri=</span><span style="color:#e6db74">&#34;ldap://xxx.yourcompany.com&#34;</span>
+     <span style="color:#a6e22e">managerDn=</span><span style="color:#e6db74">&#34;cn=Acitivity Directory LDap User,ou=InformationSystems,ou=SharedAccounts,ou=Principal,dc=xxxx,dc=yyyy,dc=com&#34;</span>
+     <span style="color:#a6e22e">managerPassword=</span><span style="color:#e6db74">&#34;password&#34;</span>
+     <span style="color:#a6e22e">searchFilter=</span><span style="color:#e6db74">&#34;(sAMAccountName={0})&#34;</span> <span style="color:#f92672">/&gt;</span>
+     <span style="color:#f92672">&lt;bases&gt;</span>
+      <span style="color:#f92672">&lt;base</span> <span style="color:#a6e22e">value=</span><span style="color:#e6db74">&#34;ou=Employees,ou=Enterprise,ou=Principal,dc=xxxx,dc=yyyy,dc=com&#34;</span><span style="color:#f92672">/&gt;</span>
+    <span style="color:#f92672">&lt;/bases&gt;</span>
+  <span style="color:#f92672">&lt;/ldap&gt;</span></code></pre></div>
 <p><a href="#top">top</a></p>
 
 <h2 id="passwordFile">&lt;passwordFile&gt;</h2>
@@ -1116,18 +1111,12 @@ the directory from which the LDAP search begins.</p>
 </ul>
 
 <p>The configuration could look like:</p>
-
-<pre><code class="language-xml">&lt;security&gt;
-  &lt;passwordFile path=&quot;/home/go/admins.properties&quot;/&gt;
-&lt;/security&gt;
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;security&gt;</span>
+  <span style="color:#f92672">&lt;passwordFile</span> <span style="color:#a6e22e">path=</span><span style="color:#e6db74">&#34;/home/go/admins.properties&#34;</span><span style="color:#f92672">/&gt;</span>
+<span style="color:#f92672">&lt;/security&gt;</span></code></pre></div>
 <p>The username and password could be set in admins.properties as follows:</p>
-
-<pre><code>Jez=ThmbShxAtJepX80c2JY1FzOEmUk
-lqiao=TfkgShslgJepX80c2JY1trwEskT
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Jez<span style="color:#f92672">=</span>ThmbShxAtJepX80c2JY1FzOEmUk
+lqiao<span style="color:#f92672">=</span>TfkgShslgJepX80c2JY1trwEskT</code></pre></div>
 <p><a href="#top">top</a></p>
 
 <h2 id="authConfigs">&lt;authConfigs&gt;</h2>
@@ -1135,17 +1124,14 @@ lqiao=TfkgShslgJepX80c2JY1trwEskT
 <p>Using <code>&lt;authConfigs&gt;</code> element GoCD administrators can provide one or more authorization configurations to connect with the authorization server(s).</p>
 
 <h3 id="example">Example</h3>
-
-<pre><code class="language-xml">&lt;authConfigs&gt;
-    &lt;authConfig id=&quot;file-auth-config&quot; pluginId=&quot;cd.go.authentication.passwordfile&quot;&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;authConfigs&gt;</span>
+    <span style="color:#f92672">&lt;authConfig</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;file-auth-config&#34;</span> <span style="color:#a6e22e">pluginId=</span><span style="color:#e6db74">&#34;cd.go.authentication.passwordfile&#34;</span><span style="color:#f92672">&gt;</span>
     ...
-    &lt;/authConfig&gt;
-    &lt;authConfig id=&quot;ldap&quot; pluginId=&quot;cd.go.authentication.ldap&quot;&gt;
+    <span style="color:#f92672">&lt;/authConfig&gt;</span>
+    <span style="color:#f92672">&lt;authConfig</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;ldap&#34;</span> <span style="color:#a6e22e">pluginId=</span><span style="color:#e6db74">&#34;cd.go.authentication.ldap&#34;</span><span style="color:#f92672">&gt;</span>
     ...
-    &lt;/authConfig&gt;
-&lt;/authConfigs&gt;
-</code></pre>
-
+    <span style="color:#f92672">&lt;/authConfig&gt;</span>
+<span style="color:#f92672">&lt;/authConfigs&gt;</span></code></pre></div>
 <p><a href="#top">top</a></p>
 
 <h2 id="authConfig">&lt;authConfig&gt;</h2>
@@ -1183,15 +1169,12 @@ lqiao=TfkgShslgJepX80c2JY1trwEskT
 <p>Refer to your plugin&rsquo;s documentation to know the <code>property</code> keys to be configured.</p>
 
 <h3 id="example-1">Example:</h3>
-
-<pre><code class="language-xml">&lt;authConfig id=&quot;file-auth-config&quot; pluginId=&quot;cd.go.authentication.passwordfile&quot;&gt;
-  &lt;property&gt;
-    &lt;key&gt;PasswordFilePath&lt;/key&gt;
-    &lt;value&gt;/etc/go/password.properties&lt;/value&gt;
-  &lt;/property&gt;
-&lt;/authConfig&gt;
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;authConfig</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;file-auth-config&#34;</span> <span style="color:#a6e22e">pluginId=</span><span style="color:#e6db74">&#34;cd.go.authentication.passwordfile&#34;</span><span style="color:#f92672">&gt;</span>
+  <span style="color:#f92672">&lt;property&gt;</span>
+    <span style="color:#f92672">&lt;key&gt;</span>PasswordFilePath<span style="color:#f92672">&lt;/key&gt;</span>
+    <span style="color:#f92672">&lt;value&gt;</span>/etc/go/password.properties<span style="color:#f92672">&lt;/value&gt;</span>
+  <span style="color:#f92672">&lt;/property&gt;</span>
+<span style="color:#f92672">&lt;/authConfig&gt;</span></code></pre></div>
 <p><a href="#top">top</a></p>
 
 <h2 id="roles">&lt;roles&gt;</h2>
@@ -1199,18 +1182,15 @@ lqiao=TfkgShslgJepX80c2JY1trwEskT
 <p>The <code>&lt;roles&gt;</code> element is a container for roles that users defined. It can&rsquo;t be defined without <code>&lt;role&gt;</code>.</p>
 
 <h3 id="examples-7">Examples</h3>
-
-<pre><code class="language-xml">&lt;security&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;security&gt;</span>
   ...
-  &lt;roles&gt;
-    &lt;role name=&quot;go-admin&quot;&gt;
-      &lt;user&gt;Jez&lt;/user&gt;
-      &lt;user&gt;lqiao&lt;/user&gt;
-    &lt;/role&gt;
-  &lt;/roles&gt;
-&lt;/security&gt;
-</code></pre>
-
+  <span style="color:#f92672">&lt;roles&gt;</span>
+    <span style="color:#f92672">&lt;role</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;go-admin&#34;</span><span style="color:#f92672">&gt;</span>
+      <span style="color:#f92672">&lt;user&gt;</span>Jez<span style="color:#f92672">&lt;/user&gt;</span>
+      <span style="color:#f92672">&lt;user&gt;</span>lqiao<span style="color:#f92672">&lt;/user&gt;</span>
+    <span style="color:#f92672">&lt;/role&gt;</span>
+  <span style="color:#f92672">&lt;/roles&gt;</span>
+<span style="color:#f92672">&lt;/security&gt;</span></code></pre></div>
 <p><a href="#top">top</a></p>
 
 <h2 id="role_definition">&lt;role&gt;</h2>
@@ -1245,17 +1225,14 @@ lqiao=TfkgShslgJepX80c2JY1trwEskT
 <h3 id="examples-8">Examples</h3>
 
 <p>Two users would be in the role &lsquo;pipeline-operators&rsquo;, they are <strong>Jez</strong> and <strong>lqiao</strong>.</p>
-
-<pre><code class="language-xml">&lt;roles&gt;
-  &lt;role name=&quot;pipeline-operators&quot;&gt;
-    &lt;users&gt;
-      &lt;user&gt;Jez&lt;/user&gt;
-      &lt;user&gt;lqiao&lt;/user&gt;
-    &lt;/users&gt;
-  &lt;/role&gt;
-&lt;/roles&gt;
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;roles&gt;</span>
+  <span style="color:#f92672">&lt;role</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;pipeline-operators&#34;</span><span style="color:#f92672">&gt;</span>
+    <span style="color:#f92672">&lt;users&gt;</span>
+      <span style="color:#f92672">&lt;user&gt;</span>Jez<span style="color:#f92672">&lt;/user&gt;</span>
+      <span style="color:#f92672">&lt;user&gt;</span>lqiao<span style="color:#f92672">&lt;/user&gt;</span>
+    <span style="color:#f92672">&lt;/users&gt;</span>
+  <span style="color:#f92672">&lt;/role&gt;</span>
+<span style="color:#f92672">&lt;/roles&gt;</span></code></pre></div>
 <p><a href="#top">top</a></p>
 
 <h2 id="usersinrole">&lt;users&gt;</h2>
@@ -1279,15 +1256,12 @@ lqiao=TfkgShslgJepX80c2JY1trwEskT
 <h3 id="examples-9">Examples</h3>
 
 <p>Two users would be in the role &lsquo;pipeline-operators&rsquo;, they are <strong>Jez</strong> and <strong>lqiao</strong>.</p>
-
-<pre><code class="language-xml">&lt;role name=&quot;pipeline-operators&quot;&gt;
-  &lt;users&gt;
-    &lt;user&gt;Jez&lt;/user&gt;
-    &lt;user&gt;lqiao&lt;/user&gt;
-  &lt;/users&gt;
-&lt;/role&gt;
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;role</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;pipeline-operators&#34;</span><span style="color:#f92672">&gt;</span>
+  <span style="color:#f92672">&lt;users&gt;</span>
+    <span style="color:#f92672">&lt;user&gt;</span>Jez<span style="color:#f92672">&lt;/user&gt;</span>
+    <span style="color:#f92672">&lt;user&gt;</span>lqiao<span style="color:#f92672">&lt;/user&gt;</span>
+  <span style="color:#f92672">&lt;/users&gt;</span>
+<span style="color:#f92672">&lt;/role&gt;</span></code></pre></div>
 <p><a href="#top">top</a></p>
 
 <h2 id="plugin_role_definition">&lt;pluginRole&gt;</h2>
@@ -1323,21 +1297,18 @@ lqiao=TfkgShslgJepX80c2JY1trwEskT
 <p>Refer to your plugin&rsquo;s documentation to know the <code>property</code> keys to be configured for the <code>pluginRole</code>.</p>
 
 <h3 id="examples-10">Examples</h3>
-
-<pre><code class="language-xml">&lt;roles&gt;
-&lt;pluginRole name=&quot;SuperAdmin&quot; authConfigId=&quot;auth_config_id&quot;&gt;
-  &lt;property&gt;
-    &lt;key&gt;MemberOfAttribute&lt;/key&gt;
-    &lt;value&gt;memberOf&lt;/value&gt;
-  &lt;/property&gt;
-  &lt;property&gt;
-    &lt;key&gt;MatchingGroups&lt;/key&gt;
-    &lt;value&gt;CN=Dev,OU=Groups,DC=some,DC=enterprise,DC=com&lt;/value&gt;
-  &lt;/property&gt;
-&lt;/pluginRole&gt;
-&lt;/roles&gt;
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;roles&gt;</span>
+<span style="color:#f92672">&lt;pluginRole</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;SuperAdmin&#34;</span> <span style="color:#a6e22e">authConfigId=</span><span style="color:#e6db74">&#34;auth_config_id&#34;</span><span style="color:#f92672">&gt;</span>
+  <span style="color:#f92672">&lt;property&gt;</span>
+    <span style="color:#f92672">&lt;key&gt;</span>MemberOfAttribute<span style="color:#f92672">&lt;/key&gt;</span>
+    <span style="color:#f92672">&lt;value&gt;</span>memberOf<span style="color:#f92672">&lt;/value&gt;</span>
+  <span style="color:#f92672">&lt;/property&gt;</span>
+  <span style="color:#f92672">&lt;property&gt;</span>
+    <span style="color:#f92672">&lt;key&gt;</span>MatchingGroups<span style="color:#f92672">&lt;/key&gt;</span>
+    <span style="color:#f92672">&lt;value&gt;</span>CN=Dev,OU=Groups,DC=some,DC=enterprise,DC=com<span style="color:#f92672">&lt;/value&gt;</span>
+  <span style="color:#f92672">&lt;/property&gt;</span>
+<span style="color:#f92672">&lt;/pluginRole&gt;</span>
+<span style="color:#f92672">&lt;/roles&gt;</span></code></pre></div>
 <p><a href="#top">top</a></p>
 
 <h2 id="admins">&lt;admins&gt;</h2>
@@ -1349,16 +1320,13 @@ lqiao=TfkgShslgJepX80c2JY1trwEskT
 <p>The user must be in your <a href="#ldap">LDAP</a> or <a href="#passwordFile">passwordFile</a>.</p>
 
 <h3 id="examples-11">Examples</h3>
-
-<pre><code class="language-xml">&lt;security&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;security&gt;</span>
   ...
-  &lt;admins&gt;
-    &lt;role&gt;go-admin&lt;/role&gt;
-    &lt;user&gt;lqiao&lt;/user&gt;
-  &lt;/admins&gt;
-&lt;/security&gt;
-</code></pre>
-
+  <span style="color:#f92672">&lt;admins&gt;</span>
+    <span style="color:#f92672">&lt;role&gt;</span>go-admin<span style="color:#f92672">&lt;/role&gt;</span>
+    <span style="color:#f92672">&lt;user&gt;</span>lqiao<span style="color:#f92672">&lt;/user&gt;</span>
+  <span style="color:#f92672">&lt;/admins&gt;</span>
+<span style="color:#f92672">&lt;/security&gt;</span></code></pre></div>
 <p><a href="#top">top</a></p>
 
 <h2 id="roleinadmin">&lt;role&gt;</h2>
@@ -1374,13 +1342,10 @@ lqiao=TfkgShslgJepX80c2JY1trwEskT
 <h3 id="examples-12">Examples</h3>
 
 <p>The users in role &lsquo;<strong>go-admin</strong>&rsquo; would be administrators.</p>
-
-<pre><code class="language-xml">&lt;admins&gt;
-  &lt;role&gt;go-admin&lt;/role&gt;
-  &lt;user&gt;lqiao&lt;/user&gt;
-&lt;/admins&gt;
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;admins&gt;</span>
+  <span style="color:#f92672">&lt;role&gt;</span>go-admin<span style="color:#f92672">&lt;/role&gt;</span>
+  <span style="color:#f92672">&lt;user&gt;</span>lqiao<span style="color:#f92672">&lt;/user&gt;</span>
+<span style="color:#f92672">&lt;/admins&gt;</span></code></pre></div>
 <p><a href="#top">top</a></p>
 
 <h2 id="user">&lt;user&gt;</h2>
@@ -1394,13 +1359,10 @@ lqiao=TfkgShslgJepX80c2JY1trwEskT
 <h3 id="examples-13">Examples</h3>
 
 <p>Two users would be administrators, they are <strong>Jez</strong> and <strong>lqiao</strong>.</p>
-
-<pre><code class="language-xml">&lt;admins&gt;
-  &lt;user&gt;Jez&lt;/user&gt;
-  &lt;user&gt;lqiao&lt;/user&gt;
-&lt;/admins&gt;
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;admins&gt;</span>
+  <span style="color:#f92672">&lt;user&gt;</span>Jez<span style="color:#f92672">&lt;/user&gt;</span>
+  <span style="color:#f92672">&lt;user&gt;</span>lqiao<span style="color:#f92672">&lt;/user&gt;</span>
+<span style="color:#f92672">&lt;/admins&gt;</span></code></pre></div>
 <p><a href="#top">top</a></p>
 
 <h2 id="role">&lt;role&gt;</h2>
@@ -1412,13 +1374,10 @@ lqiao=TfkgShslgJepX80c2JY1trwEskT
 </ul>
 
 <h3 id="examples-14">Examples</h3>
-
-<pre><code class="language-xml">&lt;view&gt;
-   &lt;user&gt;lqiao&lt;user&gt;
-   &lt;role&gt;_readonly_member&lt;role&gt;
-&lt;/view&gt;
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;view&gt;</span>
+   <span style="color:#f92672">&lt;user&gt;</span>lqiao<span style="color:#f92672">&lt;user&gt;</span>
+   <span style="color:#f92672">&lt;role&gt;</span>_readonly_member<span style="color:#f92672">&lt;role&gt;</span>
+<span style="color:#f92672">&lt;/view&gt;</span></code></pre></div>
 <h2 id="elastic">&lt;elastic&gt;</h2>
 
 <p>The <code>&lt;elastic&gt;</code> element is used to provide configurations for the elastic agents.</p>
@@ -1442,16 +1401,13 @@ lqiao=TfkgShslgJepX80c2JY1trwEskT
 </table>
 
 <h3 id="examples-15">Examples</h3>
-
-<pre><code class="language-xml">&lt;elastic jobStarvationTimeout=&quot;10&quot;&gt;
-  &lt;profiles&gt;
-    &lt;profile id=&quot;aws.small&quot; pluginId=&quot;aws&quot;&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;elastic</span> <span style="color:#a6e22e">jobStarvationTimeout=</span><span style="color:#e6db74">&#34;10&#34;</span><span style="color:#f92672">&gt;</span>
+  <span style="color:#f92672">&lt;profiles&gt;</span>
+    <span style="color:#f92672">&lt;profile</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;aws.small&#34;</span> <span style="color:#a6e22e">pluginId=</span><span style="color:#e6db74">&#34;aws&#34;</span><span style="color:#f92672">&gt;</span>
       ...
-    &lt;/profile&gt;
-  &lt;/profiles&gt;
-&lt;/elastic&gt;
-</code></pre>
-
+    <span style="color:#f92672">&lt;/profile&gt;</span>
+  <span style="color:#f92672">&lt;/profiles&gt;</span>
+<span style="color:#f92672">&lt;/elastic&gt;</span></code></pre></div>
 <p><a href="#top">top</a></p>
 
 <h2 id="profiles">&lt;profiles&gt;</h2>
@@ -1461,14 +1417,11 @@ lqiao=TfkgShslgJepX80c2JY1trwEskT
 <p>There can be zero or more profiles.</p>
 
 <h3 id="examples-16">Examples</h3>
-
-<pre><code class="language-xml">&lt;profiles&gt;
-  &lt;profile id=&quot;aws.small&quot; pluginId=&quot;aws&quot;&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;profiles&gt;</span>
+  <span style="color:#f92672">&lt;profile</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;aws.small&#34;</span> <span style="color:#a6e22e">pluginId=</span><span style="color:#e6db74">&#34;aws&#34;</span><span style="color:#f92672">&gt;</span>
     ...
-  &lt;/profile&gt;
-&lt;/profiles&gt;
-</code></pre>
-
+  <span style="color:#f92672">&lt;/profile&gt;</span>
+<span style="color:#f92672">&lt;/profiles&gt;</span></code></pre></div>
 <p><a href="#top">top</a></p>
 
 <h2 id="profile">&lt;profile&gt;</h2>
@@ -1503,19 +1456,16 @@ A profile should have a unique <code>id</code> attribute and should be associate
 </table>
 
 <h3 id="example-2">Example:</h3>
-
-<pre><code class="language-xml">&lt;profile id=&quot;ec2.small-us-east&quot; pluginId=&quot;com.example.ec2&quot;&gt;
-  &lt;property&gt;
-    &lt;key&gt;ami-id&lt;/key&gt;
-    &lt;value&gt;ami-6ac7408f&lt;/value&gt;
-  &lt;/property&gt;
-  &lt;property&gt;
-    &lt;key&gt;region&lt;/key&gt;
-    &lt;value&gt;us-east-1&lt;/value&gt;
-  &lt;/property&gt;
-&lt;/profile&gt;
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;profile</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;ec2.small-us-east&#34;</span> <span style="color:#a6e22e">pluginId=</span><span style="color:#e6db74">&#34;com.example.ec2&#34;</span><span style="color:#f92672">&gt;</span>
+  <span style="color:#f92672">&lt;property&gt;</span>
+    <span style="color:#f92672">&lt;key&gt;</span>ami-id<span style="color:#f92672">&lt;/key&gt;</span>
+    <span style="color:#f92672">&lt;value&gt;</span>ami-6ac7408f<span style="color:#f92672">&lt;/value&gt;</span>
+  <span style="color:#f92672">&lt;/property&gt;</span>
+  <span style="color:#f92672">&lt;property&gt;</span>
+    <span style="color:#f92672">&lt;key&gt;</span>region<span style="color:#f92672">&lt;/key&gt;</span>
+    <span style="color:#f92672">&lt;value&gt;</span>us-east-1<span style="color:#f92672">&lt;/value&gt;</span>
+  <span style="color:#f92672">&lt;/property&gt;</span>
+<span style="color:#f92672">&lt;/profile&gt;</span></code></pre></div>
 <p><a href="#top">top</a></p>
 
 <h2 id="config-repos">&lt;config-repos&gt;</h2>
@@ -1523,26 +1473,23 @@ A profile should have a unique <code>id</code> attribute and should be associate
 <p>The <code>&lt;config-repos&gt;</code> element is a container of many <code>&lt;config-repo&gt;</code>.</p>
 
 <h3 id="example-3">Example</h3>
-
-<pre><code class="language-xml">&lt;cruise&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;cruise&gt;</span>
   ...
-  &lt;config-repos&gt;
-    &lt;config-repo pluginId=&quot;json.config.plugin&quot; id=&quot;gocd-json-config-example&quot;&gt;
-      &lt;git url=&quot;https://github.com/tomzo/gocd-json-config-example.git&quot; /&gt;
-    &lt;/config-repo&gt;
-    &lt;config-repo pluginId=&quot;yaml.config.plugin&quot; id=&quot;gocd-yaml-config-example&quot;&gt;
-      &lt;git url=&quot;https://github.com/tomzo/gocd-yaml-config-example.git&quot; /&gt;
-      &lt;configuration&gt;
-        &lt;property&gt;
-          &lt;key&gt;file_pattern&lt;/key&gt;
-          &lt;value&gt;**/*.gocd.yaml&lt;/value&gt;
-        &lt;/property&gt;
-      &lt;/configuration&gt;
-    &lt;/config-repo&gt;
-  &lt;/config-repos&gt;
-&lt;/cruise&gt;
-</code></pre>
-
+  <span style="color:#f92672">&lt;config-repos&gt;</span>
+    <span style="color:#f92672">&lt;config-repo</span> <span style="color:#a6e22e">pluginId=</span><span style="color:#e6db74">&#34;json.config.plugin&#34;</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;gocd-json-config-example&#34;</span><span style="color:#f92672">&gt;</span>
+      <span style="color:#f92672">&lt;git</span> <span style="color:#a6e22e">url=</span><span style="color:#e6db74">&#34;https://github.com/tomzo/gocd-json-config-example.git&#34;</span> <span style="color:#f92672">/&gt;</span>
+    <span style="color:#f92672">&lt;/config-repo&gt;</span>
+    <span style="color:#f92672">&lt;config-repo</span> <span style="color:#a6e22e">pluginId=</span><span style="color:#e6db74">&#34;yaml.config.plugin&#34;</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;gocd-yaml-config-example&#34;</span><span style="color:#f92672">&gt;</span>
+      <span style="color:#f92672">&lt;git</span> <span style="color:#a6e22e">url=</span><span style="color:#e6db74">&#34;https://github.com/tomzo/gocd-yaml-config-example.git&#34;</span> <span style="color:#f92672">/&gt;</span>
+      <span style="color:#f92672">&lt;configuration&gt;</span>
+        <span style="color:#f92672">&lt;property&gt;</span>
+          <span style="color:#f92672">&lt;key&gt;</span>file_pattern<span style="color:#f92672">&lt;/key&gt;</span>
+          <span style="color:#f92672">&lt;value&gt;</span>**/*.gocd.yaml<span style="color:#f92672">&lt;/value&gt;</span>
+        <span style="color:#f92672">&lt;/property&gt;</span>
+      <span style="color:#f92672">&lt;/configuration&gt;</span>
+    <span style="color:#f92672">&lt;/config-repo&gt;</span>
+  <span style="color:#f92672">&lt;/config-repos&gt;</span>
+<span style="color:#f92672">&lt;/cruise&gt;</span></code></pre></div>
 <p><a href="#top">top</a></p>
 
 <h2 id="config-repo">&lt;config-repo&gt;</h2>
@@ -1576,23 +1523,20 @@ A profile should have a unique <code>id</code> attribute and should be associate
 </table>
 
 <h3 id="example-4">Example</h3>
-
-<pre><code class="language-xml">&lt;cruise&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;cruise&gt;</span>
     ...
-    &lt;config-repos&gt;
-      &lt;config-repo pluginId=&quot;yaml.config.plugin&quot; id=&quot;gocd-yaml-config-example&quot;&gt;
-        &lt;git url=&quot;https://github.com/tomzo/gocd-yaml-config-example.git&quot; /&gt;
-        &lt;configuration&gt;
-          &lt;property&gt;
-            &lt;key&gt;file_pattern&lt;/key&gt;
-            &lt;value&gt;**/*.gocd.yaml&lt;/value&gt;
-          &lt;/property&gt;
-        &lt;/configuration&gt;
-      &lt;/config-repo&gt;
-  &lt;/config-repos&gt;
-&lt;/cruise&gt;
-</code></pre>
-
+    <span style="color:#f92672">&lt;config-repos&gt;</span>
+      <span style="color:#f92672">&lt;config-repo</span> <span style="color:#a6e22e">pluginId=</span><span style="color:#e6db74">&#34;yaml.config.plugin&#34;</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;gocd-yaml-config-example&#34;</span><span style="color:#f92672">&gt;</span>
+        <span style="color:#f92672">&lt;git</span> <span style="color:#a6e22e">url=</span><span style="color:#e6db74">&#34;https://github.com/tomzo/gocd-yaml-config-example.git&#34;</span> <span style="color:#f92672">/&gt;</span>
+        <span style="color:#f92672">&lt;configuration&gt;</span>
+          <span style="color:#f92672">&lt;property&gt;</span>
+            <span style="color:#f92672">&lt;key&gt;</span>file_pattern<span style="color:#f92672">&lt;/key&gt;</span>
+            <span style="color:#f92672">&lt;value&gt;</span>**/*.gocd.yaml<span style="color:#f92672">&lt;/value&gt;</span>
+          <span style="color:#f92672">&lt;/property&gt;</span>
+        <span style="color:#f92672">&lt;/configuration&gt;</span>
+      <span style="color:#f92672">&lt;/config-repo&gt;</span>
+  <span style="color:#f92672">&lt;/config-repos&gt;</span>
+<span style="color:#f92672">&lt;/cruise&gt;</span></code></pre></div>
 <h3 id="config-repo-configuration">&lt;configuration&gt;</h3>
 
 <p>The <code>&lt;configuration&gt;</code> element is optional part of config repo definition.
@@ -1600,19 +1544,16 @@ Keys and values are specified and handled by particular plugin. This section
 can be used to <strong>customize how config repo plugin works when parsing this specific repository</strong>.</p>
 
 <h4 id="example-5">Example</h4>
-
-<pre><code class="language-xml">&lt;configuration&gt;
-  &lt;property&gt;
-    &lt;key&gt;file_pattern&lt;/key&gt;
-    &lt;value&gt;*.go.yaml&lt;/value&gt;
-  &lt;/property&gt;
-  &lt;property&gt;
-    &lt;key&gt;allowed_pipelines_regex&lt;/key&gt;
-    &lt;value&gt;project-X-.*&lt;/value&gt;
-  &lt;/property&gt;
-&lt;/configuration&gt;
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;configuration&gt;</span>
+  <span style="color:#f92672">&lt;property&gt;</span>
+    <span style="color:#f92672">&lt;key&gt;</span>file_pattern<span style="color:#f92672">&lt;/key&gt;</span>
+    <span style="color:#f92672">&lt;value&gt;</span>*.go.yaml<span style="color:#f92672">&lt;/value&gt;</span>
+  <span style="color:#f92672">&lt;/property&gt;</span>
+  <span style="color:#f92672">&lt;property&gt;</span>
+    <span style="color:#f92672">&lt;key&gt;</span>allowed_pipelines_regex<span style="color:#f92672">&lt;/key&gt;</span>
+    <span style="color:#f92672">&lt;value&gt;</span>project-X-.*<span style="color:#f92672">&lt;/value&gt;</span>
+  <span style="color:#f92672">&lt;/property&gt;</span>
+<span style="color:#f92672">&lt;/configuration&gt;</span></code></pre></div>
 <p><a href="#top">top</a></p>
 
 <h2 id="config-repo-svn">&lt;svn&gt;</h2>
@@ -1681,12 +1622,9 @@ can be used to <strong>customize how config repo plugin works when parsing this 
 and as the user &lsquo;go&rsquo; do a command &ldquo;svn update&rdquo; to store the certificates in the cache permanently.</p>
 
 <h3 id="examples-17">Examples:</h3>
-
-<pre><code class="language-xml">&lt;config-repo pluginId=&quot;json.config.plugin&quot; id=&quot;repo1&quot;&gt;
-    &lt;svn  url=&quot;http://svn-server.com/framework&quot; /&gt;
-&lt;/config-repo&gt;
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;config-repo</span> <span style="color:#a6e22e">pluginId=</span><span style="color:#e6db74">&#34;json.config.plugin&#34;</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;repo1&#34;</span><span style="color:#f92672">&gt;</span>
+    <span style="color:#f92672">&lt;svn</span>  <span style="color:#a6e22e">url=</span><span style="color:#e6db74">&#34;http://svn-server.com/framework&#34;</span> <span style="color:#f92672">/&gt;</span>
+<span style="color:#f92672">&lt;/config-repo&gt;</span></code></pre></div>
 <p><a href="#top">top</a></p>
 
 <h2 id="config-repo-hg">&lt;hg&gt;</h2>
@@ -1730,19 +1668,13 @@ and as the user &lsquo;go&rsquo; do a command &ldquo;svn update&rdquo; to store 
 </table>
 
 <h3 id="examples-18">Examples</h3>
-
-<pre><code class="language-xml">&lt;config-repo pluginId=&quot;json.config.plugin&quot; id=&quot;repo1&quot;&gt;
-    &lt;hg url=&quot;http://username:password@your-hg/&quot;/&gt;
-&lt;/config-repo&gt;
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;config-repo</span> <span style="color:#a6e22e">pluginId=</span><span style="color:#e6db74">&#34;json.config.plugin&#34;</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;repo1&#34;</span><span style="color:#f92672">&gt;</span>
+    <span style="color:#f92672">&lt;hg</span> <span style="color:#a6e22e">url=</span><span style="color:#e6db74">&#34;http://username:password@your-hg/&#34;</span><span style="color:#f92672">/&gt;</span>
+<span style="color:#f92672">&lt;/config-repo&gt;</span></code></pre></div>
 <h4 id="specifying-a-mercurial-branch">Specifying a mercurial branch.</h4>
-
-<pre><code class="language-xml">&lt;config-repo pluginId=&quot;json.config.plugin&quot; id=&quot;repo1&quot;&gt;
-    &lt;hg url=&quot;http://username:password@your-hg##branch_name&quot;/&gt;
-&lt;/config-repo&gt;
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;config-repo</span> <span style="color:#a6e22e">pluginId=</span><span style="color:#e6db74">&#34;json.config.plugin&#34;</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;repo1&#34;</span><span style="color:#f92672">&gt;</span>
+    <span style="color:#f92672">&lt;hg</span> <span style="color:#a6e22e">url=</span><span style="color:#e6db74">&#34;http://username:password@your-hg##branch_name&#34;</span><span style="color:#f92672">/&gt;</span>
+<span style="color:#f92672">&lt;/config-repo&gt;</span></code></pre></div>
 <p>Note that # needs to be escaped with another # - hence the ## in the url above.</p>
 
 <p><a href="#top">top</a></p>
@@ -1828,18 +1760,15 @@ and as the user &lsquo;go&rsquo; do a command &ldquo;svn update&rdquo; to store 
 setup and paste it into the view section.</p>
 
 <p>For example:</p>
-
-<pre><code class="language-xml">&lt;config-repo pluginId=&quot;json.config.plugin&quot; id=&quot;repo1&quot;&gt;
-    &lt;p4 port=&quot;10.18.3.102:1666&quot; username=&quot;userName&quot; password=&quot;passwd&quot;&gt;
-      &lt;view&gt;&lt;![CDATA[
-    //depot/dev/src...          //anything/src/...
-    //depot/dev/test...         //anything/test/...
-    //depot/dev/main/docs/...   //anything/docs/...
-      ]]&gt;&lt;/view&gt;
-    &lt;/p4&gt;
-&lt;/config-repo&gt;
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;config-repo</span> <span style="color:#a6e22e">pluginId=</span><span style="color:#e6db74">&#34;json.config.plugin&#34;</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;repo1&#34;</span><span style="color:#f92672">&gt;</span>
+    <span style="color:#f92672">&lt;p4</span> <span style="color:#a6e22e">port=</span><span style="color:#e6db74">&#34;10.18.3.102:1666&#34;</span> <span style="color:#a6e22e">username=</span><span style="color:#e6db74">&#34;userName&#34;</span> <span style="color:#a6e22e">password=</span><span style="color:#e6db74">&#34;passwd&#34;</span><span style="color:#f92672">&gt;</span>
+      <span style="color:#f92672">&lt;view&gt;</span><span style="color:#75715e">&lt;![CDATA[
+</span><span style="color:#75715e">    //depot/dev/src...          //anything/src/...
+</span><span style="color:#75715e">    //depot/dev/test...         //anything/test/...
+</span><span style="color:#75715e">    //depot/dev/main/docs/...   //anything/docs/...
+</span><span style="color:#75715e">      ]]&gt;</span><span style="color:#f92672">&lt;/view&gt;</span>
+    <span style="color:#f92672">&lt;/p4&gt;</span>
+<span style="color:#f92672">&lt;/config-repo&gt;</span></code></pre></div>
 <p><a href="#top">top</a></p>
 
 <h2 id="config-repo-git">&lt;git&gt;</h2>
@@ -1899,12 +1828,9 @@ directory where the .ssh/ directory is located.</p>
 </table>
 
 <h3 id="examples-are">Examples are:</h3>
-
-<pre><code class="language-xml">&lt;config-repo pluginId=&quot;json.config.plugin&quot; id=&quot;repo1&quot;&gt;
-    &lt;git url=&quot;git://127.0.0.1/precommit.git&quot; branch=&quot;1.3branch&quot;/&gt;
-&lt;/config-repo&gt;
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;config-repo</span> <span style="color:#a6e22e">pluginId=</span><span style="color:#e6db74">&#34;json.config.plugin&#34;</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;repo1&#34;</span><span style="color:#f92672">&gt;</span>
+    <span style="color:#f92672">&lt;git</span> <span style="color:#a6e22e">url=</span><span style="color:#e6db74">&#34;git://127.0.0.1/precommit.git&#34;</span> <span style="color:#a6e22e">branch=</span><span style="color:#e6db74">&#34;1.3branch&#34;</span><span style="color:#f92672">/&gt;</span>
+<span style="color:#f92672">&lt;/config-repo&gt;</span></code></pre></div>
 <p><a href="#top">top</a></p>
 
 <h2 id="config-repo-tfs">&lt;tfs&gt;</h2>
@@ -1974,12 +1900,9 @@ directory where the .ssh/ directory is located.</p>
 </table>
 
 <h3 id="examples-are-1">Examples are:</h3>
-
-<pre><code class="language-xml">&lt;config-repo pluginId=&quot;json.config.plugin&quot; id=&quot;repo1&quot;&gt;
-    &lt;tfs url=&quot;http://10.21.3.210:8080/tfs/New&quot; domain=&quot;DOMAIN&quot; username=&quot;jim&quot; password=&quot;as802nsk9==&quot; projectPath=&quot;$/webapp&quot; /&gt;
-&lt;/config-repo&gt;
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;config-repo</span> <span style="color:#a6e22e">pluginId=</span><span style="color:#e6db74">&#34;json.config.plugin&#34;</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;repo1&#34;</span><span style="color:#f92672">&gt;</span>
+    <span style="color:#f92672">&lt;tfs</span> <span style="color:#a6e22e">url=</span><span style="color:#e6db74">&#34;http://10.21.3.210:8080/tfs/New&#34;</span> <span style="color:#a6e22e">domain=</span><span style="color:#e6db74">&#34;DOMAIN&#34;</span> <span style="color:#a6e22e">username=</span><span style="color:#e6db74">&#34;jim&#34;</span> <span style="color:#a6e22e">password=</span><span style="color:#e6db74">&#34;as802nsk9==&#34;</span> <span style="color:#a6e22e">projectPath=</span><span style="color:#e6db74">&#34;$/webapp&#34;</span> <span style="color:#f92672">/&gt;</span>
+<span style="color:#f92672">&lt;/config-repo&gt;</span></code></pre></div>
 <p><a href="#top">top</a></p>
 
 <h2 id="config-repo-scm">&lt;scm&gt;</h2>
@@ -2007,12 +1930,9 @@ directory where the .ssh/ directory is located.</p>
 </table>
 
 <h3 id="examples-are-2">Examples are:</h3>
-
-<pre><code class="language-xml">&lt;config-repo pluginId=&quot;json.config.plugin&quot; id=&quot;repo1&quot;&gt;
-    &lt;scm ref=&quot;e289f497-057b-46bc-bb69-8043454f5c1b&quot;/&gt;
-&lt;/config-repo&gt;
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;config-repo</span> <span style="color:#a6e22e">pluginId=</span><span style="color:#e6db74">&#34;json.config.plugin&#34;</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;repo1&#34;</span><span style="color:#f92672">&gt;</span>
+    <span style="color:#f92672">&lt;scm</span> <span style="color:#a6e22e">ref=</span><span style="color:#e6db74">&#34;e289f497-057b-46bc-bb69-8043454f5c1b&#34;</span><span style="color:#f92672">/&gt;</span>
+<span style="color:#f92672">&lt;/config-repo&gt;</span></code></pre></div>
 <p><a href="#top">top</a></p>
 
 <h2 id="repositories">&lt;repositories&gt;</h2>
@@ -2020,35 +1940,32 @@ directory where the .ssh/ directory is located.</p>
 <p>The <code>&lt;repositories&gt;</code> element is a container of package repositories.</p>
 
 <h3 id="example-6">Example</h3>
-
-<pre><code class="language-xml">&lt;cruise&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;cruise&gt;</span>
   ...
-  &lt;repositories&gt;
-    &lt;repository id=&quot;repo-id&quot; name=&quot;repo-name&quot;&gt;
-      &lt;pluginConfiguration id=&quot;plugin-id&quot; version=&quot;plugin-version&quot; /&gt;
-      &lt;configuration&gt;
-        &lt;property&gt;
-            &lt;key&gt;property-name&lt;/key&gt;
-            &lt;value&gt;property-value&lt;/value&gt;
-        &lt;/property&gt;
+  <span style="color:#f92672">&lt;repositories&gt;</span>
+    <span style="color:#f92672">&lt;repository</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;repo-id&#34;</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;repo-name&#34;</span><span style="color:#f92672">&gt;</span>
+      <span style="color:#f92672">&lt;pluginConfiguration</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;plugin-id&#34;</span> <span style="color:#a6e22e">version=</span><span style="color:#e6db74">&#34;plugin-version&#34;</span> <span style="color:#f92672">/&gt;</span>
+      <span style="color:#f92672">&lt;configuration&gt;</span>
+        <span style="color:#f92672">&lt;property&gt;</span>
+            <span style="color:#f92672">&lt;key&gt;</span>property-name<span style="color:#f92672">&lt;/key&gt;</span>
+            <span style="color:#f92672">&lt;value&gt;</span>property-value<span style="color:#f92672">&lt;/value&gt;</span>
+        <span style="color:#f92672">&lt;/property&gt;</span>
         ...
-      &lt;/configuration&gt;
-      &lt;packages&gt;
-        &lt;package id=&quot;package-id&quot; name=&quot;package-name&quot;  &gt;
-          &lt;configuration&gt;
-            &lt;property&gt;
-                &lt;key&gt;property-name&lt;/key&gt;
-                &lt;value&gt;property-value&lt;/value&gt;
-            &lt;/property&gt;
+      <span style="color:#f92672">&lt;/configuration&gt;</span>
+      <span style="color:#f92672">&lt;packages&gt;</span>
+        <span style="color:#f92672">&lt;package</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;package-id&#34;</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;package-name&#34;</span>  <span style="color:#f92672">&gt;</span>
+          <span style="color:#f92672">&lt;configuration&gt;</span>
+            <span style="color:#f92672">&lt;property&gt;</span>
+                <span style="color:#f92672">&lt;key&gt;</span>property-name<span style="color:#f92672">&lt;/key&gt;</span>
+                <span style="color:#f92672">&lt;value&gt;</span>property-value<span style="color:#f92672">&lt;/value&gt;</span>
+            <span style="color:#f92672">&lt;/property&gt;</span>
             ...
-          &lt;/configuration&gt;
-        &lt;/package&gt;
-      &lt;/packages&gt;
-    &lt;/repository&gt;
-  &lt;/repositories&gt;
-&lt;/cruise&gt;
-</code></pre>
-
+          <span style="color:#f92672">&lt;/configuration&gt;</span>
+        <span style="color:#f92672">&lt;/package&gt;</span>
+      <span style="color:#f92672">&lt;/packages&gt;</span>
+    <span style="color:#f92672">&lt;/repository&gt;</span>
+  <span style="color:#f92672">&lt;/repositories&gt;</span>
+<span style="color:#f92672">&lt;/cruise&gt;</span></code></pre></div>
 <p><a href="#top">top</a></p>
 
 <h2 id="repository">&lt;repository&gt;</h2>
@@ -2082,35 +1999,32 @@ directory where the .ssh/ directory is located.</p>
 </table>
 
 <h3 id="example-7">Example</h3>
-
-<pre><code class="language-xml">&lt;cruise&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;cruise&gt;</span>
   ...
-  &lt;repositories&gt;
-    &lt;repository id=&quot;repo-id&quot; name=&quot;repo-name&quot;&gt;
-      &lt;pluginConfiguration id=&quot;plugin-id&quot; version=&quot;plugin-version&quot; /&gt;
-      &lt;configuration&gt;
-        &lt;property&gt;
-            &lt;key&gt;property-name&lt;/key&gt;
-            &lt;value&gt;property-value&lt;/value&gt;
-        &lt;/property&gt;
+  <span style="color:#f92672">&lt;repositories&gt;</span>
+    <span style="color:#f92672">&lt;repository</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;repo-id&#34;</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;repo-name&#34;</span><span style="color:#f92672">&gt;</span>
+      <span style="color:#f92672">&lt;pluginConfiguration</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;plugin-id&#34;</span> <span style="color:#a6e22e">version=</span><span style="color:#e6db74">&#34;plugin-version&#34;</span> <span style="color:#f92672">/&gt;</span>
+      <span style="color:#f92672">&lt;configuration&gt;</span>
+        <span style="color:#f92672">&lt;property&gt;</span>
+            <span style="color:#f92672">&lt;key&gt;</span>property-name<span style="color:#f92672">&lt;/key&gt;</span>
+            <span style="color:#f92672">&lt;value&gt;</span>property-value<span style="color:#f92672">&lt;/value&gt;</span>
+        <span style="color:#f92672">&lt;/property&gt;</span>
         ...
-      &lt;/configuration&gt;
-      &lt;packages&gt;
-        &lt;package id=&quot;package-id&quot; name=&quot;package-name&quot;  &gt;
-          &lt;configuration&gt;
-            &lt;property&gt;
-                &lt;key&gt;property-name&lt;/key&gt;
-                &lt;value&gt;property-value&lt;/value&gt;
-            &lt;/property&gt;
+      <span style="color:#f92672">&lt;/configuration&gt;</span>
+      <span style="color:#f92672">&lt;packages&gt;</span>
+        <span style="color:#f92672">&lt;package</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;package-id&#34;</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;package-name&#34;</span>  <span style="color:#f92672">&gt;</span>
+          <span style="color:#f92672">&lt;configuration&gt;</span>
+            <span style="color:#f92672">&lt;property&gt;</span>
+                <span style="color:#f92672">&lt;key&gt;</span>property-name<span style="color:#f92672">&lt;/key&gt;</span>
+                <span style="color:#f92672">&lt;value&gt;</span>property-value<span style="color:#f92672">&lt;/value&gt;</span>
+            <span style="color:#f92672">&lt;/property&gt;</span>
             ...
-          &lt;/configuration&gt;
-        &lt;/package&gt;
-      &lt;/packages&gt;
-    &lt;/repository&gt;
-  &lt;/repositories&gt;
-&lt;/cruise&gt;
-</code></pre>
-
+          <span style="color:#f92672">&lt;/configuration&gt;</span>
+        <span style="color:#f92672">&lt;/package&gt;</span>
+      <span style="color:#f92672">&lt;/packages&gt;</span>
+    <span style="color:#f92672">&lt;/repository&gt;</span>
+  <span style="color:#f92672">&lt;/repositories&gt;</span>
+<span style="color:#f92672">&lt;/cruise&gt;</span></code></pre></div>
 <p><a href="#top">top</a></p>
 
 <h2 id="pluginConfiguration">&lt;pluginConfiguration&gt;</h2>
@@ -2218,28 +2132,25 @@ directory where the .ssh/ directory is located.</p>
 <p>The <code>&lt;artifactStores&gt;</code> element is a container of many <code>&lt;artifactStore&gt;</code>.</p>
 
 <h3 id="example-8">Example</h3>
-
-<pre><code class="language-xml">&lt;cruise&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;cruise&gt;</span>
   ...
-  &lt;artifactStores&gt;
-      &lt;artifactStore id=&quot;dockerhub&quot; pluginId=&quot;cd.go.artifact.docker.registry&quot;&gt;
-        &lt;property&gt;
-          &lt;key&gt;RegistryURL&lt;/key&gt;
-          &lt;value&gt;https://index.docker.io/v1/&lt;/value&gt;
-        &lt;/property&gt;
-        &lt;property&gt;
-          &lt;key&gt;Username&lt;/key&gt;
-          &lt;value&gt;boohoo&lt;/value&gt;
-        &lt;/property&gt;
-        &lt;property&gt;
-          &lt;key&gt;Password&lt;/key&gt;
-          &lt;value&gt;password&lt;/value&gt;
-        &lt;/property&gt;
-      &lt;/artifactStore&gt;
-    &lt;/artifactStores&gt;
-&lt;/cruise&gt;
-</code></pre>
-
+  <span style="color:#f92672">&lt;artifactStores&gt;</span>
+      <span style="color:#f92672">&lt;artifactStore</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;dockerhub&#34;</span> <span style="color:#a6e22e">pluginId=</span><span style="color:#e6db74">&#34;cd.go.artifact.docker.registry&#34;</span><span style="color:#f92672">&gt;</span>
+        <span style="color:#f92672">&lt;property&gt;</span>
+          <span style="color:#f92672">&lt;key&gt;</span>RegistryURL<span style="color:#f92672">&lt;/key&gt;</span>
+          <span style="color:#f92672">&lt;value&gt;</span>https://index.docker.io/v1/<span style="color:#f92672">&lt;/value&gt;</span>
+        <span style="color:#f92672">&lt;/property&gt;</span>
+        <span style="color:#f92672">&lt;property&gt;</span>
+          <span style="color:#f92672">&lt;key&gt;</span>Username<span style="color:#f92672">&lt;/key&gt;</span>
+          <span style="color:#f92672">&lt;value&gt;</span>boohoo<span style="color:#f92672">&lt;/value&gt;</span>
+        <span style="color:#f92672">&lt;/property&gt;</span>
+        <span style="color:#f92672">&lt;property&gt;</span>
+          <span style="color:#f92672">&lt;key&gt;</span>Password<span style="color:#f92672">&lt;/key&gt;</span>
+          <span style="color:#f92672">&lt;value&gt;</span>password<span style="color:#f92672">&lt;/value&gt;</span>
+        <span style="color:#f92672">&lt;/property&gt;</span>
+      <span style="color:#f92672">&lt;/artifactStore&gt;</span>
+    <span style="color:#f92672">&lt;/artifactStores&gt;</span>
+<span style="color:#f92672">&lt;/cruise&gt;</span></code></pre></div>
 <p><a href="#top">top</a></p>
 
 <h2 id="artifactStore">&lt;artifactStore&gt;</h2>
@@ -2299,31 +2210,28 @@ directory where the .ssh/ directory is located.</p>
 </table>
 
 <h3 id="examples-19">Examples</h3>
-
-<pre><code class="language-xml">&lt;cruise&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;cruise&gt;</span>
   ...
-  &lt;pipelines group=&quot;studios&quot;&gt;
-    &lt;pipeline name=&quot;yourproject&quot; labeltemplate=&quot;foo-1.0.${COUNT}&quot;&gt;
-      &lt;materials&gt;
-        &lt;svn url=&quot;http://your-svn/&quot;/&gt;
-      &lt;/materials&gt;
-      &lt;stage name=&quot;ut&quot;&gt;
-    &lt;jobs&gt;
-      &lt;job name=&quot;linux&quot;&gt;
-        &lt;resources&gt;
-          &lt;resource&gt;linux&lt;/resource&gt;
-        &lt;/resources&gt;
-        &lt;tasks&gt;
-          &lt;ant target=&quot;unit-test&quot; /&gt;
-        &lt;/tasks&gt;
-      &lt;/job&gt;
-    &lt;/jobs&gt;
-      &lt;/stage&gt;
-    &lt;/pipeline&gt;
-  &lt;/pipelines&gt;
-&lt;/cruise&gt;
-</code></pre>
-
+  <span style="color:#f92672">&lt;pipelines</span> <span style="color:#a6e22e">group=</span><span style="color:#e6db74">&#34;studios&#34;</span><span style="color:#f92672">&gt;</span>
+    <span style="color:#f92672">&lt;pipeline</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;yourproject&#34;</span> <span style="color:#a6e22e">labeltemplate=</span><span style="color:#e6db74">&#34;foo-1.0.${COUNT}&#34;</span><span style="color:#f92672">&gt;</span>
+      <span style="color:#f92672">&lt;materials&gt;</span>
+        <span style="color:#f92672">&lt;svn</span> <span style="color:#a6e22e">url=</span><span style="color:#e6db74">&#34;http://your-svn/&#34;</span><span style="color:#f92672">/&gt;</span>
+      <span style="color:#f92672">&lt;/materials&gt;</span>
+      <span style="color:#f92672">&lt;stage</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;ut&#34;</span><span style="color:#f92672">&gt;</span>
+    <span style="color:#f92672">&lt;jobs&gt;</span>
+      <span style="color:#f92672">&lt;job</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;linux&#34;</span><span style="color:#f92672">&gt;</span>
+        <span style="color:#f92672">&lt;resources&gt;</span>
+          <span style="color:#f92672">&lt;resource&gt;</span>linux<span style="color:#f92672">&lt;/resource&gt;</span>
+        <span style="color:#f92672">&lt;/resources&gt;</span>
+        <span style="color:#f92672">&lt;tasks&gt;</span>
+          <span style="color:#f92672">&lt;ant</span> <span style="color:#a6e22e">target=</span><span style="color:#e6db74">&#34;unit-test&#34;</span> <span style="color:#f92672">/&gt;</span>
+        <span style="color:#f92672">&lt;/tasks&gt;</span>
+      <span style="color:#f92672">&lt;/job&gt;</span>
+    <span style="color:#f92672">&lt;/jobs&gt;</span>
+      <span style="color:#f92672">&lt;/stage&gt;</span>
+    <span style="color:#f92672">&lt;/pipeline&gt;</span>
+  <span style="color:#f92672">&lt;/pipelines&gt;</span>
+<span style="color:#f92672">&lt;/cruise&gt;</span></code></pre></div>
 <p><a href="#top">top</a></p>
 
 <h2 id="authorization">&lt;authorization&gt;</h2>
@@ -2343,23 +2251,20 @@ directory where the .ssh/ directory is located.</p>
 <h3 id="examples-20">Examples</h3>
 
 <p>Given the following configuration only <a href="#admins">admins</a>, lqiao and any users having the role &lsquo;studios_group_admin&rsquo;.</p>
-
-<pre><code class="language-xml">&lt;cruise&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;cruise&gt;</span>
   ...
-  &lt;pipelines group=&quot;studios&quot;&gt;
-    &lt;authorization&gt;
-        &lt;admins&gt;
-           &lt;user&gt;lqiao&lt;/user&gt;
-           &lt;role&gt;studios_group_admin&lt;/role&gt;
-        &lt;/admins&gt;
-    &lt;/authorization&gt;
-    &lt;pipeline name=&quot;yourproject&quot; labeltemplate=&quot;foo-1.0.${COUNT}&quot;&gt;
+  <span style="color:#f92672">&lt;pipelines</span> <span style="color:#a6e22e">group=</span><span style="color:#e6db74">&#34;studios&#34;</span><span style="color:#f92672">&gt;</span>
+    <span style="color:#f92672">&lt;authorization&gt;</span>
+        <span style="color:#f92672">&lt;admins&gt;</span>
+           <span style="color:#f92672">&lt;user&gt;</span>lqiao<span style="color:#f92672">&lt;/user&gt;</span>
+           <span style="color:#f92672">&lt;role&gt;</span>studios_group_admin<span style="color:#f92672">&lt;/role&gt;</span>
+        <span style="color:#f92672">&lt;/admins&gt;</span>
+    <span style="color:#f92672">&lt;/authorization&gt;</span>
+    <span style="color:#f92672">&lt;pipeline</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;yourproject&#34;</span> <span style="color:#a6e22e">labeltemplate=</span><span style="color:#e6db74">&#34;foo-1.0.${COUNT}&#34;</span><span style="color:#f92672">&gt;</span>
     ......
-    &lt;/pipeline&gt;
-  &lt;/pipelines&gt;
-&lt;/cruise&gt;
-</code></pre>
-
+    <span style="color:#f92672">&lt;/pipeline&gt;</span>
+  <span style="color:#f92672">&lt;/pipelines&gt;</span>
+<span style="color:#f92672">&lt;/cruise&gt;</span></code></pre></div>
 <p><a href="#top">top</a></p>
 
 <h2 id="view">&lt;view&gt;</h2>
@@ -2371,23 +2276,20 @@ directory where the .ssh/ directory is located.</p>
 <h3 id="examples-21">Examples</h3>
 
 <p>Given the following configuration only administrators can operate the pipeline group, and only <a href="#admins">admins</a>, lqiao and any users having the role &lsquo;go_readonly_member&rsquo; can see the pipeline.</p>
-
-<pre><code class="language-xml">&lt;cruise&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;cruise&gt;</span>
   ...
-  &lt;pipelines group=&quot;studios&quot;&gt;
-    &lt;authorization&gt;
-        &lt;view&gt;
-           &lt;user&gt;lqiao&lt;/user&gt;
-           &lt;role&gt;go_readonly_member&lt;/role&gt;
-        &lt;/view&gt;
-    &lt;/authorization&gt;
-    &lt;pipeline name=&quot;yourproject&quot; labeltemplate=&quot;foo-1.0.${COUNT}&quot;&gt;
+  <span style="color:#f92672">&lt;pipelines</span> <span style="color:#a6e22e">group=</span><span style="color:#e6db74">&#34;studios&#34;</span><span style="color:#f92672">&gt;</span>
+    <span style="color:#f92672">&lt;authorization&gt;</span>
+        <span style="color:#f92672">&lt;view&gt;</span>
+           <span style="color:#f92672">&lt;user&gt;</span>lqiao<span style="color:#f92672">&lt;/user&gt;</span>
+           <span style="color:#f92672">&lt;role&gt;</span>go_readonly_member<span style="color:#f92672">&lt;/role&gt;</span>
+        <span style="color:#f92672">&lt;/view&gt;</span>
+    <span style="color:#f92672">&lt;/authorization&gt;</span>
+    <span style="color:#f92672">&lt;pipeline</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;yourproject&#34;</span> <span style="color:#a6e22e">labeltemplate=</span><span style="color:#e6db74">&#34;foo-1.0.${COUNT}&#34;</span><span style="color:#f92672">&gt;</span>
     ......
-    &lt;/pipeline&gt;
-  &lt;/pipelines&gt;
-&lt;/cruise&gt;
-</code></pre>
-
+    <span style="color:#f92672">&lt;/pipeline&gt;</span>
+  <span style="color:#f92672">&lt;/pipelines&gt;</span>
+<span style="color:#f92672">&lt;/cruise&gt;</span></code></pre></div>
 <p><a href="#top">top</a></p>
 
 <h2 id="operate">&lt;operate&gt;</h2>
@@ -2399,28 +2301,25 @@ directory where the .ssh/ directory is located.</p>
 <h3 id="examples-22">Examples</h3>
 
 <p>Given the following configuration, only <a href="#admins">admins</a>, lqiao, jez and the users having the role &lsquo;go_core_member&rsquo; can operate the pipeline group. Only <a href="#admins">admins</a>, lqiao and the users having the role &lsquo;go_readonly_member&rsquo; can see the pipeline (jez and go_core_member cannot).</p>
-
-<pre><code class="language-xml">&lt;cruise&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;cruise&gt;</span>
   ...
-  &lt;pipelines group=&quot;studios&quot;&gt;
-    &lt;authorization&gt;
-        &lt;view&gt;
-           &lt;user&gt;lqiao&lt;/user&gt;
-           &lt;role&gt;go_readonly_member&lt;/role&gt;
-        &lt;/view&gt;
-        &lt;operate&gt;
-           &lt;user&gt;lqiao&lt;/user&gt;
-           &lt;user&gt;jez&lt;/user&gt;
-           &lt;role&gt;go_core_member&lt;/role&gt;
-        &lt;/operate&gt;
-    &lt;/authorization&gt;
-    &lt;pipeline name=&quot;yourproject&quot; labeltemplate=&quot;foo-1.0.${COUNT}&quot;&gt;
+  <span style="color:#f92672">&lt;pipelines</span> <span style="color:#a6e22e">group=</span><span style="color:#e6db74">&#34;studios&#34;</span><span style="color:#f92672">&gt;</span>
+    <span style="color:#f92672">&lt;authorization&gt;</span>
+        <span style="color:#f92672">&lt;view&gt;</span>
+           <span style="color:#f92672">&lt;user&gt;</span>lqiao<span style="color:#f92672">&lt;/user&gt;</span>
+           <span style="color:#f92672">&lt;role&gt;</span>go_readonly_member<span style="color:#f92672">&lt;/role&gt;</span>
+        <span style="color:#f92672">&lt;/view&gt;</span>
+        <span style="color:#f92672">&lt;operate&gt;</span>
+           <span style="color:#f92672">&lt;user&gt;</span>lqiao<span style="color:#f92672">&lt;/user&gt;</span>
+           <span style="color:#f92672">&lt;user&gt;</span>jez<span style="color:#f92672">&lt;/user&gt;</span>
+           <span style="color:#f92672">&lt;role&gt;</span>go_core_member<span style="color:#f92672">&lt;/role&gt;</span>
+        <span style="color:#f92672">&lt;/operate&gt;</span>
+    <span style="color:#f92672">&lt;/authorization&gt;</span>
+    <span style="color:#f92672">&lt;pipeline</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;yourproject&#34;</span> <span style="color:#a6e22e">labeltemplate=</span><span style="color:#e6db74">&#34;foo-1.0.${COUNT}&#34;</span><span style="color:#f92672">&gt;</span>
     ......
-    &lt;/pipeline&gt;
-  &lt;/pipelines&gt;
-&lt;/cruise&gt;
-</code></pre>
-
+    <span style="color:#f92672">&lt;/pipeline&gt;</span>
+  <span style="color:#f92672">&lt;/pipelines&gt;</span>
+<span style="color:#f92672">&lt;/cruise&gt;</span></code></pre></div>
 <p><a href="#top">top</a></p>
 
 <h2 id="pipeline">&lt;pipeline&gt;</h2>
@@ -2471,31 +2370,28 @@ pipeline group).</p>
 </table>
 
 <h3 id="examples-23">Examples</h3>
-
-<pre><code class="language-xml">&lt;pipelines&gt;
-  &lt;pipeline name=&quot;yourproject&quot; labeltemplate=&quot;foo-1.0.${COUNT}-${svn}&quot; lockBehavior=&quot;lockOnFailure&quot;&gt;
-  &lt;environmentvariables&gt;
-     &lt;variable name=&quot;FOO&quot;&gt;&lt;value&gt;bar&lt;/value&gt;&lt;/variable&gt;
-   &lt;/environmentvariables&gt;
-    &lt;materials&gt;
-      &lt;svn url=&quot;http://your-svn/&quot; materialName=&quot;svn&quot; /&gt;
-    &lt;/materials&gt;
-    &lt;stage name=&quot;ut&quot;&gt;
-      &lt;jobs&gt;
-    &lt;job name=&quot;linux&quot;&gt;
-      &lt;resources&gt;
-        &lt;resource&gt;linux&lt;/resource&gt;
-      &lt;/resources&gt;
-      &lt;tasks&gt;
-        &lt;ant target=&quot;unit-test&quot; /&gt;
-      &lt;/tasks&gt;
-    &lt;/job&gt;
-      &lt;/jobs&gt;
-    &lt;/stage&gt;
-  &lt;/pipeline&gt;
-&lt;/pipelines&gt;
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;pipelines&gt;</span>
+  <span style="color:#f92672">&lt;pipeline</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;yourproject&#34;</span> <span style="color:#a6e22e">labeltemplate=</span><span style="color:#e6db74">&#34;foo-1.0.${COUNT}-${svn}&#34;</span> <span style="color:#a6e22e">lockBehavior=</span><span style="color:#e6db74">&#34;lockOnFailure&#34;</span><span style="color:#f92672">&gt;</span>
+  <span style="color:#f92672">&lt;environmentvariables&gt;</span>
+     <span style="color:#f92672">&lt;variable</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;FOO&#34;</span><span style="color:#f92672">&gt;&lt;value&gt;</span>bar<span style="color:#f92672">&lt;/value&gt;&lt;/variable&gt;</span>
+   <span style="color:#f92672">&lt;/environmentvariables&gt;</span>
+    <span style="color:#f92672">&lt;materials&gt;</span>
+      <span style="color:#f92672">&lt;svn</span> <span style="color:#a6e22e">url=</span><span style="color:#e6db74">&#34;http://your-svn/&#34;</span> <span style="color:#a6e22e">materialName=</span><span style="color:#e6db74">&#34;svn&#34;</span> <span style="color:#f92672">/&gt;</span>
+    <span style="color:#f92672">&lt;/materials&gt;</span>
+    <span style="color:#f92672">&lt;stage</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;ut&#34;</span><span style="color:#f92672">&gt;</span>
+      <span style="color:#f92672">&lt;jobs&gt;</span>
+    <span style="color:#f92672">&lt;job</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;linux&#34;</span><span style="color:#f92672">&gt;</span>
+      <span style="color:#f92672">&lt;resources&gt;</span>
+        <span style="color:#f92672">&lt;resource&gt;</span>linux<span style="color:#f92672">&lt;/resource&gt;</span>
+      <span style="color:#f92672">&lt;/resources&gt;</span>
+      <span style="color:#f92672">&lt;tasks&gt;</span>
+        <span style="color:#f92672">&lt;ant</span> <span style="color:#a6e22e">target=</span><span style="color:#e6db74">&#34;unit-test&#34;</span> <span style="color:#f92672">/&gt;</span>
+      <span style="color:#f92672">&lt;/tasks&gt;</span>
+    <span style="color:#f92672">&lt;/job&gt;</span>
+      <span style="color:#f92672">&lt;/jobs&gt;</span>
+    <span style="color:#f92672">&lt;/stage&gt;</span>
+  <span style="color:#f92672">&lt;/pipeline&gt;</span>
+<span style="color:#f92672">&lt;/pipelines&gt;</span></code></pre></div>
 <p><a href="#top">top</a></p>
 
 <h2 id="params">&lt;params&gt;</h2>
@@ -2510,13 +2406,10 @@ pipeline group).</p>
 template.</p>
 
 <h3 id="example-9">Example:</h3>
-
-<pre><code class="language-xml">&lt;params&gt;
-    &lt;param name=&quot;COMMAND&quot;&gt;echo&lt;/param&gt;
-    &lt;param name=&quot;WORKING_DIR&quot;&gt;/repo/branch&lt;/param&gt;
-&lt;/params&gt;
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;params&gt;</span>
+    <span style="color:#f92672">&lt;param</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;COMMAND&#34;</span><span style="color:#f92672">&gt;</span>echo<span style="color:#f92672">&lt;/param&gt;</span>
+    <span style="color:#f92672">&lt;param</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;WORKING_DIR&#34;</span><span style="color:#f92672">&gt;</span>/repo/branch<span style="color:#f92672">&lt;/param&gt;</span>
+<span style="color:#f92672">&lt;/params&gt;</span></code></pre></div>
 <p><a href="#top">top</a></p>
 
 <h2 id="trackingtool">&lt;trackingtool&gt;</h2>
@@ -2554,24 +2447,18 @@ can use to take you to your tracking tool (Mingle card, JIRA issue, Trac issue e
 
 <p>Suppose you are using a Web Application to manage your tasks or bugs, and the link looks like <a href="http://your-trackingtool/yourproject/512">http://your-trackingtool/yourproject/512</a>, &lsquo;512&rsquo;
 is your task ID. Your configuration would be:</p>
-
-<pre><code class="language-xml">&lt;pipeline name=&quot;yourproject&quot;&gt;
-  &lt;trackingtool link=&quot;http://your-trackingtool/yourproject/${ID}&quot; regex=&quot;evo-(\d+)&quot;/&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;pipeline</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;yourproject&#34;</span><span style="color:#f92672">&gt;</span>
+  <span style="color:#f92672">&lt;trackingtool</span> <span style="color:#a6e22e">link=</span><span style="color:#e6db74">&#34;http://your-trackingtool/yourproject/${ID}&#34;</span> <span style="color:#a6e22e">regex=</span><span style="color:#e6db74">&#34;evo-(\d+)&#34;</span><span style="color:#f92672">/&gt;</span>
   ...
-&lt;/pipeline&gt;
-</code></pre>
-
+<span style="color:#f92672">&lt;/pipeline&gt;</span></code></pre></div>
 <p>If you check in some code with a commit message which includes the characters &lsquo;evo-512&rsquo; then that will appear in the modification pop-up
 box as a link. When you click it, Go will take you to the web page &lsquo;<a href="http://your-trackingtool/yourproject/512'">http://your-trackingtool/yourproject/512'</a>.</p>
 
 <p>For example: If you use <a href="http://www.thoughtworks.com/products/mingle-agile-project-management/">Mingle</a> for your task manager, the configuration would be:</p>
-
-<pre><code class="language-xml">&lt;pipeline name=&quot;yourproject&quot;&gt;
-  &lt;trackingtool link=&quot;http://your-mingle-server/projects/yourproject/cards/${ID}&quot; regex=&quot;##(\d+)&quot;/&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;pipeline</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;yourproject&#34;</span><span style="color:#f92672">&gt;</span>
+  <span style="color:#f92672">&lt;trackingtool</span> <span style="color:#a6e22e">link=</span><span style="color:#e6db74">&#34;http://your-mingle-server/projects/yourproject/cards/${ID}&#34;</span> <span style="color:#a6e22e">regex=</span><span style="color:#e6db74">&#34;##(\d+)&#34;</span><span style="color:#f92672">/&gt;</span>
   ...
-&lt;/pipeline&gt;
-</code></pre>
-
+<span style="color:#f92672">&lt;/pipeline&gt;</span></code></pre></div>
 <p><strong>Notes:</strong> You can not define multiple tracking tools in one pipeline.</p>
 
 <p><a href="#top">top</a></p>
@@ -2615,14 +2502,11 @@ box as a link. When you click it, Go will take you to the web page &lsquo;<a hre
 </table>
 
 <h3 id="examples-25">Examples</h3>
-
-<pre><code class="language-xml">&lt;mingle
-    baseUrl=&quot;http://mingle.example.com&quot;
-    projectIdentifier=&quot;my_project&quot;&gt;
-    &lt;mqlGroupingConditions&gt;status &gt; 'In Dev'&lt;/mqlGroupingConditions&gt;
-&lt;/mingle&gt;
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;mingle</span>
+    <span style="color:#a6e22e">baseUrl=</span><span style="color:#e6db74">&#34;http://mingle.example.com&#34;</span>
+    <span style="color:#a6e22e">projectIdentifier=</span><span style="color:#e6db74">&#34;my_project&#34;</span><span style="color:#f92672">&gt;</span>
+    <span style="color:#f92672">&lt;mqlGroupingConditions&gt;</span>status &gt; &#39;In Dev&#39;<span style="color:#f92672">&lt;/mqlGroupingConditions&gt;</span>
+<span style="color:#f92672">&lt;/mingle&gt;</span></code></pre></div>
 <p><a href="#top">top</a></p>
 
 <h2 id="timer">&lt;timer&gt;</h2>
@@ -2652,13 +2536,10 @@ box as a link. When you click it, Go will take you to the web page &lsquo;<a hre
 <h3 id="examples-26">Examples</h3>
 
 <p>For example to run a pipeline once a night at 10pm on weekdays:</p>
-
-<pre><code class="language-xml">&lt;pipeline name=&quot;yourproject&quot;&gt;
-  &lt;timer&gt;0 0 22 ? * MON-FRI&lt;/timer&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;pipeline</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;yourproject&#34;</span><span style="color:#f92672">&gt;</span>
+  <span style="color:#f92672">&lt;timer&gt;</span>0 0 22 ? * MON-FRI<span style="color:#f92672">&lt;/timer&gt;</span>
   ...
-&lt;/pipeline&gt;
-</code></pre>
-
+<span style="color:#f92672">&lt;/pipeline&gt;</span></code></pre></div>
 <p>Go uses the <a href="http://www.quartz-scheduler.org/documentation/quartz-2.x/quick-start">Quartz</a> scheduler internally. For convenience we reproduce the <a href="http://www.quartz-scheduler.org/documentation/quartz-2.x/tutorials/crontrigger">Quartz cron documentation</a> here:</p>
 
 <h3 id="format-1">Format</h3>
@@ -2881,32 +2762,26 @@ various combinations of the allowed special characters for that field. The field
 other material). Go will check out the source code into this folder for each material.</p>
 
 <h3 id="examples-28">Examples</h3>
-
-<pre><code class="language-xml">&lt;pipeline name=&quot;yourproject&quot; labeltemplate=&quot;foo-1.0.${COUNT}&quot;&gt;
-  &lt;materials&gt;
-    &lt;svn url=&quot;http://your-svn/&quot;/&gt;
-  &lt;/materials&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;pipeline</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;yourproject&#34;</span> <span style="color:#a6e22e">labeltemplate=</span><span style="color:#e6db74">&#34;foo-1.0.${COUNT}&#34;</span><span style="color:#f92672">&gt;</span>
+  <span style="color:#f92672">&lt;materials&gt;</span>
+    <span style="color:#f92672">&lt;svn</span> <span style="color:#a6e22e">url=</span><span style="color:#e6db74">&#34;http://your-svn/&#34;</span><span style="color:#f92672">/&gt;</span>
+  <span style="color:#f92672">&lt;/materials&gt;</span>
   ...
-&lt;/pipeline&gt;
-</code></pre>
-
+<span style="color:#f92672">&lt;/pipeline&gt;</span></code></pre></div>
 <p>Multiple materials:</p>
-
-<pre><code class="language-xml">&lt;pipeline name=&quot;yourproject&quot; labeltemplate=&quot;foo-1.0.${COUNT}&quot;&gt;
-  &lt;materials&gt;
-    &lt;svn url=&quot;http://your-svn/&quot; dest=&quot;svn-folder&quot; /&gt;
-    &lt;git url=&quot;git://127.0.0.1/precommit.git&quot; branch=&quot;1.3branch&quot; dest=&quot;git-folder&quot; /&gt;
-    &lt;hg url=&quot;http://your-hg/&quot; dest=&quot;hg-folder&quot; /&gt;
-    &lt;p4 port=&quot;10.18.3.102:1666&quot; username=&quot;userName&quot; password=&quot;passwd&quot; dest=&quot;p4-folder&quot;&gt;
-      &lt;view&gt;&lt;![CDATA[
-    //depot/dev/src...          //anything/src/...
-      ]]&gt;&lt;/view&gt;
-    &lt;/p4&gt;
-  &lt;/materials&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;pipeline</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;yourproject&#34;</span> <span style="color:#a6e22e">labeltemplate=</span><span style="color:#e6db74">&#34;foo-1.0.${COUNT}&#34;</span><span style="color:#f92672">&gt;</span>
+  <span style="color:#f92672">&lt;materials&gt;</span>
+    <span style="color:#f92672">&lt;svn</span> <span style="color:#a6e22e">url=</span><span style="color:#e6db74">&#34;http://your-svn/&#34;</span> <span style="color:#a6e22e">dest=</span><span style="color:#e6db74">&#34;svn-folder&#34;</span> <span style="color:#f92672">/&gt;</span>
+    <span style="color:#f92672">&lt;git</span> <span style="color:#a6e22e">url=</span><span style="color:#e6db74">&#34;git://127.0.0.1/precommit.git&#34;</span> <span style="color:#a6e22e">branch=</span><span style="color:#e6db74">&#34;1.3branch&#34;</span> <span style="color:#a6e22e">dest=</span><span style="color:#e6db74">&#34;git-folder&#34;</span> <span style="color:#f92672">/&gt;</span>
+    <span style="color:#f92672">&lt;hg</span> <span style="color:#a6e22e">url=</span><span style="color:#e6db74">&#34;http://your-hg/&#34;</span> <span style="color:#a6e22e">dest=</span><span style="color:#e6db74">&#34;hg-folder&#34;</span> <span style="color:#f92672">/&gt;</span>
+    <span style="color:#f92672">&lt;p4</span> <span style="color:#a6e22e">port=</span><span style="color:#e6db74">&#34;10.18.3.102:1666&#34;</span> <span style="color:#a6e22e">username=</span><span style="color:#e6db74">&#34;userName&#34;</span> <span style="color:#a6e22e">password=</span><span style="color:#e6db74">&#34;passwd&#34;</span> <span style="color:#a6e22e">dest=</span><span style="color:#e6db74">&#34;p4-folder&#34;</span><span style="color:#f92672">&gt;</span>
+      <span style="color:#f92672">&lt;view&gt;</span><span style="color:#75715e">&lt;![CDATA[
+</span><span style="color:#75715e">    //depot/dev/src...          //anything/src/...
+</span><span style="color:#75715e">      ]]&gt;</span><span style="color:#f92672">&lt;/view&gt;</span>
+    <span style="color:#f92672">&lt;/p4&gt;</span>
+  <span style="color:#f92672">&lt;/materials&gt;</span>
   ...
-&lt;/pipeline&gt;
-</code></pre>
-
+<span style="color:#f92672">&lt;/pipeline&gt;</span></code></pre></div>
 <p><a href="#top">top</a></p>
 
 <h2 id="filter">&lt;filter&gt;</h2>
@@ -2914,14 +2789,11 @@ other material). Go will check out the source code into this folder for each mat
 <p>The <code>&lt;filter&gt;</code> element specifies files in changesets that should not trigger a pipeline automatically. When a pipeline is triggered by files that are not ignored the filtered files will still be updated with other files. You can only define one filter under each SCM material. When you trigger a pipeline manually, it will update to most recent revision, including filtered files.</p>
 
 <h3 id="examples-29">Examples</h3>
-
-<pre><code class="language-xml">&lt;svn url=&quot;http://your-svn/&quot;&gt;
-  &lt;filter&gt;
-    &lt;ignore pattern=&quot;doc/**/*.*&quot; /&gt;
-  &lt;/filter&gt;
-&lt;/svn&gt;
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;svn</span> <span style="color:#a6e22e">url=</span><span style="color:#e6db74">&#34;http://your-svn/&#34;</span><span style="color:#f92672">&gt;</span>
+  <span style="color:#f92672">&lt;filter&gt;</span>
+    <span style="color:#f92672">&lt;ignore</span> <span style="color:#a6e22e">pattern=</span><span style="color:#e6db74">&#34;doc/**/*.*&#34;</span> <span style="color:#f92672">/&gt;</span>
+  <span style="color:#f92672">&lt;/filter&gt;</span>
+<span style="color:#f92672">&lt;/svn&gt;</span></code></pre></div>
 <p><a href="#top">top</a></p>
 
 <h2 id="ignore">&lt;ignore&gt;</h2>
@@ -2958,35 +2830,17 @@ contain these files will not trigger a pipeline automatically.</p>
 </ul>
 
 <h3 id="examples-30">Examples:</h3>
-
-<pre><code class="language-xml">&lt;ignore pattern=&quot;doc/**/*&quot; /&gt;
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;ignore</span> <span style="color:#a6e22e">pattern=</span><span style="color:#e6db74">&#34;doc/**/*&#34;</span> <span style="color:#f92672">/&gt;</span></code></pre></div>
 <p>Ignore everything under the folder <strong>&lsquo;doc&rsquo;</strong>.</p>
-
-<pre><code class="language-xml">&lt;ignore pattern=&quot;doc/*&quot; /&gt;
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;ignore</span> <span style="color:#a6e22e">pattern=</span><span style="color:#e6db74">&#34;doc/*&#34;</span> <span style="color:#f92672">/&gt;</span></code></pre></div>
 <p>Ignore files under the folder <strong>&lsquo;doc&rsquo;</strong>, excluding any subfolder.</p>
-
-<pre><code class="language-xml">&lt;ignore pattern=&quot;framework/helper/*.doc&quot; /&gt;
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;ignore</span> <span style="color:#a6e22e">pattern=</span><span style="color:#e6db74">&#34;framework/helper/*.doc&#34;</span> <span style="color:#f92672">/&gt;</span></code></pre></div>
 <p>Ignore files that are under the directory &lsquo;framework/helper&rsquo; and the file extension is <strong>.doc</strong>.</p>
-
-<pre><code class="language-xml">&lt;ignore pattern=&quot;*.pdf&quot; /&gt;
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;ignore</span> <span style="color:#a6e22e">pattern=</span><span style="color:#e6db74">&#34;*.pdf&#34;</span> <span style="color:#f92672">/&gt;</span></code></pre></div>
 <p>Ignore files that are under the root directory of SCM repository and the file extension is <strong>.pdf</strong>.</p>
-
-<pre><code class="language-xml">&lt;ignore pattern=&quot;**/helper/*.pdf&quot; /&gt;
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;ignore</span> <span style="color:#a6e22e">pattern=</span><span style="color:#e6db74">&#34;**/helper/*.pdf&#34;</span> <span style="color:#f92672">/&gt;</span></code></pre></div>
 <p>Ignore all the files that is under any <strong>&lsquo;helper&rsquo;</strong> folder and the file extension is <strong>.pdf</strong>.</p>
-
-<pre><code class="language-xml">&lt;ignore pattern=&quot;helper/**/*.pdf&quot; /&gt;
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;ignore</span> <span style="color:#a6e22e">pattern=</span><span style="color:#e6db74">&#34;helper/**/*.pdf&#34;</span> <span style="color:#f92672">/&gt;</span></code></pre></div>
 <p>Ignore all the files that are in the nested directory under folder <strong>&lsquo;helper&rsquo;</strong> of the repository and the file extension is <strong>.pdf</strong>.</p>
 
 <p><a href="#top">top</a></p>
@@ -3065,16 +2919,13 @@ and as the user &lsquo;go&rsquo; do a command &ldquo;svn update&rdquo; to store 
 <h3 id="examples-31">Examples:</h3>
 
 <p>For a Go Agent on linux with the following configuration:</p>
-
-<pre><code class="language-xml">&lt;pipeline name=&quot;myproduct&quot;&gt;
-  &lt;materials&gt;
-    &lt;svn  url=&quot;http://svn-server.com/framework&quot; dest=&quot;framework&quot;/&gt;
-    &lt;svn  url=&quot;http://svn-server.com/componentOne&quot; dest=&quot;mycomponent&quot;/&gt;
-  &lt;/materials&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;pipeline</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;myproduct&#34;</span><span style="color:#f92672">&gt;</span>
+  <span style="color:#f92672">&lt;materials&gt;</span>
+    <span style="color:#f92672">&lt;svn</span>  <span style="color:#a6e22e">url=</span><span style="color:#e6db74">&#34;http://svn-server.com/framework&#34;</span> <span style="color:#a6e22e">dest=</span><span style="color:#e6db74">&#34;framework&#34;</span><span style="color:#f92672">/&gt;</span>
+    <span style="color:#f92672">&lt;svn</span>  <span style="color:#a6e22e">url=</span><span style="color:#e6db74">&#34;http://svn-server.com/componentOne&#34;</span> <span style="color:#a6e22e">dest=</span><span style="color:#e6db74">&#34;mycomponent&#34;</span><span style="color:#f92672">/&gt;</span>
+  <span style="color:#f92672">&lt;/materials&gt;</span>
   ...
-&lt;/pipeline&gt;
-</code></pre>
-
+<span style="color:#f92672">&lt;/pipeline&gt;</span></code></pre></div>
 <p>Go Agent will check out source code from &lsquo;<a href="http://svn-server.com/framework'">http://svn-server.com/framework'</a> to &lsquo;/var/lib/go-agent/pipelines/myproduct/framwork&rsquo;, and from &lsquo;<a href="http://svn-server.com/componentOne'">http://svn-server.com/componentOne'</a> to &lsquo;/var/lib/go-agent/pipelines/myproduct/mycomponent&rsquo;.</p>
 
 <p><a href="#top">top</a></p>
@@ -3132,25 +2983,19 @@ and as the user &lsquo;go&rsquo; do a command &ldquo;svn update&rdquo; to store 
 </table>
 
 <h3 id="examples-32">Examples</h3>
-
-<pre><code class="language-xml">&lt;pipeline name=&quot;yourproject&quot;&gt;
-  &lt;materials&gt;
-    &lt;hg url=&quot;http://username:password@your-hg/&quot;/&gt;
-  &lt;/materials&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;pipeline</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;yourproject&#34;</span><span style="color:#f92672">&gt;</span>
+  <span style="color:#f92672">&lt;materials&gt;</span>
+    <span style="color:#f92672">&lt;hg</span> <span style="color:#a6e22e">url=</span><span style="color:#e6db74">&#34;http://username:password@your-hg/&#34;</span><span style="color:#f92672">/&gt;</span>
+  <span style="color:#f92672">&lt;/materials&gt;</span>
   ...
-&lt;/pipeline&gt;
-</code></pre>
-
+<span style="color:#f92672">&lt;/pipeline&gt;</span></code></pre></div>
 <h4 id="specifying-a-mercurial-branch-1">Specifying a mercurial branch.</h4>
-
-<pre><code class="language-xml">&lt;pipeline name=&quot;yourproject_branch&quot;&gt;
-  &lt;materials&gt;
-    &lt;hg url=&quot;http://username:password@your-hg##branch_name&quot;/&gt;
-  &lt;/materials&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;pipeline</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;yourproject_branch&#34;</span><span style="color:#f92672">&gt;</span>
+  <span style="color:#f92672">&lt;materials&gt;</span>
+    <span style="color:#f92672">&lt;hg</span> <span style="color:#a6e22e">url=</span><span style="color:#e6db74">&#34;http://username:password@your-hg##branch_name&#34;</span><span style="color:#f92672">/&gt;</span>
+  <span style="color:#f92672">&lt;/materials&gt;</span>
   ...
-&lt;/pipeline&gt;
-</code></pre>
-
+<span style="color:#f92672">&lt;/pipeline&gt;</span></code></pre></div>
 <p>Note that # needs to be escaped with another # - hence the ## in the url above.</p>
 
 <p><a href="#top">top</a></p>
@@ -3250,21 +3095,18 @@ configuration, Go will overwrite them before running p4.</p>
 setup and paste it into the view section.</p>
 
 <p>For example:</p>
-
-<pre><code class="language-xml">&lt;pipeline name=&quot;perforce-example&quot;/&gt;
-  &lt;materials&gt;
-    &lt;p4 port=&quot;10.18.3.102:1666&quot; username=&quot;userName&quot; password=&quot;passwd&quot;&gt;
-      &lt;view&gt;&lt;![CDATA[
-    //depot/dev/src...          //anything/src/...
-    //depot/dev/test...         //anything/test/...
-    //depot/dev/main/docs/...   //anything/docs/...
-      ]]&gt;&lt;/view&gt;
-    &lt;/p4&gt;
-  &lt;/materials&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;pipeline</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;perforce-example&#34;</span><span style="color:#f92672">/&gt;</span>
+  <span style="color:#f92672">&lt;materials&gt;</span>
+    <span style="color:#f92672">&lt;p4</span> <span style="color:#a6e22e">port=</span><span style="color:#e6db74">&#34;10.18.3.102:1666&#34;</span> <span style="color:#a6e22e">username=</span><span style="color:#e6db74">&#34;userName&#34;</span> <span style="color:#a6e22e">password=</span><span style="color:#e6db74">&#34;passwd&#34;</span><span style="color:#f92672">&gt;</span>
+      <span style="color:#f92672">&lt;view&gt;</span><span style="color:#75715e">&lt;![CDATA[
+</span><span style="color:#75715e">    //depot/dev/src...          //anything/src/...
+</span><span style="color:#75715e">    //depot/dev/test...         //anything/test/...
+</span><span style="color:#75715e">    //depot/dev/main/docs/...   //anything/docs/...
+</span><span style="color:#75715e">      ]]&gt;</span><span style="color:#f92672">&lt;/view&gt;</span>
+    <span style="color:#f92672">&lt;/p4&gt;</span>
+  <span style="color:#f92672">&lt;/materials&gt;</span>
   ...
-&lt;/pipeline&gt;
-</code></pre>
-
+<span style="color:#f92672">&lt;/pipeline&gt;</span></code></pre></div>
 <p><a href="#top">top</a></p>
 
 <h2 id="git">&lt;git&gt;</h2>
@@ -3344,23 +3186,17 @@ directory where the .ssh/ directory is located.</p>
 </table>
 
 <h3 id="examples-are-3">Examples are:</h3>
-
-<pre><code class="language-xml">&lt;pipeline name=&quot;yourproject&quot;&gt;
-  &lt;materials&gt;
-    &lt;git url=&quot;git://127.0.0.1/precommit.git&quot; branch=&quot;1.3branch&quot;/&gt;
-  &lt;/materials&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;pipeline</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;yourproject&#34;</span><span style="color:#f92672">&gt;</span>
+  <span style="color:#f92672">&lt;materials&gt;</span>
+    <span style="color:#f92672">&lt;git</span> <span style="color:#a6e22e">url=</span><span style="color:#e6db74">&#34;git://127.0.0.1/precommit.git&#34;</span> <span style="color:#a6e22e">branch=</span><span style="color:#e6db74">&#34;1.3branch&#34;</span><span style="color:#f92672">/&gt;</span>
+  <span style="color:#f92672">&lt;/materials&gt;</span>
   ...
-&lt;/pipeline&gt;
-</code></pre>
-
-<pre><code class="language-xml">&lt;pipeline name=&quot;yourproject&quot;&gt;
-  &lt;materials&gt;
-    &lt;git url=&quot;http://ccegit:pst@goserver.yourcompany.com/httpgit.git&quot; /&gt;
-  &lt;/materials&gt;
+<span style="color:#f92672">&lt;/pipeline&gt;</span></code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;pipeline</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;yourproject&#34;</span><span style="color:#f92672">&gt;</span>
+  <span style="color:#f92672">&lt;materials&gt;</span>
+    <span style="color:#f92672">&lt;git</span> <span style="color:#a6e22e">url=</span><span style="color:#e6db74">&#34;http://ccegit:pst@goserver.yourcompany.com/httpgit.git&#34;</span> <span style="color:#f92672">/&gt;</span>
+  <span style="color:#f92672">&lt;/materials&gt;</span>
   ...
-&lt;/pipeline&gt;
-</code></pre>
-
+<span style="color:#f92672">&lt;/pipeline&gt;</span></code></pre></div>
 <p><a href="#top">top</a></p>
 
 <h2 id="tfs">&lt;tfs&gt;</h2>
@@ -3424,23 +3260,17 @@ directory where the .ssh/ directory is located.</p>
 </table>
 
 <h3 id="examples-are-4">Examples are:</h3>
-
-<pre><code class="language-xml">&lt;pipeline name=&quot;webproject&quot;&gt;
-  &lt;materials&gt;
-    &lt;tfs url=&quot;http://10.21.3.210:8080/tfs/New&quot; domain=&quot;DOMAIN&quot; username=&quot;jim&quot; password=&quot;as802nsk9==&quot; projectPath=&quot;$/webapp&quot; /&gt;
-  &lt;/materials&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;pipeline</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;webproject&#34;</span><span style="color:#f92672">&gt;</span>
+  <span style="color:#f92672">&lt;materials&gt;</span>
+    <span style="color:#f92672">&lt;tfs</span> <span style="color:#a6e22e">url=</span><span style="color:#e6db74">&#34;http://10.21.3.210:8080/tfs/New&#34;</span> <span style="color:#a6e22e">domain=</span><span style="color:#e6db74">&#34;DOMAIN&#34;</span> <span style="color:#a6e22e">username=</span><span style="color:#e6db74">&#34;jim&#34;</span> <span style="color:#a6e22e">password=</span><span style="color:#e6db74">&#34;as802nsk9==&#34;</span> <span style="color:#a6e22e">projectPath=</span><span style="color:#e6db74">&#34;$/webapp&#34;</span> <span style="color:#f92672">/&gt;</span>
+  <span style="color:#f92672">&lt;/materials&gt;</span>
   ...
-&lt;/pipeline&gt;
-</code></pre>
-
-<pre><code class="language-xml">&lt;pipeline name=&quot;myproject&quot;&gt;
-  &lt;materials&gt;
-    &lt;tfs url=&quot;http://tfshost.tw.com:8080/tfs/DefaultCollection&quot; domain=&quot;DOMAIN&quot; username=&quot;jim&quot; password=&quot;as802nsk9==&quot; projectPath=&quot;$/webapp/component/branch&quot; /&gt;
-  &lt;/materials&gt;
+<span style="color:#f92672">&lt;/pipeline&gt;</span></code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;pipeline</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;myproject&#34;</span><span style="color:#f92672">&gt;</span>
+  <span style="color:#f92672">&lt;materials&gt;</span>
+    <span style="color:#f92672">&lt;tfs</span> <span style="color:#a6e22e">url=</span><span style="color:#e6db74">&#34;http://tfshost.tw.com:8080/tfs/DefaultCollection&#34;</span> <span style="color:#a6e22e">domain=</span><span style="color:#e6db74">&#34;DOMAIN&#34;</span> <span style="color:#a6e22e">username=</span><span style="color:#e6db74">&#34;jim&#34;</span> <span style="color:#a6e22e">password=</span><span style="color:#e6db74">&#34;as802nsk9==&#34;</span> <span style="color:#a6e22e">projectPath=</span><span style="color:#e6db74">&#34;$/webapp/component/branch&#34;</span> <span style="color:#f92672">/&gt;</span>
+  <span style="color:#f92672">&lt;/materials&gt;</span>
   ...
-&lt;/pipeline&gt;
-</code></pre>
-
+<span style="color:#f92672">&lt;/pipeline&gt;</span></code></pre></div>
 <p><a href="#top">top</a></p>
 
 <h2 id="package-1">&lt;package&gt;</h2>
@@ -3468,45 +3298,42 @@ directory where the .ssh/ directory is located.</p>
 </table>
 
 <h3 id="example-10">Example</h3>
-
-<pre><code class="language-xml">&lt;cruise&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;cruise&gt;</span>
   ...
-  &lt;repositories&gt;
-    &lt;repository id=&quot;repo-id&quot; name=&quot;repo-name&quot;&gt;
-      &lt;pluginConfiguration id=&quot;plugin-id&quot; version=&quot;plugin-version&quot; /&gt;
-      &lt;configuration&gt;
-        &lt;property&gt;
-            &lt;key&gt;property-name&lt;/key&gt;
-            &lt;value&gt;property-value&lt;/value&gt;
-        &lt;/property&gt;
+  <span style="color:#f92672">&lt;repositories&gt;</span>
+    <span style="color:#f92672">&lt;repository</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;repo-id&#34;</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;repo-name&#34;</span><span style="color:#f92672">&gt;</span>
+      <span style="color:#f92672">&lt;pluginConfiguration</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;plugin-id&#34;</span> <span style="color:#a6e22e">version=</span><span style="color:#e6db74">&#34;plugin-version&#34;</span> <span style="color:#f92672">/&gt;</span>
+      <span style="color:#f92672">&lt;configuration&gt;</span>
+        <span style="color:#f92672">&lt;property&gt;</span>
+            <span style="color:#f92672">&lt;key&gt;</span>property-name<span style="color:#f92672">&lt;/key&gt;</span>
+            <span style="color:#f92672">&lt;value&gt;</span>property-value<span style="color:#f92672">&lt;/value&gt;</span>
+        <span style="color:#f92672">&lt;/property&gt;</span>
         ...
-      &lt;/configuration&gt;
-      &lt;packages&gt;
-        &lt;package id=&quot;1234-12242-232312&quot; name=&quot;sample-package&quot; &gt;
-          &lt;configuration&gt;
-            &lt;property&gt;
-                &lt;key&gt;property-name&lt;/key&gt;
-                &lt;value&gt;property-value&lt;/value&gt;
-            &lt;/property&gt;
+      <span style="color:#f92672">&lt;/configuration&gt;</span>
+      <span style="color:#f92672">&lt;packages&gt;</span>
+        <span style="color:#f92672">&lt;package</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;1234-12242-232312&#34;</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;sample-package&#34;</span> <span style="color:#f92672">&gt;</span>
+          <span style="color:#f92672">&lt;configuration&gt;</span>
+            <span style="color:#f92672">&lt;property&gt;</span>
+                <span style="color:#f92672">&lt;key&gt;</span>property-name<span style="color:#f92672">&lt;/key&gt;</span>
+                <span style="color:#f92672">&lt;value&gt;</span>property-value<span style="color:#f92672">&lt;/value&gt;</span>
+            <span style="color:#f92672">&lt;/property&gt;</span>
             ...
-          &lt;/configuration&gt;
-        &lt;/package&gt;
-      &lt;/packages&gt;
-    &lt;/repository&gt;
-  &lt;/repositories&gt;
-  &lt;pipelines name=&quot;webproject&quot;&gt;
+          <span style="color:#f92672">&lt;/configuration&gt;</span>
+        <span style="color:#f92672">&lt;/package&gt;</span>
+      <span style="color:#f92672">&lt;/packages&gt;</span>
+    <span style="color:#f92672">&lt;/repository&gt;</span>
+  <span style="color:#f92672">&lt;/repositories&gt;</span>
+  <span style="color:#f92672">&lt;pipelines</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;webproject&#34;</span><span style="color:#f92672">&gt;</span>
     ...
-    &lt;pipeline name=&quot;webproject&quot;&gt;
-        &lt;materials&gt;
-            &lt;package ref=&quot;1234-12242-232312&quot; /&gt;
-        &lt;/materials&gt;
+    <span style="color:#f92672">&lt;pipeline</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;webproject&#34;</span><span style="color:#f92672">&gt;</span>
+        <span style="color:#f92672">&lt;materials&gt;</span>
+            <span style="color:#f92672">&lt;package</span> <span style="color:#a6e22e">ref=</span><span style="color:#e6db74">&#34;1234-12242-232312&#34;</span> <span style="color:#f92672">/&gt;</span>
+        <span style="color:#f92672">&lt;/materials&gt;</span>
         ...
-    &lt;/pipeline&gt;
+    <span style="color:#f92672">&lt;/pipeline&gt;</span>
     ...
-   &lt;/pipelines&gt;
-&lt;/cruise&gt;
-</code></pre>
-
+   <span style="color:#f92672">&lt;/pipelines&gt;</span>
+<span style="color:#f92672">&lt;/cruise&gt;</span></code></pre></div>
 <p><a href="#top">top</a></p>
 
 <h2 id="pipeline-1">&lt;pipeline&gt;</h2>
@@ -3558,22 +3385,19 @@ directory where the .ssh/ directory is located.</p>
 <p>Suppose there are four pipelines, and they are commonLib1, commonLib2, Server and Client. For example, the stage &lsquo;distStage&rsquo; in commonLib1
 pipeline can trigger the other two pipelines, and the stage &lsquo;pkgstage&rsquo; in commonLib2 pipeline can trigger Server pipeline. The configuration
 would be:</p>
-
-<pre><code class="language-xml">&lt;pipeline name=&quot;Server&quot;&gt;
-  &lt;materials&gt;
-    &lt;pipeline pipelineName=&quot;commonLib1&quot; stageName=&quot;distStage&quot;/&gt;
-    &lt;pipeline pipelineName=&quot;commonLib2&quot; stageName=&quot;pkgStage&quot;/&gt;
-  &lt;/materials&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;pipeline</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;Server&#34;</span><span style="color:#f92672">&gt;</span>
+  <span style="color:#f92672">&lt;materials&gt;</span>
+    <span style="color:#f92672">&lt;pipeline</span> <span style="color:#a6e22e">pipelineName=</span><span style="color:#e6db74">&#34;commonLib1&#34;</span> <span style="color:#a6e22e">stageName=</span><span style="color:#e6db74">&#34;distStage&#34;</span><span style="color:#f92672">/&gt;</span>
+    <span style="color:#f92672">&lt;pipeline</span> <span style="color:#a6e22e">pipelineName=</span><span style="color:#e6db74">&#34;commonLib2&#34;</span> <span style="color:#a6e22e">stageName=</span><span style="color:#e6db74">&#34;pkgStage&#34;</span><span style="color:#f92672">/&gt;</span>
+  <span style="color:#f92672">&lt;/materials&gt;</span>
   ...
-&lt;/pipeline&gt;
-&lt;pipeline name=&quot;Client&quot;&gt;
-  &lt;materials&gt;
-    &lt;pipeline pipelineName=&quot;commonLib1&quot; stageName=&quot;distStage&quot;/&gt;
-  &lt;/materials&gt;
+<span style="color:#f92672">&lt;/pipeline&gt;</span>
+<span style="color:#f92672">&lt;pipeline</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;Client&#34;</span><span style="color:#f92672">&gt;</span>
+  <span style="color:#f92672">&lt;materials&gt;</span>
+    <span style="color:#f92672">&lt;pipeline</span> <span style="color:#a6e22e">pipelineName=</span><span style="color:#e6db74">&#34;commonLib1&#34;</span> <span style="color:#a6e22e">stageName=</span><span style="color:#e6db74">&#34;distStage&#34;</span><span style="color:#f92672">/&gt;</span>
+  <span style="color:#f92672">&lt;/materials&gt;</span>
   ...
-&lt;/pipeline&gt;
-</code></pre>
-
+<span style="color:#f92672">&lt;/pipeline&gt;</span></code></pre></div>
 <p><a href="#top">top</a></p>
 
 <h2 id="stage">&lt;stage&gt;</h2>
@@ -3623,27 +3447,24 @@ would be:</p>
 </table>
 
 <h3 id="examples-34">Examples</h3>
-
-<pre><code class="language-xml">&lt;pipeline name=&quot;yourproject&quot;&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;pipeline</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;yourproject&#34;</span><span style="color:#f92672">&gt;</span>
   ...
-  &lt;stage name=&quot;ut&quot;&gt;
-  &lt;environmentvariables&gt;
-     &lt;variable name=&quot;FOO&quot;&gt;&lt;value&gt;bar&lt;/value&gt;&lt;/variable&gt;
-   &lt;/environmentvariables&gt;
-    &lt;jobs&gt;
-      &lt;job name=&quot;linux&quot;&gt;
-    &lt;resources&gt;
-      &lt;resource&gt;linux&lt;/resource&gt;
-    &lt;/resources&gt;
-    &lt;tasks&gt;
-      &lt;ant target=&quot;unit-test&quot; /&gt;
-    &lt;/tasks&gt;
-      &lt;/job&gt;
-    &lt;/jobs&gt;
-  &lt;/stage&gt;
-&lt;/pipeline&gt;
-</code></pre>
-
+  <span style="color:#f92672">&lt;stage</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;ut&#34;</span><span style="color:#f92672">&gt;</span>
+  <span style="color:#f92672">&lt;environmentvariables&gt;</span>
+     <span style="color:#f92672">&lt;variable</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;FOO&#34;</span><span style="color:#f92672">&gt;&lt;value&gt;</span>bar<span style="color:#f92672">&lt;/value&gt;&lt;/variable&gt;</span>
+   <span style="color:#f92672">&lt;/environmentvariables&gt;</span>
+    <span style="color:#f92672">&lt;jobs&gt;</span>
+      <span style="color:#f92672">&lt;job</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;linux&#34;</span><span style="color:#f92672">&gt;</span>
+    <span style="color:#f92672">&lt;resources&gt;</span>
+      <span style="color:#f92672">&lt;resource&gt;</span>linux<span style="color:#f92672">&lt;/resource&gt;</span>
+    <span style="color:#f92672">&lt;/resources&gt;</span>
+    <span style="color:#f92672">&lt;tasks&gt;</span>
+      <span style="color:#f92672">&lt;ant</span> <span style="color:#a6e22e">target=</span><span style="color:#e6db74">&#34;unit-test&#34;</span> <span style="color:#f92672">/&gt;</span>
+    <span style="color:#f92672">&lt;/tasks&gt;</span>
+      <span style="color:#f92672">&lt;/job&gt;</span>
+    <span style="color:#f92672">&lt;/jobs&gt;</span>
+  <span style="color:#f92672">&lt;/stage&gt;</span>
+<span style="color:#f92672">&lt;/pipeline&gt;</span></code></pre></div>
 <p><a href="#top">top</a></p>
 
 <h2 id="jobs">&lt;jobs&gt;</h2>
@@ -3655,21 +3476,18 @@ would be:</p>
 <p><code>&lt;jobs&gt;</code> can contain several <a href="#job"><code>&lt;job&gt;</code></a> elements. These jobs can run in parallel on different <a href="#agents"><code>&lt;agents&gt;</code></a>.</p>
 
 <h3 id="examples-35">Examples</h3>
-
-<pre><code class="language-xml">&lt;stage name=&quot;ut&quot;&gt;
-  &lt;jobs&gt;
-    &lt;job name=&quot;linux&quot;&gt;
-      &lt;resources&gt;
-        &lt;resource&gt;linux&lt;/resource&gt;
-      &lt;/resources&gt;
-      &lt;tasks&gt;
-        &lt;ant target=&quot;unit-test&quot; /&gt;
-      &lt;/tasks&gt;
-    &lt;/job&gt;
-  &lt;/jobs&gt;
-&lt;/stage&gt;
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;stage</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;ut&#34;</span><span style="color:#f92672">&gt;</span>
+  <span style="color:#f92672">&lt;jobs&gt;</span>
+    <span style="color:#f92672">&lt;job</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;linux&#34;</span><span style="color:#f92672">&gt;</span>
+      <span style="color:#f92672">&lt;resources&gt;</span>
+        <span style="color:#f92672">&lt;resource&gt;</span>linux<span style="color:#f92672">&lt;/resource&gt;</span>
+      <span style="color:#f92672">&lt;/resources&gt;</span>
+      <span style="color:#f92672">&lt;tasks&gt;</span>
+        <span style="color:#f92672">&lt;ant</span> <span style="color:#a6e22e">target=</span><span style="color:#e6db74">&#34;unit-test&#34;</span> <span style="color:#f92672">/&gt;</span>
+      <span style="color:#f92672">&lt;/tasks&gt;</span>
+    <span style="color:#f92672">&lt;/job&gt;</span>
+  <span style="color:#f92672">&lt;/jobs&gt;</span>
+<span style="color:#f92672">&lt;/stage&gt;</span></code></pre></div>
 <p><a href="#top">top</a></p>
 
 <h2 id="job">&lt;job&gt;</h2>
@@ -3728,39 +3546,30 @@ If a Job has no resources then it can be built by any Agent (But not by an elast
 </table>
 
 <h3 id="examples-36">Examples</h3>
-
-<pre><code class="language-xml">&lt;job name=&quot;linux&quot;&gt;
-  &lt;environmentvariables&gt;
-    &lt;variable name=&quot;FOO&quot;&gt;
-      &lt;value&gt;bar&lt;/value&gt;
-    &lt;/variable&gt;
-  &lt;/environmentvariables&gt;
-  &lt;resources&gt;
-    &lt;resource&gt;linux&lt;/resource&gt;
-  &lt;/resources&gt;
-  &lt;tasks&gt;
-    &lt;ant target=&quot;unit-test&quot; /&gt;
-  &lt;/tasks&gt;
-&lt;/job&gt;
-</code></pre>
-
-<pre><code class="language-xml">&lt;job name=&quot;run-upgrade&quot; runOnAllAgents=&quot;true&quot; timeout='30' elasticProfileId=&quot;aws.small&quot;&gt;
-  &lt;tasks&gt;
-    &lt;ant target=&quot;upgrade&quot; /&gt;
-  &lt;/tasks&gt;
-&lt;/job&gt;
-</code></pre>
-
-<pre><code class="language-xml">&lt;job name=&quot;run-upgrade&quot; runInstanceCount=&quot;5&quot; timeout='30'&gt;
-  &lt;resources&gt;
-    &lt;resource&gt;linux&lt;/resource&gt;
-  &lt;/resources&gt;
-  &lt;tasks&gt;
-    &lt;ant target=&quot;upgrade&quot; /&gt;
-  &lt;/tasks&gt;
-&lt;/job&gt;
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;job</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;linux&#34;</span><span style="color:#f92672">&gt;</span>
+  <span style="color:#f92672">&lt;environmentvariables&gt;</span>
+    <span style="color:#f92672">&lt;variable</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;FOO&#34;</span><span style="color:#f92672">&gt;</span>
+      <span style="color:#f92672">&lt;value&gt;</span>bar<span style="color:#f92672">&lt;/value&gt;</span>
+    <span style="color:#f92672">&lt;/variable&gt;</span>
+  <span style="color:#f92672">&lt;/environmentvariables&gt;</span>
+  <span style="color:#f92672">&lt;resources&gt;</span>
+    <span style="color:#f92672">&lt;resource&gt;</span>linux<span style="color:#f92672">&lt;/resource&gt;</span>
+  <span style="color:#f92672">&lt;/resources&gt;</span>
+  <span style="color:#f92672">&lt;tasks&gt;</span>
+    <span style="color:#f92672">&lt;ant</span> <span style="color:#a6e22e">target=</span><span style="color:#e6db74">&#34;unit-test&#34;</span> <span style="color:#f92672">/&gt;</span>
+  <span style="color:#f92672">&lt;/tasks&gt;</span>
+<span style="color:#f92672">&lt;/job&gt;</span></code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;job</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;run-upgrade&#34;</span> <span style="color:#a6e22e">runOnAllAgents=</span><span style="color:#e6db74">&#34;true&#34;</span> <span style="color:#a6e22e">timeout=</span><span style="color:#e6db74">&#39;30&#39;</span> <span style="color:#a6e22e">elasticProfileId=</span><span style="color:#e6db74">&#34;aws.small&#34;</span><span style="color:#f92672">&gt;</span>
+  <span style="color:#f92672">&lt;tasks&gt;</span>
+    <span style="color:#f92672">&lt;ant</span> <span style="color:#a6e22e">target=</span><span style="color:#e6db74">&#34;upgrade&#34;</span> <span style="color:#f92672">/&gt;</span>
+  <span style="color:#f92672">&lt;/tasks&gt;</span>
+<span style="color:#f92672">&lt;/job&gt;</span></code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;job</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;run-upgrade&#34;</span> <span style="color:#a6e22e">runInstanceCount=</span><span style="color:#e6db74">&#34;5&#34;</span> <span style="color:#a6e22e">timeout=</span><span style="color:#e6db74">&#39;30&#39;</span><span style="color:#f92672">&gt;</span>
+  <span style="color:#f92672">&lt;resources&gt;</span>
+    <span style="color:#f92672">&lt;resource&gt;</span>linux<span style="color:#f92672">&lt;/resource&gt;</span>
+  <span style="color:#f92672">&lt;/resources&gt;</span>
+  <span style="color:#f92672">&lt;tasks&gt;</span>
+    <span style="color:#f92672">&lt;ant</span> <span style="color:#a6e22e">target=</span><span style="color:#e6db74">&#34;upgrade&#34;</span> <span style="color:#f92672">/&gt;</span>
+  <span style="color:#f92672">&lt;/tasks&gt;</span>
+<span style="color:#f92672">&lt;/job&gt;</span></code></pre></div>
 <p><a href="#top">top</a></p>
 
 <h2 id="resources">&lt;resources&gt;</h2>
@@ -3770,16 +3579,13 @@ If a Job has no resources then it can be built by any Agent (But not by an elast
 <p>If a job has no resources it can be built on any agent.</p>
 
 <h3 id="example-11">Example:</h3>
-
-<pre><code class="language-xml">&lt;job name=&quot;linux&quot;&gt;
-  &lt;resources&gt;
-    &lt;resource&gt;jdk5&lt;/resource&gt;
-    &lt;resource&gt;tomcat5&lt;/resource&gt;
-    &lt;resource&gt;mercurial&lt;/resource&gt;
-  &lt;/resources&gt;
-&lt;/job&gt;
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;job</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;linux&#34;</span><span style="color:#f92672">&gt;</span>
+  <span style="color:#f92672">&lt;resources&gt;</span>
+    <span style="color:#f92672">&lt;resource&gt;</span>jdk5<span style="color:#f92672">&lt;/resource&gt;</span>
+    <span style="color:#f92672">&lt;resource&gt;</span>tomcat5<span style="color:#f92672">&lt;/resource&gt;</span>
+    <span style="color:#f92672">&lt;resource&gt;</span>mercurial<span style="color:#f92672">&lt;/resource&gt;</span>
+  <span style="color:#f92672">&lt;/resources&gt;</span>
+<span style="color:#f92672">&lt;/job&gt;</span></code></pre></div>
 <p><a href="#top">top</a></p>
 
 <h2 id="resource">&lt;resource&gt;</h2>
@@ -3791,14 +3597,11 @@ If a Job has no resources then it can be built by any Agent (But not by an elast
 <p>Resources are case-insensitive. A resource name can contain alphanumeric characters, hyphens (-), spaces, periods (.) and pipes (|).</p>
 
 <h3 id="example-12">Example:</h3>
-
-<pre><code class="language-xml">&lt;resources&gt;
-  &lt;resource&gt;jdk5&lt;/resource&gt;
-  &lt;resource&gt;tomcat5&lt;/resource&gt;
-  &lt;resource&gt;mercurial&lt;/resource&gt;
-&lt;/resources&gt;
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;resources&gt;</span>
+  <span style="color:#f92672">&lt;resource&gt;</span>jdk5<span style="color:#f92672">&lt;/resource&gt;</span>
+  <span style="color:#f92672">&lt;resource&gt;</span>tomcat5<span style="color:#f92672">&lt;/resource&gt;</span>
+  <span style="color:#f92672">&lt;resource&gt;</span>mercurial<span style="color:#f92672">&lt;/resource&gt;</span>
+<span style="color:#f92672">&lt;/resources&gt;</span></code></pre></div>
 <p><a href="#top">top</a></p>
 
 <h2 id="tasks">&lt;tasks&gt;</h2>
@@ -3866,14 +3669,11 @@ If a Job has no resources then it can be built by any Agent (But not by an elast
 </table>
 
 <h3 id="examples-37">Examples</h3>
-
-<pre><code class="language-xml">&lt;job name=&quot;linux&quot;&gt;
-  &lt;tasks&gt;
-    &lt;ant target=&quot;unit-test&quot; /&gt;
-  &lt;/tasks&gt;
-&lt;/job&gt;
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;job</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;linux&#34;</span><span style="color:#f92672">&gt;</span>
+  <span style="color:#f92672">&lt;tasks&gt;</span>
+    <span style="color:#f92672">&lt;ant</span> <span style="color:#a6e22e">target=</span><span style="color:#e6db74">&#34;unit-test&#34;</span> <span style="color:#f92672">/&gt;</span>
+  <span style="color:#f92672">&lt;/tasks&gt;</span>
+<span style="color:#f92672">&lt;/job&gt;</span></code></pre></div>
 <p><a href="#top">top</a></p>
 
 <h2 id="ant">&lt;ant&gt;</h2>
@@ -3918,18 +3718,14 @@ If a Job has no resources then it can be built by any Agent (But not by an elast
 
 <ul>
 <li><p>Invoke Ant, specifying a set of targets to run:</p>
-
-<pre><code class="language-xml">&lt;tasks&gt;
-  &lt;ant target=&quot;-Drun=all clean.ivy.localivy clean ft.long_running&quot;/&gt;
-&lt;/tasks&gt;
-</code></pre></li>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;tasks&gt;</span>
+  <span style="color:#f92672">&lt;ant</span> <span style="color:#a6e22e">target=</span><span style="color:#e6db74">&#34;-Drun=all clean.ivy.localivy clean ft.long_running&#34;</span><span style="color:#f92672">/&gt;</span>
+<span style="color:#f92672">&lt;/tasks&gt;</span></code></pre></div></li>
 
 <li><p>Invoke Ant in a specific working directory with a set of targets:</p>
-
-<pre><code class="language-xml">&lt;tasks&gt;
-  &lt;ant workingdir=&quot;build&quot; buildfile=&quot;mybuild.xml&quot; target=&quot;-Drun=all clean.ivy.localivy clean ft.long_running&quot;/&gt;
-&lt;/tasks&gt;
-</code></pre></li>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;tasks&gt;</span>
+  <span style="color:#f92672">&lt;ant</span> <span style="color:#a6e22e">workingdir=</span><span style="color:#e6db74">&#34;build&#34;</span> <span style="color:#a6e22e">buildfile=</span><span style="color:#e6db74">&#34;mybuild.xml&#34;</span> <span style="color:#a6e22e">target=</span><span style="color:#e6db74">&#34;-Drun=all clean.ivy.localivy clean ft.long_running&#34;</span><span style="color:#f92672">/&gt;</span>
+<span style="color:#f92672">&lt;/tasks&gt;</span></code></pre></div></li>
 </ul>
 
 <p><a href="#top">top</a></p>
@@ -3976,11 +3772,9 @@ If a Job has no resources then it can be built by any Agent (But not by an elast
 
 <ul>
 <li><p>Invoke ruby, specifying the working directory as <strong>tools/my-ruby-tool</strong> and executing the ruby script <strong>backup.rb</strong>.</p>
-
-<pre><code class="language-xml">&lt;tasks&gt;
-  &lt;exec command=&quot;/usr/local/bin/ruby&quot; args=&quot;backup.rb&quot; workingdir=&quot;tools/my-ruby-tool&quot;/&gt;
-&lt;/tasks&gt;
-</code></pre></li>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;tasks&gt;</span>
+  <span style="color:#f92672">&lt;exec</span> <span style="color:#a6e22e">command=</span><span style="color:#e6db74">&#34;/usr/local/bin/ruby&#34;</span> <span style="color:#a6e22e">args=</span><span style="color:#e6db74">&#34;backup.rb&#34;</span> <span style="color:#a6e22e">workingdir=</span><span style="color:#e6db74">&#34;tools/my-ruby-tool&#34;</span><span style="color:#f92672">/&gt;</span>
+<span style="color:#f92672">&lt;/tasks&gt;</span></code></pre></div></li>
 </ul>
 
 <p><a href="#top">top</a></p>
@@ -4000,22 +3794,18 @@ use of any character required for making argument. For example, you can specify 
 
 <ul>
 <li><p>Echo something on Windows:</p>
-
-<pre><code class="language-xml">&lt;exec command=&quot;cmd&quot;&gt;
-  &lt;arg&gt;/c&lt;/arg&gt;
-  &lt;arg&gt;echo&lt;/arg&gt;
-  &lt;arg&gt;something to print out&lt;/arg&gt;
-&lt;/exec&gt;
-</code></pre></li>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;exec</span> <span style="color:#a6e22e">command=</span><span style="color:#e6db74">&#34;cmd&#34;</span><span style="color:#f92672">&gt;</span>
+  <span style="color:#f92672">&lt;arg&gt;</span>/c<span style="color:#f92672">&lt;/arg&gt;</span>
+  <span style="color:#f92672">&lt;arg&gt;</span>echo<span style="color:#f92672">&lt;/arg&gt;</span>
+  <span style="color:#f92672">&lt;arg&gt;</span>something to print out<span style="color:#f92672">&lt;/arg&gt;</span>
+<span style="color:#f92672">&lt;/exec&gt;</span></code></pre></div></li>
 
 <li><p>Run command with pipe character in arguments:</p>
-
-<pre><code class="language-xml">&lt;exec command=&quot;MsBuild&quot;&gt;
-  &lt;arg&gt;D:\projects\project\project-8.sln&lt;/arg&gt;
-  &lt;arg&gt;/REBUILD&lt;/arg&gt;
-  &lt;arg&gt;/CFG=&quot;Release_99|Win32&quot;&lt;/arg&gt;
-&lt;/exec&gt;
-</code></pre></li>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;exec</span> <span style="color:#a6e22e">command=</span><span style="color:#e6db74">&#34;MsBuild&#34;</span><span style="color:#f92672">&gt;</span>
+  <span style="color:#f92672">&lt;arg&gt;</span>D:\projects\project\project-8.sln<span style="color:#f92672">&lt;/arg&gt;</span>
+  <span style="color:#f92672">&lt;arg&gt;</span>/REBUILD<span style="color:#f92672">&lt;/arg&gt;</span>
+  <span style="color:#f92672">&lt;arg&gt;</span>/CFG=&#34;Release_99|Win32&#34;<span style="color:#f92672">&lt;/arg&gt;</span>
+<span style="color:#f92672">&lt;/exec&gt;</span></code></pre></div></li>
 </ul>
 
 <p><a href="#top">top</a></p>
@@ -4067,12 +3857,9 @@ use of any character required for making argument. For example, you can specify 
 <h3 id="examples-41">Examples</h3>
 
 <p>Invoke NAnt, specifying a set of targets to run:</p>
-
-<pre><code class="language-xml">&lt;tasks&gt;
-  &lt;nant buildfile=&quot;myproject.build&quot; target=&quot;smoke-test&quot;/&gt;
-&lt;/tasks&gt;
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;tasks&gt;</span>
+  <span style="color:#f92672">&lt;nant</span> <span style="color:#a6e22e">buildfile=</span><span style="color:#e6db74">&#34;myproject.build&#34;</span> <span style="color:#a6e22e">target=</span><span style="color:#e6db74">&#34;smoke-test&#34;</span><span style="color:#f92672">/&gt;</span>
+<span style="color:#f92672">&lt;/tasks&gt;</span></code></pre></div>
 <p><a href="#top">top</a></p>
 
 <h2 id="rake">&lt;rake&gt;</h2>
@@ -4116,12 +3903,9 @@ use of any character required for making argument. For example, you can specify 
 <h3 id="examples-42">Examples</h3>
 
 <p>Invoke rake, specifying a set of targets to run:</p>
-
-<pre><code class="language-xml">&lt;tasks&gt;
-  &lt;rake buildfile=&quot;rakefile&quot; target=&quot;smoke-test&quot;/&gt;
-&lt;/tasks&gt;
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;tasks&gt;</span>
+  <span style="color:#f92672">&lt;rake</span> <span style="color:#a6e22e">buildfile=</span><span style="color:#e6db74">&#34;rakefile&#34;</span> <span style="color:#a6e22e">target=</span><span style="color:#e6db74">&#34;smoke-test&#34;</span><span style="color:#f92672">/&gt;</span>
+<span style="color:#f92672">&lt;/tasks&gt;</span></code></pre></div>
 <p><a href="#top">top</a></p>
 
 <h2 id="fetchartifact">&lt;fetchartifact&gt;</h2>
@@ -4213,85 +3997,79 @@ Go will not fetch the artifact again if it has not changed. The directory path i
 
 <ol>
 <li><p>Fetch all artifacts in the directory &lsquo;pkg&rsquo; from the previous stage in the same pipeline and put them under the directory &lsquo;lib&rsquo;</p>
-
-<pre><code class="language-xml">&lt;pipelines&gt;
-  &lt;pipeline name=&quot;go&quot;&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;pipelines&gt;</span>
+  <span style="color:#f92672">&lt;pipeline</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;go&#34;</span><span style="color:#f92672">&gt;</span>
     ...
-    &lt;stage name=&quot;dev&quot;&gt;
-      &lt;jobs&gt;
-    &lt;job name=&quot;unit&quot;&gt;
-      &lt;artifacts&gt;
-        &lt;artifact type=&quot;build&quot; src=&quot;target/deployable.jar&quot; dest=&quot;pkg&quot;/&gt;
-        &lt;artifact type=&quot;external&quot; id=&quot;artifact_jar&quot; storeId=&quot;dummy-s3&quot;&gt;
-          &lt;configuration&gt;
-            &lt;property&gt;
-              &lt;key&gt;Filename&lt;/key&gt;
-              &lt;value&gt;target/deployable.jar&lt;/value&gt;
-            &lt;/property&gt;
-          &lt;/configuration&gt;
-        &lt;/artifact&gt;
-      &lt;/artifacts&gt;
-    &lt;/job&gt;
-      &lt;/jobs&gt;
-    &lt;/stage&gt;
-    &lt;stage name=&quot;ft&quot;&gt;
-      &lt;jobs&gt;
-    &lt;job name=&quot;functional&quot;&gt;
-      &lt;tasks&gt;
-        &lt;fetchartifact artifactOrigin=&quot;gocd&quot; stage=&quot;dev&quot; job=&quot;unit&quot; srcdir=&quot;pkg&quot; dest=&quot;lib&quot;/&gt;
-        &lt;fetchartifact artifactOrigin=&quot;external&quot; stage=&quot;dev&quot; job=&quot;unit&quot; artifactId=&quot;artifact_jar&quot;&gt;
-          &lt;configuration&gt;
-            &lt;property&gt;
-              &lt;key&gt;dest_on_agent&lt;/key&gt;
-              &lt;value&gt;release_candidate.jar&lt;/value&gt;
-            &lt;/property&gt;
-          &lt;/configuration&gt;
-        &lt;/fetchartifact&gt;
-      &lt;/tasks&gt;
-    &lt;/job&gt;
-      &lt;/jobs&gt;
-    &lt;/stage&gt;
-  &lt;/pipeline&gt;
-&lt;/pipelines&gt;
-</code></pre></li>
+    <span style="color:#f92672">&lt;stage</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;dev&#34;</span><span style="color:#f92672">&gt;</span>
+      <span style="color:#f92672">&lt;jobs&gt;</span>
+    <span style="color:#f92672">&lt;job</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;unit&#34;</span><span style="color:#f92672">&gt;</span>
+      <span style="color:#f92672">&lt;artifacts&gt;</span>
+        <span style="color:#f92672">&lt;artifact</span> <span style="color:#a6e22e">type=</span><span style="color:#e6db74">&#34;build&#34;</span> <span style="color:#a6e22e">src=</span><span style="color:#e6db74">&#34;target/deployable.jar&#34;</span> <span style="color:#a6e22e">dest=</span><span style="color:#e6db74">&#34;pkg&#34;</span><span style="color:#f92672">/&gt;</span>
+        <span style="color:#f92672">&lt;artifact</span> <span style="color:#a6e22e">type=</span><span style="color:#e6db74">&#34;external&#34;</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;artifact_jar&#34;</span> <span style="color:#a6e22e">storeId=</span><span style="color:#e6db74">&#34;dummy-s3&#34;</span><span style="color:#f92672">&gt;</span>
+          <span style="color:#f92672">&lt;configuration&gt;</span>
+            <span style="color:#f92672">&lt;property&gt;</span>
+              <span style="color:#f92672">&lt;key&gt;</span>Filename<span style="color:#f92672">&lt;/key&gt;</span>
+              <span style="color:#f92672">&lt;value&gt;</span>target/deployable.jar<span style="color:#f92672">&lt;/value&gt;</span>
+            <span style="color:#f92672">&lt;/property&gt;</span>
+          <span style="color:#f92672">&lt;/configuration&gt;</span>
+        <span style="color:#f92672">&lt;/artifact&gt;</span>
+      <span style="color:#f92672">&lt;/artifacts&gt;</span>
+    <span style="color:#f92672">&lt;/job&gt;</span>
+      <span style="color:#f92672">&lt;/jobs&gt;</span>
+    <span style="color:#f92672">&lt;/stage&gt;</span>
+    <span style="color:#f92672">&lt;stage</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;ft&#34;</span><span style="color:#f92672">&gt;</span>
+      <span style="color:#f92672">&lt;jobs&gt;</span>
+    <span style="color:#f92672">&lt;job</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;functional&#34;</span><span style="color:#f92672">&gt;</span>
+      <span style="color:#f92672">&lt;tasks&gt;</span>
+        <span style="color:#f92672">&lt;fetchartifact</span> <span style="color:#a6e22e">artifactOrigin=</span><span style="color:#e6db74">&#34;gocd&#34;</span> <span style="color:#a6e22e">stage=</span><span style="color:#e6db74">&#34;dev&#34;</span> <span style="color:#a6e22e">job=</span><span style="color:#e6db74">&#34;unit&#34;</span> <span style="color:#a6e22e">srcdir=</span><span style="color:#e6db74">&#34;pkg&#34;</span> <span style="color:#a6e22e">dest=</span><span style="color:#e6db74">&#34;lib&#34;</span><span style="color:#f92672">/&gt;</span>
+        <span style="color:#f92672">&lt;fetchartifact</span> <span style="color:#a6e22e">artifactOrigin=</span><span style="color:#e6db74">&#34;external&#34;</span> <span style="color:#a6e22e">stage=</span><span style="color:#e6db74">&#34;dev&#34;</span> <span style="color:#a6e22e">job=</span><span style="color:#e6db74">&#34;unit&#34;</span> <span style="color:#a6e22e">artifactId=</span><span style="color:#e6db74">&#34;artifact_jar&#34;</span><span style="color:#f92672">&gt;</span>
+          <span style="color:#f92672">&lt;configuration&gt;</span>
+            <span style="color:#f92672">&lt;property&gt;</span>
+              <span style="color:#f92672">&lt;key&gt;</span>dest_on_agent<span style="color:#f92672">&lt;/key&gt;</span>
+              <span style="color:#f92672">&lt;value&gt;</span>release_candidate.jar<span style="color:#f92672">&lt;/value&gt;</span>
+            <span style="color:#f92672">&lt;/property&gt;</span>
+          <span style="color:#f92672">&lt;/configuration&gt;</span>
+        <span style="color:#f92672">&lt;/fetchartifact&gt;</span>
+      <span style="color:#f92672">&lt;/tasks&gt;</span>
+    <span style="color:#f92672">&lt;/job&gt;</span>
+      <span style="color:#f92672">&lt;/jobs&gt;</span>
+    <span style="color:#f92672">&lt;/stage&gt;</span>
+  <span style="color:#f92672">&lt;/pipeline&gt;</span>
+<span style="color:#f92672">&lt;/pipelines&gt;</span></code></pre></div></li>
 
 <li><p>Fetch a single artifact from a stage in the upstream pipeline &lsquo;framework&rsquo; and put it under the directory &lsquo;lib&rsquo;</p>
-
-<pre><code class="language-xml">&lt;pipeline name=&quot;go&quot;&gt;
-  &lt;materials&gt;
-    &lt;pipeline name=&quot;framework&quot; stage=&quot;ft&quot;/&gt;
-  &lt;/materials&gt;
-  &lt;stage name=&quot;dev&quot;&gt;
-    &lt;jobs&gt;
-      &lt;job name=&quot;unit&quot;&gt;
-    &lt;tasks&gt;
-      &lt;fetchartifact origin=&quot;gocd&quot; pipeline=&quot;framework&quot; stage=&quot;dev&quot; job=&quot;unit&quot;
-             srcfile=&quot;pkg/deployable.jar&quot; dest=&quot;lib&quot; /&gt;
-    &lt;/tasks&gt;
-      &lt;/job&gt;
-    &lt;/jobs&gt;
-  &lt;/stage&gt;
-&lt;/pipeline&gt;
-</code></pre></li>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;pipeline</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;go&#34;</span><span style="color:#f92672">&gt;</span>
+  <span style="color:#f92672">&lt;materials&gt;</span>
+    <span style="color:#f92672">&lt;pipeline</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;framework&#34;</span> <span style="color:#a6e22e">stage=</span><span style="color:#e6db74">&#34;ft&#34;</span><span style="color:#f92672">/&gt;</span>
+  <span style="color:#f92672">&lt;/materials&gt;</span>
+  <span style="color:#f92672">&lt;stage</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;dev&#34;</span><span style="color:#f92672">&gt;</span>
+    <span style="color:#f92672">&lt;jobs&gt;</span>
+      <span style="color:#f92672">&lt;job</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;unit&#34;</span><span style="color:#f92672">&gt;</span>
+    <span style="color:#f92672">&lt;tasks&gt;</span>
+      <span style="color:#f92672">&lt;fetchartifact</span> <span style="color:#a6e22e">origin=</span><span style="color:#e6db74">&#34;gocd&#34;</span> <span style="color:#a6e22e">pipeline=</span><span style="color:#e6db74">&#34;framework&#34;</span> <span style="color:#a6e22e">stage=</span><span style="color:#e6db74">&#34;dev&#34;</span> <span style="color:#a6e22e">job=</span><span style="color:#e6db74">&#34;unit&#34;</span>
+             <span style="color:#a6e22e">srcfile=</span><span style="color:#e6db74">&#34;pkg/deployable.jar&#34;</span> <span style="color:#a6e22e">dest=</span><span style="color:#e6db74">&#34;lib&#34;</span> <span style="color:#f92672">/&gt;</span>
+    <span style="color:#f92672">&lt;/tasks&gt;</span>
+      <span style="color:#f92672">&lt;/job&gt;</span>
+    <span style="color:#f92672">&lt;/jobs&gt;</span>
+  <span style="color:#f92672">&lt;/stage&gt;</span>
+<span style="color:#f92672">&lt;/pipeline&gt;</span></code></pre></div></li>
 
 <li><p>Fetch a single artifact from a stage in an ancestor pipeline &lsquo;Build&rsquo; and put it under the directory &lsquo;pkg&rsquo;</p>
-
-<pre><code class="language-xml">&lt;pipeline name=&quot;deploy&quot;&gt;
-  &lt;materials&gt;
-    &lt;pipeline name=&quot;acceptance&quot; stage=&quot;ft&quot;/&gt;
-  &lt;/materials&gt;
-  &lt;stage name=&quot;deply-pkg&quot;&gt;
-    &lt;jobs&gt;
-      &lt;job name=&quot;deploy-win&quot;&gt;
-    &lt;tasks&gt;
-      &lt;fetchartifact origin=&quot;gocd&quot; pipeline=&quot;build&quot; stage=&quot;dist&quot; job=&quot;create-installer&quot;
-             srcfile=&quot;installers/deployable-setup.exe&quot; dest=&quot;installer&quot; /&gt;
-    &lt;/tasks&gt;
-      &lt;/job&gt;
-    &lt;/jobs&gt;
-  &lt;/stage&gt;
-&lt;/pipeline&gt;
-</code></pre></li>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;pipeline</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;deploy&#34;</span><span style="color:#f92672">&gt;</span>
+  <span style="color:#f92672">&lt;materials&gt;</span>
+    <span style="color:#f92672">&lt;pipeline</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;acceptance&#34;</span> <span style="color:#a6e22e">stage=</span><span style="color:#e6db74">&#34;ft&#34;</span><span style="color:#f92672">/&gt;</span>
+  <span style="color:#f92672">&lt;/materials&gt;</span>
+  <span style="color:#f92672">&lt;stage</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;deply-pkg&#34;</span><span style="color:#f92672">&gt;</span>
+    <span style="color:#f92672">&lt;jobs&gt;</span>
+      <span style="color:#f92672">&lt;job</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;deploy-win&#34;</span><span style="color:#f92672">&gt;</span>
+    <span style="color:#f92672">&lt;tasks&gt;</span>
+      <span style="color:#f92672">&lt;fetchartifact</span> <span style="color:#a6e22e">origin=</span><span style="color:#e6db74">&#34;gocd&#34;</span> <span style="color:#a6e22e">pipeline=</span><span style="color:#e6db74">&#34;build&#34;</span> <span style="color:#a6e22e">stage=</span><span style="color:#e6db74">&#34;dist&#34;</span> <span style="color:#a6e22e">job=</span><span style="color:#e6db74">&#34;create-installer&#34;</span>
+             <span style="color:#a6e22e">srcfile=</span><span style="color:#e6db74">&#34;installers/deployable-setup.exe&#34;</span> <span style="color:#a6e22e">dest=</span><span style="color:#e6db74">&#34;installer&#34;</span> <span style="color:#f92672">/&gt;</span>
+    <span style="color:#f92672">&lt;/tasks&gt;</span>
+      <span style="color:#f92672">&lt;/job&gt;</span>
+    <span style="color:#f92672">&lt;/jobs&gt;</span>
+  <span style="color:#f92672">&lt;/stage&gt;</span>
+<span style="color:#f92672">&lt;/pipeline&gt;</span></code></pre></div></li>
 </ol>
 
 <p><a href="#top">top</a></p>
@@ -4328,28 +4106,22 @@ the state &ldquo;failed&rdquo;&ldquo;&rdquo;.</p>
 <h3 id="notes-14"><strong>Notes:</strong></h3>
 
 <p><a href="#runif"><code>&lt;runif&gt;</code></a> can also be defined under <a href="#exec"><code>&lt;exec&gt;</code></a> task even if <code>&lt;exec&gt;</code> has some <code>&lt;arg&gt;</code>s e.g.</p>
-
-<pre><code class="language-xml">    &lt;exec command=&quot;echo&quot;&gt;
-       &lt;arg value=&quot;test&quot; /&gt;
-       &lt;runif status=&quot;passed&quot; /&gt;
-    &lt;/exec&gt;
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml">    <span style="color:#f92672">&lt;exec</span> <span style="color:#a6e22e">command=</span><span style="color:#e6db74">&#34;echo&#34;</span><span style="color:#f92672">&gt;</span>
+       <span style="color:#f92672">&lt;arg</span> <span style="color:#a6e22e">value=</span><span style="color:#e6db74">&#34;test&#34;</span> <span style="color:#f92672">/&gt;</span>
+       <span style="color:#f92672">&lt;runif</span> <span style="color:#a6e22e">status=</span><span style="color:#e6db74">&#34;passed&#34;</span> <span style="color:#f92672">/&gt;</span>
+    <span style="color:#f92672">&lt;/exec&gt;</span></code></pre></div>
 <h3 id="examples-43">Examples</h3>
 
 <p>Given the tasks in a job is following:</p>
-
-<pre><code class="language-xml">&lt;tasks&gt;
-    &lt;ant  buildfile=&quot;build.xml&quot; target=&quot;complie-test-source&quot;/&gt;
-    &lt;fetchartifact origin=&quot;gocd&quot; pipeline=&quot;my_app&quot; stage=&quot;dist&quot; job=&quot;package-artifact&quot; srcdir=&quot;pkg&quot;&gt;
-       &lt;runif  status=&quot;passed&quot;/&gt;
-    &lt;/fetchartifact&gt;
-    &lt;exec command=&quot;./copy_error_log_to_someplace&quot; &gt;
-       &lt;runif status=&quot;failed&quot;/&gt;
-    &lt;/exec&gt;
-&lt;/tasks&gt;
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;tasks&gt;</span>
+    <span style="color:#f92672">&lt;ant</span>  <span style="color:#a6e22e">buildfile=</span><span style="color:#e6db74">&#34;build.xml&#34;</span> <span style="color:#a6e22e">target=</span><span style="color:#e6db74">&#34;complie-test-source&#34;</span><span style="color:#f92672">/&gt;</span>
+    <span style="color:#f92672">&lt;fetchartifact</span> <span style="color:#a6e22e">origin=</span><span style="color:#e6db74">&#34;gocd&#34;</span> <span style="color:#a6e22e">pipeline=</span><span style="color:#e6db74">&#34;my_app&#34;</span> <span style="color:#a6e22e">stage=</span><span style="color:#e6db74">&#34;dist&#34;</span> <span style="color:#a6e22e">job=</span><span style="color:#e6db74">&#34;package-artifact&#34;</span> <span style="color:#a6e22e">srcdir=</span><span style="color:#e6db74">&#34;pkg&#34;</span><span style="color:#f92672">&gt;</span>
+       <span style="color:#f92672">&lt;runif</span>  <span style="color:#a6e22e">status=</span><span style="color:#e6db74">&#34;passed&#34;</span><span style="color:#f92672">/&gt;</span>
+    <span style="color:#f92672">&lt;/fetchartifact&gt;</span>
+    <span style="color:#f92672">&lt;exec</span> <span style="color:#a6e22e">command=</span><span style="color:#e6db74">&#34;./copy_error_log_to_someplace&#34;</span> <span style="color:#f92672">&gt;</span>
+       <span style="color:#f92672">&lt;runif</span> <span style="color:#a6e22e">status=</span><span style="color:#e6db74">&#34;failed&#34;</span><span style="color:#f92672">/&gt;</span>
+    <span style="color:#f92672">&lt;/exec&gt;</span>
+<span style="color:#f92672">&lt;/tasks&gt;</span></code></pre></div>
 <h4 id="scenario-one">Scenario one:</h4>
 
 <p>If task 1 <code>&lt;ant&gt;</code> passed, task 2 <code>&lt;fetchartifact&gt;</code> would be executed.</p>
@@ -4386,16 +4158,13 @@ the state &ldquo;failed&rdquo;&ldquo;&rdquo;.</p>
 <h3 id="examples-44">Examples</h3>
 
 <p>The task &lsquo;start_server&rsquo; starts a process on an agent. When the stage is cancelled, the agent will invoke the cancel task &lsquo;kill_server&rsquo; to kill the process early and clean up any extra files.</p>
-
-<pre><code class="language-xml">&lt;tasks&gt;
-  &lt;ant target=&quot;start_server&quot;&gt;
-    &lt;oncancel&gt;
-      &lt;ant target=&quot;kill_server&quot; /&gt;
-    &lt;/oncancel&gt;
-  &lt;/ant&gt;
-&lt;/tasks&gt;
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;tasks&gt;</span>
+  <span style="color:#f92672">&lt;ant</span> <span style="color:#a6e22e">target=</span><span style="color:#e6db74">&#34;start_server&#34;</span><span style="color:#f92672">&gt;</span>
+    <span style="color:#f92672">&lt;oncancel&gt;</span>
+      <span style="color:#f92672">&lt;ant</span> <span style="color:#a6e22e">target=</span><span style="color:#e6db74">&#34;kill_server&#34;</span> <span style="color:#f92672">/&gt;</span>
+    <span style="color:#f92672">&lt;/oncancel&gt;</span>
+  <span style="color:#f92672">&lt;/ant&gt;</span>
+<span style="color:#f92672">&lt;/tasks&gt;</span></code></pre></div>
 <p><a href="#top">top</a></p>
 
 <h2 id="artifacts">&lt;artifacts&gt;</h2>
@@ -4403,27 +4172,24 @@ the state &ldquo;failed&rdquo;&ldquo;&rdquo;.</p>
 <p><code>&lt;artifacts&gt;</code> specifies what files the agent will publish to the server or an external artifact store.</p>
 
 <h3 id="examples-45">Examples</h3>
-
-<pre><code class="language-xml">&lt;job name=&quot;unit&quot;&gt;
-  &lt;artifacts&gt;
-    &lt;artifact type=&quot;build&quot; src=&quot;target/deployable.jar&quot; dest=&quot;pkg&quot;/&gt;
-    &lt;artifact type=&quot;test&quot; src=&quot;target/junit-output&quot; dest=&quot;junit&quot;/&gt;
-    &lt;artifact type=&quot;external&quot; id=&quot;docker-image&quot; storeId=&quot;dockerhub&quot;&gt;
-      &lt;configuration&gt;
-        &lt;property&gt;
-          &lt;key&gt;Image&lt;/key&gt;
-          &lt;value&gt;gocd/gocd-demo&lt;/value&gt;
-        &lt;/property&gt;
-        &lt;property&gt;
-          &lt;key&gt;Tag&lt;/key&gt;
-          &lt;value&gt;v${GO_PIPELINE_COUNTER}&lt;/value&gt;
-        &lt;/property&gt;
-      &lt;/configuration&gt;
-    &lt;/artifact&gt;
-  &lt;/artifacts&gt;
-&lt;/job&gt;
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;job</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;unit&#34;</span><span style="color:#f92672">&gt;</span>
+  <span style="color:#f92672">&lt;artifacts&gt;</span>
+    <span style="color:#f92672">&lt;artifact</span> <span style="color:#a6e22e">type=</span><span style="color:#e6db74">&#34;build&#34;</span> <span style="color:#a6e22e">src=</span><span style="color:#e6db74">&#34;target/deployable.jar&#34;</span> <span style="color:#a6e22e">dest=</span><span style="color:#e6db74">&#34;pkg&#34;</span><span style="color:#f92672">/&gt;</span>
+    <span style="color:#f92672">&lt;artifact</span> <span style="color:#a6e22e">type=</span><span style="color:#e6db74">&#34;test&#34;</span> <span style="color:#a6e22e">src=</span><span style="color:#e6db74">&#34;target/junit-output&#34;</span> <span style="color:#a6e22e">dest=</span><span style="color:#e6db74">&#34;junit&#34;</span><span style="color:#f92672">/&gt;</span>
+    <span style="color:#f92672">&lt;artifact</span> <span style="color:#a6e22e">type=</span><span style="color:#e6db74">&#34;external&#34;</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;docker-image&#34;</span> <span style="color:#a6e22e">storeId=</span><span style="color:#e6db74">&#34;dockerhub&#34;</span><span style="color:#f92672">&gt;</span>
+      <span style="color:#f92672">&lt;configuration&gt;</span>
+        <span style="color:#f92672">&lt;property&gt;</span>
+          <span style="color:#f92672">&lt;key&gt;</span>Image<span style="color:#f92672">&lt;/key&gt;</span>
+          <span style="color:#f92672">&lt;value&gt;</span>gocd/gocd-demo<span style="color:#f92672">&lt;/value&gt;</span>
+        <span style="color:#f92672">&lt;/property&gt;</span>
+        <span style="color:#f92672">&lt;property&gt;</span>
+          <span style="color:#f92672">&lt;key&gt;</span>Tag<span style="color:#f92672">&lt;/key&gt;</span>
+          <span style="color:#f92672">&lt;value&gt;</span>v${GO_PIPELINE_COUNTER}<span style="color:#f92672">&lt;/value&gt;</span>
+        <span style="color:#f92672">&lt;/property&gt;</span>
+      <span style="color:#f92672">&lt;/configuration&gt;</span>
+    <span style="color:#f92672">&lt;/artifact&gt;</span>
+  <span style="color:#f92672">&lt;/artifacts&gt;</span>
+<span style="color:#f92672">&lt;/job&gt;</span></code></pre></div>
 <p><a href="#top">top</a></p>
 
 <h2 id="artifact">&lt;artifact&gt;</h2>
@@ -4486,61 +4252,46 @@ would upload all xml files in the target directory and any of its subdirectories
 server.</p>
 
 <h3 id="examples-for-build-artifact">Examples for build artifact</h3>
-
-<pre><code class="language-xml">&lt;job name=&quot;unit&quot;&gt;
-  &lt;artifacts&gt;
-    &lt;artifact type=&quot;build&quot; src=&quot;target/deployable.jar&quot; dest=&quot;pkg&quot;/&gt;
-  &lt;/artifacts&gt;
-&lt;/job&gt;
-</code></pre>
-
-<pre><code class="language-xml">&lt;job name=&quot;unit&quot;&gt;
-  &lt;artifacts&gt;
-    &lt;artifact type=&quot;build&quot; src=&quot;target/**/*Test.xml&quot; dest=&quot;pkg&quot;/&gt;
-  &lt;/artifacts&gt;
-&lt;/job&gt;
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;job</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;unit&#34;</span><span style="color:#f92672">&gt;</span>
+  <span style="color:#f92672">&lt;artifacts&gt;</span>
+    <span style="color:#f92672">&lt;artifact</span> <span style="color:#a6e22e">type=</span><span style="color:#e6db74">&#34;build&#34;</span> <span style="color:#a6e22e">src=</span><span style="color:#e6db74">&#34;target/deployable.jar&#34;</span> <span style="color:#a6e22e">dest=</span><span style="color:#e6db74">&#34;pkg&#34;</span><span style="color:#f92672">/&gt;</span>
+  <span style="color:#f92672">&lt;/artifacts&gt;</span>
+<span style="color:#f92672">&lt;/job&gt;</span></code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;job</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;unit&#34;</span><span style="color:#f92672">&gt;</span>
+  <span style="color:#f92672">&lt;artifacts&gt;</span>
+    <span style="color:#f92672">&lt;artifact</span> <span style="color:#a6e22e">type=</span><span style="color:#e6db74">&#34;build&#34;</span> <span style="color:#a6e22e">src=</span><span style="color:#e6db74">&#34;target/**/*Test.xml&#34;</span> <span style="color:#a6e22e">dest=</span><span style="color:#e6db74">&#34;pkg&#34;</span><span style="color:#f92672">/&gt;</span>
+  <span style="color:#f92672">&lt;/artifacts&gt;</span>
+<span style="color:#f92672">&lt;/job&gt;</span></code></pre></div>
 <p>The following will upload all xml files to the server&rsquo;s artifact repository.</p>
-
-<pre><code class="language-xml">&lt;job name=&quot;unit&quot;&gt;
-  &lt;artifacts&gt;
-    &lt;artifact type=&quot;build&quot; src=&quot;target/**/*.xml&quot; /&gt;
-  &lt;/artifacts&gt;
-&lt;/job&gt;
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;job</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;unit&#34;</span><span style="color:#f92672">&gt;</span>
+  <span style="color:#f92672">&lt;artifacts&gt;</span>
+    <span style="color:#f92672">&lt;artifact</span> <span style="color:#a6e22e">type=</span><span style="color:#e6db74">&#34;build&#34;</span> <span style="color:#a6e22e">src=</span><span style="color:#e6db74">&#34;target/**/*.xml&#34;</span> <span style="color:#f92672">/&gt;</span>
+  <span style="color:#f92672">&lt;/artifacts&gt;</span>
+<span style="color:#f92672">&lt;/job&gt;</span></code></pre></div>
 <p><a href="#top">top</a></p>
 
 <h3 id="examples-for-test-artifact">Examples for test artifact</h3>
-
-<pre><code class="language-xml">&lt;job name=&quot;unit&quot;&gt;
-  &lt;artifacts&gt;
-    &lt;artifact type=&quot;test&quot; src=&quot;target/junit-output&quot; dest=&quot;junit&quot;/&gt;
-  &lt;/artifacts&gt;
-&lt;/job&gt;
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;job</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;unit&#34;</span><span style="color:#f92672">&gt;</span>
+  <span style="color:#f92672">&lt;artifacts&gt;</span>
+    <span style="color:#f92672">&lt;artifact</span> <span style="color:#a6e22e">type=</span><span style="color:#e6db74">&#34;test&#34;</span> <span style="color:#a6e22e">src=</span><span style="color:#e6db74">&#34;target/junit-output&#34;</span> <span style="color:#a6e22e">dest=</span><span style="color:#e6db74">&#34;junit&#34;</span><span style="color:#f92672">/&gt;</span>
+  <span style="color:#f92672">&lt;/artifacts&gt;</span>
+<span style="color:#f92672">&lt;/job&gt;</span></code></pre></div>
 <h3 id="examples-for-external-artifact">Examples for external artifact</h3>
-
-<pre><code class="language-xml">&lt;job name=&quot;build_image&quot;&gt;
-  &lt;artifacts&gt;
-    &lt;artifact type=&quot;external&quot; id=&quot;docker-image&quot; storeId=&quot;dockerhub&quot;&gt;
-      &lt;configuration&gt;
-        &lt;property&gt;
-          &lt;key&gt;Image&lt;/key&gt;
-          &lt;value&gt;gocd/gocd-demo&lt;/value&gt;
-        &lt;/property&gt;
-        &lt;property&gt;
-          &lt;key&gt;Tag&lt;/key&gt;
-          &lt;value&gt;v${GO_PIPELINE_COUNTER}&lt;/value&gt;
-        &lt;/property&gt;
-      &lt;/configuration&gt;
-    &lt;/artifact&gt;
-  &lt;/artifacts&gt;
-&lt;/job&gt;
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;job</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;build_image&#34;</span><span style="color:#f92672">&gt;</span>
+  <span style="color:#f92672">&lt;artifacts&gt;</span>
+    <span style="color:#f92672">&lt;artifact</span> <span style="color:#a6e22e">type=</span><span style="color:#e6db74">&#34;external&#34;</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;docker-image&#34;</span> <span style="color:#a6e22e">storeId=</span><span style="color:#e6db74">&#34;dockerhub&#34;</span><span style="color:#f92672">&gt;</span>
+      <span style="color:#f92672">&lt;configuration&gt;</span>
+        <span style="color:#f92672">&lt;property&gt;</span>
+          <span style="color:#f92672">&lt;key&gt;</span>Image<span style="color:#f92672">&lt;/key&gt;</span>
+          <span style="color:#f92672">&lt;value&gt;</span>gocd/gocd-demo<span style="color:#f92672">&lt;/value&gt;</span>
+        <span style="color:#f92672">&lt;/property&gt;</span>
+        <span style="color:#f92672">&lt;property&gt;</span>
+          <span style="color:#f92672">&lt;key&gt;</span>Tag<span style="color:#f92672">&lt;/key&gt;</span>
+          <span style="color:#f92672">&lt;value&gt;</span>v${GO_PIPELINE_COUNTER}<span style="color:#f92672">&lt;/value&gt;</span>
+        <span style="color:#f92672">&lt;/property&gt;</span>
+      <span style="color:#f92672">&lt;/configuration&gt;</span>
+    <span style="color:#f92672">&lt;/artifact&gt;</span>
+  <span style="color:#f92672">&lt;/artifacts&gt;</span>
+<span style="color:#f92672">&lt;/job&gt;</span></code></pre></div>
 <p><a href="#top">top</a></p>
 
 <h2 id="tabs">&lt;tabs&gt;</h2>
@@ -4548,17 +4299,14 @@ server.</p>
 <p>The <code>&lt;tabs&gt;</code> element allows you to add tabs to the Job Details page. You can put any artifact that can be rendered by a web browser into a tab. For example, if your coverage tool produces an html report, you can easily place that report into a tab. Tabs are implemented as iframes (see W3C iframe definition ).</p>
 
 <h3 id="example-14">Example:</h3>
-
-<pre><code class="language-xml">&lt;job name=&quot;unit&quot;&gt;
-  &lt;artifacts&gt;
-    &lt;artifact type=&quot;build&quot; src=&quot;target/jcoverage&quot; dest=&quot;Jcoverage&quot;/&gt;
-  &lt;/artifacts&gt;
-  &lt;tabs&gt;
-    &lt;tab name=&quot;coverage&quot; path=&quot;Jcoverage/index.html&quot;/&gt;
-  &lt;/tabs&gt;
-&lt;/job&gt;
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;job</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;unit&#34;</span><span style="color:#f92672">&gt;</span>
+  <span style="color:#f92672">&lt;artifacts&gt;</span>
+    <span style="color:#f92672">&lt;artifact</span> <span style="color:#a6e22e">type=</span><span style="color:#e6db74">&#34;build&#34;</span> <span style="color:#a6e22e">src=</span><span style="color:#e6db74">&#34;target/jcoverage&#34;</span> <span style="color:#a6e22e">dest=</span><span style="color:#e6db74">&#34;Jcoverage&#34;</span><span style="color:#f92672">/&gt;</span>
+  <span style="color:#f92672">&lt;/artifacts&gt;</span>
+  <span style="color:#f92672">&lt;tabs&gt;</span>
+    <span style="color:#f92672">&lt;tab</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;coverage&#34;</span> <span style="color:#a6e22e">path=</span><span style="color:#e6db74">&#34;Jcoverage/index.html&#34;</span><span style="color:#f92672">/&gt;</span>
+  <span style="color:#f92672">&lt;/tabs&gt;</span>
+<span style="color:#f92672">&lt;/job&gt;</span></code></pre></div>
 <p><a href="#top">top</a></p>
 
 <h2 id="tab">&lt;tab&gt;</h2>
@@ -4594,17 +4342,14 @@ server.</p>
 <h3 id="example-15">Example:</h3>
 
 <p>Given some coverage information in &lsquo;target/Jcoverage&rsquo; folder on the agent side, We configure a tab to show the coverage information by specifying a tab with the index.html file.</p>
-
-<pre><code class="language-xml">&lt;job name=&quot;unit&quot;&gt;
-  &lt;artifacts&gt;
-    &lt;artifact type=&quot;build&quot; src=&quot;target/jcoverage&quot; dest=&quot;Jcoverage&quot;/&gt;
-  &lt;/artifacts&gt;
-  &lt;tabs&gt;
-    &lt;tab name=&quot;coverage&quot; path=&quot;Jcoverage/index.html&quot;/&gt;
-  &lt;/tabs&gt;
-&lt;/job&gt;
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;job</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;unit&#34;</span><span style="color:#f92672">&gt;</span>
+  <span style="color:#f92672">&lt;artifacts&gt;</span>
+    <span style="color:#f92672">&lt;artifact</span> <span style="color:#a6e22e">type=</span><span style="color:#e6db74">&#34;build&#34;</span> <span style="color:#a6e22e">src=</span><span style="color:#e6db74">&#34;target/jcoverage&#34;</span> <span style="color:#a6e22e">dest=</span><span style="color:#e6db74">&#34;Jcoverage&#34;</span><span style="color:#f92672">/&gt;</span>
+  <span style="color:#f92672">&lt;/artifacts&gt;</span>
+  <span style="color:#f92672">&lt;tabs&gt;</span>
+    <span style="color:#f92672">&lt;tab</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;coverage&#34;</span> <span style="color:#a6e22e">path=</span><span style="color:#e6db74">&#34;Jcoverage/index.html&#34;</span><span style="color:#f92672">/&gt;</span>
+  <span style="color:#f92672">&lt;/tabs&gt;</span>
+<span style="color:#f92672">&lt;/job&gt;</span></code></pre></div>
 <h2 id="properties">&lt;properties&gt;</h2>
 
 <p>The <code>&lt;properties&gt;</code> element allows you to create properties of the build from XML files or artifacts created during your build. You can export
@@ -4612,23 +4357,20 @@ the values of properties over time. This allows you to track properties against 
 improving or getting worse.</p>
 
 <h3 id="example-16">Example:</h3>
-
-<pre><code class="language-xml">&lt;job name=&quot;emma&quot;&gt;
-  &lt;artifacts&gt;
-    &lt;artifact type=&quot;build&quot; src=&quot;target/emma&quot; dest=&quot;analysis&quot; /&gt;
-  &lt;/artifacts&gt;
-  &lt;tasks&gt;
-    &lt;ant target=&quot;emma&quot; /&gt;
-  &lt;/tasks&gt;
-  &lt;properties&gt;
-    &lt;property name=&quot;coverage.class&quot; src=&quot;target/emma/coverage.xml&quot; xpath=&quot;substring-before(//report/data/all/coverage[starts-with(@type,'class')]/@value, '%')&quot; /&gt;
-    &lt;property name=&quot;coverage.method&quot; src=&quot;target/emma/coverage.xml&quot; xpath=&quot;substring-before(//report/data/all/coverage[starts-with(@type,'method')]/@value, '%')&quot; /&gt;
-    &lt;property name=&quot;coverage.block&quot; src=&quot;target/emma/coverage.xml&quot; xpath=&quot;substring-before(//report/data/all/coverage[starts-with(@type,'block')]/@value, '%')&quot; /&gt;
-    &lt;property name=&quot;coverage.line&quot; src=&quot;target/emma/coverage.xml&quot; xpath=&quot;substring-before(//report/data/all/coverage[starts-with(@type,'line')]/@value, '%')&quot; /&gt;
-  &lt;/properties&gt;
-&lt;/job&gt;
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;job</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;emma&#34;</span><span style="color:#f92672">&gt;</span>
+  <span style="color:#f92672">&lt;artifacts&gt;</span>
+    <span style="color:#f92672">&lt;artifact</span> <span style="color:#a6e22e">type=</span><span style="color:#e6db74">&#34;build&#34;</span> <span style="color:#a6e22e">src=</span><span style="color:#e6db74">&#34;target/emma&#34;</span> <span style="color:#a6e22e">dest=</span><span style="color:#e6db74">&#34;analysis&#34;</span> <span style="color:#f92672">/&gt;</span>
+  <span style="color:#f92672">&lt;/artifacts&gt;</span>
+  <span style="color:#f92672">&lt;tasks&gt;</span>
+    <span style="color:#f92672">&lt;ant</span> <span style="color:#a6e22e">target=</span><span style="color:#e6db74">&#34;emma&#34;</span> <span style="color:#f92672">/&gt;</span>
+  <span style="color:#f92672">&lt;/tasks&gt;</span>
+  <span style="color:#f92672">&lt;properties&gt;</span>
+    <span style="color:#f92672">&lt;property</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;coverage.class&#34;</span> <span style="color:#a6e22e">src=</span><span style="color:#e6db74">&#34;target/emma/coverage.xml&#34;</span> <span style="color:#a6e22e">xpath=</span><span style="color:#e6db74">&#34;substring-before(//report/data/all/coverage[starts-with(@type,&#39;class&#39;)]/@value, &#39;%&#39;)&#34;</span> <span style="color:#f92672">/&gt;</span>
+    <span style="color:#f92672">&lt;property</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;coverage.method&#34;</span> <span style="color:#a6e22e">src=</span><span style="color:#e6db74">&#34;target/emma/coverage.xml&#34;</span> <span style="color:#a6e22e">xpath=</span><span style="color:#e6db74">&#34;substring-before(//report/data/all/coverage[starts-with(@type,&#39;method&#39;)]/@value, &#39;%&#39;)&#34;</span> <span style="color:#f92672">/&gt;</span>
+    <span style="color:#f92672">&lt;property</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;coverage.block&#34;</span> <span style="color:#a6e22e">src=</span><span style="color:#e6db74">&#34;target/emma/coverage.xml&#34;</span> <span style="color:#a6e22e">xpath=</span><span style="color:#e6db74">&#34;substring-before(//report/data/all/coverage[starts-with(@type,&#39;block&#39;)]/@value, &#39;%&#39;)&#34;</span> <span style="color:#f92672">/&gt;</span>
+    <span style="color:#f92672">&lt;property</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;coverage.line&#34;</span> <span style="color:#a6e22e">src=</span><span style="color:#e6db74">&#34;target/emma/coverage.xml&#34;</span> <span style="color:#a6e22e">xpath=</span><span style="color:#e6db74">&#34;substring-before(//report/data/all/coverage[starts-with(@type,&#39;line&#39;)]/@value, &#39;%&#39;)&#34;</span> <span style="color:#f92672">/&gt;</span>
+  <span style="color:#f92672">&lt;/properties&gt;</span>
+<span style="color:#f92672">&lt;/job&gt;</span></code></pre></div>
 <p><a href="#top">top</a></p>
 
 <h2 id="property-1">&lt;property&gt;</h2>
@@ -4670,37 +4412,31 @@ improving or getting worse.</p>
 <h3 id="example-17">Example:</h3>
 
 <p>This is a simple example to parse the errors and failures count from a single junit file and turn them into properties.</p>
-
-<pre><code class="language-xml">&lt;job name=&quot;junit&quot;&gt;
-  &lt;tasks&gt;
-    &lt;ant target=&quot;unittest&quot;&gt;
-  &lt;/tasks&gt;
-  &lt;properties&gt;
-    &lt;property name=&quot;junit.errors&quot; src=&quot;target/junit-reports/TEST-MainAppTest.xml&quot; xpath=&quot;string(/testsuite/@errors)&quot; /&gt;
-    &lt;property name=&quot;junit.failures&quot; src=&quot;target/junit-reports/TEST-MainAppTest.xml&quot; xpath=&quot;string(/testsuite/@failures)&quot; /&gt;
-  &lt;/properties&gt;
-&lt;/job&gt;
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;job</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;junit&#34;</span><span style="color:#f92672">&gt;</span>
+  <span style="color:#f92672">&lt;tasks&gt;</span>
+    <span style="color:#f92672">&lt;ant</span> <span style="color:#a6e22e">target=</span><span style="color:#e6db74">&#34;unittest&#34;</span><span style="color:#f92672">&gt;</span>
+  <span style="color:#f92672">&lt;/tasks&gt;</span>
+  <span style="color:#f92672">&lt;properties&gt;</span>
+    <span style="color:#f92672">&lt;property</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;junit.errors&#34;</span> <span style="color:#a6e22e">src=</span><span style="color:#e6db74">&#34;target/junit-reports/TEST-MainAppTest.xml&#34;</span> <span style="color:#a6e22e">xpath=</span><span style="color:#e6db74">&#34;string(/testsuite/@errors)&#34;</span> <span style="color:#f92672">/&gt;</span>
+    <span style="color:#f92672">&lt;property</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;junit.failures&#34;</span> <span style="color:#a6e22e">src=</span><span style="color:#e6db74">&#34;target/junit-reports/TEST-MainAppTest.xml&#34;</span> <span style="color:#a6e22e">xpath=</span><span style="color:#e6db74">&#34;string(/testsuite/@failures)&#34;</span> <span style="color:#f92672">/&gt;</span>
+  <span style="color:#f92672">&lt;/properties&gt;</span>
+<span style="color:#f92672">&lt;/job&gt;</span></code></pre></div>
 <p>Here&rsquo;s a more complex example. This will parse the class, method, block, and line coverage out of an <a href="http://emma.sourceforge.net/">EMMA</a>
 coverage.xml file.</p>
-
-<pre><code class="language-xml">&lt;job name=&quot;emma&quot;&gt;
-  &lt;artifacts&gt;
-    &lt;artifact type=&quot;build&quot; src=&quot;target/emma&quot; dest=&quot;analysis&quot; /&gt;
-  &lt;/artifacts&gt;
-  &lt;tasks&gt;
-    &lt;ant target=&quot;emma&quot; /&gt;
-  &lt;/tasks&gt;
-  &lt;properties&gt;
-    &lt;property name=&quot;coverage.class&quot; src=&quot;target/emma/coverage.xml&quot; xpath=&quot;substring-before(//report/data/all/coverage[starts-with(@type,'class')]/@value, '%')&quot; /&gt;
-    &lt;property name=&quot;coverage.method&quot; src=&quot;target/emma/coverage.xml&quot; xpath=&quot;substring-before(//report/data/all/coverage[starts-with(@type,'method')]/@value, '%')&quot; /&gt;
-    &lt;property name=&quot;coverage.block&quot; src=&quot;target/emma/coverage.xml&quot; xpath=&quot;substring-before(//report/data/all/coverage[starts-with(@type,'block')]/@value, '%')&quot; /&gt;
-    &lt;property name=&quot;coverage.line&quot; src=&quot;target/emma/coverage.xml&quot; xpath=&quot;substring-before(//report/data/all/coverage[starts-with(@type,'line')]/@value, '%')&quot; /&gt;
-  &lt;/properties&gt;
-&lt;/job&gt;
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;job</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;emma&#34;</span><span style="color:#f92672">&gt;</span>
+  <span style="color:#f92672">&lt;artifacts&gt;</span>
+    <span style="color:#f92672">&lt;artifact</span> <span style="color:#a6e22e">type=</span><span style="color:#e6db74">&#34;build&#34;</span> <span style="color:#a6e22e">src=</span><span style="color:#e6db74">&#34;target/emma&#34;</span> <span style="color:#a6e22e">dest=</span><span style="color:#e6db74">&#34;analysis&#34;</span> <span style="color:#f92672">/&gt;</span>
+  <span style="color:#f92672">&lt;/artifacts&gt;</span>
+  <span style="color:#f92672">&lt;tasks&gt;</span>
+    <span style="color:#f92672">&lt;ant</span> <span style="color:#a6e22e">target=</span><span style="color:#e6db74">&#34;emma&#34;</span> <span style="color:#f92672">/&gt;</span>
+  <span style="color:#f92672">&lt;/tasks&gt;</span>
+  <span style="color:#f92672">&lt;properties&gt;</span>
+    <span style="color:#f92672">&lt;property</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;coverage.class&#34;</span> <span style="color:#a6e22e">src=</span><span style="color:#e6db74">&#34;target/emma/coverage.xml&#34;</span> <span style="color:#a6e22e">xpath=</span><span style="color:#e6db74">&#34;substring-before(//report/data/all/coverage[starts-with(@type,&#39;class&#39;)]/@value, &#39;%&#39;)&#34;</span> <span style="color:#f92672">/&gt;</span>
+    <span style="color:#f92672">&lt;property</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;coverage.method&#34;</span> <span style="color:#a6e22e">src=</span><span style="color:#e6db74">&#34;target/emma/coverage.xml&#34;</span> <span style="color:#a6e22e">xpath=</span><span style="color:#e6db74">&#34;substring-before(//report/data/all/coverage[starts-with(@type,&#39;method&#39;)]/@value, &#39;%&#39;)&#34;</span> <span style="color:#f92672">/&gt;</span>
+    <span style="color:#f92672">&lt;property</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;coverage.block&#34;</span> <span style="color:#a6e22e">src=</span><span style="color:#e6db74">&#34;target/emma/coverage.xml&#34;</span> <span style="color:#a6e22e">xpath=</span><span style="color:#e6db74">&#34;substring-before(//report/data/all/coverage[starts-with(@type,&#39;block&#39;)]/@value, &#39;%&#39;)&#34;</span> <span style="color:#f92672">/&gt;</span>
+    <span style="color:#f92672">&lt;property</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;coverage.line&#34;</span> <span style="color:#a6e22e">src=</span><span style="color:#e6db74">&#34;target/emma/coverage.xml&#34;</span> <span style="color:#a6e22e">xpath=</span><span style="color:#e6db74">&#34;substring-before(//report/data/all/coverage[starts-with(@type,&#39;line&#39;)]/@value, &#39;%&#39;)&#34;</span> <span style="color:#f92672">/&gt;</span>
+  <span style="color:#f92672">&lt;/properties&gt;</span>
+<span style="color:#f92672">&lt;/job&gt;</span></code></pre></div>
 <p><a href="#top">top</a></p>
 
 <h2 id="approval">&lt;approval&gt;</h2>
@@ -4735,13 +4471,10 @@ coverage.xml file.</p>
 </ul>
 
 <h3 id="example-18">Example:</h3>
-
-<pre><code class="language-xml">&lt;stage name=&quot;ut&quot;&gt;
-  &lt;approval type=&quot;manual&quot; /&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;stage</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;ut&#34;</span><span style="color:#f92672">&gt;</span>
+  <span style="color:#f92672">&lt;approval</span> <span style="color:#a6e22e">type=</span><span style="color:#e6db74">&#34;manual&#34;</span> <span style="color:#f92672">/&gt;</span>
   ...
-&lt;/stage&gt;
-</code></pre>
-
+<span style="color:#f92672">&lt;/stage&gt;</span></code></pre></div>
 <p><a href="#top">top</a></p>
 
 <h2 id="authorization-1">&lt;authorization&gt;</h2>
@@ -4750,23 +4483,17 @@ coverage.xml file.</p>
 are two sub-elements: <a href="#user"><code>&lt;user&gt;</code></a> and <a href="#role"><code>&lt;role&gt;</code></a>.</p>
 
 <h3 id="examples-46">Examples</h3>
-
-<pre><code class="language-xml">&lt;approval type=&quot;manual&quot;&gt;
-  &lt;authorization&gt;
-    &lt;user&gt;lqiao&lt;/user&gt;
-    &lt;role&gt;go_admins&lt;/role&gt;
-  &lt;/authorization&gt;
-&lt;/approval&gt;
-</code></pre>
-
-<pre><code class="language-xml">&lt;approval type=&quot;success&quot;&gt;
-  &lt;authorization&gt;
-    &lt;user&gt;lqiao&lt;/user&gt;
-    &lt;role&gt;go_admins&lt;/role&gt;
-  &lt;/authorization&gt;
-&lt;/approval&gt;
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;approval</span> <span style="color:#a6e22e">type=</span><span style="color:#e6db74">&#34;manual&#34;</span><span style="color:#f92672">&gt;</span>
+  <span style="color:#f92672">&lt;authorization&gt;</span>
+    <span style="color:#f92672">&lt;user&gt;</span>lqiao<span style="color:#f92672">&lt;/user&gt;</span>
+    <span style="color:#f92672">&lt;role&gt;</span>go_admins<span style="color:#f92672">&lt;/role&gt;</span>
+  <span style="color:#f92672">&lt;/authorization&gt;</span>
+<span style="color:#f92672">&lt;/approval&gt;</span></code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;approval</span> <span style="color:#a6e22e">type=</span><span style="color:#e6db74">&#34;success&#34;</span><span style="color:#f92672">&gt;</span>
+  <span style="color:#f92672">&lt;authorization&gt;</span>
+    <span style="color:#f92672">&lt;user&gt;</span>lqiao<span style="color:#f92672">&lt;/user&gt;</span>
+    <span style="color:#f92672">&lt;role&gt;</span>go_admins<span style="color:#f92672">&lt;/role&gt;</span>
+  <span style="color:#f92672">&lt;/authorization&gt;</span>
+<span style="color:#f92672">&lt;/approval&gt;</span></code></pre></div>
 <p><a href="#top">top</a></p>
 
 <h2 id="templates">&lt;templates&gt;</h2>
@@ -4800,40 +4527,37 @@ are two sub-elements: <a href="#user"><code>&lt;user&gt;</code></a> and <a href=
 </table>
 
 <h3 id="examples-47">Examples</h3>
-
-<pre><code class="language-xml">&lt;cruise&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;cruise&gt;</span>
   ...
-  &lt;pipelines group=&quot;studios&quot; &gt;
-    &lt;pipeline name=&quot;yourproject&quot; template=&quot;project-template&quot; &gt;
-      &lt;materials&gt;
-        &lt;svn url=&quot;http://your-svn/&quot;/&gt;
-      &lt;/materials&gt;
-    &lt;/pipeline&gt;
-  &lt;/pipelines&gt;
-  &lt;templates&gt;
-    &lt;pipeline name=&quot;project-template&quot;&gt;
-        &lt;authorization&gt;
-            &lt;admins&gt;
-                &lt;user&gt;jez&lt;/user&gt;
-            &lt;/admins&gt;
-        &lt;/authorization&gt;
-      &lt;stage name=&quot;ut&quot;&gt;
-    &lt;jobs&gt;
-      &lt;job name=&quot;linux&quot;&gt;
-        &lt;resources&gt;
-          &lt;resource&gt;linux&lt;/resource&gt;
-        &lt;/resources&gt;
-        &lt;tasks&gt;
-          &lt;ant target=&quot;unit-test&quot; /&gt;
-        &lt;/tasks&gt;
-      &lt;/job&gt;
-    &lt;/jobs&gt;
-      &lt;/stage&gt;
-    &lt;/pipeline&gt;
-  &lt;/templates&gt;
-&lt;/cruise&gt;
-</code></pre>
-
+  <span style="color:#f92672">&lt;pipelines</span> <span style="color:#a6e22e">group=</span><span style="color:#e6db74">&#34;studios&#34;</span> <span style="color:#f92672">&gt;</span>
+    <span style="color:#f92672">&lt;pipeline</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;yourproject&#34;</span> <span style="color:#a6e22e">template=</span><span style="color:#e6db74">&#34;project-template&#34;</span> <span style="color:#f92672">&gt;</span>
+      <span style="color:#f92672">&lt;materials&gt;</span>
+        <span style="color:#f92672">&lt;svn</span> <span style="color:#a6e22e">url=</span><span style="color:#e6db74">&#34;http://your-svn/&#34;</span><span style="color:#f92672">/&gt;</span>
+      <span style="color:#f92672">&lt;/materials&gt;</span>
+    <span style="color:#f92672">&lt;/pipeline&gt;</span>
+  <span style="color:#f92672">&lt;/pipelines&gt;</span>
+  <span style="color:#f92672">&lt;templates&gt;</span>
+    <span style="color:#f92672">&lt;pipeline</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;project-template&#34;</span><span style="color:#f92672">&gt;</span>
+        <span style="color:#f92672">&lt;authorization&gt;</span>
+            <span style="color:#f92672">&lt;admins&gt;</span>
+                <span style="color:#f92672">&lt;user&gt;</span>jez<span style="color:#f92672">&lt;/user&gt;</span>
+            <span style="color:#f92672">&lt;/admins&gt;</span>
+        <span style="color:#f92672">&lt;/authorization&gt;</span>
+      <span style="color:#f92672">&lt;stage</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;ut&#34;</span><span style="color:#f92672">&gt;</span>
+    <span style="color:#f92672">&lt;jobs&gt;</span>
+      <span style="color:#f92672">&lt;job</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;linux&#34;</span><span style="color:#f92672">&gt;</span>
+        <span style="color:#f92672">&lt;resources&gt;</span>
+          <span style="color:#f92672">&lt;resource&gt;</span>linux<span style="color:#f92672">&lt;/resource&gt;</span>
+        <span style="color:#f92672">&lt;/resources&gt;</span>
+        <span style="color:#f92672">&lt;tasks&gt;</span>
+          <span style="color:#f92672">&lt;ant</span> <span style="color:#a6e22e">target=</span><span style="color:#e6db74">&#34;unit-test&#34;</span> <span style="color:#f92672">/&gt;</span>
+        <span style="color:#f92672">&lt;/tasks&gt;</span>
+      <span style="color:#f92672">&lt;/job&gt;</span>
+    <span style="color:#f92672">&lt;/jobs&gt;</span>
+      <span style="color:#f92672">&lt;/stage&gt;</span>
+    <span style="color:#f92672">&lt;/pipeline&gt;</span>
+  <span style="color:#f92672">&lt;/templates&gt;</span>
+<span style="color:#f92672">&lt;/cruise&gt;</span></code></pre></div>
 <p><a href="#top">top</a></p>
 
 <h2 id="environments">&lt;environments&gt;</h2>
@@ -4867,33 +4591,30 @@ are two sub-elements: <a href="#user"><code>&lt;user&gt;</code></a> and <a href=
 </table>
 
 <h3 id="examples-48">Examples</h3>
-
-<pre><code class="language-xml">&lt;cruise&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;cruise&gt;</span>
   ...
-  &lt;pipelines group=&quot;studios&quot; /&gt;
-    &lt;pipeline name=&quot;yourproject&quot; labeltemplate=&quot;foo-1.0.${COUNT}&quot; &gt;
+  <span style="color:#f92672">&lt;pipelines</span> <span style="color:#a6e22e">group=</span><span style="color:#e6db74">&#34;studios&#34;</span> <span style="color:#f92672">/&gt;</span>
+    <span style="color:#f92672">&lt;pipeline</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;yourproject&#34;</span> <span style="color:#a6e22e">labeltemplate=</span><span style="color:#e6db74">&#34;foo-1.0.${COUNT}&#34;</span> <span style="color:#f92672">&gt;</span>
     ...
-    &lt;/pipeline&gt;
-  &lt;/pipelines&gt;
-  &lt;environments&gt;
-    &lt;environment name=&quot;UAT&quot;&gt;
-      &lt;environmentvariables&gt;
-      &lt;variable name=&quot;FOO&quot;&gt;&lt;value&gt;bar&lt;/value&gt;&lt;/variable&gt;
-      &lt;/environmentvariables&gt;
-      &lt;agents&gt;
-        &lt;physical uuid=&quot;94fcb7ad-8b97-4078-b5f6-3c7436d6a390&quot;/&gt;
-      &lt;/agents&gt;
-      &lt;pipelines&gt;
-        &lt;pipeline name=&quot;yourproject&quot;/&gt;
-      &lt;/pipelines&gt;
-    &lt;/environment&gt;
-  &lt;/environments&gt;
-  &lt;agents&gt;
-    &lt;agent hostname=&quot;agent01&quot; ipaddress=&quot;192.168.0.1&quot; uuid=&quot;94fcb7ad-8b97-4078-b5f6-3c7436d6a390&quot; /&gt;
-  &lt;/agents&gt;
-&lt;/cruise&gt;
-</code></pre>
-
+    <span style="color:#f92672">&lt;/pipeline&gt;</span>
+  <span style="color:#f92672">&lt;/pipelines&gt;</span>
+  <span style="color:#f92672">&lt;environments&gt;</span>
+    <span style="color:#f92672">&lt;environment</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;UAT&#34;</span><span style="color:#f92672">&gt;</span>
+      <span style="color:#f92672">&lt;environmentvariables&gt;</span>
+      <span style="color:#f92672">&lt;variable</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;FOO&#34;</span><span style="color:#f92672">&gt;&lt;value&gt;</span>bar<span style="color:#f92672">&lt;/value&gt;&lt;/variable&gt;</span>
+      <span style="color:#f92672">&lt;/environmentvariables&gt;</span>
+      <span style="color:#f92672">&lt;agents&gt;</span>
+        <span style="color:#f92672">&lt;physical</span> <span style="color:#a6e22e">uuid=</span><span style="color:#e6db74">&#34;94fcb7ad-8b97-4078-b5f6-3c7436d6a390&#34;</span><span style="color:#f92672">/&gt;</span>
+      <span style="color:#f92672">&lt;/agents&gt;</span>
+      <span style="color:#f92672">&lt;pipelines&gt;</span>
+        <span style="color:#f92672">&lt;pipeline</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;yourproject&#34;</span><span style="color:#f92672">/&gt;</span>
+      <span style="color:#f92672">&lt;/pipelines&gt;</span>
+    <span style="color:#f92672">&lt;/environment&gt;</span>
+  <span style="color:#f92672">&lt;/environments&gt;</span>
+  <span style="color:#f92672">&lt;agents&gt;</span>
+    <span style="color:#f92672">&lt;agent</span> <span style="color:#a6e22e">hostname=</span><span style="color:#e6db74">&#34;agent01&#34;</span> <span style="color:#a6e22e">ipaddress=</span><span style="color:#e6db74">&#34;192.168.0.1&#34;</span> <span style="color:#a6e22e">uuid=</span><span style="color:#e6db74">&#34;94fcb7ad-8b97-4078-b5f6-3c7436d6a390&#34;</span> <span style="color:#f92672">/&gt;</span>
+  <span style="color:#f92672">&lt;/agents&gt;</span>
+<span style="color:#f92672">&lt;/cruise&gt;</span></code></pre></div>
 <p><a href="#top">top</a></p>
 
 <h2 id="environment-agents">&lt;agents&gt;</h2>
@@ -4941,14 +4662,11 @@ allow certain variable names and/or values.</p>
 </table>
 
 <h3 id="example-19">Example:</h3>
-
-<pre><code class="language-xml">  &lt;environmentvariables&gt;
-     &lt;variable name=&quot;FOO&quot;&gt;&lt;value&gt;bar&lt;/value&gt;&lt;/variable&gt;
-     &lt;variable name=&quot;MULTIPLE_LINES&quot;&gt;&lt;value&gt;multiplelines&lt;/value&gt;&lt;/variable&gt;
-     &lt;variable name=&quot;COMPLEX&quot;&gt;&lt;value&gt;![CDATA[This has very &lt;complex&gt; data]]&lt;/value&gt;&lt;/variable&gt;
-  &lt;/environmentvariables&gt;
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml">  <span style="color:#f92672">&lt;environmentvariables&gt;</span>
+     <span style="color:#f92672">&lt;variable</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;FOO&#34;</span><span style="color:#f92672">&gt;&lt;value&gt;</span>bar<span style="color:#f92672">&lt;/value&gt;&lt;/variable&gt;</span>
+     <span style="color:#f92672">&lt;variable</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;MULTIPLE_LINES&#34;</span><span style="color:#f92672">&gt;&lt;value&gt;</span>multiplelines<span style="color:#f92672">&lt;/value&gt;&lt;/variable&gt;</span>
+     <span style="color:#f92672">&lt;variable</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;COMPLEX&#34;</span><span style="color:#f92672">&gt;&lt;value&gt;</span>![CDATA[This has very <span style="color:#f92672">&lt;complex&gt;</span> data]]<span style="color:#f92672">&lt;/value&gt;&lt;/variable&gt;</span>
+  <span style="color:#f92672">&lt;/environmentvariables&gt;</span></code></pre></div>
 <p><a href="#top">top</a></p>
 
 <h2 id="environment-agents-physical">&lt;physical&gt;</h2>
@@ -4976,14 +4694,11 @@ allow certain variable names and/or values.</p>
 </table>
 
 <h3 id="examples-49">Examples</h3>
-
-<pre><code class="language-xml">&lt;environment name=&quot;UAT&quot;&gt;
-  &lt;agents&gt;
-    &lt;physical uuid=&quot;94fcb7ad-8b97-4078-b5f6-3c7436d6a390&quot;/&gt;
-  &lt;/agents&gt;
-&lt;/environment&gt;
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;environment</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;UAT&#34;</span><span style="color:#f92672">&gt;</span>
+  <span style="color:#f92672">&lt;agents&gt;</span>
+    <span style="color:#f92672">&lt;physical</span> <span style="color:#a6e22e">uuid=</span><span style="color:#e6db74">&#34;94fcb7ad-8b97-4078-b5f6-3c7436d6a390&#34;</span><span style="color:#f92672">/&gt;</span>
+  <span style="color:#f92672">&lt;/agents&gt;</span>
+<span style="color:#f92672">&lt;/environment&gt;</span></code></pre></div>
 <p><a href="#top">top</a></p>
 
 <h2 id="environment-pipelines">&lt;pipelines&gt;</h2>
@@ -5017,14 +4732,11 @@ allow certain variable names and/or values.</p>
 </table>
 
 <h3 id="examples-50">Examples</h3>
-
-<pre><code class="language-xml">&lt;environment name=&quot;UAT&quot;&gt;
-  &lt;pipelines&gt;
-    &lt;pipeline name=&quot;yourproject&quot;/&gt;
-  &lt;/pipelines&gt;
-&lt;/environment&gt;
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;environment</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;UAT&#34;</span><span style="color:#f92672">&gt;</span>
+  <span style="color:#f92672">&lt;pipelines&gt;</span>
+    <span style="color:#f92672">&lt;pipeline</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;yourproject&#34;</span><span style="color:#f92672">/&gt;</span>
+  <span style="color:#f92672">&lt;/pipelines&gt;</span>
+<span style="color:#f92672">&lt;/environment&gt;</span></code></pre></div>
 <p><a href="#top">top</a></p>
 
 <h2 id="agents">&lt;agents&gt;</h2>
@@ -5112,16 +4824,14 @@ allow certain variable names and/or values.</p>
 <p>Resources names can contain the following characters: a-z, A-Z, 0-9, fullstop, underscore and hyphen. Spaces are not allowed.</p>
 
 <h3 id="examples-51">Examples</h3>
-
-<pre><code class="language-xml">&lt;agents&gt;
-  &lt;agent hostname=&quot;agent01&quot; ipaddress=&quot;192.168.0.1&quot; uuid=&quot;94fcb7ad-8b97-4078-b5f6-3c7436d6a390&quot;&gt;
-    &lt;resources&gt;
-      &lt;resource&gt;java&lt;/resource&gt;
-      &lt;resource&gt;linux&lt;/resource&gt;
-    &lt;/resources&gt;
-  &lt;/agent&gt;
-&lt;/agents&gt;
-</code></pre>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;agents&gt;</span>
+  <span style="color:#f92672">&lt;agent</span> <span style="color:#a6e22e">hostname=</span><span style="color:#e6db74">&#34;agent01&#34;</span> <span style="color:#a6e22e">ipaddress=</span><span style="color:#e6db74">&#34;192.168.0.1&#34;</span> <span style="color:#a6e22e">uuid=</span><span style="color:#e6db74">&#34;94fcb7ad-8b97-4078-b5f6-3c7436d6a390&#34;</span><span style="color:#f92672">&gt;</span>
+    <span style="color:#f92672">&lt;resources&gt;</span>
+      <span style="color:#f92672">&lt;resource&gt;</span>java<span style="color:#f92672">&lt;/resource&gt;</span>
+      <span style="color:#f92672">&lt;resource&gt;</span>linux<span style="color:#f92672">&lt;/resource&gt;</span>
+    <span style="color:#f92672">&lt;/resources&gt;</span>
+  <span style="color:#f92672">&lt;/agent&gt;</span>
+<span style="color:#f92672">&lt;/agents&gt;</span></code></pre></div></p>
 </article>
 
       
@@ -5581,6 +5291,17 @@ allow certain variable names and/or values.</p>
 
   
   
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-48357651-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
 </body>
 
 </html>

@@ -15,6 +15,18 @@
 <link rel="stylesheet" href="../stylesheets/website.css"/>
 
 <link rel="stylesheet" href="../book.min.f2a0cdad2e0137fc7e70bc050b9c5d2798b5b4f45b50cfb8e342022c8cfd0732.css"/>
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-48357651-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
   
 </head>
 
@@ -153,8 +165,8 @@
 <li><a href="../extension_points/package_repository_extension.html">Package Repository Extension</a></li>
 <li><a href="../extension_points/yum_repository_poller.html">Yum Repository Poller</a></li>
 <li><a href="../extension_points/scm_extension.html">SCM Extension</a></li>
-<li><a href="../extension_points/task_extension.html">Task Extension</a></li>
-<li><a href="../extension_points/notification_extension.html">Notification Extension</a></li>
+<li><a href="../extension_points/task_extension.html">Task Extension</a>
+<!---  - [Notification Extension](/extension_points/notification_extension.html)--></li>
 <li><a href="../extension_points/configrepo_extension.html">Configuration repository Extension</a></li>
 </ul></li>
 <li><a href="../gocd_on_kubernetes.html"><strong>GoCD on Kubernetes</strong></a>
@@ -230,6 +242,7 @@
 
       
 <article class="markdown">
+  <p>
 
 <h1 id="managing-artifacts-and-reports">Managing artifacts and reports</h1>
 
@@ -252,12 +265,9 @@
 <p><img src="../images/job_artifacts.png" alt="" /></p>
 
 <p>For power users, here&rsquo;s how you would configure this via Config XML:</p>
-
-<pre><code class="language-xml">&lt;artifacts&gt;
-  &lt;artifact src=&quot;target/commonlib.dll&quot; dest=&quot;pkg&quot; /&gt;
-&lt;/artifacts&gt;
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;artifacts&gt;</span>
+  <span style="color:#f92672">&lt;artifact</span> <span style="color:#a6e22e">src=</span><span style="color:#e6db74">&#34;target/commonlib.dll&#34;</span> <span style="color:#a6e22e">dest=</span><span style="color:#e6db74">&#34;pkg&#34;</span> <span style="color:#f92672">/&gt;</span>
+<span style="color:#f92672">&lt;/artifacts&gt;</span></code></pre></div>
 <h2 id="using-tabs">Using tabs</h2>
 
 <p>Once your artifacts are safely in GoCD server&rsquo;s artifact repository, you can have the dashboard display them in tabs.</p>
@@ -277,12 +287,9 @@
 <p><img src="../images/select_artifact.png" alt="" /></p>
 
 <p>You can use the following configuration to display it in a tab:</p>
-
-<pre><code class="language-xml">&lt;tabs&gt;
-  &lt;tab name=&quot;Recording&quot; path=&quot;deployment/drop/smoke/smoke-recording.html&quot; /&gt;
-&lt;/tabs&gt;
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;tabs&gt;</span>
+  <span style="color:#f92672">&lt;tab</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;Recording&#34;</span> <span style="color:#a6e22e">path=</span><span style="color:#e6db74">&#34;deployment/drop/smoke/smoke-recording.html&#34;</span> <span style="color:#f92672">/&gt;</span>
+<span style="color:#f92672">&lt;/tabs&gt;</span></code></pre></div>
 <p>GoCD will create a tab called &ldquo;Recording&rdquo; and display the contents of the file in the tab when you click on it:</p>
 
 <p><img src="../images/recording.png" alt="" /></p>
@@ -305,12 +312,9 @@
 <p><img src="../images/job_test_artifacts.png" alt="" /></p>
 
 <p>For power users, here&rsquo;s how you would configure this via Config XML:</p>
-
-<pre><code class="language-xml">&lt;artifacts&gt;
-  &lt;test src=&quot;xstream/target/test-reports&quot; /&gt;
-&lt;/artifacts&gt;
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;artifacts&gt;</span>
+  <span style="color:#f92672">&lt;test</span> <span style="color:#a6e22e">src=</span><span style="color:#e6db74">&#34;xstream/target/test-reports&#34;</span> <span style="color:#f92672">/&gt;</span>
+<span style="color:#f92672">&lt;/artifacts&gt;</span></code></pre></div>
 <p>GoCD will:</p>
 
 <ul>
@@ -323,6 +327,7 @@
 <h3 id="restful-api">RESTful API</h3>
 
 <p>GoCD publishes all of its information as resources that can be queried through http in the form of RESTful API. See the <a href="../integration/index.html">Go integration</a> page for more information.</p>
+</p>
 </article>
 
       
@@ -369,6 +374,17 @@
 
   
   
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-48357651-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
 </body>
 
 </html>

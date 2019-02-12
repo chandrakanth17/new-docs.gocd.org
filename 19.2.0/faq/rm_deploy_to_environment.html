@@ -15,6 +15,18 @@
 <link rel="stylesheet" href="../stylesheets/website.css"/>
 
 <link rel="stylesheet" href="../book.min.f2a0cdad2e0137fc7e70bc050b9c5d2798b5b4f45b50cfb8e342022c8cfd0732.css"/>
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-48357651-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
   
 </head>
 
@@ -153,8 +165,8 @@
 <li><a href="../extension_points/package_repository_extension.html">Package Repository Extension</a></li>
 <li><a href="../extension_points/yum_repository_poller.html">Yum Repository Poller</a></li>
 <li><a href="../extension_points/scm_extension.html">SCM Extension</a></li>
-<li><a href="../extension_points/task_extension.html">Task Extension</a></li>
-<li><a href="../extension_points/notification_extension.html">Notification Extension</a></li>
+<li><a href="../extension_points/task_extension.html">Task Extension</a>
+<!---  - [Notification Extension](/extension_points/notification_extension.html)--></li>
 <li><a href="../extension_points/configrepo_extension.html">Configuration repository Extension</a></li>
 </ul></li>
 <li><a href="../gocd_on_kubernetes.html"><strong>GoCD on Kubernetes</strong></a>
@@ -230,6 +242,7 @@
 
       
 <article class="markdown">
+  <p>
 
 <h1 id="releasing-into-an-environment">Releasing into an environment</h1>
 
@@ -246,17 +259,14 @@
 <li><a href="../configuration/dev_choose_when_stage_runs.html">Ensure that the <strong>UAT</strong> stage is manual</a></li>
 <li>Ensure the following task block is in the <strong>deploy</strong> job configuration</li>
 </ul>
-
-<pre><code class="language-xml">&lt;tasks&gt;
-  &lt;fetchartifact stage=&quot;dist&quot; job=&quot;create-installers&quot; srcdir=&quot;pkg&quot; dest=&quot;installers&quot; /&gt;
-  &lt;ant target=&quot;deploy_to_uat&quot; /&gt;
-  &lt;ant target=&quot;verify_uat_works_correctly&quot; /&gt;
-  &lt;ant target=&quot;rollback_to_previous_install_in_uat&quot;&gt;
-    &lt;runif status=&quot;failed&quot; /&gt;
-  &lt;/ant&gt;
-&lt;/tasks&gt;
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;tasks&gt;</span>
+  <span style="color:#f92672">&lt;fetchartifact</span> <span style="color:#a6e22e">stage=</span><span style="color:#e6db74">&#34;dist&#34;</span> <span style="color:#a6e22e">job=</span><span style="color:#e6db74">&#34;create-installers&#34;</span> <span style="color:#a6e22e">srcdir=</span><span style="color:#e6db74">&#34;pkg&#34;</span> <span style="color:#a6e22e">dest=</span><span style="color:#e6db74">&#34;installers&#34;</span> <span style="color:#f92672">/&gt;</span>
+  <span style="color:#f92672">&lt;ant</span> <span style="color:#a6e22e">target=</span><span style="color:#e6db74">&#34;deploy_to_uat&#34;</span> <span style="color:#f92672">/&gt;</span>
+  <span style="color:#f92672">&lt;ant</span> <span style="color:#a6e22e">target=</span><span style="color:#e6db74">&#34;verify_uat_works_correctly&#34;</span> <span style="color:#f92672">/&gt;</span>
+  <span style="color:#f92672">&lt;ant</span> <span style="color:#a6e22e">target=</span><span style="color:#e6db74">&#34;rollback_to_previous_install_in_uat&#34;</span><span style="color:#f92672">&gt;</span>
+    <span style="color:#f92672">&lt;runif</span> <span style="color:#a6e22e">status=</span><span style="color:#e6db74">&#34;failed&#34;</span> <span style="color:#f92672">/&gt;</span>
+  <span style="color:#f92672">&lt;/ant&gt;</span>
+<span style="color:#f92672">&lt;/tasks&gt;</span></code></pre></div>
 <p>When you are ready to deploy something into the UAT environment&hellip;</p>
 
 <ul>
@@ -313,6 +323,7 @@ environment&hellip;</p>
 </ul>
 
 <p><img src="../images/6_click_manual_to_prod.png" alt="" /></p>
+</p>
 </article>
 
       
@@ -354,6 +365,17 @@ environment&hellip;</p>
 
   
   
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-48357651-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
 </body>
 
 </html>

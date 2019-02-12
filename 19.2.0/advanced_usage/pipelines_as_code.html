@@ -15,6 +15,18 @@
 <link rel="stylesheet" href="../stylesheets/website.css"/>
 
 <link rel="stylesheet" href="../book.min.f2a0cdad2e0137fc7e70bc050b9c5d2798b5b4f45b50cfb8e342022c8cfd0732.css"/>
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-48357651-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
   
 </head>
 
@@ -153,8 +165,8 @@
 <li><a href="../extension_points/package_repository_extension.html">Package Repository Extension</a></li>
 <li><a href="../extension_points/yum_repository_poller.html">Yum Repository Poller</a></li>
 <li><a href="../extension_points/scm_extension.html">SCM Extension</a></li>
-<li><a href="../extension_points/task_extension.html">Task Extension</a></li>
-<li><a href="../extension_points/notification_extension.html">Notification Extension</a></li>
+<li><a href="../extension_points/task_extension.html">Task Extension</a>
+<!---  - [Notification Extension](/extension_points/notification_extension.html)--></li>
 <li><a href="../extension_points/configrepo_extension.html">Configuration repository Extension</a></li>
 </ul></li>
 <li><a href="../gocd_on_kubernetes.html"><strong>GoCD on Kubernetes</strong></a>
@@ -230,6 +242,7 @@
 
       
 <article class="markdown">
+  <p>
 
 <h1 id="pipelines-as-code">Pipelines as code</h1>
 
@@ -267,14 +280,11 @@ make it more declarative, depending on the plugin and possibly give more control
 
 <ol>
 <li><p>After starting the server, open the config XML (&ldquo;Admin -&gt; Config XML&rdquo;) and add a config repository for the server to poll. This tag should be added just after the &ldquo;<code>&lt;server&gt;</code>&rdquo; tag, at the top level, as a child of &ldquo;<code>&lt;cruise&gt;</code>&ldquo;:</p>
-
-<pre><code class="language-xml">  &lt;config-repos&gt;
-    &lt;config-repo pluginId=&quot;json.config.plugin&quot; id=&quot;gocd-demo-config-repo-json&quot;&gt;
-      &lt;git url=&quot;https://github.com/arvindsv/gocd-demo-config-repo-json.git&quot; /&gt;
-    &lt;/config-repo&gt;
-  &lt;/config-repos&gt;
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml">  <span style="color:#f92672">&lt;config-repos&gt;</span>
+    <span style="color:#f92672">&lt;config-repo</span> <span style="color:#a6e22e">pluginId=</span><span style="color:#e6db74">&#34;json.config.plugin&#34;</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;gocd-demo-config-repo-json&#34;</span><span style="color:#f92672">&gt;</span>
+      <span style="color:#f92672">&lt;git</span> <span style="color:#a6e22e">url=</span><span style="color:#e6db74">&#34;https://github.com/arvindsv/gocd-demo-config-repo-json.git&#34;</span> <span style="color:#f92672">/&gt;</span>
+    <span style="color:#f92672">&lt;/config-repo&gt;</span>
+  <span style="color:#f92672">&lt;/config-repos&gt;</span></code></pre></div>
 <p>You can fork the repository mentioned above to your own GitHub account or locally, so that you can make some changes
 to see what happens. Any file ending in &ldquo;.gopipeline.json&rdquo; is picked up by the plugin. Documentation of what is
 possible in the JSON is <a href="https://github.com/tomzo/gocd-json-config-plugin">here</a>.</p></li>
@@ -294,14 +304,11 @@ red box).</p></li>
 
 <ol>
 <li><p>After starting the server, open the config XML (&ldquo;Admin -&gt; Config XML&rdquo;) and add a config repository for the server to poll. This tag should be added just after the &ldquo;<code>&lt;server&gt;</code>&rdquo; tag, at the top level, as a child of &ldquo;<code>&lt;cruise&gt;</code>&ldquo;:</p>
-
-<pre><code class="language-xml">  &lt;config-repos&gt;
-    &lt;config-repo pluginId=&quot;yaml.config.plugin&quot; id=&quot;gocd-yaml-config-example&quot;&gt;
-      &lt;git url=&quot;https://github.com/tomzo/gocd-yaml-config-example.git&quot; /&gt;
-    &lt;/config-repo&gt;
-  &lt;/config-repos&gt;
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml">  <span style="color:#f92672">&lt;config-repos&gt;</span>
+    <span style="color:#f92672">&lt;config-repo</span> <span style="color:#a6e22e">pluginId=</span><span style="color:#e6db74">&#34;yaml.config.plugin&#34;</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;gocd-yaml-config-example&#34;</span><span style="color:#f92672">&gt;</span>
+      <span style="color:#f92672">&lt;git</span> <span style="color:#a6e22e">url=</span><span style="color:#e6db74">&#34;https://github.com/tomzo/gocd-yaml-config-example.git&#34;</span> <span style="color:#f92672">/&gt;</span>
+    <span style="color:#f92672">&lt;/config-repo&gt;</span>
+  <span style="color:#f92672">&lt;/config-repos&gt;</span></code></pre></div>
 <p>You can fork the repository mentioned above to your own GitHub account or locally, so that you can make some changes
 to see what happens. Any file ending in &ldquo;.gocd.yaml&rdquo; is picked up by the plugin. Documentation of what is
 possible in the YAML file is <a href="https://github.com/tomzo/gocd-yaml-config-plugin">here</a>.</p></li>
@@ -314,6 +321,7 @@ red box).</p></li>
 
 <li><p>You can even have multiple repositories. Just repeat the <code>&lt;config-repo&gt;</code> tag and make sure that there are no duplicate pipelines.</p></li>
 </ol>
+</p>
 </article>
 
       
@@ -355,6 +363,17 @@ red box).</p></li>
 
   
   
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-48357651-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
 </body>
 
 </html>

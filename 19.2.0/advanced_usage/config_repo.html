@@ -15,6 +15,18 @@
 <link rel="stylesheet" href="../stylesheets/website.css"/>
 
 <link rel="stylesheet" href="../book.min.f2a0cdad2e0137fc7e70bc050b9c5d2798b5b4f45b50cfb8e342022c8cfd0732.css"/>
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-48357651-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
   
 </head>
 
@@ -153,8 +165,8 @@
 <li><a href="../extension_points/package_repository_extension.html">Package Repository Extension</a></li>
 <li><a href="../extension_points/yum_repository_poller.html">Yum Repository Poller</a></li>
 <li><a href="../extension_points/scm_extension.html">SCM Extension</a></li>
-<li><a href="../extension_points/task_extension.html">Task Extension</a></li>
-<li><a href="../extension_points/notification_extension.html">Notification Extension</a></li>
+<li><a href="../extension_points/task_extension.html">Task Extension</a>
+<!---  - [Notification Extension](/extension_points/notification_extension.html)--></li>
 <li><a href="../extension_points/configrepo_extension.html">Configuration repository Extension</a></li>
 </ul></li>
 <li><a href="../gocd_on_kubernetes.html"><strong>GoCD on Kubernetes</strong></a>
@@ -230,6 +242,7 @@
 
       
 <article class="markdown">
+  <p>
 
 <h1 id="gocd-configuration-repository">GoCD Configuration repository</h1>
 
@@ -301,10 +314,7 @@ be made non-aggressive by setting this value to <code>N</code>. It is recommende
 <a href="../configuration/configuration_reference.html#format">documentation</a> for help on cron syntax. For linux users, while
 overriding <code>go.config.repo.gc.cron</code> you need to escape special shell characters such <code>*</code> using a backward-slash. For
 example:</p>
-
-<pre><code>GO_SERVER_SYSTEM_PROPERTIES=&quot;$GO_SERVER_SYSTEM_PROPERTIES -Dgo.config.repo.gc.cron='0 0 7 1/1 \* \?'&quot;
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">GO_SERVER_SYSTEM_PROPERTIES<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span>$GO_SERVER_SYSTEM_PROPERTIES<span style="color:#e6db74"> -Dgo.config.repo.gc.cron=&#39;0 0 7 1/1 \* \?&#39;&#34;</span></code></pre></div>
 <p>The above cron will set to run git gc at 7 am every day for every month.</p>
 
 <h3 id="property-go-config-repo-gc-warning-looseobject-threshold">Property: go.config.repo.gc.warning.looseobject.threshold</h3>
@@ -339,6 +349,7 @@ Specify this propery in hours.</p>
 server, when it comes back up. As an administrator, if you access <code>/go/api/support</code> (meaning,
 <code>http://your-go-server/go/api/support</code>), then you should be able to find those properties in that page, with the values
 you set. If you don&rsquo;t see them, or see them with wrong values, you&rsquo;ll need to see whether you&rsquo;ve set them correctly.</p>
+</p>
 </article>
 
       
@@ -386,6 +397,17 @@ you set. If you don&rsquo;t see them, or see them with wrong values, you&rsquo;l
 
   
   
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-48357651-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
 </body>
 
 </html>

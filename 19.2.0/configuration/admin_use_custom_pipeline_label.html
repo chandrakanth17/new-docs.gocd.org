@@ -15,6 +15,18 @@
 <link rel="stylesheet" href="../stylesheets/website.css"/>
 
 <link rel="stylesheet" href="../book.min.f2a0cdad2e0137fc7e70bc050b9c5d2798b5b4f45b50cfb8e342022c8cfd0732.css"/>
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-48357651-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
   
 </head>
 
@@ -153,8 +165,8 @@
 <li><a href="../extension_points/package_repository_extension.html">Package Repository Extension</a></li>
 <li><a href="../extension_points/yum_repository_poller.html">Yum Repository Poller</a></li>
 <li><a href="../extension_points/scm_extension.html">SCM Extension</a></li>
-<li><a href="../extension_points/task_extension.html">Task Extension</a></li>
-<li><a href="../extension_points/notification_extension.html">Notification Extension</a></li>
+<li><a href="../extension_points/task_extension.html">Task Extension</a>
+<!---  - [Notification Extension](/extension_points/notification_extension.html)--></li>
 <li><a href="../extension_points/configrepo_extension.html">Configuration repository Extension</a></li>
 </ul></li>
 <li><a href="../gocd_on_kubernetes.html"><strong>GoCD on Kubernetes</strong></a>
@@ -230,6 +242,7 @@
 
       
 <article class="markdown">
+  <p>
 
 <h1 id="use-a-custom-pipeline-label">Use a custom pipeline label</h1>
 
@@ -248,16 +261,12 @@
 <h2 id="using-material-revisions">Using material revisions</h2>
 
 <p>You might also want to include material revision into the pipeline label so that it&rsquo;s easier to find a GoCD pipeline by material revision and vice versa. For example, you might have a pipeline with a svn material. The following example shows how to include svn material revision into pipeline label:</p>
-
-<pre><code class="language-xml">&lt;pipeline name=&quot;main&quot; labeltemplate=&quot;1.3.${COUNT}-${svn}&quot;&gt;
-  &lt;materials&gt;
-      &lt;svn url=&quot;http://server/path&quot; materialName=&quot;svn&quot; /&gt;
-  &lt;materials&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;pipeline</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;main&#34;</span> <span style="color:#a6e22e">labeltemplate=</span><span style="color:#e6db74">&#34;1.3.${COUNT}-${svn}&#34;</span><span style="color:#f92672">&gt;</span>
+  <span style="color:#f92672">&lt;materials&gt;</span>
+      <span style="color:#f92672">&lt;svn</span> <span style="color:#a6e22e">url=</span><span style="color:#e6db74">&#34;http://server/path&#34;</span> <span style="color:#a6e22e">materialName=</span><span style="color:#e6db74">&#34;svn&#34;</span> <span style="color:#f92672">/&gt;</span>
+  <span style="color:#f92672">&lt;materials&gt;</span>
   ...
-&lt;/pipeline&gt;
-
-</code></pre>
-
+<span style="color:#f92672">&lt;/pipeline&gt;</span></code></pre></div>
 <h4 id="using-truncated-material-revisions">Using truncated material revisions</h4>
 
 <p>You can optionally truncate a material revision.
@@ -267,69 +276,55 @@ By adding a &ldquo;[:7]&rdquo; you can have a short, truncated version of the Gi
 The later one might be 4-7 characters long as Git tries to find a unique hash that&rsquo;s as short as possible. See the
 <a href="https://www.kernel.org/pub/software/scm/git/docs/git-rev-parse.html">documentation of git-rev-parse</a>
 under &ldquo;&ndash;short&rdquo; for further details.)</p>
-
-<pre><code class="language-xml">&lt;pipeline name=&quot;main&quot; labeltemplate=&quot;15.1.${COUNT}-${git[:7]}&quot;&gt;
-    &lt;materials&gt;
-        &lt;git url=&quot;git://github.com/foo.git&quot;  materialName=&quot;git&quot; /&gt;
-    &lt;materials&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;pipeline</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;main&#34;</span> <span style="color:#a6e22e">labeltemplate=</span><span style="color:#e6db74">&#34;15.1.${COUNT}-${git[:7]}&#34;</span><span style="color:#f92672">&gt;</span>
+    <span style="color:#f92672">&lt;materials&gt;</span>
+        <span style="color:#f92672">&lt;git</span> <span style="color:#a6e22e">url=</span><span style="color:#e6db74">&#34;git://github.com/foo.git&#34;</span>  <span style="color:#a6e22e">materialName=</span><span style="color:#e6db74">&#34;git&#34;</span> <span style="color:#f92672">/&gt;</span>
+    <span style="color:#f92672">&lt;materials&gt;</span>
   ...
-&lt;/pipeline&gt;
-
-</code></pre>
-
+<span style="color:#f92672">&lt;/pipeline&gt;</span></code></pre></div>
 <h2 id="using-upstream-pipeline-labels">Using upstream pipeline labels</h2>
 
 <p>You can also include the revision of an upstream pipeline into the pipeline label to, for example, share the same revision across different but related pipelines:</p>
-
-<pre><code class="language-xml">&lt;pipeline name=&quot;upstream&quot; labeltemplate=&quot;1.3.${COUNT}-${svn}&quot;&gt;
-    &lt;materials&gt;
-        &lt;svn url=&quot;http://server/path&quot; materialName=&quot;svn&quot; /&gt;
-    &lt;materials&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;pipeline</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;upstream&#34;</span> <span style="color:#a6e22e">labeltemplate=</span><span style="color:#e6db74">&#34;1.3.${COUNT}-${svn}&#34;</span><span style="color:#f92672">&gt;</span>
+    <span style="color:#f92672">&lt;materials&gt;</span>
+        <span style="color:#f92672">&lt;svn</span> <span style="color:#a6e22e">url=</span><span style="color:#e6db74">&#34;http://server/path&#34;</span> <span style="color:#a6e22e">materialName=</span><span style="color:#e6db74">&#34;svn&#34;</span> <span style="color:#f92672">/&gt;</span>
+    <span style="color:#f92672">&lt;materials&gt;</span>
   ...
-&lt;/pipeline&gt;
-&lt;pipeline name=&quot;downstream&quot; labeltemplate=&quot;${upstream}&quot;&gt;
-    &lt;materials&gt;
-        &lt;pipeline pipelineName=&quot;upstream&quot; stageName=&quot;dev&quot; materialName=&quot;upstream&quot; /&gt;
-    &lt;materials&gt;
+<span style="color:#f92672">&lt;/pipeline&gt;</span>
+<span style="color:#f92672">&lt;pipeline</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;downstream&#34;</span> <span style="color:#a6e22e">labeltemplate=</span><span style="color:#e6db74">&#34;${upstream}&#34;</span><span style="color:#f92672">&gt;</span>
+    <span style="color:#f92672">&lt;materials&gt;</span>
+        <span style="color:#f92672">&lt;pipeline</span> <span style="color:#a6e22e">pipelineName=</span><span style="color:#e6db74">&#34;upstream&#34;</span> <span style="color:#a6e22e">stageName=</span><span style="color:#e6db74">&#34;dev&#34;</span> <span style="color:#a6e22e">materialName=</span><span style="color:#e6db74">&#34;upstream&#34;</span> <span style="color:#f92672">/&gt;</span>
+    <span style="color:#f92672">&lt;materials&gt;</span>
   ...
-&lt;/pipeline&gt;
-
-</code></pre>
-
+<span style="color:#f92672">&lt;/pipeline&gt;</span></code></pre></div>
 <p>In this case, if the label of upstream pipeline is &ldquo;1.3.0-1234&rdquo;, then when downstream pipeline is triggered, the label of downstream pipeline is also &ldquo;1.3.0-1234&rdquo;.</p>
 
 <h2 id="using-parameters">Using parameters</h2>
 
 <p>You can also include parameters into the pipeline label:</p>
-
-<pre><code class="language-xml">&lt;pipeline name=&quot;main&quot; labeltemplate=&quot;15.1.${COUNT}-#{param1}&quot;&gt;
-    &lt;params&gt;
-        &lt;param name=&quot;param1&quot;&gt;default&lt;/param&gt;
-    &lt;/params&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;pipeline</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;main&#34;</span> <span style="color:#a6e22e">labeltemplate=</span><span style="color:#e6db74">&#34;15.1.${COUNT}-#{param1}&#34;</span><span style="color:#f92672">&gt;</span>
+    <span style="color:#f92672">&lt;params&gt;</span>
+        <span style="color:#f92672">&lt;param</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;param1&#34;</span><span style="color:#f92672">&gt;</span>default<span style="color:#f92672">&lt;/param&gt;</span>
+    <span style="color:#f92672">&lt;/params&gt;</span>
   ...
-&lt;/pipeline&gt;
-
-</code></pre>
-
+<span style="color:#f92672">&lt;/pipeline&gt;</span></code></pre></div>
 <h2 id="using-pipeline-level-environment-variables">Using Pipeline Level Environment Variables</h2>
 
 <p>From GoCD v18.10.0, you can also include pipeline level environment variables into the pipeline label:</p>
-
-<pre><code class="language-xml">&lt;pipeline name=&quot;main&quot; labeltemplate=&quot;18.10.0.${COUNT}-${env:var}&quot;&gt;
-    &lt;environmentvariables&gt;
-        &lt;variable name=&quot;var&quot;&gt;
-          &lt;value&gt;default&lt;/value&gt;
-        &lt;/variable&gt;
-    &lt;/environmentvariables&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;pipeline</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;main&#34;</span> <span style="color:#a6e22e">labeltemplate=</span><span style="color:#e6db74">&#34;18.10.0.${COUNT}-${env:var}&#34;</span><span style="color:#f92672">&gt;</span>
+    <span style="color:#f92672">&lt;environmentvariables&gt;</span>
+        <span style="color:#f92672">&lt;variable</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;var&#34;</span><span style="color:#f92672">&gt;</span>
+          <span style="color:#f92672">&lt;value&gt;</span>default<span style="color:#f92672">&lt;/value&gt;</span>
+        <span style="color:#f92672">&lt;/variable&gt;</span>
+    <span style="color:#f92672">&lt;/environmentvariables&gt;</span>
    ...
-&lt;/pipeline&gt;
-</code></pre>
-
+<span style="color:#f92672">&lt;/pipeline&gt;</span></code></pre></div>
 <h4 id="also-see">Also see&hellip;</h4>
 
 <ul>
 <li><a href="admin_use_parameters_in_configuration.html">Use parameters in configuration</a></li>
 </ul>
+</p>
 </article>
 
       
@@ -382,6 +377,17 @@ under &ldquo;&ndash;short&rdquo; for further details.)</p>
 
   
   
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-48357651-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
 </body>
 
 </html>

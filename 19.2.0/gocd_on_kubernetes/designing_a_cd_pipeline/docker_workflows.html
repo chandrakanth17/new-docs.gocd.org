@@ -15,6 +15,18 @@
 <link rel="stylesheet" href="../../stylesheets/website.css"/>
 
 <link rel="stylesheet" href="../../book.min.f2a0cdad2e0137fc7e70bc050b9c5d2798b5b4f45b50cfb8e342022c8cfd0732.css"/>
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-48357651-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
   
 </head>
 
@@ -153,8 +165,8 @@
 <li><a href="../../extension_points/package_repository_extension.html">Package Repository Extension</a></li>
 <li><a href="../../extension_points/yum_repository_poller.html">Yum Repository Poller</a></li>
 <li><a href="../../extension_points/scm_extension.html">SCM Extension</a></li>
-<li><a href="../../extension_points/task_extension.html">Task Extension</a></li>
-<li><a href="../../extension_points/notification_extension.html">Notification Extension</a></li>
+<li><a href="../../extension_points/task_extension.html">Task Extension</a>
+<!---  - [Notification Extension](/extension_points/notification_extension.html)--></li>
 <li><a href="../../extension_points/configrepo_extension.html">Configuration repository Extension</a></li>
 </ul></li>
 <li><a href="../../gocd_on_kubernetes.html"><strong>GoCD on Kubernetes</strong></a>
@@ -230,6 +242,7 @@
 
       
 <article class="markdown">
+  <p>
 
 <h1 id="docker-workflows">Docker workflows</h1>
 
@@ -248,10 +261,7 @@
 <p>Docker outside of Docker involves volume mounting the host&rsquo;s docker socket onto the GoCD agent container and use the host&rsquo;s docker daemon to execute docker related commands from the CI.</p>
 
 <p>This can be achieved by doing:</p>
-
-<pre><code class="language-bash">$ docker run -it -v /var/run/docker.sock:/var/run/docker.sock -e GO_SERVER_URL=&quot;https://&lt;go-server-ip&gt;:8154/go&quot; gocd/gocd-agent-alpine-3.7:v18.1.0
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ docker run -it -v /var/run/docker.sock:/var/run/docker.sock -e GO_SERVER_URL<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://&lt;go-server-ip&gt;:8154/go&#34;</span> gocd/gocd-agent-alpine-3.7:v18.1.0</code></pre></div>
 <p><strong>Drawbacks:</strong></p>
 
 <ul>
@@ -263,6 +273,7 @@
 <h2 id="using-a-single-docker-gocd-agent-image">Using a single docker GoCD agent image</h2>
 
 <p>In cases where DinD and DooD both don&rsquo;t work for your use case, an alternative is to package all the build time dependencies into a single docker image. Use this docker image with the GoCD Elastic Agents to run the builds. This works only if you are not choosing to containerize your application builds and tests. In other words, this works well for a workflow that doesn&rsquo;t involve running docker related commands using elastic agents.</p>
+</p>
 </article>
 
       
@@ -302,6 +313,17 @@
 
   
   
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-48357651-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
 </body>
 
 </html>

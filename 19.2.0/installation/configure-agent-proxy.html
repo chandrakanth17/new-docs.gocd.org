@@ -15,6 +15,18 @@
 <link rel="stylesheet" href="../stylesheets/website.css"/>
 
 <link rel="stylesheet" href="../book.min.f2a0cdad2e0137fc7e70bc050b9c5d2798b5b4f45b50cfb8e342022c8cfd0732.css"/>
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-48357651-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
   
 </head>
 
@@ -153,8 +165,8 @@
 <li><a href="../extension_points/package_repository_extension.html">Package Repository Extension</a></li>
 <li><a href="../extension_points/yum_repository_poller.html">Yum Repository Poller</a></li>
 <li><a href="../extension_points/scm_extension.html">SCM Extension</a></li>
-<li><a href="../extension_points/task_extension.html">Task Extension</a></li>
-<li><a href="../extension_points/notification_extension.html">Notification Extension</a></li>
+<li><a href="../extension_points/task_extension.html">Task Extension</a>
+<!---  - [Notification Extension](/extension_points/notification_extension.html)--></li>
 <li><a href="../extension_points/configrepo_extension.html">Configuration repository Extension</a></li>
 </ul></li>
 <li><a href="../gocd_on_kubernetes.html"><strong>GoCD on Kubernetes</strong></a>
@@ -230,6 +242,7 @@
 
       
 <article class="markdown">
+  <p>
 
 <h1 id="configure-a-gocd-agent-to-connect-to-a-server-through-a-proxy-server">Configure a GoCD agent to connect to a server through a proxy server.</h1>
 
@@ -249,33 +262,22 @@
 </ul>
 
 <p>If your proxy server is running on <code>proxy.example.com</code> port <code>3128</code>, you will need to setup the following system properties:</p>
-
-<pre><code>-Dhttp.proxyHost=proxy.example.com -Dhttp.proxyPort=3128 -Dhttps.proxyHost=proxy.example.com -Dhttps.proxyPort=3128 -Dhttp.nonProxyHosts=localhost
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">-Dhttp.proxyHost<span style="color:#f92672">=</span>proxy.example.com -Dhttp.proxyPort<span style="color:#f92672">=</span><span style="color:#ae81ff">3128</span> -Dhttps.proxyHost<span style="color:#f92672">=</span>proxy.example.com -Dhttps.proxyPort<span style="color:#f92672">=</span><span style="color:#ae81ff">3128</span> -Dhttp.nonProxyHosts<span style="color:#f92672">=</span>localhost</code></pre></div>
 <p>To avoid using proxies for certain hosts, you may use <code>http.nonProxyHosts</code> which is a list of hostnames or ip addresses separated by a pipe character(<code>|</code>), you may include a wildcard character (<code>*</code>) for matching. For example:</p>
-
-<pre><code>-Dhttp.nonProxyHosts='*.foo.com|localhost'
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">-Dhttp.nonProxyHosts<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;*.foo.com|localhost&#39;</span></code></pre></div>
 <p><strong>Note:</strong> that the pipe character (<code>|</code>) may wildcard (<code>*</code>) may need special escaping on Linux.</p>
 
 <h2 id="configuring-an-agent-on-linux">Configuring an agent on Linux</h2>
 
 <p>To setup the agent on linux, edit the file <code>/etc/default/go-agent</code> and add the following:</p>
-
-<pre><code class="language-shell">PROXY_SETTINGS=&quot;-Dhttps.proxyHost=proxy.example.com -Dhttps.proxyPort=3128 -Dhttp.nonProxyHosts='localhost|*.department.acme.com'&quot;
-GO_AGENT_SYSTEM_PROPERTIES=&quot;${PROXY_SETTINGS}&quot;
-AGENT_BOOTSTRAPPER_JVM_ARGS=&quot;${PROXY_SETTINGS}&quot;
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">PROXY_SETTINGS<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;-Dhttps.proxyHost=proxy.example.com -Dhttps.proxyPort=3128 -Dhttp.nonProxyHosts=&#39;localhost|*.department.acme.com&#39;&#34;</span>
+GO_AGENT_SYSTEM_PROPERTIES<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>PROXY_SETTINGS<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
+AGENT_BOOTSTRAPPER_JVM_ARGS<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>PROXY_SETTINGS<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span></code></pre></div>
 <h2 id="configuring-an-agent-on-windows">Configuring an agent on Windows</h2>
 
 <p>Follow the <a href="../installation/install/agent/windows.html#overriding-default-startup-arguments-and-environment">instructions</a> to add a new property for GoCD agents setup on windows, such as:</p>
-
-<pre><code>wrapper.java.additional.17=&quot;-Dhttps.proxyHost=proxy.example.com -Dhttps.proxyPort=3128 -Dhttp.nonProxyHosts='localhost|*.department.acme.com'&quot;
-set.AGENT_STARTUP_ARGS=%AGENT_STARTUP_ARGS% -Dhttps.proxyHost=proxy.example.com -Dhttps.proxyPort=3128 '-Dhttp.nonProxyHosts=localhost|*.department.acme.com'
-</code></pre>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">wrapper.java.additional.17<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;-Dhttps.proxyHost=proxy.example.com -Dhttps.proxyPort=3128 -Dhttp.nonProxyHosts=&#39;localhost|*.department.acme.com&#39;&#34;</span>
+set.AGENT_STARTUP_ARGS<span style="color:#f92672">=</span>%AGENT_STARTUP_ARGS% -Dhttps.proxyHost<span style="color:#f92672">=</span>proxy.example.com -Dhttps.proxyPort<span style="color:#f92672">=</span><span style="color:#ae81ff">3128</span> <span style="color:#e6db74">&#39;-Dhttp.nonProxyHosts=localhost|*.department.acme.com&#39;</span></code></pre></div></p>
 </article>
 
       
@@ -314,6 +316,17 @@ set.AGENT_STARTUP_ARGS=%AGENT_STARTUP_ARGS% -Dhttps.proxyHost=proxy.example.com 
 
   
   
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-48357651-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
 </body>
 
 </html>
