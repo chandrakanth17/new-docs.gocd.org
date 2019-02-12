@@ -101,7 +101,7 @@ headless: true
     - [Yum Repository Poller]({{< relref "extension_points/yum_repository_poller.md" >}})
     - [SCM Extension]({{< relref "extension_points/scm_extension.md" >}})
     - [Task Extension]({{< relref "extension_points/task_extension.md" >}})
-    - [Notification Extension]({{< relref "extension_points/notification_extension.md" >}})
+  <!---  - [Notification Extension]({{< relref "extension_points/notification_extension.md" >}})-->
     - [Configuration repository Extension]({{< relref "extension_points/configrepo_extension.md" >}})
 - [**GoCD on Kubernetes**]({{< relref "gocd_on_kubernetes/_index.md" >}})
     - [Introduction]({{< relref "gocd_on_kubernetes/introduction.md" >}})
