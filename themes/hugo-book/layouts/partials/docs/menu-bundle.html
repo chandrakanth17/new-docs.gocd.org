@@ -2,7 +2,7 @@
 {{ $attrVal := .RelPermalink }}
 {{ if eq .RelPermalink "/" }}
   {{ $attrEq = "=" }}
-  {{ $attrVal = .Permalink }}
+  {{ $attrVal = "./" }}
 {{ end }}
 
 <style>
