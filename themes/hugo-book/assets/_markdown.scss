@@ -60,6 +60,12 @@ $block-border-radius: 0.15rem;
 
   table {
     border-spacing: 0;
+    table-layout: fixed;
+    width: 100%;
+
+    td {
+      word-break: break-all;
+    }
   }
 
   img {
