@@ -15,6 +15,10 @@ $block-border-radius: 0.15rem;
     line-height: 1.25;
   }
 
+  h3 {
+    font-weight: 700;
+  }
+
   b, optgroup, strong {
     font-weight: 700;
   }
@@ -56,10 +60,10 @@ $block-border-radius: 0.15rem;
 
   table tr td {
     padding: $padding-8;
+    border: 1px solid $body-font-color;
   }
 
   img {
     max-width: 90%;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   }
 }
