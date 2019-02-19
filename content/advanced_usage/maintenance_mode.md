@@ -2,7 +2,7 @@
 title: Maintenance Mode
 
 ---
-# **Maintenance Mode**
+# Maintenance Mode
 
 **Note:** Using this feature requires atleast version `19.1.0`  of the GoCD server.
 

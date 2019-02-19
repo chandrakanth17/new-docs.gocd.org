@@ -15,7 +15,7 @@ Delivery](http://martinfowler.com/bliki/ContinuousDelivery.html).
 If you're very new to GoCD, the [Getting Started Guide](https://www.gocd.org/getting-started/part-1/) is a good
 starting point to get a good understanding of the concepts while trying them out on a real GoCD instance.
 
-### Index
+# Index
 
 - [Task](#task)
 - [Job](#job)
@@ -100,7 +100,8 @@ and tasks. This representation is shown below.
 
 
 <a id="materials">   </a>
-# Materials and triggers <span class="header smaller">(or "*When* do these tasks, jobs, stages and pipelines run?")</span> 
+# Materials and triggers 
+<span class="header smaller">(or "*When* do these tasks, jobs, stages and pipelines run?")</span> 
 
 A material is a cause for a pipeline to run. Often, it is a source code material repository (Git, SVN, Mercurial, etc). The GoCD Server
 continuously polls configured materials and when a new change or commit is found, the corresponding pipelines are run or "triggered".
@@ -212,7 +213,7 @@ its artifacts and the job below it has two directories and a file as its artifac
 </figure>
 
 <a id="fetch_artifact">  </a>
-### Fetching artifacts
+## Fetching artifacts
 
 GoCD provides a special task called a "Fetch Artifact Task", which allows artifacts to be fetched and used, from any ancestor pipeline - that is, any
 pipeline that is upstream of the current pipeline. GoCD will ensure that the correct version of the artifact is fetched, irrespective of anything else
@@ -228,7 +229,8 @@ a Fetch Artifact Task fetches an artifact from Pipeline 1, through Pipeline 2.
 </figure>
 
 <a id="agent">       </a>
-# Agent <span class="header smaller">(or "*Where* do these tasks, jobs, stages and pipelines run?")</span>
+# Agent 
+<span class="header smaller">(or "*Where* do these tasks, jobs, stages and pipelines run?")</span>
 
 GoCD Agents are the workers in the GoCD ecosystem. All tasks configured in the system run on GoCD Agents. The GoCD Server polls for changes in material (this
 happens on the GoCD Server itself) and then, when a change is detected and a pipeline needs to be triggered, the corresponding jobs are assigned to the
@@ -353,7 +355,7 @@ is not defined at the stage and job levels, the value of `ENV_PIP` will be 2. Th
 This section is a work in progress.
 
 
-### Image attributions
+# Image attributions
 
 - [Git logo - Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Git-logo.svg)
 - [Subversion logo - Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Subversion-logo.svg)
