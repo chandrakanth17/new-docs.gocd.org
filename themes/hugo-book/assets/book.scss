@@ -98,6 +98,7 @@ ul.pagination {
   flex: 0 0 $menu-width;
   font-size: $font-size-14;
   padding: 0 20px;
+  border-right: 1px solid $gray-600;
 
   nav {
     width: $menu-width;

@@ -55,16 +55,27 @@ $block-border-radius: 0.15rem;
 
   table tr td {
     padding: $padding-8;
-    border: 1px solid $body-font-color;
+    border: 1px solid #ddd;
+    border-width: 0.5px;
   }
 
   table {
     border-spacing: 0;
     table-layout: fixed;
     width: 100%;
+    border-collapse: collapse;
 
     td {
       word-break: break-all;
+    }
+
+    th{
+      border: 1px solid #ddd;
+      border-bottom: 0px;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f8f8f8;
     }
   }
 
