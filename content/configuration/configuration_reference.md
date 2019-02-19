@@ -258,7 +258,7 @@ The `<cruise>` element is the root element of the configuration.
 
 The `<server>` element can be used to define information and attributes of the Go Server.
 
-### Attributes
+**Attributes**
 
 | Attribute | Required | Description |
 |-----------|----------|-------------|
@@ -272,7 +272,7 @@ The `<server>` element can be used to define information and attributes of the G
 | serverId | Yes (auto-generated) | This value uniquely identifies a Go server installation. It may be used by features that require unique names/identifiers across different Go server installations. This attribute need not be specified for a new server. In case no value is given, server auto-generates a random UUID an assigns it as serverId. This value should never be changed for an existing server. Administrator should clear this attribute before copying configuration to a different installation. |
 | agentAutoRegisterKey | No | The key specified here is used by agents for [auto-registration](../../advanced_usage/agent_auto_register.html). |
 
-### Notes:
+**Notes:**
 
 -   If both siteUrl and secureSiteUrl are not defined, Go URLs will use the default domain which in most cases will be http://your-go-server:8153
 -   If only siteUrl is defined and is not HTTPS, Go URLs will be composed from the siteUrl entry. In this case, the secure pages of Go will not be navigable.
@@ -280,7 +280,7 @@ The `<server>` element can be used to define information and attributes of the G
 -   If only secureSiteUrl is defined, Go URLs will use the default domain for non-HTTPS pages, while HTTPs pages will be composed from the secureSiteUrl entry.
 -   If purgeStart and purgeUpto are not defined, artifacts will never be deleted.
 
-### Examples
+**Examples**
 
 ```xml
 <cruise>
@@ -295,13 +295,13 @@ The `<server>` element can be used to define information and attributes of the G
 
 The `<security>` element can be used to enable authentication. If the element is not defined anyone can use Go without logging in. We currently support enabling authentication using Authorization plugin endpoint. Support for LDAP and simple password-file authentication is available out of box via the bundled plugins for the same. You can use more than one authentication mechanism if you want. Support for inbuilt [LDAP](#ldap) and [password file](#passwordFile) tags in configuration has been deprecated.
 
-### Attributes
+**Attributes**
 
 | Attribute | Required | Description |
 |-----------|----------|-------------|
 | allowOnlyKnownUsersToLogin | No | Allow only those users to login who have been explicitly added by an admin. If false, any new user who tries to login and is present in your password file or LDAP will be automatically created as a Go user. (Default=false) |
 
-### Examples
+**Examples**
 
 ```xml
 <server artifactsdir="/var/lib/go/big-artifacts-folder">
@@ -362,7 +362,7 @@ The `<mailhost>` element is used to configure mail notifications. Mail notificat
 | from  | Yes | Go will attempt to set this email address as the 'from' address for email that it sends. Note that this setting may not be honoured by the SMTP server that you use. For example, from="go-admin@yourcompany.com". |
 | admin  | Yes | Go admintrator's email address. Go will send diagnostic messages to this email address. For example, Go will send a warning message if it is running out of disk space. |
 
-### Examples
+**Examples**
 
 ```xml
 <mailhost hostname="mailhost.yourcompany.com" port="25" username="go-user" password="crs123" tls="false" from="go@yourcompany.com" admin="goadministrator@yourcompany.com" />
@@ -382,7 +382,7 @@ The `<backup>` element is used to configure backups.
 | emailOnSuccess   | No       | Boolean indicating whether email should be sent on a successful backup. Requires that [mailhost](#mailhost) config be setup.                                                                 |
 | emailOnFailure   | No       | Boolean indicating whether email should be sent on a failed backup backup. Requires that [mailhost](#mailhost) config be setup.                                                              |
 
-### Examples
+**Examples**
 
 For example: to perform a backup once a night at 10pm on weekdays and call the `/usr/local/bin/upload-to-s3` script after the backup is done.
 
@@ -395,7 +395,7 @@ For example: to perform a backup once a night at 10pm on weekdays and call the `
 
 Go uses the [Quartz](http://www.quartz-scheduler.org/documentation/quartz-2.x/quick-start) scheduler internally. For convenience we reproduce the [Quartz cron documentation](http://www.quartz-scheduler.org/documentation/quartz-2.x/tutorials/crontrigger) here:
 
-### Format
+**Format**
 
 A cron expression is a string comprised of 6 or 7 fields separated by white space. Fields can contain any of the allowed values, along with
 various combinations of the allowed special characters for that field. The fields are as follows:
@@ -412,7 +412,7 @@ various combinations of the allowed special characters for that field. The field
 
 So cron expressions can be as simple as this: `* * * * * ?` or more complex, like this: `0 15 10 ? * 6L 2002-2005`
 
-### Special characters
+**Special characters**
 
 -   `*` (*"all values"*) - used to select all values within a field. For example, "\*" in the minute field means *"every minute"*.
 
@@ -430,7 +430,7 @@ So cron expressions can be as simple as this: `* * * * * ?` or more complex, lik
 
 -   `#` - used to specify "the nth" XXX day of the month. For example, the value of "6\#3" in the day-of-week field means *"the third Friday of the month"* (day 6 = Friday and "\#3" = the 3rd one in the month). Other examples: "2\#1" = the first Monday of the month and "4\#5" = the fifth Wednesday of the month. Note that if you specify "\#5" and there is not 5 of the given day-of-week in the month, then no firing will occur that month. The legal characters and the names of months and days of the week are not case sensitive. `MON` is the same as `mon`.
 
-### Examples
+**Examples**
 
 Here are some full examples:
 
@@ -458,7 +458,7 @@ Here are some full examples:
 
 Pay attention to the effects of '?' and '\*' in the day-of-week and day-of-month fields!
 
-### Notes
+**Notes**
 
 -   Support for specifying both a day-of-week and a day-of-month value is not complete (you must currently use the '?' character in one of these fields).
 -   Be careful when setting fire times between mid-night and 1:00 AM - "daylight savings" can cause a skip or a repeat depending on whether the time moves back or jumps forward.
@@ -471,7 +471,7 @@ Pay attention to the effects of '?' and '\*' in the day-of-week and day-of-month
 
 The `<ldap>` element is used to specify the ldap server. Users can access Go with their username and password from this ldap server.
 
-### Attributes
+**Attributes**
 
 | Attribute | Required | Description |
 |-----------|----------|-------------|
@@ -480,7 +480,7 @@ The `<ldap>` element is used to specify the ldap server. Users can access Go wit
 | managerPassword | Yes  | Go will connect to the LDAP server with this password |
 | searchFilter | No | e.g. searchFilter="(sAMAccountName={0})" |
 
-### Examples
+**Examples**
 
 ```xml
 <security>
@@ -545,7 +545,7 @@ The `<passwordFile>` element is used to specify a file which has a set of userna
 |-----------|----------|-------------|
 | path | Yes | The absolute path of the password file. |
 
-### Examples
+**Examples**
 
 Suppose the password file is **admins.properties**, which is located in **/home/go**. You want to create two users as Administrators:
 
@@ -573,7 +573,7 @@ lqiao=TfkgShslgJepX80c2JY1trwEskT
 
 Using `<authConfigs>` element GoCD administrators can provide one or more authorization configurations to connect with the authorization server(s).
 
-### Example
+**Example**
 
 ```xml
 <authConfigs>
@@ -594,7 +594,7 @@ The `<authConfig>` specifies the [configuration](#property) to be used by the au
 
 An `authConfig` should have a unique `id` attribute and should be associated to plugin through the `pluginId` attribute.
 
-### Attributes
+**Attributes**
 
 | Attribute | Required | Description |
 |-----------|----------|-------------|
@@ -603,7 +603,7 @@ An `authConfig` should have a unique `id` attribute and should be associated to 
 
 Refer to your plugin's documentation to know the `property` keys to be configured.
 
-### Example:
+**Example:**
 
 
 ```xml
@@ -621,7 +621,7 @@ Refer to your plugin's documentation to know the `property` keys to be configure
 
 The `<roles>` element is a container for roles that users defined. It can't be defined without `<role>`.
 
-### Examples
+**Examples**
 
 ```xml
 <security>
@@ -650,7 +650,7 @@ The `<role>` element is used to define a group of users who perform similar task
 |-----------|----------|-------------|
 | name | Yes | The name of the role. |
 
-### Examples
+**Examples**
 
 Two users would be in the role 'pipeline-operators', they are **Jez** and **lqiao**.
 
@@ -684,7 +684,7 @@ One `<user>` element defines a particular user in a role. You can add as many as
 
 -   The user must be in your [LDAP](#ldap) or [passwordFile](#passwordFile).
 
-### Examples
+**Examples**
 
 Two users would be in the role 'pipeline-operators', they are **Jez** and **lqiao**.
 
@@ -712,7 +712,7 @@ The `<pluginRole>` element is used to define roles in GoCD. Unlike `role` which 
 
 Refer to your plugin's documentation to know the `property` keys to be configured for the `pluginRole`.
 
-### Examples
+**Examples**
 
 ```xml
 <roles>
@@ -740,7 +740,7 @@ The `<admins>` element specifies which users are administrators. Only administra
 
 The user must be in your [LDAP](#ldap) or [passwordFile](#passwordFile).
 
-### Examples
+**Examples**
 
 ```xml
 <security>
@@ -762,7 +762,7 @@ One `<role>` element in [`<admins>`](#admins) is used to specify a group as admi
 
 -   The role must refer to [`<roles>`](#roles).
 
-### Examples
+**Examples**
 
 The users in role '**go-admin**' would be administrators.
 
@@ -781,7 +781,7 @@ The users in role '**go-admin**' would be administrators.
 
 -   The user must be in your [LDAP](#ldap) or [passwordFile](#passwordFile).
 
-### Examples
+**Examples**
 
 Two users would be administrators, they are **Jez** and **lqiao**.
 
@@ -800,7 +800,7 @@ Two users would be administrators, they are **Jez** and **lqiao**.
 
 -   The role must be defined in [`<roles>`](#roles).
 
-### Examples
+**Examples**
 
 ```xml
 <view>
@@ -816,7 +816,7 @@ The `<elastic>` element is used to provide configurations for the elastic agents
 |-----------|----------|-------------|
 | jobStarvationTimeout | No | Timeout in minutes. If a job that requires an elastic agent is not assigned within the specified period, the elastic agent plugin will be [notified](https://plugin-api.gocd.org/current/elastic-agents/#create-agent) to create a new elastic agent. |
 
-### Examples
+**Examples**
 
 ```xml
 <elastic jobStarvationTimeout="10">
@@ -837,7 +837,7 @@ The `<elastic>` element is used to provide configurations for the elastic agents
 
 There can be zero or more profiles.
 
-### Examples
+**Examples**
 
 ```xml
 <profiles>
@@ -854,14 +854,14 @@ There can be zero or more profiles.
 `<profile>` specifies the [configuration](#property) to be used to to create an elastic-agent instance.
 A profile should have a unique `id` attribute and should be associated to plugin through the `pluginId` attribute.
 
-### Attributes
+**Attributes**
 
 | Attribute | Required | Description |
 |-----------|----------|-------------|
 | id       | Yes | Unique Id of profile.           |
 | pluginId | Yes | The Id of elastic-agent plugin. |
 
-### Example:
+**Example:**
 
 ```xml
 <profile id="ec2.small-us-east" pluginId="com.example.ec2">
@@ -883,7 +883,7 @@ A profile should have a unique `id` attribute and should be associated to plugin
 
 The `<config-repos>` element is a container of many `<config-repo>`.
 
-### Example
+**Example**
 
 ```xml
 <cruise>
@@ -911,14 +911,14 @@ The `<config-repos>` element is a container of many `<config-repo>`.
 
 The `<config-repo>` element specifies a single configuration repository. It must contain exactly one SCM material and may contain additional configuration section.
 
-### Attributes
+**Attributes**
 
 | Attribute | Required | Description |
 |-----------|----------|-------------|
 | pluginId | Yes | The ID of configuration repository plugin. E.g. `json.config.plugin`. |
 | id | Yes | The ID of the configuration repository. ID must be a unique alphanumeric string. It can also contain `-`,`_`,`.`. |
 
-### Example
+**Example**
 
 ```xml
 <cruise>
@@ -937,13 +937,13 @@ The `<config-repo>` element specifies a single configuration repository. It must
 </cruise>
 ```
 
-### &lt;configuration&gt; {#config-repo-configuration}
+**&lt;configuration&gt; {#config-repo-configuration}**
 
 The `<configuration>` element is optional part of config repo definition.
 Keys and values are specified and handled by particular plugin. This section
 can be used to **customize how config repo plugin works when parsing this specific repository**.
 
-#### Example
+#**Example**
 
 ```xml
 <configuration>
@@ -964,7 +964,7 @@ can be used to **customize how config repo plugin works when parsing this specif
 
 The config repo `<svn>` material element specifies the location of your code base in Subversion repository.
 
-### Attributes
+**Attributes**
 
 | Attribute | Required | Description |
 |-----------|----------|-------------|
@@ -976,12 +976,12 @@ The config repo `<svn>` material element specifies the location of your code bas
 | materialName | No | The name to identify a material. Material name can contain the following characters: a-z, A-Z, 0-9, fullstop, underscore and hyphen, but whitespace is not allowed. A material name is case insensitive and starting with fullstop is invalid. The max length is 255 characters. |
 | autoUpdate | No | By default Go polls the repository for changes automatically. If autoUpdate is set to false then Go will not poll the repository for changes. For config repo materials, autoUpdate is always set to true. |
 
-### Notes:
+**Notes:**
 
 Go cannot automatically accept svn SSL certificates. If you are using https for svn repository, you have to go to the Server,
 and as the user 'go' do a command "svn update" to store the certificates in the cache permanently.
 
-### Examples:
+**Examples:**
 
 ```xml
 <config-repo pluginId="json.config.plugin" id="repo1">
@@ -996,11 +996,11 @@ and as the user 'go' do a command "svn update" to store the certificates in the 
 
 The config repo `<hg>` material element specifies the location of your code base in a Mercurial repository. Go supports the following protocols for Mercurial: http, ssh.
 
-### Notes:
+**Notes:**
 
 You must install Mercurial 1.5 or above on the Go Server. Go does not ship with Mercurial.
 
-### Attributes
+**Attributes**
 
 | Attribute | Required | Description |
 |-----------|----------|-------------|
@@ -1008,7 +1008,7 @@ You must install Mercurial 1.5 or above on the Go Server. Go does not ship with 
 | materialName | No | The name to identify a material. Material name can contain the following characters: a-z, A-Z, 0-9, fullstop, underscore and hyphen. Spaces are not allowed. Material name is case insensitive. The max length is 255 characters. |
 | autoUpdate | No | By default Go polls the repository for changes automatically. If autoUpdate is set to false then Go will not poll the repository for changes. For config repo materials, autoUpdate is always set to true. |
 
-### Examples
+**Examples**
 
 ```xml
 <config-repo pluginId="json.config.plugin" id="repo1">
@@ -1016,7 +1016,7 @@ You must install Mercurial 1.5 or above on the Go Server. Go does not ship with 
 </config-repo>
 ```
 
-#### Specifying a mercurial branch.
+#**Specifying a mercurial branch.**
 
 ```xml
 <config-repo pluginId="json.config.plugin" id="repo1">
@@ -1031,7 +1031,7 @@ Note that \# needs to be escaped with another \# - hence the \#\# in the url abo
 
 The config repo `<p4>` material element specifies the location of your code base in a Perforce repository.
 
-### Attributes
+**Attributes**
 
 | Attribute | Required | Description |
 |-----------|----------|-------------|
@@ -1044,7 +1044,7 @@ The config repo `<p4>` material element specifies the location of your code base
 | materialName | No | The name to identify a material. Material name can contain the following characters: a-z, A-Z, 0-9, fullstop, underscore and hyphen. Spaces are not allowed. Material name is case insensitive. The max length is 255 characters. |
 | autoUpdate | No | By default Go polls the repository for changes automatically. If autoUpdate is set to false then Go will not poll the repository for changes. For config repo materials, autoUpdate is always set to true. |
 
-### Notes:
+**Notes:**
 
 Views consist of multiple mappings. Each mapping has two parts:
 
@@ -1076,7 +1076,7 @@ For example:
 
 The config repo `<git>` material element specifies the location of your code base in a GIT repository. Go only supports remote repositories.
 
-### Notes:
+**Notes:**
 
 git versions 1.9 and above are supported by Go.
 
@@ -1090,7 +1090,7 @@ windows command prompt*
 If you are using git through SSH on windows, please ensure that the HOME user environment variable is set to the full path of the parent
 directory where the .ssh/ directory is located.
 
-### Attributes
+**Attributes**
 
 | Attribute | Required | Description |
 |-----------|----------|-------------|
@@ -1099,7 +1099,7 @@ directory where the .ssh/ directory is located.
 | materialName | No | The name to identify a material. Material name can contain the following characters: a-z, A-Z, 0-9, fullstop, underscore and hyphen. Spaces are not allowed. Material name is case insensitive. The max length is 255 characters. |
 | autoUpdate | No | By default Go polls the repository for changes automatically. If autoUpdate is set to false then Go will not poll the repository for changes. For config repo materials, autoUpdate is always set to true. |
 
-### Examples are:
+**Examples are:**
 
 ```xml
 <config-repo pluginId="json.config.plugin" id="repo1">
@@ -1113,7 +1113,7 @@ directory where the .ssh/ directory is located.
 
 The config repo `<tfs>` material element specifies the location of your code base in a TFS Source repository.
 
-### Attributes
+**Attributes**
 
 | Attribute | Required | Description |
 |-----------|----------|-------------|
@@ -1126,7 +1126,7 @@ The config repo `<tfs>` material element specifies the location of your code bas
 | materialName | No | The name to identify a material. Material name can contain the following characters: a-z, A-Z, 0-9, fullstop, underscore and hyphen. Spaces are not allowed. Material name is case insensitive. The max length is 255 characters. |
 | autoUpdate | No | By default Go polls the repository for changes automatically. If autoUpdate is set to false then Go will not poll the repository for changes. For config repo materials, autoUpdate is always set to true. |
 
-### Examples are:
+**Examples are:**
 
 ```xml
 <config-repo pluginId="json.config.plugin" id="repo1">
@@ -1140,13 +1140,13 @@ The config repo `<tfs>` material element specifies the location of your code bas
 
 The config repo `<scm>` material element specifies the location of your code base in any of the  SCM repositories.
 
-### Attributes
+**Attributes**
 
 | Attribute | Required | Description |
 |-----------|----------|-------------|
 | ref | Yes | The unique package repository id. |
 
-### Examples are:
+**Examples are:**
 
 ```xml
 <config-repo pluginId="json.config.plugin" id="repo1">
@@ -1161,7 +1161,7 @@ The config repo `<scm>` material element specifies the location of your code bas
 
 The `<repositories>` element is a container of package repositories.
 
-### Example
+**Example**
 
 ```xml
 <cruise>
@@ -1198,14 +1198,14 @@ The `<repositories>` element is a container of package repositories.
 
 The `<repository>` element specifies a single repository. Repository must be be unique by id and name (name is case-insensitive) across repositories configuration.
 
-### Attributes
+**Attributes**
 
 | Attribute | Required | Description |
 |-----------|----------|-------------|
 | id | No | The id uniquely identifies a package repository by GO. This attribute need not be specified. In case no value is given, server auto-generates a random UUID and assigns it as repository id. |
 | name | Yes | The name uniquely identifies a package repository which will be specified by user and same will be used to display on screen. Repository name can contain the following characters: a-z, A-Z, 0-9, fullstop, underscore and hyphen. Spaces are not allowed. Name is case-insensitive in Go and the length should be less than 255 characters. |
 
-### Example
+**Example**
 
 ```xml
 <cruise>
@@ -1242,7 +1242,7 @@ The `<repository>` element specifies a single repository. Repository must be be 
 
 The `<pluginConfiguration>` element specifies configuration related to plugin.
 
-### Attributes
+**Attributes**
 
 | Attribute | Required | Description |
 |-----------|----------|-------------|
@@ -1285,7 +1285,7 @@ The `<packages>` element specifies list of packages under a repository.
 
 The `<package>` element specifies single package under a repository. This tag holds configuration related to package
 
-### Attributes
+**Attributes**
 
 | Attribute | Required | Description |
 |-----------|----------|-------------|
@@ -1299,7 +1299,7 @@ The `<package>` element specifies single package under a repository. This tag ho
 
 The `<artifactStores>` element is a container of many `<artifactStore>`.
 
-### Example
+**Example**
 
 ```xml
 <cruise>
@@ -1329,7 +1329,7 @@ The `<artifactStores>` element is a container of many `<artifactStore>`.
 
 The `<artifactStore>` element specifies a global artifact store to publish/fetch external artifacts. It can contain zero or more `<property>` elements to specify the plugin properties.
 
-### Attributes
+**Attributes**
 
 | Attribute | Required | Description |
 |-----------|----------|-------------|
@@ -1343,13 +1343,13 @@ The `<artifactStore>` element specifies a global artifact store to publish/fetch
 
 The `<pipelines>` element is a container of pipelines.
 
-### Attributes
+**Attributes**
 
 | Attribute | Required | Description |
 |-----------|----------|-------------|
 | group | No | The name is used to identify a pipeline group, and must be unique. The name can contain the following characters: a-z, A-Z, 0-9, period (.), underscore (_) and hyphen (-). Spaces are not allowed. The length should be less than 255 characters. The default name is 'defaultGroup'. |
 
-### Examples
+**Examples**
 
 ```xml
 <cruise>
@@ -1392,7 +1392,7 @@ Users and Roles defined as group admins can view and operate on all pipelines in
 
 **Note:** Go Administrators ([admins](#admins)) defined in [security](#security) tab, can administer all pipeline groups.
 
-### Examples
+**Examples**
 
 Given the following configuration only [admins](#admins), lqiao and any users having the role 'studios\_group\_admin'.
 
@@ -1421,7 +1421,7 @@ The `<view>` element is a permission section to specify who can see the pipeline
 
 **Note:**Administrators ([admins](#admins)) can see all pipeline groups. Any other users or roles that are not listed under the `<view>` tag will be unable to see this pipeline group
 
-### Examples
+**Examples**
 
 Given the following configuration only administrators can operate the pipeline group, and only [admins](#admins), lqiao and any users having the role 'go\_readonly\_member' can see the pipeline.
 
@@ -1450,7 +1450,7 @@ The `<operate>` element specifies who can operate the pipelines under the pipeli
 
 **Note:**Any users/roles that are not listed under the [`<view>`](#group_view) tag will be unable to see this pipeline group (even if they are listed as being allowed to `<operate>` that pipeline group)
 
-### Examples
+**Examples**
 
 Given the following configuration, only [admins](#admins), lqiao, jez and the users having the role 'go\_core\_member' can operate the pipeline group. Only [admins](#admins), lqiao and the users having the role 'go\_readonly\_member' can see the pipeline (jez and go\_core\_member cannot).
 
@@ -1487,7 +1487,7 @@ pipeline group).
 
 There should be at least one stage in one pipeline. Go uses the pipeline name to identify the pipeline. If you change the pipeline name, you will lose the history of the pipeline.
 
-### Attributes
+**Attributes**
 
 | Attribute | Required | Description |
 |-----------|----------|-------------|
@@ -1496,7 +1496,7 @@ There should be at least one stage in one pipeline. Go uses the pipeline name to
 | lockBehavior | No | The possible values are "none", "lockOnFailure" or "unlockWhenFinished".The default value is "none". When set to "lockOnFailure", GoCD ensures that only a single instance of a pipeline can be run at a time and the pipeline [will be locked](../configuration/admin_lock_pipelines.html) if it fails, unless it is the last stage which fails. When set to "unlockWhenFinished", GoCD ensures that only a single instance of a pipeline can be run at a time, and the pipeline will be unlocked as soon as it finishes (success or failure), or reaches a manual stage. |
 | template | No | The name of the template that this pipeline references. If this is set, no stages may be defined in this pipeline. |
 
-### Examples
+**Examples**
 
 ```xml
 <pipelines>
@@ -1536,7 +1536,7 @@ The element `<params>` specifies the list of parameters (Element [param](#param)
 A `<param>` defines the parameter name that will be substituted with the paramerter value that will be substituted in a pipeline or a pipeline
 template.
 
-### Example:
+**Example:**
 
 ```xml
 <params>
@@ -1552,14 +1552,14 @@ template.
 The `<trackingtool>` element can be used to specify links to an issue tracker. Go will construct a link based on the commit message that you
 can use to take you to your tracking tool (Mingle card, JIRA issue, Trac issue etc).
 
-### Attributes
+**Attributes**
 
 | Attribute | Required | Description |
 |-----------|----------|-------------|
 | link | Yes | a URL with a string '${ID}'. Go will replace the string '${ID}' with the first matched group value at run-time. |
 | regex | Yes | A [regex]() to identify the IDs. Go will find the first matched group in your commit messages and use it to construct the hyper-link. |
 
-### Examples
+**Examples**
 
 Suppose you are using a Web Application to manage your tasks or bugs, and the link looks like http://your-trackingtool/yourproject/512, '512'
 is your task ID. Your configuration would be:
@@ -1593,7 +1593,7 @@ This element let's you associate a [Mingle](http://www.thoughtworks.com/mingle) 
 
 **Note:** You cannot configure a [trackingtool](#trackingtool) if mingle is configured for a pipeline.
 
-### Attributes
+**Attributes**
 
 | Attribute | Required | Description |
 |-----------|----------|-------------|
@@ -1601,7 +1601,7 @@ This element let's you associate a [Mingle](http://www.thoughtworks.com/mingle) 
 | projectIdentifier | Yes | This is the "Identifier" specified under a Mingle project's "Basic Options" |
 | mqlGroupingConditions | No | An MQL string that determines the "passing criteria" for cards displayed in Go |
 
-### Examples
+**Examples**
 
 ```xml
 <mingle
@@ -1617,13 +1617,13 @@ This element let's you associate a [Mingle](http://www.thoughtworks.com/mingle) 
 
 The `<timer>` element specifies a cron-like schedule to build the pipeline.
 
-### Attributes
+**Attributes**
 
 | Attribute | Required | Description |
 |-----------|----------|-------------|
 | onlyOnChanges | No | Skips scheduling if the previous run of the pipeline was with the latest material(s). This option is typically useful when automatic pipeline scheduling is turned off. |
 
-### Examples
+**Examples**
 
 For example to run a pipeline once a night at 10pm on weekdays:
 
@@ -1636,7 +1636,7 @@ For example to run a pipeline once a night at 10pm on weekdays:
 
 Go uses the [Quartz](http://www.quartz-scheduler.org/documentation/quartz-2.x/quick-start) scheduler internally. For convenience we reproduce the [Quartz cron documentation](http://www.quartz-scheduler.org/documentation/quartz-2.x/tutorials/crontrigger) here:
 
-### Format
+**Format**
 
 A cron expression is a string comprised of 6 or 7 fields separated by white space. Fields can contain any of the allowed values, along with
 various combinations of the allowed special characters for that field. The fields are as follows:
@@ -1653,7 +1653,7 @@ various combinations of the allowed special characters for that field. The field
 
 So cron expressions can be as simple as this: `* * * * * ?` or more complex, like this: `0 15 10 ? * 6L 2002-2005`
 
-### Special characters
+**Special characters**
 
 -   `*` (*"all values"*) - used to select all values within a field. For example, "\*" in the minute field means *"every minute"*.
 
@@ -1671,7 +1671,7 @@ So cron expressions can be as simple as this: `* * * * * ?` or more complex, lik
 
 -   `#` - used to specify "the nth" XXX day of the month. For example, the value of "6\#3" in the day-of-week field means *"the third Friday of the month"* (day 6 = Friday and "\#3" = the 3rd one in the month). Other examples: "2\#1" = the first Monday of the month and "4\#5" = the fifth Wednesday of the month. Note that if you specify "\#5" and there is not 5 of the given day-of-week in the month, then no firing will occur that month. The legal characters and the names of months and days of the week are not case sensitive. `MON` is the same as `mon`.
 
-### Examples
+**Examples**
 
 Here are some full examples:
 
@@ -1699,7 +1699,7 @@ Here are some full examples:
 
 Pay attention to the effects of '?' and '\*' in the day-of-week and day-of-month fields!
 
-### Notes
+**Notes**
 
 -   Support for specifying both a day-of-week and a day-of-month value is not complete (you must currently use the '?' character in one of these fields).
 -   Be careful when setting fire times between mid-night and 1:00 AM - "daylight savings" can cause a skip or a repeat depending on whether the time moves back or jumps forward.
@@ -1715,7 +1715,7 @@ The `<materials>` element specifies the source of the pipeline changes. Generall
 Go supports multiple materials with the restriction that every material must contain a unique "dest" folder (that is not a subfolder of any
 other material). Go will check out the source code into this folder for each material.
 
-### Examples
+**Examples**
 
 ```xml
 <pipeline name="yourproject" labeltemplate="foo-1.0.${COUNT}">
@@ -1750,7 +1750,7 @@ Multiple materials:
 
 The `<filter>` element specifies files in changesets that should not trigger a pipeline automatically. When a pipeline is triggered by files that are not ignored the filtered files will still be updated with other files. You can only define one filter under each SCM material. When you trigger a pipeline manually, it will update to most recent revision, including filtered files.
 
-### Examples
+**Examples**
 
 ```xml
 <svn url="http://your-svn/">
@@ -1767,19 +1767,19 @@ The `<filter>` element specifies files in changesets that should not trigger a p
 The `<ignore>` element is used to specify a set of files that are ignored when Go checks for changes. Repository changesets which only
 contain these files will not trigger a pipeline automatically.
 
-### Attributes
+**Attributes**
 
 | Attribute | Required | Description |
 |-----------|----------|-------------|
 | pattern | Yes | defines a pattern (Ant-style) for the files to be ignored. Changes of thoes files will not trigger the pipeline. the pattern is relative to the root of the SCM repository, not the sandbox of the pipeline. |
 
-### Notes
+**Notes**
 
 -   `<ignore>` can occur multiple times under [`<filter>`](#filter).
 -   The pattern is relative to the root directory of the SCM repository, not the sandbox in the agent side or the materials URL.
 -   Ignored files are still updated when other files are updated.
 
-### Examples:
+**Examples:**
 
 ```xml
 <ignore pattern="doc/**/*" />
@@ -1817,7 +1817,7 @@ Ignore all the files that are in the nested directory under folder **'helper'** 
 
 The `<svn>` element specifies the location of your code base in Subversion repository.
 
-### Attributes
+**Attributes**
 
 | Attribute | Required | Description |
 |-----------|----------|-------------|
@@ -1830,12 +1830,12 @@ The `<svn>` element specifies the location of your code base in Subversion repos
 | autoUpdate | No | By default Go polls the repository for changes automatically. If autoUpdate is set to false then Go will not poll the repository for changes. Instead it will check for changes only when you trigger a pipeline that contains this material or it receives a notification through a post-commit hook. If the same material is specified more than once in the configuration file, all of them must have the same value for autoUpdate. |
 | invertFilter | No | Inverts any `filter` elements, turning them into whitelists. Only files that *match* the filter will trigger a new build. |
 
-### Notes:
+**Notes:**
 
 Go cannot automatically accept svn SSL certificates. If you are using https for svn repository, you have to go to the Server and each Agent,
 and as the user 'go' do a command "svn update" to store the certificates in the cache permanently.
 
-### Examples:
+**Examples:**
 
 For a Go Agent on linux with the following configuration:
 
@@ -1858,11 +1858,11 @@ Go Agent will check out source code from 'http://svn-server.com/framework' to '/
 
 The `<hg>` element specifies the location of your code base in a Mercurial repository. Go supports the http and ssh for Mercurial.
 
-### Notes:
+**Notes:**
 
 You must install Mercurial 1.5 or above on the Go Server and Go Agents for the jobs need Mercurial. Go does not ship with Mercurial.
 
-### Attributes
+**Attributes**
 
 | Attribute | Required | Description |
 |-----------|----------|-------------|
@@ -1872,7 +1872,7 @@ You must install Mercurial 1.5 or above on the Go Server and Go Agents for the j
 | autoUpdate | No | By default Go polls the repository for changes automatically. If autoUpdate is set to false then Go will not poll the repository for changes. Instead it will check for changes only when you trigger a pipeline that contains this material. If the same material is specified more than once in the configuration file, all of them must have the same value for autoUpdate. |
 | invertFilter | No | Inverts any `filter` elements, turning them into whitelists. Only files that *match* the filter will trigger a new build. |
 
-### Examples
+**Examples**
 
 ```xml
 <pipeline name="yourproject">
@@ -1883,7 +1883,7 @@ You must install Mercurial 1.5 or above on the Go Server and Go Agents for the j
 </pipeline>
 ```
 
-#### Specifying a mercurial branch.
+#**Specifying a mercurial branch.**
 
 ```xml
 <pipeline name="yourproject_branch">
@@ -1902,11 +1902,11 @@ Note that \# needs to be escaped with another \# - hence the \#\# in the url abo
 
 The `<p4>` element specifies the location of your code base in a Perforce repository.
 
-### Notes:
+**Notes:**
 
 Go will use directory under pipelines/{pipelineName} in agent side as Perforce root directory of perforce client workspace.
 
-### Attributes
+**Attributes**
 
 | Attribute | Required | Description |
 |-----------|----------|-------------|
@@ -1920,7 +1920,7 @@ Go will use directory under pipelines/{pipelineName} in agent side as Perforce r
 | autoUpdate | No | By default Go polls the repository for changes automatically. If autoUpdate is set to false then Go will not poll the repository for changes. Instead it will check for changes only when you trigger a pipeline that contains this material. If the same material is specified more than once in the configuration file, all of them must have the same value for autoUpdate. |
 | invertFilter | No | Inverts any `filter` elements, turning them into whitelists. Only files that *match* the filter will trigger a new build. |
 
-### Notes:
+**Notes:**
 
 You do not need to specify the above attributes if you have already defined them as system variables. So if you have a P4PASSWD variable
 defined then you can leave out the "password" tag defined above. If you already have them defined as system variables and also in Go
@@ -1959,7 +1959,7 @@ For example:
 
 The `<git>` element specifies the location of your code base in a GIT repository. Go only supports remote repositories.
 
-### Notes:
+**Notes:**
 
 git versions 1.7 and above are supported by Go.
 
@@ -1975,7 +1975,7 @@ windows command prompt*
 If you are using git through SSH on windows, please ensure that the HOME user environment variable is set to the full path of the parent
 directory where the .ssh/ directory is located.
 
-### Attributes
+**Attributes**
 
 | Attribute | Required | Description |
 |-----------|----------|-------------|
@@ -1987,7 +1987,7 @@ directory where the .ssh/ directory is located.
 | autoUpdate | No | By default Go polls the repository for changes automatically. If autoUpdate is set to false then Go will not poll the repository for changes. Instead it will check for changes only when you trigger a pipeline that contains this material. If the same material is specified more than once in the configuration file, all of them must have the same value for autoUpdate. |
 | invertFilter | No | Inverts any `filter` elements, turning them into whitelists. Only files that *match* the filter will trigger a new build. |
 
-### Examples are:
+**Examples are:**
 
 ```xml
 <pipeline name="yourproject">
@@ -2013,7 +2013,7 @@ directory where the .ssh/ directory is located.
 
 The `<tfs>` element specifies the location of your code base in a TFS Source repository.
 
-### Attributes
+**Attributes**
 
 | Attribute | Required | Description |
 |-----------|----------|-------------|
@@ -2025,7 +2025,7 @@ The `<tfs>` element specifies the location of your code base in a TFS Source rep
 | dest | Only for multiple materials | The directory where the code will be checked out. This is relative to the sandbox of the Go Agent. Go prevents the destination folder from being outside the agent's sandbox. |
 | invertFilter | No | Inverts any `filter` elements, turning them into whitelists. Only files that *match* the filter will trigger a new build. |
 
-### Examples are:
+**Examples are:**
 
 ```xml
 <pipeline name="webproject">
@@ -2051,13 +2051,13 @@ The `<tfs>` element specifies the location of your code base in a TFS Source rep
 
 The `<package>` element refers to package which is defined as part of repositories configuration.
 
-### Attributes
+**Attributes**
 
 | Attribute | Required | Description |
 |-----------|----------|-------------|
 | ref | Yes | The ref tag holds the id of the package |
 
-### Example
+**Example**
 
 ```xml
 <cruise>
@@ -2108,7 +2108,7 @@ If there are multiple pipeline dependencies, then any one of them passing will t
 
 Note that you can not specify two (or more) dependencies for the same upstream pipeline.
 
-### Attributes
+**Attributes**
 
 | Attribute | Required | Description |
 |-----------|----------|-------------|
@@ -2116,11 +2116,11 @@ Note that you can not specify two (or more) dependencies for the same upstream p
 | stageName | Yes | The name of a stage which will trigger this pipeline once it is successful. |
 | materialName | By default the materialName is the name of the upstream pipeline (the pipelineName). This is required if this material is referenced in pipeline labeltemplate | The name to identify a material. Material name can contain the following characters: a-z, A-Z, 0-9, fullstop, underscore and hyphen. Spaces are not allowed. Material name is case insensitive. It needs to be unique within a pipeline. The max length is 255 characters. |
 
-### Notes:
+**Notes:**
 
 The downstream pipeline wouldn't be triggered if there was no passed stage in the upstream pipeline.
 
-### Examples
+**Examples**
 
 Suppose there are four pipelines, and they are commonLib1, commonLib2, Server and Client. For example, the stage 'distStage' in commonLib1
 pipeline can trigger the other two pipelines, and the stage 'pkgstage' in commonLib2 pipeline can trigger Server pipeline. The configuration
@@ -2152,7 +2152,7 @@ The `<stage>` element specifies a set of jobs. If any job in a given stage fails
 
 There must be at least one job in stage.
 
-### Attributes
+**Attributes**
 
 | Attribute | Required | Description |
 |-----------|----------|-------------|
@@ -2161,7 +2161,7 @@ There must be at least one job in stage.
 | cleanWorkingDir | No (Default: false) | Remove all files/directories in the working directory on the agent. By default this operation is skipped. |
 | artifactCleanupProhibited | No (Default: false) | Never cleanup artifacts for this stage, if purging artifacts is configured at the Server Level. |
 
-### Examples
+**Examples**
 
 ```xml
 <pipeline name="yourproject">
@@ -2194,7 +2194,7 @@ The `<jobs>` element specify the set of jobs for a stage.
 
 `<jobs>` can contain several [`<job>`](#job) elements. These jobs can run in parallel on different [`<agents>`](#agents).
 
-### Examples
+**Examples**
 
 ```xml
 <stage name="ut">
@@ -2224,7 +2224,7 @@ Resources are used to match a Job to an Agent. ElasticProfileId is used to match
 A job cannot have both [resources](#resources) as well as [elasticProfileId](#profile).
 If a Job has no resources then it can be built by any Agent (But not by an elastic agent)
 
-### Attributes
+**Attributes**
 
 | Attribute | Required | Description |
 |-----------|----------|-------------|
@@ -2234,7 +2234,7 @@ If a Job has no resources then it can be built by any Agent (But not by an elast
 | timeout | No | A job can be configured to time out if it does not generate any console output for a period of time. Use this attribute to define the timeout value in minutes. Define timeout as 0 if the job should never time out. If the attribute is not defined, the default `<server>` level timeout behaviour will apply. |
 | elasticProfileId | No | A job can be configured to run on an elastic agent by specifying this attribute, which maps to the id of an existing [`<profile>`](#profile). MUST NOT be specified along with `resources`.|
 
-### Examples
+**Examples**
 
 ```xml
 <job name="linux">
@@ -2279,7 +2279,7 @@ If a Job has no resources then it can be built by any Agent (But not by an elast
 
 If a job has no resources it can be built on any agent.
 
-### Example:
+**Example:**
 
 ```xml
 <job name="linux">
@@ -2297,11 +2297,11 @@ If a job has no resources it can be built on any agent.
 
 A `<resource>` is a text tag that specifies a resource which a job requires to build. An Agent must have all the Resources specified for a Job to be able to run that Job.
 
-### Validations:
+**Validations:**
 
 Resources are case-insensitive. A resource name can contain alphanumeric characters, hyphens (-), spaces, periods (.) and pipes (|).
 
-### Example:
+**Example:**
 
 ```xml
 <resources>
@@ -2333,7 +2333,7 @@ The following environment variables are set for all tasks:
 | <span id="env-var-GO_TO_REVISION">`GO_TO_REVISION_<material_name>`</span> | The lastest revision in modifications that the build running against for each configured SCM material. |
 | <span id="env-var-GO_FROM_REVISION">`GO_FROM_REVISION_<material_name>`</span> | The earlist revision in modifications that the build running against for each configured SCM material. |
 
-### Examples
+**Examples**
 
 ```xml
 <job name="linux">
@@ -2351,7 +2351,7 @@ Specifies an Ant build to run. Ant is assumed to be present from the command lin
 
 All paths specified are relative to the pipeline working directory.
 
-### Attributes
+**Attributes**
 
 | Attribute | Required | Description |
 |-----------|----------|-------------|
@@ -2359,7 +2359,7 @@ All paths specified are relative to the pipeline working directory.
 | target | No | Ant target(s) to run. If not specified, the target defaults to 'default' |
 | workingdir | No | The directory from where Ant is invoked |
 
-### Examples
+**Examples**
 
 -   Invoke Ant, specifying a set of targets to run:
 
@@ -2385,7 +2385,7 @@ Runs a specified command. The build fails if the command cannot be run or if it 
 
 All paths specified are relative to the pipeline working directory.
 
-### Attributes
+**Attributes**
 
 | Attribute | Required | Description |
 |-----------|----------|-------------|
@@ -2393,7 +2393,7 @@ All paths specified are relative to the pipeline working directory.
 | args | No | Set of arguments (as a single string) to be passed to the command or script. Note that for complex or quoted arguments we suggest that you use separate `<arg>` tags for each argument. |
 | workingdir | No | The directory in which the script or command is to be executed. Note that this directory is relative to the directory where the agent checks out the materials. |
 
-### Examples
+**Examples**
 
 -   Invoke ruby, specifying the working directory as **tools/my-ruby-tool** and executing the ruby script **backup.rb**.
 
@@ -2416,7 +2416,7 @@ use of any character required for making argument. For example, you can specify 
 
 On Windows you should specify the full name of your script file such as "mybuild.bat". (Only specifying "mybuild" won't work)
 
-### Examples
+**Examples**
 
 -   Echo something on Windows:
 
@@ -2446,7 +2446,7 @@ Specifies a NAnt build to run. NAnt is assumed to be present from the command li
 
 All paths specified must be relative to the pipeline working directory.
 
-### Attributes
+**Attributes**
 
 | Attribute | Required | Description |
 |-----------|----------|-------------|
@@ -2455,7 +2455,7 @@ All paths specified must be relative to the pipeline working directory.
 | workingdir | No | The directory from where NAnt is invoked |
 | nantpath | No | Path of the directory in which NAnt is installed. By default Go will assume that NAnt is in the system environment variable ${PATH}. If the path is specified, then the path must be the same in all agents which run the job. |
 
-### Examples
+**Examples**
 
 Invoke NAnt, specifying a set of targets to run:
 
@@ -2473,7 +2473,7 @@ Specifies a Rake build to be run. Ruby and Rake are assumed to be present from t
 
 All paths specified must be relative to the pipeline working directory.
 
-### Attributes
+**Attributes**
 
 | Attribute | Required | Description |
 |-----------|----------|-------------|
@@ -2481,7 +2481,7 @@ All paths specified must be relative to the pipeline working directory.
 | target | No | Rake target(s) to run. If not specified, defaults to the default target of the build file |
 | workingdir | No | The directory from where Rake is invoked |
 
-### Examples
+**Examples**
 
 Invoke rake, specifying a set of targets to run:
 
@@ -2505,7 +2505,7 @@ introduced in 12.2. Stages after the upstream stage can not be fetched from, bec
 
 All file paths specified are relative to the pipeline working directory.
 
-### Attributes
+**Attributes**
 
 | Attribute | Required | Description |
 |-----------|----------|-------------|
@@ -2522,7 +2522,7 @@ All file paths specified are relative to the pipeline working directory.
 Note: If the file does not exist, the job will fail.
 Go will not fetch the artifact again if it has not changed. The directory path is relative to the pipeline working directory. |
 
-### Example:
+**Example:**
 
 1.  Fetch all artifacts in the directory 'pkg' from the previous stage in the same pipeline and put them under the directory 'lib'
 
@@ -2619,13 +2619,13 @@ the state "failed""".
 
 A task can specify any of three possible runif filters: 'passed', 'failed' or 'any'. ('passed' is the default)
 
-### Attributes
+**Attributes**
 
 | Attribute | Required | Description |
 |-----------|----------|-------------|
 | status | Yes | The status is the job's current status. The value should be one of 'passed', 'failed' or 'any'. |
 
-### **Notes:**
+****Notes:****
 
 [`<runif>`](#runif) can also be defined under [`<exec>`](#exec) task even if `<exec>` has some `<arg>`s e.g.
 
@@ -2636,7 +2636,7 @@ A task can specify any of three possible runif filters: 'passed', 'failed' or 'a
     </exec>
 ```
 
-### Examples
+**Examples**
 
 Given the tasks in a job is following:
 
@@ -2652,7 +2652,7 @@ Given the tasks in a job is following:
 </tasks>
 ```
 
-#### Scenario one:
+#**Scenario one:**
 
 If task 1 `<ant>` passed, task 2 `<fetchartifact>` would be executed.
 
@@ -2660,7 +2660,7 @@ If task 2 `<fetchartifact>` passed, task 3 `<exec>` would NOT be executed.
 
 If task 2 `<fetchartifact>` failed, task 3 `<exec>` would be executed.
 
-#### Scenario two:
+#**Scenario two:**
 
 If task 1 `<ant>` failed, task 2 `<fetchartifact>` would NOT be executed.
 
@@ -2683,7 +2683,7 @@ If a job is cancelled during the building phase:
 
 If a job is cancelled during the completing phase, the agent will ignore the request and complete as planned
 
-### Examples
+**Examples**
 
 The task 'start\_server' starts a process on an agent. When the stage is cancelled, the agent will invoke the cancel task 'kill\_server' to kill the process early and clean up any extra files.
 
@@ -2703,7 +2703,7 @@ The task 'start\_server' starts a process on an agent. When the stage is cancell
 
 `<artifacts>` specifies what files the agent will publish to the server or an external artifact store.
 
-### Examples
+**Examples**
 
 ```xml
 <job name="unit">
@@ -2733,7 +2733,7 @@ The task 'start\_server' starts a process on an agent. When the stage is cancell
 Publish build or test artifacts to the artifact repository for the job. The src attribute should point towards a folder that contains the test output files. Go will use these to generate a test report if the artifact type is `test`. Test
 information is placed in the Failures and Test sub-tabs. Test results from multiple jobs are aggregated on the stage detail pages. This allows you to see the results of tests from both functional and unit tests even if they are run in different jobs.
 
-### Attributes
+**Attributes**
 
 | Attribute | Required | Description |
 |-----------|----------|-------------|
@@ -2748,7 +2748,7 @@ You can use wildcards to specify which files to upload to the go server in case 
 would upload all xml files in the target directory and any of its subdirectories. The original directory structure is preserved on the
 server.
 
-### Examples for build artifact
+**Examples for build artifact**
 
 ```xml
 <job name="unit">
@@ -2779,7 +2779,7 @@ The following will upload all xml files to the server's artifact repository.
 [top](#top)
 
 
-### Examples for test artifact
+**Examples for test artifact**
 
 ```xml
 <job name="unit">
@@ -2789,7 +2789,7 @@ The following will upload all xml files to the server's artifact repository.
 </job>
 ```
 
-### Examples for external artifact
+**Examples for external artifact**
 
 ```xml
 <job name="build_image">
@@ -2816,7 +2816,7 @@ The following will upload all xml files to the server's artifact repository.
 
 The `<tabs>` element allows you to add tabs to the Job Details page. You can put any artifact that can be rendered by a web browser into a tab. For example, if your coverage tool produces an html report, you can easily place that report into a tab. Tabs are implemented as iframes (see W3C iframe definition ).
 
-### Example:
+**Example:**
 
 ```xml
 <job name="unit">
@@ -2835,14 +2835,14 @@ The `<tabs>` element allows you to add tabs to the Job Details page. You can put
 
 Define a tab with specific name and artifact to show.
 
-### Attributes
+**Attributes**
 
 | Attribute | Required | Description |
 |-----------|----------|-------------|
 | name | Yes | The name of the tab. If should be unique in that job. |
 | path | Yes | The relative path of a file in the artifact repository of the job. |
 
-### Example:
+**Example:**
 
 Given some coverage information in 'target/Jcoverage' folder on the agent side, We configure a tab to show the coverage information by specifying a tab with the index.html file.
 
@@ -2863,7 +2863,7 @@ The `<properties>` element allows you to create properties of the build from XML
 the values of properties over time. This allows you to track properties against certain builds, for example to see whether build time is
 improving or getting worse.
 
-### Example:
+**Example:**
 
 ```xml
 <job name="emma">
@@ -2888,7 +2888,7 @@ improving or getting worse.
 
 Define a Property based on the contents of an XML file.
 
-### Attributes
+**Attributes**
 
 | Attribute | Required | Description |
 |-----------|----------|-------------|
@@ -2896,7 +2896,7 @@ Define a Property based on the contents of an XML file.
 | src | Yes | The xml file containing the data that you want to use to create the property, and it isn't allowed to start from '.' Properties are set on the Agent at the end of the build and does not need to be an artifact that will be uploaded to the server. |
 | xpath | Yes | The XPath that will be used to create the property. |
 
-### Example:
+**Example:**
 
 This is a simple example to parse the errors and failures count from a single junit file and turn them into properties.
 
@@ -2938,7 +2938,7 @@ coverage.xml file.
 
 Specifies how a stage should be triggered. `<approval>` of type 'manual' or 'success' can be used to stop a pipeline execution at the start of a stage and can only be resumed when it is manually approved on the pipeline activity page, stage details page or through RESTful url.
 
-### Attributes
+**Attributes**
 
 | Attribute | Required | Description |
 |-----------|----------|-------------|
@@ -2949,7 +2949,7 @@ Specifies how a stage should be triggered. `<approval>` of type 'manual' or 'suc
 -   `<approval>` must be the first sub-element of [`<stage>`](#stage).
 -   If an approval is not specified then the behavior is same as 'success' i.e. the stage will be automatically triggered when the previous stage passes.
 
-### Example:
+**Example:**
 
 ```xml
 <stage name="ut">
@@ -2965,7 +2965,7 @@ Specifies how a stage should be triggered. `<approval>` of type 'manual' or 'suc
 You can use `<authorization>` under an [`<approval>`](#approval) with a 'manual' or 'success' type to specify who can approve this stage. There
 are two sub-elements: [`<user>`](#user) and [`<role>`](#role).
 
-### Examples
+**Examples**
 
 ```xml
 <approval type="manual">
@@ -2997,13 +2997,13 @@ The `<templates>` element specifies the set of templates known by the server.
 
 Allows you to provide a template for pipeline definition
 
-### Attributes
+**Attributes**
 
 | Attribute | Required | Description |
 |-----------|----------|-------------|
 | name | Yes | Identifier for the pipeline template |
 
-### Examples
+**Examples**
 
 ```xml
 <cruise>
@@ -3051,13 +3051,13 @@ The `<environments>` element specifies the set of environments known by the serv
 
 Allows you to group a set of agents together for exclusive use.
 
-### Attributes
+**Attributes**
 
 | Attribute | Required | Description |
 |-----------|----------|-------------|
 | name | Yes | Identifier for an environment |
 
-### Examples
+**Examples**
 
 ```xml
 <cruise>
@@ -3106,14 +3106,14 @@ A `<variable>` defines the variable name and property value that will be passed 
 is run. The value can be include multiple lines or CDATA. Note that the behaviour is operating system dependent. Your operating system may not
 allow certain variable names and/or values.
 
-### Attributes
+**Attributes**
 
 | Attribute | Required | Description |
 |-----------|----------|-------------|
 | name | Yes | Identifier for an environment variable |
 | secure | No | This attribute is applicable only at the pipeline level and when set to true, encrypts the environment variable value. |
 
-### Example:
+**Example:**
 
 ```xml
   <environmentvariables>
@@ -3129,13 +3129,13 @@ allow certain variable names and/or values.
 
 References a physical agent to be associated with this environment.
 
-### Attributes
+**Attributes**
 
 | Attribute | Required | Description |
 |-----------|----------|-------------|
 | uuid  | Yes | Identifier to an agent (must exist in the config file). |
 
-### Examples
+**Examples**
 
 ```xml
 <environment name="UAT">
@@ -3157,13 +3157,13 @@ The `<pipelines>` element inside the [`<environment>`](#environment) element spe
 
 References a pipeline to be associated with this environment.
 
-### Attributes
+**Attributes**
 
 | Attribute | Required | Description |
 |-----------|----------|-------------|
 | name | Yes | Identifier to an pipeline (must exist in the config file). |
 
-### Examples
+**Examples**
 
 ```xml
 <environment name="UAT">
@@ -3189,7 +3189,7 @@ Do not change it manually. You can manage these through the Agents tab.
 
 An approved agent. Before it is approved, the agent is displayed on the top of the agent tab with a grey bar.
 
-### Attributes
+**Attributes**
 
 | Attribute | Required | Description |
 |-----------|----------|-------------|
@@ -3200,7 +3200,7 @@ An approved agent. Before it is approved, the agent is displayed on the top of t
 | elasticAgentId | No | Id of your elastic agent. **This attribute is only required for elastic agents.** |
 | elasticPluginId | No | Elastic-agent plugin Id. **This attribute is only required for elastic agents.** |
 
-### Notes:
+**Notes:**
 
 A local agent will be approved automatically.
 
@@ -3220,7 +3220,7 @@ An agent without any resources will build any jobs that don't specify resources.
 
 Resources names can contain the following characters: a-z, A-Z, 0-9, fullstop, underscore and hyphen. Spaces are not allowed.
 
-### Examples
+**Examples**
 
 ```xml
 <agents>
