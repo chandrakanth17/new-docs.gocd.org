@@ -213,7 +213,7 @@ aside nav,
   .book-page,
   .book-menu nav,
   .book-toc nav {
-    padding: $padding-16 * 2 $padding-16;
+    padding: $padding-16 * 2 0 $padding-16 * 2 $padding-16;
   }
 }
 
