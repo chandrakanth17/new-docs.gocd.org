@@ -98,11 +98,12 @@ ul.pagination {
   flex: 0 0 $menu-width;
   font-size: $font-size-14;
   padding: 0 20px;
+  
 
   nav {
     width: $menu-width;
     padding: $padding-16;
-
+    border-right: 1px solid $gray-600;
     @include fixed;
 
     @media (min-width: 44rem){
@@ -212,7 +213,7 @@ aside nav,
   .book-page,
   .book-menu nav,
   .book-toc nav {
-    padding: $padding-16 * 2 $padding-16;
+    padding: $padding-16 * 2 0 $padding-16 * 2 $padding-16;
   }
 }
 
