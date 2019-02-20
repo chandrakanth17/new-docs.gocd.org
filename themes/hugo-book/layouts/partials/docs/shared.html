@@ -16,15 +16,15 @@
         var menu = document.querySelector('aside.book-menu nav')
         addEventListener('beforeunload', function(event) {
             localStorage.setItem('menu.scrollTop', menu.scrollTop)
+            console.log("Setting scrolltop before unload:", menu.scrollTop)
         });
     })()
-    var loadFunction = function(){
+    $(document).ready(function(){
         var menu = document.querySelector('aside.book-menu nav')
         var top = parseInt(localStorage.getItem('menu.scrollTop'));
         $(menu).animate({
             scrollTop: top
-        }, 10)
-    }
-    window.onload = loadFunction();
+        }, "slow")
+    })
 </script>
 {{ end }}
