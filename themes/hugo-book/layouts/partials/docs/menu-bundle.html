@@ -4,6 +4,9 @@
   {{ $attrEq = "=" }}
   {{ $attrVal = "./" }}
 {{ end }}
+{{ if .Site.Params.BookEnableJS }}
+  {{- template "jsmenu" . -}}
+{{ end }}
 
 <style>
   nav ul a[href{{ $attrEq }}"{{ $attrVal }}"] {

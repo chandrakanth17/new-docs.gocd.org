@@ -9,3 +9,22 @@
     {{- default $title .Title -}}
   {{- end -}}
 {{ end }}
+
+{{ define "jsmenu" }}
+<script>
+    (function() {
+        var menu = document.querySelector('aside.book-menu nav')
+        addEventListener('beforeunload', function(event) {
+            localStorage.setItem('menu.scrollTop', menu.scrollTop)
+        });
+    })()
+    var loadFunction = function(){
+        var menu = document.querySelector('aside.book-menu nav')
+        var top = parseInt(localStorage.getItem('menu.scrollTop'));
+        $(menu).animate({
+            scrollTop: top
+        }, 10)
+    }
+    window.onload = loadFunction();
+</script>
+{{ end }}

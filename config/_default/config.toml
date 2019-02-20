@@ -11,6 +11,7 @@ pygmentsCodefences = true
   # (Optional, default true) Show or hide table of contents globally
   # You can also specify this parameter per page in front matter
   BookShowToC = true
+  BookEnableJS = true
 
   # (Optional, default none) Set leaf bundle to render as side menu
   # When not specified file structure and weights will be used
