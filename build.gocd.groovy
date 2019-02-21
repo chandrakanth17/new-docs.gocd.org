@@ -1,5 +1,4 @@
 import cd.go.contrib.plugins.configrepo.groovy.dsl.*
-import java.util.function.*
 
 def buildStage = {
   new Stage("Build", {
@@ -42,6 +41,9 @@ def pushToGHPages = {
 
 def publishToS3 = {
   new Stage("S3Sync", {
+    approval {
+      type = 'manual'
+    }
     jobs {
       job("upload") {
         elasticProfileId = 'azure-plugin-ubuntu-with-ruby'
