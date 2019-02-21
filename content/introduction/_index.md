@@ -13,9 +13,6 @@ title: Concepts In GoCD
     <br>
     <br>
     <br>
-    <br>
-    <br>
-    <br>
        <h1>CONCEPTS</h1>
        <h1>IN GOCD</h1>
     </div>

@@ -9,9 +9,6 @@
     <br>
     <br>
     <br>
-    <br>
-    <br>
-    <br>
        <h1>CONFIGURING</h1>
        <h1>GO</h1>
     </div>

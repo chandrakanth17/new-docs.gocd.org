@@ -9,9 +9,6 @@
     <br>
     <br>
     <br>
-    <br>
-    <br>
-    <br>
        <h1>Beta</h1>
        <h1>Features</h1>
     </div>

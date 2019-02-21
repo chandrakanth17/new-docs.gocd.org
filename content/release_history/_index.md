@@ -9,9 +9,6 @@
     <br>
     <br>
     <br>
-    <br>
-    <br>
-    <br>
        <h1>RELEASE</h1>
        <h1>HISTORY</h1>
     </div>
