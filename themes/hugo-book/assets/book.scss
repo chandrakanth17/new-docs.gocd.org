@@ -103,11 +103,11 @@ ul.pagination {
   nav {
     width: $menu-width;
     padding: $padding-16;
-    border-right: 1px solid $gray-600;
     @include fixed;
 
     @media (min-width: 44rem){
       left: 12px;
+      border-right: 1px solid $gray-600;
     }
   }
 
