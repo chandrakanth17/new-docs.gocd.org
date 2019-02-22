@@ -17,14 +17,14 @@
         addEventListener('beforeunload', function(event) {
             localStorage.setItem('menu.scrollTop', menu.scrollTop)
         });
-    })()
-    var loadFunction = function(){
+    })();
+    function loadFunction(){
         var menu = document.querySelector('aside.book-menu nav')
         var top = parseInt(localStorage.getItem('menu.scrollTop'));
         $(menu).animate({
             scrollTop: top
         }, 10)
     }
-    window.onload = loadFunction();
+    $(document).ready = loadFunction();
 </script>
 {{ end }}
